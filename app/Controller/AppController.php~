@@ -35,23 +35,25 @@ class AppController extends Controller {
     public $components=array(
         'Session',
         'Auth'=>array(
-            'loginRedirect'=>array('controller'=>'posts','action'=>'index'),
+            'loginRedirect'=>array('controller'=>'Proposals','action'=>'index'),
             'logoutRedirect'=>array('controller'=>'pages','action'=>'display','home'),
             'authorize'=>array('Controller')
         ),
     );
     
     public function beforeFilter() {
-        $this->Auth->allow('index','view');
-	$this->set('current_user',$this->Auth->user());
-
+		$this->set('current_user',$this->Auth->user());
+		#Configure::write('Config.language', 'ger');
     }
     
     public function isAuthorized($logged_user) {
-        if (isset($logged_user['role']) && $logged_user['role']==='admin') {
+        if (isset($logged_user['role']) && $logged_user['role']<2) {
             return TRUE;
         }
         
+        
+        
+        $this->Session->setFlash(__('Acces denied'));
         return FALSE;
     }
 }

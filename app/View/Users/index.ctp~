@@ -1,11 +1,13 @@
-<h1>Users</h1>
-
-<?php echo $this->Html->link(
-	'Create User',
-	array('controller'=>'users','action'=>'add')
-	);
+<?php
+Configure::load('Blog_config');
+Configure::write('Config.language', 'de');
+$level = Configure::read('Level'); 
 ?>
-<?php echo($this->element('topmenu'));?>
+
+
+<h3>Users</h3>
+<?php echo __('blakbfksdjnmjsndfb penis')?>
+
 <table>
 	<tr>
 		<th>Id</th>
@@ -21,7 +23,7 @@
 	<tr> 
 		<td> <?php echo $x['User']['id']; ?> </td> 
 		<td> <?php echo $this->Html->link($x['User']['username'], array('controller'=>'users','action'=>'view',$x['User']['id'])); ?></td>
-                <td> <?php echo $x['User']['role']?></td>
+                <td> <?php echo $x['User']['role'].' '.$level[$x['User']['role']]?></td>
                 <td> <?php echo $x['User']['password']?></td>
                 <td> <?php
                 echo $this->Html->link('Edit ',array('action' => 'edit',$x['User']['id']));
@@ -32,3 +34,22 @@
 	<?php endforeach; ?>
 	<?php unset($x); ?>
 </table>
+
+
+<?php 
+if ($current_user['role'] < 2 && !empty($current_user) ) {?>
+
+
+	<?php echo $this->Form->create('User'); ?>
+    	<fieldset>
+	        <legend>Create user</legend>
+    	    <?php echo $this->Html->link('Back', array('controller'=>'users','action'=>'index')) ?>
+        	<?php 
+  	    	echo $this->Form->input('username');
+    	    echo $this->Form->input('password');
+        	echo $this->Form->input('role',array('options'=> $level));
+        	?>
+   		 </fieldset>
+    
+	<?php echo $this->Form->end('Create User');
+}?>

@@ -1,11 +1,12 @@
 <?php
-Configure::load('Blog_config'); 
+Configure::load('Blog_config');
+#Configure::write('Config.language', 'de');
 $level = Configure::read('Level'); 
 ?>
 
 
-<h3><?php __('Users')?></h3>
-<?php __('blakbfksdjnmjsndfb penis')?>
+<h3>Users</h3>
+<?php echo __('blakbfksdjnmjsndfb penis')?>
 
 <table>
 	<tr>

@@ -19,6 +19,7 @@ class UsersController extends AppController{
     
     public function beforeFilter() {
         parent::beforeFilter();
+	
         // Allow users to login and logout.
         
         $this->Auth->allow('logout', 'login');
@@ -37,7 +38,6 @@ class UsersController extends AppController{
     
     public function index() {
     	$logged_user = $this->Auth->user();
-    	
         $this->User->recursive = 0;
         $this->set('users_view',$this->paginate());
         
