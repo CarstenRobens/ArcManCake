@@ -70,7 +70,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'Blog',
+		'database' => 'ArcManCake',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
