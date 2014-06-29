@@ -1,0 +1,8 @@
+<?php
+
+// Config of Userright names
+$config['User'][0] = 'User'     ;
+$config['User'][1] = 'Moderator';
+$config['User'][2] = 'Admin'    ;
+$config['User'][3] = 'Webmaster';
+?>

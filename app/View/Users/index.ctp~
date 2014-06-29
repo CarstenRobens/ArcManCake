@@ -1,0 +1,34 @@
+<h1>Users</h1>
+
+<?php echo $this->Html->link(
+	'Create User',
+	array('controller'=>'users','action'=>'add')
+	);
+?>
+<?php echo($this->element('topmenu'));?>
+<table>
+	<tr>
+		<th>Id</th>
+		<th>username</th>
+                <th>Role</th>
+                <th>password</th>
+                <th>Action</th>
+		<th>Created</th>
+	</tr>
+
+<!-- Here is where we loop through our $users array, printing out post info --> 
+	<?php foreach($users_view as $x ): ?>
+	<tr> 
+		<td> <?php echo $x['User']['id']; ?> </td> 
+		<td> <?php echo $this->Html->link($x['User']['username'], array('controller'=>'users','action'=>'view',$x['User']['id'])); ?></td>
+                <td> <?php echo $x['User']['role']?></td>
+                <td> <?php echo $x['User']['password']?></td>
+                <td> <?php
+                echo $this->Html->link('Edit ',array('action' => 'edit',$x['User']['id']));
+                echo $this->Form->postLink('Delete',array('controller' => 'users','action' => 'delete',$x['User']['id']),array('confirm'=>'Are you sure?'));
+                ?></td>
+		<td> <?php echo $x['User']['created']; ?> </td>
+	</tr>
+	<?php endforeach; ?>
+	<?php unset($x); ?>
+</table>

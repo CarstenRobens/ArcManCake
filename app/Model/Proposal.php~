@@ -1,0 +1,19 @@
+<?php
+
+class Proposal extends AppModel{
+    public $validate=array(
+    		'name'=>array(
+            	'rule'=>'notEmpty'
+    		),
+    		'surname'=>array(
+            	'rule'=>'notEmpty'
+			),
+    		'phone'=>array(
+            	'rule'=>'notEmpty'
+			)
+    );
+    
+    public function isOwnedBy ($owned_proposal,$owner){
+        return $this->field('id', array('id'=>$owned_proposal, 'user_id'=>$owner))!==FALSE;
+    }
+}

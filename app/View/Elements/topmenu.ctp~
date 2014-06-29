@@ -1,0 +1,25 @@
+			<?php Configure::load('Blog_config'); 
+			$power = Configure::read('Power');
+			?>
+			<?php echo $this->Html->image('Miss.jpg', array('alt' => 'CakePHP')); ?>
+
+
+			<?php 
+				if(empty($current_user)){
+					echo $this->Html->link($this->Html->image('Miss.jpg', array('alt' => 'CakePHP')),array('controller' => 'users','action' => 'login'),array('escape' => false)); 
+				}else{
+					echo 'Hello '.$current_user['username'].'  '.$this->Html->link('Logout',array('controller' => 'users','action' => 'logout'));
+				}
+			?>
+			<div class="button">
+			<?php 
+				echo $this->Html->link('Posts',array('controller' => 'Posts','action' => 'index')); 
+
+			?>
+			</div>
+			<div class="button">
+			<?php 
+				echo $this->Html->link('Users',array('controller' => 'Users','action' => 'index')); 
+
+			?>
+			</div>

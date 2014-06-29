@@ -1,0 +1,17 @@
+<div class="users form">
+<?php $power_array = array('admin'=>'Admin','owner'=>'Owner','employee'=>'Employee','visitor'=>'Visitor'); ?>
+<?php echo $this->Form->create('User'); ?>
+    <fieldset>
+        <legend>Create user</legend>
+        <?php echo $this->Html->link('Back', array('controller'=>'users','action'=>'index')) ?>
+        <?php 
+        echo $this->Form->input('username');
+        echo $this->Form->input('password');
+        echo $this->Form->input('role',array('options'=> $power_array));
+        ?>
+    </fieldset>
+    
+<?php echo $this->Form->end('Create User'); ?>
+
+
+</div>
