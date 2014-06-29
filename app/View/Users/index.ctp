@@ -5,7 +5,7 @@ $level = Configure::read('Level');
 
 
 <h3><?php __('Users')?></h3>
-
+<?php __('blakbfksdjnmjsndfb penis')?>
 
 <table>
 	<tr>
