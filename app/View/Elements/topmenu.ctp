@@ -1,34 +1,55 @@
-			
-			<?php Configure::load('Blog_config'); 
-			$level = Configure::read('Level');
-			?>
-			
-			<?php echo $this->Html->Link(
-				$this->Html->image('Miss.jpg', array('alt' => 'CakePHP')),
-				'http://www.google.com', array('escape' => false)
-			); ?>
-			
 
-			<div>
-			<?php 
-				if(empty($current_user)){
-					 echo $this->Html->link('Log in',array('controller' => 'users','action' => 'login'),array('escape' => false));
-				}else{
-					echo 'Hello '.$current_user['id'].' '.$current_user['username'];
-					echo ' ('.$level[$current_user['role']].') ';
-					echo '  '.$this->Html->link('Log out',array('controller' => 'users','action' => 'logout'));
-				}
-			?>
-			</div>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+			  <a href="../" class="navbar-brand">ArcManCake 0.1</a> 
+			  
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+				<?php if($this->Session->read('menue.active')=='Home'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Home'), array('controller' => 'home', 'action' => 'index')); ?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Home'), array('controller' => 'home', 'action' => 'index')); ?></li>
+				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='Users'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Users'), array('controller' => 'users', 'action' => 'index')); ?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Users'), array('controller' => 'users', 'action' => 'index')); ?></li>
+				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='Costumers'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Costumers'), array('controller' => 'Costumers', 'action' => 'index')); ?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Costumers'), array('controller' => 'Costumers', 'action' => 'index')); ?></li>
+				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='Proposals'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Proposals'), array('controller' => 'Proposals', 'action' => 'index')); ?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Proposals'), array('controller' => 'Proposals', 'action' => 'index')); ?></li>
+				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='Houses'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Houses'),array('controller'=>'home','action'=>'open_positions'))?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Houses'),array('controller'=>'home','action'=>'open_positions'))?></li>
+				<?php } ?>
+				
+                
+              </ul>
+				
+            </div>
+          </div>
+        </div>
+
+      </div>
+</div>		
 			
-			<div>
-			<?php
-				echo $this->Html->link('Users',array('controller' => 'Users','action' => 'index')); 
-				echo '  ';
-				echo $this->Html->link('Costumers',array('controller' => 'Costumers','action' => 'index'));
-				echo '  ';
-				echo $this->Html->link('Proposals',array('controller' => 'Proposals','action' => 'index'));
-				echo '   |   ';
-				echo $this->Html->link('Houses',array('controller' => 'Houses','action' => 'index'));
-			?>
-			</div>

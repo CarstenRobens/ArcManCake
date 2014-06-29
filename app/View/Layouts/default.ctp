@@ -29,39 +29,42 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+		
+		echo $this->Html->css('ArcManCake');
+		echo $this->Html->css('jquery.imageZoom');
+		echo $this->Html->css('bootstrap.min');
+		echo $this->Html->css('carousel');
+		echo $this->Html->css('theme');
+		
+		echo $scripts_for_layout;
+		//echo $this->Html->script('jquery-1.2.6');
+		echo $this->Html->script('startstop-slider');
+		//echo $this->Html->script('jquery-1.6.2.min');
+		echo $this->Html->script('animatedcollapse');
+		echo $this->Html->script('jquery-1.11.0.min');
+		echo $this->Html->script('bootstrap.min'); 	
+		echo $this->Html->script('docs.min');
+		echo $this->Html->script('signin');
+		echo $this->Html->script('customize.min');
+		echo $this->Html->script('raw-files.min');
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-		
-			<?php echo($this->element('topmenu'));?>
+	<?php Configure::load('ArcManCake_config');	?>
+							
 
-		</div>
-		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+            
+	<?php echo($this->element('topmenu'));?>
+				
+	<?php echo $this->Session->flash(); ?>
+	<?php echo $this->Session->flash('email'); ?>
+								
+	<?php echo $this->fetch('content'); ?>
+                            
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php echo($this->element('footer'));?>
+
+
 </body>
 </html>

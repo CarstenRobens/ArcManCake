@@ -1450,3 +1450,829 @@ Stack Trace:
 #10 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(HousesController), Object(CakeRequest))
 #11 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2014-06-29 16:14:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:14:48 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/img/Footer_5.png
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:16:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:16:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/img/Footer_5.png
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:17:42 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\appcake_configuration.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('appcake_configu...')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Layouts\default.ctp(53): Configure::load('appcake_configu...')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(479): View->renderLayout('', 'default')
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#8 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-29 16:17:43 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:17:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:18:01 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\appcake_configuration.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('appcake_configu...')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Layouts\default.ctp(53): Configure::load('appcake_configu...')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(479): View->renderLayout('', 'default')
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#8 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-29 16:18:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:18:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:18:17 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\appcake_configuration.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('appcake_configu...')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Layouts\default.ctp(53): Configure::load('appcake_configu...')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(479): View->renderLayout('', 'default')
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#8 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-29 16:18:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:18:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:18:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:19:38 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:19:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:19:53 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:19:53 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:19:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:04 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:20:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:15 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:20:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:29 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:20:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:32 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:20:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:33 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:20:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:20:33 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:22:46 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:22:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:22:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/css/cake.generic.css
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:23:07 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\Blog_config.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('Blog_config')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Users\index.ctp(2): Configure::load('Blog_config')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#6 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-29 16:23:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:23:31 Error: [ConfigureException] Could not load configuration file: C:\xampp\htdocs\ArcManCake\app\Config\NeuronCake_configuration.php
+Request URL: /ArcManCake/Users
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\lib\Cake\Core\Configure.php(298): PhpReader->read('NeuronCake_conf...')
+#1 C:\xampp\htdocs\ArcManCake\app\View\Elements\footer.ctp(1): Configure::load('NeuronCake_conf...')
+#2 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#6 C:\xampp\htdocs\ArcManCake\app\View\Layouts\default.ctp(66): View->element('footer')
+#7 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#9 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\ArcManCake\lib\Cake\View\View.php(479): View->renderLayout('', 'default')
+#11 C:\xampp\htdocs\ArcManCake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#12 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#13 C:\xampp\htdocs\ArcManCake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-06-29 16:23:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:25:26 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:25:26 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/img/Footer_5.png
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:27:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:27:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:16 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/home/open_positions
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:19 Error: [MissingControllerException] Controller class PapersController could not be found.
+Exception Attributes: array (
+  'class' => 'PapersController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/papers
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:20 Error: [MissingControllerException] Controller class MembersController could not be found.
+Exception Attributes: array (
+  'class' => 'MembersController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/members
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:30 Error: [MissingControllerException] Controller class ResearchesController could not be found.
+Exception Attributes: array (
+  'class' => 'ResearchesController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/researches
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:31:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:33:49 Error: [MissingControllerException] Controller class ResearchesController could not be found.
+Exception Attributes: array (
+  'class' => 'ResearchesController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/researches
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:33:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:17 Error: [MissingControllerException] Controller class ResearchesController could not be found.
+Exception Attributes: array (
+  'class' => 'ResearchesController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/researches
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:25 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/home
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:39:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:40:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:40:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:41:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:41:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:41:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:42:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:45:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:46:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:47:09 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:48:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:48:44 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:51:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:51:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:52:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:52:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:54:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:55:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:55:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:55:09 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:55:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-29 16:55:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 C:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

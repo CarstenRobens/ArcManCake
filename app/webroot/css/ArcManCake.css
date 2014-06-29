@@ -1,0 +1,1189 @@
+/**
+ *
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       cake
+ * @subpackage    cake.app.webroot.css
+ * @since         CakePHP(tm)
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ background-color:transparent;*/
+
+* {
+	margin:0;
+	padding:0;
+}
+
+/** General Style Info **/
+body {
+	height: 100%;
+	min-height: 100%;
+	color: #3A4C5A;
+	background: #e1e6eb;
+	font-family:helvetica,'lucida grande',verdana,arial,sans-serif;
+	font-size:90%;
+	margin: 0;
+}
+
+a {
+	color: #999;
+	text-decoration: none;
+}
+
+.invert a
+{
+	
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover {
+	color:#00549f;
+	text-decoration: underline;
+}
+a img {
+	border:none;
+}
+h1, h2, h3, h4 {
+	font-weight: normal;
+	/*margin-bottom:0.5em;*/
+}
+h1 {
+	
+	font-size: 100%;
+}
+h2 {
+	color:#00549f;
+	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
+	font-size: 190%;
+	
+}
+h3 {
+	font-weight:bold;
+	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
+	font-size: 100%;
+}
+h3 a{
+	
+	font-weight: normal;
+}
+h3 a:hover{
+	
+}
+h4 {
+	
+	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
+	font-size: 130%;
+}
+h4 a{
+	
+	font-weight: normal;
+}
+h4 a:hover{
+	
+}
+ul, li {
+	margin: 0 12px;
+}
+
+/** Layout **/
+#container {
+	text-align: left;
+}
+#subcontainer{
+	
+	width: 992px;
+	position:relative;
+	margin: 0px auto;
+	background-color:#FFF;
+}
+
+
+
+
+#header{
+	width: 992px;
+	text-align:center;
+	position:relative;
+    margin: 0px auto;
+	background-color:clear;
+	
+}
+
+
+div.headerwrapper{
+	
+	background-color:clear;
+	padding-top:25px;
+	height:25px;
+}
+div.topmenuemainbox {
+	width: 992px;
+	
+	
+}
+
+div.contactwrapper{
+	margin: 15px 100px;
+	border: 1px solid #00549f;
+}
+
+
+div.topmenuewrapper {
+	position:relative;
+    margin: 0px auto;
+	padding:  32px 8px 0 8px;
+}
+
+div.secondtopmenuewrapper {
+	position:relative;
+    float:right;
+	border-bottom:dashed 1px #999;
+}
+
+div.topmenuebox {
+	position: relative;
+	float: right;
+	width: 120px;
+}
+
+div.topmenuemaincontent
+div.topmenuemaincontentActive {
+	width: 100%;
+	padding:  0px 0px;
+}
+
+div.topmenuemaincontent a,
+div.topmenuemaincontentActive a{
+	
+	font-weight:normal;
+	margin:0px 0px ;
+	padding:  4px 0px;
+	text-align:center;
+	display: block;
+	
+	
+	
+	
+	font-size: 100%;
+	
+}
+
+
+div.topmenuemaincontent a:hover,
+div.topmenuemaincontentActive a{
+	margin:0px 0px ;
+	padding:  4px 0px;
+	text-align:center;
+	display: block;
+	
+	color:#00549f;
+	
+}
+
+
+div.topmenuemaincontentActive a{
+	font-weight: bold;
+	
+}
+
+	
+
+
+#content{
+	background: #BBCEDD;
+	clear: both;
+	padding: 10px 20px 40px 20px;
+	overflow: auto;
+	
+}
+
+#footer {
+	text-align:center;
+	position:relative;
+    margin: 0px auto;
+	clear: both;
+	
+	background: url('../img/Footer_5.png') no-repeat bottom;
+
+	
+
+}
+#footer2 {
+	text-align:center;
+	position:relative;
+    margin: 0px auto;
+	clear: both;
+	background-color:clear;
+	width: 992px;
+	height: 50px;
+}
+
+div.footerwrapper{
+	text-align:center;
+	position:relative;
+    margin: 0px auto;
+	background-color:clear;
+	
+}
+
+
+
+
+/** containers **/
+div.form,
+div.index,
+div.view ,
+div.home{
+	padding:2px 2px;
+
+}
+div.actions {
+	float:left;
+	width:16%;
+	padding:10px 1.5%;
+}
+div.actions h3 {
+	padding-top:0;
+}
+
+/** Tables **/
+table {
+	/*background: #eef8ff;*/
+	border-right:0;
+	clear: both;
+	margin-bottom: 10px;
+	width: 100%;
+}
+th {
+	border:0;
+	border-bottom:2px solid #555;
+	text-align: left;
+	padding:4px;
+}
+th a {
+	display: block;
+	padding: 2px 4px;
+	text-decoration: none;
+}
+th a.asc:after {
+	content: ' ⇣';
+}
+th a.desc:after {
+	content: ' ⇡';
+}
+table tr td {
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom:1px solid #ddd
+	
+	;
+}
+table tr:nth-child(2n) td {
+	
+}
+table .altrow td {
+	
+}
+td.actions {
+	text-align: left;
+	white-space: nowrap;
+}
+td.info {
+	width: 20%;
+	}
+table td.actions a {
+	margin: 0px 6px;
+	padding:2px 5px;
+}
+.cake-sql-log table {
+	background: #f4f4f4;
+}
+.cake-sql-log td {
+	padding: 4px 8px;
+	text-align: left;
+	font-family: Monaco, Consolas, "Courier New", monospaced;
+}
+.cake-sql-log caption {
+}
+
+/** Paging **/
+div.paging {
+	background:#505050;
+	margin-top: 1em;
+	clear:both;
+}
+div.paging span.disabled {
+	display: inline;
+}
+div.paging span.current {
+}
+div.paging span a {
+}
+
+/** Scaffold View **/
+dl {
+	line-height: 2em;
+	margin: 0em 0em;
+	width: 100%;
+}
+dl .altrow {
+	background: #92B1C8;
+}
+dt {
+	font-weight: bold;
+	padding-left: 4px;
+	vertical-align: top;
+}
+dd {
+	margin-left: 10em;
+	margin-top: -2em;
+	vertical-align: top;
+	
+}
+
+/** Forms **/
+form {
+	clear: both;
+	margin-right: 20px;
+	padding: 0;
+	width: 95%;
+}
+fieldset {
+	border: 0px solid #ccc;
+	margin-bottom: 1em;
+	padding: 5px 5px;
+	text-align:justify;
+}
+fieldset legend {
+	font-size: 160%;
+	font-weight: bold;
+}
+fieldset disclaimer {
+	font-size: 120%;
+	font-weight: bold;
+	text-align:justify;
+}
+fieldset fieldset {
+	margin-top: 0px;
+	margin-bottom: 20px;
+	padding: 16px 10px;
+}
+fieldset fieldset legend {
+	font-size: 120%;
+	font-weight: normal;
+}
+fieldset fieldset div {
+	clear: left;
+	margin: 0 20px;
+}
+form div {
+	clear: both;
+	margin-bottom: 1em;
+	padding: .5em;
+	vertical-align: text-top;
+}
+
+div.000000 input{
+	width: 20%;
+	}
+form .input {
+}
+
+form .required {
+	font-weight: bold;
+}
+form .required label:after {
+	content: '*';
+	display:inline;
+	color: #00549f;
+}
+form div.submit {
+	border: 0;
+	clear: both;
+	margin-top: 10px;
+}
+label {
+	display: block;
+	font-size: 110%;
+	margin-bottom:3px;
+}
+input, textarea {
+	clear: both;
+	font-size: 100%;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	padding: 1%;
+	width:100%;
+}
+select {
+	clear: both;
+	font-size: 120%;
+	vertical-align: text-bottom;
+}
+select[multiple=multiple] {
+	width: 100%;
+}
+option {
+	font-size: 120%;
+	padding: 0 3px;
+}
+input[type=checkbox] {
+	clear: left;
+	float: left;
+	margin: 0px 6px 7px 2px;
+	width: auto;
+}
+div.checkbox label {
+	display: inline;
+}
+input[type=radio] {
+	float:left;
+	width:auto;
+	margin: 0 3px 7px 0;
+}
+div.radio label {
+	margin: 0 0 6px 20px;
+}
+input[type=submit] {
+	/*display: inline;*/
+	font-size: 100%;
+	/*width: auto;*/
+}
+form .submit input[type=submit] {
+	background:#DDCABB;
+	background: -webkit-gradient(linear, left top, left bottom, from(#DDCABB), to(#DDDBBB));
+	background-image: -moz-linear-gradient(top, #DDCABB, #DDDBBB);
+	
+	border:none;
+	
+}
+form .submit input[type=submit]:hover {
+	background:#E5D7CD;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E5D7CD), to(#E5E3CD));
+	background-image: -moz-linear-gradient(top, #E5D7CD, #E5E3CD);
+}
+
+/** Notices and Errors **/
+div.message {
+	clear: both;
+	color: #BBCEDD;
+	font-size: 140%;
+	font-weight: bold;
+	margin: 0 0 1em 0;
+	background: #c73e14;
+	padding: 5px;
+}
+div.error-message {
+	clear: both;
+	color: #BBCEDD;
+	font-weight: bold;
+	background: #c73e14;
+}
+p.error {
+	background-color: #e32;
+	color: #BBCEDD;
+	font-family: Courier, monospace;
+	font-size: 120%;
+	line-height: 140%;
+	padding: 0.8em;
+	margin: 1em 0;
+}
+p.error em {
+	color: #000;
+	font-weight: normal;
+	line-height: 140%;
+}
+.notice {
+	background: #ffcc00;
+	color: #000;
+	display: block;
+	font-family: Courier, monospace;
+	font-size: 120%;
+	line-height: 140%;
+	padding: 0.8em;
+	margin: 1em 0;
+}
+.success {
+	background: green;
+	color: #BBCEDD;
+}
+
+/**  Actions  **/
+div.actions ul {
+	margin: 0;
+	padding: 0;
+}
+div.actions li {
+	margin:0 0 0.5em 0;
+	list-style-type: none;
+	white-space: nowrap;
+	padding: 0;
+}
+div.actions ul li a 
+{
+	font-weight: normal;
+	display: block;
+	clear: both;
+}
+div.actions ul li a:hover {
+	text-decoration: underline;
+}
+
+
+div.actions ul li a,
+div.buttons a,
+td.actions a {
+	font-weight:normal;
+	padding: 4px 8px;
+	background:#C6937B;
+	background: -webkit-gradient(linear, left top, left bottom, from(#B47050), to(#C6937B));
+	background: -moz-linear-gradient(top, #B47050, #C6937B);
+	color:#EEF3F6;
+	border:1px solid #6A94B4;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-o-border-radius:8px;
+	border-radius:8px;
+	text-shadow: #555 0px 1px 0px;
+	min-width: 0;
+}
+
+div.actions ul li a:hover,
+div.buttons a:hover,
+td.actions a:hover {
+	background: #CEA18D;
+	background: -webkit-gradient(linear, left top, left bottom, from(#BC7E62), to(#CEA18D));
+	background: -moz-linear-gradient(top,#BC7E62, #CEA18D);
+}
+
+div.actionbox {
+	margin:0px 66px;
+	padding: 8px 4px;
+	width:320px;
+	
+	border-bottom:1px dashed #999;
+}
+div.inneractionbox {
+	padding: 0px 28px;
+	height:20px;
+	background-image:url(../img/arrowright.png) ;
+	background-repeat:no-repeat;
+}
+
+
+div.inneractionbox a {
+	
+	
+	font-weight:bold;
+	min-width: 0;
+}
+
+/** Related **/
+div.related {
+	clear: both;
+	display: block;
+}
+
+/** Debugging **/
+pre {
+	color: #000;
+	background: #f0f0f0;
+	padding: 1em;
+}
+pre.cake-debug {
+	background: #ffcc00;
+	font-size: 120%;
+	line-height: 140%;
+	margin-top: 1em;
+	overflow: auto;
+	position: relative;
+}
+div.cake-stack-trace {
+	background: #BBCEDD;
+	color: #383838;
+	margin: 0px;
+	padding: 6px;
+	font-size: 120%;
+	line-height: 140%;
+	overflow: auto;
+	position: relative;
+}
+div.cake-code-dump pre {
+	position: relative;
+	overflow: auto;
+}
+div.cake-stack-trace pre, div.cake-code-dump pre {
+	color: #000;
+	background-color: #F0F0F0;
+	margin: 0px;
+	padding: 1em;
+	overflow: auto;
+}
+div.cake-code-dump pre, div.cake-code-dump pre code {
+	clear: both;
+	font-size: 12px;
+	line-height: 15px;
+	margin: 4px 2px;
+	padding: 4px;
+	overflow: auto;
+}
+div.cake-code-dump span.code-highlight {
+	background-color: #ff0;
+	padding: 4px;
+}
+div.code-coverage-results div.code-line {
+	padding-left:5px;
+	display:block;
+	margin-left:10px;
+}
+div.code-coverage-results div.uncovered span.content {
+	background:#ecc;
+}
+div.code-coverage-results div.covered span.content {
+	background:#cec;
+}
+div.code-coverage-results div.ignored span.content {
+	color:#aaa;
+}
+div.code-coverage-results span.line-num {
+	color:#666;
+	display:block;
+	float:left;
+	width:20px;
+	text-align:right;
+	margin-right:5px;
+}
+div.code-coverage-results span.line-num strong {
+	color:#666;
+}
+div.code-coverage-results div.start {
+	border:1px solid #aaa;
+	border-width:1px 1px 0px 1px;
+	margin-top:30px;
+	padding-top:5px;
+}
+div.code-coverage-results div.end {
+	border:1px solid #aaa;
+	border-width:0px 1px 1px 1px;
+	margin-bottom:30px;
+	padding-bottom:5px;
+}
+div.code-coverage-results div.realstart {
+	margin-top:0px;
+}
+div.code-coverage-results p.note {
+	color:#bbb;
+	padding:5px;
+	margin:5px 0 10px;
+	font-size:10px;
+}
+div.code-coverage-results span.result-bad {
+	color: #a00;
+}
+div.code-coverage-results span.result-ok {
+	color: #fa0;
+}
+div.code-coverage-results span.result-good {
+	color: #0a0;
+}
+
+#wrapper1 {
+	position:relative;
+	text-align:left;
+	width: 992px;
+    margin: 0px auto;
+}
+
+
+#wrapper2 {
+	position:relative;
+	text-align:left;
+	width:100%;
+}
+
+#maincol {
+	position:relative;
+	margin:0;
+}
+
+#leftcol { 
+	top:-0px;
+	left:-0px;
+	float:left;
+	width:220px;  /* for IE5/WIN */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 200px; /* actual value */
+	margin:14px 0  14px 0;
+	background-color:transparent;
+	z-index:100;
+}
+#rightcol {
+	position:relative;
+	top:-10px;
+	right:-10px;
+	float:right;
+	width:220px;  /* for IE5/WIN */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width:200px; /* actual value */
+	margin:0 0 -10px 0;
+	padding:10px 5px;
+	background-color:transparent;
+	z-index:99;
+}
+#centercol {
+	position:relative;
+	float:left;
+    width: 790px;
+}
+
+div.halfbox {
+	position:relative;
+	float: left;
+	width: 50%;
+	
+}
+
+
+div.containerbox {
+	margin: auto;
+	
+}
+
+div.submenuemain {
+	display: block;
+	
+	text-shadow: 1px 1px 0px #606060, -1px -1px 0px #202020;
+	
+	text-shadow: 0px 1px 1px #fff;
+	border-top:1px solid #FFF;
+	
+}
+
+div.submenuemainactive,
+div.submenuemain:hover {
+	
+	border-top:1px solid #FFF;
+	
+	font-weight:bold;
+	
+}
+
+div.submenuemain a{
+	padding: 4px 6px;
+	
+	font-weight: bold;
+	display: block;
+	text-shadow: 0px 1px 1px #fff;
+	min-width: 0;
+	
+}
+
+div.submenuemain:hover a,
+div.submenuemainactive a{
+	padding: 4px 6px;
+	
+	font-weight: bold;
+	display: block;
+	text-shadow: #555 0px 1px 0px;
+	min-width: 0;
+	
+	
+}
+
+
+div.submenuecontent {
+	background-color:#505050;
+}
+
+div.menuebox,
+div.menuebox_active {
+	width: 100%;
+	
+}
+
+div.menuebox a,
+div.menuebox_active a {
+	text-shadow: 0px 1px 1px #fff;
+	display: block;
+	padding: 4px 12px;
+	background: #ebebed; 
+	min-width: 0;
+	
+}
+div.menuebox a:hover,
+div.menuebox_active a{
+}
+
+
+
+div.containerheader {
+	display: block;
+	padding: 4px 2%;
+	text-shadow: 0px 1px 1px #fff;
+	text-shadow: 0px 1px 1px #fff;
+	border-top:1px solid #FFF;
+	font-weight:bold;
+}
+div.containerheader a {
+	font-weight: bold;
+}
+
+div.containercontent {
+	background-color:#505050;
+}
+div.containerMain {
+	background-color:clear;
+}
+
+div.containercontentbox {
+	width: 100%;
+}
+
+
+
+div.maincontentbox {
+	padding: 32px 16px;
+}
+
+div.topleftbox {
+	color:#999;
+	padding:16px 0px;
+	padding-left:150px; 
+	padding-right:30px;
+}
+div.toprightbox {
+	padding:16px 0px;
+	padding-right:150px; 
+	padding-left:30px;
+}
+div.adressbox {
+	float:left;
+	position:relative;
+	padding:21px 0px;
+	padding-left:16px;
+}
+div.initialsbox {
+	float:left;
+	position:relative;
+	padding:46px 0px;
+}
+div.toppicturebox {
+	width:316px;
+	height:212px;
+}
+
+
+
+div.prePostBox {
+	width: 50%;
+	padding: 4px 0;
+	float:left;
+	background:clear;
+}
+
+div.PostBox {
+	padding: 2px 8px 6px 8px;
+}
+
+div.SideMenuePreWrapper{
+	padding: 0px 0px 16px 0px ;
+}
+
+
+div.ThreadTitleBox {
+	width: 100%;
+	padding: 4px 0px;
+	text-shadow: 0px 1px 1px #fff;
+	font-weight:normal;
+	
+}
+
+div.ThreadTitleContent {
+	width: 100%;
+	float:left;
+	padding: 0px 5px;
+}
+
+div.PostHeader {
+	width: 100%;
+	padding: 2px 0px;
+	
+	border-bottom:none;
+	text-shadow: 0px 1px 1px #fff;
+	
+	text-align:center;
+	font-weight:normal;
+	
+}
+
+
+
+div.PostFooter {
+	width: 100%;
+	padding: 2px 0px;
+	
+	
+	border-top:none;
+	text-shadow: 0px 1px 1px #fff;
+	
+    text-align:center;
+	font-weight:normal;	
+}
+
+div.PostContent {
+	width: 100%;
+	text-align:left;
+	font-weight:normal;
+}
+div.PostContent a {
+	color:#00549f;
+}
+div.PostActions {
+	width: 100%;
+	text-align:left;
+	padding-top: 16px;
+}
+div.PostActions a {
+	color:#00549f;
+}
+
+div.leftBox {
+	width: 20%;
+	float:left;
+	padding: 5px 5px;	
+}
+div.rightBox {
+	width: 75%;
+	float:left;
+	padding: 13px 5px;
+	/*border-left:1px solid #000000;*/
+}
+div.PostContentBox {
+	
+	padding: 5px 0px;
+	
+}
+
+
+
+div.PostMainContentbox {
+	padding: 5px 10px;
+	text-align:justify;
+}
+
+div.bottomaction {
+	float:right;
+	vertical-align: middle;
+}
+
+div.footeraction {
+	float:right;
+	vertical-align: middle;
+	
+}
+
+div.headeraction {
+	float:right;
+	vertical-align: middle;
+	padding: 0px 4px;
+}
+div.headeraction a{
+	font-weight:bold;
+	color:#00549f;
+}
+
+
+
+div.bottomactionleft,
+div.footeractionleft {
+	float:left;
+	vertical-align: middle;
+	padding: 0 4px;
+}
+div.bottompages {
+	float:left;
+	vertical-align: middle;
+	padding: 0px 5px;
+	
+}
+
+div.bottompages span.current {
+	color: #4077d1;
+}
+
+
+div.bottomaction a,
+div.bottomactionleft a{
+	display: block;
+	padding: 2px 8px;
+	font-weight:bold;
+
+	background:#f6f6f6;
+	border-top:1px solid #cccccc;
+	border-left:1px solid #cccccc;
+	border-bottom:1px solid #eeeeee;
+	border-right:1px solid #eeeeee;;
+	
+	border-radius:4px;
+	-o-border-radius:4px;
+	-ms-border-radius:4px;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	
+	min-width: 0;
+}
+
+div.footeractionleft a,
+div.footeraction a{
+	display: block;
+	padding: 0px 8px;
+	
+	
+	min-width: 0;
+}
+
+
+
+
+input[type=submit] {
+	display: block;
+	padding: 2px 8px;
+	font-weight:bold;
+	
+	maging:0;
+	cursor:pointer;
+}
+
+
+div.bottomaction a:hover,
+div.bottomactionleft a:hover,
+input[type=submit]:hover  {
+	
+}
+
+
+
+
+div.Sidematchbox {
+	padding:1px 1.5%;
+	width: 170px;
+}
+
+div.Sidenamesbox {
+	padding:1px;
+	width: 170px;
+}
+
+div.power_1 a {
+	color: #39adff;
+	font-weight: bold;
+}
+div.power_1 a:hover {
+	color: #39adff;
+	text-decoration: underline;
+}
+
+div.power_2 a {
+	color: #21a14b;
+	font-weight: bold;
+}div.power_2 a:hover {
+	color: #21a14b;
+	text-decoration: underline;
+}
+
+div.power_3 a {
+	color: #ee1c25;
+	font-weight: bold;
+}div.power_3 a:hover {
+	color: #ee1c25;
+	text-decoration: underline;
+}
+
+div.bottompages a {
+	font-weight: bold;
+}
+
+
+div.bottompages a:hover {
+	text-decoration: underline;
+}
+
+div.quote{
+	padding: 5px 0px;
+	border-radius:4px;
+	-o-border-radius:4px;
+	-ms-border-radius:4px;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	
+	background-image: url(gradient-quote.svg);
+    background-size: 100% 100%;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-color: #555555; /* old browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#d3d4d5));
+	background: -moz-linear-gradient(top,  #eaeaea,  #d3d4d5);
+	background: -ms-linear-gradient(top,  #eaeaea,  #d3d4d5);
+	background: -o-linear-gradient(top,  #eaeaea,  #d3d4d5);
+	filter:	progid:DXImageTransform.Microsoft.gradient(startColorstr=#eaeaea,endColorstr=#d3d4d5 );
+	
+}
+
+div.CategorieTitleBox{
+	padding-top:15px;
+	width:100%;
+	font-size: 180%;
+	font-weight:bold;
+	font-variant: small-caps;
+}
+
+
+
+div.BlankPage{
+	width:80%;
+	padding: 0 10%;
+}
+
+div.datebox{
+	width:10%;
+	margin:0 2% ;
+	float:left;
+	min-height:2px;
+	text-align:right;
+}
+div.descriptionbox{
+	width:52%;
+	margin:0 5% ;
+	float:left;
+}
+div.entrywrapper{
+	padding: 15px 0px;
+}
+div.linkbox{
+	width: 5%;
+	float:left;
+	min-height:2px;
+}
+
+
+	
+
+
+
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+

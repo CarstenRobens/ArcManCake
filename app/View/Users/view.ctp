@@ -1,5 +1,5 @@
 <?php
-Configure::load('Blog_config'); 
+//Configure::load('Blog_config'); 
 $level = Configure::read('Level'); 
 ?>
 
