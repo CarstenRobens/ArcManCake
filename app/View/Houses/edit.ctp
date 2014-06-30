@@ -7,7 +7,7 @@ echo $this->Form->create('House');
 echo $this->Form->input('name');
 echo $this->Form->input('notes');
 echo $this->Form->input('size');
-echo $this->Form->input('stores');
+echo $this->Form->input('floors');
 echo $this->Form->input('type');
 echo $this->Form->input('price');
 echo $this->Form->end('Save house');

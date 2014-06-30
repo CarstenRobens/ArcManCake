@@ -39,32 +39,32 @@ class LandsController extends AppController{
 
 	public function view($id=null) {
             if(!$id){
-                throw new NotFoundException(__('Invalid postumer'));
+                throw new NotFoundException(__('Invalid customer'));
             }
 	
             $x = $this->Land->findById($id);
             if (!$x) {
-                throw new NotFoundException(__('Invalid postumer'));
+                throw new NotFoundException(__('Invalid customer'));
             }
             $this->set('land_view',$x);
 
 	}
 
 
-	public function add($costumer_id=0) {
-		if (!$costumer_id) {
-			throw new NotFoundException(__('Invaled postumer'));
+	public function add($customer_id=0) {
+		if (!$customer_id) {
+			throw new NotFoundException(__('Invaled customer'));
 		}
-		$this->set('costumer_id_view',$costumer_id);
+		$this->set('customer_id_view',$customer_id);
         if ($this->request->is('post')) {
         	$this->Land->create();
             $this->request->data['Land']['user_id'] = $this->Auth->user('id');
-            $this->request->data['Land']['costumer_id']=$costumer_id;
+            $this->request->data['Land']['customer_id']=$customer_id;
             if ($this->Land->save($this->request->data)) {
             	$this->Session->setFlash(__('Your land has been saved.'));
                 return $this->redirect(array('action' => 'index'));
             }
-            $this->Session->setFlash(__('Unable to add your postumer.'));
+            $this->Session->setFlash(__('Unable to add your customer.'));
      	}
 	}
         

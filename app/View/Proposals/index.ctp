@@ -4,7 +4,7 @@
 <table>
 	<tr>
 		<th>Id</th>
-		<th>Costumer</th>
+		<th>Customer</th>
 		<th>Name</th>
 		<th>Supervisor</th>
         <th>Action</th>
@@ -16,7 +16,7 @@
 	<?php foreach($proposals_view as $x ): ?>
 	<tr> 
 		<td> <?php echo $x['Proposal']['id']; ?> </td> 
-		<td> <?php echo $this->Html->link($x['Proposal']['costumer_id'], array('controller'=>'Costumers','action'=>'view',$x['Proposal']['costumer_id'])); ?></td>
+		<td> <?php echo $this->Html->link($x['Proposal']['customer_id'], array('controller'=>'Customers','action'=>'view',$x['Proposal']['customer_id'])); ?></td>
 		<td> <?php echo $this->Html->link($x['Proposal']['name'], array('controller'=>'Proposals','action'=>'view',$x['Proposal']['id'])); ?></td>
 		<td> <?php echo $this->Html->link($x['Proposal']['user_id'], array('controller'=>'Users','action'=>'view',$x['Proposal']['user_id'])); ?></td>
         <td> <?php 

@@ -3,9 +3,13 @@
 class Land extends AppModel{
 	
 	public $belongsTo = array(
-			'MyCostumer' => array(
-					'className' => 'Costumer',
-					'foreignKey' => 'costumer_id'
+			'MyCustomer' => array(
+					'className' => 'Customer',
+					'foreignKey' => 'customer_id'
+			),
+			'MyUser' => array(
+					'className' => 'User',
+					'foreignKey' => 'user_id'
 			)
 	);
 	
@@ -20,8 +24,40 @@ class Land extends AppModel{
     		'name'=>array(
             	'rule'=>'notEmpty'
     		),
-    		'price'=>array(
-            	'rule'=>'notEmpty'
+    		'land_size'=>array(
+            	'rule'=>'decimal',
+    			'message'=> 'Please enter the size of the land in m2',
+    			'allowEmpty'=>false
+			),
+    		'land_price_per_m2'=>array(
+            	'rule'=>'decimal',
+    			'message'=> 'Please enter the price per m2',
+    			'allowEmpty'=>false
+			),
+    		'dev_size'=>array(
+            	'rule'=>'decimal',
+    			'message'=> 'Please enter the size of the dev in m2',
+    			'allowEmpty'=>false
+			),
+    		'dev_cost_per_m2'=>array(
+            	'rule'=>'decimal',
+    			'message'=> 'Please enter the cost of the dev per m2',
+    			'allowEmpty'=>false
+			),
+    		'notary_cost'=>array(
+            	'rule'=>'decimal',
+    			'message'=> 'Please enter the cost of the notary (in %)',
+    			'allowEmpty'=>false
+			),
+    		'land_agent_cost'=>array(
+            	'rule'=>'decimal',
+    			'message'=> 'Please enter the cost of the land agent',
+    			'allowEmpty'=>false
+			),
+    		'land_tax'=>array(
+            	'rule'=>'decimal',
+    			'message'=> 'Please enter the tax over the land (in %)',
+    			'allowEmpty'=>false
 			)
     );
     

@@ -1,7 +1,7 @@
 <div class="users form">
 
 <?php
-//Configure::load('Blog_config'); 
+Configure::load('ArcManCake_config'); 
 $level = Configure::read('Level'); 
 ?>
 
@@ -13,6 +13,10 @@ $level = Configure::read('Level');
         echo $this->Form->input('username');
         echo $this->Form->input('password');
         echo $this->Form->input('role',array('options'=> $level));
+        echo $this->Form->input('name');
+		echo $this->Form->input('surname');
+		echo $this->Form->input('phone');
+		echo $this->Form->input('email');
         ?>
     </fieldset>
     

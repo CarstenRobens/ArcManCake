@@ -65,7 +65,7 @@ class UsersController extends AppController{
     }
 
 
-    public function add() {
+    /** public function add() {
 	
         if ($this->request->is('post')) {
             $this->User->create();
@@ -76,7 +76,7 @@ class UsersController extends AppController{
             $this->Session->setFlash(__('Unable to add user.'));
         }
         
-    }
+    } INCLUDED IN THE INDEX **/
       
     
     public function edit($id = NULL) {

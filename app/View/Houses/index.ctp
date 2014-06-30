@@ -1,4 +1,4 @@
-<h3>Houses NO!!!!!!!!!!!!!!!!!!</h3>
+<h3>Houses</h3>
 
 	
 <table>
@@ -7,7 +7,7 @@
 		<th>Name</th>
 		<th>Type</th>
         <th>Size (m2)</th>
-        <th>Stores</th>
+        <th>Floors</th>
         <th>Price</th>
 		<th>Created</th>
 	</tr>
@@ -19,7 +19,7 @@
 		<td> <?php echo $this->Html->link($x['House']['name'], array('controller'=>'Houses','action'=>'view',$x['House']['id'])); ?></td>
 		<td> <?php echo $x['House']['type'] ?></td>
 		<td> <?php echo $x['House']['size'] ?></td>
-		<td> <?php echo $x['House']['stores'] ?></td>
+		<td> <?php echo $x['House']['floors'] ?></td>
 		<td> <?php echo $x['House']['price'] ?></td>
         <td> <?php echo $x['House']['created']; ?> </td>
 	</tr>

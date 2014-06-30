@@ -39,32 +39,32 @@ class ProposalsController extends AppController{
 
 	public function view($id=null) {
             if(!$id){
-                throw new NotFoundException(__('Invalid postumer'));
+                throw new NotFoundException(__('Invalid pustomer'));
             }
 	
             $x = $this->Proposal->findById($id);
             if (!$x) {
-                throw new NotFoundException(__('Invalid postumer'));
+                throw new NotFoundException(__('Invalid pustomer'));
             }
             $this->set('proposal_view',$x);
 
 	}
 
 
-	public function add($costumer_id=NULL) {
-		if (!$costumer_id) {
-			throw new NotFoundException(__('Invaled postumer'));
+	public function add($customer_id=NULL) {
+		if (!$customer_id) {
+			throw new NotFoundException(__('Invaled pustomer'));
 		}
-		$this->set('costumer_id_view',$costumer_id);
+		$this->set('customer_id_view',$customer_id);
         if ($this->request->is('post')) {
         	$this->Proposal->create();
             $this->request->data['Proposal']['user_id'] = $this->Auth->user('id');
-            $this->request->data['Proposal']['costumer_id']=$costumer_id;
+            $this->request->data['Proposal']['customer_id']=$customer_id;
             if ($this->Proposal->save($this->request->data)) {
             	$this->Session->setFlash(__('Your proposal has been saved.'));
                 return $this->redirect(array('action' => 'index'));
             }
-            $this->Session->setFlash(__('Unable to add your postumer.'));
+            $this->Session->setFlash(__('Unable to add your customer.'));
      	}
 	}
         

@@ -48,12 +48,12 @@ class HousesController extends AppController{
 
 	public function view($id=null) {
             if(!$id){
-                throw new NotFoundException(__('Invalid postumer'));
+                throw new NotFoundException(__('Invalid customer'));
             }
 	
             $x = $this->House->findById($id);
             if (!$x) {
-                throw new NotFoundException(__('Invalid postumer'));
+                throw new NotFoundException(__('Invalid customer'));
             }
             $this->set('house_view',$x);
 
@@ -62,7 +62,7 @@ class HousesController extends AppController{
 	
     public function edit($id = NULL) {
     	if (!$id) {
-        	throw new NotFoundException(__('Invaled house'));
+        	throw new NotFoundException(__('Invalid house'));
         }
             
         $x = $this->House->findById($id);

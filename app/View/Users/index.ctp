@@ -1,5 +1,6 @@
 <?php
-
+Configure::load('ArcManCake_config'); 
+$level = Configure::read('Level'); 
 ?>
 
 <div class="container theme-showcase" role="main">
@@ -33,10 +34,10 @@
 			<table>
 			<tr>
 				<th>Id</th>
-				<th>username</th>
-						<th>Role</th>
-						<th>password</th>
-						<th>Action</th>
+				<th>Name</th>
+				<th>Username</th>
+				<th>Role</th>
+				<th>Action</th>
 				<th>Created</th>
 			</tr>
 			<?php
@@ -44,14 +45,14 @@
 			{?>	
 			<tr> 
 				<td> <?php echo $User['User']['id']; ?> </td> 
+				<td> <?php echo $User['User']['name']?></td>
 				<td> <?php echo $this->Html->link($User['User']['username'], array('controller'=>'users','action'=>'view',$User['User']['id'])); ?></td>
-						<td> <?php echo $User['User']['role']?></td>
-						<td> <?php echo $User['User']['password']?></td>
-						<td>
-						 <?php echo $this->Html->link(__('Edit User'),array('action' => 'edit',$User['User']['id']));?>
-						&middot;
-						<?php echo $this->Form->postLink(__('Delete User'),array('controller' => 'users','action' => 'delete',$User['User']['id']),array('confirm'=>'Are you sure?'));?>
-						</td>
+				<td> <?php echo $User['User']['role']?></td>
+				<td>
+					 <?php echo $this->Html->link(__('Edit User'),array('action' => 'edit',$User['User']['id']));?>
+					&middot;
+					<?php echo $this->Form->postLink(__('Delete User'),array('controller' => 'users','action' => 'delete',$User['User']['id']),array('confirm'=>'Are you sure?'));?>
+				</td>
 				<td> <?php echo $User['User']['created']; ?> </td>
 			</tr>
 			<?php
@@ -111,6 +112,10 @@
 							echo $this->Form->input('username');
 							echo $this->Form->input('password');
 							echo $this->Form->input('role',array('options'=> $level));
+							echo $this->Form->input('name');
+							echo $this->Form->input('surname');
+							echo $this->Form->input('phone');
+							echo $this->Form->input('email');
 							?>		
 						</div>
 					</div>

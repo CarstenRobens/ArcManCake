@@ -1,8 +1,8 @@
 <h1>Add proposal</h1>
 
-<?php echo $this->Html->link('Back', array('controller'=>'Costumers','action'=>'index')) ?>
+<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'index')) ?>
 
-<?php echo 'Costumer: '.$costumer_id_view; ?>
+<?php echo 'Customer: '.$customer_id_view; ?>
 
 <?php 
 echo $this->Form->create('Proposal');

@@ -1,21 +1,55 @@
 <?php
 
 class House extends AppModel{
+	
+	
+	public $belongsTo = array(
+			'MyUser' => array(
+					'className' => 'User',
+					'foreignKey' => 'user_id'
+			)
+	);
+	
+	public $hasMany = array(
+			'MyProposal' => array(
+					'className' => 'Proposal',
+					'foreignKey' => 'house_id'
+			),
+			'MyHousePicture' => array(
+					'className' => 'HousePictures',
+					'foreignKey' => 'house_id'
+			)
+			
+	);
+	
+	
+	
     public $validate=array(
     		'name'=>array(
             	'rule'=>'notEmpty'
     		),
-    		'type'=>array(
+    		'description'=>array(
     				'rule'=>'notEmpty'
     		),
+    		'type'=>array(
+    			'rule'=>array('inList',array(0,1,2,3)),
+            	'message'=> 'Please enter a valid role',
+            	'allowEmpty'=>false
+    		),
     		'size'=>array(
-            	'rule'=>'notEmpty'
+            	'rule'=>'decimal',
+            	'message'=> 'Please enter a valid size',
+            	'allowEmpty'=>false
 			),
-    		'stores'=>array(
-            	'rule'=>'notEmpty'
+    		'floors'=>array(
+            	'rule'=>'decimal',
+            	'message'=> 'Please enter a valid number of floors',
+            	'allowEmpty'=>false
 			),
     		'price'=>array(
-    				'rule'=>'notEmpty'
+    			'rule'=>'decimal',
+            	'message'=> 'Please enter a valid price',
+            	'allowEmpty'=>false
     		)
     );
     

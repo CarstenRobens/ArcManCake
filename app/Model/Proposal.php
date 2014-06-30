@@ -3,9 +3,9 @@
 class Proposal extends AppModel{
 	
 	public $belongsTo = array(
-			'MyCostumer' => array(
-					'className' => 'Costumer',
-					'foreignKey' => 'costumer_id'
+			'MyCustomer' => array(
+					'className' => 'Customer',
+					'foreignKey' => 'customer_id'
 			),
 			'MyUser' => array(
 					'className' => 'User',
@@ -25,13 +25,7 @@ class Proposal extends AppModel{
     public $validate=array(
     		'name'=>array(
             	'rule'=>'notEmpty'
-    		),
-    		'surname'=>array(
-            	'rule'=>'notEmpty'
-			),
-    		'phone'=>array(
-            	'rule'=>'notEmpty'
-			)
+    		)
     );
     
     public function isOwnedBy ($owned_proposal,$owner){

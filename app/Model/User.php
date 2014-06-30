@@ -18,8 +18,8 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 class User extends AppModel{
     
 	public $hasMany = array(
-			'MyCostumer' => array(
-					'className' => 'Costumer',
+			'MyCustomer' => array(
+					'className' => 'Customer',
 					'foreignKey' => 'user_id'
 			),
 			'MyProposal' => array(
@@ -30,26 +30,41 @@ class User extends AppModel{
 
 	
     public $validate=array(
-	'username'=>array(
-            'required'=>array(
-                'rule'=>array('notEmpty'),
-                'message'=> 'A username is required'
+		'username'=>array(
+        	    'required'=>array(
+            	    'rule'=>array('notEmpty'),
+                	'message'=> 'A username is required'
                 )
-	),
+		),
         'password'=>array(
             'required'=>array(
                 'rule'=>array('notEmpty'),
                 'message'=> 'A password is required'
             )
-	),
-        'role'=>array(
-            'valid'=>array(
-                #'rule'=>array('inList',array('admin','owner','employee','visitor')),
+		),
+    	'role'=>array(
+     		'valid'=>array(
+        		#'rule'=>array('inList',array('admin','owner','employee','visitor')),
             	'rule'=>array('inList',array(0,1,2,3)),
-                'message'=> 'Please enter a valid role',
-                'allowEmpty'=>false
+            	'message'=> 'Please enter a valid role',
+            	'allowEmpty'=>false
+    		)
+		),
+        'name'=>array(
+            'required'=>array(
+                'rule'=>array('notEmpty'),
+                'message'=> 'A name is required'
             )
-	)
+		),
+        'surname'=>array(
+            'required'=>array(
+                'rule'=>array('notEmpty'),
+                'message'=> 'A surname is required'
+            )
+		),
+        'phone'=>'phone',
+        'email'=>'email'
+    		
     );
     
     public function beforeSave($options = array()) {

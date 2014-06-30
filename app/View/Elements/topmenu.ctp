@@ -27,10 +27,10 @@
 				<?php }else{ ?>
 					<li><?php echo $this->Html->link(__('Users'), array('controller' => 'users', 'action' => 'index')); ?></li>
 				<?php } ?>
-				<?php if($this->Session->read('menue.active')=='Costumers'){ ?>
-					<li class="active"><?php echo $this->Html->link(__('Costumers'), array('controller' => 'Costumers', 'action' => 'index')); ?></li>
+				<?php if($this->Session->read('menue.active')=='Customers'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Customers'), array('controller' => 'Customers', 'action' => 'index')); ?></li>
 				<?php }else{ ?>
-					<li><?php echo $this->Html->link(__('Costumers'), array('controller' => 'Costumers', 'action' => 'index')); ?></li>
+					<li><?php echo $this->Html->link(__('Customers'), array('controller' => 'Customers', 'action' => 'index')); ?></li>
 				<?php } ?>
 				<?php if($this->Session->read('menue.active')=='Proposals'){ ?>
 					<li class="active"><?php echo $this->Html->link(__('Proposals'), array('controller' => 'Proposals', 'action' => 'index')); ?></li>
@@ -38,9 +38,9 @@
 					<li><?php echo $this->Html->link(__('Proposals'), array('controller' => 'Proposals', 'action' => 'index')); ?></li>
 				<?php } ?>
 				<?php if($this->Session->read('menue.active')=='Houses'){ ?>
-					<li class="active"><?php echo $this->Html->link(__('Houses'),array('controller'=>'home','action'=>'open_positions'))?></li>
+					<li class="active"><?php echo $this->Html->link(__('Houses'),array('controller'=>'Houses','action'=>'index'))?></li>
 				<?php }else{ ?>
-					<li><?php echo $this->Html->link(__('Houses'),array('controller'=>'home','action'=>'open_positions'))?></li>
+					<li><?php echo $this->Html->link(__('Houses'),array('controller'=>'Houses','action'=>'index'))?></li>
 				<?php } ?>
 				
                 
