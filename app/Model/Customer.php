@@ -43,7 +43,12 @@ class Customer extends AppModel{
             	'rule'=>'decimal',
                 'message'=> 'Enter a valid zipcode'
 			),
-    		'phone'=>'phone',
+    		'phone'=>array(
+            'required'=>array(
+                'rule'=>'decimal',
+                'message'=> 'A phone is required'
+            )
+        ),
     		'email'=>'email'
     		
     );

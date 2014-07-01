@@ -6,7 +6,7 @@
 	<tr>
 		<th>Id</th>
 		<th>Name</th>
-		<th>Supervisor</th>
+		<th>Created By</th>
         <th>Action</th>
 		<th>Created</th>
 	</tr>
@@ -16,7 +16,7 @@
 	<tr> 
 		<td> <?php echo $x['Customer']['id']; ?> </td> 
 		<td> <?php echo $this->Html->link($x['Customer']['name'].' '.$x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
-		<td> <?php echo $this->Html->link($x['Customer']['user_id'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
+		<td> <?php echo $this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
         <td> <?php 
         	echo $this->Html->link('Create Proposal',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' ';
             echo $this->Html->link('Edit',array('action' => 'edit',$x['Customer']['id'])).' ';

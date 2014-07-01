@@ -30,12 +30,12 @@ class ProposalsController extends AppController{
 	public function index() {
 		$logged_user = $this->Auth->user();
 		if ($logged_user['role']!=2){
-			$this->set('proposals_view',$this->Proposal->find('all'));
+			$this->set('proposals_view',$this->paginate());
 		}else{
-			$this->set('proposals_view',$this->Proposal->find('all',Array('conditions'=>Array('user_id'=>$logged_user['id']))));
+			$this->set('proposals_view',$this->paginate('Proposal',array('Proposal.user_id LIKE'=>$logged_user['id'])));
 		}
 	}
-
+    #Proposal->find('all',Array('conditions'=>Array('user_id'=>$logged_user['id']))));
 
 	public function view($id=null) {
             if(!$id){

@@ -23,7 +23,7 @@
 		&copy; 2014 C. Robens and R. Gomez &middot; 
 		<?php echo $this->Html->link('Impressum',array('controller'=>'pages','action'=>'impressum'))?> &middot; 
 		<?php 
-			if($this->Session->read('Auth.User.power')>1){
+			if($this->Session->read('Auth.User.power')<2){
 				echo $this->Html->link('Users',array('controller'=>'Users','action'=>'index'));
 				?>
 				&middot; 
@@ -31,8 +31,8 @@
 			}
 		?> 
 		<?php 
-			if($this->Session->read('Auth.User.power')>1){
-				echo $this->Html->link('Homepictures',array('controller'=>'Homepictures','action'=>'index'));
+			if($this->Session->read('Auth.User.power')<2){
+				echo $this->Html->link('Homepictures',array('controller'=>'HomePictures','action'=>'index'));
 				?>
 				&middot; 
 				<?php
@@ -40,7 +40,7 @@
 		?> 
 		<?php 
 			if($this->Session->check('Auth.User')){
-				echo $this->Html->link('Logout',array('controller'=>'users','action'=>'logout'));
+				echo 'Hello '.$current_user['username'].'!  '.$this->Html->link('Logout',array('controller'=>'users','action'=>'logout'));
 			} else {
 				echo $this->Html->link('Login',array('controller'=>'users','action'=>'login'));
 			}

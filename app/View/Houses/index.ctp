@@ -9,6 +9,7 @@
         <th>Size (m2)</th>
         <th>Floors</th>
         <th>Price</th>
+        <th>Action</th>
 		<th>Created</th>
 	</tr>
 
@@ -21,6 +22,10 @@
 		<td> <?php echo $x['House']['size'] ?></td>
 		<td> <?php echo $x['House']['floors'] ?></td>
 		<td> <?php echo $x['House']['price'] ?></td>
+		<td> <?php 
+        	echo $this->Html->link('Edit',array('action' => 'edit',$x['House']['id'])).' ';
+            echo $this->Form->postLink('Delete',array('action' => 'delete',$x['House']['id']),array('confirm'=>'Are you sure?'));
+        ?></td>
         <td> <?php echo $x['House']['created']; ?> </td>
 	</tr>
 	<?php endforeach; ?>
@@ -36,7 +41,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	<?php 
 	echo $this->Form->create('House');
 	echo $this->Form->input('name');
-	echo $this->Form->input('notes');
+	echo $this->Form->input('description');
 	echo $this->Form->input('size');
 	echo $this->Form->input('stores');
 	echo $this->Form->input('type');

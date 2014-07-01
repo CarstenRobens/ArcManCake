@@ -109,6 +109,7 @@ $level = Configure::read('Level');
 						<div class="PostMainContentbox">
 							<?php echo $this->Html->link('Back', array('controller'=>'users','action'=>'index')) ?>
 							<?php 
+							echo $this->Form->create('User');
 							echo $this->Form->input('username');
 							echo $this->Form->input('password');
 							echo $this->Form->input('role',array('options'=> $level));

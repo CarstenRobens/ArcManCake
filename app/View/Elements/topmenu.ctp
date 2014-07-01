@@ -42,6 +42,11 @@
 				<?php }else{ ?>
 					<li><?php echo $this->Html->link(__('Houses'),array('controller'=>'Houses','action'=>'index'))?></li>
 				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='HousePictures'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('HousePictures'),array('controller'=>'HousePictures','action'=>'index'))?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('HousePictures'),array('controller'=>'HousePictures','action'=>'index'))?></li>
+				<?php } ?>
 				
                 
               </ul>

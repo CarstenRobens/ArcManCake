@@ -30,10 +30,10 @@ class CustomersController extends AppController{
 	public function index() {
 		$logged_user = $this->Auth->user();
 		
-		if ($logged_user['role']<2){
-			$this->set('customers_view',$this->Customer->find('all'));
+	if ($logged_user['role']!=2){
+			$this->set('customers_view',$this->paginate());
 		}else{
-			$this->set('customers_view',$this->Customer->find('all',Array('conditions'=>Array('user_id'=>$logged_user['id']))));
+			$this->set('customers_view',$this->paginate('Customer',array('Customer.user_id LIKE'=>$logged_user['id'])));
 		}
 		
 		

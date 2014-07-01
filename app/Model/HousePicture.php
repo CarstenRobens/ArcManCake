@@ -1,6 +1,6 @@
 <?php
 
-class Floorplan extends AppModel{
+class HousePicture extends AppModel{
 	
 	public $belongsTo = array(
 			'MyHouse' => array(
@@ -15,8 +15,8 @@ class Floorplan extends AppModel{
 	
 	
     public $validate=array(
-    		'name'=>array('rule'=>'notEmpty'),
-    		'picture'=>array('rule'=>'notEmpty')
+    		'name'=>array('rule'=>'notEmpty')
+    		#'picture'=>array('rule'=>'notEmpty')
     );
     
 

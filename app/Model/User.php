@@ -62,7 +62,12 @@ class User extends AppModel{
                 'message'=> 'A surname is required'
             )
 		),
-        'phone'=>'phone',
+        'phone'=>array(
+            'required'=>array(
+                'rule'=>'decimal',
+                'message'=> 'A phone is required'
+            )
+        ),
         'email'=>'email'
     		
     );

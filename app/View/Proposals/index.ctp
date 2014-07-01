@@ -16,9 +16,9 @@
 	<?php foreach($proposals_view as $x ): ?>
 	<tr> 
 		<td> <?php echo $x['Proposal']['id']; ?> </td> 
-		<td> <?php echo $this->Html->link($x['Proposal']['customer_id'], array('controller'=>'Customers','action'=>'view',$x['Proposal']['customer_id'])); ?></td>
+		<td> <?php echo $this->Html->link($x['MyCustomer']['name'].' '.$x['MyCustomer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Proposal']['customer_id'])); ?></td>
 		<td> <?php echo $this->Html->link($x['Proposal']['name'], array('controller'=>'Proposals','action'=>'view',$x['Proposal']['id'])); ?></td>
-		<td> <?php echo $this->Html->link($x['Proposal']['user_id'], array('controller'=>'Users','action'=>'view',$x['Proposal']['user_id'])); ?></td>
+		<td> <?php echo $this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Proposal']['user_id'])); ?></td>
         <td> <?php 
                 echo $this->Html->link('Edit ',array('action' => 'edit',$x['Proposal']['id']));
                 echo $this->Form->postLink('Delete',array('controller' => 'Proposals','action' => 'delete',$x['Proposal']['id']),array('confirm'=>'Are you sure?')).'   ';

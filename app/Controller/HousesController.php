@@ -14,7 +14,7 @@ class HousesController extends AppController{
 		if ($logged_user['role']>2) {
 			$this->Session->setFlash(__('Acces denied: Low cleareance access'));
 			return FALSE; # Overseers have the same privileges as visitors
-		}elseif(in_array($this->action, array('edit','delete','view'))){
+		}elseif(in_array($this->action, array('edit','delete'))){
 			return TRUE;
 		}
 		
@@ -25,17 +25,12 @@ class HousesController extends AppController{
 	public function index() {
 		$logged_user = $this->Auth->user();
 		
-		if ($logged_user['role']<2){
-			$this->set('houses_view',$this->House->find('all'));
-		}else{
-			$this->set('houses_view',$this->House->find('all',Array('conditions'=>Array('user_id'=>$logged_user['id']))));
-		}
-		
-		
+		$this->set('houses_view',$this->paginate());
 		
 		if ($logged_user['role']<3 && !empty($logged_user)){
 			if ($this->request->is('post')) {
 				$this->House->create();
+				$this->request->data['House']['user_id'] = $this->Auth->user('id');
 				if ($this->House->save($this->request->data)) {
 					$this->Session->setFlash(__('The house has been saved.'));
 					return $this->redirect(array('action' => 'index'));
