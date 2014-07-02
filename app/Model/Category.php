@@ -1,6 +1,6 @@
 <?php
 
-class Floorplan extends AppModel{
+class Category extends AppModel{
 	
 	public $belongsTo = array(
 			'MyUser' => array(

@@ -1,12 +1,12 @@
 <!-- File: /app/View/Posts/view.ctp --> 
-<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'index')) ?>
+<?php echo $this->Html->link('Back', array('controller'=>'Lands','action'=>'index')) ?>
 
-<h1><big><b><?php echo $proposal_view['Proposal']['name']; ?> </b></big></h1>
+<h1><big><b><?php echo $land_view['Land']['name']; ?> </b></big></h1>
 
-<p><small>Created: <?php echo $proposal_view['Proposal']['created'].' by '.$proposal_view['Proposal']['user_id']; ?> </small></p>
+<p><small>Created: <?php echo $land_view['Land']['created'].' by '.$land_view['MyUser']['username']; ?> </small></p>
 
-<p> <b>Costumer: </b><?php echo $proposal_view['Proposal']['costumer_id']; ?> </p>
-<p> <b>Land: </b><?php echo $proposal_view['Proposal']['land_id']; ?> </p>
-<p> <b>House: </b><?php echo $proposal_view['Proposal']['house_id']; ?> </p>
+<p> <b>Size: </b><?php echo $land_view['Land']['land_size'].' m2'; ?> </p>
+<p> <b>Price: </b><?php echo $land_view['Land']['land_price_per_m2'].' €/m2'; ?> </p>
+<p> <b>Notary cost: </b><?php echo $land_view['Land']['notary_cost'].' %'; ?> </p>
 <p> <b>Notes: </b> </p>
-<p> <?php echo $proposal_view['Proposal']['notes']; ?> </p>
+<p> <?php echo $land_view['Land']['notes']; ?> </p>

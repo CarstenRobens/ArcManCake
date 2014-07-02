@@ -1,6 +1,6 @@
 <?php
 
-class Floorplan extends AppModel{
+class Extra extends AppModel{
 	
 	public $belongsTo = array(
 			'MyCategory' => array(
@@ -13,12 +13,12 @@ class Floorplan extends AppModel{
 			)
 	);
 	
-	public $hasMany = array(
+	/**public $hasMany = array(
 			'MyBoughtExtras' => array(
 					'className' => 'BoughtExtra',
 					'foreignKey' => 'extra_id'
 			)
-	);
+	); **/
 	
 	
     public $validate=array(
@@ -27,7 +27,8 @@ class Floorplan extends AppModel{
             	'rule'=>'decimal',
     			'message'=> 'Please enter a valid price',
     			'allowEmpty'=>false
-			)
+			),
+    		'category'=>array('rule'=>'notEmpty'),
     );
     
 

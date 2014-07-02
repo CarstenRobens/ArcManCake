@@ -26,7 +26,7 @@
         	echo $this->Html->link('Edit',array('action' => 'edit',$x['House']['id'])).' ';
             echo $this->Form->postLink('Delete',array('action' => 'delete',$x['House']['id']),array('confirm'=>'Are you sure?'));
         ?></td>
-        <td> <?php echo $x['House']['created']; ?> </td>
+        <td> <?php echo $x['House']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>
 	<?php endforeach; ?>
 	<?php unset($house); ?>

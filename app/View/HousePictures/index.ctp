@@ -12,12 +12,12 @@
 	<?php foreach($house_pictures_view as $x ): ?>
 	<tr> 
 		<td> <?php echo $x['HousePicture']['id']; ?> </td> 
-		<td> <?php echo $this->Html->link($x['HousePicture']['name'], array('controller'=>'HousePictures','action'=>'view',$x['HousePicture']['id'])); ?></td>>
+		<td> <?php echo $this->Html->link($x['HousePicture']['name'], array('controller'=>'HousePictures','action'=>'view',$x['HousePicture']['id'])); ?></td>
 		<td> <?php echo $x['HousePicture']['house_id'] ?></td>
 		<td> <?php 
             echo $this->Form->postLink('Delete',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?'));
         ?></td>
-        <td> <?php echo $x['HousePicture']['created']; ?> </td>
+        <td> <?php echo $x['HousePicture']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>
 	<?php endforeach; ?>
 </table>
@@ -30,10 +30,12 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 
 	<?php 
 	echo $this->Form->create('HousePicture',array('enctype'=>'multipart/form-data'));
+	
 	echo $this->Form->input('name');
 	echo $this->Form->input('description');
 	echo $this->Form->input('upload', array('type' => 'file'));
 	echo $this->Form->input('house');
+	
 	echo $this->Form->end('Save house picture');
 }?>
 

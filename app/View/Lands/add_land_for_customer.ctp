@@ -1,6 +1,8 @@
-<h3>Edit Land</h3>
+<h1>Add proposal</h1>
 
-<?php echo $this->Html->link('Back', array('controller'=>'Lands','action'=>'index')) ?>
+<?php echo $this->Html->link('Back', array('controller'=>'Costumers','action'=>'index')) ?>
+
+<?php echo 'Costumer: '.$costumer_id_view; ?>
 
 <?php 
 	echo $this->Form->create('Land');
@@ -17,4 +19,3 @@
 	
 	echo $this->Form->end('Save Land');
 ?>
-

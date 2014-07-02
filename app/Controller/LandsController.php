@@ -9,19 +9,13 @@ class LandsController extends AppController{
 	
 	public function isAuthorized($logged_user) {
 		
-		if ($this->action==='index'){
+		if ($logged_user['role']>2) {
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'));
+			return FALSE; # Overseers are not allowed to interact with customer data
+		} else{
 			return TRUE;
 		}
-		if ($logged_user['role']==2){
-			if ($this->action==='add'){
-				return TRUE;
-			}
-			if(in_array($this->action, array('edit','delete','view'))){
-				if ($this->Land->isOwnedBy($landId,$logged_user['id'])){
-					return TRUE;
-				}
-			}
-		}
+		
 		
 		return parent::isAuthorized($logged_user);
 	}
@@ -29,31 +23,40 @@ class LandsController extends AppController{
 	
 	public function index() {
 		$logged_user = $this->Auth->user();
-		if ($logged_user['role']!=2){
-			$this->set('lands_view',$this->Land->find('all'));
-		}else{
-			$this->set('lands_view',$this->Land->find('all',Array('conditions'=>Array('user_id'=>$logged_user['id']))));
+		$this->set('lands_view',$this->paginate());
+	
+
+		if ($logged_user['role']<3){
+			if ($this->request->is('post')) {
+				$this->Land->create();
+				$this->request->data['Land']['user_id'] = $this->Auth->user('id');
+				$this->request->data['Land']['customer_id'] = $this->request->data['Land']['customer'];
+				if ($this->Land->save($this->request->data)) {
+					$this->Session->setFlash(__('The land has been saved.'));
+					return $this->redirect(array('action' => 'index'));
+				}
+				$this->Session->setFlash(__('Unable to add the land.'));
+			}
 		}
 	}
 
-
 	public function view($id=null) {
             if(!$id){
-                throw new NotFoundException(__('Invalid customer'));
+                throw new NotFoundException(__('Invalid land'));
             }
 	
             $x = $this->Land->findById($id);
             if (!$x) {
-                throw new NotFoundException(__('Invalid customer'));
+                throw new NotFoundException(__('Invalid land'));
             }
             $this->set('land_view',$x);
 
 	}
 
 
-	public function add($customer_id=0) {
+	public function add_land_for_customer($customer_id) {
 		if (!$customer_id) {
-			throw new NotFoundException(__('Invaled customer'));
+			throw new NotFoundException(__('Invalid land'));
 		}
 		$this->set('customer_id_view',$customer_id);
         if ($this->request->is('post')) {

@@ -47,6 +47,26 @@
 				<?php }else{ ?>
 					<li><?php echo $this->Html->link(__('HousePictures'),array('controller'=>'HousePictures','action'=>'index'))?></li>
 				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='Categorys'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Categories'),array('controller'=>'Categories','action'=>'index'))?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Categories'),array('controller'=>'Categories','action'=>'index'))?></li>
+				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='Lands'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Lands'),array('controller'=>'Lands','action'=>'index'))?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Lands'),array('controller'=>'Lands','action'=>'index'))?></li>
+				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='Extras'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('Extras'),array('controller'=>'Extras','action'=>'index'))?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('Extras'),array('controller'=>'Extras','action'=>'index'))?></li>
+				<?php } ?>
+				<?php if($this->Session->read('menue.active')=='HomePictures'){ ?>
+					<li class="active"><?php echo $this->Html->link(__('HomePictures'),array('controller'=>'HomePictures','action'=>'index'))?></li>
+				<?php }else{ ?>
+					<li><?php echo $this->Html->link(__('HomePictures'),array('controller'=>'HomePictures','action'=>'index'))?></li>
+				<?php } ?>
 				
                 
               </ul>

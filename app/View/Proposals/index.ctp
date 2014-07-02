@@ -6,7 +6,6 @@
 		<th>Id</th>
 		<th>Customer</th>
 		<th>Name</th>
-		<th>Supervisor</th>
         <th>Action</th>
         <th>Generate</th>
 		<th>Created</th>
@@ -28,7 +27,7 @@
         	echo $this->Html->link('Bank Receipt',array('action' => 'gen_bank_receipt',$x['Proposal']['id'])).' ';
         	echo $this->Html->link('Contract',array('action' => 'gen_contract',$x['Proposal']['id']));
         ?></td>
-		<td> <?php echo $x['Proposal']['created']; ?> </td>
+		<td> <?php echo $x['Proposal']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>
 	<?php endforeach; ?>
 	<?php unset($proposal); ?>

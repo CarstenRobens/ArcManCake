@@ -1,6 +1,6 @@
 <?php
 
-class HousePicture extends AppModel{
+class HomePicture extends AppModel{
 	
 	public $belongsTo = array(
 			'MyUser' => array(
@@ -11,16 +11,12 @@ class HousePicture extends AppModel{
 	
 	
     public $validate=array(
-    		'name'=>array('rule'=>'notEmpty'),
+    		'title'=>array('rule'=>'notEmpty'),
     		'upload'=>array(
             	'rule'=>'uploadError',
     			'message'=> 'Something went wrong while updating',
     			'allowEmpty'=>false
-			),
-    		'house'=>array(
-    			'rule'=>'notEmpty',
-            	'message'=> 'Please enter a valid house'
-    		)
+			)
     );
     
 

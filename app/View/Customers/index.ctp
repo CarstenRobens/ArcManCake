@@ -18,11 +18,12 @@
 		<td> <?php echo $this->Html->link($x['Customer']['name'].' '.$x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
 		<td> <?php echo $this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
         <td> <?php 
-        	echo $this->Html->link('Create Proposal',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' ';
-            echo $this->Html->link('Edit',array('action' => 'edit',$x['Customer']['id'])).' ';
+        	echo $this->Html->link('Create Proposal',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' | ';
+        	echo $this->Html->link('Add Land',array('controller' => 'Lands','action' => 'add_land_for_customer',$x['Customer']['id'])).' | ';
+            echo $this->Html->link('Edit',array('action' => 'edit',$x['Customer']['id'])).' | ';
             echo $this->Form->postLink('Delete',array('controller' => 'Customers','action' => 'delete',$x['Customer']['id']),array('confirm'=>'Are you sure?'));
         ?></td>
-		<td> <?php echo $x['Customer']['created']; ?> </td>
+		<td> <?php echo $x['Customer']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>
 	<?php endforeach; ?>
 	<?php unset($customer); ?>
