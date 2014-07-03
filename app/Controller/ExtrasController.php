@@ -29,6 +29,8 @@ class ExtrasController extends AppController{
 		
 		if ($logged_user['role']<3){
 			
+			$this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
+			
 			if ($this->request->is('post')) {
 				$this->Extra->create();
 				//Check if image has been uploaded
@@ -93,6 +95,8 @@ class ExtrasController extends AppController{
         	throw new NotFoundException (__('Invalid extra'));
         }
             
+        $this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
+        
         if ($this->request->is(array('extra','put'))) {
         	$this->Extra->id = $id;
         	if ($this->Extra->save($this->request->data)) {

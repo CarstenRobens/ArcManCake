@@ -12,9 +12,9 @@
 	<tr> 
 		<td> <?php echo $x['Category']['id']; ?> </td> 
 		<td> <?php echo $x['Category']['name']; ?></td>
-		<td> <?php 
+		<td> <?php
+            echo $this->Html->link('Edit',array('action' => 'edit',$x['Category']['id'])).' | ';
             echo $this->Form->postLink('Delete',array('controller' => 'Categories','action' => 'delete',$x['Category']['id']),array('confirm'=>'Are you sure?'));
-            echo ' '.$this->Html->link('Edit',array('action' => 'edit',$x['Category']['id'])).' ';
         ?></td>
         <td> <?php echo $x['Category']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>

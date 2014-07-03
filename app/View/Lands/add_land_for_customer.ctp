@@ -1,8 +1,7 @@
-<h1>Add proposal</h1>
+<h3>Private land for <?php echo $customer_view['MyCustomer']['name'].' '.$customer_view['MyCustomer']['surname']; ?></h3>
 
-<?php echo $this->Html->link('Back', array('controller'=>'Costumers','action'=>'index')) ?>
+<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'index')) ?>
 
-<?php echo 'Costumer: '.$costumer_id_view; ?>
 
 <?php 
 	echo $this->Form->create('Land');

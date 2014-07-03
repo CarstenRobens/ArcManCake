@@ -19,8 +19,8 @@
 		<td> <?php echo $this->Html->link($x['Proposal']['name'], array('controller'=>'Proposals','action'=>'view',$x['Proposal']['id'])); ?></td>
 		<td> <?php echo $this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Proposal']['user_id'])); ?></td>
         <td> <?php 
-                echo $this->Html->link('Edit ',array('action' => 'edit',$x['Proposal']['id']));
-                echo $this->Form->postLink('Delete',array('controller' => 'Proposals','action' => 'delete',$x['Proposal']['id']),array('confirm'=>'Are you sure?')).'   ';
+                echo $this->Html->link('Edit ',array('action' => 'edit',$x['Proposal']['id'])).' | ';
+                echo $this->Form->postLink('Delete',array('controller' => 'Proposals','action' => 'delete',$x['Proposal']['id']),array('confirm'=>'Are you sure?'));
         ?></td>
         <td><?php
         	echo $this->Html->link('Summary',array('action' => 'gen_summary',$x['Proposal']['id'])).' ';

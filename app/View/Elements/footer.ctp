@@ -1,4 +1,7 @@
-
+<?php
+Configure::load('ArcManCake_config'); 
+$level = Configure::read('Level'); 
+?>
 
 <div class="container">
 	<div class="row">
@@ -20,37 +23,51 @@
 		</p>
 		
 		<p>
-		&copy; 2014 C. Robens and R. Gomez &middot; 
-		<?php echo $this->Html->link('Impressum',array('controller'=>'pages','action'=>'impressum'))?> &middot; 
-		<?php 
-			if($this->Session->read('Auth.User.power')<2){
-				echo $this->Html->link('Users',array('controller'=>'Users','action'=>'index'));
-				?>
-				&middot; 
-				<?php
-			}
-		?> 
-		<?php 
-			if($this->Session->read('Auth.User.power')<2){
-				echo $this->Html->link('Homepictures',array('controller'=>'HomePictures','action'=>'index'));
-				?>
-				&middot; 
-				<?php
-			}
-		?> 
 		<?php 
 			if($this->Session->check('Auth.User')){
-				echo 'Hello '.$current_user['username'].'!  '.$this->Html->link('Logout',array('controller'=>'users','action'=>'logout'));
+				echo 'Hello <b>'.$current_user['username'].'</b> ('.$level[$current_user['role']].') &middot; '.$this->Html->link('Logout',array('controller'=>'users','action'=>'logout'));
+				
+				
+				if($current_user['role']<3){
+					?> &middot; <?php
+					echo $this->Html->link('Users',array('controller'=>'Users','action'=>'index'));
+				}
+				
+				if($current_user['role']<2){
+					?> &middot; <?php
+					echo $this->Html->link('Extra categories',array('controller'=>'Categories','action'=>'index'));
+				}
+				
+				if($current_user['role']<2){
+					?> &middot; <?php
+					echo $this->Html->link('Home pictures',array('controller'=>'HomePictures','action'=>'index'));
+				}
+				
+				if($current_user['role']<2){
+					?> &middot; <?php
+					echo $this->Html->link('House pictures',array('controller'=>'HousePictures','action'=>'index'));
+				}
+				
+				
 			} else {
 				echo $this->Html->link('Login',array('controller'=>'users','action'=>'login'));
+				
 			}
 		?>
+		</p>
+		
+		
+		<p>
+		&copy; 2014 C. Robens and R. Gomez &middot; 
+		<?php echo $this->Html->link('Impressum',array('controller'=>'pages','action'=>'impressum'))?> 
+		
+		
 		</p>
 		<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
 					'http://www.cakephp.org/',
 					array('target' => '_blank', 'escape' => false)
 				);
-			?>
+		?>
     </footer>
 </div><!-- /.container -->

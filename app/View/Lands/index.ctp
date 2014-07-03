@@ -24,8 +24,8 @@
 		<td> <?php echo $this->Html->link($x['Land']['name'], array('controller'=>'Lands','action'=>'view',$x['Land']['id'])); ?></td>
 		<td> <?php echo $this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
         <td> <?php 
-                echo $this->Html->link('Edit ',array('action' => 'edit',$x['Land']['id']));
-                echo $this->Form->postLink('Delete',array('controller' => 'Lands','action' => 'delete',$x['Land']['id']),array('confirm'=>'Are you sure?')).'   ';
+                echo $this->Html->link('Edit ',array('action' => 'edit',$x['Land']['id'])).' | ';
+                echo $this->Form->postLink('Delete',array('controller' => 'Lands','action' => 'delete',$x['Land']['id']),array('confirm'=>'Are you sure?'));
         ?></td>
 
 		<td> <?php echo $x['Land']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>

@@ -58,7 +58,8 @@ class LandsController extends AppController{
 		if (!$customer_id) {
 			throw new NotFoundException(__('Invalid land'));
 		}
-		$this->set('customer_id_view',$customer_id);
+		
+		$this->set('customer_view',$this->Land->MyCustomer->findById($customer_id));
         if ($this->request->is('post')) {
         	$this->Land->create();
             $this->request->data['Land']['user_id'] = $this->Auth->user('id');

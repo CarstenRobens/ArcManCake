@@ -24,7 +24,6 @@ class HousesController extends AppController{
 	
 	public function index() {
 		$logged_user = $this->Auth->user();
-		
 		$this->set('houses_view',$this->paginate());
 		
 		if ($logged_user['role']<3 && !empty($logged_user)){
@@ -51,6 +50,8 @@ class HousesController extends AppController{
                 throw new NotFoundException(__('Invalid customer'));
             }
             $this->set('house_view',$x);
+            
+            $this->set('house_pictures_view',$x['MyHousePicture']);
 
 	}
 

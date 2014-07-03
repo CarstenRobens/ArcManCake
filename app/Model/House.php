@@ -22,7 +22,14 @@ class House extends AppModel{
 			
 	);
 	
-	
+	/** public $hasAndBelongsToMany = array(
+			'Extra'=>array(
+					'className'=>'Extra',
+					'joinTable'=>'extras_houses',
+					'foreignKey'=>'house_id',
+					'associationForeignKey'=>'extra_id'
+			)
+	);**/
 	
     public $validate=array(
     		'name'=>array(

@@ -34,7 +34,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	echo $this->Form->input('name');
 	echo $this->Form->input('description');
 	echo $this->Form->input('upload', array('type' => 'file'));
-	echo $this->Form->input('house');
+	echo $this->Form->input('house_id',array('options'=> $list_houses_view));
 	
 	echo $this->Form->end('Save house picture');
 }?>

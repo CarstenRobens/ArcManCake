@@ -1,6 +1,6 @@
 <?php echo $this->Html->link('Back', array('controller'=>'Extras','action'=>'index')) ?>
 
-<h3><big><b><?php echo $extra_view['Extra']['name']; ?> </b></big></h3>
+<h3><big><b><?php echo $extra_view['Extra']['name']; ?> </b></big> in <?php echo $extra_view['MyCategory']['name']; ?></h3>
 
 <p><small>Created: <?php echo $extra_view['Extra']['created'].' by '.$extra_view['MyUser']['username']; ?> </small></p>
 

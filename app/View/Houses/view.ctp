@@ -9,3 +9,8 @@
 <p> <b> <?php echo $house_view['House']['price'].' €'; ?> </b></p>
 <p> <b> Description: </b> </p>
 <p> <?php echo $house_view['House']['description']; ?> </p>
+
+<p>Pictures:</p>
+<?php foreach($house_pictures_view as $x ): ?>
+<?php echo $this->Html->image('uploads/houses/'.$x['picture'], array('width'=>'40%', 'height' => '40%')); ?>
+<?php endforeach; ?>

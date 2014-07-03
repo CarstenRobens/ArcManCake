@@ -25,6 +25,9 @@ class HousePicturesController extends AppController{
 		
 		// add
 		if ($logged_user['role']<3 && !empty($logged_user)){
+			
+			$this->set('list_houses_view',$this->HousePicture->MyHouse->find('list'));
+			
 			if ($this->request->is('post')) {
 				$this->HousePicture->create();
 				//Check if image has been uploaded
@@ -51,7 +54,6 @@ class HousePicturesController extends AppController{
 					}
 				}
 				
-				$this->request->data['HousePicture']['house_id'] = $this->request->data['HousePicture']['house'];
 				$this->request->data['HousePicture']['user_id'] = $this->Auth->user('id');
 				
 				if ($this->HousePicture->save($this->request->data)) {
