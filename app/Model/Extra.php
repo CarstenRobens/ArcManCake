@@ -13,12 +13,12 @@ class Extra extends AppModel{
 		)
 	);
 	
-	/**public $hasMany = array(
-			'MyBoughtExtras' => array(
+	public $hasMany = array(
+			'MyBoughtExtra' => array(
 					'className' => 'BoughtExtra',
 					'foreignKey' => 'extra_id'
 			)
-	); **/
+	);
 	
 	/** public $hasAndBelongsToMany = array(
 		'House'=>array(

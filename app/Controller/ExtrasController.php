@@ -57,7 +57,6 @@ class ExtrasController extends AppController{
 					}
 				}
 				
-				$this->request->data['Extra']['category_id'] = $this->request->data['Extra']['category'];
 				$this->request->data['Extra']['user_id'] = $this->Auth->user('id');
 				debug($this->request->data);
 				if ($this->Extra->save($this->request->data)) {

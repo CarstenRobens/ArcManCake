@@ -17,9 +17,9 @@ class ProposalsController extends AppController{
 				return TRUE;
 			}
 			if(in_array($this->action, array('edit','delete','view'))){
-				if ($this->Proposal->isOwnedBy($proposalId,$logged_user['id'])){
+				#if ($this->Proposal->isOwnedBy($proposalId,$logged_user['id'])){
 					return TRUE;
-				}
+				#}
 			}
 		}
 		
@@ -53,9 +53,17 @@ class ProposalsController extends AppController{
 
 	public function add($customer_id=NULL) {
 		if (!$customer_id) {
-			throw new NotFoundException(__('Invaled pustomer'));
+			throw new NotFoundException(__('Invaled customer'));
 		}
-		$this->set('customer_id_view',$customer_id);
+		
+		
+		$this->set('customer_view',$this->Proposal->MyCustomer->findById($customer_id));
+		$this->set('list_lands_view',$this->Proposal->MyLand->find('list',array(
+			'conditions'=>array('MyLand.customer_id' => array(0 ,$customer_id))
+		)));
+		$this->set('list_houses_view',$this->Proposal->MyHouse->find('list'));
+				
+		
         if ($this->request->is('post')) {
         	$this->Proposal->create();
             $this->request->data['Proposal']['user_id'] = $this->Auth->user('id');
@@ -75,6 +83,12 @@ class ProposalsController extends AppController{
         }
             
         $x = $this->Proposal->findById($id);
+        $this->set('proposal_view',$x);
+        $this->set('list_lands_view',$this->Proposal->MyLand->find('list',array(
+        		'conditions'=>array('MyLand.customer_id' => array(0 ,$x['MyCustomer']['id']))
+        )));
+        $this->set('list_houses_view',$this->Proposal->MyHouse->find('list'));
+        $this->set('list_extras_view',$this->Proposal->MyBoughtExtra->MyExtra->find('list'));
         if (!$x) {
         	throw new NotFoundException (__('Invalid proposal'));
         }

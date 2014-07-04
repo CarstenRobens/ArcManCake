@@ -21,6 +21,13 @@ class Proposal extends AppModel{
 			)
 	);
 	
+	public $hasMany = array(
+			'MyBoughtExtra' => array(
+					'className' => 'BoughtExtra',
+					'foreignKey' => 'proposal_id'
+			)
+	);
+	
 	
     public $validate=array(
     		'name'=>array(
