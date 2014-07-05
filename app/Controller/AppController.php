@@ -42,7 +42,9 @@ class AppController extends Controller {
     );
     
     public function beforeFilter() {
-		$this->set('current_user',$this->Auth->user());		
+		$this->set('current_user',$this->Auth->user());
+		Configure::load('ArcManCake_config');
+		$this->set('level',Configure::read('Level') );		
     }
     
     public function isAuthorized($logged_user) {

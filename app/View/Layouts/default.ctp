@@ -50,7 +50,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-	<?php Configure::load('ArcManCake_config');	?>
+	
 							
 
 

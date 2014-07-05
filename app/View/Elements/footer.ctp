@@ -1,7 +1,4 @@
-<?php
-Configure::load('ArcManCake_config'); 
-$level = Configure::read('Level'); 
-?>
+
 
 <div class="container">
 	<div class="row">
