@@ -15,7 +15,8 @@
 			  
             </div>
             <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+				<?php if (!empty($current_user)) {?>
+				<ul class="nav navbar-nav">
 				<?php if($this->Session->read('menue.active')=='Home'){ ?>
 					<li class="active"><?php echo $this->Html->link(__('Home'), array('controller' => 'home', 'action' => 'index')); ?></li>
 				<?php }else{ ?>
@@ -56,8 +57,10 @@
 				
                 
               </ul>
+				<?php } else {?>
 				
-            </div>
+				<?php }?>
+			</div>
           </div>
         </div>
 	

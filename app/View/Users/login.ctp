@@ -2,25 +2,10 @@
 
 
 <div class="container">
-
 <div class="contactwrapper">
 <div class="view">
 
 <div class="PostBox">
-<div class="ThreadTitleBox">
-	<div class="ThreadTitleContent">
-		<h2><?php __('Login');?></h2>
-	</div> 
-	
-	<p style="clear: both;">  </p>  
-</div>
-</div>
-
-<div class="PostBox">
-	<div class="PostHeader">
-        <h3></h3>
-        <p style="clear: both;">  </p>
-    </div> 
 	<div class="PostContent">
 		<div class="PostContentBox">
 			<div class="PostMainContentbox">
@@ -30,20 +15,20 @@
 					</legend>
 					
 					<?php 
-					echo $this->Form->input('username');
-					echo $this->Form->input('password'); ?>			
-			</div>
+					echo $this->Form->input('username',array('placeholder' => __('Enter a Username'),'label' => __('Username')));
+					echo $this->Form->input('password',array('placeholder' => __('Enter a Password'),'label' => __('Password'))); ?>	
+					
+			</div>						
 		</div>
-		<p style="clear: both;"> </p>
 	</div>
+	<p style="clear: both;"> </p>
+
 	<div class="PostFooter">
-    	<div class="bottomaction"> <?php echo $this->Form->end(__('Login')); ?> <p style="clear: both;">  </p></div>
-       
+    	<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Login'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
 		<p style="clear: both;">  </p>
 	</div>
 </div>
-
+	
 </div>
-
 </div>
 </div> <!-- /container -->
