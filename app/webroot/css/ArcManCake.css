@@ -33,7 +33,7 @@ body {
 }
 
 a {
-	color: #999;
+	color: #b5e61d;
 	text-decoration: none;
 }
 
@@ -44,7 +44,7 @@ a {
 	font-weight: bold;
 }
 a:hover {
-	color:#00549f;
+	color:#23c111;
 	text-decoration: underline;
 }
 a img {
@@ -59,7 +59,7 @@ h1 {
 	font-size: 100%;
 }
 h2 {
-	color:#00549f;
+	color:#23c111;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 190%;
 	
@@ -131,7 +131,7 @@ div.topmenuemainbox {
 
 div.contactwrapper{
 	margin: 15px 100px;
-	border: 1px solid #00549f;
+	border: 1px solid #23c111;
 }
 
 
@@ -144,7 +144,7 @@ div.topmenuewrapper {
 div.secondtopmenuewrapper {
 	position:relative;
     float:right;
-	border-bottom:dashed 1px #999;
+	border-bottom:dashed 1px #b5e61d;
 }
 
 div.topmenuebox {
@@ -183,7 +183,7 @@ div.topmenuemaincontentActive a{
 	text-align:center;
 	display: block;
 	
-	color:#00549f;
+	color:#23c111;
 	
 }
 
@@ -403,7 +403,7 @@ form .required {
 form .required label:after {
 	content: '*';
 	display:inline;
-	color: #00549f;
+	color: #23c111;
 }
 form div.submit {
 	border: 0;
@@ -568,7 +568,7 @@ div.actionbox {
 	padding: 8px 4px;
 	width:320px;
 	
-	border-bottom:1px dashed #999;
+	border-bottom:1px dashed #b5e61d;
 }
 div.inneractionbox {
 	padding: 0px 28px;
@@ -855,7 +855,7 @@ div.maincontentbox {
 }
 
 div.topleftbox {
-	color:#999;
+	color:#b5e61d;
 	padding:16px 0px;
 	padding-left:150px; 
 	padding-right:30px;
@@ -945,7 +945,7 @@ div.PostContent {
 	font-weight:normal;
 }
 div.PostContent a {
-	color:#00549f;
+	color:#23c111;
 }
 div.PostActions {
 	width: 100%;
@@ -953,7 +953,7 @@ div.PostActions {
 	padding-top: 16px;
 }
 div.PostActions a {
-	color:#00549f;
+	color:#23c111;
 }
 
 div.leftBox {
@@ -998,7 +998,7 @@ div.headeraction {
 }
 div.headeraction a{
 	font-weight:bold;
-	color:#00549f;
+	color:#23c111;
 }
 
 
