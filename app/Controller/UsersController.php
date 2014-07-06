@@ -21,7 +21,6 @@ class UsersController extends AppController{
         parent::beforeFilter();
 		$this->Session->write('menue.active','Users');
         // Allow users to login and logout.
-        
         $this->Auth->allow('logout', 'login');
     }
     

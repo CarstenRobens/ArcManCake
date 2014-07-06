@@ -4,7 +4,7 @@ class LandsController extends AppController{
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		
+		$this->Session->write('menue.active','Lands');
 	}
 	
 	public function isAuthorized($logged_user) {

@@ -7,6 +7,7 @@ class HousesController extends AppController{
 		// Allow visitors to view houses
 	
 		$this->Auth->allow('index','view');
+		$this->Session->write('menue.active','Houses');
 	}
 	
 	public function isAuthorized($logged_user) {

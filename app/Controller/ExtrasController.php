@@ -5,7 +5,7 @@ class ExtrasController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		// Allow visitors to view extras
-	
+		$this->Session->write('menue.active','Extras');
 	}
 	
 	public function isAuthorized($logged_user) {

@@ -4,6 +4,7 @@ class CategoriesController extends AppController{
 
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->Session->write('menue.active','Categories');
 	}
 	
 	public function isAuthorized($logged_user) {

@@ -4,7 +4,7 @@ class CustomersController extends AppController{
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		
+		$this->Session->write('menue.active','Customers');
 	}
 	
 	public function isAuthorized($logged_user) {

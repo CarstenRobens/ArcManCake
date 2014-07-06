@@ -4,7 +4,7 @@ class ProposalsController extends AppController{
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		
+		$this->Session->write('menue.active','Proposals');
 	}
 	
 	public function isAuthorized($logged_user) {
