@@ -36,17 +36,45 @@
 <?php 
 if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 
-	<h3>Add house</h3>
 
-	<?php 
-	echo $this->Form->create('House');
-	echo $this->Form->input('name');
-	echo $this->Form->input('description');
-	echo $this->Form->input('size');
-	echo $this->Form->input('stores');
-	echo $this->Form->input('type');
-	echo $this->Form->input('price');
-	echo $this->Form->end('Save house');
-}?>
+	<div class="container">
+	<div class="contactwrapper">
+	<div class="view">
+
+	<div class="PostBox">
+		<div class="PostContent">
+			<div class="PostContentBox">
+				<div class="PostMainContentbox">
+						<?php echo $this->Form->create('House');?>	
+						<legend>
+							<?php echo __('Add a House'); ?>
+						</legend>
+						
+						<?php 
+						echo $this->Form->input('name',array('placeholder' => __('Enter a Name'),'label' => __('Name')));
+						echo $this->Form->input('description',array('placeholder' => __('Enter a Description'),'label' => __('Description')));
+						echo $this->Form->input('size',array('placeholder' => __('Enter a Size in Squaremeter'),'label' => __('Size')));
+						echo $this->Form->input('stores',array('placeholder' => __('Enter how many floors'),'label' => __('Foors')));
+						echo $this->Form->input('type',array('placeholder' => __('Enter the Type'),'label' => __('Type')));
+						echo $this->Form->input('price',array('placeholder' => __('Enter a Price'),'label' => __('Price')));?>	
+						
+				</div>						
+			</div>
+		</div>
+		<p style="clear: both;"> </p>
+
+		<div class="PostFooter">
+			<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Save house'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
+			<p style="clear: both;">  </p>
+		</div>
+	</div>
+		
+	</div>
+	</div>
+	</div> <!-- /container -->
+	
+	
+	
+<?php } ?>
 
 
