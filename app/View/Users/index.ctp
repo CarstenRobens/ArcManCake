@@ -3,27 +3,16 @@ Configure::load('ArcManCake_config');
 $level = Configure::read('Level'); 
 ?>
 
-<div class="container theme-showcase" role="main">
 
 
-	<div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8"><p style="clear: both;">  </p></div>
-        <div class="col-md-2"></div>
-    </div>
 	
 	
     <div class="CategorieTitleBox">
         <div id="Users">
-        <?php __( 'Users',false);?>
+        <?php echo __( 'Users',false);?>
         </div>
     </div>
     
-	<div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8"><p style="clear: both;">  </p></div>
-        <div class="col-md-2"></div>
-    </div>
 	<hr >
     
     <div class="row">
@@ -81,11 +70,16 @@ $level = Configure::read('Level');
 	
     
 	
-	</div>
+	
+	
+	
 
 <?php 
     if ($current_user['role'] < 2 && !empty($current_user))
     {?>
+	
+	
+	
 		<div class="contactwrapper">
 			<div class="view">
 
@@ -107,16 +101,16 @@ $level = Configure::read('Level');
 				<div class="PostContent">
 					<div class="PostContentBox">
 						<div class="PostMainContentbox">
-							<?php echo $this->Html->link('Back', array('controller'=>'users','action'=>'index')) ?>
+							
 							<?php 
 							echo $this->Form->create('User');
-							echo $this->Form->input('username');
-							echo $this->Form->input('password');
-							echo $this->Form->input('role',array('options'=> $level));
-							echo $this->Form->input('name');
-							echo $this->Form->input('surname');
-							echo $this->Form->input('phone');
-							echo $this->Form->input('email');
+							echo $this->Form->input('username',array('label' => __('Username')));
+							echo $this->Form->input('password',array('label' => __('Password')));
+							echo $this->Form->input('role',array('options'=> $level,'label' => __('Role')));
+							echo $this->Form->input('name',array('label' => __('Name')));
+							echo $this->Form->input('surname',array('label' => __('Surname')));
+							echo $this->Form->input('phone',array('label' => __('Phone Number')));
+							echo $this->Form->input('email', array('type' => 'email','label' => __('E-Mail Address')));
 							?>		
 						</div>
 					</div>
@@ -134,4 +128,19 @@ $level = Configure::read('Level');
 	<?php 
     }?>
 
-
+<?php echo $this->Form->create('ModelName', array(
+    'class' => 'form-horizontal',
+    'inputDefaults' => array(
+        'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
+        'div' => array('class' => 'control-group'),
+        'label' => array('class' => 'control-label'),
+        'between' => '<div class="controls">',
+        'after' => '</div>',
+        'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline')),
+    )));?>
+<fieldset>
+<?php echo $this->Form->input('Fieldname', array(
+    'label' => array('class' => 'control-label'), // the preset in Form->create() doesn't work for me
+    )); ?>
+</fieldset>
+<?php echo $this->Form->end();?>

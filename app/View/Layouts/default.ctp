@@ -56,13 +56,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
             
 	<?php echo($this->element('topmenu'));?>
-				
-	<?php echo $this->Session->flash(); ?>
-	<?php echo $this->Session->flash('email'); ?>
+	<div class="container theme-showcase" role="main">		
+		<?php echo $this->Session->flash(); ?>
+		<?php echo $this->Session->flash('email'); ?>
 								
-	<?php echo $this->fetch('content'); ?>
+		<?php echo $this->fetch('content'); ?>
                             
-
+	</div>
 	<?php echo($this->element('footer'));?>
 
 
