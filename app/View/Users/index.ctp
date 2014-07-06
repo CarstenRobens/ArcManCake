@@ -253,13 +253,13 @@
 						
 						<?php 
 						echo $this->Form->create('User', array('class' => 'form'));
-							echo $this->Form->input('username',array('placeholder' => __('Enter a Username'),'label' => __('Username')));
-							echo $this->Form->input('password',array('placeholder' => __('Enter a Password'),'label' => __('Password')));
-							echo $this->Form->input('role',array('options'=> $level,'label' => __('Role')));
-							echo $this->Form->input('name',array('placeholder' => __('Enter a Name'),'label' => __('Name')));
-							echo $this->Form->input('surname',array('placeholder' => __('Enter a Surname'),'label' => __('Surname')));
-							echo $this->Form->input('phone',array('placeholder' => __('Enter a Phone Number'),'label' => __('Phone Number')));
-							echo $this->Form->input('email', array('placeholder' => __('Enter an E-Mail Address'),'type' => 'email','label' => __('E-Mail Address')));
+							echo $this->Form->input('username',array('placeholder' => __('Enter a Username'),'label' => __('Username'),'div' => 'form-group has-success'));
+							echo $this->Form->input('password',array('placeholder' => __('Enter a Password'),'label' => __('Password'),'div' => 'form-group has-success'));
+							echo $this->Form->input('role',array('options'=> $level,'label' => __('Role'),'div' => 'form-group has-success'));
+							echo $this->Form->input('name',array('placeholder' => __('Enter a Name'),'label' => __('Name'),'div' => 'form-group has-success'));
+							echo $this->Form->input('surname',array('placeholder' => __('Enter a Surname'),'label' => __('Surname'),'div' => 'form-group has-success'));
+							echo $this->Form->input('phone',array('placeholder' => __('Enter a Phone Number'),'label' => __('Phone Number'),'div' => 'form-group has-success'));
+							echo $this->Form->input('email', array('placeholder' => __('Enter an E-Mail Address'),'type' => 'email','label' => __('E-Mail Address'),'div' => 'form-group has-success'));
 						?>	
 						
 				</div>						
