@@ -10,8 +10,7 @@
 	
 
       <div class="row"id="<?php echo $id = str_replace(' ', '+', $user_view['User']['name']);?>">
-	  <?php
-        	if(true){?>
+	  <?php if(true){?>
         
 		<div class="col-md-2">
 		</div>
@@ -24,114 +23,85 @@
 			<div class="row">
 				<div class="col-xs-4">
 					<p >
-					<?php
-					if(!empty($user_view['User']['name'])){
+					<?php if(!empty($user_view['User']['name'])){
 						echo __('Name:');
-					}
-					?>
+					} ?>
 					</p>
 					<p >
-					<?php
-					if(!empty($user_view['User']['surname'])){
+					<?php if(!empty($user_view['User']['surname'])){
 						echo __('Surname:');
-					}
-					?>
+					} ?>
 					</p>
 					<p >
-					<?php
-					if(!empty($user_view['User']['username'])){
+					<?php if(!empty($user_view['User']['username'])){
 						echo __('Username:');
-					}
-					?>
+					} ?>
 					</p>
 					<p >
-					<?php
-					if(!empty($user_view['User']['username'])){
+					<?php if(!empty($user_view['User']['username'])){
 						echo __('Role:');
-					}
-					?>
+					} ?>
 					</p>
 				</div>
 				<div class="col-xs-8">
 					<p >
 					<?php
-					
 						echo ( $user_view['User']['name']);
-					
 					?>
 					</p>
 					<p >
 					<?php
-					
 						echo $user_view['User']['surname'];
-					
 					?>
 					</p>
 					<p >
 					<?php
-					
 						echo $user_view['User']['username'];
-					
 					?>
 					</p>
 					<p >
 					<?php
-					
 						echo $level[$user_view['User']['role']];
-					
 					?>
 					</p>
 				</div>
-				
 			</div>
 			
 			<div class="row">
 				<div class="col-xs-4">
 					<p >
-					<?php
-					if(!empty($user_view['User']['phone'])){
+					<?php if(!empty($user_view['User']['phone'])){
 						echo __('Tel. Office:');
-					}
-					?>
+					} ?>
 					</p>
 					<p >
-					<?php
-					if(!empty($user_view['User']['email'])){
+					<?php if(!empty($user_view['User']['email'])){
 						echo __('E-Mail:');
-					}
-					?>
+					} ?>
 					</p>
 					<p >
-					<?php
-					if(!empty($user_view['User']['created'])){
+					<?php if(!empty($user_view['User']['created'])){
 						echo __('Created:');
-					}
-					?>
+					} ?>
 					</p>
 				</div>
 				
 				
 				<div class="col-xs-4">
 					<p >
-					<?php
-					if(!empty($user_view['User']['phone'])){
+					<?php if(!empty($user_view['User']['phone'])){
 						echo $user_view['User']['phone'];
-					}
-					?>
+					} ?>
 					</p>
 					<p >
-					<?php
-					if(!empty($user_view['User']['email'])){
+					<?php if(!empty($user_view['User']['email'])){
 						echo $user_view['User']['email'];
-					}
-					?>
+					} ?>
 					</p>
 					<p >
-					<?php
-					if(!empty($user_view['User']['created'])){
+					<?php if(!empty($user_view['User']['created'])){
 						echo $user_view['User']['created'];
-					}
-					?>
+					} ?>
 					</p>
 				</div>
 				
@@ -141,8 +111,7 @@
 			
 			
 			<?php 
-			if ($current_user['role'] < 2 && !empty($current_user))
-			{?>
+			if ($current_user['role'] < 2 && !empty($current_user)) {?>
 			<div class="row">
 				<div class="col-md-12">
 					<?php echo $this->Html->link(__('Edit User'),array('action' => 'edit',$user_view['User']['id']));?>
@@ -152,16 +121,14 @@
 				
 				
 			</div>
-			<?php
-			}?>
+			<?php }?>
 			
         </div>
 		<div class="col-md-2">
 		</div>
 		
 		
-		<?php
-		}?>
+		<?php }?>
       </div>
 	<hr>
 	

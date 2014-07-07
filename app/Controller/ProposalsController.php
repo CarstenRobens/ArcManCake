@@ -70,9 +70,9 @@ class ProposalsController extends AppController{
             $this->request->data['Proposal']['customer_id']=$customer_id;
             if ($this->Proposal->save($this->request->data)) {
             	$this->Session->setFlash(__('Your proposal has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('controller'=>'Customer','action' => 'view',$customer_id));
             }
-            $this->Session->setFlash(__('Unable to add your customer.'));
+            $this->Session->setFlash(__('Unable to add the proposal.'));
      	}
 	}
         

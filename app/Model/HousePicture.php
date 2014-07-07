@@ -24,7 +24,8 @@ class HousePicture extends AppModel{
     		'house_id'=>array(
     			'rule'=>'notEmpty',
             	'message'=> 'Please enter a valid house'
-    		)
+    		),
+    		'type_flag'=>array('rule'=>'notEmpty')
     );
     
 

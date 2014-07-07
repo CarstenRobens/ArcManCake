@@ -40,7 +40,7 @@
 					echo $this->Html->link('Home pictures',array('controller'=>'HomePictures','action'=>'index'));
 				}
 				
-				if($current_user['role']<2){
+				if($current_user['role']<3){
 					?> &middot; <?php
 					echo $this->Html->link('House pictures',array('controller'=>'HousePictures','action'=>'index'));
 				}

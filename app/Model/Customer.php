@@ -42,6 +42,9 @@ class Customer extends AppModel{
     		'zipcode'=>array(
             	'rule'=>'decimal',
                 'message'=> 'Enter a valid zipcode'
+			),'city'=>array(
+            	'rule'=>'notEmpty',
+                'message'=> 'Enter your city'
 			),
     		'phone'=>array(
             'required'=>array(
