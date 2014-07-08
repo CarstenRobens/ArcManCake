@@ -39,14 +39,22 @@ class ProposalsController extends AppController{
 
 	public function view($id=null) {
             if(!$id){
-                throw new NotFoundException(__('Invalid pustomer'));
+                throw new NotFoundException(__('Invalid proposal'));
             }
 	
             $x = $this->Proposal->findById($id);
+            $y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'])));
+            $z = $this->Proposal->MyBoughtExtra->find('all',array(
+				'conditions'=>array('proposal_id' => $x['Proposal']['id'])));
+            
             if (!$x) {
-                throw new NotFoundException(__('Invalid pustomer'));
+                throw new NotFoundException(__('Invalid proposal'));
             }
+            
             $this->set('proposal_view',$x);
+            $this->set('house_pictures_view',$y);
+            $this->set('bought_extras_view',$z);
 
 	}
 

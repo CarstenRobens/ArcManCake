@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 04, 2014 at 08:58 
+-- Generation Time: Jul 08, 2014 at 10:11 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -46,7 +46,11 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `extra_id`, `proposal_id`,
 (2, 765, 1, 15, 2, '2014-07-04', '2014-07-04'),
 (3, 8765, 1, 13, 2, '2014-07-04', '2014-07-04'),
 (4, 3, 1, 16, 2, '2014-07-04', '2014-07-04'),
-(5, 1050, 1, 17, 2, '2014-07-04', '2014-07-04');
+(5, 1050, 1, 17, 2, '2014-07-04', '2014-07-04'),
+(6, 100, 1, 14, 3, '2014-07-05', '2014-07-05'),
+(7, 1000, 1, 15, 3, '2014-07-05', '2014-07-05'),
+(8, 1567, 2, 15, 4, '2014-07-08', '2014-07-08'),
+(9, 478, 3, 14, 4, '2014-07-08', '2014-07-08');
 
 -- --------------------------------------------------------
 
@@ -96,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `customers`
@@ -107,7 +111,57 @@ INSERT INTO `customers` (`id`, `name`, `surname`, `notes`, `phone`, `email`, `ad
 (2, 'cus', 'a2', '', 1631728215, 'sfvn@jsn.com', '', '', 0, '', 3, '2014-07-01', '2014-07-01'),
 (3, 'cus', 'b', '', 23456789, 'yasgevb@hgsjb.com', '', '', 0, '', 4, '2014-07-01', '2014-07-01'),
 (4, 'cus', 'b2', '', 45689, 'akejnm@kand.com', '', '', 0, '', 4, '2014-07-01', '2014-07-01'),
-(5, 'cus', 'own', '', 679, 'sdjf@ikshf.com', '', '', 0, '', 2, '2014-07-01', '2014-07-01');
+(5, 'cus', 'own', 'Cus Own is cool', 679, 'sdjf@ikshf.com', 'sdfghj, 7', 'IAP', 45678, 'tutupa', 2, '2014-07-01', '2014-07-07'),
+(6, 'Jose Carlos', 'Gallego', 'Penis!', 34567890, 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-07-07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_type_id` int(11) NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `details` text COLLATE utf8_unicode_ci NOT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL,
+  `all_day` tinyint(1) NOT NULL DEFAULT '1',
+  `status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Scheduled',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `created`, `modified`) VALUES
+(1, 1, 'The boss is angry!', '', '2014-08-14 11:21:00', '2014-08-18 11:21:00', 1, 'Scheduled', 1, '2014-07-07', '2014-07-07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_types`
+--
+
+CREATE TABLE IF NOT EXISTS `event_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `color` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `event_types`
+--
+
+INSERT INTO `event_types` (`id`, `name`, `color`) VALUES
+(1, 'Meeting', 'Green'),
+(2, 'Customer appointment', 'Blue');
 
 -- --------------------------------------------------------
 
@@ -121,6 +175,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `description` text NOT NULL,
   `default_price` int(11) NOT NULL,
   `picture` varchar(200) NOT NULL,
+  `bool_size_dependent` tinyint(1) NOT NULL,
   `bool_custom` tinyint(1) NOT NULL,
   `bool_external` tinyint(1) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -134,23 +189,12 @@ CREATE TABLE IF NOT EXISTS `extras` (
 -- Dumping data for table `extras`
 --
 
-INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
-(13, 'Cellar', 'Wet and dark', 1000, 'cellar.jpg', 0, 0, 2, 3, '2014-07-02', '2014-07-02'),
-(14, 'Jacuzzi', '^^', 1050, 'jacuzzi.jpg', 1, 0, 2, 4, '2014-07-02', '2014-07-02'),
-(15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 1, 1, 3, 4, '2014-07-02', '2014-07-02'),
-(16, 'Something boring', 'Booooooooooooooring', 5, '', 1, 0, 1, 4, '2014-07-04', '2014-07-04'),
-(17, 'T-Rex', 'Rooooooooaarr', 1000, 'trex.jpg', 0, 1, 6, 6, '2014-07-04', '2014-07-04');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `extras_houses`
---
-
-CREATE TABLE IF NOT EXISTS `extras_houses` (
-  `extra_id` int(11) NOT NULL,
-  `house_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `bool_size_dependent`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
+(13, 'Cellar', 'Wet and dark', 1000, 'cellar.jpg', 0, 0, 0, 2, 3, '2014-07-02', '2014-07-02'),
+(14, 'Jacuzzi', '^^', 1050, 'jacuzzi.jpg', 0, 1, 0, 2, 4, '2014-07-02', '2014-07-02'),
+(15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 1, 1, 3, 4, '2014-07-02', '2014-07-02'),
+(16, 'Something boring', 'Booooooooooooooring', 5, '', 0, 1, 0, 1, 4, '2014-07-04', '2014-07-04'),
+(17, 'T-Rex', 'Rooooooooaarr', 1000, 'trex.jpg', 0, 0, 1, 6, 6, '2014-07-04', '2014-07-04');
 
 -- --------------------------------------------------------
 
@@ -217,22 +261,25 @@ CREATE TABLE IF NOT EXISTS `house_pictures` (
   `name` varchar(200) NOT NULL,
   `description` text NOT NULL,
   `picture` varchar(200) NOT NULL,
+  `type_flag` int(11) NOT NULL,
   `house_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `house_pictures`
 --
 
-INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `house_id`, `user_id`, `created`, `modified`) VALUES
-(7, 'Bat', 'sdnj', 'batcave.jpg', 4, 2, '2014-07-03', '2014-07-03'),
-(8, 'Batcave entry', 'sefsf', 'batcave2.jpg', 4, 2, '2014-07-03', '2014-07-03'),
-(9, 'pool', 'ksjdfnsn', 'cool.jpg', 3, 2, '2014-07-03', '2014-07-03'),
-(10, 'Front', 'sdgfgdfrgdf', 'wayne.jpg', 3, 2, '2014-07-03', '2014-07-03');
+INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag`, `house_id`, `user_id`, `created`, `modified`) VALUES
+(7, 'Bat', 'sdnj', 'batcave.jpg', 0, 4, 2, '2014-07-03', '2014-07-03'),
+(8, 'Batcave entry', 'sefsf', 'batcave2.jpg', 0, 4, 2, '2014-07-03', '2014-07-03'),
+(9, 'pool', 'ksjdfnsn', 'cool.jpg', 0, 3, 2, '2014-07-03', '2014-07-03'),
+(10, 'Front', 'sdgfgdfrgdf', 'wayne.jpg', 0, 3, 2, '2014-07-03', '2014-07-03'),
+(11, 'first-floor', '', 'floorplan1-wayneManor.jpg', 2, 3, 6, '2014-07-07', '2014-07-07'),
+(12, 'Basement', 'thbgvfc', 'basement manor.jpg', -1, 3, 6, '2014-07-07', '2014-07-07');
 
 -- --------------------------------------------------------
 
@@ -287,14 +334,17 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `proposals`
 --
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `customer_id`, `land_id`, `house_id`, `user_id`, `created`, `modified`) VALUES
-(2, 'Prop for cus b 1', '', 3, 4, 3, 4, '2014-07-04', '2014-07-04');
+(2, 'Prop for cus b 1', '', 3, 4, 3, 4, '2014-07-04', '2014-07-04'),
+(3, 'Prop for cus a 33', 'trfyhjkl;[', 1, 1, 4, 3, '2014-07-05', '2014-07-05'),
+(4, 'Very expensive house', 'Tooooooooooooo expensive', 6, 1, 3, 6, '2014-07-07', '2014-07-07'),
+(5, 'Secret Lair', 'Cool', 6, 2, 4, 6, '2014-07-07', '2014-07-07');
 
 -- --------------------------------------------------------
 
