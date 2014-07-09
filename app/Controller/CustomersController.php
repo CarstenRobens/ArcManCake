@@ -67,7 +67,7 @@ class CustomersController extends AppController{
 
     public function edit($id = NULL) {
     	if (!$id) {
-        	throw new NotFoundException(__('Invaled pustomer'));
+        	throw new NotFoundException(__('Invaled customer'));
         }
             
         $x = $this->Customer->findById($id);

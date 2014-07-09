@@ -91,6 +91,17 @@
 		</div>
 		<?php } ?>
 	</div>			
+	
+	
+	<div class="row">
+		<div class="col-md-11" align=right>
+			<?php echo $this->Html->link(__('Edit'),array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	
+	
+	
 <!----------END PANEL CONTENT-------------->			
 			
 			
@@ -106,7 +117,7 @@
 			<div class="col-xs-7">		
 				<div class="CategorieTitleBox">
     	    		<div id="AddHouse">
-        				<?php echo $this->Html->link(__('Add house'),array('controller' => 'proposals','action' => 'add'));?>
+        				<?php echo $this->Html->link(__('Add house'),array('controller' => 'Proposals','action' => 'add_house',$proposal_view['Proposal']['id']));?>
     	    		</div>
     			</div>
     		</div>
@@ -146,7 +157,16 @@
 		<div class="col-md-2"></div>
 		
 		<div class="col-md-6">
+			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
 			<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
+			&middot;
+			<?php echo $this->Html->link(__('Edit'),array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?>
+			&middot;
+			<?php if ($x['MyExtra']['bool_custom']){
+				echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
+			}else{
+				echo $this->Form->postLink(__('Delete'),array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
+			} ?>
 		</div>
 		
 		<div class="col-md-2">
@@ -181,6 +201,18 @@
 	</div>
 	<hr>
 <?php } ?>
+
+<div class="row">
+	<div class="col-md-11" align=right>
+		<?php echo $this->Html->link(__('Add extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id']));?>
+		&middot;
+        <?php echo $this->Html->link(__('Add custom extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id']));?>
+	</div>
+	
+	<div class="col-md-1"></div>
+
+</div>
+
 	
 <!----------END PANEL CONTENT-------------->			
 			
@@ -195,6 +227,8 @@
 				<div class="CategorieTitleBox">
     	    		<div id="AddExtra">
         				<?php echo $this->Html->link(__('Add extra'),array('controller' => 'BoughtExtras','action' => 'add',$proposal_view['Proposal']['id']));?>
+        				&middot;
+        				<?php echo $this->Html->link(__('Add custom extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id']));?>
     	    		</div>
     			</div>
     		</div>
@@ -362,7 +396,12 @@
 	</div>
 		
 			
-			
+	<div class="row">
+		<div class="col-md-11" align=right>
+			<?php echo $this->Html->link(__('Edit'),array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']));?>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
 	
 	
 <!----------END PANEL CONTENT-------------->			
@@ -378,7 +417,7 @@
 			<div class="col-xs-7">		
 				<div class="CategorieTitleBox">
     	    		<div id="AddExtra">
-        				<?php echo $this->Html->link(__('Add extra'),array('controller' => 'BoughtExtras','action' => 'add',$proposal_view['Proposal']['id']));?>
+        				<?php echo $this->Html->link(__('Add land'),array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']));?>
     	    		</div>
     			</div>
     		</div>
@@ -387,60 +426,3 @@
     	
 	
 	<hr>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<legend>
-		<?php echo __( 'House: '.$proposal_view['MyHouse']['name']);?>
-	</legend>
-	
-	
-    <div class="row"id=" ">
-	  <?php if(true){?>
-        
-		<div class="col-md-2">
-		</div>
-		
-		<div class="col-md-2">
-		</div>
-		
-		<div class="col-md-6">
-		
-			<div class="row">
-				<div class="col-xs-4">
-					<p > <?php echo __('Name:'); ?> </p>
-					<p > <?php echo __('Surname:'); ?> </p>
-					<p > <?php echo __('Notes:'); ?> </p>
-				</div>
-			</div>
-		</div>
-		<?php } ?>
-	</div>
-    
-
-	<hr>
-
-
-
-<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'index')) ?>
-
-<h3><big><b><?php echo $proposal_view['Proposal']['name']; ?> </b></big></h3>
-
-<p><small>Created: <?php echo $proposal_view['Proposal']['created'].' by '.$proposal_view['MyUser']['username']; ?> </small></p>
-
-<p> <b>Customer: </b><?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname']; ?> </p>
-<p> <b>Land: </b><?php echo $proposal_view['MyLand']['name']; ?> </p>
-<p> <b>House: </b><?php echo $proposal_view['MyHouse']['name']; ?> </p>
-<p> <b>Notes: </b> </p>
-<p> <?php echo $proposal_view['Proposal']['notes']; ?> </p>

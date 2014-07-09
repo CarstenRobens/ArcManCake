@@ -1,4 +1,4 @@
-<h3>Edit Category</h3>
+<h3>Add Bought Extra</h3>
 
 <?php echo $this->Html->link('Back', array('controller'=>'Proposal','action'=>'index')) ?>
 

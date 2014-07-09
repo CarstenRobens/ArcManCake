@@ -29,7 +29,7 @@ class BoughtExtra extends AppModel{
     );
     
     public function idFromKeys ($proposal_id,$extra_id){
-    	return $id=$this->BoughtExtra->find('list',array(
+    	return $id=$this->find('list',array(
         		'conditions'=>array('proposal_id' => $proposal_id, 'extra_id' => $extra_id)
         ));
     }

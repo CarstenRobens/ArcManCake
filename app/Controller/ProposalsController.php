@@ -125,6 +125,14 @@ class ProposalsController extends AppController{
         }
     }
     
+    public function delete_custom_extra($bought_extra_id){
+    	$x = $this->Proposal->MyBoughtExtra->findById($bought_extra_id);
+    	if ($this->Proposal->MyBoughtExtra->MyExtra->delete($x['MyExtra']['id']) && $this->Proposal->MyBoughtExtra->delete($x['MyBoughtExtra']['id'])) {
+    		$this->Session->setFlash(__('Deleted'));
+    		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyBoughtExtra']['proposal_id']));
+    	}
+    }
+    
     
     public function gen_summary($id) {
     	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");

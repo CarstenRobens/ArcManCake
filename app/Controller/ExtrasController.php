@@ -56,9 +56,8 @@ class ExtrasController extends AppController{
 						$this->Session->setFlash(__('File not saved, you must use a picture.'));
 					}
 				}
-				
+				$this->request->data['Extra']['bool_custom'] = 0;
 				$this->request->data['Extra']['user_id'] = $this->Auth->user('id');
-				debug($this->request->data);
 				if ($this->Extra->save($this->request->data)) {
 					$this->Session->setFlash(__('The extra has been saved.'));
 					return $this->redirect(array('action' => 'index'));
@@ -84,6 +83,31 @@ class ExtrasController extends AppController{
 	}
 
 	
+	public function add_custom_extra($proposal_id=NULL) {
+	
+		if (!$proposal_id) {
+			throw new NotFoundException(__('Invaled Proposal'));
+		}
+		
+		$this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
+		$this->set('proposal_id_view',$proposal_id);
+		
+		if ($this->request->is('post')) {
+			$this->Extra->create();
+			//No Picture for custom Extras
+			$this->request->data['Extra']['bool_custom'] = 1;
+			$this->request->data['Extra']['user_id'] = $this->Auth->user('id');
+			if ($this->Extra->save($this->request->data)) {
+				$this->Session->setFlash(__('Custom extra added.'));
+				debug($this->request->data);
+				return $this->redirect(array('controller'=>'BoughtExtras','action' => 'add_default',$proposal_id,$this->Extra->getLastInsertId()));
+			}else{
+				$this->Session->setFlash(__('Unable to add your extra.'));
+			}
+		}
+	}
+	
+	
     public function edit($id = NULL) {
     	if (!$id) {
         	throw new NotFoundException(__('Invalid extra'));
@@ -108,6 +132,7 @@ class ExtrasController extends AppController{
         	$this->request->data=$x;
         }
 	}
+	
         
 	
     public function delete($id) {

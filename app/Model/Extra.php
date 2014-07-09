@@ -37,7 +37,7 @@ class Extra extends AppModel{
     		'message'=> 'Please enter a valid price',
     		'allowEmpty'=>false
 		),
-    	'category_id'=>array('rule'=>'notEmpty'),
+    	'category_id'=>array('rule'=>'notEmpty')
     );
     
 

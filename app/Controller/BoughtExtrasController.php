@@ -19,7 +19,7 @@ class BoughtExtrasController extends AppController{
 	
 	public function add($proposal_id=NULL) {
 		if (!$proposal_id) {
-			throw new NotFoundException(__('Invaled Proposal'));
+			throw new NotFoundException(__('Invalid Proposal'));
 		}
 	
 		$this->set('list_extras_view',$this->BoughtExtra->MyExtra->find('list'));
@@ -31,25 +31,77 @@ class BoughtExtrasController extends AppController{
 			$this->request->data['BoughtExtra']['proposal_id']=$proposal_id;
 			if ($this->BoughtExtra->save($this->request->data)) {
 				$this->Session->setFlash(__('Extra added.'));
-				return $this->redirect(array('controller'=>'Proposals', 'action'=>'edit',$proposal_id));
+				return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
 			}
 			$this->Session->setFlash(__('Unable to add extra to your proposal.'));
 		}
 	}    
 	
-    public function delete($proposal_id,$extra_id) {
-    	
-    	if ($this->request->is('get')) {
-        	throw new MethodNotAllowedException();
-        }
-        
-        $id=$this->BoughtExtra->idFromKeys($proposal_id,$extra_id);
-        
-        if ($this->BoughtExtra->delete($id)) {
-        	$this->Session->setFlash(__('Deleted'));
-            return $this->redirect(array('controller'=>'Proposals', 'action'=>'edit',$proposal_id));
-        }
-    }
+	public function add_default($proposal_id=NULL,$extra_id=NULL) {
+		if (!$proposal_id) {
+			throw new NotFoundException(__('Invalid Proposal'));
+		}
+		
+		if (!$extra_id) {
+			throw new NotFoundException(__('Invalid Extra'));
+		}
+		
+		$extra=$this->BoughtExtra->MyExtra->findById($extra_id);
+		
+		$bought_extra['proposal_id']=$proposal_id;
+		$bought_extra['extra_id']=$extra['MyExtra']['id'];
+		$bought_extra['price']=$extra['MyExtra']['default_price'];
+		$bought_extra['factor']=1;
+	
+		$this->BoughtExtra->create();
+		
+		if ($this->BoughtExtra->save($bought_extra)) {
+			$this->Session->setFlash(__('Extra added to proposal.'));
+			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
+		}
+		$this->Session->setFlash(__('Unable to add extra to your proposal.'));
+	}
+	
+	
+	public function edit($id = NULL) {
+		if (!$id) {
+			throw new NotFoundException(__('Invalid bought extra'));
+		}
+		
+		$x = $this->BoughtExtra->findById($id);
+		$this->set('proposal_id_view',$x['BoughtExtra']['proposal_id']);
+		
+		if (!$x) {
+			throw new NotFoundException (__('Invalid bought extra'));
+		}
+	
+		if ($this->request->is(array('bought_extra','put'))) {
+			$this->BoughtExtra->id = $id;
+			if ($this->BoughtExtra->save($this->request->data)) {
+				$this->Session->setFlash(__('The extra has been updated'));
+				return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
+			}
+			$this->Session->setFlash(__('Unable to update your customer.'));
+		}
+		if (!$this->request->data) {
+			$this->request->data=$x;
+		}
+	}
+	
    
-  	
+    public function delete($id) {
+    	 
+    	if ($this->request->is('get')) {
+    		throw new MethodNotAllowedException();
+    	}
+    	
+    	
+    	if ($this->BoughtExtra->delete($id)) {
+    		$this->Session->setFlash(__('Deleted'));
+    		return $this->redirect(array('controller'=>'Proposals', 'action'=>'index'));
+    	}
+    }
+    
+    
+    
 }
