@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 08, 2014 at 10:11 
+-- Generation Time: Jul 10, 2014 at 08:22 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -28,14 +28,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `bought_extras` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `price` int(11) NOT NULL,
-  `factor` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `factor` float NOT NULL,
   `extra_id` int(11) DEFAULT NULL,
   `proposal_id` int(11) DEFAULT NULL,
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -45,12 +45,18 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `extra_id`, `proposal_id`,
 (1, 100000, 1, 14, 2, '2014-07-04', '2014-07-04'),
 (2, 765, 1, 15, 2, '2014-07-04', '2014-07-04'),
 (3, 8765, 1, 13, 2, '2014-07-04', '2014-07-04'),
-(4, 3, 1, 16, 2, '2014-07-04', '2014-07-04'),
 (5, 1050, 1, 17, 2, '2014-07-04', '2014-07-04'),
 (6, 100, 1, 14, 3, '2014-07-05', '2014-07-05'),
 (7, 1000, 1, 15, 3, '2014-07-05', '2014-07-05'),
-(8, 1567, 2, 15, 4, '2014-07-08', '2014-07-08'),
-(9, 478, 3, 14, 4, '2014-07-08', '2014-07-08');
+(16, 345, 1, 33, 4, '2014-07-09', '2014-07-09'),
+(20, 2234, 1, 17, 4, '2014-07-10', '2014-07-10'),
+(21, 126, 1, 35, 4, '2014-07-10', '2014-07-10'),
+(24, 0, 0, NULL, NULL, '2014-07-10', '2014-07-10'),
+(25, 0, 0, NULL, NULL, '2014-07-10', '2014-07-10'),
+(26, 0, 0, NULL, NULL, '2014-07-10', '2014-07-10'),
+(27, 1000, 1, 13, 4, '2014-07-10', '2014-07-10'),
+(28, 1050, 1, 14, 4, '2014-07-10', '2014-07-10'),
+(30, 2000, 1, 15, 4, '2014-07-10', '2014-07-10');
 
 -- --------------------------------------------------------
 
@@ -173,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `default_price` int(11) NOT NULL,
+  `default_price` float NOT NULL,
   `picture` varchar(200) NOT NULL,
   `bool_size_dependent` tinyint(1) NOT NULL,
   `bool_custom` tinyint(1) NOT NULL,
@@ -183,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `extras`
@@ -191,10 +197,12 @@ CREATE TABLE IF NOT EXISTS `extras` (
 
 INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `bool_size_dependent`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
 (13, 'Cellar', 'Wet and dark', 1000, 'cellar.jpg', 0, 0, 0, 2, 3, '2014-07-02', '2014-07-02'),
-(14, 'Jacuzzi', '^^', 1050, 'jacuzzi.jpg', 0, 1, 0, 2, 4, '2014-07-02', '2014-07-02'),
-(15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 1, 1, 3, 4, '2014-07-02', '2014-07-02'),
-(16, 'Something boring', 'Booooooooooooooring', 5, '', 0, 1, 0, 1, 4, '2014-07-04', '2014-07-04'),
-(17, 'T-Rex', 'Rooooooooaarr', 1000, 'trex.jpg', 0, 0, 1, 6, 6, '2014-07-04', '2014-07-04');
+(14, 'Jacuzzi', '^^', 1050, 'jacuzzi.jpg', 0, 0, 0, 2, 4, '2014-07-02', '2014-07-09'),
+(15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 0, 1, 3, 4, '2014-07-02', '2014-07-09'),
+(17, 'T-Rex', 'Rooooooooaarr', 1000, 'trex.jpg', 0, 0, 1, 6, 6, '2014-07-04', '2014-07-04'),
+(31, 'Something boring', 'This tutorial is written for Django 1.6 and Python 2.x. If the Django version doesnâ€™t match, you can refer to the tutorial for your version of Django by using the version switcher at the bottom right corner of this page, or update Django to the newest version. If you are using Python 3.x, be aware that your code may need to differ from what is in the tutorial and you should continue using the tutorial only if you know what you are doing with Python 3.x.', 59, '', 0, 0, 0, 3, 6, '2014-07-09', '2014-07-09'),
+(33, 'stupid custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, '', 1, 1, 0, 1, 6, '2014-07-09', '2014-07-09'),
+(35, 'Custom stupid external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, '', 0, 1, 1, 4, 6, '2014-07-10', '2014-07-10');
 
 -- --------------------------------------------------------
 
@@ -232,9 +240,9 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `size` int(11) NOT NULL,
+  `size` float NOT NULL,
   `floors` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` float NOT NULL,
   `type` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created` date DEFAULT NULL,
@@ -247,8 +255,8 @@ CREATE TABLE IF NOT EXISTS `houses` (
 --
 
 INSERT INTO `houses` (`id`, `name`, `description`, `size`, `floors`, `price`, `type`, `user_id`, `created`, `modified`) VALUES
-(3, 'Wayne''s Manor', 'Beautiful palace. For a long time it has been home for the illustrious Wayne familie\r\n\r\nNote: Batcave not included', 2000, 2, 1234567890, 2, 6, '2014-07-01', '2014-07-01'),
-(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147483647, 3, 3, '2014-07-01', '2014-07-01');
+(3, 'Wayne''s Manor', 'Beautiful palace. For a long time it has been home for the illustrious Wayne familie\r\n\r\nNote: Batcave not included', 2000, 2, 1234570000, 2, 6, '2014-07-01', '2014-07-01'),
+(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01');
 
 -- --------------------------------------------------------
 
@@ -291,13 +299,13 @@ CREATE TABLE IF NOT EXISTS `lands` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `notes` text NOT NULL,
-  `land_size` int(11) NOT NULL,
-  `land_price_per_m2` int(11) NOT NULL,
-  `dev_size` int(11) NOT NULL,
-  `dev_cost_per_m2` int(11) NOT NULL,
-  `notary_cost` int(11) NOT NULL,
-  `land_agent_cost` int(11) NOT NULL,
-  `land_tax` int(11) NOT NULL,
+  `land_size` float NOT NULL,
+  `land_price_per_m2` float NOT NULL,
+  `dev_size` float NOT NULL,
+  `dev_cost_per_m2` float NOT NULL,
+  `notary_cost` float NOT NULL,
+  `land_agent_cost` float NOT NULL,
+  `land_tax` float NOT NULL,
   `customer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created` date DEFAULT NULL,
@@ -310,8 +318,8 @@ CREATE TABLE IF NOT EXISTS `lands` (
 --
 
 INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `customer_id`, `user_id`, `created`, `modified`) VALUES
-(1, 'Terminus', 'Desertic, no natural resources', 39999999, 1, 888888, 2, 30, 20, 21, 0, 3, '2014-07-02', '2014-07-02'),
-(2, 'Hyperion', 'Careful with the Shriek!', 2147483647, 3, 1234234, 2, 25, 23, 21, 0, 3, '2014-07-02', '2014-07-02'),
+(1, 'Terminus', 'Desertic, no natural resources', 40000000, 1, 888888, 2, 30, 20, 21, 0, 3, '2014-07-02', '2014-07-02'),
+(2, 'Hyperion', 'Careful with the Shriek!', 2147480000, 3, 1234230, 2, 25, 23, 21, 0, 3, '2014-07-02', '2014-07-02'),
 (4, 'Alderaan', 'Set your house on an asteroid!', 3000, 1, 600, 30, 1, 1, 0, 0, 3, '2014-07-02', '2014-07-02'),
 (5, 'land for cus a2', '', 234, 120, 123, 123, 2, 3, 21, 2, 3, '2014-07-02', '2014-07-02'),
 (6, 'land cus b', '', 4567, 456789, 5678, 5678, 5, 6, 21, 3, 4, '2014-07-04', '2014-07-04'),
@@ -330,21 +338,23 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `customer_id` int(11) NOT NULL,
   `land_id` int(11) NOT NULL,
   `house_id` int(11) NOT NULL,
+  `default_house_picture_id` varchar(200) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `proposals`
 --
 
-INSERT INTO `proposals` (`id`, `name`, `notes`, `customer_id`, `land_id`, `house_id`, `user_id`, `created`, `modified`) VALUES
-(2, 'Prop for cus b 1', '', 3, 4, 3, 4, '2014-07-04', '2014-07-04'),
-(3, 'Prop for cus a 33', 'trfyhjkl;[', 1, 1, 4, 3, '2014-07-05', '2014-07-05'),
-(4, 'Very expensive house', 'Tooooooooooooo expensive', 6, 1, 3, 6, '2014-07-07', '2014-07-07'),
-(5, 'Secret Lair', 'Cool', 6, 2, 4, 6, '2014-07-07', '2014-07-07');
+INSERT INTO `proposals` (`id`, `name`, `notes`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
+(2, 'Prop for cus b 1', '', 3, 4, 3, '', 4, '2014-07-04', '2014-07-04'),
+(3, 'Prop for cus a 33', 'trfyhjkl;[', 1, 1, 4, '', 3, '2014-07-05', '2014-07-05'),
+(4, 'Very expensive house', 'Tooooooooooooo expensive', 6, 4, 3, '10', 6, '2014-07-07', '2014-07-10'),
+(5, 'Secret Lair', 'Cool', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
+(6, 'Prop for cus a2: Cheap House', '', 2, 0, 0, '', 3, '2014-07-09', '2014-07-09');
 
 -- --------------------------------------------------------
 

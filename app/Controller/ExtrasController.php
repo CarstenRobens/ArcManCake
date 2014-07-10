@@ -83,10 +83,10 @@ class ExtrasController extends AppController{
 	}
 
 	
-	public function add_custom_extra($proposal_id=NULL) {
+	public function add_custom_extra($proposal_id=NULL,$bool_external) {
 	
 		if (!$proposal_id) {
-			throw new NotFoundException(__('Invaled Proposal'));
+			throw new NotFoundException(__('Invalid Proposal'));
 		}
 		
 		$this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
@@ -96,6 +96,7 @@ class ExtrasController extends AppController{
 			$this->Extra->create();
 			//No Picture for custom Extras
 			$this->request->data['Extra']['bool_custom'] = 1;
+			$this->request->data['Extra']['bool_external'] = $bool_external;
 			$this->request->data['Extra']['user_id'] = $this->Auth->user('id');
 			if ($this->Extra->save($this->request->data)) {
 				$this->Session->setFlash(__('Custom extra added.'));

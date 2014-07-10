@@ -63,6 +63,42 @@ class BoughtExtrasController extends AppController{
 	}
 	
 	
+	
+	public function add_many_extras($proposal_id=NULL,$bool_external=false) {
+		if (!$proposal_id) {
+			throw new NotFoundException(__('Invalid Proposal'));
+		}
+	
+		$proposal = $this->BoughtExtra->MyProposal->findById($proposal_id);
+		$extras=$this->BoughtExtra->MyExtra->find('all',array(
+            		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
+		$this->set('proposal_id_view',$proposal_id);
+		$this->set('extras_view',$extras);
+		$this->set('list_categories_view',$this->BoughtExtra->MyExtra->MyCategory->find('list'));
+	
+		if ($this->request->is('post')){
+			foreach($extras as $x){
+				if ($this->request->data['List_bool']['bool_'.$x['MyExtra']['id']]){
+					$this->BoughtExtra->create();
+					$save['BoughtExtra']['proposal_id']=$proposal_id;
+					$save['BoughtExtra']['extra_id']=$x['MyExtra']['id'];
+					$save['BoughtExtra']['price']=$x['MyExtra']['default_price'];
+					$save['BoughtExtra']['factor']=1;
+					
+					if (!$this->BoughtExtra->save($save)) {
+						$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'));
+					}
+				}
+			}
+			$this->Session->setFlash(__('Extras added.'));
+			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
+		}
+		
+	}
+	
+	
+	
+	
 	public function edit($id = NULL) {
 		if (!$id) {
 			throw new NotFoundException(__('Invalid bought extra'));
@@ -79,7 +115,7 @@ class BoughtExtrasController extends AppController{
 			$this->BoughtExtra->id = $id;
 			if ($this->BoughtExtra->save($this->request->data)) {
 				$this->Session->setFlash(__('The extra has been updated'));
-				return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
+				return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyProposal']['id']));
 			}
 			$this->Session->setFlash(__('Unable to update your customer.'));
 		}
@@ -95,10 +131,10 @@ class BoughtExtrasController extends AppController{
     		throw new MethodNotAllowedException();
     	}
     	
-    	
+    	$x = $this->BoughtExtra->findById($id);
     	if ($this->BoughtExtra->delete($id)) {
     		$this->Session->setFlash(__('Deleted'));
-    		return $this->redirect(array('controller'=>'Proposals', 'action'=>'index'));
+    		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view', $x['MyProposal']['id']));
     	}
     }
     

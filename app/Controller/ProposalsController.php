@@ -46,7 +46,9 @@ class ProposalsController extends AppController{
             $y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
 				'conditions'=>array('house_id' => $x['Proposal']['house_id'])));
             $z = $this->Proposal->MyBoughtExtra->find('all',array(
-				'conditions'=>array('proposal_id' => $x['Proposal']['id'])));
+				'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false)));
+            $zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
+            		'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
             
             if (!$x) {
                 throw new NotFoundException(__('Invalid proposal'));
@@ -55,7 +57,7 @@ class ProposalsController extends AppController{
             $this->set('proposal_view',$x);
             $this->set('house_pictures_view',$y);
             $this->set('bought_extras_view',$z);
-
+            $this->set('bought_external_extras_view',$zexternal);
 	}
 
 
@@ -112,6 +114,90 @@ class ProposalsController extends AppController{
         if (!$this->request->data) {
         	$this->request->data=$x;
         }
+	}
+	
+	public function edit_land($id = NULL) {
+		if (!$id) {
+			throw new NotFoundException(__('Invaled proposal'));
+		}
+	
+		$x = $this->Proposal->findById($id);
+		$this->set('proposal_id_view',$id);
+		$this->set('list_lands_view',$this->Proposal->MyLand->find('list',array(
+				'conditions'=>array('MyLand.customer_id' => array(0 ,$x['MyCustomer']['id']))
+		)));
+		
+		if (!$x) {
+			throw new NotFoundException (__('Invalid proposal'));
+		}
+	
+		if ($this->request->is(array('proposal','put'))) {
+			$this->Proposal->id = $id;
+			if ($this->Proposal->save($this->request->data)) {
+				$this->Session->setFlash(__('Your proposal has been updated'));
+				return $this->redirect(array('action'=>'view',$id));
+			}
+			$this->Session->setFlash(__('Unable to update your proposal.'));
+		}
+		if (!$this->request->data) {
+			$this->request->data=$x;
+		}
+	}
+	
+	public function edit_house($id = NULL) {
+		if (!$id) {
+			throw new NotFoundException(__('Invaled proposal'));
+		}
+	
+		$x = $this->Proposal->findById($id);
+		$this->set('proposal_id_view',$id);
+		$this->set('list_houses_view',$this->Proposal->MyHouse->find('list'));
+		
+	
+		if (!$x) {
+			throw new NotFoundException (__('Invalid proposal'));
+		}
+	
+		if ($this->request->is(array('proposal','put'))) {
+			$this->Proposal->id = $id;
+			if ($this->Proposal->save($this->request->data)) {
+				$this->Session->setFlash(__('Your proposal has been updated'));
+				return $this->redirect(array('action'=>'select_default_picture',$id));
+			}
+			$this->Session->setFlash(__('Unable to update your proposal.'));
+		}
+		if (!$this->request->data) {
+			$this->request->data=$x;
+		}
+	}
+	
+	public function select_default_picture($id = NULL) {
+		if (!$id) {
+			throw new NotFoundException(__('Invaled proposal'));
+		}
+	
+		$x = $this->Proposal->findById($id);
+		$this->set('proposal_id_view',$id);
+		$this->set('house_pictures_view',$this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id'=>$x['MyHouse']['id'])
+		)));
+	
+	
+		if (!$x) {
+			throw new NotFoundException (__('Invalid proposal'));
+		}
+	
+		if ($this->request->is(array('proposal','put'))) {
+			$this->Proposal->id = $id;
+			if ($this->Proposal->save($this->request->data)) {
+				$this->Session->setFlash(__('Your proposal has been updated'));
+				return $this->redirect(array('action'=>'view',$id));
+			}
+			$this->Session->setFlash(__('Unable to select the picture.'));
+		}
+		if (!$this->request->data) {
+			$this->request->data=$x;
+		}
 	}
         
 	
