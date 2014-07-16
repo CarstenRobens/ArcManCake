@@ -13,8 +13,13 @@
 <?php foreach ($list_categories_view as $index=>$category){ ?>
 	<div class="panel panel-primary">
        	<div class="panel-heading">
-			<h3 class="panel-title"><?php echo $category;?></h3>
+			<h3 class="panel-title">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
+					<?php echo $category;?>
+				</a>
+			</h3>
 		</div>
+		<div id="collapse<?php echo $index;?>" class="panel-collapse collapse in">
 		<div class="panel-body">
 			
 			
@@ -40,18 +45,8 @@
 			
 			
 		</div>
+		</div>
 	</div>
 <?php } ?> 
 </div>
 <?php echo $this->Form->end('Save extras'); ?>
-
-
-	<div class="row">
-		<div class="CategorieTitleBox" align=center>
-			<div id="AddExtra">
-        		<?php echo $this->Html->link(__('Add extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>
-       			&middot;
-       			<?php echo $this->Html->link(__('Add custom extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>
-        	</div>
-   		</div>
-   	</div>

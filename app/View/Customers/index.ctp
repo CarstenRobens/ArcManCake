@@ -4,11 +4,11 @@
 
 <table>
 	<tr>
-		<th>Id</th>
-		<th>Name</th>
-		<th>Created By</th>
+		<th><?php echo $this->Paginator->sort('id'); ?></th>
+		<th><?php echo $this->Paginator->sort('name'); ?></th>
+		<th><?php echo $this->Paginator->sort('MyUser.username','Created By'); ?></th>
         <th>Action</th>
-		<th>Created</th>
+		<th><?php echo $this->Paginator->sort('created'); ?></th>
 	</tr>
 
 <!-- Here is where we loop through our $customers array, printing out customer info --> 
@@ -23,9 +23,10 @@
             echo $this->Html->link('Edit',array('action' => 'edit',$x['Customer']['id'])).' | ';
             echo $this->Form->postLink('Delete',array('controller' => 'Customers','action' => 'delete',$x['Customer']['id']),array('confirm'=>'Are you sure?'));
         ?></td>
-		<td> <?php echo $x['Customer']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
+		<td> <?php echo $x['Customer']['created']; ?></td>
 	</tr>
 	<?php endforeach; ?>
+	<?php echo $this->Paginator->numbers(); ?>
 	<?php unset($customer); ?>
 </table>
 

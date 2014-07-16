@@ -1,6 +1,15 @@
 <?php
 class CustomersController extends AppController{
 	public $helper = array('Html','Form');
+	
+	public $components = array('Paginator');
+	
+	public $paginate = array(
+        'limit' => 2,
+        'order' => array(
+            'Customer.name' => 'asc'
+        )
+    );
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -30,10 +39,11 @@ class CustomersController extends AppController{
 	public function index() {
 		$logged_user = $this->Auth->user();
 		
+		$this->Paginator->settings = $this->paginate;
 		if ($logged_user['role']!=2){
-			$this->set('customers_view',$this->paginate());
+			$this->set('customers_view',$this->Paginator->paginate());
 		}else{
-			$this->set('customers_view',$this->paginate('Customer',array('Customer.user_id LIKE'=>$logged_user['id'])));
+			$this->set('customers_view',$this->Paginator->paginate('Customer',array('Customer.user_id LIKE'=>$logged_user['id'])));
 		}
 		
 		

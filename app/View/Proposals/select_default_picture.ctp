@@ -15,8 +15,5 @@
 
 
 
-
-echo $this->Form->input('default_house_picture_id',array('options'=> $list_houses_view));
-
 <?php echo $this->Form->end('Add house to proposal'); ?>
 

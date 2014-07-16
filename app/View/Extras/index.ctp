@@ -3,13 +3,15 @@
 	
 <table>
 	<tr>
-		<th>Id</th>
-		<th>Name</th>
-		<th>Default price</th>
-        <th>Custom</th>
-        <th>External</th>
+		<th><?php echo $this->Paginator->sort('id'); ?></th>
+		<th><?php echo $this->Paginator->sort('name'); ?></th>
+		<th><?php echo $this->Paginator->sort('default_price'); ?></th>
+		<th><?php echo $this->Paginator->sort('MyCategory.name','Category'); ?></th>
+		<th><?php echo $this->Paginator->sort('bool_size_dependent','Size dep.?'); ?></th>
+        <th><?php echo $this->Paginator->sort('bool_custom','Custom?'); ?></th>
+        <th><?php echo $this->Paginator->sort('bool_external','Ext?'); ?></th>
         <th>Action</th>
-		<th>Created</th>
+		<th><?php echo $this->Paginator->sort('created'); ?></th>
 	</tr>
 
 <!-- Here is where we loop through our $extras array, printing out extra info --> 
@@ -17,7 +19,15 @@
 	<tr> 
 		<td> <?php echo $x['Extra']['id']; ?> </td> 
 		<td> <?php echo $this->Html->link($x['Extra']['name'], array('controller'=>'Extras','action'=>'view',$x['Extra']['id'])); ?></td>
-		<td> <?php echo $x['Extra']['default_price'].' €' ?></td>
+		<td> <?php echo $x['Extra']['default_price'].' €'; ?></td>
+		<td> <?php echo $x['MyCategory']['name']; ?></td>
+		<td> <?php 
+		if ($x['Extra']['bool_size_dependent']==true){
+			echo 'yes'; 
+		}else{
+			echo 'no';
+		} 
+		?></td>
 		<td> <?php 
 		if ($x['Extra']['bool_custom']==true){
 			echo 'yes'; 
@@ -39,6 +49,7 @@
         <td> <?php echo $x['Extra']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>
 	<?php endforeach; ?>
+	<?php echo $this->Paginator->numbers(); ?>
 	<?php unset($extra); ?>
 </table>
 
@@ -55,7 +66,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	echo $this->Form->input('description');
 	echo $this->Form->input('default_price');
 	echo $this->Form->input('upload', array('type' => 'file'));
-	echo $this->Form->input('bool_external',array('default' => false));
+	echo $this->Form->input('bool_size_dependent',array('default' => false));
 	echo $this->Form->input('category_id',array('options'=> $list_categories_view));
 	
 	echo $this->Form->end('Save extra');
