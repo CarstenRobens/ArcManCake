@@ -258,6 +258,22 @@ class ProposalsController extends AppController{
     	return $this->redirect(array('action'=>'index'));
     	 
     }
+    
+    /**public function gen_contract() {
+    	require("/home/elgatil/Development/CakePHP/Blog/plugins/PHPWord_0.6.2_Beta/PHPWord.php");
+    	 
+    	
+		$PHPWord = new PHPWord();
+
+		$section = $PHPWord->createSection();
+
+		$section->addText('Hello world!');
+
+
+		$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
+		$objWriter->save('helloWorld.docx');
+    
+    }**/
 
     public function gen_bank_receipt() {
     	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");

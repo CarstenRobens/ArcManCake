@@ -2,6 +2,16 @@
 class ExtrasController extends AppController{
 	public $helper = array('Html','Form');
 
+	public $components = array('Paginator');
+	
+	public $paginate = array(
+			'limit' => 6,
+			'order' => array(
+					'Customer.name' => 'asc'
+			)
+	);
+	
+	
 	public function beforeFilter() {
 		parent::beforeFilter();
 		// Allow visitors to view extras
@@ -24,7 +34,8 @@ class ExtrasController extends AppController{
 	public function index() {
 		$logged_user = $this->Auth->user();
 		
-		$this->set('extras_view',$this->paginate());
+		$this->Paginator->settings = $this->paginate;
+		$this->set('extras_view',$this->Paginator->paginate());
 		
 		
 		if ($logged_user['role']<3){

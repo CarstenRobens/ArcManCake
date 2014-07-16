@@ -5,91 +5,52 @@
 </div>
 
 <hr>
-    <?php
-    foreach($houses_view as $House ){?>
-	
-	
+    <?php foreach($houses_view as $House ){?>
 
       <div class="row"id="<?php echo $id = str_replace(' ', '+', $House['House']['name']);?>">
-	  <?php
-        	if(true){?>
+	  <?php if(true){?>
         
-		<div class="col-md-2">
-		</div>
+		<div class="col-md-2"></div>
+		
 		<div class="col-md-2">
 			<div class="row">
-			<div class="col-md-12">
-				<?php 
-				if(!empty($House['MyHousePicture'])){
+				<?php if(!empty($House['MyHousePicture'])){
 					echo $this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][1]['picture'], array('class' => 'featurette-image img-responsive'));
-				
-				}
-				?>
-			</div>
+				} ?>
 			</div>
 		</div>
 		
 		<div class="col-md-6">
 		
 			<div class="row">
-				<div class="col-xs-4">
+				<div class="col-xs-12">
 					<p >
-					<?php
-					if(!empty($House['House']['name'])){
-						echo 'Name:';
-					}
-					?>
+						<?php echo 'Type'.$House['House']['type'].': <b><u>'.$House['House']['name'].'</u></b>'; ?>
+						<?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
+							&middot;
+							<?php echo $this->Html->link(__('Edit House', true), array('action' => 'edit', $House['House']['id'])); ?>
+							&middot;
+							<?php echo $this->Html->link(__('Delete House', true), array('action' => 'delete', $House['House']['id'])); ?>
+						<?php } ?> 
+						<br>
+						&nbsp; &nbsp;<?php echo ' <small>with '.$House['House']['size'].__(' m<sup>2</sup> in ').$House['House']['floors'].__(' floors.').'</small>'; ?>
 					</p>
-					<p >
-					
-					</p>
-				</div>
-				<div class="col-xs-8">
-					<p >
-					<?php
-					
-					if(!empty($House['House']['name'])){
-						echo ( $House['House']['name']);
-					}
-					?>
-					</p>
-					<p >
-					
+					<p>
+						<?php echo $House['House']['description']; ?>
 					</p>
 				</div>
-				
 			</div>
-			
-			
-			<?php 
-			if ($current_user['role'] < 2 && !empty($current_user))
-			{?>
-			<div class="row">
-				<div class="col-md-12">
-					<?php echo $this->Html->link(__('Edit House', true), array('action' => 'edit', $House['House']['id'])); ?>
-                    &middot;
-					<?php echo $this->Html->link(__('Delete House', true), array('action' => 'delete', $House['House']['id'])); ?>
-				</div>
-				
-				
-			</div>
-			<?php
-			}?>
-			
         </div>
-		<div class="col-md-2">
-		</div>
+        
+		<div class="col-md-2"> </div>
 		
-		
-		<?php
-		}?>
+		<?php }?>
       </div>
 	<hr>
 	
 	
     
-    <?php
-    }?>
+    <?php }?>
 
 
 
