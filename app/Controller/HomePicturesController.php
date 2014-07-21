@@ -63,6 +63,10 @@ class HomePicturesController extends AppController{
 			}
 		}
 	}
+	
+	public function home() {
+		$this->set('home_pictures_view',$this->HomePicture->find('all'));
+	}
 
 
 	public function view($id=null) {

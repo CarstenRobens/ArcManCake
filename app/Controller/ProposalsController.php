@@ -146,34 +146,38 @@ class ProposalsController extends AppController{
 	
 	public function edit_house($id = NULL) {
 		if (!$id) {
-			throw new NotFoundException(__('Invaled proposal'));
+			throw new NotFoundException(__('Invalid proposal'));
 		}
 	
-		$x = $this->Proposal->findById($id);
 		$this->set('proposal_id_view',$id);
-		$this->set('list_houses_view',$this->Proposal->MyHouse->find('list'));
+		$this->set('houses_view',$this->Proposal->MyHouse->find('all'));
 		
-	
-		if (!$x) {
-			throw new NotFoundException (__('Invalid proposal'));
-		}
-	
-		if ($this->request->is(array('proposal','put'))) {
-			$this->Proposal->id = $id;
-			if ($this->Proposal->save($this->request->data)) {
-				$this->Session->setFlash(__('Your proposal has been updated'));
-				return $this->redirect(array('action'=>'select_default_picture',$id));
-			}
-			$this->Session->setFlash(__('Unable to update your proposal.'));
-		}
-		if (!$this->request->data) {
-			$this->request->data=$x;
-		}
 	}
+	
+	public function selected_house($proposal_id = NULL, $house_id = NULL) {
+		if (!$proposal_id) {
+			throw new NotFoundException(__('Invalid proposal'));
+		}
+		
+		$x = $this->Proposal->findById($proposal_id);
+		
+		if (!$house_id) {
+			throw new NotFoundException(__('Invalid house'));
+		}
+		
+		$x['Proposal']['house_id']=$house_id;
+		
+		if ($this->Proposal->save($x)) {
+			$this->Session->setFlash(__('Your proposal has been updated'));
+			return $this->redirect(array('action'=>'select_default_picture',$proposal_id));
+		}
+		$this->Session->setFlash(__('Unable to update your proposal.'));
+	}
+	
 	
 	public function select_default_picture($id = NULL) {
 		if (!$id) {
-			throw new NotFoundException(__('Invaled proposal'));
+			throw new NotFoundException(__('Invalid proposal'));
 		}
 	
 		$x = $this->Proposal->findById($id);

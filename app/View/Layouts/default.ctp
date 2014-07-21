@@ -35,6 +35,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('carousel');
 		echo $this->Html->css('theme');
+		echo $this->Html->css('bootstrap-theme.min');
 		
 		echo $scripts_for_layout;
 		//echo $this->Html->script('jquery-1.2.6');

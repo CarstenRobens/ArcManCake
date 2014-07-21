@@ -111,12 +111,11 @@
 	
 <?php }else{ ?>
 	<div class="row">
-		<div class="CategorieTitleBox" align=center>
-        	<div id="AddHouse">
-       			<?php echo $this->Html->link(__('Add house'),array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?>
-       		</div>
-   		</div>
+		<div id="AddHouse" align=center>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']))?> role="button">Add house</a></p>
+       	</div>
 	</div>
+	<hr>
 <?php } ?>
    
     	
@@ -124,6 +123,220 @@
 	
 	
 	
+
+
+
+
+<!---------------------------------------------EXTRAS---------------------------------------------------->
+
+<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
+	<div class="row">
+		<div class="panel panel-success">
+           	<div class="panel-heading">
+				<h3 class="panel-title"><?php echo __( 'Extras');?></h3>
+			</div>
+			<div class="panel-body">
+			
+			
+<!----------PANEL CONTENT------------------>	
+			
+			
+<?php foreach($bought_extras_view as $index=>$x) { ?>
+	<div class="row">
+		<div class="col-md-2"></div>
+		
+		<div class="col-md-8">
+			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
+				<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
+			</a>
+			&middot;
+			<?php echo $this->Html->link(__('Edit'),array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?>
+			&middot;
+			<?php if ($x['MyExtra']['bool_custom']){
+				echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
+			}else{
+				echo $this->Form->postLink(__('Delete'),array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
+			} ?>
+		</div>
+		
+		
+		<div class="col-md-2"></div>
+	</div>
+	
+	<div id="collapse<?php echo $index;?>" class="panel-collapse collapse out">
+	<div class="row">
+		<div class="col-md-2"> </div>
+		
+		<div class="col-md-<?php if (!empty($x['MyExtra']['picture'])){ echo '6';}else{ echo '8';}?>">
+			<?php echo $x['MyExtra']['description']; ?>
+		</div>
+		
+		<?php if (!empty($x['MyExtra']['picture'])){ ?>
+			<div class="col-md-2">
+				<?php echo $this->Html->image('uploads/extras/'.$x['MyExtra']['picture'], array('class' => 'featurette-image img-responsive')); ?> 
+			</div>
+		<?php } ?>
+				
+		<div class="col-md-2"> </div>
+	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-8" align=right>
+			<b><?php echo __('Price'); ?></b>
+		</div>
+		
+		<div class="col-md-2">
+			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
+		</div>
+		
+		<div class="col-md-2"> </div>
+	</div>
+	<hr>
+<?php } ?>
+
+<div class="row">
+	<div class="col-md-11" align=right>
+		<?php echo $this->Html->link(__('Add extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>
+		&middot;
+        <?php echo $this->Html->link(__('Add custom extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>
+	</div>
+	
+	<div class="col-md-1"></div>
+
+</div>
+
+	
+<!----------END PANEL CONTENT-------------->			
+			
+			
+			</div>
+		</div>
+	</div>
+<?php }else{ ?>
+	<div class="row">
+		<div id="AddExtra" align=center>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> role="button">Add extras</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],0));?> role="button">Add custom extra</a></p>
+       	</div>
+	</div>
+	<hr>
+<?php } ?>
+    	
+
+
+
+
+
+
+
+
+
+	
+	
+	
+<!---------------------------------------------EXTERNAL EXTRAS---------------------------------------------------->
+
+<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
+	<div class="row">
+		<div class="panel panel-success">
+           	<div class="panel-heading">
+				<h3 class="panel-title"><?php echo __( 'External Extras');?></h3>
+			</div>
+			<div class="panel-body">
+			
+			
+<!----------PANEL CONTENT------------------>	
+			
+			
+<?php foreach($bought_external_extras_view as $index=>$x) { ?>
+	<div class="row">
+		<div class="col-md-2"></div>
+		
+		<div class="col-md-8">
+			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
+				<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
+			</a>
+			&middot;
+			<?php echo $this->Html->link(__('Edit'),array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?>
+			&middot;
+			<?php if ($x['MyExtra']['bool_custom']){
+				echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
+			}else{
+				echo $this->Form->postLink(__('Delete'),array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
+			} ?>
+		</div>
+		
+		
+		<div class="col-md-2"></div>
+	</div>
+	
+	<div id="collapse<?php echo $index;?>" class="panel-collapse collapse out">
+	<div class="row">
+		<div class="col-md-2"> </div>
+		
+		<div class="col-md-<?php if (!empty($x['MyExtra']['picture'])){ echo '6';}else{ echo '8';}?>">
+			<?php echo $x['MyExtra']['description']; ?>
+		</div>
+		
+		<?php if (!empty($x['MyExtra']['picture'])){ ?>
+			<div class="col-md-2">
+				<?php echo $this->Html->image('uploads/extras/'.$x['MyExtra']['picture'], array('class' => 'featurette-image img-responsive')); ?> 
+			</div>
+		<?php } ?>
+		
+		<div class="col-md-2"> </div>
+	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-8" align=right>
+			<b><?php echo __('Price'); ?></b>
+		</div>
+		
+		<div class="col-md-2">
+			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
+		</div>
+		
+		<div class="col-md-2"> </div>
+	</div>
+	<hr>
+<?php } ?>
+
+<div class="row">
+	<div class="col-md-11" align=right>
+		<?php echo $this->Html->link(__('Add external extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?>
+		&middot;
+        <?php echo $this->Html->link(__('Add custom external extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?>
+	</div>
+	
+	<div class="col-md-1"></div>
+
+</div>
+
+	
+<!----------END PANEL CONTENT-------------->			
+			
+			
+			</div>
+		</div>
+	</div>
+<?php }else{ ?>
+	<div class="row">
+		<div id="AddExtra" align=center>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> role="button">Add external extras</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],1));?> role="button">Add custom external extra</a></p>
+       	</div>
+	</div>
+	<hr>
+<?php } ?>
+    	
+
+
+
+
 
 
 
@@ -291,228 +504,20 @@
 	</div>
 <?php }else{ ?>
 	<div class="row">
-		<div class="CategorieTitleBox" align=center>
-			<div id="AddExtra">
-       			<?php echo $this->Html->link(__('Add land'),array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']));?>
-			</div>
-    	</div>
-	</div>
-<?php } ?>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<!---------------------------------------------EXTRAS---------------------------------------------------->
-
-<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
-	<div class="row">
-		<div class="panel panel-success">
-           	<div class="panel-heading">
-				<h3 class="panel-title"><?php echo __( 'Extras');?></h3>
-			</div>
-			<div class="panel-body">
-			
-			
-<!----------PANEL CONTENT------------------>	
-			
-			
-<?php foreach($bought_extras_view as $x) { ?>
-	<div class="row">
-		<div class="col-md-2"></div>
-		
-		<div class="col-md-6">
-			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
-			<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
-			&middot;
-			<?php echo $this->Html->link(__('Edit'),array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?>
-			&middot;
-			<?php if ($x['MyExtra']['bool_custom']){
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			}else{
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			} ?>
-		</div>
-		
-		<div class="col-md-2">
-			<?php if (!empty($x['MyExtra']['picture'])){ 
-				echo $this->Html->image('uploads/extras/'.$x['MyExtra']['picture'], array('class' => 'featurette-image img-responsive')); 
-			} ?>
-		</div>
-		
-		<div class="col-md-2"></div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-2"> </div>
-		
-		<div class="col-md-8">
-			<?php echo $x['MyExtra']['description']; ?>
-		</div>
-		
-		<div class="col-md-2"> </div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-8" align=right>
-			<b><?php echo __('Price'); ?></b>
-		</div>
-		
-		<div class="col-md-2">
-			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
-		</div>
-		
-		<div class="col-md-2"> </div>
+		<div id="AddLand" align=center>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']))?> role="button">Add land</a></p>
+       	</div>
 	</div>
 	<hr>
 <?php } ?>
-
-<div class="row">
-	<div class="col-md-11" align=right>
-		<?php echo $this->Html->link(__('Add extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>
-		&middot;
-        <?php echo $this->Html->link(__('Add custom extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>
-	</div>
-	
-	<div class="col-md-1"></div>
-
-</div>
-
-	
-<!----------END PANEL CONTENT-------------->			
-			
-			
-			</div>
-		</div>
-	</div>
-<?php }else{ ?>
-	<div class="row">
-		<div class="CategorieTitleBox" align=center>
-			<div id="AddExtra">
-        		<?php echo $this->Html->link(__('Add extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>
-       			&middot;
-       			<?php echo $this->Html->link(__('Add custom extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>
-        	</div>
-   		</div>
-   	</div>
-<?php } ?>
-    	
-
-
-
-
-
-
-
-
-
 	
 	
 	
-<!---------------------------------------------EXTERNAL EXTRAS---------------------------------------------------->
-
-<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
-	<div class="row">
-		<div class="panel panel-success">
-           	<div class="panel-heading">
-				<h3 class="panel-title"><?php echo __( 'External Extras');?></h3>
-			</div>
-			<div class="panel-body">
-			
-			
-<!----------PANEL CONTENT------------------>	
-			
-			
-<?php foreach($bought_external_extras_view as $x) { ?>
-	<div class="row">
-		<div class="col-md-2"></div>
-		
-		<div class="col-md-6">
-			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
-			<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
-			&middot;
-			<?php echo $this->Html->link(__('Edit'),array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?>
-			&middot;
-			<?php if ($x['MyExtra']['bool_custom']){
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			}else{
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			} ?>
-		</div>
-		
-		<div class="col-md-2">
-			<?php if (!empty($x['MyExtra']['picture'])){ 
-				echo $this->Html->image('uploads/extras/'.$x['MyExtra']['picture'], array('class' => 'featurette-image img-responsive')); 
-			} ?>
-		</div>
-		
-		<div class="col-md-2"></div>
-	</div>
+<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
+<span class="glyphicon glyphicon-adjust"></span>
+<span class="glyphicon-class">.glyphicon .glyphicon-adjust</span>
 	
-	<div class="row">
-		<div class="col-md-2"> </div>
-		
-		<div class="col-md-8">
-			<?php echo $x['MyExtra']['description']; ?>
-		</div>
-		
-		<div class="col-md-2"> </div>
-	</div>
 	
-	<div class="row">
-		<div class="col-md-8" align=right>
-			<b><?php echo __('Price'); ?></b>
-		</div>
-		
-		<div class="col-md-2">
-			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
-		</div>
-		
-		<div class="col-md-2"> </div>
-	</div>
-	<hr>
-<?php } ?>
-
-<div class="row">
-	<div class="col-md-11" align=right>
-		<?php echo $this->Html->link(__('Add external extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?>
-		&middot;
-        <?php echo $this->Html->link(__('Add custom external extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?>
-	</div>
 	
-	<div class="col-md-1"></div>
-
-</div>
-
 	
-<!----------END PANEL CONTENT-------------->			
-			
-			
-			</div>
-		</div>
-	</div>
-<?php }else{ ?>
-	<div class="row">
-		<div class="CategorieTitleBox" align=center>
-			<div id="AddExtra">
-        		<?php echo $this->Html->link(__('Add external extras'),array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?>
-       			&middot;
-       			<?php echo $this->Html->link(__('Add custom external extra'),array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?>
-        	</div>
-   		</div>
-   	</div>
-<?php } ?>
-    	
-
-
-
-
-
-
-
-
     	

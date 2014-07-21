@@ -20,7 +20,7 @@
 				<?php if($this->Session->read('menue.active')=='Home'){ ?>
 					<li class="active">	<?php }else{ ?>	<li>
 				<?php } ?>
-				<?php echo $this->Html->link(__('Home'), array('plugin'=>NULL,'controller' => 'home', 'action' => 'index')); ?></li>
+				<?php echo $this->Html->link(__('Home'), array('plugin'=>NULL,'controller' => 'HomePictures', 'action' => 'home')); ?></li>
 				
 				<?php if($this->Session->read('menue.active')=='Customers'){ ?>
 					<li class="active">	<?php }else{ ?>	<li>
