@@ -133,17 +133,9 @@
 	<?php }else{ ?>
 		<div class="row">
 		
-			<div class="col-xs-5">
+			<div class="col-md-12" align=center>
+				<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'proposals','action' => 'add', $customer_view['Customer']['id']));?> role="button"><span class="glyphicon glyphicon-plus"></span> Add proposal</a></p>
 			</div>
-			
-			<div class="col-xs-7">		
-				<div class="CategorieTitleBox">
-    	    		<div id="AddProposals">
-        				<?php echo $this->Html->link(__('Add proposal'),array('controller' => 'proposals','action' => 'add', $customer_view['Customer']['id']));?>
-    	    		</div>
-    			</div>
-    		</div>
-    		
     		
     	</div>
    <?php } ?>

@@ -10,8 +10,6 @@ echo $this->Form->create('Proposal');
 
 echo $this->Form->input('name');
 echo $this->Form->input('notes');
-echo $this->Form->input('land_id',array('options'=> $list_lands_view, 'default' => 0));
-echo $this->Form->input('house_id',array('options'=> $list_houses_view, 'default' => 0));
 
 echo $this->Form->end('Save proposal');
 ?>

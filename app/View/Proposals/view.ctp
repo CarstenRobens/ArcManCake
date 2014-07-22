@@ -32,6 +32,10 @@
 	</p>
 	
 	
+	
+	
+	
+	
 <!---------------------------------------------HOUSE---------------------------------------------------->
 	
 <?php if (!empty($proposal_view['MyHouse']['id'])){ ?>	
@@ -112,7 +116,7 @@
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddHouse" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']))?> role="button">Add house</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']))?> role="button"><span class="glyphicon glyphicon-plus"></span> Add house</a></p>
        	</div>
 	</div>
 	<hr>
@@ -145,19 +149,20 @@
 	<div class="row">
 		<div class="col-md-2"></div>
 		
-		<div class="col-md-8">
+		<div class="col-md-4">
 			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
 			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
 				<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
 			</a>
-			&middot;
-			<?php echo $this->Html->link(__('Edit'),array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?>
-			&middot;
-			<?php if ($x['MyExtra']['bool_custom']){
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			}else{
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			} ?>
+		</div>
+		<div class="col-md-4" align=right>
+			<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> role="button"><span class="glyphicon glyphicon-edit"></span></a>
+			
+			<?php if ($x['MyExtra']['bool_custom']){?>
+				<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']));?> role="button"><span class="glyphicon glyphicon-remove"></span></a>
+			<?php }else{ ?>
+				<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> role="button"><span class="glyphicon glyphicon-remove"></span></a>
+			<?php } ?>
 		</div>
 		
 		
@@ -217,8 +222,8 @@
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddExtra" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> role="button">Add extras</a></p>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],0));?> role="button">Add custom extra</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> role="button"><span class="glyphicon glyphicon-plus"></span> Add extras</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],0));?> role="button"><span class="glyphicon glyphicon-plus"></span> Add custom extra</a></p>
        	</div>
 	</div>
 	<hr>
@@ -238,8 +243,7 @@
 	
 <!---------------------------------------------EXTERNAL EXTRAS---------------------------------------------------->
 
-<?php $numExtras = $index+1;
-if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
+<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
 	<div class="row">
 		<div class="panel panel-success">
            	<div class="panel-heading">
@@ -255,26 +259,27 @@ if (!empty($proposal_view['MyBoughtExtra'])){ ?>
 	<div class="row">
 		<div class="col-md-2"></div>
 		
-		<div class="col-md-8">
+		<div class="col-md-4">
 			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index+$numExtras;?>">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseExt<?php echo $index;?>">
 				<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
 			</a>
-			&middot;
-			<?php echo $this->Html->link(__('Edit'),array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?>
-			&middot;
-			<?php if ($x['MyExtra']['bool_custom']){
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			}else{
-				echo $this->Form->postLink(__('Delete'),array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']),array('confirm'=>'Are you sure?'));
-			} ?>
+		</div>
+		<div class="col-md-4" align=right>
+			<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> role="button"><span class="glyphicon glyphicon-edit"></span></a>
+			
+			<?php if ($x['MyExtra']['bool_custom']){?>
+				<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']));?> role="button"><span class="glyphicon glyphicon-remove"></span></a>
+			<?php }else{ ?>
+				<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> role="button"><span class="glyphicon glyphicon-remove"></span></a>
+			<?php } ?>
 		</div>
 		
 		
 		<div class="col-md-2"></div>
 	</div>
 	
-	<div id="collapse<?php echo $index+$numExtras;?>" class="panel-collapse collapse out">
+	<div id="collapseExt<?php echo $index;?>" class="panel-collapse collapse out">
 	<div class="row">
 		<div class="col-md-2"> </div>
 		
@@ -327,8 +332,8 @@ if (!empty($proposal_view['MyBoughtExtra'])){ ?>
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddExtra" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> role="button">Add external extras</a></p>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],1));?> role="button">Add custom external extra</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> role="button"><span class="glyphicon glyphicon-plus"></span> Add external extras</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],1));?> role="button"><span class="glyphicon glyphicon-plus"></span> Add custom external extra</a></p>
        	</div>
 	</div>
 	<hr>
@@ -357,9 +362,16 @@ if (!empty($proposal_view['MyBoughtExtra'])){ ?>
 	<div class="row">
 		<div class="col-md-2"> </div>
 		
-		<div class="col-md-10">
-			<u><b><?php echo $proposal_view['MyLand']['name']; ?></b></u>
+		<div class="col-md-6">
+			<u><b><?php echo $proposal_view['MyLand']['name']; ?></b></u>  
 		</div>
+		
+		<div class="col-md-2" align=right> 
+			<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']));?> role="button"><span class="glyphicon glyphicon-edit"></span></a>
+		</div>
+		
+		<div class="col-md-2"> </div>
+		
 	</div>
 	
 	<?php if(!empty($proposal_view['MyLand']['notes'])){ ?>
@@ -487,14 +499,6 @@ if (!empty($proposal_view['MyBoughtExtra'])){ ?>
 		<div class="col-md-2">
 		</div>
 	</div>
-		
-			
-	<div class="row">
-		<div class="col-md-11" align=right>
-			<?php echo $this->Html->link(__('Edit'),array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']));?>
-		</div>
-		<div class="col-md-1"></div>
-	</div>
 	
 	
 <!----------END PANEL CONTENT-------------->			
@@ -506,7 +510,7 @@ if (!empty($proposal_view['MyBoughtExtra'])){ ?>
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddLand" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']))?> role="button">Add land</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']))?> role="button"> <span class="glyphicon glyphicon-plus"></span> Add land</a></p>
        	</div>
 	</div>
 	<hr>
@@ -516,9 +520,11 @@ if (!empty($proposal_view['MyBoughtExtra'])){ ?>
 	
 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-envelope"></span> Mail</button>
-<span class="glyphicon glyphicon-adjust"></span>
-<span class="glyphicon glyphicon glyphicon-adjust"></span>
-	
+<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> </button>
+<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> </button>
+<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> </button>
+<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-remove"></span> </button>
+<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> </button>
 	
 	
 	
