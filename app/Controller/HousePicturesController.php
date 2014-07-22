@@ -86,6 +86,8 @@ class HousePicturesController extends AppController{
     	if ($this->request->is('get')) {
         	throw new MethodNotAllowedException();
         }
+        $x=$this->HousePicture->findById($id);
+        unlink(WWW_ROOT.'img/uploads/houses/'.$x['HousePicture']['picture']);
         if ($this->HousePicture->delete($id)) {
         	$this->Session->setFlash(__('Picture with id: %s has been deleted',h($id)));
             return $this->redirect(array('action'=>'index'));

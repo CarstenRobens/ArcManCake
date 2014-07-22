@@ -21,37 +21,46 @@
 		<td> <?php echo $this->Html->link($x['Extra']['name'], array('controller'=>'Extras','action'=>'view',$x['Extra']['id'])); ?></td>
 		<td> <?php echo $x['Extra']['default_price'].' €'; ?></td>
 		<td> <?php echo $x['MyCategory']['name']; ?></td>
-		<td> <?php 
-		if ($x['Extra']['bool_size_dependent']==true){
+		<td> 
+		<?php if ($x['Extra']['bool_size_dependent']==true){
 			echo 'yes'; 
 		}else{
 			echo 'no';
-		} 
-		?></td>
-		<td> <?php 
-		if ($x['Extra']['bool_custom']==true){
+		} ?>
+		</td>
+		<td> 
+		<?php if ($x['Extra']['bool_custom']==true){
 			echo 'yes'; 
 		}else{
 			echo 'no';
-		} 
-		?></td>
-		<td> <?php 
-		if ($x['Extra']['bool_external']==true){
+		} ?>
+		</td>
+		<td> 
+		<?php if ($x['Extra']['bool_external']==true){
 			echo 'yes'; 
 		}else{
 			echo 'no';
-		} 
-		?></td>
-		<td> <?php 
+		} ?>
+		</td>
+		<td> 
+		<?php 
         	echo $this->Html->link('Edit',array('action' => 'edit',$x['Extra']['id'])).' | ';
             echo $this->Form->postLink('Delete',array('action' => 'delete',$x['Extra']['id']),array('confirm'=>'Are you sure?'));
-        ?></td>
+        ?>
+        </td>
         <td> <?php echo $x['Extra']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>
 	<?php endforeach; ?>
 	<?php echo $this->Paginator->numbers(); ?>
-	<?php unset($extra); ?>
+	<?php unset($x); ?>
 </table>
+
+
+
+
+
+
+
 
 
 <?php 
@@ -65,6 +74,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	echo $this->Form->input('name');
 	echo $this->Form->input('description');
 	echo $this->Form->input('default_price');
+	echo $this->Form->input('bool_external',array('default' => false));
 	echo $this->Form->input('upload', array('type' => 'file'));
 	echo $this->Form->input('bool_size_dependent',array('default' => false));
 	echo $this->Form->input('category_id',array('options'=> $list_categories_view));

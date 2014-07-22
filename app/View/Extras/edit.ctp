@@ -10,9 +10,9 @@
 	echo $this->Form->input('name');
 	echo $this->Form->input('description');
 	echo $this->Form->input('default_price');
+	echo $this->Form->input('bool_external');
 	echo $this->Form->input('upload', array('type' => 'file'));
-	echo $this->Form->input('bool_custom',array('default' => false));
-	echo $this->Form->input('bool_external',array('default' => false));
+	echo $this->Form->input('bool_size_dependent',array('default' => false));
 	echo $this->Form->input('category_id',array('options'=> $list_categories_view));
 	
 	echo $this->Form->end('Save extra');

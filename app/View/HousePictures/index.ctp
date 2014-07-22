@@ -47,7 +47,7 @@
 			<?php if ($current_user['role'] < 2 && !empty($current_user)){?>
 				<div class="row">
 					<div class="col-md-12">
-						<?php echo $this->Html->link(__('Delete House Picture', true), array('action' => 'delete', $x['HousePicture']['id'])); ?>
+						<?php echo $this->Form->postLink(__('Delete house picture'),array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?')); ?>
 					</div>
 				</div>
 			<?php }?>

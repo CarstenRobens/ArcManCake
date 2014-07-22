@@ -5,22 +5,27 @@
 <p><small>Created: <?php echo $extra_view['Extra']['created'].' by '.$extra_view['MyUser']['username']; ?> </small></p>
 
 <p> <b> Picture: </b> </p>
-<p><?php echo $this->Html->image('uploads/extras/'.$extra_view['Extra']['picture'], array('alt'=> __(' ', true), 'border' => '0')); ?></p>
-
+<p>
+<?php if (!empty($extra_view['Extra']['picture'])){
+	echo $this->Html->image('uploads/extras/'.$extra_view['Extra']['picture'], array('alt'=> __(' ', true), 'border' => '0'));
+} ?>
+</p>
 <p> <b> Default price: </b> <?php echo $extra_view['Extra']['default_price']; ?></p>
 
-<p><b> Custom? </b> <?php 
-if ($extra_view['Extra']['bool_custom']==true){
+<p><b> Custom? </b> 
+<?php if ($extra_view['Extra']['bool_custom']==true){
 	echo 'yes'; 
 }else{
 	echo 'no';
-} ?></p>
+} ?>
+</p>
 
-<p><b> External? </b> <?php 
-if ($extra_view['Extra']['bool_external']==true){
+<p><b> External? </b> 
+<?php if ($extra_view['Extra']['bool_external']==true){
 	echo 'yes'; 
 }else{
 	echo 'no';
-} ?></p>
+} ?>
+</p>
 <p> <b> Description: </b> </p>
 <p> <?php echo $extra_view['Extra']['description']; ?> </p>

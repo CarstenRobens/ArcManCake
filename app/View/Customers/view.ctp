@@ -9,7 +9,7 @@
     
 	<hr >
       <div class="row"id="<?php echo $id = str_replace(' ', '+', $customer_view['Customer']['name']);?>">
-	  <?php if(true){?>
+	  <?php if(true){ ?>
         
 		<div class="col-md-2">
 		</div>
@@ -88,7 +88,7 @@
 		<div class="col-md-2">
 		</div>
 		
-		<?php }?>
+		<?php } ?>
     </div>
       
       
