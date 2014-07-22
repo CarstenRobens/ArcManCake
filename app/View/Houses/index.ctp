@@ -15,7 +15,7 @@
 		<div class="col-md-2">
 			<div class="row">
 				<?php if(!empty($House['MyHousePicture'])){
-					echo $this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][1]['picture'], array('class' => 'featurette-image img-responsive'));
+					echo $this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][0]['picture'], array('class' => 'featurette-image img-responsive'));
 				} ?>
 			</div>
 		</div>
@@ -28,9 +28,9 @@
 						<?php echo 'Type'.$House['House']['type'].': <b><u>'.$House['House']['name'].'</u></b>'; ?>
 						<?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
 							&middot;
-							<?php echo $this->Html->link(__('Edit House', true), array('action' => 'edit', $House['House']['id'])); ?>
-							&middot;
-							<?php echo $this->Html->link(__('Delete House', true), array('action' => 'delete', $House['House']['id'])); ?>
+							<a href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
+							<a href=<?php echo $this->Html->url(array('action' => 'edit', $House['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+							<a href=<?php echo $this->Html->url(array('action' => 'delete', $House['House']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 						<?php } ?> 
 						<br>
 						&nbsp; &nbsp;<?php echo ' <small>with '.$House['House']['size'].__(' m<sup>2</sup> in ').$House['House']['floors'].__(' floors.').'</small>'; ?>

@@ -1,5 +1,5 @@
 <hr>
-    <?php foreach($house_pictures_view as $x){?>
+    <?php foreach($house_pictures_view as $x){ ?>
 	
 	
 
@@ -44,7 +44,7 @@
 			</div>
 			
 			
-			<?php if ($current_user['role'] < 2 && !empty($current_user)){?>
+			<?php if ($current_user['role'] < 2 && !empty($current_user)){ ?>
 				<div class="row">
 					<div class="col-md-12">
 						<?php echo $this->Form->postLink(__('Delete house picture'),array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?')); ?>
@@ -60,7 +60,7 @@
       </div>
 	<hr>
     
-    <?php }?>
+    <?php } ?>
 
 
 
@@ -129,7 +129,9 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 							echo $this->Form->input('name');
 							echo $this->Form->input('description');
 							echo $this->Form->input('upload', array('type' => 'file'));
-							echo $this->Form->input('house_id',array('options'=> $list_houses_view));
+							if ($house_id_view==NULL){
+								echo $this->Form->input('house_id',array('options'=> $list_houses_view));	
+							}
 							echo $this->Form->input('type_flag',array('options'=> $house_pic_type, 'label'=>'Type','default'=>0));
 						?>
 				</div>						

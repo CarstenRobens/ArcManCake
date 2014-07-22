@@ -20,13 +20,20 @@ class HousePicturesController extends AppController{
 	}
 	
 	
-	public function index() {
+	public function index($house_id=NULL) {
 		$logged_user = $this->Auth->user();
-		$this->set('house_pictures_view',$this->paginate());
+		if ($house_id==NULL){
+			$this->set('house_pictures_view',$this->paginate());
+		}else{
+			$this->set('house_pictures_view',$this->paginate('HousePicture',array('HousePicture.house_id'=>$house_id)));
+			$this->request->data['HousePicture']['house_id'] = $house_id;
+		}
+		$this->set('house_id_view',$house_id);
 		
 		// add
 		if ($logged_user['role']<3 && !empty($logged_user)){
 			
+			$this->set('house_id_view',$house_id);
 			$this->set('list_houses_view',$this->HousePicture->MyHouse->find('list'));
 			
 			if ($this->request->is('post')) {
@@ -55,7 +62,7 @@ class HousePicturesController extends AppController{
 					}
 				}
 				
-				$this->request->data['HousePicture']['user_id'] = $this->Auth->user('id');
+				$this->request->data['HousePicture']['picture'] = $file['name'];
 				
 				if ($this->HousePicture->save($this->request->data)) {
 					$this->Session->setFlash(__('Picture saved.'));
