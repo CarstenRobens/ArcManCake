@@ -33,23 +33,50 @@
 
 <?php 
 if ($current_user['role'] < 3 && !empty($current_user) ) {?>
+	<div class="container">
+	<div class="contactwrapper">
+	<div class="view">
 
-	<h3>Add customer</h3>
+	<div class="PostBox">
+		<div class="PostContent">
+			<div class="PostContentBox">
+				<div class="PostMainContentbox">
+						<legend>
+							<?php echo __('Add a Customer'); ?>
+						</legend>
+						
+						<?php 
+						echo $this->Form->create('Customer', array('class' => 'form'));
+						
+						echo $this->Form->input('name',array('placeholder' => __('Enter the customer name'),'label' => __('Name'),'div' => 'form-group has-success'));
+						echo $this->Form->input('surname',array('placeholder' => __('Enter the customer surname'),'label' => __('Surname'),'div' => 'form-group has-success'));
+						echo $this->Form->input('phone',array('placeholder' => __('Enter the customer phone number'),'label' => __('Phone'),'div' => 'form-group has-success'));
+						echo $this->Form->input('email',array('placeholder' => __('Enter the customer email address'),'label' => __('eMail'),'div' => 'form-group has-success'));
+						echo $this->Form->input('address1',array('placeholder' => __('Enter the customer post address'),'label' => __('Post Address'),'div' => 'form-group has-success'));
+						echo $this->Form->input('address2',array('placeholder' => __('additional post address information'),'label' => __('Post Address 2'),'div' => 'form-group has-success'));
+						echo $this->Form->input('zipcode',array('placeholder' => __('Enter the customer zipcode'),'label' => __('Zipcode'),'div' => 'form-group has-success'));
+						echo $this->Form->input('city',array('placeholder' => __('Enter the customer City'),'label' => __('City'),'div' => 'form-group has-success'));
+						echo $this->Form->input('notes',array('placeholder' => __('additional notes if required'),'label' => __('Notes'),'div' => 'form-group has-success'));
+						?>	
+						
+				</div>						
+			</div>
+		</div>
+		<p style="clear: both;"> </p>
+
+		<div class="PostFooter">
+			<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Save Customer'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
+			<p style="clear: both;">  </p>
+		</div>
+	</div>
+		
+	</div>
+	</div>
+	</div> <!-- /container -->
+	
+	
 
 	<?php 
-	echo $this->Form->create('Customer');
-	
-	echo $this->Form->input('name');
-	echo $this->Form->input('surname');
-	echo $this->Form->input('notes');
-	echo $this->Form->input('phone');
-	echo $this->Form->input('email');
-	echo $this->Form->input('address1');
-	echo $this->Form->input('address2');
-	echo $this->Form->input('zipcode');
-	echo $this->Form->input('city');
-	
-	echo $this->Form->end('Save customer');
 }?>
 
 
