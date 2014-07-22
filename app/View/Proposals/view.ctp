@@ -238,7 +238,8 @@
 	
 <!---------------------------------------------EXTERNAL EXTRAS---------------------------------------------------->
 
-<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
+<?php $numExtras = $index+1;
+if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
 	<div class="row">
 		<div class="panel panel-success">
            	<div class="panel-heading">
@@ -256,7 +257,7 @@
 		
 		<div class="col-md-8">
 			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index+$numExtras;?>">
 				<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
 			</a>
 			&middot;
@@ -273,7 +274,7 @@
 		<div class="col-md-2"></div>
 	</div>
 	
-	<div id="collapse<?php echo $index;?>" class="panel-collapse collapse out">
+	<div id="collapse<?php echo $index+$numExtras;?>" class="panel-collapse collapse out">
 	<div class="row">
 		<div class="col-md-2"> </div>
 		
@@ -514,8 +515,9 @@
 	
 	
 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
+<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-envelope"></span> Mail</button>
 <span class="glyphicon glyphicon-adjust"></span>
-<span class="glyphicon-class">.glyphicon .glyphicon-adjust</span>
+<span class="glyphicon glyphicon glyphicon-adjust"></span>
 	
 	
 	
