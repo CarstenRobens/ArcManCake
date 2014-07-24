@@ -46,7 +46,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 						</legend>
 						
 						<?php 
-						echo $this->Form->create('Customer', array('class' => 'form'));
+						echo $this->Form->create('Customer', array('class' => 'form-horizontal'));
 						
 						echo $this->Form->input('name',array('placeholder' => __('Enter the customer name'),'label' => __('Name'),'div' => 'form-group has-success'));
 						echo $this->Form->input('surname',array('placeholder' => __('Enter the customer surname'),'label' => __('Surname'),'div' => 'form-group has-success'));
@@ -79,4 +79,5 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	<?php 
 }?>
 
+		
 

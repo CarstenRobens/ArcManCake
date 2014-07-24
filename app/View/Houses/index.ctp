@@ -122,7 +122,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 		<div class="PostContent">
 			<div class="PostContentBox">
 				<div class="PostMainContentbox">
-						<?php echo $this->Form->create('House');?>	
+						<?php echo $this->Form->create('House', array('class' => 'form-horizontal'));?>	
 						<legend>
 							<?php echo __('Add a House'); ?>
 						</legend>

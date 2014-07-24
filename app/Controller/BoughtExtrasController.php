@@ -106,7 +106,7 @@ class BoughtExtrasController extends AppController{
 		
 		$x = $this->BoughtExtra->findById($id);
 		$this->set('proposal_id_view',$x['BoughtExtra']['proposal_id']);
-		
+		$this->set('bought_extra',$x);
 		if (!$x) {
 			throw new NotFoundException (__('Invalid bought extra'));
 		}
@@ -127,9 +127,7 @@ class BoughtExtrasController extends AppController{
    
     public function delete($id) {
     	 
-    	if ($this->request->is('get')) {
-    		throw new MethodNotAllowedException();
-    	}
+    	
     	
     	$x = $this->BoughtExtra->findById($id);
     	if ($this->BoughtExtra->delete($id)) {
