@@ -12,7 +12,7 @@
 	</tr>
 
 <!-- Here is where we loop through our $customers array, printing out customer info --> 
-	<?php foreach($customers_view as $x ): ?>
+	<?php foreach($customers_view as $x ){ ?>
 	<tr> 
 		<td> <?php echo $x['Customer']['id']; ?> </td> 
 		<td> <?php echo $this->Html->link($x['Customer']['name'].' '.$x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
@@ -25,7 +25,7 @@
         ?></td>
 		<td> <?php echo $x['Customer']['created']; ?></td>
 	</tr>
-	<?php endforeach; ?>
+	<?php } ?>
 	<?php echo $this->Paginator->numbers(); ?>
 	<?php unset($customer); ?>
 </table>

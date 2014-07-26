@@ -162,5 +162,10 @@ class LandsController extends AppController{
     	return $this->redirect(array('action'=>'index'));
     	 
     }
+    
+    public function all_names() {
+    	$this->set('land_list_view',$this->Land->find('list'));
+    
+    }
   	
 }

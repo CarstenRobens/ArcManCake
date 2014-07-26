@@ -18,7 +18,7 @@
 			<div class="row">
 				<?php if(!empty($House['MyHousePicture'])){
 					echo $this->Html->link(
-						$this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][1]['picture'], array('class' => 'featurette-image img-responsive')),
+						$this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][0]['picture'], array('class' => 'featurette-image img-responsive')),
 						array('controller'=>'Proposals','action'=>'selected_house', $proposal_id_view, $House['MyHouse']['id']),
 						array('escape' => false)
 					);
