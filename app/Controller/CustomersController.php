@@ -5,7 +5,7 @@ class CustomersController extends AppController{
 	public $components = array('Paginator');
 	
 	public $paginate = array(
-        'limit' => 2,
+        'limit' => 5,
         'order' => array(
             'Customer.name' => 'asc'
         )

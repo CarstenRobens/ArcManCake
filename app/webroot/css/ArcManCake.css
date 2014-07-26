@@ -237,7 +237,7 @@ div.footerwrapper{
 
 
 /** containers **/
-div.form,
+
 div.index,
 div.view ,
 div.home{
@@ -350,46 +350,7 @@ dd {
 }
 
 /** Forms **/
-form {
-	clear: both;
-	margin-right: 20px;
-	padding: 0;
-	width: 95%;
-}
-fieldset {
-	border: 0px solid #ccc;
-	margin-bottom: 1em;
-	padding: 5px 5px;
-	text-align:justify;
-}
-fieldset legend {
-	font-size: 160%;
-	font-weight: bold;
-}
-fieldset disclaimer {
-	font-size: 120%;
-	font-weight: bold;
-	text-align:justify;
-}
-fieldset fieldset {
-	margin-top: 0px;
-	margin-bottom: 20px;
-	padding: 16px 10px;
-}
-fieldset fieldset legend {
-	font-size: 120%;
-	font-weight: normal;
-}
-fieldset fieldset div {
-	clear: left;
-	margin: 0 20px;
-}
-form div {
-	clear: both;
-	margin-bottom: 1em;
-	padding: .5em;
-	vertical-align: text-top;
-}
+
 
 div.000000 input{
 	width: 20%;

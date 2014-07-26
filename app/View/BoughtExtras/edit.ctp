@@ -9,7 +9,9 @@
 				<div class="PostMainContentbox">
 						<?php echo $this->Form->create('BoughtExtra');?>	
 						<legend>
-							<?php echo __('Edit User'); ?>
+							<?php 
+							echo __('Change the price of: ');
+							echo $bought_extra['MyExtra']['name']; ?>
 						</legend>
 						
 						<?php 

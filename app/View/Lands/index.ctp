@@ -41,7 +41,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	<h3>Add Land</h3>
 
 	<?php 
-	echo $this->Form->create('Land');
+	echo $this->Form->create('Land', array('class' => 'form-horizontal'));
 	
 	echo $this->Form->input('name');
 	echo $this->Form->input('notes');
