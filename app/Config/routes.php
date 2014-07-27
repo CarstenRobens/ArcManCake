@@ -41,3 +41,10 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
+
+
+/**
+ * This will enable Router to handle multiple extensions.
+ */
+
+	Router::parseExtensions('json','xml');

@@ -1,5 +1,6 @@
 <?php
 class ProposalsController extends AppController{
+	public $components = array('RequestHandler');
 	public $helper = array('Html','Form');
 
 	public function beforeFilter() {
@@ -143,6 +144,29 @@ class ProposalsController extends AppController{
 			$this->request->data=$x;
 		}
 	}
+	
+	public function selected_land(){
+		
+		$proposal_id=$this->request->data['proposal_id'];
+		$land_id=$this->request->data['land_id'];
+		
+		if (!$proposal_id) {
+			throw new NotFoundException(__('Invalid proposal'));
+		}
+		$x = $this->Proposal->findById($proposal_id);
+	
+		if (!$land_id) {
+			throw new NotFoundException(__('Invalid land'));
+		}
+		$x['Proposal']['land_id']=$land_id;
+	
+		if ($this->Proposal->save($x)) {
+			$this->set('confirmation','Land has been changed');
+			$this->set('_serialize',array('confirmation'));
+		}
+		$this->Session->setFlash(__('Unable to update your proposal.'));
+	}
+	
 	
 	public function edit_house($id = NULL) {
 		if (!$id) {

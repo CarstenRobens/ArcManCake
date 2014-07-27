@@ -1,5 +1,7 @@
 <?php
 class LandsController extends AppController{
+	
+	public $components = array('RequestHandler');
 	public $helper = array('Html','Form');
 
 	public function beforeFilter() {
@@ -164,8 +166,13 @@ class LandsController extends AppController{
     }
     
     public function all_names() {
-    	$this->set('land_list_view',$this->Land->find('list'));
-    
+    	$lands=$this->Land->find('list');
+    	$lands2=array();
+    	foreach ($lands as $index=>$land){
+    		$lands2[]=array($index,$land);
+    	}
+    	$this->set('land_list_view',$lands2);
+    	$this->set('_serialize',array('land_list_view'));
     }
   	
 }

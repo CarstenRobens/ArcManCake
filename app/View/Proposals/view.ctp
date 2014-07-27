@@ -358,8 +358,49 @@
 		<div class="col-md-2"> </div>
 		
 		<div class="col-md-6">
-			<u><b><?php echo $proposal_view['MyLand']['name']; ?></b></u>  
+			<strong id="foo" ><?php echo $proposal_view['MyLand']['name']; ?></strong> 
+			<select id="bar" style="display:none;"></select> 
 		</div>
+		
+		<script>
+			$( "#foo" ).click(function() {
+				$.ajax({
+					url: "<?php echo $this->Html->url(array('controller'=>'Lands','action'=>'all_names')); ?>.json",
+					success: function(response) {
+
+						var arr = response.land_list_view
+						
+						$( "#foo" ).hide();
+						$( "#bar" ).show();
+
+						$(arr).each(function() {
+							$('#bar').append($("<option>").attr('value',this[0]).text(this[1]));
+						});
+					}
+				})
+			})		
+			
+			         
+			$('#bar').click(function(){
+				var selection=$('#bar option:selected').attr('value')
+				
+				var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , land_id:selection}
+				
+				$.ajax({
+					url: "<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'selected_land')); ?>.json",
+					type: "POST",
+					data: formData,
+					success: function(response) {
+						alert(response.confirmation)
+						location.reload()
+					}
+				});
+			})
+		</script>
+		
+		
+		
+		
 		
 		<div class="col-md-2" align=right> 
 			<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>

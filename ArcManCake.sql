@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2014 at 08:22 
+-- Generation Time: Jul 27, 2014 at 10:57 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -56,7 +56,10 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `extra_id`, `proposal_id`,
 (26, 0, 0, NULL, NULL, '2014-07-10', '2014-07-10'),
 (27, 1000, 1, 13, 4, '2014-07-10', '2014-07-10'),
 (28, 1050, 1, 14, 4, '2014-07-10', '2014-07-10'),
-(30, 2000, 1, 15, 4, '2014-07-10', '2014-07-10');
+(30, 2000, 1, 15, 4, '2014-07-10', '2014-07-10'),
+(31, 30000, 1, 41, 4, '2014-07-11', '2014-07-11'),
+(32, 34563, 1, 42, 4, '2014-07-11', '2014-07-11'),
+(33, 5000, 1, 43, 4, '2014-07-11', '2014-07-11');
 
 -- --------------------------------------------------------
 
@@ -189,20 +192,28 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `extras`
 --
 
 INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `bool_size_dependent`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
-(13, 'Cellar', 'Wet and dark', 1000, 'cellar.jpg', 0, 0, 0, 2, 3, '2014-07-02', '2014-07-02'),
-(14, 'Jacuzzi', '^^', 1050, 'jacuzzi.jpg', 0, 0, 0, 2, 4, '2014-07-02', '2014-07-09'),
+(14, 'Jacuzzi', 'One of the all-time classic adventures, multi BAFTA-nominated "Broken Sword: Director''s Cut" pitches sassy journalist Nico Collard, and intrepid American George Stobbart into a mysterious journey of intrigue and jeopardy. Guide George and Nico on their globe-spanning adventure, exploring exotic locations, solving ancient mysteries, and thwarting a dark conspiracy to reveal the secret truths of the Knights Templar. \r\n\r\n"Broken Sword: The Directorâ€™s Cut" introduces an intricate new narrative thread, alongside the classic story that has charmed millions of players. Itâ€™s time to experience George and Nicoâ€™s worldwide adventure in a whole new way, with brand new puzzles, hilarious new jokes, and the distinctive, rich story that made the series so deservedly renowned. This is adventure gaming at its very best. ', 1050, 'jacuzzi.jpg', 0, 0, 0, 4, 4, '2014-07-02', '2014-07-22'),
 (15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 0, 1, 3, 4, '2014-07-02', '2014-07-09'),
-(17, 'T-Rex', 'Rooooooooaarr', 1000, 'trex.jpg', 0, 0, 1, 6, 6, '2014-07-04', '2014-07-04'),
+(17, 'T-Rex', 'Rooooooooaarr\r\n\r\nEver wonder how it feels to sail a half-million-ton supertanker through the perfect storm? To take on illegal whale hunters in the Antarctic? Or to feel the rush of being part of the Coast Guard as you evacuate a cruise liner in distress? Ship Simulator Extremes has players take on exciting missions all over the world as they pilot an impressive array of vessels and live the stories of real ship captains. With missions based on actual events in realistic environments at locations all over the world, the new Ship Simulator game is sure to take you to extremes! ', 1000, 'trex.jpg', 0, 0, 1, 6, 6, '2014-07-04', '2014-07-22'),
 (31, 'Something boring', 'This tutorial is written for Django 1.6 and Python 2.x. If the Django version doesnâ€™t match, you can refer to the tutorial for your version of Django by using the version switcher at the bottom right corner of this page, or update Django to the newest version. If you are using Python 3.x, be aware that your code may need to differ from what is in the tutorial and you should continue using the tutorial only if you know what you are doing with Python 3.x.', 59, '', 0, 0, 0, 3, 6, '2014-07-09', '2014-07-09'),
 (33, 'stupid custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, '', 1, 1, 0, 1, 6, '2014-07-09', '2014-07-09'),
-(35, 'Custom stupid external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, '', 0, 1, 1, 4, 6, '2014-07-10', '2014-07-10');
+(35, 'Custom stupid external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, '', 0, 1, 1, 4, 6, '2014-07-10', '2014-07-10'),
+(36, 'Oven', 'Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.', 200, '', 0, 0, 0, 1, 6, '2014-07-11', '2014-07-11'),
+(37, 'Terrace', 'Estamos en pleno julio ya: unos cuantos ya estarÃ¡n de vacaciones aprovechando la ventana que nos abre el verano, otros se encontrarÃ¡n trabajando en sus respectivas tareasâ€¦ pero lo que es seguro es que contarÃ©is con unos cuantos momentos de tranquilidad o aburrimiento entre medias. Para salvar todos esos momentos llegan los mejores juegos Android de la semana, una secciÃ³n en la que recopilamos toda la semana en lo que a juegos se refiere y ademÃ¡s os damos unos cuantos lanzamientos por si no habÃ©is tenido suficiente. Â¡Comenzamos!', 1004, '', 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
+(38, 'Dog House', 'Cartoon Network lleva una buena sucesiÃ³n de juegos lanzados en Google Play, y con Monsters Ate My Birthday parece que quieren reafirmar esa tendencia: muchos monstruos, tarta, superpoderes, una aventura Ã©pica llena de rutas secretasâ€¦ si querÃ©is diversiÃ³n mÃ¡gica llena de pasteles, habÃ©is encontrado vuestro juego ideal sin lugar a dudas. Lo tenÃ©is disponible en Google Play al precio de 3.66â‚¬, algo caro, pero no han vuelto a cometer el error de combinarlo con pagos dentro de la aplicaciÃ³n.', 145, '', 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
+(39, 'Fracking Big TV', 'Team 17 es conocido entre nosotros por el enorme trabajo que han hecho en su prestigioso Worms, pero eso no significa que sea lo Ãºnico que han hecho en todos los aÃ±os que llevan en activo. Fue en 1993 cuando lanzaron Superfrog, un juego que quedÃ³ sepultado bajo el Ã©xito de Worms dos aÃ±os despuÃ©s, pero tuvo sus seguidores que disfrutarÃ¡n mucho de la remasterizaciÃ³n HD que ha lanzado el equipo en Android: 24 niveles en seis mundos diferentes, ademÃ¡s de grÃ¡ficos y controles mejorados y adaptados. Lo tenÃ©is al suculento precio de 2.49â‚¬ en Google Play.', 699, '', 0, 0, 0, 5, 6, '2014-07-11', '2014-07-11'),
+(40, 'Giant Desk', 'Noodlecake Studios es la casa que da origen a otro juego que vale la pena probarlo: en Wayward Souls tendremos que combatir en mazmorras que se generan de manera aleatoria contra monstruos y magia, de tal forma que tendremos partidas rÃ¡pidas que nunca serÃ¡n iguales (al estilo The Binding of Issac, por ejemplo) y que nos harÃ¡n repetir una y otra vez. Tiene una dificultad elevada, para que nos vamos a engaÃ±ar, pero es uno de estos juegos que merece mucho la pena jugarlo. QuizÃ¡s el precio sea lo Ãºnico que eche atrÃ¡s a muchos, 3.43â‚¬, pero es muy probable que lo veamos en un prÃ³ximo Humble Bundle teniendo en cuenta la trayectoria del estudio.', 206, '', 0, 0, 0, 3, 6, '2014-07-11', '2014-07-11'),
+(42, 'Superbatcomputer', 'Con el mirroring podemos transmitir todo lo que aparece en el mÃ³vil en la televisiÃ³n; sonido, juegos y pelÃ­culas incluidos. Sin embargo muchos se han quedado fuera de poder disfrutar de una de las opciones mÃ¡s Ãºtiles. Para solucionar esto estÃ¡n los desarrolladores de XDA, que hoy nos trae la posibilidad de activar el mirroring en casi cualquier Android con KitKat, eso sÃ­ tiene una pega y es que necesitaremos tener permisos root en nuestro dispositivo.', 34563, '', 0, 0, 0, 2, 6, '2014-07-11', '2014-07-11'),
+(43, 'Autodresser', 'La app ha sido modificada para funcionar en mÃ¡s terminales. Se ha comprobado que funciona en ASUS PadFone 2, Sony Xperia Z2, Sony Xperia ZL, Sony Z Ultra, HTC One M8 (Including GPE), Motorola Moto X, Samsung Note 8 Tab, Samsung Note Pro 12.2 Tab, Nexus 7 2012, QHD Find 7, LG GPad 8.3 aunque no lo han conseguido en el Galaxy S3 o el Note 2.', 5000, '', 0, 0, 0, 4, 6, '2014-07-11', '2014-07-11'),
+(45, 'Batmobile', 'An unlikely pair, young Kate Walker and old, eccentric Hans Voralberg now set off on a journey together: in search of the last of the fabled Syberian mammoths at the heart of a long and forgotten universe. The surreal quest Hans began alone several years ago will come to a final close as he and Kate face obstacles far more dangerous than ever before, testing their courage and determination.', 300000, 'batmobile.jpg', 0, 0, 0, 2, 6, '2014-07-22', '2014-07-22'),
+(46, 'Cellar', 'You are your spells! The Lichdom: Battlemage spell crafting system offers an enormous range of customization. Every Mage is the product of crafted magic that reflects the individual''s play style. Whether you prefer to target your foes from a safe distance, wade into combat and unleash your power at point-blank range, or pit your enemies against each other, endless spell customization lets you become the Mage you want to be. ', 5000, 'cellar.jpg', 1, 0, 0, 5, 6, '2014-07-22', '2014-07-22');
 
 -- --------------------------------------------------------
 
@@ -219,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `home_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `home_pictures`
@@ -228,7 +239,8 @@ CREATE TABLE IF NOT EXISTS `home_pictures` (
 INSERT INTO `home_pictures` (`id`, `picture`, `title`, `description`, `user_id`, `created`, `modified`) VALUES
 (5, 'home3.jpg', 'Gugen', 'Bilbao', 4, '2014-07-02', '2014-07-02'),
 (7, 'home2.jpg', 'weird house', 'lkdvn', 4, '2014-07-02', '2014-07-02'),
-(9, 'home1.png', 'Gehry something', 'png yes!', 4, '2014-07-02', '2014-07-02');
+(9, 'home1.png', 'Gehry something', 'png yes!', 4, '2014-07-02', '2014-07-02'),
+(11, 'homemanor.jpg', 'Cool Manor', 'Use the <paper-dialog> element to create a dialog. Set a title on a dialog using the heading published property.\r\n\r\nYou can use any kind of children inside the dialog. For action buttons, add the dismissive or affirmative attributes to place the controls (typically buttons) at the bottom of the dialog:', 6, '2014-07-22', '2014-07-22');
 
 -- --------------------------------------------------------
 
@@ -248,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `houses`
@@ -256,7 +268,8 @@ CREATE TABLE IF NOT EXISTS `houses` (
 
 INSERT INTO `houses` (`id`, `name`, `description`, `size`, `floors`, `price`, `type`, `user_id`, `created`, `modified`) VALUES
 (3, 'Wayne''s Manor', 'Beautiful palace. For a long time it has been home for the illustrious Wayne familie\r\n\r\nNote: Batcave not included', 2000, 2, 1234570000, 2, 6, '2014-07-01', '2014-07-01'),
-(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01');
+(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01'),
+(5, 'Stark tower', 'Obviamente detrÃ¡s de cada consola del mercado existe un punto que diferencia la plataforma del resto y es el software / juegos disponible para cada una de ellas y NVIDIA lo centraliza a travÃ©s de su aplicaciÃ³n TegraZone y Shield.\r\nNVIDIA deja claro que con Shield Tablet se puede jugar a cualquier juego Android del mercado bien sea utilizando la pantalla tÃ¡ctil o bien un mando (existe un software de NVIDIA para asignar pulsaciones fÃ­sicas del mando a zonas en pantalla para juegos con controles virtuales).', 20000, 0, 90000000, 3, 6, '2014-07-22', '2014-07-22');
 
 -- --------------------------------------------------------
 
@@ -275,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `house_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `house_pictures`
@@ -287,7 +300,11 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (9, 'pool', 'ksjdfnsn', 'cool.jpg', 0, 3, 2, '2014-07-03', '2014-07-03'),
 (10, 'Front', 'sdgfgdfrgdf', 'wayne.jpg', 0, 3, 2, '2014-07-03', '2014-07-03'),
 (11, 'first-floor', '', 'floorplan1-wayneManor.jpg', 2, 3, 6, '2014-07-07', '2014-07-07'),
-(12, 'Basement', 'thbgvfc', 'basement manor.jpg', -1, 3, 6, '2014-07-07', '2014-07-07');
+(13, 'Basement', 'The Polymer core elements set includes several elements for application layout, including creating toolbars, app bars, tabs, and side nav consistent with the material design guidelines.\r\n\r\nSee Layout elements for information on using these elements.', 'basement manor.jpg', -1, 3, 6, '2014-07-22', '2014-07-22'),
+(14, 'Stark Tower Main', 'The number of results that are fetched is exposed to the user as the limit parameter. It is generally undesirable to allow users to fetch all rows in a paginated set. By default CakePHP limits the maximum number of rows that can be fetched to 100. If this default is not appropriate for your application, you can adjust it as part of the pagination options:', 'Stark_Tower.jpg', 0, 5, 0, '2014-07-22', '2014-07-22'),
+(15, 'Stark tower 2', 'With the release 0.6.2 the paragraph properties has been moved into a separate Class!\r\nSo, every text element now has two style properties: FONT and PARAGRAPH. See the following example for more information:', 'starktower2.png', 0, 5, 0, '2014-07-23', '2014-07-23'),
+(16, 'Stark tower 3', ' OLD release, 0.6.1:\r\n$styleFont = array(''bold''=>true, ''size''=>16, ''name''=>''Calibri'', ''align''=>''center'', ''spaceAfter''=>100);\r\n$section->addText(''Hello World'', $styleFont);\r\n\r\n// NEW release, 0.6.2:\r\n$styleFont = array(''bold''=>true, ''size''=>16, ''name''=>''Calibri'');\r\n$styleParagraph = array(''align''=>''center'', ''spaceAfter''=>100);\r\n$section->addText(''Hello World'', $styleFont, $styleParagraph', 'StarTowerDay-Avengers.png', 0, 5, 0, '2014-07-23', '2014-07-23'),
+(17, 'Stark tower floorplan', '$myTextElement->setBold();\r\n$myTextElement->setName(''Verdana'');\r\n$myTextElement->setSize(22);\r\n\r\n// At least write the document to webspace:\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, ''Word2007'');\r\n$objWriter->save(''helloWorld.docx'')', 'starktowerfloorplan.jpg', 1, 5, 0, '2014-07-23', '2014-07-23');
 
 -- --------------------------------------------------------
 
@@ -352,7 +369,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
 INSERT INTO `proposals` (`id`, `name`, `notes`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
 (2, 'Prop for cus b 1', '', 3, 4, 3, '', 4, '2014-07-04', '2014-07-04'),
 (3, 'Prop for cus a 33', 'trfyhjkl;[', 1, 1, 4, '', 3, '2014-07-05', '2014-07-05'),
-(4, 'Very expensive house', 'Tooooooooooooo expensive', 6, 4, 3, '10', 6, '2014-07-07', '2014-07-10'),
+(4, 'Very expensive house', 'Tooooooooooooo expensive', 6, 2, 3, '9', 6, '2014-07-07', '2014-07-23'),
 (5, 'Secret Lair', 'Cool', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
 (6, 'Prop for cus a2: Cheap House', '', 2, 0, 0, '', 3, '2014-07-09', '2014-07-09');
 
