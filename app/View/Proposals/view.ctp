@@ -12,7 +12,7 @@
     <div class="row">
 		
 		<div class="col-md-1" align=right>
-			<b><?php echo __('Notes'); ?></b>
+			<strong><?php echo __('Notes'); ?></strong>
 		</div>
 		
 		<div class="col-md-10">
@@ -55,27 +55,47 @@
         
         <div class="col-md-2">
 			<div class="row">
-				<?php echo $this->Html->image('uploads/houses/'.$house_pictures_view[1]['MyHousePicture']['picture'], array('class' => 'featurette-image img-responsive')); ?>
+				<?php echo $this->Html->link(
+				    $this->Html->image(
+				    	'uploads/houses/'.$house_pictures_view[1]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[1]['MyHousePicture']['picture']),
+					array('escape'=>false,'data-lightbox'=>'summary')
+				); ?>
 			</div>
 				
 			<div class="row">
-				<?php echo $this->Html->image('uploads/houses/'.$house_pictures_view[2]['MyHousePicture']['picture'], array('class' => 'featurette-image img-responsive')); ?>
+				<?php echo $this->Html->link(
+				    $this->Html->image(
+				    	'uploads/houses/'.$house_pictures_view[2]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[2]['MyHousePicture']['picture']),
+					array('escape'=>false,'data-lightbox'=>'summary')
+				); ?>
 			</div>
 				
 			<div class="row">
-				<?php echo $this->Html->image('uploads/houses/'.$house_pictures_view[3]['MyHousePicture']['picture'], array('class' => 'featurette-image img-responsive')); ?>
+				<?php echo $this->Html->link(
+				    $this->Html->image(
+				    	'uploads/houses/'.$house_pictures_view[3]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[3]['MyHousePicture']['picture']),
+					array('escape'=>false,'data-lightbox'=>'summary')
+				); ?>
 			</div>
         </div>
         
 		<div class="col-md-5">
 			<div class="row">
-				<?php echo $this->Html->image('uploads/houses/'.$house_pictures_view[0]['MyHousePicture']['picture'], array('class' => 'featurette-image img-responsive')); ?>
+				<?php echo $this->Html->link(
+				    $this->Html->image(
+				    	'uploads/houses/'.$house_pictures_view[0]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[0]['MyHousePicture']['picture']),
+					array('escape'=>false,'data-lightbox'=>'summary')
+				); ?>
 			</div>
 		</div>
 		
 		<div class="col-md-5">
 			<div class="row">
-				<div class="col-md-6"> <u><b><?php echo $proposal_view['MyHouse']['name']; ?> </b></u></div>
+				<div class="col-md-6"> <strong><?php echo $proposal_view['MyHouse']['name']; ?> </strong></div>
 				<div class="col-md-6"> 
 					<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 				</div>
@@ -149,7 +169,7 @@
 		<div class="col-md-4">
 			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
 			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
-				<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
+				<strong><?php echo $x['MyExtra']['name']; ?></strong>
 			</a>
 		</div>
 		<div class="col-md-4" align=right>
@@ -186,7 +206,7 @@
 	
 	<div class="row">
 		<div class="col-md-8" align=right>
-			<b><?php echo __('Price'); ?></b>
+			<strong><?php echo __('Price'); ?></strong>
 		</div>
 		
 		<div class="col-md-2">
@@ -258,7 +278,7 @@
 		<div class="col-md-4">
 			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
 			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseExt<?php echo $index;?>">
-				<u><b><?php echo $x['MyExtra']['name']; ?></b></u>
+				<strong><?php echo $x['MyExtra']['name']; ?></strong>
 			</a>
 		</div>
 		<div class="col-md-4" align=right>
@@ -295,7 +315,7 @@
 	
 	<div class="row">
 		<div class="col-md-8" align=right>
-			<b><?php echo __('Price'); ?></b>
+			<strong><?php echo __('Price'); ?></strong>
 		</div>
 		
 		<div class="col-md-2">
@@ -435,11 +455,11 @@
 		<div class="col-md-4">
 			<div class="row">
 				<div class="col-md-4">
-					<b><?php echo __('Land Size'); ?></b>
+					<strong><?php echo __('Land Size'); ?></strong>
 					<p align=right><?php echo $proposal_view['MyLand']['land_size'].' m<sup>2</sup>'; ?></p>
 				</div>
 				<div class="col-md-4">
-					<b><?php echo __('Land Price'); ?></b>
+					<strong><?php echo __('Land Price'); ?></strong>
 					<p align=right><?php echo $proposal_view['MyLand']['land_price_per_m2'].' €/m<sup>2</sup>'; ?></p>
 				</div>
 				<div class="col-md-4">
@@ -450,11 +470,11 @@
 			
 			<div class="row">
 				<div class="col-md-4">
-					<b><?php echo __('Dev. Size'); ?></b>
+					<strong><?php echo __('Dev. Size'); ?></strong>
 					<p align=right><?php echo $proposal_view['MyLand']['dev_size'].' m<sup>2</sup>'; ?></p>
 				</div>
 				<div class="col-md-4">
-					<b><?php echo __('Dev. Cost'); ?></b>
+					<strong><?php echo __('Dev. Cost'); ?></strong>
 					<p align=right><?php echo $proposal_view['MyLand']['dev_cost_per_m2'].' €/m<sup>2</sup>'; ?></p>
 				</div>
 				<div class="col-md-4">
@@ -474,11 +494,11 @@
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-5">
-					<b><?php echo __('Land Agent Cost'); ?></b>
+					<strong><?php echo __('Land Agent Cost'); ?></strong>
 					<p align=right><?php echo $proposal_view['MyLand']['land_agent_cost'].' %'; ?></p>
-					<b><?php echo __('Notary Cost'); ?></b>
+					<strong><?php echo __('Notary Cost'); ?></strong>
 					<p align=right><?php echo $proposal_view['MyLand']['notary_cost'].' %'; ?></p>
-					<b><?php echo __('Tax'); ?></b>
+					<strong><?php echo __('Tax'); ?></strong>
 					<p align=right><?php echo $proposal_view['MyLand']['land_tax'].' %'; ?></p>
 				</div>
 				<div class="col-md-4">
@@ -510,7 +530,7 @@
 				<div class="col-md-4"> </div>
 				
 				<div class="col-md-4" align=right>
-					<b><?php echo __('Subtotal'); ?></b>
+					<strong><?php echo __('Subtotal'); ?></strong>
 				</div>
 				<div class="col-md-4" align=right>
 					<?php echo $subtotal.' €'; ?>
@@ -523,7 +543,7 @@
 				<div class="col-md-1"> </div>
 				
 				<div class="col-md-5" align=right>
-					<b><?php echo __('Total'); ?></b>
+					<strong><?php echo __('Total'); ?></strong>
 				</div>
 				<div class="col-md-4" align=right>
 					<?php echo $total.' €'; ?>
@@ -551,17 +571,4 @@
 	</div>
 	<hr>
 <?php } ?>
-	
-	
-	
-<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
-<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-envelope"></span> Mail</button>
-<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> </button>
-<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> </button>
-<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> </button>
-<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-remove"></span> </button>
-<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> </button>
-	
-	
-	
-    	
+   

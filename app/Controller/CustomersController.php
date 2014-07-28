@@ -110,20 +110,5 @@ class CustomersController extends AppController{
     }
 
     
-    
-    /**               NOW INCLUDED IN THE INDEX
-     public function add() {
-     if ($this->request->is('post')) {
-     $this->Customer->create();
-     $this->request->data['Customer']['user_id'] = $this->Auth->user('id');
-     if ($this->Customer->save($this->request->data)) {
-     $this->Session->setFlash(__('Your customer has been saved.'));
-     return $this->redirect(array('action' => 'index'));
-     }
-     $this->Session->setFlash(__('Unable to add your customer.'));
-     }
-     }
-     **/
-  	
   	
 }

@@ -29,6 +29,10 @@ class ProposalsController extends AppController{
 	
 	
 	public function index() {
+		/**
+		 * Shows in a tabular, squematic way all existent proposals.
+		 * Not in the logic thread of the user workflow (admin only).
+		 */
 		$logged_user = $this->Auth->user();
 		if ($logged_user['role']!=2){
 			$this->set('proposals_view',$this->paginate());
@@ -39,6 +43,9 @@ class ProposalsController extends AppController{
     #Proposal->find('all',Array('conditions'=>Array('user_id'=>$logged_user['id']))));
 
 	public function view($id=null) {
+		/**
+		 * It shows all relevant information related with a proposal
+		 */
             if(!$id){
                 throw new NotFoundException(__('Invalid proposal'));
             }
@@ -63,6 +70,9 @@ class ProposalsController extends AppController{
 
 
 	public function add($customer_id=NULL) {
+		/**
+		 * Creates an empty proposal for the customer with id $customer_id 
+		 */
 		if (!$customer_id) {
 			throw new NotFoundException(__('Invaled customer'));
 		}
@@ -89,6 +99,9 @@ class ProposalsController extends AppController{
         
 	
     public function edit($id = NULL) {
+    	/**
+    	 * Let the user modify all fields of the proposal (Admin only)
+    	 */
     	if (!$id) {
         	throw new NotFoundException(__('Invaled proposal'));
         }
@@ -118,6 +131,9 @@ class ProposalsController extends AppController{
 	}
 	
 	public function edit_land($id = NULL) {
+		/**
+		 * DEPRECATED!
+		 */
 		if (!$id) {
 			throw new NotFoundException(__('Invaled proposal'));
 		}
@@ -146,6 +162,12 @@ class ProposalsController extends AppController{
 	}
 	
 	public function selected_land(){
+		/**
+		 * This action is part of an API to change Proposal.land_id in the DB using ajax.
+		 * It receive via POST the land_id we want to set and the proposal_id we want to apply to, and it makes the corresponding changes in the DB.
+		 * It creates a JSON view with a success message.
+		 * 
+		 */
 		
 		$proposal_id=$this->request->data['proposal_id'];
 		$land_id=$this->request->data['land_id'];
@@ -163,12 +185,18 @@ class ProposalsController extends AppController{
 		if ($this->Proposal->save($x)) {
 			$this->set('confirmation','Land has been changed');
 			$this->set('_serialize',array('confirmation'));
+		}else{
+			$this->set('confirmation','Unable to update your proposal.');
+			$this->set('_serialize',array('confirmation'));
 		}
-		$this->Session->setFlash(__('Unable to update your proposal.'));
 	}
 	
 	
 	public function edit_house($id = NULL) {
+		/**
+		 * This action let the user select house he wants for the proposal with id $id, using a user-friendly interface.
+		 * 
+		 */
 		if (!$id) {
 			throw new NotFoundException(__('Invalid proposal'));
 		}
@@ -179,6 +207,13 @@ class ProposalsController extends AppController{
 	}
 	
 	public function selected_house($proposal_id = NULL, $house_id = NULL) {
+		
+		/**
+		 * This action changes Proposal.house_id in the DB.
+		 * It receives via GET the house_id we want to set and the proposal_id we want to apply to, and it makes the corresponding changes in the DB.
+		 *
+		 */
+		
 		if (!$proposal_id) {
 			throw new NotFoundException(__('Invalid proposal'));
 		}
@@ -200,6 +235,10 @@ class ProposalsController extends AppController{
 	
 	
 	public function select_default_picture($id = NULL) {
+		/**
+		 * This action let the user select the default picture he wants for the proposal with id $id, using a user-friendly interface.
+		 */
+		
 		if (!$id) {
 			throw new NotFoundException(__('Invalid proposal'));
 		}
@@ -230,6 +269,9 @@ class ProposalsController extends AppController{
         
 	
     public function delete($id) {
+    	/**
+    	 * Deletes the proposal with id $id from the DB
+    	 */
     	if ($this->request->is('get')) {
         	throw new MethodNotAllowedException();
         }
@@ -240,6 +282,10 @@ class ProposalsController extends AppController{
     }
     
     public function delete_custom_extra($bought_extra_id){
+    	/**
+    	 * This action it is used to delete a custom extra from a proposal.
+    	 * Since custom extras are uniquely binded to a proposal, this action deletes the BoughtExtra from the DB and calls an action to also delete the related Extra.
+    	 */
     	$x = $this->Proposal->MyBoughtExtra->findById($bought_extra_id);
     	if ($this->Proposal->MyBoughtExtra->MyExtra->delete($x['MyExtra']['id']) && $this->Proposal->MyBoughtExtra->delete($x['MyBoughtExtra']['id'])) {
     		$this->Session->setFlash(__('Deleted'));
@@ -249,6 +295,9 @@ class ProposalsController extends AppController{
     
     
     public function gen_summary($id) {
+    	/**
+    	 * Generates a PDF with the summary of the proposal.
+    	 */
     	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
     	
     	$pdf = new myPDF();
@@ -271,6 +320,9 @@ class ProposalsController extends AppController{
     }
     
     public function gen_contract() {
+    	/**
+    	 * Generates a PDF with a contract.
+    	 */
     	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
     	
     	$pdf = new myPDF();
@@ -287,23 +339,10 @@ class ProposalsController extends AppController{
     	 
     }
     
-    /**public function gen_contract() {
-    	require("/home/elgatil/Development/CakePHP/Blog/plugins/PHPWord_0.6.2_Beta/PHPWord.php");
-    	 
-    	
-		$PHPWord = new PHPWord();
-
-		$section = $PHPWord->createSection();
-
-		$section->addText('Hello world!');
-
-
-		$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
-		$objWriter->save('helloWorld.docx');
-    
-    }**/
-
     public function gen_bank_receipt() {
+    	/**
+    	 * Generates a PDF with a bank receipt for this proposal.
+    	 */
     	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
     	
     	$pdf = new myPDF();

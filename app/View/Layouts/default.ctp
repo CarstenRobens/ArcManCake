@@ -36,6 +36,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('carousel');
 		echo $this->Html->css('theme');
 		echo $this->Html->css('bootstrap-theme.min');
+		echo $this->Html->css('lightbox');
 		
 		echo $scripts_for_layout;
 		//echo $this->Html->script('jquery-1.2.6');
@@ -48,6 +49,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('signin');
 		echo $this->Html->script('customize.min');
 		echo $this->Html->script('raw-files.min');
+		echo $this->Html->script('lightbox.min');
 	?>
 </head>
 <body>

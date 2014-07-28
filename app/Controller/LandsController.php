@@ -24,6 +24,10 @@ class LandsController extends AppController{
 	
 	
 	public function index() {
+		/**
+		 * Shows all existing lands.
+		 * Also allows you to created a new land in the DB, free from any customer (Land.customer_id=0)
+		 */
 		$logged_user = $this->Auth->user();
 		$this->set('lands_view',$this->paginate());
 	
@@ -43,6 +47,9 @@ class LandsController extends AppController{
 	}
 
 	public function view($id=null) {
+		/**
+		 * Shows all details of the land with id $id
+		 */
             if(!$id){
                 throw new NotFoundException(__('Invalid land'));
             }
@@ -57,6 +64,9 @@ class LandsController extends AppController{
 
 
 	public function add_land_for_customer($customer_id) {
+		/**
+		 * Creates a new entry of land in the DB associated with a customer (Land.customer=$customer_id).
+		 */
 		if (!$customer_id) {
 			throw new NotFoundException(__('Invalid land'));
 		}
@@ -76,6 +86,9 @@ class LandsController extends AppController{
         
 	
     public function edit($id = NULL) {
+    	/**
+    	 * Allows the user to manipulate the data in the entry of the land with id $id.
+    	 */
     	if (!$id) {
         	throw new NotFoundException(__('Invaled land'));
         }
@@ -100,6 +113,9 @@ class LandsController extends AppController{
         
 	
     public function delete($id) {
+    	/**
+    	 * Deletes the land with id $id from the DB.
+    	 */
     	if ($this->request->is('get')) {
         	throw new MethodNotAllowedException();
         }
@@ -110,62 +126,11 @@ class LandsController extends AppController{
     }
     
     
-    public function gen_summary($id) {
-    	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
-    	
-    	$pdf = new myPDF();
-    	
-    	$pdf->title='Summary';
-    	$pdf->AddPage();
-    	$pdf->SetFont('helvetica','B',16);
-    	$pdf->Cell(0,10,'Summary','B',1,'C');
-    	$pdf->Cell(1,10,'Ssrfgjk',0,1);
-    	$pdf->SetFont('helvetica','',16);
-    	$pdf->Cell(1,10,'dgdbfd',0,1);
-    	$pdf->Cell(1,10,'aaaaaaaaa',0,1);
-    	$pdf->AddPage();
-    	$pdf->Cell(1,10,'anuuuuuuuuuu',0,1);
-    	$pdf->Output('/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/Summary','F');
-    	
-    	$this->Session->setFlash(__('Summary generated'));
-    	return $this->redirect(array('action'=>'index'));
-    	
-    }
-    
-    public function gen_contract() {
-    	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
-    	
-    	$pdf = new myPDF();
-    	 
-    	$pdf->title='Contract';
-    	$pdf->AddPage();
-    	$pdf->SetFont('helvetica','B',16);
-    	$pdf->Cell(0,10,'Contract',1,0,'C');
-    	$pdf->Cell(1,30,'Ssrfgjk',0,1,'L');
-    	$pdf->Output('/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/Contract','F');
-    	
-    	$this->Session->setFlash(__('Contract generated'));
-    	return $this->redirect(array('action'=>'index'));
-    	 
-    }
-
-    public function gen_bank_receipt() {
-    	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
-    	
-    	$pdf = new myPDF();
-    	 
-    	$pdf->title='Bank Receipt';
-    	$pdf->AddPage();
-    	$pdf->SetFont('helvetica','B',16);
-    	$pdf->Cell(0,10,'Summary',1,0,'C');
-    	$pdf->Cell(1,30,'Ssrfgjk',0,1,'L');
-    	$pdf->Output('/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/Bank_Receipt','F');
-    	$this->Session->setFlash(__('Bank Receipt generated'));
-    	return $this->redirect(array('action'=>'index'));
-    	 
-    }
-    
     public function all_names() {
+    	/**
+		 * Creates a JSON view with an array of pairs id-land.
+		 * All lands are included (It has to be modified)
+    	 */
     	$lands=$this->Land->find('list');
     	$lands2=array();
     	foreach ($lands as $index=>$land){
