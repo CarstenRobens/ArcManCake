@@ -382,48 +382,9 @@
 			<select id="bar" style="display:none;"></select> 
 		</div>
 		
-		<script>
-			$( "#foo" ).click(function() {
-				$.ajax({
-					url: "<?php echo $this->Html->url(array('controller'=>'Lands','action'=>'all_names')); ?>.json",
-					success: function(response) {
-
-						var arr = response.land_list_view
-						
-						$( "#foo" ).hide();
-						$( "#bar" ).show();
-
-						$(arr).each(function() {
-							$('#bar').append($("<option>").attr('value',this[0]).text(this[1]));
-						});
-					}
-				})
-			})		
-			
-			         
-			$('#bar').click(function(){
-				var selection=$('#bar option:selected').attr('value')
-				
-				var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , land_id:selection}
-				
-				$.ajax({
-					url: "<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'selected_land')); ?>.json",
-					type: "POST",
-					data: formData,
-					success: function(response) {
-						alert(response.confirmation)
-						location.reload()
-					}
-				});
-			})
-		</script>
-		
-		
-		
-		
-		
 		<div class="col-md-2" align=right> 
-			<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+			<a id="launch_modal" href=# data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-edit"></span></a>
+			
 		</div>
 		
 		<div class="col-md-2"> </div>
@@ -566,9 +527,64 @@
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddLand" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_land',$proposal_view['Proposal']['id']))?> > <span class="glyphicon glyphicon-plus"></span> Add land</a></p>
+       		<p><a class="btn btn-lg btn-success" id="launch_modal" href=# data-toggle="modal" data-target="#myModal" > <span class="glyphicon glyphicon-plus"></span> Add land</a></p>
        	</div>
 	</div>
 	<hr>
 <?php } ?>
+
+
+
+
+
+
+<!-----------------MODAL-------------------->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" >Select Land</h3>
+      </div>
+      <div class="modal-body">
+      
+      <select id="land_list"></select> 
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="save_land" type="button" class="btn btn-success">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
    
+   
+<script>
+	$( "#launch_modal" ).click(function() {
+		$.ajax({
+			url: "<?php echo $this->Html->url(array('controller'=>'Lands','action'=>'all_names')); ?>.json",
+			success: function(response) {
+				var arr = response.land_list_view
+				$(arr).each(function() {
+					$('#land_list').append($("<option>").attr('value',this[0]).text(this[1]));
+				});
+			}
+		})
+	})		
+			         
+	$("#save_land").click(function(){
+		var selection=$('#land_list option:selected').attr('value')
+		var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , land_id:selection}
+				
+		$.ajax({
+			url: "<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'selected_land')); ?>.json",
+			type: "POST",
+			data: formData,
+			success: function(response) {
+				alert(response.confirmation)
+				location.reload()
+			}
+		});
+	})
+</script>
