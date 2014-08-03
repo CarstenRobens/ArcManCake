@@ -11,6 +11,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
+				<a class="navbar-brand" href="#">
+					<?php echo $this->Html->image('Logo.png', array('width' => '40'), array('class' => 'img-responsive'));?>
+					
+				</a>
 			  <?php echo $this->Html->link(__('ArcManCake 0.1'), array('plugin'=>NULL,'controller' => 'HomePictures', 'action' => 'home'),array('class' => 'navbar-brand')); ?>
             </div>
             <div class="navbar-collapse collapse">
