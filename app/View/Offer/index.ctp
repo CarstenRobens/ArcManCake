@@ -61,6 +61,30 @@
             <br />
             <br />
             </div> 
+			
+			
+    <?= $this->Html->script("http://maps.google.com/maps/api/js?sensor=false", false); ?>
+ 
+    <?php
+      $map_options = array(
+        "id"           => "map_canvas",
+        "width"        => "800px",
+        "height"       => "800px",
+        "zoom"         => 9,
+        "type"         => "ROADMAP",
+        "localize"     => false,
+        "latitude"     => 40.69847032728747,
+        "longitude"    => -1.9514422416687,
+        "marker"       => true,
+        "markerIcon"   => "http://google-maps-icons.googlecode.com/files/home.png",
+        "markerShadow" => "http://google-maps-icons.googlecode.com/files/shadow.png",
+        "infoWindow"   => true,
+        "windowText"   => "My Position custom text"
+      );
+    ?>
+ 
+    <?= $this->GoogleMap->map(); ?>
+			
         	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 					<script type="text/javascript">
                       var geocoder;

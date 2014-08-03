@@ -3,7 +3,7 @@ class OfferController extends AppController {
 
 	var $name = 'Offer';
 	var $components = array('Email','RequestHandler');
-	var $helpers = array();
+	var $helpers = array('GoogleMap');
 	var $uses = null;
 	
 	var $paginate = array(
