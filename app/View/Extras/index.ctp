@@ -77,6 +77,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	echo $this->Form->input('bool_external',array('default' => false));
 	echo $this->Form->input('upload', array('type' => 'file'));
 	echo $this->Form->input('bool_size_dependent',array('default' => false));
+	echo $this->Form->input('bool_garage',array('default' => false));
 	echo $this->Form->input('category_id',array('options'=> $list_categories_view));
 	
 	echo $this->Form->end('Save extra');

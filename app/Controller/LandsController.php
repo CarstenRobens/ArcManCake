@@ -131,7 +131,14 @@ class LandsController extends AppController{
 		 * Creates a JSON view with an array of pairs id-land.
 		 * All lands are included (It has to be modified)
     	 */
-    	$lands=$this->Land->find('list');
+    	$customer_id=$this->request->data['customer_id'];
+    	if (!$customer_id) {
+    		throw new NotFoundException (__('Invalid customer'));
+    	}
+    	
+    	$lands=$this->Land->find('list',array(
+				'conditions'=>array('customer_id' => array(0 ,$customer_id))
+    	));
     	$lands2=array();
     	foreach ($lands as $index=>$land){
     		$lands2[]=array($index,$land);

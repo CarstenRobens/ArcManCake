@@ -82,20 +82,6 @@ class UsersController extends AppController{
         }
     }
     
-    
-    
-    /** public function add() {
-    
-    if ($this->request->is('post')) {
-    $this->User->create();
-    if ($this->User->save($this->request->data)) {
-    $this->Session->setFlash(__('User has been created.'));
-    return $this->redirect(array('action' => 'index'));
-    }
-    $this->Session->setFlash(__('Unable to add user.'));
-    }
-    
-    } INCLUDED IN THE INDEX **/
         
     
     public function delete($id=NULL) {

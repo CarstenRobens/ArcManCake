@@ -95,10 +95,11 @@
 		
 		<div class="col-md-5">
 			<div class="row">
-				<div class="col-md-6"> <strong><?php echo $proposal_view['MyHouse']['name']; ?> </strong></div>
-				<div class="col-md-6"> 
+				<div class="col-md-4"> <strong><?php echo $proposal_view['MyHouse']['name']; ?> </strong></div>
+				<div class="col-md-4"> 
 					<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 				</div>
+				<div class="col-md-4"></div> 
 			</div>
 			<div class="row">
 				<div class="col-xs-4"> <?php echo __('Type:'); ?> </div>  
@@ -150,7 +151,7 @@
 
 <!---------------------------------------------EXTRAS---------------------------------------------------->
 
-<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
+<?php if (!empty($bought_extras_view)){ ?>	
 	<div class="row">
 		<div class="panel panel-success">
            	<div class="panel-heading">
@@ -172,7 +173,7 @@
 				<strong><?php echo $x['MyExtra']['name']; ?></strong>
 			</a>
 		</div>
-		<div class="col-md-4" align=right>
+		<div class="col-md-3" align=right>
 			<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			
 			<?php if ($x['MyExtra']['bool_custom']){?>
@@ -183,7 +184,13 @@
 		</div>
 		
 		
-		<div class="col-md-2"></div>
+		<div class="col-md-1" align=right>
+			<strong><?php echo __('Price'); ?></strong>
+		</div>
+		
+		<div class="col-md-2">
+			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
+		</div>
 	</div>
 	
 	<div id="collapse<?php echo $index;?>" class="panel-collapse collapse out">
@@ -203,25 +210,14 @@
 		<div class="col-md-2"> </div>
 	</div>
 	</div>
-	
-	<div class="row">
-		<div class="col-md-8" align=right>
-			<strong><?php echo __('Price'); ?></strong>
-		</div>
-		
-		<div class="col-md-2">
-			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
-		</div>
-		
-		<div class="col-md-2"> </div>
-	</div>
+
 	<hr>
 <?php } ?>
 
 <div class="row">
 	<div class="col-md-12" align=right>
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span></a>
-		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> <?php echo __('Custom'); ?></span></a>
+		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> <?php echo __('Custom'); ?></span></a>
 	</div>
 	
 	<div class="col-md-0"></div>
@@ -239,7 +235,7 @@
 	<div class="row">
 		<div id="AddExtra" align=center>
        		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add extras</a></p>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add custom extra</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add custom extra</a></p>
        	</div>
 	</div>
 	<hr>
@@ -259,7 +255,7 @@
 	
 <!---------------------------------------------EXTERNAL EXTRAS---------------------------------------------------->
 
-<?php if (!empty($proposal_view['MyBoughtExtra'])){ ?>	
+<?php if (!empty($bought_external_extras_view)){ ?>	
 	<div class="row">
 		<div class="panel panel-success">
            	<div class="panel-heading">
@@ -281,7 +277,7 @@
 				<strong><?php echo $x['MyExtra']['name']; ?></strong>
 			</a>
 		</div>
-		<div class="col-md-4" align=right>
+		<div class="col-md-3" align=right>
 			<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			
 			<?php if ($x['MyExtra']['bool_custom']){?>
@@ -292,7 +288,14 @@
 		</div>
 		
 		
-		<div class="col-md-2"></div>
+		<div class="col-md-1" align=right>
+			<strong><?php echo __('Price'); ?></strong>
+		</div>
+		
+		<div class="col-md-2">
+			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
+		</div>
+		
 	</div>
 	
 	<div id="collapseExt<?php echo $index;?>" class="panel-collapse collapse out">
@@ -313,24 +316,13 @@
 	</div>
 	</div>
 	
-	<div class="row">
-		<div class="col-md-8" align=right>
-			<strong><?php echo __('Price'); ?></strong>
-		</div>
-		
-		<div class="col-md-2">
-			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
-		</div>
-		
-		<div class="col-md-2"> </div>
-	</div>
 	<hr>
 <?php } ?>
 
 <div class="row">
 	<div class="col-md-12" align=right>
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?>><span class="glyphicon glyphicon-plus"></span></a>
-		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],1));?>><span class="glyphicon glyphicon-paperclip"> <?php echo __('Custom'); ?></span></a>
+		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?>><span class="glyphicon glyphicon-paperclip"> <?php echo __('Custom'); ?></span></a>
 	</div>
 	
 	<div class="col-md-0"></div>
@@ -348,7 +340,7 @@
 	<div class="row">
 		<div id="AddExtra" align=center>
        		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> Add external extras</a></p>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_custom_extras',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> Add custom external extra</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> Add custom external extra</a></p>
        	</div>
 	</div>
 	<hr>
@@ -377,7 +369,7 @@
 	<div class="row">
 		<div class="col-md-2"> </div>
 		
-		<div class="col-md-6">
+		<div class="col-md-5">
 			<strong id="foo" ><?php echo $proposal_view['MyLand']['name']; ?></strong> 
 			<select id="bar" style="display:none;"></select> 
 		</div>
@@ -386,6 +378,8 @@
 			<a id="launch_modal" href=# data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-edit"></span></a>
 			
 		</div>
+		
+		<div class="col-md-1"> </div>
 		
 		<div class="col-md-2"> </div>
 		
@@ -559,11 +553,15 @@
   </div>
 </div>
    
-   
+
 <script>
 	$( "#launch_modal" ).click(function() {
+		var formData =	{customer_id:"<?php echo $proposal_view['MyCustomer']['id'];?>"}
+		
 		$.ajax({
 			url: "<?php echo $this->Html->url(array('controller'=>'Lands','action'=>'all_names')); ?>.json",
+			type: "POST",
+			data: formData,
 			success: function(response) {
 				var arr = response.land_list_view
 				$(arr).each(function() {

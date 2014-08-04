@@ -31,10 +31,6 @@
 					<?php } ?>
 					<?php echo $this->Html->link(__('Customers'), array('plugin'=>NULL,'controller' => 'Customers', 'action' => 'index')); ?></li>
 					
-					<?php if($this->Session->read('menue.active')=='Proposals'){ ?>
-						<li class="active"> <?php }else{ ?>	<li>
-					<?php } ?>
-					<?php echo $this->Html->link(__('Proposals'), array('plugin'=>NULL,'controller' => 'Proposals', 'action' => 'index')); ?></li>
 					
 				<?php } ?>
 				

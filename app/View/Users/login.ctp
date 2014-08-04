@@ -15,8 +15,8 @@
 					</legend>
 					
 					<?php 
-					echo $this->Form->input('username',array('placeholder' => __('Enter a Username'),'label' => __('Username'),'div' => 'form-group has-success'));
-					echo $this->Form->input('password',array('placeholder' => __('Enter a Password'),'label' => __('Password'),'div' => 'form-group has-success')); ?>	
+					echo $this->Form->input(__('username'),array('placeholder' => __('Enter a Username'),'label' => __('Username'),'div' => 'form-group has-success'));
+					echo $this->Form->input(__('password'),array('placeholder' => __('Enter a Password'),'label' => __('Password'),'div' => 'form-group has-success')); ?>	
 					
 			</div>						
 		</div>

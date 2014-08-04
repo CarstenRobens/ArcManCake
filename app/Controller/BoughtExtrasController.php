@@ -37,7 +37,7 @@ class BoughtExtrasController extends AppController{
 		}
 	}    
 	
-	public function add_default($proposal_id=NULL,$extra_id=NULL) {
+	/* public function add_default($proposal_id=NULL,$extra_id=NULL) {
 		if (!$proposal_id) {
 			throw new NotFoundException(__('Invalid Proposal'));
 		}
@@ -60,8 +60,19 @@ class BoughtExtrasController extends AppController{
 			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
 		}
 		$this->Session->setFlash(__('Unable to add extra to your proposal.'));
-	}
+	} */
 	
+	
+	public function add_default($proposal_id=NULL,$extra_id=NULL) {
+		
+		if ($this->BoughtExtra->add_default_extra($proposal_id,$extra_id)) {
+			$this->Session->setFlash(__('Extra added to proposal.'));
+			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
+		}else {
+			$this->Session->setFlash(__('Unable to add extra to your proposal.'));
+			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
+		}
+	}
 	
 	
 	public function add_many_extras($proposal_id=NULL,$bool_external=false) {
@@ -70,23 +81,28 @@ class BoughtExtrasController extends AppController{
 		}
 	
 		$proposal = $this->BoughtExtra->MyProposal->findById($proposal_id);
+		$ext_garage=$this->BoughtExtra->find('first',array(
+            		'conditions'=>array('proposal_id'=>$proposal_id,'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
 		$extras=$this->BoughtExtra->MyExtra->find('all',array(
             		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
+		
+		
 		$this->set('proposal_id_view',$proposal_id);
 		$this->set('extras_view',$extras);
 		$this->set('list_categories_view',$this->BoughtExtra->MyExtra->MyCategory->find('list'));
-	
+		
+		
 		if ($this->request->is('post')){
 			foreach($extras as $x){
 				if ($this->request->data['List_bool']['bool_'.$x['MyExtra']['id']]){
-					$this->BoughtExtra->create();
-					$save['BoughtExtra']['proposal_id']=$proposal_id;
-					$save['BoughtExtra']['extra_id']=$x['MyExtra']['id'];
-					$save['BoughtExtra']['price']=$x['MyExtra']['default_price'];
-					$save['BoughtExtra']['factor']=1;
 					
-					if (!$this->BoughtExtra->save($save)) {
+					if (!$this->BoughtExtra->add_default_extra($proposal_id,$x['MyExtra']['id'])) {
 						$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'));
+					}else{
+						/* Logic to handle the addition of a garage */
+						if($x['MyExtra']['bool_garage']){
+							$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra']['id'],1,1);
+						}	
 					}
 				}
 			}
@@ -126,10 +142,21 @@ class BoughtExtrasController extends AppController{
 	
    
     public function delete($id) {
-    	 
-    	
     	
     	$x = $this->BoughtExtra->findById($id);
+    	
+    	/* Logic to handle the removal of a garage */
+    	if($x['MyExtra']['bool_garage']){
+    		$count= sizeof($this->BoughtExtra->find('all',array(
+				'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>0,'MyExtra.bool_garage'=>1))));
+			if($count==1){
+    		 	$ext_garage=$this->BoughtExtra->find('first',array(
+					'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
+    			$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra']['id'],$ext_garage['MyExtra']['default_price'],1);
+    		}
+    	} 
+    	/*end*/
+    	
     	if ($this->BoughtExtra->delete($id)) {
     		$this->Session->setFlash(__('Deleted'));
     		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view', $x['MyProposal']['id']));

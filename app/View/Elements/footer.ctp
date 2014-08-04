@@ -27,27 +27,29 @@
 				
 				if($current_user['role']<3){
 					?> &middot; <?php
-					echo $this->Html->link('Users',array('controller'=>'Users','action'=>'index'));
+					echo $this->Html->link(__('Users'),array('controller'=>'Users','action'=>'index'));
+					?> &middot; <?php
+					echo $this->Html->link(__('Proposals'),array('controller'=>'Proposals','action'=>'index'));
 				}
 				
 				if($current_user['role']<2){
 					?> &middot; <?php
-					echo $this->Html->link('Extra categories',array('controller'=>'Categories','action'=>'index'));
+					echo $this->Html->link(__('Extra categories'),array('controller'=>'Categories','action'=>'index'));
 				}
 				
 				if($current_user['role']<2){
 					?> &middot; <?php
-					echo $this->Html->link('Home pictures',array('controller'=>'HomePictures','action'=>'index'));
+					echo $this->Html->link(__('Home pictures'),array('controller'=>'HomePictures','action'=>'index'));
 				}
 				
 				if($current_user['role']<3){
 					?> &middot; <?php
-					echo $this->Html->link('House pictures',array('controller'=>'HousePictures','action'=>'index'));
+					echo $this->Html->link(__('House pictures'),array('controller'=>'HousePictures','action'=>'index'));
 				}
 				
 				
 			} else {
-				echo $this->Html->link('Login',array('controller'=>'users','action'=>'login'));
+				echo $this->Html->link(__('Login'),array('controller'=>'users','action'=>'login'));
 				
 			}
 		?>

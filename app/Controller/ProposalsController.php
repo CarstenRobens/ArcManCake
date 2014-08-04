@@ -86,12 +86,29 @@ class ProposalsController extends AppController{
 				
 		
         if ($this->request->is('post')) {
+        	
         	$this->Proposal->create();
             $this->request->data['Proposal']['user_id'] = $this->Auth->user('id');
             $this->request->data['Proposal']['customer_id']=$customer_id;
             if ($this->Proposal->save($this->request->data)) {
+            	
+            	/* Add all external extras */
+            	 
+            	$ext_extras=$this->Proposal->MyBoughtExtra->MyExtra->find('list',array(
+            			'conditions'=>array('bool_external' => 1)));
+            	debug($ext_extras);
+            	 
+            	foreach($ext_extras as $index=>$x){
+            		if(!$this->Proposal->MyBoughtExtra->add_default_extra($this->Proposal->getLastInsertId(),$index)){
+            			$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'));
+            		}
+            	}
+            	 
+            	 
+            	/* done */
+            	
             	$this->Session->setFlash(__('Your proposal has been saved.'));
-                return $this->redirect(array('controller'=>'Customer','action' => 'view',$customer_id));
+                return $this->redirect(array('controller'=>'Customers','action' => 'view',$customer_id));
             }
             $this->Session->setFlash(__('Unable to add the proposal.'));
      	}
