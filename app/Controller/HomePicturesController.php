@@ -5,6 +5,7 @@ class HomePicturesController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HomePictures');
+		$this->Auth->allow('home');
 	}
 	
 	public function isAuthorized($logged_user) {
