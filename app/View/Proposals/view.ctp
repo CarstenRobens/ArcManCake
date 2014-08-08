@@ -239,7 +239,7 @@ foreach($bought_extras_view as $index=>$x){
 	<div class="col-md-12" align=right>
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span></a>
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> </span> <?php echo __('Custom'); ?></a>
-		<?php if($enlargement=0){?>
+		<?php if($enlargement==0){?>
 			<a class="btn btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
 		<?php }?>
 	</div>
