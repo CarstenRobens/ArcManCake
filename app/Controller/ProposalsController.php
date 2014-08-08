@@ -7,7 +7,7 @@ class ProposalsController extends AppController{
 		parent::beforeFilter();
 		$this->Session->write('menue.active','Proposals');
 		
-		$subtotal=$proposal_view['MyLand']['land_price_per_m2']*$proposal_view['MyLand']['land_size']+$proposal_view['MyLand']['dev_cost_per_m2']*$proposal_view['MyLand']['dev_size'];
+		
 	}
 	
 	public function isAuthorized($logged_user) {
@@ -311,6 +311,27 @@ class ProposalsController extends AppController{
     		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyBoughtExtra']['proposal_id']));
     	}
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     public function gen_summary($id) {

@@ -7,7 +7,7 @@
 		<th><?php echo $this->Paginator->sort('name'); ?></th>
 		<th><?php echo $this->Paginator->sort('default_price'); ?></th>
 		<th><?php echo $this->Paginator->sort('MyCategory.name','Category'); ?></th>
-		<th><?php echo $this->Paginator->sort('bool_size_dependent','Size dep.?'); ?></th>
+		<th><?php echo $this->Paginator->sort('size_dependent_flag','Size dep.?'); ?></th>
         <th><?php echo $this->Paginator->sort('bool_custom','Custom?'); ?></th>
         <th><?php echo $this->Paginator->sort('bool_external','Ext?'); ?></th>
         <th>Action</th>
@@ -22,8 +22,10 @@
 		<td> <?php echo $x['Extra']['default_price'].' €'; ?></td>
 		<td> <?php echo $x['MyCategory']['name']; ?></td>
 		<td> 
-		<?php if ($x['Extra']['bool_size_dependent']==true){
+		<?php if ($x['Extra']['size_dependent_flag']<0){
 			echo 'yes'; 
+		}elseif($x['Extra']['size_dependent_flag']>0){
+			echo 'enlarge';
 		}else{
 			echo 'no';
 		} ?>
@@ -58,28 +60,42 @@
 
 
 
+<div class="container">
+	<div class="contactwrapper">
+	<div class="view">
 
+	<div class="PostBox">
+		<div class="PostContent">
+			<div class="PostContentBox">
+				<div class="PostMainContentbox">
+						<?php echo $this->Form->create('Extra');?>	
+						<legend>
+							<?php echo __('Add Custom Extra'); ?>
+						</legend>
+						
+						<?php 
+						echo $this->Form->create('Extra', array('class' => 'form'));
+						
+						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name')));
+						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description')));
+						echo $this->Form->input('default_price',array('placeholder' => __('Enter the default price'),'label' => __('Default Price')));
+						echo $this->Form->input('size_dependent_check',array('type'=>'checkbox','default' => false,'label' => __('Is the price size dependent?')));
+						echo $this->Form->input('bool_garage',array('default' => false,'label'=>'Is a garage?'));
+						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category')));
+						
+						?>		
+						
+				</div>						
+			</div>
+		</div>
+		<p style="clear: both;"> </p>
 
-
-
-
-<?php 
-if ($current_user['role'] < 3 && !empty($current_user) ) {?>
-
-	<h3>Add extra</h3>
-
-	<?php 
-	echo $this->Form->create('Extra',array('enctype'=>'multipart/form-data'));
-	
-	echo $this->Form->input('name');
-	echo $this->Form->input('description');
-	echo $this->Form->input('default_price');
-	echo $this->Form->input('bool_external',array('default' => false));
-	echo $this->Form->input('upload', array('type' => 'file'));
-	echo $this->Form->input('bool_size_dependent',array('default' => false));
-	echo $this->Form->input('bool_garage',array('default' => false));
-	echo $this->Form->input('category_id',array('options'=> $list_categories_view));
-	
-	echo $this->Form->end('Save extra');
-}?>
-
+		<div class="PostFooter">
+			<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Add'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
+			<p style="clear: both;">  </p>
+		</div>
+	</div>
+		
+	</div>
+	</div>
+	</div>

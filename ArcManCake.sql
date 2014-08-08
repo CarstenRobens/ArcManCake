@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `description` text NOT NULL,
   `default_price` float NOT NULL,
   `picture` varchar(200) NOT NULL,
-  `bool_size_dependent` tinyint(1) NOT NULL,
+  `size_dependent_flag` tinyint(1) NOT NULL,
   `bool_garage` tinyint(1) NOT NULL,
   `bool_custom` tinyint(1) NOT NULL,
   `bool_external` tinyint(1) NOT NULL,
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
 -- Dumping data for table `extras`
 --
 
-INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `bool_size_dependent`, `bool_garage`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
+INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `size_dependent_flag`, `bool_garage`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
 (14, 'Jacuzzi', 'One of the all-time classic adventures, multi BAFTA-nominated "Broken Sword: Director''s Cut" pitches sassy journalist Nico Collard, and intrepid American George Stobbart into a mysterious journey of intrigue and jeopardy. Guide George and Nico on their globe-spanning adventure, exploring exotic locations, solving ancient mysteries, and thwarting a dark conspiracy to reveal the secret truths of the Knights Templar. \r\n\r\n"Broken Sword: The Directorâ€™s Cut" introduces an intricate new narrative thread, alongside the classic story that has charmed millions of players. Itâ€™s time to experience George and Nicoâ€™s worldwide adventure in a whole new way, with brand new puzzles, hilarious new jokes, and the distinctive, rich story that made the series so deservedly renowned. This is adventure gaming at its very best. ', 1050, 'jacuzzi.jpg', 0, 0, 0, 0, 4, 4, '2014-07-02', '2014-07-22'),
 (15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 0, 0, 0, 3, 4, '2014-07-02', '2014-08-04'),
 (17, 'T-Rex', 'Rooooooooaarr\r\n\r\nEver wonder how it feels to sail a half-million-ton supertanker through the perfect storm? To take on illegal whale hunters in the Antarctic? Or to feel the rush of being part of the Coast Guard as you evacuate a cruise liner in distress? Ship Simulator Extremes has players take on exciting missions all over the world as they pilot an impressive array of vessels and live the stories of real ship captains. With missions based on actual events in realistic environments at locations all over the world, the new Ship Simulator game is sure to take you to extremes! ', 1000, 'trex.jpg', 0, 0, 0, 0, 6, 6, '2014-07-04', '2014-08-04'),

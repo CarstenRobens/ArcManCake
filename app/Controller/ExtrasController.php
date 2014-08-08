@@ -2,7 +2,7 @@
 class ExtrasController extends AppController{
 	public $helper = array('Html','Form');
 
-	public $components = array('Paginator');
+	public $components = array('RequestHandler','Paginator');
 	
 	public $paginate = array(
 			'limit' => 6,
@@ -68,6 +68,7 @@ class ExtrasController extends AppController{
 				}
 				$this->request->data['Extra']['bool_custom'] = 0;
 				$this->request->data['Extra']['user_id'] = $this->Auth->user('id');
+				$this->request->data['Extra']['size_dependent_flag'] = -1*$this->request->data['Extra']['size_dependent_check'];
 				if ($this->Extra->save($this->request->data)) {
 					$this->Session->setFlash(__('The extra has been saved.'));
 					return $this->redirect(array('action' => 'index'));
@@ -108,6 +109,7 @@ class ExtrasController extends AppController{
 			$this->request->data['Extra']['bool_custom'] = 1;
 			$this->request->data['Extra']['bool_external'] = $bool_external;
 			$this->request->data['Extra']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Extra']['size_dependent_flag'] = -1*$this->request->data['Extra']['size_dependent_check'];
 			if ($this->Extra->save($this->request->data)) {
 				$this->Session->setFlash(__('Custom extra added.'));
 				debug($this->request->data);
@@ -172,6 +174,7 @@ class ExtrasController extends AppController{
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
+        	$this->request->data['Extra']['size_dependent_check'] = -1*$this->request->data['Extra']['size_dependent_flag'];
         }
 	}
 	
@@ -191,5 +194,40 @@ class ExtrasController extends AppController{
         }
     }
    
+    
+    public function add_enlarge_extra(){
+    	/**
+    	 * This action is part of an API to create the custom extra enlarge_house in the DB using ajax.
+    	 * It receive via POST all the relevant information.
+    	 * It creates a JSON view with a success message.
+    	 *
+    	 */
+    
+    	$proposal_id=$this->request->data['proposal_id'];
+    
+    	if (!$proposal_id) {
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
+    
+    	
+    	$x['Extra']['name']=__('Enlarge house');
+    	$x['Extra']['description']=__('Enlargement of the house by ').$this->request->data['enlargement'].__(' m<sup>2</sup> per floor.');
+    	$x['Extra']['default_price']=$this->request->data['default_price'];
+    	$x['Extra']['size_dependent_flag']=$this->request->data['enlargement'];
+    	$x['Extra']['bool_custom']=1;
+    	$x['Extra']['bool_garage']=1;
+    	$x['Extra']['bool_external']=0;
+    	$x['Extra']['category_id']=1;
+    	$x['Extra']['user_id']=$this->Auth->user('id');
+    
+    	if ($this->Extra->save($x)) {
+    		$this->Extra->MyBoughtExtra->add_default_extra($proposal_id,$this->Extra->getLastInsertId());
+    		$this->set('confirmation',__('Enlargement added'));
+    		$this->set('_serialize',array('confirmation'));
+    	}else{
+    		$this->set('confirmation',__('Unable to update your proposal.'));
+    		$this->set('_serialize',array('confirmation'));
+    	}
+    }
   	
 }

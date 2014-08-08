@@ -1,4 +1,11 @@
-	
+<?php 
+$enlargement=0;
+foreach($bought_extras_view as $index=>$x){
+	if($x['MyExtra']['size_dependent_flag']>0){
+		$enlargement=$x['MyExtra']['size_dependent_flag'];
+	}
+}
+?>
 	
 	<div class="CategorieTitleBox">
         <div id="Proposal">
@@ -107,7 +114,13 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-4"> <?php echo __('Size:'); ?> </div>  
-				<div class="col-xs-8"> <?php echo __($proposal_view['MyHouse']['size'].' m<sup>2</sup> in '.$proposal_view['MyHouse']['floors'].' floors.'); ?> </div>
+				<div class="col-xs-8"> 
+					<?php if($enlargement>0){
+						echo $proposal_view['MyHouse']['size'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' floors.').__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+					}else{
+						echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+					}?>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-4"> <?php echo __('Description:'); ?> </div>  
@@ -189,7 +202,15 @@
 		</div>
 		
 		<div class="col-md-2">
-			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
+			<?php
+			if ($x['MyExtra']['size_dependent_flag']<0){ 
+				echo ($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+			}elseif($x['MyExtra']['size_dependent_flag']>0){
+				echo ($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'].' €';
+			}else{
+				echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+			}
+			?>
 		</div>
 	</div>
 	
@@ -217,7 +238,10 @@
 <div class="row">
 	<div class="col-md-12" align=right>
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span></a>
-		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> <?php echo __('Custom'); ?></span></a>
+		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> </span> <?php echo __('Custom'); ?></a>
+		<?php if($enlargement=0){?>
+			<a class="btn btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
+		<?php }?>
 	</div>
 	
 	<div class="col-md-0"></div>
@@ -234,8 +258,9 @@
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddExtra" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add extras</a></p>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add custom extra</a></p>
+       		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add extras</a>
+       		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-paperclip"></span> Add custom extra</a>
+       		<a class="btn btn-lg btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
        	</div>
 	</div>
 	<hr>
@@ -375,7 +400,7 @@
 		</div>
 		
 		<div class="col-md-2" align=right> 
-			<a id="launch_modal" href=# data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-edit"></span></a>
+			<a id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-edit"></span></a>
 			
 		</div>
 		
@@ -521,7 +546,7 @@
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddLand" align=center>
-       		<p><a class="btn btn-lg btn-success" id="launch_modal" href=# data-toggle="modal" data-target="#myModal" > <span class="glyphicon glyphicon-plus"></span> Add land</a></p>
+       		<p><a class="btn btn-lg btn-success" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal" > <span class="glyphicon glyphicon-plus"></span> Add land</a></p>
        	</div>
 	</div>
 	<hr>
@@ -532,8 +557,9 @@
 
 
 
-<!-----------------MODAL-------------------->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-----------------MODALS-------------------->
+<!-----LAND------>
+<div class="modal fade" id="landModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -552,10 +578,40 @@
     </div>
   </div>
 </div>
+
+
+
+<!-----ENLARGE------>
+<div class="modal fade" id="enlargeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" ><?php echo __('House enlargement:')?></h3>
+      </div>
+      <div class="modal-body">
+      
+      <strong><?php echo __('Enlargement (in  m<sup>2</sup>):');?></strong> 
+      <textarea id="text_enlarge" rows="1">10</textarea>
+      
+      <strong><?php echo __('Price (in € / m<sup>2</sup>):');?></strong> 
+      <textarea id="text_enlarge_price" rows="1">1</textarea>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="save_enlarge" type="button" class="btn btn-success">Enlarge</button>
+      </div>
+    </div>
+  </div>
+</div>
+
    
 
+
+<!-----------------SCRIPTS-------------------->
 <script>
-	$( "#launch_modal" ).click(function() {
+	$( "#launch_land_modal" ).click(function() {
 		var formData =	{customer_id:"<?php echo $proposal_view['MyCustomer']['id'];?>"}
 		
 		$.ajax({
@@ -586,3 +642,24 @@
 		});
 	})
 </script>
+
+<script>
+$("#save_enlarge").click(function(){
+	var enlargement=parseInt($("#text_enlarge").val())
+	var price = parseInt($("#text_enlarge_price").val())
+	
+	var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , default_price:price, enlargement:enlargement}
+			
+	$.ajax({
+		url: "<?php echo $this->Html->url(array('controller'=>'Extras','action'=>'add_enlarge_extra')); ?>.json",
+		type: "POST",
+		data: formData,
+		success: function(response) {
+			alert(response.confirmation)
+			location.reload()
+		}
+	});
+})
+</script>
+
+
