@@ -1,6 +1,6 @@
 <?php
 class ProposalsController extends AppController{
-	public $components = array('RequestHandler');
+	public $components = array('RequestHandler','Mpdf');
 	public $helper = array('Html','Form');
 
 	public function beforeFilter() {
@@ -338,64 +338,137 @@ class ProposalsController extends AppController{
     	/**
     	 * Generates a PDF with the summary of the proposal.
     	 */
-    	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
+    	require("/home/elgatil/Development/CakePHP/ArcManCake/plugins/fpdf17/myPDF.php");
     	
     	$pdf = new myPDF();
     	
     	$pdf->title='Summary';
+    	
     	$pdf->AddPage();
+    	
     	$pdf->SetFont('helvetica','B',16);
     	$pdf->Cell(0,10,'Summary','B',1,'C');
     	$pdf->Cell(1,10,'Ssrfgjk',0,1);
     	$pdf->SetFont('helvetica','',16);
     	$pdf->Cell(1,10,'dgdbfd',0,1);
     	$pdf->Cell(1,10,'aaaaaaaaa',0,1);
+    	
     	$pdf->AddPage();
+    	
     	$pdf->Cell(1,10,'anuuuuuuuuuu',0,1);
-    	$pdf->Output('/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/Summary','F');
+    	
+    	#$pdf->Output('Summary','I');
+    	$pdf->Output('/home/elgatil/Downloads/Documents/Summary','F');
     	
     	$this->Session->setFlash(__('Summary generated'));
     	return $this->redirect(array('action'=>'index'));
     	
     }
     
-    public function gen_contract() {
+    public function gen_contract($id) {
     	/**
     	 * Generates a PDF with a contract.
     	 */
-    	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
+    	require("/home/elgatil/Development/CakePHP/ArcManCake/plugins/fpdf17/myPDF.php");
     	
     	$pdf = new myPDF();
     	 
     	$pdf->title='Contract';
+    	
     	$pdf->AddPage();
+    	
     	$pdf->SetFont('helvetica','B',16);
-    	$pdf->Cell(0,10,'Contract',1,0,'C');
-    	$pdf->Cell(1,30,'Ssrfgjk',0,1,'L');
-    	$pdf->Output('/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/Contract','F');
+    	$pdf->Cell(0,10,'Summary','B',1,'C');
+    	$pdf->Cell(1,10,'Ssrfgjk',0,1);
+    	$pdf->SetFont('helvetica','',16);
+    	$pdf->Cell(1,10,'dgdbfd',0,1);
+    	$pdf->Cell(1,10,'aaaaaaaaa',0,1);
+    	
+    	$pdf->AddPage();
+    	
+    	$pdf->Cell(1,10,'anuuuuuuuuuu',0,1);
+    	
+    	#$pdf->Output('Contract','I');
+    	$pdf->Output('/home/elgatil/Downloads/Documents/Contract','F');
     	
     	$this->Session->setFlash(__('Contract generated'));
     	return $this->redirect(array('action'=>'index'));
     	 
     }
     
-    public function gen_bank_receipt() {
+    public function gen_bank_receipt($id) {
     	/**
     	 * Generates a PDF with a bank receipt for this proposal.
     	 */
-    	require("/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/myPDF.php");
+    	require("/home/elgatil/Development/CakePHP/ArcManCake/plugins/fpdf17/myPDF.php");
     	
     	$pdf = new myPDF();
     	 
     	$pdf->title='Bank Receipt';
+    	
     	$pdf->AddPage();
+    	
+    	$pdf->SetFont('helvetica','',16);
     	$pdf->SetFont('helvetica','B',16);
     	$pdf->Cell(0,10,'Summary',1,0,'C');
-    	$pdf->Cell(1,30,'Ssrfgjk',0,1,'L');
-    	$pdf->Output('/home/elgatil/Development/CakePHP/Blog/plugins/fpdf17/Bank_Receipt','F');
+    	$pdf->Ln();
+    	$pdf->Cell(1,10,'Ssrfgjk',0,1,'L');
+    	
+    	$pdf->Cell(1,50,'Mr. Tutupa. ksjdnfsldmflsdmfdlkfms',0,1,'L');
+    	
+    	
+    	$header=array('tutupa','nunu');
+    	$data=array(array('ajajaja','anununu'),array('tuutut','bababa'));
+    	$pdf->BasicTable($header,$data);
+    	
+    	#$pdf->Output('Bank_Receipt','I');
+    	$pdf->Output('/home/elgatil/Downloads/Documents/Bank_Receipt','F');
+    	
     	$this->Session->setFlash(__('Bank Receipt generated'));
     	return $this->redirect(array('action'=>'index'));
     	 
+    }
+    
+    
+    public function testpdf($id) {
+    	/**
+    	 * It shows all relevant information related with a proposal
+    	 */
+    	if(!$id){
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
+    	
+    	$x = $this->Proposal->findById($id);
+    	$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+    			'conditions'=>array('house_id' => $x['Proposal']['house_id'])));
+    	$z = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false)));
+    	$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
+    	
+    	if (!$x) {
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
+    	
+    	$this->set('proposal_view',$x);
+    	$this->set('house_pictures_view',$y);
+    	$this->set('bought_extras_view',$z);
+    	$this->set('bought_external_extras_view',$zexternal);
+    	
+    	
+    	$this->layout='pdf';
+    	
+    	// initializing mPDF
+    	$this->Mpdf->init();
+    
+    	// setting filename of output pdf file
+    	$this->Mpdf->setFilename('file.pdf');
+    
+    	// setting output to I, D, F, S
+    	$this->Mpdf->setOutput('I');
+    
+    	// you can call any mPDF method via component, for example:
+    	$this->Mpdf->SetWatermarkText("Draft");
     }
   	
 }
