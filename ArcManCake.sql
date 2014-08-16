@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 04, 2014 at 07:46 
+-- Generation Time: Aug 16, 2014 at 03:04 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=95 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -76,12 +76,21 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `extra_id`, `proposal_id`,
 (57, 3000, 1, 48, 11, '2014-08-04', '2014-08-04'),
 (58, 5000, 1, 49, 11, '2014-08-04', '2014-08-04'),
 (59, 5000, 1, 50, 11, '2014-08-04', '2014-08-04'),
-(60, 8000, 1, 51, 11, '2014-08-04', '2014-08-04'),
+(60, 8000, 1, 51, 11, '2014-08-04', '2014-08-09'),
 (61, 9000, 1, 52, 11, '2014-08-04', '2014-08-04'),
 (62, 500, 1, 53, 11, '2014-08-04', '2014-08-04'),
 (63, 4400, 1, 54, 11, '2014-08-04', '2014-08-04'),
 (77, 200, 1, 36, 11, '2014-08-04', '2014-08-04'),
-(78, 34563, 1, 42, 11, '2014-08-04', '2014-08-04');
+(78, 34563, 1, 42, 11, '2014-08-04', '2014-08-04'),
+(81, 200, 1, 46, 11, '2014-08-08', '2014-08-09'),
+(84, 5000, 1, 47, 12, '2014-08-08', '2014-08-08'),
+(85, 3000, 1, 48, 12, '2014-08-08', '2014-08-08'),
+(86, 5000, 1, 49, 12, '2014-08-08', '2014-08-08'),
+(87, 5000, 1, 50, 12, '2014-08-08', '2014-08-08'),
+(88, 8000, 1, 51, 12, '2014-08-08', '2014-08-08'),
+(89, 9000, 1, 52, 12, '2014-08-08', '2014-08-08'),
+(90, 500, 1, 53, 12, '2014-08-08', '2014-08-08'),
+(91, 4400, 1, 54, 12, '2014-08-08', '2014-08-08');
 
 -- --------------------------------------------------------
 
@@ -138,10 +147,10 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `surname`, `notes`, `phone`, `email`, `address1`, `address2`, `zipcode`, `city`, `user_id`, `created`, `modified`) VALUES
-(1, 'cus', 'a', '', 2147483647, 'dhf@kjaefh.com', '', '', 0, '', 3, '2014-07-01', '2014-07-01'),
-(2, 'cus', 'a2', '', 1631728215, 'sfvn@jsn.com', '', '', 0, '', 3, '2014-07-01', '2014-07-01'),
-(3, 'cus', 'b', '', 23456789, 'yasgevb@hgsjb.com', '', '', 0, '', 4, '2014-07-01', '2014-07-01'),
-(4, 'cus', 'b2', '', 45689, 'akejnm@kand.com', '', '', 0, '', 4, '2014-07-01', '2014-07-01'),
+(1, 'cus', 'a', '', 2147483647, 'dhf@kjaefh.com', 'dllfjg,2', '', 56777, 'Pekin', 3, '2014-07-01', '2014-07-01'),
+(2, 'cus', 'a2', '', 1631728215, 'sfvn@jsn.com', 'sjdfhv, 4', 'Gugle Inc.', 76222, 'srfg', 3, '2014-07-01', '2014-07-01'),
+(3, 'cus', 'b', '', 23456789, 'yasgevb@hgsjb.com', 'dbfgb, 2', '', 23000, 'Bonn', 4, '2014-07-01', '2014-07-01'),
+(4, 'cus', 'b2', '', 45689, 'akejnm@kand.com', 'sdfghjk, 3', '', 90000, 'Cologne', 4, '2014-07-01', '2014-07-01'),
 (5, 'cus', 'own', 'Cus Own is cool', 679, 'sdjf@ikshf.com', 'sdfghj, 7', 'IAP', 45678, 'tutupa', 2, '2014-07-01', '2014-07-07'),
 (6, 'Jose Carlos', 'Gallego', 'Penis!', 34567890, 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-07-07');
 
@@ -206,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `description` text NOT NULL,
   `default_price` float NOT NULL,
   `picture` varchar(200) NOT NULL,
-  `size_dependent_flag` tinyint(1) NOT NULL,
+  `size_dependent_flag` int(11) NOT NULL,
   `bool_garage` tinyint(1) NOT NULL,
   `bool_custom` tinyint(1) NOT NULL,
   `bool_external` tinyint(1) NOT NULL,
@@ -215,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Dumping data for table `extras`
@@ -226,7 +235,7 @@ INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `
 (15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 0, 0, 0, 3, 4, '2014-07-02', '2014-08-04'),
 (17, 'T-Rex', 'Rooooooooaarr\r\n\r\nEver wonder how it feels to sail a half-million-ton supertanker through the perfect storm? To take on illegal whale hunters in the Antarctic? Or to feel the rush of being part of the Coast Guard as you evacuate a cruise liner in distress? Ship Simulator Extremes has players take on exciting missions all over the world as they pilot an impressive array of vessels and live the stories of real ship captains. With missions based on actual events in realistic environments at locations all over the world, the new Ship Simulator game is sure to take you to extremes! ', 1000, 'trex.jpg', 0, 0, 0, 0, 6, 6, '2014-07-04', '2014-08-04'),
 (31, 'Something boring', 'This tutorial is written for Django 1.6 and Python 2.x. If the Django version doesnâ€™t match, you can refer to the tutorial for your version of Django by using the version switcher at the bottom right corner of this page, or update Django to the newest version. If you are using Python 3.x, be aware that your code may need to differ from what is in the tutorial and you should continue using the tutorial only if you know what you are doing with Python 3.x.', 59, '', 0, 0, 0, 0, 3, 6, '2014-07-09', '2014-07-09'),
-(33, 'stupid custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, '', 1, 0, 1, 0, 1, 6, '2014-07-09', '2014-07-09'),
+(33, 'stupid custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, '', -1, 0, 1, 0, 1, 6, '2014-07-09', '2014-07-09'),
 (35, 'Custom stupid external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, '', 0, 0, 1, 0, 4, 6, '2014-07-10', '2014-08-04'),
 (36, 'Oven', 'Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.', 200, '', 0, 0, 0, 0, 1, 6, '2014-07-11', '2014-07-11'),
 (37, 'Terrace', 'Estamos en pleno julio ya: unos cuantos ya estarÃ¡n de vacaciones aprovechando la ventana que nos abre el verano, otros se encontrarÃ¡n trabajando en sus respectivas tareasâ€¦ pero lo que es seguro es que contarÃ©is con unos cuantos momentos de tranquilidad o aburrimiento entre medias. Para salvar todos esos momentos llegan los mejores juegos Android de la semana, una secciÃ³n en la que recopilamos toda la semana en lo que a juegos se refiere y ademÃ¡s os damos unos cuantos lanzamientos por si no habÃ©is tenido suficiente. Â¡Comenzamos!', 1004, '', 0, 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
@@ -236,7 +245,7 @@ INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `
 (42, 'Superbatcomputer', 'Con el mirroring podemos transmitir todo lo que aparece en el mÃ³vil en la televisiÃ³n; sonido, juegos y pelÃ­culas incluidos. Sin embargo muchos se han quedado fuera de poder disfrutar de una de las opciones mÃ¡s Ãºtiles. Para solucionar esto estÃ¡n los desarrolladores de XDA, que hoy nos trae la posibilidad de activar el mirroring en casi cualquier Android con KitKat, eso sÃ­ tiene una pega y es que necesitaremos tener permisos root en nuestro dispositivo.', 34563, '', 0, 0, 0, 0, 2, 6, '2014-07-11', '2014-07-11'),
 (43, 'Autodresser', 'La app ha sido modificada para funcionar en mÃ¡s terminales. Se ha comprobado que funciona en ASUS PadFone 2, Sony Xperia Z2, Sony Xperia ZL, Sony Z Ultra, HTC One M8 (Including GPE), Motorola Moto X, Samsung Note 8 Tab, Samsung Note Pro 12.2 Tab, Nexus 7 2012, QHD Find 7, LG GPad 8.3 aunque no lo han conseguido en el Galaxy S3 o el Note 2.', 5000, '', 0, 0, 0, 0, 4, 6, '2014-07-11', '2014-07-11'),
 (45, 'Batmobile', 'An unlikely pair, young Kate Walker and old, eccentric Hans Voralberg now set off on a journey together: in search of the last of the fabled Syberian mammoths at the heart of a long and forgotten universe. The surreal quest Hans began alone several years ago will come to a final close as he and Kate face obstacles far more dangerous than ever before, testing their courage and determination.', 300000, 'batmobile.jpg', 0, 0, 0, 0, 2, 6, '2014-07-22', '2014-07-22'),
-(46, 'Cellar', 'You are your spells! The Lichdom: Battlemage spell crafting system offers an enormous range of customization. Every Mage is the product of crafted magic that reflects the individual''s play style. Whether you prefer to target your foes from a safe distance, wade into combat and unleash your power at point-blank range, or pit your enemies against each other, endless spell customization lets you become the Mage you want to be. ', 5000, 'cellar.jpg', 1, 0, 0, 0, 5, 6, '2014-07-22', '2014-07-22'),
+(46, 'Cellar', 'You are your spells! The Lichdom: Battlemage spell crafting system offers an enormous range of customization. Every Mage is the product of crafted magic that reflects the individual''s play style. Whether you prefer to target your foes from a safe distance, wade into combat and unleash your power at point-blank range, or pit your enemies against each other, endless spell customization lets you become the Mage you want to be. ', 5000, 'cellar.jpg', -1, 0, 0, 0, 5, 6, '2014-07-22', '2014-07-22'),
 (47, 'MehrgrÃ¼ndung', 'The display assembly is held in place by a large amount of adhesive on the underside of the large copper ESD shield. In the next few steps, you will be using a plastic spudger to release this adhesive.\r\nWork carefully and slowly, making sure to not break the I/O data cable.', 5000, '', 0, 0, 0, 1, 1, 6, '2014-08-04', '2014-08-04'),
 (48, 'Erdbebenzone', 'Use the flat end of a spudger to carefully flip up the retaining flaps on the digitizer ribbon cable ZIF sockets.\r\nMake sure you are flipping up the retaining flaps, not the sockets themselves.\r\nUse the tip of a spudger to pull the digitizer ribbon cable straight out of its socket', 3000, '', 0, 0, 0, 1, 2, 6, '2014-08-04', '2014-08-04'),
 (49, 'Eigenleistung AuÃŸennanlage', 'Peel the upper piece of black adhesive tape completely up off the Nexus 7.\r\nSimilarly, peel the lower piece of black adhesive tape, but only as far as the copper strip.\r\nIt is helpful to fold this piece of tape back on itself to keep it out of the way.\r\nWhilst pulling the tape, be sure that the metal shield does not lift up. Hold the shield in place, and if it lifts up, re-seat it in the spring clips around the perimeter of the shielded area.', 5000, '', 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
@@ -351,7 +360,15 @@ CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
   `ic_secret` varchar(128) NOT NULL,
   `ic_expire` datetime NOT NULL,
   PRIMARY KEY (`ic_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `Immocaster_Storage`
+--
+
+INSERT INTO `Immocaster_Storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
+(23, 'REQUEST', 'ea567b98-3129-407c-ad73-f83a0b2f7f61', 'iV7L4OrUSS1VdGkbZKfMfBTkYl6%2FP4MbdnwMc%2BiL4Su7oDn4NRxIcX%2BUPRoEjgVwSQpAi8AdEcxWBNEp8x9ZyylcwZH7HhxbvwQ8Rjheg7o%3D', '2012-11-02 20:44:08'),
+(22, 'APPLICATION', '7ceda6d2-be12-4bb2-93ad-f24e32b778ab', 'd9YWI%2F90I03Jo9aVYZKmUCv1IROLc89KT1Sf78sMAe2UrhqPxpuLqT0bQJ1c2YZn3RslRyVH5y3AOkbplIfPfUDBtMzIMJnaGfFkprEhATw%3D', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -399,6 +416,9 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `notes` text NOT NULL,
+  `summary` varchar(200) NOT NULL,
+  `bank_receipt` varchar(200) NOT NULL,
+  `contract` varchar(200) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `land_id` int(11) NOT NULL,
   `house_id` int(11) NOT NULL,
@@ -407,19 +427,20 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `proposals`
 --
 
-INSERT INTO `proposals` (`id`, `name`, `notes`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
-(2, 'Prop for cus b 1', '', 3, 4, 3, '', 4, '2014-07-04', '2014-07-04'),
-(3, 'Prop for cus a 33', 'trfyhjkl;[', 1, 1, 4, '', 3, '2014-07-05', '2014-07-05'),
-(4, 'Very expensive house', 'Tooooooooooooo expensive', 6, 2, 3, '9', 6, '2014-07-07', '2014-07-23'),
-(5, 'Secret Lair', 'Cool', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
-(6, 'Prop for cus a2: Cheap House', '', 2, 0, 0, '', 3, '2014-07-09', '2014-07-09'),
-(11, 'first proposal', 'so, i spoke with Babsis Dad yesterday, but first to your comments:\r\n\r\nButtons: i mean the edit and delete buttons look gread, altough here is already one comment from Babsis Dad: delete must be red button (should be no problem)\r\n\r\nUsers: I donâ€™t really care what we do here ... we can do it as a tabular, but also there the actions should be buttons\r\n\r\nadd many extras: no it will stay one column, there will be max 6 categories and folded in it fits very well on one page with the add button at the bottom\r\n\r\nanyway, letâ€™s get to the important stuff:\r\n\r\n(we might need to skype also since there are some details which i''m not sure if i can perfectly describe them in two sentences)\r\n\r\nokay, so regarding the external extras: (maybe also open the excel sheet for comparison) there are 8 entries and they need to always added with default values when a proposal is created! its apparently important and i can also try to explain this to you on skype', 5, 0, 0, '', 6, '2014-08-04', '2014-08-04');
+INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
+(2, 'Prop for cus b 1', '', '', '', '', 3, 4, 3, '', 4, '2014-07-04', '2014-07-04'),
+(3, 'Prop for cus a 33', 'trfyhjkl;[', '', '', '', 1, 1, 4, '', 3, '2014-07-05', '2014-07-05'),
+(4, 'Very expensive house', 'Tooooooooooooo expensive', '', '', '', 6, 2, 3, '9', 6, '2014-07-07', '2014-07-23'),
+(5, 'Secret Lair', 'Cool', '', '', '', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
+(6, 'Prop for cus a2: Cheap House', '', '', '', '', 2, 0, 0, '', 3, '2014-07-09', '2014-07-09'),
+(11, 'first proposal', 'so, i spoke with Babsis Dad yesterday, but first to your comments:\r\n\r\nButtons: i mean the edit and delete buttons look gread, altough here is already one comment from Babsis Dad: delete must be red button (should be no problem)\r\n\r\nUsers: I donâ€™t really care what we do here ... we can do it as a tabular, but also there the actions should be buttons\r\n\r\nadd many extras: no it will stay one column, there will be max 6 categories and folded in it fits very well on one page with the add button at the bottom\r\n\r\nanyway, letâ€™s get to the important stuff:\r\n\r\n(we might need to skype also since there are some details which i''m not sure if i can perfectly describe them in two sentences)\r\n\r\nokay, so regarding the external extras: (maybe also open the excel sheet for comparison) there are 8 entries and they need to always added with default values when a proposal is created! its apparently important and i can also try to explain this to you on skype', '', '', '', 5, 2, 3, '10', 6, '2014-08-04', '2014-08-04'),
+(12, 'Empty proposal', 'PortÃ¡tiles para jugadores, ese complicado equilibrio entre potencia y autonomÃ­a - si es que quieres moverlo -, para conseguir echar andar los juegos de Ãºltima generaciÃ³n, o los que siguen de moda, que normalmente tambiÃ©n piden una buena mÃ¡quina. AquÃ­ nos encontramos casi sin pensarlo con Alienware.\r\n\r\nLa compaÃ±Ã­a perteneciente a Dell nos acaba de presentar un nuevo modelo de 13 pulgadas, con unos ingredientes bastante interesantes, con los que intentarÃ¡n que olvidemos a aquel pequeÃ±o Alienware M11x, que dejÃ³ de venderse en 2012.\r\n\r\nEl Dell Alienware 13 es una vuelta a la misma idea, un portÃ¡til lo mÃ¡s compacto posible, sin perder capacidades para jugar. Se situarÃ­a un escalÃ³n por debajo del Dell Alienware 14, que analizamos el aÃ±o pasado. En la competencia tambiÃ©n nos tenemos que ir a ', '', '', '', 4, 0, 0, '', 6, '2014-08-08', '2014-08-08');
 
 -- --------------------------------------------------------
 

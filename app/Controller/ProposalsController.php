@@ -458,17 +458,35 @@ class ProposalsController extends AppController{
     	
     	$this->layout='pdf';
     	
+    	$filename = 'files/BankReceipt'.$x['Proposal']['id'].'.pdf';
+    	
+    	
     	// initializing mPDF
     	$this->Mpdf->init();
+    	
+  
+    	$this->Mpdf->SetHTMLFooter('
+    			<table width="100%" style="vertical-align: bottom; font-family: serif; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
+    			<td width="33%"><span style="font-weight: bold; font-style: italic;">{DATE j-m-Y}</span></td>
+    			<td width="33%" align="center" style="font-weight: bold; font-style: italic;">{PAGENO}/{nbpg}</td>
+    			<td width="33%" style="text-align: right; "><img src="img/Logo.png" alt="Smiley face" width="25"></td>
+    			</tr></table>
+    			');
     
     	// setting filename of output pdf file
-    	$this->Mpdf->setFilename('file.pdf');
+    	$this->Mpdf->setFilename($filename);
     
     	// setting output to I, D, F, S
-    	$this->Mpdf->setOutput('I');
+    	$this->Mpdf->setOutput('F');
     
     	// you can call any mPDF method via component, for example:
     	$this->Mpdf->SetWatermarkText("Draft");
+    	
+    	$x['Proposal']['bank_receipt'] = $filename;
+    	if ($this->Proposal->save($x)) {
+    		$this->Session->setFlash(__('Your proposal has been updated'));
+    		
+    	}
     }
   	
 }
