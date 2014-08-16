@@ -224,7 +224,7 @@
 			<div class="panel panel-success">
 				<!---------- Right PANEL CONTENT------------------>
 				<div class="panel-heading">
-					<h3 class="panel-title"><?php echo __('€ Price');?></h3>
+					<h3 class="panel-title"><?php echo __('Details');?></h3>
 				</div>
 				<div class="panel-body">
 					<div style="padding:3px;">
