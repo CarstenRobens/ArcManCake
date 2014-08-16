@@ -43227,3 +43227,48 @@ Request URL: /ArcManCake/js/signin.js
 Stack Trace:
 #0 F:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-08-16 20:58:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 F:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-16 20:58:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 F:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-16 20:58:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 F:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-16 20:59:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 F:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-16 21:00:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 F:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

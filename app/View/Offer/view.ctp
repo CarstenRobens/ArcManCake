@@ -53,7 +53,7 @@
 				<div class="panel panel-success">
 				<!---------- Left PANEL CONTENT------------------>
 					<div class="panel-heading">
-						<h3 class="panel-title"><?php echo __($Expose['expose']['realEstate']['title']);?></h3>
+						<h3 class="panel-title" style="text-align: center"><?php echo __($Expose['expose']['realEstate']['title']);?></h3>
 					</div>
 					<div class="panel-body">
 					
@@ -119,7 +119,7 @@
 			<div class="panel panel-success">
 				<!---------- Right PANEL CONTENT------------------>
 				<div class="panel-heading">
-					<h3 class="panel-title"><?php echo __('Address');?></h3>
+					<h3 class="panel-title" style="text-align: center"><?php echo __('Address');?></h3>
 				</div>
 				<div class="panel-body">
 					<div id="map-container" class="col-md-12">
@@ -176,8 +176,8 @@
 			<!---------- END Right PANEL CONTENT------------------>
 			<div class="panel panel-success">
 				<!---------- Right PANEL CONTENT------------------>
-				<div class="panel-heading">
-					<h3 class="panel-title"><?php echo __('€ Price');?></h3>
+				<div class="panel-heading" style="text-align: center">
+					<h3 class="panel-title" ><?php echo __('€ Price');?></h3>
 				</div>
 				<div class="panel-body">
 					<div style="padding:3px;">
@@ -224,7 +224,7 @@
 			<div class="panel panel-success">
 				<!---------- Right PANEL CONTENT------------------>
 				<div class="panel-heading">
-					<h3 class="panel-title"><?php echo __('Details');?></h3>
+					<h3 class="panel-title" style="text-align: center"><?php echo __('Details');?></h3>
 				</div>
 				<div class="panel-body">
 					<div style="padding:3px;">
