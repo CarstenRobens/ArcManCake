@@ -101,7 +101,7 @@ class BoughtExtrasController extends AppController{
 					}else{
 						/* Logic to handle the addition of a garage */
 						if($x['MyExtra']['bool_garage']){
-							$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra']['id'],1,1);
+							$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra']['id'],$ext_garage['BoughtExtra']['price'],0);
 						}	
 					}
 				}

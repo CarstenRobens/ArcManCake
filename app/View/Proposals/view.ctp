@@ -305,11 +305,6 @@ foreach($bought_extras_view as $index=>$x){
 		<div class="col-md-3" align=right>
 			<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			
-			<?php if ($x['MyExtra']['bool_custom']){?>
-				<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
-			<?php }else{ ?>
-				<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
-			<?php } ?>
 		</div>
 		
 		
@@ -344,15 +339,6 @@ foreach($bought_extras_view as $index=>$x){
 	<hr>
 <?php } ?>
 
-<div class="row">
-	<div class="col-md-12" align=right>
-		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?>><span class="glyphicon glyphicon-plus"></span></a>
-		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?>><span class="glyphicon glyphicon-paperclip"> <?php echo __('Custom'); ?></span></a>
-	</div>
-	
-	<div class="col-md-0"></div>
-
-</div>
 
 	
 <!----------END PANEL CONTENT-------------->			

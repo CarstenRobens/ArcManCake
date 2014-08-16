@@ -51,6 +51,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('raw-files.min');
 		echo $this->Html->script('lightbox.min');
 	?>
+	
+
 </head>
 <body>
 	
