@@ -17,8 +17,6 @@
 				if($Region_id==0){
 					echo $this->Html->link('Kaufobjekte', array('controller' => 'offer','action' => 'index', 'Immobilienscout', 'Kaufobjekte'))
 						.' > '
-						.$this->Html->link($regionarray[$Region_id], array('controller' => 'offer','action' => 'allregion',$Region_id, 'Immobilienscout', 'Kaufobjekte'))
-						.' > '
 						.$this->Html->link('Expose: '.$Expose['expose']['realEstate']['@id'], array('controller' => 'offer','view' => 'category',$Expose['expose']['realEstate']['@id'], 'Immobilienscout', 'Kaufobjekte', $Expose['expose']['realEstate']['title']))
 						
 						;

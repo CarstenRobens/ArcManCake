@@ -109,6 +109,70 @@ class OfferController extends AppController {
 		$lasthouse['menue'] = 'Kaufobjekte';
 		$this->Session->write('lasthouse', $lasthouse);
 		
+		/**
+		 * Immocaster SDK laden.
+		 */
+		require_once('Immocaster/Sdk.php');
+		
+		/**
+		 * Verbindung zum Service von ImmobilienScout24 aufbauen.
+		 * Die Daten (Key und Secret) erhält man auf 
+		 * http://developer.immobilienscout24.de.
+		 */
+		
+		$sImmobilienScout24Key    = 'Kundenwebsite-tc-architectKey'; // Hier den Key für ImmobilienScout24 einsetzen
+		$sImmobilienScout24Secret = 'GreDmJJfqMFQ5waBqSTd'; // Hier Secret für ImmobilienScout24 einsetzen
+		$oImmocaster              = Immocaster_Sdk::getInstance('is24',$sImmobilienScout24Key,$sImmobilienScout24Secret);
+		$oImmocaster->setReadingType('curl');
+		/**
+		 * Auf Live-System arbeiten.
+		 * Für die Arbeit mit Livedaten, muss man von
+		 * ImmobilienScout24 extra freigeschaltet werden.
+		 * Standardmäßig wird auf der Sandbox gearbeitet!
+		 */
+		App::uses('ConnectionManager', 'Model');
+		$dataSource = ConnectionManager::getDataSource('default');
+		$username = $dataSource->config['login'];
+		$password = $dataSource->config['password'];
+		$host = $dataSource->config['host'];
+		$database = $dataSource->config['database'];
+		 
+		$oImmocaster->setRequestUrl('live');
+		$aDatabase = array(
+		  'mysql',
+		  $host,
+		  $username,
+		  $password,
+		  $database
+		);
+		$oImmocaster->setDataStorage($aDatabase);
+		
+		$this->set('oImmocaster', $oImmocaster);
+		
+		$regionarray = array(1276010010,1276010012,1276010017,1276010027,1276010029,1276010034,1276010037,1276010051,1276010053);
+		
+		
+		
+		for ($idx = 0; $idx < sizeof($regionarray) ; $idx++) {
+			$type = "housebuy"; 
+			$aParameter = array('geocodes'=>$regionarray[$idx] ,
+			'realestatetype'=>$type, 'username'=>'89991', 
+			'channel'=>'hp'); 
+			$res        = $oImmocaster->regionSearch($aParameter); 
+			$OffersArray = Xml::toArray(Xml::build($res));
+			$numoffers[$regionarray[$idx]]=$OffersArray['resultlist']['resultlistEntries']['@numberOfHits'];
+			
+			
+		}
+		$this->set('numoffers', $numoffers);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
