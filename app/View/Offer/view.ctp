@@ -348,7 +348,7 @@
 									<?php } else {?>
 										<tr>
 											<td><?php echo 'Keller:' ?>&nbsp;</td>
-											<td><span class="glyphicon glyphicon-remove"></span></td>
+											<td><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div></td>
 										</tr>
 									<?php } ?>
 								<?php } ?>
@@ -371,7 +371,7 @@
 									<?php } else {?>
 										<tr>
 											<td><?php echo 'Gästebadezimmer:' ?>&nbsp;</td>
-											<td><span class="glyphicon glyphicon-remove"></span></td>
+											<td><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div></td>
 										</tr>
 									<?php } ?>
 								<?php } ?>
