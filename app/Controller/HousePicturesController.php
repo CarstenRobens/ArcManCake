@@ -66,7 +66,7 @@ class HousePicturesController extends AppController{
 				
 				if ($this->HousePicture->save($this->request->data)) {
 					$this->Session->setFlash(__('Picture saved.'));
-					return $this->redirect(array('action' => 'index'));
+					return $this->redirect(array('action' => 'index',$house_id));
 				}
 				$this->Session->setFlash(__('Unable to add the picture.'));
 			}

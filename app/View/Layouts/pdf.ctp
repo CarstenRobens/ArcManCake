@@ -29,43 +29,26 @@
 	<?php
 		echo $this->Html->meta('icon');
 		
-		echo $this->Html->css('ArcManCake');
-		echo $this->Html->css('jquery.imageZoom');
+		echo $this->Html->css('ArcManCake_pdf');
+		//echo $this->Html->css('jquery.imageZoom');
 		echo $this->Html->css('bootstrap.min');
-		echo $this->Html->css('carousel');
-		echo $this->Html->css('theme');
-		echo $this->Html->css('bootstrap-theme.min');
-		echo $this->Html->css('lightbox');
+		//echo $this->Html->css('carousel');
+		//echo $this->Html->css('theme');
+		//echo $this->Html->css('bootstrap-theme.min');
+		//echo $this->Html->css('lightbox');
+		echo $this->Html->css('pdf');
 		
-		echo $scripts_for_layout;
-		//echo $this->Html->script('jquery-1.2.6');
-		echo $this->Html->script('startstop-slider');
-		//echo $this->Html->script('jquery-1.6.2.min');
-		echo $this->Html->script('animatedcollapse');
-		echo $this->Html->script('jquery-1.11.0.min');
-		echo $this->Html->script('bootstrap.min'); 	
-		echo $this->Html->script('docs.min');
-		echo $this->Html->script('signin');
-		echo $this->Html->script('customize.min');
-		echo $this->Html->script('raw-files.min');
-		echo $this->Html->script('lightbox.min');
+		
 	?>
 </head>
 <body>
 	
 							
 
-
-            
-	<?php echo($this->element('pdf_topmenu'));?>
-	<div class="container theme-showcase" role="main">		
-		<?php echo $this->Session->flash(); ?>
-		<?php echo $this->Session->flash('email'); ?>
+	
 								
 		<?php echo $this->fetch('content'); ?>
-                            
-	</div>
-	<?php echo($this->element('pdf_footer'));?>
+  
 
 
 </body>

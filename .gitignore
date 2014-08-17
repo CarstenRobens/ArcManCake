@@ -20,3 +20,6 @@ Icon?
 ehthumbs.db
 Thumbs.db
 /nbproject/private/
+*.log
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_eng
+app/tmp/cache/persistent/myapp_cake_core_file_map

@@ -4,29 +4,36 @@
 	
 
 	<div class="row">
-		<div class="panel panel-default">
-           	<div class="panel-heading">
-				<strong><?php echo __( 'General Data');?></strong>
-			</div>
-			<div class="panel-body">
-			
-			<p>
-			<?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?>
-			</p>
-			<p>
-			<?php echo $proposal_view['MyCustomer']['address1'];?><br>
-			<?php if(!empty($proposal_view['MyCustomer']['address2'])){echo $proposal_view['MyCustomer']['address2'].'<br>';}?>
-			<?php echo $proposal_view['MyCustomer']['zipcode'].', '.$proposal_view['MyCustomer']['city'];?><br>
-			</p>
-			
-			<p>
-			<?php echo $proposal_view['MyCustomer']['phone'];?><br>
-			<?php echo $proposal_view['MyCustomer']['email'];?><br>
-			</p>
-			
-			
+		<div style="width: 200px;float:left;">
+			<img src="img/Logo.png" alt="Smiley face" width="150">
+		</div>
+		<div style="float:left;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?></strong>
+				</div>
+				<div class="panel-body">
+				
+				<p>
+				<?php echo $proposal_view['MyCustomer']['address1'];?><br>
+				<?php if(!empty($proposal_view['MyCustomer']['address2'])){echo $proposal_view['MyCustomer']['address2'].'<br>';}?>
+				<?php echo $proposal_view['MyCustomer']['zipcode'].', '.$proposal_view['MyCustomer']['city'];?><br>
+				</p>
+				
+				<p>
+				<?php echo $proposal_view['MyCustomer']['phone'];?><br>
+				<?php echo $proposal_view['MyCustomer']['email'];?><br>
+				</p>
+				<p>
+				<b>Objekt: <?php echo $proposal_view['Proposal']['name'];?></b>
+				</p>
+				
+				
+				</div>
 			</div>
 		</div>
+		
+		
 	</div>
 	
 	
@@ -81,9 +88,9 @@
 					
 					<tr>
 						<td>Bauzinsen 0,25%/Monat</td>
-						<td>I DUNNO WHATS THIS %</td>
+						<td>TODO %</td>
 						<td> </td>
-						<td>????? €</td>
+						<td>TODO €</td>
 						<td> </td>
 					</tr>
 					
@@ -113,10 +120,20 @@
 			<div class="panel-body">
 			
 			<table>
-				<?php $total_extras=0; 
+					<tr>
+						<td><?php echo __('Haus ausgebaut'); ?></td>
+						<td> <td>
+						<td align="right"> 
+							<?php $total_extras=$proposal_view['MyHouse']['price']; echo $total_extras.' €'; ?>
+						</td>
+						
+					</tr>
+			
+				<?php 
 				foreach ($bought_extras_view as $index=>$x){?>			
 					<tr>
 						<td><?php echo $x['MyExtra']['name']; ?></td>
+						<td> <td>
 						<td align="right"><?php
 						if ($x['MyExtra']['size_dependent_flag']<0){
 							$price=($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
@@ -128,7 +145,7 @@
 						echo $price.' €';
 						$total_extras=$total_extras+$price;
 						?></td>
-						<td> <td>
+						
 					</tr>
 				
 				<?php }?>
@@ -136,7 +153,7 @@
 			<table>
 				<tr>
 					<th>Gesamt Bau- u. Baunebenkosten:</th>
-					<th align="right"><?php echo $total_extras;?> €</th>
+					<th align="right"><?php echo $total_extras.' €';?></th>
 				</tr>
 			</table>
 			
@@ -159,8 +176,9 @@
 				foreach ($bought_external_extras_view as $index=>$x){?>			
 					<tr>
 						<td><?php echo $x['MyExtra']['name']; ?></td>
-						<td align="right"><?php echo $price_ext=$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor']; ?> €</td>
 						<td> <td>
+						<td align="right"><?php echo $price_ext=$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor']; ?> €</td>
+						
 					</tr>
 				<?php $total_ext_extras=$total_ext_extras+$price_ext; 
 				}?>
@@ -173,6 +191,19 @@
 			</table>
 			
 			
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="panel panel-default">
+           	
+			<div class="panel-body">
+			<table>
+				<tr>
+					<th>Kalkulierte Gesamtkosten:</th>
+					<th align="right"><?php echo $total_ext_extras+$total_extras+$total_land;?> €</th>
+				</tr>
+			</table>
 			</div>
 		</div>
 	</div>

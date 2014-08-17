@@ -429,6 +429,11 @@ class ProposalsController extends AppController{
     	 
     }
     
+	public function gen_bank_receipt_wrapper($id) {
+		$this->testpdf($id);
+		$this->Session->setFlash(__('Bank receipt generated'));
+		return $this->redirect(array('action'=>'index'));
+	}
     
     public function testpdf($id) {
     	/**
@@ -466,10 +471,10 @@ class ProposalsController extends AppController{
     	
   
     	$this->Mpdf->SetHTMLFooter('
-    			<table width="100%" style="vertical-align: bottom; font-family: serif; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-    			<td width="33%"><span style="font-weight: bold; font-style: italic;">{DATE j-m-Y}</span></td>
-    			<td width="33%" align="center" style="font-weight: bold; font-style: italic;">{PAGENO}/{nbpg}</td>
-    			<td width="33%" style="text-align: right; "><img src="img/Logo.png" alt="Smiley face" width="25"></td>
+    			<table width="100%" ><tr>
+    			<td width="33%"><span ><img src="img/Logo.png" alt="Smiley face" width="25"></span></td>
+    			<td width="33%" align="center" >{DATE j-m-Y}</td>
+    			<td width="33%" style="text-align: right; ">{PAGENO}/{nbpg}</td>
     			</tr></table>
     			');
     
@@ -483,10 +488,7 @@ class ProposalsController extends AppController{
     	$this->Mpdf->SetWatermarkText("Draft");
     	
     	$x['Proposal']['bank_receipt'] = $filename;
-    	if ($this->Proposal->save($x)) {
-    		$this->Session->setFlash(__('Your proposal has been updated'));
-    		
-    	}
+    	$this->Proposal->save($x);
     }
   	
 }
