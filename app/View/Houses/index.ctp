@@ -15,7 +15,12 @@
 		<div class="col-md-2">
 			<div class="row">
 				<?php if(!empty($House['MyHousePicture'])){
-					echo $this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][0]['picture'], array('class' => 'featurette-image img-responsive'));
+					foreach ($House['MyHousePicture'] as $x){
+						if($x['type_flag']==0){
+							echo $this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][0]['picture'], array('class' => 'featurette-image img-responsive'));
+							break;
+						}
+					}
 				} ?>
 			</div>
 		</div>

@@ -289,12 +289,22 @@ class ProposalsController extends AppController{
 	
     public function delete($id) {
     	/**
-    	 * Deletes the proposal with id $id from the DB
+    	 * Deletes the proposal with id $id from the DB and deletes the pdf files related to it
     	 */
-    	if ($this->request->is('get')) {
-        	throw new MethodNotAllowedException();
-        }
+    	
+    	$proposal=$this->Proposal->findById($id);
+    	
+    	
         if ($this->Proposal->delete($id)) {
+        	if (!empty($proposal['summary'])){
+        		unlink(WWW_ROOT.$proposal['summary']);
+        	}
+        	if (!empty($proposal['bank_receipt'])){
+        		unlink(WWW_ROOT.$proposal['bank_receipt']);
+        	}
+        	if (!empty($proposal['contract'])){
+        		unlink(WWW_ROOT.$proposal['contract']);
+        	}
         	$this->Session->setFlash(__('The proposal with id: %s has been deleted',h($id)));
             return $this->redirect(array('action'=>'index'));
         }

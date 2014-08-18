@@ -33,12 +33,24 @@ foreach($bought_extras_view as $index=>$x){
     
     
 	<hr >
+
 	
-	<p align=right>
-	<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
-	</p>
-	
-	
+	<div class="row">
+		<div class="col-md-6">
+			<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
+		</div>
+		<div class="col-md-6" align="right">
+			<?php if (!empty($proposal_view['Proposal']['bank_receipt'])){ ?>
+				
+			<?php }
+			if(!empty($proposal_view['Proposal']['contract'])){ ?>
+				
+			<?php  }
+			if(!empty($proposal_view['Proposal']['summary'])){ ?>
+			
+			<?php }?>
+		</div>
+	</div>
 	
 	
 	

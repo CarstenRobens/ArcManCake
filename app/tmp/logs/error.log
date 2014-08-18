@@ -44325,3 +44325,590 @@ Request URL: /ArcManCake/js/signin.js
 Stack Trace:
 #0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-08-18 17:40:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:40:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:41:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:41:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:41:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:46:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:46:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:53:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:53:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:53:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:54:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:54:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:54:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:54:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:54:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:54:56 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/img/uploads/houses/basement%20manor.jpg
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:57:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 17:58:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:02:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:02:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:03:00 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /ArcManCake/Houses/delete/6
+Stack Trace:
+#0 [internal function]: HousesController->delete('6')
+#1 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(HousesController), Array)
+#2 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(HousesController), Object(CakeRequest))
+#4 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-08-18 18:03:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:03:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:03:45 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /ArcManCake/Houses/delete/6
+Stack Trace:
+#0 [internal function]: HousesController->delete('6')
+#1 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(HousesController), Array)
+#2 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(HousesController), Object(CakeRequest))
+#4 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-08-18 18:03:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:03:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:08:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:08:55 Error: Fatal Error (4): syntax error, unexpected 'glyphicon' (T_STRING) in [/home/elgatil/Development/CakePHP/ArcManCake/app/View/Houses/index.ctp, line 38]
+2014-08-18 18:08:55 Error: [FatalErrorException] syntax error, unexpected 'glyphicon' (T_STRING)
+Request URL: /ArcManCake/Houses
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/elgatil/D...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/elgatil/D...', 38, Array)
+#2 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/elgatil/D...', 38, Array)
+#3 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-08-18 18:08:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:09:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:09:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:12:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:13:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:15:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:15:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:15:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:15:52 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /ArcManCake/Houses/delete/4
+Stack Trace:
+#0 [internal function]: HousesController->delete('4')
+#1 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(HousesController), Array)
+#2 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(HousesController), Object(CakeRequest))
+#4 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-08-18 18:15:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:16:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:16:55 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /ArcManCake/Houses/delete/4
+Stack Trace:
+#0 [internal function]: HousesController->delete('4')
+#1 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(HousesController), Array)
+#2 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(HousesController), Object(CakeRequest))
+#4 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-08-18 18:16:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:17:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:17:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:17:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:18:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:18:44 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:19:21 Error: Fatal Error (1): Call to a member function delete() on a non-object in [/home/elgatil/Development/CakePHP/ArcManCake/app/Controller/HousesController.php, line 90]
+2014-08-18 18:19:21 Error: [FatalErrorException] Call to a member function delete() on a non-object
+Request URL: /ArcManCake/Houses/delete/5
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/elgatil/D...', 90)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/elgatil/D...', 90, Array)
+#2 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/elgatil/D...', 90, Array)
+#3 /home/elgatil/Development/CakePHP/ArcManCake/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-08-18 18:19:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:20:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:21:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:21:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:49:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:49:44 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:49:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:49:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:50:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:53:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:54:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 18:54:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 19:19:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 19:23:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 19:24:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 19:24:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 19:26:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-18 19:28:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

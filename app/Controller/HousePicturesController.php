@@ -50,11 +50,11 @@ class HousePicturesController extends AppController{
 					if(in_array($ext, $arr_ext)){
 						//do the actual uploading of the file. First arg is the tmp name, second arg is
 						//where we are putting it
-						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/houses/' . $file['name']);
+						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/houses/' . $file['name'].$house_id);
 				
 						//prepare the filename for database entry
 						
-						$this->request->data['HousePicture']['picture'] = $file['name'];
+						$this->request->data['HousePicture']['picture'] = $file['name'].$house_id;
 						
 						
 					}else{

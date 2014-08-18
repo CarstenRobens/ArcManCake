@@ -2,7 +2,7 @@
 
 	<div class="CategorieTitleBox">
         <div id="Customer">
-        <?php echo __( $customer_view['Customer']['name'].' '.$customer_view['Customer']['surname'],false);?>
+        	<?php echo __( $customer_view['Customer']['name'].' '.$customer_view['Customer']['surname'],false);?>
         </div>
     </div>
 
@@ -123,9 +123,9 @@
     		</div>
     		
 			<div class="col-xs-4">
-				<?php echo $this->Html->link(__('Edit'),array('controller' => 'Proposals','action' => 'edit',$x['id']));?>
-					&middot;
-				<?php echo $this->Form->postLink(__('Delete'),array('controller' => 'Proposals','action' => 'delete',$x['id']),array('confirm'=>'Are you sure?'));?>
+				<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+				
 			</div>
 		</div>
 		<?php } ?>

@@ -82,10 +82,16 @@ class HousesController extends AppController{
         
 	
     public function delete($id) {
-    	if ($this->request->is('get')) {
-        	throw new MethodNotAllowedException();
-        }
+    	
+        $house=$this->House->findById($id);
+        
+        
         if ($this->House->delete($id)) {
+        	foreach ($house['MyHousePicture'] as $x){
+        		if ($this->House->MyHousePicture->delete($x['id'])){
+        			unlink(WWW_ROOT.'img/uploads/houses/'.$x['picture']);
+        		}
+        	}
         	$this->Session->setFlash(__('House with id: %s has been deleted',h($id)));
             return $this->redirect(array('action'=>'index'));
         }
