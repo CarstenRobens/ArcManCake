@@ -203,7 +203,9 @@ foreach($bought_extras_view as $index=>$x){
 		
 		<div class="col-md-2">
 			<?php
-			if ($x['MyExtra']['size_dependent_flag']<0){ 
+			if ($x['MyExtra']['size_dependent_flag']==-2){ 
+				echo ($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+			}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
 				echo ($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
 			}elseif($x['MyExtra']['size_dependent_flag']>0){
 				echo ($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'].' €';

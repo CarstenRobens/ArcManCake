@@ -265,7 +265,7 @@ class ProposalsController extends AppController{
 		$x = $this->Proposal->findById($id);
 		$this->set('proposal_id_view',$id);
 		$this->set('house_pictures_view',$this->Proposal->MyHouse->MyHousePicture->find('all',array(
-				'conditions'=>array('house_id'=>$x['MyHouse']['id'])
+				'conditions'=>array('house_id'=>$x['MyHouse']['id'],'type_flag'=>0)
 		)));
 	
 	
@@ -396,46 +396,8 @@ class ProposalsController extends AppController{
     	 
     }
     
+    
     public function gen_bank_receipt($id) {
-    	/**
-    	 * Generates a PDF with a bank receipt for this proposal.
-    	 */
-    	require("/home/elgatil/Development/CakePHP/ArcManCake/plugins/fpdf17/myPDF.php");
-    	
-    	$pdf = new myPDF();
-    	 
-    	$pdf->title='Bank Receipt';
-    	
-    	$pdf->AddPage();
-    	
-    	$pdf->SetFont('helvetica','',16);
-    	$pdf->SetFont('helvetica','B',16);
-    	$pdf->Cell(0,10,'Summary',1,0,'C');
-    	$pdf->Ln();
-    	$pdf->Cell(1,10,'Ssrfgjk',0,1,'L');
-    	
-    	$pdf->Cell(1,50,'Mr. Tutupa. ksjdnfsldmflsdmfdlkfms',0,1,'L');
-    	
-    	
-    	$header=array('tutupa','nunu');
-    	$data=array(array('ajajaja','anununu'),array('tuutut','bababa'));
-    	$pdf->BasicTable($header,$data);
-    	
-    	#$pdf->Output('Bank_Receipt','I');
-    	$pdf->Output('/home/elgatil/Downloads/Documents/Bank_Receipt','F');
-    	
-    	$this->Session->setFlash(__('Bank Receipt generated'));
-    	return $this->redirect(array('action'=>'index'));
-    	 
-    }
-    
-	public function gen_bank_receipt_wrapper($id) {
-		$this->testpdf($id);
-		$this->Session->setFlash(__('Bank receipt generated'));
-		return $this->redirect(array('action'=>'index'));
-	}
-    
-    public function testpdf($id) {
     	/**
     	 * It shows all relevant information related with a proposal
     	 */
@@ -487,8 +449,11 @@ class ProposalsController extends AppController{
     	// you can call any mPDF method via component, for example:
     	$this->Mpdf->SetWatermarkText("Draft");
     	
+    	
     	$x['Proposal']['bank_receipt'] = $filename;
     	$this->Proposal->save($x);
+    	
+    	
     }
   	
 }

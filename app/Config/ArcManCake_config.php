@@ -1,18 +1,19 @@
 <?php
 
 // Config of Userright names
-$config['Level'][0] = 'Webmaster';
-$config['Level'][1] = 'Admin';
-$config['Level'][2] = 'Salesman';
-$config['Level'][3] = 'Overseer';
+$config['Level'][0] = __('Webmaster');
+$config['Level'][1] = __('Admin');
+$config['Level'][2] = __('Salesman');
+$config['Level'][3] = __('Overseer');
 
 
-$config['HousePictureType'][-1] = 'Basement';
-$config['HousePictureType'][0] = 'House Picture';
-$config['HousePictureType'][1] = 'Floorplan: Ground level';
-$config['HousePictureType'][2] = 'Floorplan: First floor';
-$config['HousePictureType'][3] = 'Floorplan: Second floor';
-$config['HousePictureType'][4] = 'Floorplan: Third floor';
+$config['HousePictureType'][-1] = __('Basement');
+$config['HousePictureType'][0] = __('House Picture');
+$config['HousePictureType'][1] = __('Floorplan: Ground level');
+$config['HousePictureType'][2] = __('Floorplan: First floor');
+$config['HousePictureType'][3] = __('Floorplan: Second floor');
+$config['HousePictureType'][4] = __('Floorplan: Third floor');
+$config['HousePictureType'][5] = __('Floorplan: Side view');
 
 
 ?>
