@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 17, 2014 at 08:16 PM
+-- Host: localhost
+-- Generation Time: Aug 18, 2014 at 09:27 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `arcmancake`
+-- Database: `ArcManCake`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=95 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=140 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -90,7 +90,55 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `extra_id`, `proposal_id`,
 (88, 8000, 1, 51, 12, '2014-08-08', '2014-08-08'),
 (89, 9000, 1, 52, 12, '2014-08-08', '2014-08-08'),
 (90, 500, 1, 53, 12, '2014-08-08', '2014-08-08'),
-(91, 4400, 1, 54, 12, '2014-08-08', '2014-08-08');
+(91, 4400, 1, 54, 12, '2014-08-08', '2014-08-08'),
+(92, 5000, 1, 47, 13, '2014-08-18', '2014-08-18'),
+(93, 3000, 1, 48, 13, '2014-08-18', '2014-08-18'),
+(94, 5000, 1, 49, 13, '2014-08-18', '2014-08-18'),
+(95, 5000, 1, 50, 13, '2014-08-18', '2014-08-18'),
+(96, 8000, 1, 51, 13, '2014-08-18', '2014-08-18'),
+(97, 9000, 1, 52, 13, '2014-08-18', '2014-08-18'),
+(98, 500, 1, 53, 13, '2014-08-18', '2014-08-18'),
+(99, 4400, 1, 54, 13, '2014-08-18', '2014-08-18'),
+(100, 5000, 1, 47, 14, '2014-08-18', '2014-08-18'),
+(101, 3000, 1, 48, 14, '2014-08-18', '2014-08-18'),
+(102, 5000, 1, 49, 14, '2014-08-18', '2014-08-18'),
+(103, 5000, 1, 50, 14, '2014-08-18', '2014-08-18'),
+(104, 8000, 1, 51, 14, '2014-08-18', '2014-08-18'),
+(105, 9000, 1, 52, 14, '2014-08-18', '2014-08-18'),
+(106, 500, 1, 53, 14, '2014-08-18', '2014-08-18'),
+(107, 4400, 1, 54, 14, '2014-08-18', '2014-08-18'),
+(108, 5000, 1, 47, 15, '2014-08-18', '2014-08-18'),
+(109, 3000, 1, 48, 15, '2014-08-18', '2014-08-18'),
+(110, 5000, 1, 49, 15, '2014-08-18', '2014-08-18'),
+(111, 5000, 1, 50, 15, '2014-08-18', '2014-08-18'),
+(112, 8000, 1, 51, 15, '2014-08-18', '2014-08-18'),
+(113, 9000, 1, 52, 15, '2014-08-18', '2014-08-18'),
+(114, 500, 1, 53, 15, '2014-08-18', '2014-08-18'),
+(115, 4400, 1, 54, 15, '2014-08-18', '2014-08-18'),
+(116, 5000, 1, 47, 16, '2014-08-18', '2014-08-18'),
+(117, 3000, 1, 48, 16, '2014-08-18', '2014-08-18'),
+(118, 5000, 1, 49, 16, '2014-08-18', '2014-08-18'),
+(119, 5000, 1, 50, 16, '2014-08-18', '2014-08-18'),
+(120, 8000, 1, 51, 16, '2014-08-18', '2014-08-18'),
+(121, 9000, 1, 52, 16, '2014-08-18', '2014-08-18'),
+(122, 500, 1, 53, 16, '2014-08-18', '2014-08-18'),
+(123, 4400, 1, 54, 16, '2014-08-18', '2014-08-18'),
+(124, 5000, 1, 47, 17, '2014-08-18', '2014-08-18'),
+(125, 3000, 1, 48, 17, '2014-08-18', '2014-08-18'),
+(126, 5000, 1, 49, 17, '2014-08-18', '2014-08-18'),
+(127, 5000, 1, 50, 17, '2014-08-18', '2014-08-18'),
+(128, 8000, 1, 51, 17, '2014-08-18', '2014-08-18'),
+(129, 9000, 1, 52, 17, '2014-08-18', '2014-08-18'),
+(130, 500, 1, 53, 17, '2014-08-18', '2014-08-18'),
+(131, 4400, 1, 54, 17, '2014-08-18', '2014-08-18'),
+(132, 5000, 1, 47, 18, '2014-08-18', '2014-08-18'),
+(133, 3000, 1, 48, 18, '2014-08-18', '2014-08-18'),
+(134, 5000, 1, 49, 18, '2014-08-18', '2014-08-18'),
+(135, 5000, 1, 50, 18, '2014-08-18', '2014-08-18'),
+(136, 8000, 1, 51, 18, '2014-08-18', '2014-08-18'),
+(137, 9000, 1, 52, 18, '2014-08-18', '2014-08-18'),
+(138, 500, 1, 53, 18, '2014-08-18', '2014-08-18'),
+(139, 4400, 1, 54, 18, '2014-08-18', '2014-08-18');
 
 -- --------------------------------------------------------
 
@@ -224,7 +272,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
 
 --
 -- Dumping data for table `extras`
@@ -235,8 +283,8 @@ INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `
 (15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 0, 0, 0, 3, 4, '2014-07-02', '2014-08-04'),
 (17, 'T-Rex', 'Rooooooooaarr\r\n\r\nEver wonder how it feels to sail a half-million-ton supertanker through the perfect storm? To take on illegal whale hunters in the Antarctic? Or to feel the rush of being part of the Coast Guard as you evacuate a cruise liner in distress? Ship Simulator Extremes has players take on exciting missions all over the world as they pilot an impressive array of vessels and live the stories of real ship captains. With missions based on actual events in realistic environments at locations all over the world, the new Ship Simulator game is sure to take you to extremes! ', 1000, 'trex.jpg', 0, 0, 0, 0, 6, 6, '2014-07-04', '2014-08-04'),
 (31, 'Something boring', 'This tutorial is written for Django 1.6 and Python 2.x. If the Django version doesnâ€™t match, you can refer to the tutorial for your version of Django by using the version switcher at the bottom right corner of this page, or update Django to the newest version. If you are using Python 3.x, be aware that your code may need to differ from what is in the tutorial and you should continue using the tutorial only if you know what you are doing with Python 3.x.', 59, '', 0, 0, 0, 0, 3, 6, '2014-07-09', '2014-07-09'),
-(33, 'custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, '', -1, 0, 1, 0, 1, 6, '2014-07-09', '2014-08-17'),
-(35, 'Custom external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, '', 0, 0, 1, 0, 4, 6, '2014-07-10', '2014-08-17'),
+(33, 'stupid custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, '', -1, 0, 1, 0, 1, 6, '2014-07-09', '2014-07-09'),
+(35, 'Custom stupid external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, '', 0, 0, 1, 0, 4, 6, '2014-07-10', '2014-08-04'),
 (36, 'Oven', 'Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.', 200, '', 0, 0, 0, 0, 1, 6, '2014-07-11', '2014-07-11'),
 (37, 'Terrace', 'Estamos en pleno julio ya: unos cuantos ya estarÃ¡n de vacaciones aprovechando la ventana que nos abre el verano, otros se encontrarÃ¡n trabajando en sus respectivas tareasâ€¦ pero lo que es seguro es que contarÃ©is con unos cuantos momentos de tranquilidad o aburrimiento entre medias. Para salvar todos esos momentos llegan los mejores juegos Android de la semana, una secciÃ³n en la que recopilamos toda la semana en lo que a juegos se refiere y ademÃ¡s os damos unos cuantos lanzamientos por si no habÃ©is tenido suficiente. Â¡Comenzamos!', 1004, '', 0, 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
 (38, 'Dog House', 'Cartoon Network lleva una buena sucesiÃ³n de juegos lanzados en Google Play, y con Monsters Ate My Birthday parece que quieren reafirmar esa tendencia: muchos monstruos, tarta, superpoderes, una aventura Ã©pica llena de rutas secretasâ€¦ si querÃ©is diversiÃ³n mÃ¡gica llena de pasteles, habÃ©is encontrado vuestro juego ideal sin lugar a dudas. Lo tenÃ©is disponible en Google Play al precio de 3.66â‚¬, algo caro, pero no han vuelto a cometer el error de combinarlo con pagos dentro de la aplicaciÃ³n.', 145, '', 0, 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
@@ -301,7 +349,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `houses`
@@ -309,9 +357,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
 
 INSERT INTO `houses` (`id`, `name`, `description`, `size`, `floors`, `price`, `type`, `user_id`, `created`, `modified`) VALUES
 (3, 'Wayne''s Manor', 'Beautiful palace. For a long time it has been home for the illustrious Wayne familie\r\n\r\nNote: Batcave not included', 2000, 2, 1234570000, 2, 6, '2014-07-01', '2014-07-01'),
-(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01'),
-(5, 'Stark tower', 'Obviamente detrÃ¡s de cada consola del mercado existe un punto que diferencia la plataforma del resto y es el software / juegos disponible para cada una de ellas y NVIDIA lo centraliza a travÃ©s de su aplicaciÃ³n TegraZone y Shield.\r\nNVIDIA deja claro que con Shield Tablet se puede jugar a cualquier juego Android del mercado bien sea utilizando la pantalla tÃ¡ctil o bien un mando (existe un software de NVIDIA para asignar pulsaciones fÃ­sicas del mando a zonas en pantalla para juegos con controles virtuales).', 20000, 0, 90000000, 3, 6, '2014-07-22', '2014-07-22'),
-(6, 'Stadt 120', 'TBD', 120, 2, 200000, 0, 2, '2014-08-17', '2014-08-17');
+(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01');
 
 -- --------------------------------------------------------
 
@@ -330,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `house_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `house_pictures`
@@ -342,25 +388,15 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (9, 'pool', 'ksjdfnsn', 'cool.jpg', 0, 3, 2, '2014-07-03', '2014-07-03'),
 (10, 'Front', 'sdgfgdfrgdf', 'wayne.jpg', 0, 3, 2, '2014-07-03', '2014-07-03'),
 (11, 'first-floor', '', 'floorplan1-wayneManor.jpg', 2, 3, 6, '2014-07-07', '2014-07-07'),
-(13, 'Basement', 'The Polymer core elements set includes several elements for application layout, including creating toolbars, app bars, tabs, and side nav consistent with the material design guidelines.\r\n\r\nSee Layout elements for information on using these elements.', 'basement manor.jpg', -1, 3, 6, '2014-07-22', '2014-07-22'),
-(14, 'Stark Tower Main', 'The number of results that are fetched is exposed to the user as the limit parameter. It is generally undesirable to allow users to fetch all rows in a paginated set. By default CakePHP limits the maximum number of rows that can be fetched to 100. If this default is not appropriate for your application, you can adjust it as part of the pagination options:', 'Stark_Tower.jpg', 0, 5, 0, '2014-07-22', '2014-07-22'),
-(15, 'Stark tower 2', 'With the release 0.6.2 the paragraph properties has been moved into a separate Class!\r\nSo, every text element now has two style properties: FONT and PARAGRAPH. See the following example for more information:', 'starktower2.png', 0, 5, 0, '2014-07-23', '2014-07-23'),
-(16, 'Stark tower 3', ' OLD release, 0.6.1:\r\n$styleFont = array(''bold''=>true, ''size''=>16, ''name''=>''Calibri'', ''align''=>''center'', ''spaceAfter''=>100);\r\n$section->addText(''Hello World'', $styleFont);\r\n\r\n// NEW release, 0.6.2:\r\n$styleFont = array(''bold''=>true, ''size''=>16, ''name''=>''Calibri'');\r\n$styleParagraph = array(''align''=>''center'', ''spaceAfter''=>100);\r\n$section->addText(''Hello World'', $styleFont, $styleParagraph', 'StarTowerDay-Avengers.png', 0, 5, 0, '2014-07-23', '2014-07-23'),
-(17, 'Stark tower floorplan', '$myTextElement->setBold();\r\n$myTextElement->setName(''Verdana'');\r\n$myTextElement->setSize(22);\r\n\r\n// At least write the document to webspace:\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, ''Word2007'');\r\n$objWriter->save(''helloWorld.docx'')', 'starktowerfloorplan.jpg', 1, 5, 0, '2014-07-23', '2014-07-23'),
-(18, 'Erdgeschoss', '', 'stadt-120-EG.png', 1, 6, 0, '2014-08-17', '2014-08-17'),
-(19, 'Eingang', '', 'stadt-120-eingang.png', 0, 6, 0, '2014-08-17', '2014-08-17'),
-(20, 'Garten', '', 'stadt-120-garten.png', 0, 6, 0, '2014-08-17', '2014-08-17'),
-(21, 'Dachgeschoss', '', 'stadt-120-DG.png', 2, 6, 0, '2014-08-17', '2014-08-17'),
-(22, 'Keller', '', 'stadt-120-KG.png', -1, 6, 0, '2014-08-17', '2014-08-17'),
-(23, 'Seitenschnitt', '', 'stadt-120-Schnitt.png', 4, 6, 0, '2014-08-17', '2014-08-17');
+(19, 'Basement', 'I: send the file inline to the browser. The plug-in is used if available. The name given by filename is used when one selects the "Save as" option on the link generating the PDF.\r\nD: send to the browser and force a file download with the name given by filename.\r\nF: save to a local file with the name given by filename (may include a path).\r\nS: return the document as a string. filename is ignored.', 'basement manor.jpg', -1, 3, 0, '2014-08-18', '2014-08-18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `immocaster_storage`
+-- Table structure for table `Immocaster_Storage`
 --
 
-CREATE TABLE IF NOT EXISTS `immocaster_storage` (
+CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
   `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `ic_desc` varchar(32) NOT NULL,
   `ic_key` varchar(128) NOT NULL,
@@ -370,10 +406,10 @@ CREATE TABLE IF NOT EXISTS `immocaster_storage` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
--- Dumping data for table `immocaster_storage`
+-- Dumping data for table `Immocaster_Storage`
 --
 
-INSERT INTO `immocaster_storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
+INSERT INTO `Immocaster_Storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
 (23, 'REQUEST', 'ea567b98-3129-407c-ad73-f83a0b2f7f61', 'iV7L4OrUSS1VdGkbZKfMfBTkYl6%2FP4MbdnwMc%2BiL4Su7oDn4NRxIcX%2BUPRoEjgVwSQpAi8AdEcxWBNEp8x9ZyylcwZH7HhxbvwQ8Rjheg7o%3D', '2012-11-02 20:44:08'),
 (22, 'APPLICATION', '7ceda6d2-be12-4bb2-93ad-f24e32b778ab', 'd9YWI%2F90I03Jo9aVYZKmUCv1IROLc89KT1Sf78sMAe2UrhqPxpuLqT0bQJ1c2YZn3RslRyVH5y3AOkbplIfPfUDBtMzIMJnaGfFkprEhATw%3D', '0000-00-00 00:00:00');
 
@@ -434,7 +470,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `proposals`
@@ -442,11 +478,10 @@ CREATE TABLE IF NOT EXISTS `proposals` (
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
 (2, 'Prop for cus b 1', '', '', 'files/BankReceipt2.pdf', '', 3, 4, 3, '', 4, '2014-07-04', '2014-07-04'),
-(3, 'Prop for cus a 33', 'trfyhjkl;[', '', 'files/BankReceipt3.pdf', '', 1, 1, 6, '19', 3, '2014-07-05', '2014-08-17'),
-(4, 'Very expensive house', 'Tooooooooooooo expensive', '', 'files/BankReceipt4.pdf', '', 6, 2, 3, '9', 6, '2014-07-07', '2014-07-23'),
-(5, 'Secret Lair', 'Cool', '', '', '', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
+(4, 'Very expensive house', 'Tooooooooooooo expensive', '', 'files/BankReceipt4.pdf', '', 6, 2, 3, '10', 6, '2014-07-07', '2014-08-18'),
+(5, 'Secret Lair', 'Cool', '', 'files/BankReceipt5.pdf', '', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
 (6, 'Prop for cus a2: Cheap House', '', '', 'files/BankReceipt6.pdf', '', 2, 0, 0, '', 3, '2014-07-09', '2014-07-09'),
-(11, 'first proposal', 'so, i spoke with Babsis Dad yesterday, but first to your comments:\r\n\r\nButtons: i mean the edit and delete buttons look gread, altough here is already one comment from Babsis Dad: delete must be red button (should be no problem)\r\n\r\nUsers: I donâ€™t really care what we do here ... we can do it as a tabular, but also there the actions should be buttons\r\n\r\nadd many extras: no it will stay one column, there will be max 6 categories and folded in it fits very well on one page with the add button at the bottom\r\n\r\nanyway, letâ€™s get to the important stuff:\r\n\r\n(we might need to skype also since there are some details which i''m not sure if i can perfectly describe them in two sentences)\r\n\r\nokay, so regarding the external extras: (maybe also open the excel sheet for comparison) there are 8 entries and they need to always added with default values when a proposal is created! its apparently important and i can also try to explain this to you on skype', '', '', '', 5, 2, 3, '10', 6, '2014-08-04', '2014-08-04'),
+(11, 'first proposal', 'so, i spoke with Babsis Dad yesterday, but first to your comments:\r\n\r\nButtons: i mean the edit and delete buttons look gread, altough here is already one comment from Babsis Dad: delete must be red button (should be no problem)\r\n\r\nUsers: I donâ€™t really care what we do here ... we can do it as a tabular, but also there the actions should be buttons\r\n\r\nadd many extras: no it will stay one column, there will be max 6 categories and folded in it fits very well on one page with the add button at the bottom\r\n\r\nanyway, letâ€™s get to the important stuff:\r\n\r\n(we might need to skype also since there are some details which i''m not sure if i can perfectly describe them in two sentences)\r\n\r\nokay, so regarding the external extras: (maybe also open the excel sheet for comparison) there are 8 entries and they need to always added with default values when a proposal is created! its apparently important and i can also try to explain this to you on skype', '', 'files/BankReceipt11.pdf', '', 5, 2, 3, '10', 6, '2014-08-04', '2014-08-04'),
 (12, 'Empty proposal', 'PortÃ¡tiles para jugadores, ese complicado equilibrio entre potencia y autonomÃ­a - si es que quieres moverlo -, para conseguir echar andar los juegos de Ãºltima generaciÃ³n, o los que siguen de moda, que normalmente tambiÃ©n piden una buena mÃ¡quina. AquÃ­ nos encontramos casi sin pensarlo con Alienware.\r\n\r\nLa compaÃ±Ã­a perteneciente a Dell nos acaba de presentar un nuevo modelo de 13 pulgadas, con unos ingredientes bastante interesantes, con los que intentarÃ¡n que olvidemos a aquel pequeÃ±o Alienware M11x, que dejÃ³ de venderse en 2012.\r\n\r\nEl Dell Alienware 13 es una vuelta a la misma idea, un portÃ¡til lo mÃ¡s compacto posible, sin perder capacidades para jugar. Se situarÃ­a un escalÃ³n por debajo del Dell Alienware 14, que analizamos el aÃ±o pasado. En la competencia tambiÃ©n nos tenemos que ir a ', '', 'files/BankReceipt12.pdf', '', 4, 0, 0, '', 6, '2014-08-08', '2014-08-08');
 
 -- --------------------------------------------------------

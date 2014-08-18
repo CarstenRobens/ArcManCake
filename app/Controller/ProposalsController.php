@@ -296,14 +296,14 @@ class ProposalsController extends AppController{
     	
     	
         if ($this->Proposal->delete($id)) {
-        	if (!empty($proposal['summary'])){
-        		unlink(WWW_ROOT.$proposal['summary']);
+        	if (!empty($proposal['Proposal']['summary'])){
+        		unlink(WWW_ROOT.$proposal['Proposal']['summary']);
         	}
-        	if (!empty($proposal['bank_receipt'])){
-        		unlink(WWW_ROOT.$proposal['bank_receipt']);
+        	if (!empty($proposal['Proposal']['bank_receipt'])){
+        		unlink(WWW_ROOT.$proposal['Proposal']['bank_receipt']);
         	}
-        	if (!empty($proposal['contract'])){
-        		unlink(WWW_ROOT.$proposal['contract']);
+        	if (!empty($proposal['Proposal']['contract'])){
+        		unlink(WWW_ROOT.$proposal['Proposal']['contract']);
         	}
         	$this->Session->setFlash(__('The proposal with id: %s has been deleted',h($id)));
             return $this->redirect(array('action'=>'index'));
