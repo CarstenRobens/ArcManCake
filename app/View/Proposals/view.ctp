@@ -59,6 +59,36 @@ foreach($bought_extras_view as $index=>$x){
 	
 	
 <!---------------------------------------------HOUSE---------------------------------------------------->
+
+<?php 
+foreach ($normal_house_pictures_view as $x){
+	if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
+		$default_picture=$x['MyHousePicture'];
+	}else{
+		echo $this->Html->link('','/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+				array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
+		);
+	}
+}
+foreach ($basement_house_pictures_view as $key=>$x){
+if ($key==0){
+		$base_first=$x['MyHousePicture'];
+	}else{
+		echo $this->Html->link('','/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+				array('escape'=>false,'data-lightbox'=>'base_pics','data-title'=>$house_pic_type[$x['MyHousePicture']['type_flag']].': '.$x['MyHousePicture']['description'])
+		);
+	}
+}
+foreach ($floorplan_house_pictures_view as $key=>$x){
+	if ($key==0){
+		$floor_first=$x['MyHousePicture'];
+	}else{
+		echo $this->Html->link('','/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+				array('escape'=>false,'data-lightbox'=>'floor_pics','data-title'=>$house_pic_type[$x['MyHousePicture']['type_flag']].': '.$x['MyHousePicture']['description'])
+		);
+	}
+}?>
+	
 	
 <?php if (!empty($proposal_view['MyHouse']['id'])){ ?>	
 	<div class="row">
@@ -75,43 +105,40 @@ foreach($bought_extras_view as $index=>$x){
         
         
         
-        <div class="col-md-2">
+        <div class="col-md-1">
 			<div class="row">
-				<?php echo $this->Html->link(
-				    $this->Html->image(
-				    	'uploads/houses/'.$house_pictures_view[1]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[1]['MyHousePicture']['picture']),
-					array('escape'=>false,'data-lightbox'=>'summary')
-				); ?>
-			</div>
 				
-			<div class="row">
-				<?php echo $this->Html->link(
-				    $this->Html->image(
-				    	'uploads/houses/'.$house_pictures_view[2]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[2]['MyHousePicture']['picture']),
-					array('escape'=>false,'data-lightbox'=>'summary')
-				); ?>
-			</div>
-				
-			<div class="row">
-				<?php echo $this->Html->link(
-				    $this->Html->image(
-				    	'uploads/houses/'.$house_pictures_view[3]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[3]['MyHousePicture']['picture']),
-					array('escape'=>false,'data-lightbox'=>'summary')
-				); ?>
 			</div>
         </div>
         
 		<div class="col-md-5">
 			<div class="row">
 				<?php echo $this->Html->link(
-				    $this->Html->image(
-				    	'uploads/houses/'.$house_pictures_view[0]['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-					array('controller'=>'img','action'=>'uploads','houses',$house_pictures_view[0]['MyHousePicture']['picture']),
-					array('escape'=>false,'data-lightbox'=>'summary')
+				    $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+					'/img/uploads/houses/'.$default_picture['picture'],
+					array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])
 				); ?>
+			</div>
+			<div class="row">
+				<div class="col-md-6" align="center">
+					<?php if (!empty($floorplan_house_pictures_view)){
+						echo $this->Html->link(
+								$this->Html->image('uploads/houses/'.$floor_first['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ", "width"=>100)),
+								'/img/uploads/houses/'.$floor_first['picture'],
+								array('escape'=>false,'data-lightbox'=>'floor_pics','data-title'=>$house_pic_type[$floor_first['type_flag']].': '.$floor_first['description'])
+						);
+					}?>
+				</div>
+				
+				<div class="col-md-6" align="center">
+					<?php if (!empty($basement_house_pictures_view)){
+						echo $this->Html->link(
+								$this->Html->image('uploads/houses/'.$base_first['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ", "width"=>100)),
+								'/img/uploads/houses/'.$base_first['picture'],
+								array('escape'=>false,'data-lightbox'=>'base_pics','data-title'=>$house_pic_type[$base_first['type_flag']].': '.$base_first['description'])
+						);
+					}?>
+				</div>
 			</div>
 		</div>
 		
@@ -146,6 +173,7 @@ foreach($bought_extras_view as $index=>$x){
 				<div class="col-xs-8"> <?php echo $proposal_view['MyHouse']['price'].' €'; ?> </div>
 			</div>
 		</div>
+		<div class="col-md-1"></div>
 		<?php } ?>
 	</div>			
 	
@@ -664,4 +692,5 @@ $("#save_enlarge").click(function(){
 	});
 })
 </script>
+
 

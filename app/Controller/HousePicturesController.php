@@ -42,7 +42,8 @@ class HousePicturesController extends AppController{
 				if(!empty($this->request->data['HousePicture']['upload']['name']))
 				{
 					$file = $this->request->data['HousePicture']['upload']; //put the data into a var for easy use
-				
+					$file['name']=$this->request->data['HousePicture']['house_id'].'_'.$file['name'];
+					
 					$ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
 					$arr_ext = array('jpg', 'jpeg', 'gif','png'); //set allowed extensions
 				
@@ -50,11 +51,11 @@ class HousePicturesController extends AppController{
 					if(in_array($ext, $arr_ext)){
 						//do the actual uploading of the file. First arg is the tmp name, second arg is
 						//where we are putting it
-						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/houses/' . $file['name'].$house_id);
+						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/houses/'.$file['name']);
 				
 						//prepare the filename for database entry
 						
-						$this->request->data['HousePicture']['picture'] = $file['name'].$house_id;
+						$this->request->data['HousePicture']['picture'] = $file['name'];
 						
 						
 					}else{
@@ -62,8 +63,7 @@ class HousePicturesController extends AppController{
 					}
 				}
 				
-				$this->request->data['HousePicture']['picture'] = $file['name'];
-				
+				$this->request->data['HousePicture']['user_id'] = $this->Auth->user('id');
 				if ($this->HousePicture->save($this->request->data)) {
 					$this->Session->setFlash(__('Picture saved.'));
 					return $this->redirect(array('action' => 'index',$house_id));

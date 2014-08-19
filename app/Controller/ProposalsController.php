@@ -53,8 +53,14 @@ class ProposalsController extends AppController{
             }
 	
             $x = $this->Proposal->findById($id);
+            
             $y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
-				'conditions'=>array('house_id' => $x['Proposal']['house_id'])));
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>0)));
+            $ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>-1)));
+            $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
+            
             $z = $this->Proposal->MyBoughtExtra->find('all',array(
 				'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false)));
             $zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
@@ -65,7 +71,11 @@ class ProposalsController extends AppController{
             }
             
             $this->set('proposal_view',$x);
-            $this->set('house_pictures_view',$y);
+            
+            $this->set('normal_house_pictures_view',$y);
+            $this->set('basement_house_pictures_view',$ybase);
+            $this->set('floorplan_house_pictures_view',$yfloor);
+            
             $this->set('bought_extras_view',$z);
             $this->set('bought_external_extras_view',$zexternal);
 	}
@@ -76,7 +86,7 @@ class ProposalsController extends AppController{
 		 * Creates an empty proposal for the customer with id $customer_id 
 		 */
 		if (!$customer_id) {
-			throw new NotFoundException(__('Invaled customer'));
+			throw new NotFoundException(__('Invalid customer'));
 		}
 		
 		
@@ -122,7 +132,7 @@ class ProposalsController extends AppController{
     	 * Let the user modify all fields of the proposal (Admin only)
     	 */
     	if (!$id) {
-        	throw new NotFoundException(__('Invaled proposal'));
+        	throw new NotFoundException(__('Invalid proposal'));
         }
             
         $x = $this->Proposal->findById($id);
@@ -147,37 +157,6 @@ class ProposalsController extends AppController{
         if (!$this->request->data) {
         	$this->request->data=$x;
         }
-	}
-	
-	public function edit_land($id = NULL) {
-		/**
-		 * DEPRECATED!
-		 */
-		if (!$id) {
-			throw new NotFoundException(__('Invaled proposal'));
-		}
-	
-		$x = $this->Proposal->findById($id);
-		$this->set('proposal_id_view',$id);
-		$this->set('list_lands_view',$this->Proposal->MyLand->find('list',array(
-				'conditions'=>array('MyLand.customer_id' => array(0 ,$x['MyCustomer']['id']))
-		)));
-		
-		if (!$x) {
-			throw new NotFoundException (__('Invalid proposal'));
-		}
-	
-		if ($this->request->is(array('proposal','put'))) {
-			$this->Proposal->id = $id;
-			if ($this->Proposal->save($this->request->data)) {
-				$this->Session->setFlash(__('Your proposal has been updated'));
-				return $this->redirect(array('action'=>'view',$id));
-			}
-			$this->Session->setFlash(__('Unable to update your proposal.'));
-		}
-		if (!$this->request->data) {
-			$this->request->data=$x;
-		}
 	}
 	
 	public function selected_land(){
@@ -247,13 +226,13 @@ class ProposalsController extends AppController{
 		
 		if ($this->Proposal->save($x)) {
 			$this->Session->setFlash(__('Your proposal has been updated'));
-			return $this->redirect(array('action'=>'select_default_picture',$proposal_id));
+			return $this->redirect(array('action'=>'edit_default_picture',$proposal_id));
 		}
 		$this->Session->setFlash(__('Unable to update your proposal.'));
 	}
 	
 	
-	public function select_default_picture($id = NULL) {
+	public function edit_default_picture($id = NULL) {
 		/**
 		 * This action let the user select the default picture he wants for the proposal with id $id, using a user-friendly interface.
 		 */
@@ -284,6 +263,33 @@ class ProposalsController extends AppController{
 		if (!$this->request->data) {
 			$this->request->data=$x;
 		}
+	}
+	
+	public function selected_default_picture($proposal_id = NULL, $default_house_picture_id = NULL) {
+	
+		/**
+		 * This action changes Proposal.default_house_picture_id in the DB.
+		 * It receives via GET the default_house_picture_id we want to set and the proposal_id we want to apply to, and it makes the corresponding changes in the DB.
+		 *
+		 */
+	
+		if (!$proposal_id) {
+			throw new NotFoundException(__('Invalid proposal'));
+		}
+	
+		$x = $this->Proposal->findById($proposal_id);
+	
+		if (!$default_house_picture_id) {
+			throw new NotFoundException(__('Invalid house picture'));
+		}
+	
+		$x['Proposal']['default_house_picture_id']=$default_house_picture_id;
+	
+		if ($this->Proposal->save($x)) {
+			$this->Session->setFlash(__('Your proposal has been updated'));
+			return $this->redirect(array('action'=>'view',$proposal_id));
+		}
+		$this->Session->setFlash(__('Unable to update your proposal.'));
 	}
         
 	

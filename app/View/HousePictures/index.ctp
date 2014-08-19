@@ -1,4 +1,35 @@
 <hr>
+
+<div class="row">
+	<div class="col-md-1"></div>
+	
+	<div class="col-md-10" align=center>
+		<?php for($j=0; $j<=count($house_pictures_view)-1; $j++) {
+			if (($j % 3) ==0){ ?>
+				<div class="row">
+				<?php for ($i=0; $i<=2; $i++){ ?>
+					<div class="col-md-4" align=center>
+						<?php if (!empty($house_pictures_view[$j+$i])){
+							echo $this->Html->image('/img/uploads/houses/'.$house_pictures_view[$j+$i]['HousePicture']['picture'], array('class' => 'featurette-image img-responsive'));
+							echo $house_pictures_view[$j+$i]['HousePicture']['name'].': '.$house_pictures_view[$j+$i]['HousePicture']['description'].'<br>';
+							echo $this->Form->postLink(__('Delete house picture'),array('controller' => 'HousePictures','action' => 'delete',$house_pictures_view[$j+$i]['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove'));
+						}?>
+					</div>
+				<?php }?>
+				</div>
+			<?php }
+		}?>
+		
+		<div class="row">
+			
+		</div>
+	</div>
+	
+	<div class="col-md-1"></div>
+	
+</div>
+
+
     <?php foreach($house_pictures_view as $x){ ?>
 	
 	
