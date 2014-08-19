@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
               </button>
 				
-			  <?php echo $this->Html->link(__('Home'), array('plugin'=>NULL,'controller' => 'HomePictures', 'action' => 'home'),array('class' => 'navbar-brand')); ?>
+			  <?php echo $this->Html->link(__('IZ-Haus'), array('plugin'=>NULL,'controller' => 'HomePictures', 'action' => 'home'),array('class' => 'navbar-brand')); ?>
             </div>
             <div class="navbar-collapse collapse">
 				
