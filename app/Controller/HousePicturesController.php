@@ -97,7 +97,7 @@ class HousePicturesController extends AppController{
         unlink(WWW_ROOT.'img/uploads/houses/'.$x['HousePicture']['picture']);
         if ($this->HousePicture->delete($id)) {
         	$this->Session->setFlash(__('Picture with id: %s has been deleted',h($id)));
-            return $this->redirect(array('action'=>'index'));
+            return $this->redirect(array('action'=>'index',$x['MyHouse']['id']));
         }
     }
    

@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 20, 2014 at 08:06 
+-- Host: 127.0.0.1
+-- Generation Time: Aug 20, 2014 at 08:26 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ArcManCake`
+-- Database: `arcmancake`
 --
 
 -- --------------------------------------------------------
@@ -353,7 +353,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `houses`
@@ -361,7 +361,8 @@ CREATE TABLE IF NOT EXISTS `houses` (
 
 INSERT INTO `houses` (`id`, `name`, `description`, `size`, `floors`, `price`, `type`, `user_id`, `created`, `modified`) VALUES
 (3, 'Wayne''s Manor', 'Beautiful palace. For a long time it has been home for the illustrious Wayne familie\r\n\r\nNote: Batcave not included', 2000, 2, 1234570000, 2, 6, '2014-07-01', '2014-07-01'),
-(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01');
+(4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01'),
+(5, 'Stadt 120', 'GenieÃŸen Sie das Zusammensein mit Ihren Lieben im grÃ¤umigen Wohnzimmer. GroÃŸe Fenster geben Helligkeit und freie Sicht nach drauÃŸen, in Ihren Garten. Damit Sie den Tag mit einem gemÃ¼tlichen FrÃ¼hstÃ¼ck beginnen kÃ¶nnen, findet in der KÃ¼che auch eine gemÃ¼tliche Essecke Platz. Ein Hauswirtschafts- und ein Abstellraum runden Ihr REH im Ergeschoss ab. Im OG erwarten Sie drei schÃ¶ne Zimmer, die sich sowohl als Schlafzimmer, Kinder-, oder GÃ¤ste- eignen. Platz zum Spielen, Ausruhen oder Arbeiten ist fÃ¼r alle vorhanden. Das Bad wirkt, wie die gesamte obere Etage, hell und freundlich. Im DG ist ein Arbeitszimmer. Die dargestellten Preise beziehen sich auf ein REH. Auf Wunsch ist dieses Haus auch mit Keller sowie als EnergieSparhaus erhÃ¤ltlich	', 120, 0, 200000, 1, 2, '2014-08-20', '2014-08-20');
 
 -- --------------------------------------------------------
 
@@ -380,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `house_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `house_pictures`
@@ -394,15 +395,21 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (11, 'first-floor', '', 'floorplan1-wayneManor.jpg', 2, 3, 6, '2014-07-07', '2014-07-07'),
 (19, 'Basement', 'I: send the file inline to the browser. The plug-in is used if available. The name given by filename is used when one selects the "Save as" option on the link generating the PDF.\r\nD: send to the browser and force a file download with the name given by filename.\r\nF: save to a local file with the name given by filename (may include a path).\r\nS: return the document as a string. filename is ignored.', 'basement manor.jpg', -1, 3, 0, '2014-08-18', '2014-08-18'),
 (30, 'Living room', 'A lil old fashioned', '3_LivingRoom.jpg', 0, 3, 6, '2014-08-19', '2014-08-19'),
-(31, 'bedroom', 'scary', '3_castle-leslie-the-green-bedroom.jpg', 0, 3, 6, '2014-08-19', '2014-08-19');
+(31, 'bedroom', 'scary', '3_castle-leslie-the-green-bedroom.jpg', 0, 3, 6, '2014-08-19', '2014-08-19'),
+(32, 'Eingang', '', '5_stadt-120-eingang.png', 0, 5, 2, '2014-08-20', '2014-08-20'),
+(33, 'Garten', '', '5_stadt-120-garten.png', 0, 5, 2, '2014-08-20', '2014-08-20'),
+(37, 'Erdgeschoss', '', '5_stadt-120-EG.png', 1, 5, 2, '2014-08-20', '2014-08-20'),
+(38, 'Dachgeschoss', '', '5_stadt-120-DG.png', 2, 5, 2, '2014-08-20', '2014-08-20'),
+(39, 'Keller', '', '5_stadt-120-KG.png', -1, 5, 2, '2014-08-20', '2014-08-20'),
+(40, 'Seitenschnitt', '', '5_stadt-120-Schnitt.png', 5, 5, 2, '2014-08-20', '2014-08-20');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Immocaster_Storage`
+-- Table structure for table `immocaster_storage`
 --
 
-CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
+CREATE TABLE IF NOT EXISTS `immocaster_storage` (
   `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `ic_desc` varchar(32) NOT NULL,
   `ic_key` varchar(128) NOT NULL,
@@ -412,10 +419,10 @@ CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
--- Dumping data for table `Immocaster_Storage`
+-- Dumping data for table `immocaster_storage`
 --
 
-INSERT INTO `Immocaster_Storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
+INSERT INTO `immocaster_storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
 (23, 'REQUEST', 'ea567b98-3129-407c-ad73-f83a0b2f7f61', 'iV7L4OrUSS1VdGkbZKfMfBTkYl6%2FP4MbdnwMc%2BiL4Su7oDn4NRxIcX%2BUPRoEjgVwSQpAi8AdEcxWBNEp8x9ZyylcwZH7HhxbvwQ8Rjheg7o%3D', '2012-11-02 20:44:08'),
 (22, 'APPLICATION', '7ceda6d2-be12-4bb2-93ad-f24e32b778ab', 'd9YWI%2F90I03Jo9aVYZKmUCv1IROLc89KT1Sf78sMAe2UrhqPxpuLqT0bQJ1c2YZn3RslRyVH5y3AOkbplIfPfUDBtMzIMJnaGfFkprEhATw%3D', '0000-00-00 00:00:00');
 
@@ -484,7 +491,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
 (2, 'Prop for cus b 1', '', '', 'files/BankReceipt2.pdf', '', 3, 4, 3, '', 4, '2014-07-04', '2014-07-04'),
-(4, 'Very expensive house', 'Tooooooooooooo expensive', '', 'files/BankReceipt4.pdf', '', 6, 2, 3, '9', 6, '2014-07-07', '2014-08-19'),
+(4, 'Very expensive house', 'Tooooooooooooo expensive', '', 'files/BankReceipt4.pdf', '', 6, 2, 5, '32', 6, '2014-07-07', '2014-08-19'),
 (5, 'Secret Lair', 'Cool', '', 'files/BankReceipt5.pdf', '', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
 (11, 'first proposal', 'so, i spoke with Babsis Dad yesterday, but first to your comments:\r\n\r\nButtons: i mean the edit and delete buttons look gread, altough here is already one comment from Babsis Dad: delete must be red button (should be no problem)\r\n\r\nUsers: I donâ€™t really care what we do here ... we can do it as a tabular, but also there the actions should be buttons\r\n\r\nadd many extras: no it will stay one column, there will be max 6 categories and folded in it fits very well on one page with the add button at the bottom\r\n\r\nanyway, letâ€™s get to the important stuff:\r\n\r\n(we might need to skype also since there are some details which i''m not sure if i can perfectly describe them in two sentences)\r\n\r\nokay, so regarding the external extras: (maybe also open the excel sheet for comparison) there are 8 entries and they need to always added with default values when a proposal is created! its apparently important and i can also try to explain this to you on skype', '', 'files/BankReceipt11.pdf', '', 5, 2, 3, '31', 6, '2014-08-04', '2014-08-04'),
 (12, 'Empty proposal', 'PortÃ¡tiles para jugadores, ese complicado equilibrio entre potencia y autonomÃ­a - si es que quieres moverlo -, para conseguir echar andar los juegos de Ãºltima generaciÃ³n, o los que siguen de moda, que normalmente tambiÃ©n piden una buena mÃ¡quina. AquÃ­ nos encontramos casi sin pensarlo con Alienware.\r\n\r\nLa compaÃ±Ã­a perteneciente a Dell nos acaba de presentar un nuevo modelo de 13 pulgadas, con unos ingredientes bastante interesantes, con los que intentarÃ¡n que olvidemos a aquel pequeÃ±o Alienware M11x, que dejÃ³ de venderse en 2012.\r\n\r\nEl Dell Alienware 13 es una vuelta a la misma idea, un portÃ¡til lo mÃ¡s compacto posible, sin perder capacidades para jugar. Se situarÃ­a un escalÃ³n por debajo del Dell Alienware 14, que analizamos el aÃ±o pasado. En la competencia tambiÃ©n nos tenemos que ir a ', '', 'files/BankReceipt12.pdf', '', 4, 0, 0, '', 6, '2014-08-08', '2014-08-08');

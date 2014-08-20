@@ -92,7 +92,9 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 	
 <?php if (!empty($proposal_view['MyHouse']['id'])){ ?>	
 	<div class="row">
+		<div class="col-md-8">
 		<div class="panel panel-success">
+		
            	<div class="panel-heading">
 				<h3 class="panel-title"><?php echo __( 'House');?></h3>
 			</div>
@@ -110,39 +112,19 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 				
 			</div>
         </div>
-        
-		<div class="col-md-5">
-			<div class="row">
+		<div class="col-md-10">
+        <div class="row">
+		
+			
 				<?php echo $this->Html->link(
 				    $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
 					'/img/uploads/houses/'.$default_picture['picture'],
 					array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])
 				); ?>
-			</div>
-			<div class="row">
-				<div class="col-md-6" align="center">
-					<?php if (!empty($floorplan_house_pictures_view)){
-						echo $this->Html->link(
-								$this->Html->image('uploads/houses/'.$floor_first['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ", "width"=>100)),
-								'/img/uploads/houses/'.$floor_first['picture'],
-								array('escape'=>false,'data-lightbox'=>'floor_pics','data-title'=>$house_pic_type[$floor_first['type_flag']].': '.$floor_first['description'])
-						);
-					}?>
-				</div>
-				
-				<div class="col-md-6" align="center">
-					<?php if (!empty($basement_house_pictures_view)){
-						echo $this->Html->link(
-								$this->Html->image('uploads/houses/'.$base_first['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ", "width"=>100)),
-								'/img/uploads/houses/'.$base_first['picture'],
-								array('escape'=>false,'data-lightbox'=>'base_pics','data-title'=>$house_pic_type[$base_first['type_flag']].': '.$base_first['description'])
-						);
-					}?>
-				</div>
-			</div>
+			
 		</div>
 		
-		<div class="col-md-5">
+		
 			<div class="row">
 				<div class="col-md-4"> <strong><?php echo $proposal_view['MyHouse']['name']; ?> </strong></div>
 				<div class="col-md-4"> 
@@ -172,7 +154,9 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 				<div class="col-xs-4"> <?php echo __('Price:'); ?> </div>  
 				<div class="col-xs-8"> <?php echo $proposal_view['MyHouse']['price'].' €'; ?> </div>
 			</div>
+		
 		</div>
+		
 		<div class="col-md-1"></div>
 		<?php } ?>
 	</div>			
@@ -184,6 +168,79 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 			
 			
 			</div>
+		</div>
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title"><?php echo __( 'Gallery');?></h3>
+				</div>
+				<div class="panel-body">
+					<?php 
+					foreach ($normal_house_pictures_view as $x){
+						if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
+							$default_picture=$x['MyHousePicture'];
+						}else{?>
+							<div class="col-md-6">
+							<?php 
+							echo $this->Html->link(
+								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
+							);?>
+							</div>
+							<?php 
+						}
+					}?>
+					
+				</div>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title"><?php echo __( 'Floorplans');?></h3>
+				</div>
+				<div class="panel-body">
+					<?php 
+					foreach ($floorplan_house_pictures_view as $key=>$x){
+						if ($key==0){
+							$floor_first=$x['MyHousePicture'];
+						}else{?>
+							<div class="col-md-6">
+							<?php 
+							echo $this->Html->link(
+								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
+							);?>
+							</div>
+							<?php 
+							
+						}
+					}
+					foreach ($basement_house_pictures_view as $key=>$x){
+					if ($key==0){
+							$base_first=$x['MyHousePicture'];
+						}else{?>
+							<div class="col-md-6">
+							<?php
+							echo $this->Html->link(
+								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
+							);?>
+							</div>
+							<?php 
+						}
+					}
+					?>
+				</div>
+			</div>
+			</div>
+			
 		</div>
 	</div>
 	
@@ -209,6 +266,7 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 
 <?php if (!empty($bought_extras_view)){ ?>	
 	<div class="row">
+		<div class="col-md-12">
 		<div class="panel panel-success">
            	<div class="panel-heading">
 				<h3 class="panel-title"><?php echo __( 'Extras');?></h3>
@@ -301,14 +359,17 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 			
 			</div>
 		</div>
+		</div>
 	</div>
 <?php }else{ ?>
 	<div class="row">
+		<div class="col-md-12">
 		<div id="AddExtra" align=center>
        		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add extras</a>
        		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-paperclip"></span> Add custom extra</a>
        		<a class="btn btn-lg btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
        	</div>
+		</div>
 	</div>
 	<hr>
 <?php } ?>
@@ -329,6 +390,7 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 
 <?php if (!empty($bought_external_extras_view)){ ?>	
 	<div class="row">
+		<div class="col-md-12">
 		<div class="panel panel-success">
            	<div class="panel-heading">
 				<h3 class="panel-title"><?php echo __( 'External Extras');?></h3>
@@ -393,13 +455,16 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 			
 			</div>
 		</div>
+		</div>
 	</div>
 <?php }else{ ?>
 	<div class="row">
+		<div class="col-md-12">
 		<div id="AddExtra" align=center>
        		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> Add external extras</a></p>
        		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> Add custom external extra</a></p>
        	</div>
+		</div>
 	</div>
 	<hr>
 <?php } ?>
@@ -415,6 +480,7 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 	
 <?php if (!empty($proposal_view['MyLand']['id'])){ ?>		
 	<div class="row">
+		<div class="col-md-12">
 		<div class="panel panel-success">
            	<div class="panel-heading">
 				<h3 class="panel-title"><?php echo __( 'Land');?></h3>
@@ -575,12 +641,15 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 			
 			</div>
 		</div>
+		</div>
 	</div>
 <?php }else{ ?>
 	<div class="row">
+		<div class="col-md-12">
 		<div id="AddLand" align=center>
        		<p><a class="btn btn-lg btn-success" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal" > <span class="glyphicon glyphicon-plus"></span> Add land</a></p>
        	</div>
+		</div>
 	</div>
 	<hr>
 <?php } ?>
