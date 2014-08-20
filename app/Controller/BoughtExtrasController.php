@@ -8,72 +8,13 @@ class BoughtExtrasController extends AppController{
 	}
 	
 	public function isAuthorized($logged_user) {
-
+		
 		if ($logged_user['role']<3) {
 			return TRUE;
 		}
 		
 		return parent::isAuthorized($logged_user);
 	}
-	
-	
-	public function add($proposal_id=NULL) {
-		if (!$proposal_id) {
-			throw new NotFoundException(__('Invalid Proposal'));
-		}
-	
-		$this->set('list_extras_view',$this->BoughtExtra->MyExtra->find('list'));
-		$this->set('extras_view',$this->BoughtExtra->MyExtra->find('all'));
-	
-	
-		if ($this->request->is('post')) {
-			$this->BoughtExtra->create();
-			$this->request->data['BoughtExtra']['proposal_id']=$proposal_id;
-			if ($this->BoughtExtra->save($this->request->data)) {
-				$this->Session->setFlash(__('Extra added.'));
-				return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
-			}
-			$this->Session->setFlash(__('Unable to add extra to your proposal.'));
-		}
-	}    
-	
-	/* public function add_default($proposal_id=NULL,$extra_id=NULL) {
-		if (!$proposal_id) {
-			throw new NotFoundException(__('Invalid Proposal'));
-		}
-		
-		if (!$extra_id) {
-			throw new NotFoundException(__('Invalid Extra'));
-		}
-		
-		$extra=$this->BoughtExtra->MyExtra->findById($extra_id);
-		
-		$bought_extra['proposal_id']=$proposal_id;
-		$bought_extra['extra_id']=$extra['MyExtra']['id'];
-		$bought_extra['price']=$extra['MyExtra']['default_price'];
-		$bought_extra['factor']=1;
-	
-		$this->BoughtExtra->create();
-		
-		if ($this->BoughtExtra->save($bought_extra)) {
-			$this->Session->setFlash(__('Extra added to proposal.'));
-			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
-		}
-		$this->Session->setFlash(__('Unable to add extra to your proposal.'));
-	} */
-	
-	
-	public function add_default($proposal_id=NULL,$extra_id=NULL) {
-		
-		if ($this->BoughtExtra->add_default_extra($proposal_id,$extra_id)) {
-			$this->Session->setFlash(__('Extra added to proposal.'));
-			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
-		}else {
-			$this->Session->setFlash(__('Unable to add extra to your proposal.'));
-			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
-		}
-	}
-	
 	
 	public function add_many_extras($proposal_id=NULL,$bool_external=false) {
 		if (!$proposal_id) {
@@ -86,6 +27,11 @@ class BoughtExtrasController extends AppController{
 		$extras=$this->BoughtExtra->MyExtra->find('all',array(
             		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
 		
+		foreach ($extras as $key=>$x){
+			if(!$this->BoughtExtra->allow_extra($proposal_id,$x['MyExtra'])){
+				unset($extras[$key]);
+			}
+		}
 		
 		$this->set('proposal_id_view',$proposal_id);
 		$this->set('extras_view',$extras);
@@ -121,6 +67,12 @@ class BoughtExtrasController extends AppController{
 		}
 		
 		$x = $this->BoughtExtra->findById($id);
+		
+		if ($x['MyExtra']['bool_uneditable']) {
+			$this->Session->setFlash(__('This extra canoot be edited.'));
+			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyProposal']['id']));
+		}
+		
 		$this->set('proposal_id_view',$x['BoughtExtra']['proposal_id']);
 		$this->set('bought_extra',$x);
 		if (!$x) {

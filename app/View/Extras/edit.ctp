@@ -22,13 +22,16 @@
 						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name')));
 						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description')));
 						echo $this->Form->input('default_price',array('placeholder' => __('Enter the default price'),'label' => __('Default Price')));
+						echo $this->Form->input('depends_on',array('options'=> $list_extras_view,'label'=>__('Can be selected only after buying:')));
 						$array_options=array(
 							0=>'No',
 							1=>__('Floor size dependent'),
-							2=>__('Whole size dependent')
+							2=>__('Total size dependent')
 						);
 						echo $this->Form->input('size_dependent_check',array('type'=>'select','options'=>$array_options ,'default' => 0,'label' => __('Is the price size dependent?')));
-						echo $this->Form->input('bool_garage',array('default' => false,'label'=>'Is a garage?'));
+						echo $this->Form->input('bool_garage',array('label'=>__('Is a garage?')));
+						echo $this->Form->input('bool_unique',array('label'=>__('Only one can be purchased?')));
+						echo $this->Form->input('bool_uneditable',array('label'=>__('Will the price be fixed?')));
 						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category')));
 						
 						?>		

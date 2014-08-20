@@ -30,71 +30,6 @@
 </div>
 
 
-    <?php foreach($house_pictures_view as $x){ ?>
-	
-	
-
-      <div class="row"id="<?php echo $id = str_replace(' ', '+', $x['HousePicture']['name']); ?>">
-        
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-2">
-			<div class="row">
-			<div class="col-md-12">
-				<?php if(!empty($x)){
-					echo $this->Html->image('/img/uploads/houses/'.$x['HousePicture']['picture'], array('class' => 'featurette-image img-responsive'));
-				} ?>
-			</div>
-			</div>
-		</div>
-		
-		<div class="col-md-6">
-		
-			<div class="row">
-				<div class="col-xs-4">
-					<p >
-					<?php if(!empty($x['HousePicture']['name'])){
-						echo 'Name:';
-					} ?>
-					</p>
-					
-					<p>
-					</p>
-					
-				</div>
-				<div class="col-xs-8">
-					<p >
-					<?php if(!empty($x['HousePicture']['name'])){
-						echo ( $x['HousePicture']['name']);
-					} ?>
-					</p>
-					
-					<p>
-					</p>
-				</div>
-			</div>
-			
-			
-			<?php if ($current_user['role'] < 2 && !empty($current_user)){ ?>
-				<div class="row">
-					<div class="col-md-12">
-						<?php echo $this->Form->postLink(__('Delete house picture'),array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?')); ?>
-					</div>
-				</div>
-			<?php }?>
-			
-        </div>
-		<div class="col-md-2">
-		</div>
-		
-		
-      </div>
-	<hr>
-    
-    <?php } ?>
-
-
-
 <div class="row">
         <div class="col-md-2"></div>
 		<div class="col-md-8">
@@ -117,7 +52,7 @@
 			<td> <?php echo $x['MyHouse']['name'] ?></td>
 			<td> <?php echo $house_pic_type[$x['HousePicture']['type_flag']] ?></td>
 			<td> <?php 
-        	    echo $this->Form->postLink('Delete',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?'));
+        	    echo $this->Form->postLink('Delete',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove'));
        		 ?></td>
         	<td> <?php echo $x['HousePicture']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 		</tr>
@@ -130,7 +65,7 @@
 						<?php echo $this->Html->link(__('Delete User', true), array('action' => 'delete', $User['User']['id'])); ?>
                     </p>
         	<?php }?>
-		</div> </p>
+		</div>
 		
 		<div class="col-md-2"></div>
 	

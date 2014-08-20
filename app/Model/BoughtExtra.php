@@ -29,7 +29,7 @@ class BoughtExtra extends AppModel{
     );
     
     public function idFromKeys ($proposal_id,$extra_id){
-    	return $id=$this->find('list',array(
+    	return $BoughtExtra=$this->find('list',array(
         		'conditions'=>array('proposal_id' => $proposal_id, 'extra_id' => $extra_id)
         ));
     }
@@ -78,6 +78,25 @@ class BoughtExtra extends AppModel{
 		}
 	
 	}
-    
+	
+	public function allow_extra($proposal_id,$extra){
+		if (!$extra) {
+			throw new NotFoundException(__('Invalid Extra'));
+		}
+		if (!$proposal_id) {
+			throw new NotFoundException(__('Invalid Proposal'));
+		}
+		
+		
+		if ($extra['bool_unique'] && !empty($this->idFromKeys($proposal_id,$extra['id']))){
+			return FALSE;
+		}elseif(!empty($this->idFromKeys($proposal_id,$extra['depends_on']))){
+			return FALSE;
+		}else{
+			return TRUE;
+		}
+		
+	}
+    	
 
 }

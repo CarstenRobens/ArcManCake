@@ -41,6 +41,10 @@ class ExtrasController extends AppController{
 			
 			$this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
 			
+			$list_extras=$this->Extra->find('list',array('conditions'=>array('bool_external'=>false,'bool_custom'=>false),'order'=>'name'));
+			$list_extras[0]=__('None');
+			$this->set('list_extras_view',$list_extras);
+			
 			if ($this->request->is('post')) {
 				$this->Extra->create();
 				//Check if image has been uploaded
@@ -103,6 +107,10 @@ class ExtrasController extends AppController{
 		$this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
 		$this->set('proposal_id_view',$proposal_id);
 		
+		$list_extras=$this->Extra->find('list',array('conditions'=>array('bool_external'=>false,'bool_custom'=>false),'order'=>'name'));
+		$list_extras[0]=__('None');
+		$this->set('list_extras_view',$list_extras);
+		
 		if ($this->request->is('post')) {
 			$this->Extra->create();
 			//No Picture for custom Extras
@@ -112,8 +120,14 @@ class ExtrasController extends AppController{
 			$this->request->data['Extra']['size_dependent_flag'] = -1*$this->request->data['Extra']['size_dependent_check'];
 			if ($this->Extra->save($this->request->data)) {
 				$this->Session->setFlash(__('Custom extra added.'));
-				debug($this->request->data);
-				return $this->redirect(array('controller'=>'BoughtExtras','action' => 'add_default',$proposal_id,$this->Extra->getLastInsertId()));
+				if ($this->Extra->MyBoughtExtra->add_default_extra($proposal_id,$this->Extra->getLastInsertId())) {
+					$this->Session->setFlash(__('Extra added to proposal.'));
+					return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
+				}else {
+					$this->Session->setFlash(__('Unable to add extra to your proposal.'));
+					return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
+				}
+				
 			}else{
 				$this->Session->setFlash(__('Unable to add your extra.'));
 			}
@@ -132,6 +146,11 @@ class ExtrasController extends AppController{
         }
             
         $this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
+       
+        $list_extras=$this->Extra->find('list',array('conditions'=>array('bool_external'=>false,'bool_custom'=>false),'order'=>'name'));
+        $list_extras[0]=__('None');
+        $this->set('list_extras_view',$list_extras);
+        
         
         if ($this->request->is(array('extra','put'))) {
         	$this->Extra->id = $id;
