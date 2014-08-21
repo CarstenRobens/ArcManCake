@@ -15,5 +15,7 @@ $config['HousePictureType'][3] = __('Floorplan: Second floor');
 $config['HousePictureType'][4] = __('Floorplan: Third floor');
 $config['HousePictureType'][5] = __('Floorplan: Side view');
 
-
+$config['HouseType'][1] = __('A');
+$config['HouseType'][2] = __('B');
+$config['HouseType'][3] = __('C');
 ?>

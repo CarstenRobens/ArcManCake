@@ -5,7 +5,9 @@
 	<tr>
 		<th><?php echo $this->Paginator->sort('id'); ?></th>
 		<th><?php echo $this->Paginator->sort('name'); ?></th>
-		<th><?php echo $this->Paginator->sort('default_price'); ?></th>
+		<th><?php echo $this->Paginator->sort('default_priceA'); ?></th>
+		<th><?php echo $this->Paginator->sort('default_priceB'); ?></th>
+		<th><?php echo $this->Paginator->sort('default_priceC'); ?></th>
 		<th><?php echo $this->Paginator->sort('MyCategory.name','Category'); ?></th>
 		<th><?php echo $this->Paginator->sort('size_dependent_flag','Size dep.?'); ?></th>
         <th><?php echo $this->Paginator->sort('bool_custom','Custom?'); ?></th>
@@ -19,7 +21,9 @@
 	<tr> 
 		<td> <?php echo $x['Extra']['id']; ?> </td> 
 		<td> <?php echo $this->Html->link($x['Extra']['name'], array('controller'=>'Extras','action'=>'view',$x['Extra']['id'])); ?></td>
-		<td> <?php echo $x['Extra']['default_price'].' €'; ?></td>
+		<td> <?php echo $x['Extra']['default_priceA'].' €'; ?></td>
+		<td> <?php echo $x['Extra']['default_priceC'].' €'; ?></td>
+		<td> <?php echo $x['Extra']['default_priceB'].' €'; ?></td>
 		<td> <?php echo $x['MyCategory']['name']; ?></td>
 		<td> 
 		<?php if ($x['Extra']['size_dependent_flag']<0){
@@ -68,17 +72,19 @@
 		<div class="PostContent">
 			<div class="PostContentBox">
 				<div class="PostMainContentbox">
-						<?php echo $this->Form->create('Extra');?>	
+						<?php echo $this->Form->create('Extra',array('enctype'=>'multipart/form-data'));?>	
 						<legend>
 							<?php echo __('Add Custom Extra'); ?>
 						</legend>
 						
 						<?php 
-						echo $this->Form->create('Extra', array('class' => 'form'));
+						
 						
 						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name')));
 						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description')));
-						echo $this->Form->input('default_price',array('placeholder' => __('Enter the default price'),'label' => __('Default Price')));
+						echo $this->Form->input('default_priceA',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[1].__(' (in € or €/m<sup>2</sup>)')));
+						echo $this->Form->input('default_priceB',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[2].__(' (in € or €/m<sup>2</sup>)')));
+						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)')));
 						echo $this->Form->input('depends_on',array('default' => 0,'options'=> $list_extras_view,'label'=>__('Can be selected only after buying:')));
 						$array_options=array(
 							0=>'No',
@@ -89,6 +95,7 @@
 						echo $this->Form->input('bool_garage',array('default' => false,'label'=>__('Is a garage?')));
 						echo $this->Form->input('bool_unique',array('default' => false,'label'=>__('Only one can be purchased?')));
 						echo $this->Form->input('bool_uneditable',array('default' => false,'label'=>__('Will the price be fixed?')));
+						echo $this->Form->input('upload', array('type' => 'file','label'=>'Picture'));
 						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category')));
 						
 						?>		

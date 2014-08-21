@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 20, 2014 at 08:26 PM
+-- Host: localhost
+-- Generation Time: Aug 21, 2014 at 09:17 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `arcmancake`
+-- Database: `ArcManCake`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=141 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=264 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -139,7 +139,119 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `extra_id`, `proposal_id`,
 (137, 9000, 1, 52, 18, '2014-08-18', '2014-08-18'),
 (138, 500, 1, 53, 18, '2014-08-18', '2014-08-18'),
 (139, 4400, 1, 54, 18, '2014-08-18', '2014-08-18'),
-(140, 200, 1, 36, 4, '2014-08-20', '2014-08-20');
+(140, 200, 1, 36, 4, '2014-08-20', '2014-08-20'),
+(141, 0, 1, 47, 17, '2014-08-21', '2014-08-21'),
+(142, 0, 1, 48, 17, '2014-08-21', '2014-08-21'),
+(143, 0, 1, 49, 17, '2014-08-21', '2014-08-21'),
+(144, 0, 1, 50, 17, '2014-08-21', '2014-08-21'),
+(145, 0, 1, 51, 17, '2014-08-21', '2014-08-21'),
+(146, 0, 1, 52, 17, '2014-08-21', '2014-08-21'),
+(147, 0, 1, 53, 17, '2014-08-21', '2014-08-21'),
+(148, 0, 1, 54, 17, '2014-08-21', '2014-08-21'),
+(149, 0, 1, 47, 18, '2014-08-21', '2014-08-21'),
+(150, 0, 1, 48, 18, '2014-08-21', '2014-08-21'),
+(151, 0, 1, 49, 18, '2014-08-21', '2014-08-21'),
+(152, 0, 1, 50, 18, '2014-08-21', '2014-08-21'),
+(153, 0, 1, 51, 18, '2014-08-21', '2014-08-21'),
+(154, 0, 1, 52, 18, '2014-08-21', '2014-08-21'),
+(155, 0, 1, 53, 18, '2014-08-21', '2014-08-21'),
+(156, 0, 1, 54, 18, '2014-08-21', '2014-08-21'),
+(157, 0, 1, 47, 19, '2014-08-21', '2014-08-21'),
+(158, 0, 1, 48, 19, '2014-08-21', '2014-08-21'),
+(159, 0, 1, 49, 19, '2014-08-21', '2014-08-21'),
+(160, 0, 1, 50, 19, '2014-08-21', '2014-08-21'),
+(161, 0, 1, 51, 19, '2014-08-21', '2014-08-21'),
+(162, 0, 1, 52, 19, '2014-08-21', '2014-08-21'),
+(163, 0, 1, 53, 19, '2014-08-21', '2014-08-21'),
+(164, 0, 1, 54, 19, '2014-08-21', '2014-08-21'),
+(165, 0, 1, 47, 20, '2014-08-21', '2014-08-21'),
+(166, 0, 1, 48, 20, '2014-08-21', '2014-08-21'),
+(167, 0, 1, 49, 20, '2014-08-21', '2014-08-21'),
+(168, 0, 1, 50, 20, '2014-08-21', '2014-08-21'),
+(169, 0, 1, 51, 20, '2014-08-21', '2014-08-21'),
+(170, 0, 1, 52, 20, '2014-08-21', '2014-08-21'),
+(171, 0, 1, 53, 20, '2014-08-21', '2014-08-21'),
+(172, 0, 1, 54, 20, '2014-08-21', '2014-08-21'),
+(173, 0, 1, 47, 21, '2014-08-21', '2014-08-21'),
+(174, 0, 1, 48, 21, '2014-08-21', '2014-08-21'),
+(175, 0, 1, 49, 21, '2014-08-21', '2014-08-21'),
+(176, 0, 1, 50, 21, '2014-08-21', '2014-08-21'),
+(177, 0, 1, 51, 21, '2014-08-21', '2014-08-21'),
+(178, 0, 1, 52, 21, '2014-08-21', '2014-08-21'),
+(179, 0, 1, 53, 21, '2014-08-21', '2014-08-21'),
+(180, 0, 1, 54, 21, '2014-08-21', '2014-08-21'),
+(181, 0, 1, 47, 22, '2014-08-21', '2014-08-21'),
+(182, 0, 1, 48, 22, '2014-08-21', '2014-08-21'),
+(183, 0, 1, 49, 22, '2014-08-21', '2014-08-21'),
+(184, 0, 1, 50, 22, '2014-08-21', '2014-08-21'),
+(185, 0, 1, 51, 22, '2014-08-21', '2014-08-21'),
+(186, 0, 1, 52, 22, '2014-08-21', '2014-08-21'),
+(187, 0, 1, 53, 22, '2014-08-21', '2014-08-21'),
+(188, 0, 1, 54, 22, '2014-08-21', '2014-08-21'),
+(189, 0, 1, 47, 23, '2014-08-21', '2014-08-21'),
+(190, 0, 1, 48, 23, '2014-08-21', '2014-08-21'),
+(191, 0, 1, 49, 23, '2014-08-21', '2014-08-21'),
+(192, 0, 1, 50, 23, '2014-08-21', '2014-08-21'),
+(193, 0, 1, 51, 23, '2014-08-21', '2014-08-21'),
+(194, 0, 1, 52, 23, '2014-08-21', '2014-08-21'),
+(195, 0, 1, 53, 23, '2014-08-21', '2014-08-21'),
+(196, 0, 1, 54, 23, '2014-08-21', '2014-08-21'),
+(197, 0, 1, 47, 24, '2014-08-21', '2014-08-21'),
+(198, 0, 1, 48, 24, '2014-08-21', '2014-08-21'),
+(199, 0, 1, 49, 24, '2014-08-21', '2014-08-21'),
+(200, 0, 1, 50, 24, '2014-08-21', '2014-08-21'),
+(201, 0, 1, 51, 24, '2014-08-21', '2014-08-21'),
+(202, 0, 1, 52, 24, '2014-08-21', '2014-08-21'),
+(203, 0, 1, 53, 24, '2014-08-21', '2014-08-21'),
+(204, 0, 1, 54, 24, '2014-08-21', '2014-08-21'),
+(205, 0, 1, 47, 25, '2014-08-21', '2014-08-21'),
+(206, 0, 1, 48, 25, '2014-08-21', '2014-08-21'),
+(207, 0, 1, 49, 25, '2014-08-21', '2014-08-21'),
+(208, 0, 1, 50, 25, '2014-08-21', '2014-08-21'),
+(209, 0, 1, 51, 25, '2014-08-21', '2014-08-21'),
+(210, 0, 1, 52, 25, '2014-08-21', '2014-08-21'),
+(211, 0, 1, 53, 25, '2014-08-21', '2014-08-21'),
+(212, 0, 1, 54, 25, '2014-08-21', '2014-08-21'),
+(213, 5000, 1, 47, 26, '2014-08-21', '2014-08-21'),
+(214, 3000, 1, 48, 26, '2014-08-21', '2014-08-21'),
+(215, 5000, 1, 49, 26, '2014-08-21', '2014-08-21'),
+(216, 5000, 1, 50, 26, '2014-08-21', '2014-08-21'),
+(217, 8000, 1, 51, 26, '2014-08-21', '2014-08-21'),
+(218, 9000, 1, 52, 26, '2014-08-21', '2014-08-21'),
+(219, 500, 1, 53, 26, '2014-08-21', '2014-08-21'),
+(220, 4400, 1, 54, 26, '2014-08-21', '2014-08-21'),
+(221, 5000, 1, 47, 27, '2014-08-21', '2014-08-21'),
+(222, 3000, 1, 48, 27, '2014-08-21', '2014-08-21'),
+(223, 5000, 1, 49, 27, '2014-08-21', '2014-08-21'),
+(224, 5000, 1, 50, 27, '2014-08-21', '2014-08-21'),
+(225, 8000, 1, 51, 27, '2014-08-21', '2014-08-21'),
+(226, 9000, 1, 52, 27, '2014-08-21', '2014-08-21'),
+(227, 500, 1, 53, 27, '2014-08-21', '2014-08-21'),
+(228, 4400, 1, 54, 27, '2014-08-21', '2014-08-21'),
+(229, 5000, 1, 47, 28, '2014-08-21', '2014-08-21'),
+(230, 3000, 1, 48, 28, '2014-08-21', '2014-08-21'),
+(231, 5000, 1, 49, 28, '2014-08-21', '2014-08-21'),
+(232, 5000, 1, 50, 28, '2014-08-21', '2014-08-21'),
+(233, 8000, 1, 51, 28, '2014-08-21', '2014-08-21'),
+(234, 9000, 1, 52, 28, '2014-08-21', '2014-08-21'),
+(235, 500, 1, 53, 28, '2014-08-21', '2014-08-21'),
+(236, 4400, 1, 54, 28, '2014-08-21', '2014-08-21'),
+(237, 5000, 1, 47, 29, '2014-08-21', '2014-08-21'),
+(238, 3000, 1, 48, 29, '2014-08-21', '2014-08-21'),
+(239, 5000, 1, 49, 29, '2014-08-21', '2014-08-21'),
+(240, 5000, 1, 50, 29, '2014-08-21', '2014-08-21'),
+(241, 8000, 1, 51, 29, '2014-08-21', '2014-08-21'),
+(242, 9000, 1, 52, 29, '2014-08-21', '2014-08-21'),
+(243, 500, 1, 53, 29, '2014-08-21', '2014-08-21'),
+(244, 4400, 1, 54, 29, '2014-08-21', '2014-08-21'),
+(245, 5000, 1, 47, 30, '2014-08-21', '2014-08-21'),
+(246, 3000, 1, 48, 30, '2014-08-21', '2014-08-21'),
+(247, 5000, 1, 49, 30, '2014-08-21', '2014-08-21'),
+(248, 5000, 1, 50, 30, '2014-08-21', '2014-08-21'),
+(249, 8000, 1, 51, 30, '2014-08-21', '2014-08-21'),
+(250, 9000, 1, 52, 30, '2014-08-21', '2014-08-21'),
+(251, 500, 1, 53, 30, '2014-08-21', '2014-08-21'),
+(252, 4400, 1, 54, 30, '2014-08-21', '2014-08-21');
 
 -- --------------------------------------------------------
 
@@ -262,7 +374,9 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `default_price` float NOT NULL,
+  `default_priceA` float NOT NULL,
+  `default_priceB` float NOT NULL,
+  `default_priceC` float NOT NULL,
   `picture` varchar(200) NOT NULL,
   `size_dependent_flag` int(11) NOT NULL,
   `depends_on` int(11) NOT NULL,
@@ -282,31 +396,31 @@ CREATE TABLE IF NOT EXISTS `extras` (
 -- Dumping data for table `extras`
 --
 
-INSERT INTO `extras` (`id`, `name`, `description`, `default_price`, `picture`, `size_dependent_flag`, `depends_on`, `bool_unique`, `bool_uneditable`, `bool_garage`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
-(14, 'Jacuzzi', 'One of the all-time classic adventures, multi BAFTA-nominated "Broken Sword: Director''s Cut" pitches sassy journalist Nico Collard, and intrepid American George Stobbart into a mysterious journey of intrigue and jeopardy. Guide George and Nico on their globe-spanning adventure, exploring exotic locations, solving ancient mysteries, and thwarting a dark conspiracy to reveal the secret truths of the Knights Templar. \r\n\r\n"Broken Sword: The Directorâ€™s Cut" introduces an intricate new narrative thread, alongside the classic story that has charmed millions of players. Itâ€™s time to experience George and Nicoâ€™s worldwide adventure in a whole new way, with brand new puzzles, hilarious new jokes, and the distinctive, rich story that made the series so deservedly renowned. This is adventure gaming at its very best. ', 1050, 'jacuzzi.jpg', 0, 0, 0, 0, 0, 0, 0, 4, 4, '2014-07-02', '2014-07-22'),
-(15, 'Garden maze', 'Get lost!', 2000, 'maze.jpg', 0, 0, 0, 0, 0, 0, 0, 3, 4, '2014-07-02', '2014-08-04'),
-(17, 'T-Rex', 'Rooooooooaarr\r\n\r\nEver wonder how it feels to sail a half-million-ton supertanker through the perfect storm? To take on illegal whale hunters in the Antarctic? Or to feel the rush of being part of the Coast Guard as you evacuate a cruise liner in distress? Ship Simulator Extremes has players take on exciting missions all over the world as they pilot an impressive array of vessels and live the stories of real ship captains. With missions based on actual events in realistic environments at locations all over the world, the new Ship Simulator game is sure to take you to extremes! ', 1000, 'trex.jpg', 0, 0, 0, 0, 0, 0, 0, 6, 6, '2014-07-04', '2014-08-04'),
-(31, 'Something boring', 'This tutorial is written for Django 1.6 and Python 2.x. If the Django version doesnâ€™t match, you can refer to the tutorial for your version of Django by using the version switcher at the bottom right corner of this page, or update Django to the newest version. If you are using Python 3.x, be aware that your code may need to differ from what is in the tutorial and you should continue using the tutorial only if you know what you are doing with Python 3.x.', 59, '', 0, 0, 0, 0, 0, 0, 0, 3, 6, '2014-07-09', '2014-07-09'),
-(33, 'stupid custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, '', -1, 0, 0, 0, 0, 1, 0, 1, 6, '2014-07-09', '2014-07-09'),
-(35, 'Custom stupid external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, '', 0, 0, 0, 0, 0, 1, 0, 4, 6, '2014-07-10', '2014-08-04'),
-(36, 'Oven', 'Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.', 200, '', 0, 0, 1, 0, 0, 0, 0, 1, 6, '2014-07-11', '2014-07-11'),
-(37, 'Terrace', 'Estamos en pleno julio ya: unos cuantos ya estarÃ¡n de vacaciones aprovechando la ventana que nos abre el verano, otros se encontrarÃ¡n trabajando en sus respectivas tareasâ€¦ pero lo que es seguro es que contarÃ©is con unos cuantos momentos de tranquilidad o aburrimiento entre medias. Para salvar todos esos momentos llegan los mejores juegos Android de la semana, una secciÃ³n en la que recopilamos toda la semana en lo que a juegos se refiere y ademÃ¡s os damos unos cuantos lanzamientos por si no habÃ©is tenido suficiente. Â¡Comenzamos!', 1004, '', 0, 0, 0, 0, 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
-(38, 'Dog House', 'Cartoon Network lleva una buena sucesiÃ³n de juegos lanzados en Google Play, y con Monsters Ate My Birthday parece que quieren reafirmar esa tendencia: muchos monstruos, tarta, superpoderes, una aventura Ã©pica llena de rutas secretasâ€¦ si querÃ©is diversiÃ³n mÃ¡gica llena de pasteles, habÃ©is encontrado vuestro juego ideal sin lugar a dudas. Lo tenÃ©is disponible en Google Play al precio de 3.66â‚¬, algo caro, pero no han vuelto a cometer el error de combinarlo con pagos dentro de la aplicaciÃ³n.', 145, '', 0, 0, 0, 0, 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
-(39, 'Fracking Big TV', 'Team 17 es conocido entre nosotros por el enorme trabajo que han hecho en su prestigioso Worms, pero eso no significa que sea lo Ãºnico que han hecho en todos los aÃ±os que llevan en activo. Fue en 1993 cuando lanzaron Superfrog, un juego que quedÃ³ sepultado bajo el Ã©xito de Worms dos aÃ±os despuÃ©s, pero tuvo sus seguidores que disfrutarÃ¡n mucho de la remasterizaciÃ³n HD que ha lanzado el equipo en Android: 24 niveles en seis mundos diferentes, ademÃ¡s de grÃ¡ficos y controles mejorados y adaptados. Lo tenÃ©is al suculento precio de 2.49â‚¬ en Google Play.', 699, '', 0, 0, 0, 0, 0, 0, 0, 5, 6, '2014-07-11', '2014-07-11'),
-(40, 'Giant Desk', 'Noodlecake Studios es la casa que da origen a otro juego que vale la pena probarlo: en Wayward Souls tendremos que combatir en mazmorras que se generan de manera aleatoria contra monstruos y magia, de tal forma que tendremos partidas rÃ¡pidas que nunca serÃ¡n iguales (al estilo The Binding of Issac, por ejemplo) y que nos harÃ¡n repetir una y otra vez. Tiene una dificultad elevada, para que nos vamos a engaÃ±ar, pero es uno de estos juegos que merece mucho la pena jugarlo. QuizÃ¡s el precio sea lo Ãºnico que eche atrÃ¡s a muchos, 3.43â‚¬, pero es muy probable que lo veamos en un prÃ³ximo Humble Bundle teniendo en cuenta la trayectoria del estudio.', 206, '', 0, 0, 0, 0, 0, 0, 0, 3, 6, '2014-07-11', '2014-07-11'),
-(42, 'Superbatcomputer', 'Con el mirroring podemos transmitir todo lo que aparece en el mÃ³vil en la televisiÃ³n; sonido, juegos y pelÃ­culas incluidos. Sin embargo muchos se han quedado fuera de poder disfrutar de una de las opciones mÃ¡s Ãºtiles. Para solucionar esto estÃ¡n los desarrolladores de XDA, que hoy nos trae la posibilidad de activar el mirroring en casi cualquier Android con KitKat, eso sÃ­ tiene una pega y es que necesitaremos tener permisos root en nuestro dispositivo.', 34563, '', 0, 0, 0, 0, 0, 0, 0, 2, 6, '2014-07-11', '2014-07-11'),
-(43, 'Autodresser', 'La app ha sido modificada para funcionar en mÃ¡s terminales. Se ha comprobado que funciona en ASUS PadFone 2, Sony Xperia Z2, Sony Xperia ZL, Sony Z Ultra, HTC One M8 (Including GPE), Motorola Moto X, Samsung Note 8 Tab, Samsung Note Pro 12.2 Tab, Nexus 7 2012, QHD Find 7, LG GPad 8.3 aunque no lo han conseguido en el Galaxy S3 o el Note 2.', 5000, '', 0, 0, 0, 0, 0, 0, 0, 4, 6, '2014-07-11', '2014-07-11'),
-(45, 'Batmobile', 'An unlikely pair, young Kate Walker and old, eccentric Hans Voralberg now set off on a journey together: in search of the last of the fabled Syberian mammoths at the heart of a long and forgotten universe. The surreal quest Hans began alone several years ago will come to a final close as he and Kate face obstacles far more dangerous than ever before, testing their courage and determination.', 300000, 'batmobile.jpg', 0, 0, 0, 0, 0, 0, 0, 2, 6, '2014-07-22', '2014-07-22'),
-(46, 'Cellar', 'You are your spells! The Lichdom: Battlemage spell crafting system offers an enormous range of customization. Every Mage is the product of crafted magic that reflects the individual''s play style. Whether you prefer to target your foes from a safe distance, wade into combat and unleash your power at point-blank range, or pit your enemies against each other, endless spell customization lets you become the Mage you want to be. ', 5000, 'cellar.jpg', -1, 0, 0, 1, 0, 0, 0, 5, 6, '2014-07-22', '2014-07-22'),
-(47, 'MehrgrÃ¼ndung', 'The display assembly is held in place by a large amount of adhesive on the underside of the large copper ESD shield. In the next few steps, you will be using a plastic spudger to release this adhesive.\r\nWork carefully and slowly, making sure to not break the I/O data cable.', 5000, '', 0, 0, 0, 0, 0, 0, 1, 1, 6, '2014-08-04', '2014-08-04'),
-(48, 'Erdbebenzone', 'Use the flat end of a spudger to carefully flip up the retaining flaps on the digitizer ribbon cable ZIF sockets.\r\nMake sure you are flipping up the retaining flaps, not the sockets themselves.\r\nUse the tip of a spudger to pull the digitizer ribbon cable straight out of its socket', 3000, '', 0, 0, 0, 0, 0, 0, 1, 2, 6, '2014-08-04', '2014-08-04'),
-(49, 'Eigenleistung AuÃŸennanlage', 'Peel the upper piece of black adhesive tape completely up off the Nexus 7.\r\nSimilarly, peel the lower piece of black adhesive tape, but only as far as the copper strip.\r\nIt is helpful to fold this piece of tape back on itself to keep it out of the way.\r\nWhilst pulling the tape, be sure that the metal shield does not lift up. Hold the shield in place, and if it lifts up, re-seat it in the spring clips around the perimeter of the shielded area.', 5000, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
-(50, 'Eigenleistung Maler-/Bodenarbeiten', 'Gently insert a plastic opening tool near the top of the Nexus 7 between the rear panel and the front panel assembly.\r\nCarefully run the plastic opening tool along the top edge to pry the rear panel away from the front panel assembly of the Nexus 7', 5000, '', 0, 0, 0, 0, 0, 0, 1, 3, 6, '2014-08-04', '2014-08-04'),
-(51, 'Garage 6 m', 'Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.', 8000, '', 0, 0, 0, 0, 1, 0, 1, 6, 6, '2014-08-04', '2014-08-04'),
-(52, 'HausanschluÃŸkosten', 'The latest Linux GPU benchmarks at Phoronix for your viewing pleasure are looking at the OpenCL compute performance with the latest AMD and NVIDIA binary blobs while also marking down the performance efficiency and overall system power consumption.', 9000, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
-(53, 'Baustrom- und Bauwasseranschluss', 'The Linux 3.16 kernel could be released as soon as today with its development having calmed down but if you''ve refrained from reading up on this new kernel, here''s the rundown on the new features and capabilities of this 2014 late-summer kernel debut.', 500, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
-(54, 'Lageplan, Genehmigungskosten', 'Belkin revived the Linksys WRT54G in a new 802.11ac model earlier this year and one of its selling points has been the OpenWRT support as what made the WRT54G legendary. However, OpenWRT developers and fans are yet to be satisfied by this new router.', 4400, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
-(55, 'cool Garage ', 'hen there is something tricky, which we should think about: if they want to do a garage with babsis dad, then the factor of this external extra will be set to zero (but it must remain in the list!) and a bought normal extra need to be added to the list above ... question is whether we can easily do this automatically ....\r\nhe salesperson only enters the desired amount of additional square meters, the price in the DB can be simply the price per square meter. then the system need to check how many floors (and possibly basement) and calculate the factor accordingly (e.g. 1000â‚¬ per square meter, 3 floors, 10 additional square meter -> factor 30 and price ', 5000, '', 0, 0, 0, 0, 1, 0, 0, 6, 6, '2014-08-04', '2014-08-04');
+INSERT INTO `extras` (`id`, `name`, `description`, `default_priceA`, `default_priceB`, `default_priceC`, `picture`, `size_dependent_flag`, `depends_on`, `bool_unique`, `bool_uneditable`, `bool_garage`, `bool_custom`, `bool_external`, `category_id`, `user_id`, `created`, `modified`) VALUES
+(14, 'Jacuzzi', 'One of the all-time classic adventures, multi BAFTA-nominated "Broken Sword: Director''s Cut" pitches sassy journalist Nico Collard, and intrepid American George Stobbart into a mysterious journey of intrigue and jeopardy. Guide George and Nico on their globe-spanning adventure, exploring exotic locations, solving ancient mysteries, and thwarting a dark conspiracy to reveal the secret truths of the Knights Templar. \r\n\r\n"Broken Sword: The Directorâ€™s Cut" introduces an intricate new narrative thread, alongside the classic story that has charmed millions of players. Itâ€™s time to experience George and Nicoâ€™s worldwide adventure in a whole new way, with brand new puzzles, hilarious new jokes, and the distinctive, rich story that made the series so deservedly renowned. This is adventure gaming at its very best. ', 1050, 0, 0, 'jacuzzi.jpg', 0, 0, 0, 0, 0, 0, 0, 4, 4, '2014-07-02', '2014-07-22'),
+(15, 'Garden maze', 'Get lost!', 2000, 0, 0, 'maze.jpg', 0, 0, 0, 0, 0, 0, 0, 3, 4, '2014-07-02', '2014-08-04'),
+(17, 'T-Rex', 'Rooooooooaarr\r\n\r\nEver wonder how it feels to sail a half-million-ton supertanker through the perfect storm? To take on illegal whale hunters in the Antarctic? Or to feel the rush of being part of the Coast Guard as you evacuate a cruise liner in distress? Ship Simulator Extremes has players take on exciting missions all over the world as they pilot an impressive array of vessels and live the stories of real ship captains. With missions based on actual events in realistic environments at locations all over the world, the new Ship Simulator game is sure to take you to extremes! ', 1000, 0, 0, 'trex.jpg', 0, 0, 0, 0, 0, 0, 0, 6, 6, '2014-07-04', '2014-08-04'),
+(31, 'Something boring', 'This tutorial is written for Django 1.6 and Python 2.x. If the Django version doesnâ€™t match, you can refer to the tutorial for your version of Django by using the version switcher at the bottom right corner of this page, or update Django to the newest version. If you are using Python 3.x, be aware that your code may need to differ from what is in the tutorial and you should continue using the tutorial only if you know what you are doing with Python 3.x.', 59, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 3, 6, '2014-07-09', '2014-07-09'),
+(33, 'stupid custom extra', 'f your background is in plain old PHP (with no use of modern frameworks), youâ€™re probably used to putting code under the Web serverâ€™s document root (in a place such as /var/www). With Django, you donâ€™t do that. Itâ€™s not a good idea to put any of this Python code within your Web serverâ€™s document root, because it risks the possibility that people may be able to view your code over the Web. Thatâ€™s not good for security.', 345, 0, 0, '', -1, 0, 0, 0, 0, 1, 0, 1, 6, '2014-07-09', '2014-07-09'),
+(35, 'Custom stupid external extra for Jose', 'Youâ€™ve started the Django development server, a lightweight Web server written purely in Python. Weâ€™ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server â€“ such as Apache â€“ until youâ€™re ready for production.\r\n\r\nNowâ€™s a good time to note: Donâ€™t use this server in anything resembling a production environment. Itâ€™s intended only for use while developing. (Weâ€™re in the business of making Web frameworks, not Web servers.)', 126, 0, 0, '', 0, 0, 0, 0, 0, 1, 0, 4, 6, '2014-07-10', '2014-08-04'),
+(36, 'Oven', 'Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.', 200, 0, 0, '', 0, 0, 1, 0, 0, 0, 0, 1, 6, '2014-07-11', '2014-07-11'),
+(37, 'Terrace', 'Estamos en pleno julio ya: unos cuantos ya estarÃ¡n de vacaciones aprovechando la ventana que nos abre el verano, otros se encontrarÃ¡n trabajando en sus respectivas tareasâ€¦ pero lo que es seguro es que contarÃ©is con unos cuantos momentos de tranquilidad o aburrimiento entre medias. Para salvar todos esos momentos llegan los mejores juegos Android de la semana, una secciÃ³n en la que recopilamos toda la semana en lo que a juegos se refiere y ademÃ¡s os damos unos cuantos lanzamientos por si no habÃ©is tenido suficiente. Â¡Comenzamos!', 1004, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
+(38, 'Dog House', 'Cartoon Network lleva una buena sucesiÃ³n de juegos lanzados en Google Play, y con Monsters Ate My Birthday parece que quieren reafirmar esa tendencia: muchos monstruos, tarta, superpoderes, una aventura Ã©pica llena de rutas secretasâ€¦ si querÃ©is diversiÃ³n mÃ¡gica llena de pasteles, habÃ©is encontrado vuestro juego ideal sin lugar a dudas. Lo tenÃ©is disponible en Google Play al precio de 3.66â‚¬, algo caro, pero no han vuelto a cometer el error de combinarlo con pagos dentro de la aplicaciÃ³n.', 145, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 6, 6, '2014-07-11', '2014-07-11'),
+(39, 'Fracking Big TV', 'Team 17 es conocido entre nosotros por el enorme trabajo que han hecho en su prestigioso Worms, pero eso no significa que sea lo Ãºnico que han hecho en todos los aÃ±os que llevan en activo. Fue en 1993 cuando lanzaron Superfrog, un juego que quedÃ³ sepultado bajo el Ã©xito de Worms dos aÃ±os despuÃ©s, pero tuvo sus seguidores que disfrutarÃ¡n mucho de la remasterizaciÃ³n HD que ha lanzado el equipo en Android: 24 niveles en seis mundos diferentes, ademÃ¡s de grÃ¡ficos y controles mejorados y adaptados. Lo tenÃ©is al suculento precio de 2.49â‚¬ en Google Play.', 699, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 5, 6, '2014-07-11', '2014-07-11'),
+(40, 'Giant Desk', 'Noodlecake Studios es la casa que da origen a otro juego que vale la pena probarlo: en Wayward Souls tendremos que combatir en mazmorras que se generan de manera aleatoria contra monstruos y magia, de tal forma que tendremos partidas rÃ¡pidas que nunca serÃ¡n iguales (al estilo The Binding of Issac, por ejemplo) y que nos harÃ¡n repetir una y otra vez. Tiene una dificultad elevada, para que nos vamos a engaÃ±ar, pero es uno de estos juegos que merece mucho la pena jugarlo. QuizÃ¡s el precio sea lo Ãºnico que eche atrÃ¡s a muchos, 3.43â‚¬, pero es muy probable que lo veamos en un prÃ³ximo Humble Bundle teniendo en cuenta la trayectoria del estudio.', 206, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 3, 6, '2014-07-11', '2014-07-11'),
+(42, 'Superbatcomputer', 'Con el mirroring podemos transmitir todo lo que aparece en el mÃ³vil en la televisiÃ³n; sonido, juegos y pelÃ­culas incluidos. Sin embargo muchos se han quedado fuera de poder disfrutar de una de las opciones mÃ¡s Ãºtiles. Para solucionar esto estÃ¡n los desarrolladores de XDA, que hoy nos trae la posibilidad de activar el mirroring en casi cualquier Android con KitKat, eso sÃ­ tiene una pega y es que necesitaremos tener permisos root en nuestro dispositivo.', 34563, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 2, 6, '2014-07-11', '2014-07-11'),
+(43, 'Autodresser', 'La app ha sido modificada para funcionar en mÃ¡s terminales. Se ha comprobado que funciona en ASUS PadFone 2, Sony Xperia Z2, Sony Xperia ZL, Sony Z Ultra, HTC One M8 (Including GPE), Motorola Moto X, Samsung Note 8 Tab, Samsung Note Pro 12.2 Tab, Nexus 7 2012, QHD Find 7, LG GPad 8.3 aunque no lo han conseguido en el Galaxy S3 o el Note 2.', 5000, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 4, 6, '2014-07-11', '2014-07-11'),
+(45, 'Batmobile', 'An unlikely pair, young Kate Walker and old, eccentric Hans Voralberg now set off on a journey together: in search of the last of the fabled Syberian mammoths at the heart of a long and forgotten universe. The surreal quest Hans began alone several years ago will come to a final close as he and Kate face obstacles far more dangerous than ever before, testing their courage and determination.', 300000, 0, 0, 'batmobile.jpg', 0, 0, 0, 0, 0, 0, 0, 2, 6, '2014-07-22', '2014-08-21'),
+(46, 'Cellar', 'You are your spells! The Lichdom: Battlemage spell crafting system offers an enormous range of customization. Every Mage is the product of crafted magic that reflects the individual''s play style. Whether you prefer to target your foes from a safe distance, wade into combat and unleash your power at point-blank range, or pit your enemies against each other, endless spell customization lets you become the Mage you want to be. ', 5000, 0, 0, 'Extra_46', -1, 0, 1, 1, 0, 0, 0, 5, 6, '2014-07-22', '2014-08-21'),
+(47, 'MehrgrÃ¼ndung', 'The display assembly is held in place by a large amount of adhesive on the underside of the large copper ESD shield. In the next few steps, you will be using a plastic spudger to release this adhesive.\r\nWork carefully and slowly, making sure to not break the I/O data cable.', 5000, 0, 0, '', 0, 0, 0, 0, 0, 0, 1, 1, 6, '2014-08-04', '2014-08-04'),
+(48, 'Erdbebenzone', 'Use the flat end of a spudger to carefully flip up the retaining flaps on the digitizer ribbon cable ZIF sockets.\r\nMake sure you are flipping up the retaining flaps, not the sockets themselves.\r\nUse the tip of a spudger to pull the digitizer ribbon cable straight out of its socket', 3000, 0, 0, '', 0, 0, 0, 0, 0, 0, 1, 2, 6, '2014-08-04', '2014-08-04'),
+(49, 'Eigenleistung AuÃŸennanlage', 'Peel the upper piece of black adhesive tape completely up off the Nexus 7.\r\nSimilarly, peel the lower piece of black adhesive tape, but only as far as the copper strip.\r\nIt is helpful to fold this piece of tape back on itself to keep it out of the way.\r\nWhilst pulling the tape, be sure that the metal shield does not lift up. Hold the shield in place, and if it lifts up, re-seat it in the spring clips around the perimeter of the shielded area.', 5000, 0, 0, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
+(50, 'Eigenleistung Maler-/Bodenarbeiten', 'Gently insert a plastic opening tool near the top of the Nexus 7 between the rear panel and the front panel assembly.\r\nCarefully run the plastic opening tool along the top edge to pry the rear panel away from the front panel assembly of the Nexus 7', 5000, 0, 0, '', 0, 0, 0, 0, 0, 0, 1, 3, 6, '2014-08-04', '2014-08-04'),
+(51, 'Garage 6 m', 'Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.', 8000, 0, 0, '', 0, 0, 0, 0, 1, 0, 1, 6, 6, '2014-08-04', '2014-08-04'),
+(52, 'HausanschluÃŸkosten', 'The latest Linux GPU benchmarks at Phoronix for your viewing pleasure are looking at the OpenCL compute performance with the latest AMD and NVIDIA binary blobs while also marking down the performance efficiency and overall system power consumption.', 9000, 0, 0, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
+(53, 'Baustrom- und Bauwasseranschluss', 'The Linux 3.16 kernel could be released as soon as today with its development having calmed down but if you''ve refrained from reading up on this new kernel, here''s the rundown on the new features and capabilities of this 2014 late-summer kernel debut.', 500, 0, 0, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
+(54, 'Lageplan, Genehmigungskosten', 'Belkin revived the Linksys WRT54G in a new 802.11ac model earlier this year and one of its selling points has been the OpenWRT support as what made the WRT54G legendary. However, OpenWRT developers and fans are yet to be satisfied by this new router.', 4400, 0, 0, '', 0, 0, 0, 0, 0, 0, 1, 4, 6, '2014-08-04', '2014-08-04'),
+(55, 'cool Garage ', 'hen there is something tricky, which we should think about: if they want to do a garage with babsis dad, then the factor of this external extra will be set to zero (but it must remain in the list!) and a bought normal extra need to be added to the list above ... question is whether we can easily do this automatically ....\r\nhe salesperson only enters the desired amount of additional square meters, the price in the DB can be simply the price per square meter. then the system need to check how many floors (and possibly basement) and calculate the factor accordingly (e.g. 1000â‚¬ per square meter, 3 floors, 10 additional square meter -> factor 30 and price ', 5000, 0, 0, '', 0, 0, 0, 0, 1, 0, 0, 6, 6, '2014-08-04', '2014-08-04');
 
 -- --------------------------------------------------------
 
@@ -362,7 +476,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
 INSERT INTO `houses` (`id`, `name`, `description`, `size`, `floors`, `price`, `type`, `user_id`, `created`, `modified`) VALUES
 (3, 'Wayne''s Manor', 'Beautiful palace. For a long time it has been home for the illustrious Wayne familie\r\n\r\nNote: Batcave not included', 2000, 2, 1234570000, 2, 6, '2014-07-01', '2014-07-01'),
 (4, 'Batcave', 'HQ of Batman\r\n\r\nNote: Waynes Manor not included', 1000, 2, 2147480000, 3, 3, '2014-07-01', '2014-07-01'),
-(5, 'Stadt 120', 'GenieÃŸen Sie das Zusammensein mit Ihren Lieben im grÃ¤umigen Wohnzimmer. GroÃŸe Fenster geben Helligkeit und freie Sicht nach drauÃŸen, in Ihren Garten. Damit Sie den Tag mit einem gemÃ¼tlichen FrÃ¼hstÃ¼ck beginnen kÃ¶nnen, findet in der KÃ¼che auch eine gemÃ¼tliche Essecke Platz. Ein Hauswirtschafts- und ein Abstellraum runden Ihr REH im Ergeschoss ab. Im OG erwarten Sie drei schÃ¶ne Zimmer, die sich sowohl als Schlafzimmer, Kinder-, oder GÃ¤ste- eignen. Platz zum Spielen, Ausruhen oder Arbeiten ist fÃ¼r alle vorhanden. Das Bad wirkt, wie die gesamte obere Etage, hell und freundlich. Im DG ist ein Arbeitszimmer. Die dargestellten Preise beziehen sich auf ein REH. Auf Wunsch ist dieses Haus auch mit Keller sowie als EnergieSparhaus erhÃ¤ltlich	', 120, 0, 200000, 1, 2, '2014-08-20', '2014-08-20');
+(5, 'Stadt 120', 'GenieÃŸen Sie das Zusammensein mit Ihren Lieben im grÃ¤umigen Wohnzimmer. GroÃŸe Fenster geben Helligkeit und freie Sicht nach drauÃŸen, in Ihren Garten. Damit Sie den Tag mit einem gemÃ¼tlichen FrÃ¼hstÃ¼ck beginnen kÃ¶nnen, findet in der KÃ¼che auch eine gemÃ¼tliche Essecke Platz. Ein Hauswirtschafts- und ein Abstellraum runden Ihr REH im Ergeschoss ab. Im OG erwarten Sie drei schÃ¶ne Zimmer, die sich sowohl als Schlafzimmer, Kinder-, oder GÃ¤ste- eignen. Platz zum Spielen, Ausruhen oder Arbeiten ist fÃ¼r alle vorhanden. Das Bad wirkt, wie die gesamte obere Etage, hell und freundlich. Im DG ist ein Arbeitszimmer. Die dargestellten Preise beziehen sich auf ein REH. Auf Wunsch ist dieses Haus auch mit Keller sowie als EnergieSparhaus erhÃ¤ltlich	', 120, 0, 200000, 1, 2, '2014-08-20', '2014-08-21');
 
 -- --------------------------------------------------------
 
@@ -483,7 +597,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `proposals`
@@ -494,7 +608,8 @@ INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `cont
 (4, 'Very expensive house', 'Tooooooooooooo expensive', '', 'files/BankReceipt4.pdf', '', 6, 2, 5, '32', 6, '2014-07-07', '2014-08-19'),
 (5, 'Secret Lair', 'Cool', '', 'files/BankReceipt5.pdf', '', 6, 2, 4, '', 6, '2014-07-07', '2014-07-07'),
 (11, 'first proposal', 'so, i spoke with Babsis Dad yesterday, but first to your comments:\r\n\r\nButtons: i mean the edit and delete buttons look gread, altough here is already one comment from Babsis Dad: delete must be red button (should be no problem)\r\n\r\nUsers: I donâ€™t really care what we do here ... we can do it as a tabular, but also there the actions should be buttons\r\n\r\nadd many extras: no it will stay one column, there will be max 6 categories and folded in it fits very well on one page with the add button at the bottom\r\n\r\nanyway, letâ€™s get to the important stuff:\r\n\r\n(we might need to skype also since there are some details which i''m not sure if i can perfectly describe them in two sentences)\r\n\r\nokay, so regarding the external extras: (maybe also open the excel sheet for comparison) there are 8 entries and they need to always added with default values when a proposal is created! its apparently important and i can also try to explain this to you on skype', '', 'files/BankReceipt11.pdf', '', 5, 2, 3, '31', 6, '2014-08-04', '2014-08-04'),
-(12, 'Empty proposal', 'PortÃ¡tiles para jugadores, ese complicado equilibrio entre potencia y autonomÃ­a - si es que quieres moverlo -, para conseguir echar andar los juegos de Ãºltima generaciÃ³n, o los que siguen de moda, que normalmente tambiÃ©n piden una buena mÃ¡quina. AquÃ­ nos encontramos casi sin pensarlo con Alienware.\r\n\r\nLa compaÃ±Ã­a perteneciente a Dell nos acaba de presentar un nuevo modelo de 13 pulgadas, con unos ingredientes bastante interesantes, con los que intentarÃ¡n que olvidemos a aquel pequeÃ±o Alienware M11x, que dejÃ³ de venderse en 2012.\r\n\r\nEl Dell Alienware 13 es una vuelta a la misma idea, un portÃ¡til lo mÃ¡s compacto posible, sin perder capacidades para jugar. Se situarÃ­a un escalÃ³n por debajo del Dell Alienware 14, que analizamos el aÃ±o pasado. En la competencia tambiÃ©n nos tenemos que ir a ', '', 'files/BankReceipt12.pdf', '', 4, 0, 0, '', 6, '2014-08-08', '2014-08-08');
+(12, 'Empty proposal', 'PortÃ¡tiles para jugadores, ese complicado equilibrio entre potencia y autonomÃ­a - si es que quieres moverlo -, para conseguir echar andar los juegos de Ãºltima generaciÃ³n, o los que siguen de moda, que normalmente tambiÃ©n piden una buena mÃ¡quina. AquÃ­ nos encontramos casi sin pensarlo con Alienware.\r\n\r\nLa compaÃ±Ã­a perteneciente a Dell nos acaba de presentar un nuevo modelo de 13 pulgadas, con unos ingredientes bastante interesantes, con los que intentarÃ¡n que olvidemos a aquel pequeÃ±o Alienware M11x, que dejÃ³ de venderse en 2012.\r\n\r\nEl Dell Alienware 13 es una vuelta a la misma idea, un portÃ¡til lo mÃ¡s compacto posible, sin perder capacidades para jugar. Se situarÃ­a un escalÃ³n por debajo del Dell Alienware 14, que analizamos el aÃ±o pasado. En la competencia tambiÃ©n nos tenemos que ir a ', '', 'files/BankReceipt12.pdf', '', 4, 0, 0, '', 6, '2014-08-08', '2014-08-08'),
+(30, 'aaaaaaaaa', '', '', '', '', 5, 0, 5, '32', 6, '2014-08-21', '2014-08-21');
 
 -- --------------------------------------------------------
 

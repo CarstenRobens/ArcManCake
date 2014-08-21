@@ -106,9 +106,7 @@ class ProposalsController extends AppController{
             	
             	/* Add all external extras */
             	 
-            	$ext_extras=$this->Proposal->MyBoughtExtra->MyExtra->find('list',array(
-            			'conditions'=>array('bool_external' => 1)));
-            	debug($ext_extras);
+            	$ext_extras=$this->Proposal->MyBoughtExtra->MyExtra->find('list',array('conditions'=>array('bool_external' => 1)));
             	 
             	foreach($ext_extras as $index=>$x){
             		if(!$this->Proposal->MyBoughtExtra->add_default_extra($this->Proposal->getLastInsertId(),$index)){
@@ -120,7 +118,7 @@ class ProposalsController extends AppController{
             	/* done */
             	
             	$this->Session->setFlash(__('Your proposal has been saved.'));
-                return $this->redirect(array('controller'=>'Customers','action' => 'view',$customer_id));
+                return $this->redirect(array('controller'=>'Proposals','action' => 'edit_house',$this->Proposal->getLastInsertID()));
             }
             $this->Session->setFlash(__('Unable to add the proposal.'));
      	}
@@ -131,6 +129,7 @@ class ProposalsController extends AppController{
     	/**
     	 * Let the user modify all fields of the proposal (Admin only)
     	 */
+    	
     	if (!$id) {
         	throw new NotFoundException(__('Invalid proposal'));
         }
@@ -216,15 +215,25 @@ class ProposalsController extends AppController{
 			throw new NotFoundException(__('Invalid proposal'));
 		}
 		
-		$x = $this->Proposal->findById($proposal_id);
+		
+		$prop = $this->Proposal->findById($proposal_id);
+		$house = $this->Proposal->MyHouse->findById($house_id);
 		
 		if (!$house_id) {
 			throw new NotFoundException(__('Invalid house'));
 		}
 		
-		$x['Proposal']['house_id']=$house_id;
+		foreach ($prop['MyBoughtExtra'] as $bextra){
+			$extra=$this->Proposal->MyBoughtExtra->MyExtra->findById($bextra['extra_id']);
+			$price = $this->Proposal->MyHouse->extra_price($house['MyHouse']['type'],$extra['MyExtra']);
+			$this->Proposal->MyBoughtExtra->edit_extra($bextra,$price, $bextra['factor']);
+			
+			
+		}
 		
-		if ($this->Proposal->save($x)) {
+		$prop['Proposal']['house_id']=$house_id;
+		
+		if ($this->Proposal->save($prop)) {
 			$this->Session->setFlash(__('Your proposal has been updated'));
 			return $this->redirect(array('action'=>'edit_default_picture',$proposal_id));
 		}
@@ -312,7 +321,7 @@ class ProposalsController extends AppController{
         		unlink(WWW_ROOT.$proposal['Proposal']['contract']);
         	}
         	$this->Session->setFlash(__('The proposal with id: %s has been deleted',h($id)));
-            return $this->redirect(array('action'=>'index'));
+            return $this->redirect(array('controller'=>'Customers','action'=>'view',$proposal['MyCustomer']['id']));
         }
     }
     

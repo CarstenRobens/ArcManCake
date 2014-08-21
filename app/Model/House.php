@@ -60,5 +60,19 @@ class House extends AppModel{
     		)
     );
     
+    public function extra_price($house_type,$extra){
+    	$price=0;
+    	if($house_type==1){
+    		$price=$extra['default_priceA'];
+    	}elseif($house_type==2 || empty($house_type)){
+    		$price=$extra['default_priceB'];
+    	}elseif($house_type==3){
+    		$price=$extra['default_priceC'];
+    	}
+    	return $price;
+    
+    }
+    
+    
 
 }

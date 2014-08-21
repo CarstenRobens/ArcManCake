@@ -47,7 +47,7 @@ class BoughtExtrasController extends AppController{
 					}else{
 						/* Logic to handle the addition of a garage */
 						if($x['MyExtra']['bool_garage']){
-							$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra']['id'],$ext_garage['BoughtExtra']['price'],0);
+							$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra'],$ext_garage['BoughtExtra']['price'],0);
 						}	
 					}
 				}
@@ -96,7 +96,6 @@ class BoughtExtrasController extends AppController{
     public function delete($id) {
     	
     	$x = $this->BoughtExtra->findById($id);
-    	
     	/* Logic to handle the removal of a garage */
     	if($x['MyExtra']['bool_garage']){
     		$count= sizeof($this->BoughtExtra->find('all',array(
@@ -104,7 +103,9 @@ class BoughtExtrasController extends AppController{
 			if($count==1){
     		 	$ext_garage=$this->BoughtExtra->find('first',array(
 					'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
-    			$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra']['id'],$ext_garage['MyExtra']['default_price'],1);
+    		 	$house=$this->BoughtExtra->MyProposal->MyHouse->findById($ext_garage['MyProposal']['house_id']);
+    		 	$price=$this->BoughtExtra->MyProposal->MyHouse->extra_price($house['MyHouse']['type'],$ext_garage['MyExtra']);
+    			$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra'],$price,1);
     		}
     	} 
     	/*end*/

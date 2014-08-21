@@ -44,10 +44,11 @@ class BoughtExtra extends AppModel{
 		}
 		
 		$extra=$this->MyExtra->findById($extra_id);
+		$proposal=$this->MyProposal->findById($proposal_id);
 		
 		$bought_extra['proposal_id']=$proposal_id;
 		$bought_extra['extra_id']=$extra['MyExtra']['id'];
-		$bought_extra['price']=$extra['MyExtra']['default_price'];
+		$bought_extra['price']=$this->MyProposal->MyHouse->extra_price($proposal['MyHouse']['type'],$extra['MyExtra']);
 		$bought_extra['factor']=1;
 	
 		$this->create();
@@ -60,16 +61,13 @@ class BoughtExtra extends AppModel{
 		
 	}
 	
-	public function edit_extra($bought_extra_id=NULL,$price=NULL, $factor=NULL) {
-		if (!$bought_extra_id) {
+	public function edit_extra($bought_extra=NULL,$price=NULL, $factor=NULL) {
+		if (!$bought_extra) {
 			throw new NotFoundException(__('Invalid Bought Extra'));
 		}
-	
-	
-		$bought_extra=$this->findById($bought_extra_id);
-	
-		$bought_extra['BoughtExtra']['price']=$price;
-		$bought_extra['BoughtExtra']['factor']=$factor;
+		
+		$bought_extra['price']=$price;
+		$bought_extra['factor']=$factor;
 	
 		if ($this->save($bought_extra)) {
 			return TRUE;

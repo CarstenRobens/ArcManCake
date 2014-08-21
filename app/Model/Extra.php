@@ -30,15 +30,25 @@ class Extra extends AppModel{
 	); **/
 	
 	
-    public $validate=array(
-    	'name'=>array('rule'=>'notEmpty'),
-   		'default_price'=>array(
-           	'rule'=>'decimal',
-    		'message'=> 'Please enter a valid price',
-    		'allowEmpty'=>false
-		),
-    	'category_id'=>array('rule'=>'notEmpty')
-    );
-    
+	public $validate=array(
+			'name'=>array('rule'=>'notEmpty'),
+			'default_priceA'=>array(
+					'rule'=>'decimal',
+					'message'=> 'Please enter a valid price',
+					'allowEmpty'=>false
+			),
+			'default_priceB'=>array(
+					'rule'=>'decimal',
+					'message'=> 'Please enter a valid price',
+					'allowEmpty'=>false
+			),
+			'default_priceC'=>array(
+					'rule'=>'decimal',
+					'message'=> 'Please enter a valid price',
+					'allowEmpty'=>false
+			),
+			'category_id'=>array('rule'=>'notEmpty')
+	);
+
 
 }

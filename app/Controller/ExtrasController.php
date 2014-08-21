@@ -45,8 +45,12 @@ class ExtrasController extends AppController{
 			$list_extras[0]=__('None');
 			$this->set('list_extras_view',$list_extras);
 			
+			
 			if ($this->request->is('post')) {
 				$this->Extra->create();
+				
+				$this->Extra->save($this->request->data); //To the an ID
+				$this->request->data['Extra']['id']=$this->Extra->getLastInsertID();
 				//Check if image has been uploaded
 				if(!empty($this->request->data['Extra']['upload']['name'])){
 					
@@ -58,13 +62,14 @@ class ExtrasController extends AppController{
 					//only process if the extension is valid
 					if(in_array($ext, $arr_ext))
 					{
+						$new_filename='Extra_'.$this->request->data['Extra']['id'];
 						//do the actual uploading of the file. First arg is the tmp name, second arg is
 						//where we are putting it
-						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/extras/' . $file['name']);
+						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/extras/' .$new_filename);
 				
 						//prepare the filename for database entry
 						
-						$this->request->data['Extra']['picture'] = $file['name'];
+						$this->request->data['Extra']['picture'] = $new_filename;
 						
 					}else{
 						$this->Session->setFlash(__('File not saved, you must use a picture.'));
@@ -169,13 +174,14 @@ class ExtrasController extends AppController{
         		//only process if the extension is valid
         		if(in_array($ext, $arr_ext))
         		{
+        			$new_filename='Extra_'.$id;
         			//do the actual uploading of the file. First arg is the tmp name, second arg is
         			//where we are putting it
-        			move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/extras/' . $file['name']);
+        			move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/extras/' . $new_filename);
         	
         			//prepare the filename for database entry
         	
-        			$this->request->data['Extra']['picture'] = $file['name'];
+        			$this->request->data['Extra']['picture'] = $new_filename;
         	
         		}else{
         			$this->Session->setFlash(__('File not saved, you must use a picture.'));

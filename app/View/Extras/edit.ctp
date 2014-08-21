@@ -11,17 +11,18 @@
 		<div class="PostContent">
 			<div class="PostContentBox">
 				<div class="PostMainContentbox">
-						<?php echo $this->Form->create('Extra');?>	
+						<?php echo $this->Form->create('Extra',array('enctype'=>'multipart/form-data'));?>	
 						<legend>
 							<?php echo __('Add Custom Extra'); ?>
 						</legend>
 						
 						<?php 
-						echo $this->Form->create('Extra', array('class' => 'form'));
 						
 						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name')));
 						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description')));
-						echo $this->Form->input('default_price',array('placeholder' => __('Enter the default price'),'label' => __('Default Price')));
+						echo $this->Form->input('default_priceA',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[1].__(' (in € or €/m<sup>2</sup>)')));
+						echo $this->Form->input('default_priceB',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[2].__(' (in € or €/m<sup>2</sup>)')));
+						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)')));
 						echo $this->Form->input('depends_on',array('options'=> $list_extras_view,'label'=>__('Can be selected only after buying:')));
 						$array_options=array(
 							0=>'No',
@@ -32,6 +33,7 @@
 						echo $this->Form->input('bool_garage',array('label'=>__('Is a garage?')));
 						echo $this->Form->input('bool_unique',array('label'=>__('Only one can be purchased?')));
 						echo $this->Form->input('bool_uneditable',array('label'=>__('Will the price be fixed?')));
+						echo $this->Form->input('upload', array('type' => 'file','label'=>'New picture (ignore to keep the old one)'));
 						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category')));
 						
 						?>		
