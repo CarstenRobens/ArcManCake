@@ -5,7 +5,7 @@ class ExtrasController extends AppController{
 	public $components = array('RequestHandler','Paginator');
 	
 	public $paginate = array(
-			'limit' => 6,
+			'limit' => 50,
 			'order' => array(
 					'Customer.name' => 'asc'
 			)

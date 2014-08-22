@@ -46,7 +46,7 @@
 		<p style="clear: both;"> </p>
 
 		<div class="PostFooter">
-			<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Add'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
+			<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Save'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
 			<p style="clear: both;">  </p>
 		</div>
 	</div>
