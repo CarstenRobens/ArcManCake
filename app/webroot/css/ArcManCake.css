@@ -944,6 +944,7 @@ div.PostMainContentbox {
 div.bottomaction {
 	float:right;
 	vertical-align: middle;
+	width = 100px;
 }
 
 div.footeraction {
@@ -960,6 +961,7 @@ div.headeraction {
 div.headeraction a{
 	font-weight:bold;
 	color:#23c111;
+	
 }
 
 
@@ -1001,7 +1003,6 @@ div.bottomactionleft a{
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
 	border-radius:4px;
-	
 	min-width: 0;
 }
 
