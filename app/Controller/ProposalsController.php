@@ -225,10 +225,12 @@ class ProposalsController extends AppController{
 		
 		foreach ($prop['MyBoughtExtra'] as $bextra){
 			$extra=$this->Proposal->MyBoughtExtra->MyExtra->findById($bextra['extra_id']);
-			$price = $this->Proposal->MyHouse->extra_price($house['MyHouse']['type'],$extra['MyExtra']);
-			$this->Proposal->MyBoughtExtra->edit_extra($bextra,$price, $bextra['factor']);
-			
-			
+			if($extra['MyExtra']['depends_on_house']!=$house['MyHouse']['type'] && $extra['MyExtra']['depends_on_house']!=0){
+				$this->Proposal->MyBoughtExtra->delete_extra($bextra['id']);
+			}else{
+				$price = $this->Proposal->MyHouse->extra_price($house['MyHouse']['type'],$extra['MyExtra']);
+				$this->Proposal->MyBoughtExtra->edit_extra($bextra,$price, $bextra['factor']);
+			}
 		}
 		
 		$prop['Proposal']['house_id']=$house_id;
@@ -309,8 +311,10 @@ class ProposalsController extends AppController{
     	
     	$proposal=$this->Proposal->findById($id);
     	
-    	
         if ($this->Proposal->delete($id)) {
+        	foreach ($proposal['MyBoughtExtra'] as $bextra){
+        		$this->Proposal->MyBoughtExtra->delete_extra($bextra['id']);
+        	}
         	if (!empty($proposal['Proposal']['summary'])){
         		unlink(WWW_ROOT.$proposal['Proposal']['summary']);
         	}
@@ -320,6 +324,7 @@ class ProposalsController extends AppController{
         	if (!empty($proposal['Proposal']['contract'])){
         		unlink(WWW_ROOT.$proposal['Proposal']['contract']);
         	}
+        	
         	$this->Session->setFlash(__('The proposal with id: %s has been deleted',h($id)));
             return $this->redirect(array('controller'=>'Customers','action'=>'view',$proposal['MyCustomer']['id']));
         }

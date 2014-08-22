@@ -39,7 +39,7 @@ class House extends AppModel{
     				'rule'=>'notEmpty'
     		),
     		'type'=>array(
-    			'rule'=>array('inList',array(0,1,2,3)),
+    			'rule'=>array('inList',array(1,2,3)),
             	'message'=> 'Please enter a valid role',
             	'allowEmpty'=>false
     		),

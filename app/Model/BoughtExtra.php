@@ -77,14 +77,52 @@ class BoughtExtra extends AppModel{
 	
 	}
 	
+	public function delete_extra($bought_extra_id=NULL) {
+		if (!$bought_extra_id) {
+			throw new NotFoundException(__('Invalid Bought Extra'));
+		}
+	
+		$x = $this->findById($bought_extra_id);
+		if (!$x) {
+			throw new NotFoundException(__('Invalid Bought Extra'));
+		}
+		/* Logic to handle the removal of a garage */
+		if($x['MyExtra']['bool_garage']){
+			$count= sizeof($this->find('all',array(
+					'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>0,'MyExtra.bool_garage'=>1))));
+			if($count==1){
+				$ext_garage=$this->find('first',array(
+						'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
+				$house=$this->MyProposal->MyHouse->findById($ext_garage['MyProposal']['house_id']);
+				$price=$this->MyProposal->MyHouse->extra_price($house['MyHouse']['type'],$ext_garage['MyExtra']);
+				$this->edit_extra($ext_garage['BoughtExtra'],$price,1);
+			}
+		}
+		/*end*/
+		
+		$custom_deleted=true;
+		if($x['MyExtra']['bool_custom']){
+			$custom_deleted=$this->MyExtra->delete($x['MyExtra']['id']);
+		}
+	
+		if ($this->delete($bought_extra_id) && $custom_deleted) {
+			return $x['MyProposal']['id'];
+		}else{
+			return FALSE;
+		}
+	
+	}
+	
+	
+	
 	public function allow_extra($proposal_id,$extra){
+		/* checks for dependencies with other extras and whether it has to be unique */
 		if (!$extra) {
 			throw new NotFoundException(__('Invalid Extra'));
 		}
 		if (!$proposal_id) {
 			throw new NotFoundException(__('Invalid Proposal'));
 		}
-		
 		
 		if ($extra['bool_unique'] && !empty($this->idFromKeys($proposal_id,$extra['id']))){
 			return FALSE;

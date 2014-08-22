@@ -28,7 +28,8 @@ class BoughtExtrasController extends AppController{
             		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
 		
 		foreach ($extras as $key=>$x){
-			if(!$this->BoughtExtra->allow_extra($proposal_id,$x['MyExtra'])){
+			$house_dependency=($proposal['MyHouse']['type']==$x['MyExtra']['depends_on_house'] || $x['MyExtra']['depends_on_house']==0);
+			if(!$this->BoughtExtra->allow_extra($proposal_id,$x['MyExtra']) || !$house_dependency){
 				unset($extras[$key]);
 			}
 		}
@@ -95,24 +96,11 @@ class BoughtExtrasController extends AppController{
    
     public function delete($id) {
     	
-    	$x = $this->BoughtExtra->findById($id);
-    	/* Logic to handle the removal of a garage */
-    	if($x['MyExtra']['bool_garage']){
-    		$count= sizeof($this->BoughtExtra->find('all',array(
-				'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>0,'MyExtra.bool_garage'=>1))));
-			if($count==1){
-    		 	$ext_garage=$this->BoughtExtra->find('first',array(
-					'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
-    		 	$house=$this->BoughtExtra->MyProposal->MyHouse->findById($ext_garage['MyProposal']['house_id']);
-    		 	$price=$this->BoughtExtra->MyProposal->MyHouse->extra_price($house['MyHouse']['type'],$ext_garage['MyExtra']);
-    			$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra'],$price,1);
-    		}
-    	} 
-    	/*end*/
     	
-    	if ($this->BoughtExtra->delete($id)) {
+    	
+    	if ($prop_id=$this->BoughtExtra->delete_extra($id)) {
     		$this->Session->setFlash(__('Deleted'));
-    		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view', $x['MyProposal']['id']));
+    		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view', $prop_id));
     	}
     }
     

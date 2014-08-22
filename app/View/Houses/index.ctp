@@ -79,7 +79,7 @@
 			{?>	
 			<tr> 
 				<td> <?php echo $this->Html->link($House['House']['name'], array('controller'=>'Houses','action'=>'view',$House['House']['id'])); ?></td>
-				<td> <?php echo $House['House']['type'] ?></td>
+				<td> <?php echo $house_type[$House['House']['type']] ?></td>
 				<td> <?php echo $House['House']['size'] ?></td>
 				<td> <?php echo $House['House']['floors'] ?></td>
 				<td> <?php echo $House['House']['price'] ?></td>
@@ -136,8 +136,8 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 						echo $this->Form->input('name',array('placeholder' => __('Enter a Name'),'label' => __('Name'),'div' => 'form-group has-success'));
 						echo $this->Form->input('description',array('placeholder' => __('Enter a Description'),'label' => __('Description'),'div' => 'form-group has-success'));
 						echo $this->Form->input('size',array('placeholder' => __('Enter a Size in Squaremeter'),'label' => __('Size'),'div' => 'form-group has-success'));
-						echo $this->Form->input('stores',array('placeholder' => __('Enter how many floors'),'label' => __('Foors'),'div' => 'form-group has-success'));
-						echo $this->Form->input('type',array('placeholder' => __('Enter the Type'),'label' => __('Type'),'div' => 'form-group has-success'));
+						echo $this->Form->input('floors',array('placeholder' => __('Enter how many floors'),'label' => __('Foors'),'div' => 'form-group has-success'));
+						echo $this->Form->input('type',array('options'=>$house_type,'placeholder' => __('Choose type:'),'label' => __('Type'),'div' => 'form-group has-success'));
 						echo $this->Form->input('price',array('placeholder' => __('Enter a Price'),'label' => __('Price'),'div' => 'form-group has-success'));?>	
 						
 				</div>						

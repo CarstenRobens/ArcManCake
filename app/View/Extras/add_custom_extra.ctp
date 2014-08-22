@@ -20,19 +20,15 @@
 						echo $this->Form->input('default_priceA',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[1].__(' (in € or €/m<sup>2</sup>)')));
 						echo $this->Form->input('default_priceB',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[2].__(' (in € or €/m<sup>2</sup>)')));
 						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)')));
-						echo $this->Form->input('depends_on',array('default' => 0,'options'=> $list_extras_view,'label'=>__('Can be selected only after buying:')));
-						
 						$array_options=array(
-							0=>'No',
+							0=>__('No'),
 							1=>__('Floor size dependent'),
 							2=>__('Total size dependent')
 						);
 						echo $this->Form->input('size_dependent_check',array('type'=>'select','options'=>$array_options ,'default' => 0,'label' => __('Is the price size dependent?')));
 						echo $this->Form->input('bool_garage',array('default' => false,'label'=>__('Is a garage?')));
-						echo $this->Form->input('bool_unique',array('default' => false,'label'=>__('Only one can be purchased?')));
-						echo $this->Form->input('bool_uneditable',array('default' => false,'label'=>__('Will the price be fixed?')));
 						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category')));
-						
+						/* Custom extras do not need so many fields like a standard extra */
 						?>		
 						
 				</div>						
