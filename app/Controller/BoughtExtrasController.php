@@ -96,7 +96,21 @@ class BoughtExtrasController extends AppController{
    
     public function delete($id) {
     	
-    	
+    	$bought_extra=$this->BoughtExtra->findById($id);
+    	$count=sizeof($this->BoughtExtra->find('list',array('conditions'=>array('proposal_id'=>$bought_extra['MyProposal']['id'],'extra_id'=>$bought_extra['MyExtra']['id']))));
+    	debug($count);
+    	if ($count==1){
+    		$list_extras=$this->BoughtExtra->MyExtra->find('list',array('conditions'=>array('depends_on'=>$bought_extra['MyExtra']['id'])));
+    		 
+    		foreach($list_extras as $key=>$extra){
+    			$x=$this->BoughtExtra->idFromKeys($bought_extra['MyProposal']['id'],$key);
+    			if (!empty($x)){
+    				foreach($x as $key2=>$y){
+    					$this->BoughtExtra->delete_extra($key2);
+    				}
+    			}
+    		}
+    	}
     	
     	if ($prop_id=$this->BoughtExtra->delete_extra($id)) {
     		$this->Session->setFlash(__('Deleted'));

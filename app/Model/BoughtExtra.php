@@ -93,9 +93,11 @@ class BoughtExtra extends AppModel{
 			if($count==1){
 				$ext_garage=$this->find('first',array(
 						'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
-				$house=$this->MyProposal->MyHouse->findById($ext_garage['MyProposal']['house_id']);
-				$price=$this->MyProposal->MyHouse->extra_price($house['MyHouse']['type'],$ext_garage['MyExtra']);
-				$this->edit_extra($ext_garage['BoughtExtra'],$price,1);
+				if(!empty($ext_garage)){
+					$house=$this->MyProposal->MyHouse->findById($ext_garage['MyProposal']['house_id']);
+					$price=$this->MyProposal->MyHouse->extra_price($house['MyHouse']['type'],$ext_garage['MyExtra']);
+					$this->edit_extra($ext_garage['BoughtExtra'],$price,1);
+				}
 			}
 		}
 		/*end*/
@@ -126,7 +128,7 @@ class BoughtExtra extends AppModel{
 		
 		if ($extra['bool_unique'] && !empty($this->idFromKeys($proposal_id,$extra['id']))){
 			return FALSE;
-		}elseif(!empty($this->idFromKeys($proposal_id,$extra['depends_on']))){
+		}elseif(empty($this->idFromKeys($proposal_id,$extra['depends_on'])) && $extra['depends_on']!=0){
 			return FALSE;
 		}else{
 			return TRUE;
