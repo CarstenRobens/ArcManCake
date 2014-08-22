@@ -697,7 +697,7 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
       <textarea id="text_enlarge" rows="1">10</textarea>
       
       <strong><?php echo __('Price (in € / m<sup>2</sup>):');?></strong> 
-      <textarea id="text_enlarge_price" rows="1">1</textarea>
+      <textarea id="text_enlarge_price" rows="1">990</textarea>
       
       </div>
       <div class="modal-footer">

@@ -22,8 +22,8 @@
 		<td> <?php echo $x['Extra']['id']; ?> </td> 
 		<td> <?php echo $this->Html->link($x['Extra']['name'], array('controller'=>'Extras','action'=>'view',$x['Extra']['id'])); ?></td>
 		<td> <?php echo $x['Extra']['default_priceA'].' €'; ?></td>
-		<td> <?php echo $x['Extra']['default_priceC'].' €'; ?></td>
 		<td> <?php echo $x['Extra']['default_priceB'].' €'; ?></td>
+		<td> <?php echo $x['Extra']['default_priceC'].' €'; ?></td>
 		<td> <?php echo $x['MyCategory']['name']; ?></td>
 		<td> 
 		<?php if ($x['Extra']['size_dependent_flag']<0){
@@ -113,3 +113,4 @@
 	</div>
 	</div>
 </div>
+
