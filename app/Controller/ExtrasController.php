@@ -37,9 +37,14 @@ class ExtrasController extends AppController{
 		$this->Paginator->settings = $this->paginate;
 		$this->set('extras_view',$this->Paginator->paginate());
 		
+		
 		if ($logged_user['role']<3){
 			
 			$this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
+			
+			$houses_list_view=$this->Extra->MyBoughtExtra->MyProposal->MyHouse->find('list');
+			$houses_list_view[0]=__('None');
+			$this->set('houses_list_view',$houses_list_view);
 			
 			$list_extras=$this->Extra->find('list',array('conditions'=>array('bool_external'=>false,'bool_custom'=>false),'order'=>'name'));
 			$list_extras[0]=__('None');
@@ -151,6 +156,10 @@ class ExtrasController extends AppController{
         }
             
         $this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
+        
+        $houses_list_view=$this->Extra->MyBoughtExtra->MyProposal->MyHouse->find('list');
+		$houses_list_view[0]=__('None');
+		$this->set('houses_list_view',$houses_list_view);
        
         $list_extras=$this->Extra->find('list',array('conditions'=>array('bool_external'=>false,'bool_custom'=>false),'order'=>'name'));
         $list_extras[0]=__('None');

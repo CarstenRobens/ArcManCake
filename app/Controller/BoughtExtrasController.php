@@ -28,7 +28,7 @@ class BoughtExtrasController extends AppController{
             		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
 		
 		foreach ($extras as $key=>$x){
-			$house_dependency=($proposal['MyHouse']['type']==$x['MyExtra']['depends_on_house'] || $x['MyExtra']['depends_on_house']==0);
+			$house_dependency=($proposal['MyHouse']['id']==$x['MyExtra']['depends_on_house'] || $x['MyExtra']['depends_on_house']==0);
 			if(!$this->BoughtExtra->allow_extra($proposal_id,$x['MyExtra']) || !$house_dependency){
 				unset($extras[$key]);
 			}

@@ -56909,3 +56909,48 @@ Request URL: /ArcManCake/js/signin.js
 Stack Trace:
 #0 F:\xampp\htdocs\ArcManCake\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-08-22 22:34:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-22 22:34:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-22 22:36:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-22 22:41:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-08-22 22:42:33 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /ArcManCake/js/signin.js
+Stack Trace:
+#0 /home/elgatil/Development/CakePHP/ArcManCake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

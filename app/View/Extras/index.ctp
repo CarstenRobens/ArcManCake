@@ -87,7 +87,7 @@
 						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)')));
 						echo $this->Form->input('depends_on',array('default' => 0,'options'=> $list_extras_view,'label'=>__('Can be selected only after buying:')));
 						$house_type[0]=__('None');
-						echo $this->Form->input('depends_on_house',array('default' => 0,'options'=> $house_type,'label'=>__('Can be selected only for houses of type:')));
+						echo $this->Form->input('depends_on_house',array('default' => 0,'options'=> $houses_list_view,'label'=>__('Can be selected only for house:')));
 						$array_options=array(
 							0=>__('No'),
 							1=>__('Floor size dependent'),
