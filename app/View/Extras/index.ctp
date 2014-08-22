@@ -81,7 +81,7 @@
 						
 						
 						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name')));
-						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description')));
+						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description'),'escape' => true));
 						echo $this->Form->input('default_priceA',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[1].__(' (in € or €/m<sup>2</sup>)')));
 						echo $this->Form->input('default_priceB',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[2].__(' (in € or €/m<sup>2</sup>)')));
 						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)')));
@@ -106,13 +106,10 @@
 			</div>
 		</div>
 		<p style="clear: both;"> </p>
-
-		<div class="PostFooter">
-			<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Add'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
-			<p style="clear: both;">  </p>
-		</div>
+		<?php echo $this->Form->end(array('label' => __('Save'),'text' => 'test','class' => 'btn btn-success  pull-right buttonwidth')); ?>
+		<p style="clear: both;">  </p>
 	</div>
 		
 	</div>
 	</div>
-	</div>
+</div>

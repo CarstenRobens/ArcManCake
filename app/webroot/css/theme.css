@@ -99,3 +99,6 @@ $colHover       : #ffbbbc;
 .navbar-header { 
  margin-top: 20px !important
 }
+.buttonwidth {
+    width: 100px !important;
+}

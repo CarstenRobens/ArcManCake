@@ -48,6 +48,11 @@ class House extends AppModel{
             	'message'=> 'Please enter a valid size',
             	'allowEmpty'=>false
 			),
+			'size_din'=>array(
+            	'rule'=>'decimal',
+            	'message'=> 'Please enter a valid size',
+            	'allowEmpty'=>false
+			),
     		'floors'=>array(
             	'rule'=>'decimal',
             	'message'=> 'Please enter a valid number of floors',

@@ -63,11 +63,8 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 			</div>
 		</div>
 		<p style="clear: both;"> </p>
-
-		<div class="PostFooter">
-			<div class="bottomaction"> <?php echo $this->Form->end(array('label' => __('Save Customer'),'text' => 'test','class' => 'btn btn-success')); ?> <p style="clear: both;">  </p></div>
-			<p style="clear: both;">  </p>
-		</div>
+		<?php echo $this->Form->end(array('label' => __('Save'),'text' => 'test','class' => 'btn btn-success  pull-right buttonwidth')); ?>
+		<p style="clear: both;">  </p>
 	</div>
 		
 	</div>

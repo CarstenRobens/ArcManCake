@@ -28,4 +28,4 @@
 } ?>
 </p>
 <p> <b> Description: </b> </p>
-<p> <?php echo $extra_view['Extra']['description']; ?> </p>
+<p> <?php echo $this->Text->autoParagraph($extra_view['Extra']['description']);?> </p>
