@@ -57,14 +57,37 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 						
 						echo $this->Form->input('name',array('placeholder' => __('Enter the customer name'),'label' => __('Name'),'div' => 'form-group has-success'));
 						echo $this->Form->input('surname',array('placeholder' => __('Enter the customer surname'),'label' => __('Surname'),'div' => 'form-group has-success'));
-						echo $this->Form->input('phone',array('placeholder' => __('Enter the customer phone number'),'label' => __('Phone'),'div' => 'form-group has-success'));
+						echo $this->Form->input('phone_private',array('placeholder' => __('Enter the customer private phone number'),'label' => __('Private Phone'),'div' => 'form-group has-success'));
+						echo $this->Form->input('phone_work',array('placeholder' => __('Enter the customer work phone number'),'label' => __('Work Phone'),'div' => 'form-group has-success'));
 						echo $this->Form->input('email',array('placeholder' => __('Enter the customer email address'),'label' => __('eMail'),'div' => 'form-group has-success'));
 						echo $this->Form->input('address1',array('placeholder' => __('Enter the customer post address'),'label' => __('Post Address'),'div' => 'form-group has-success'));
 						echo $this->Form->input('address2',array('placeholder' => __('additional post address information'),'label' => __('Post Address 2'),'div' => 'form-group has-success'));
 						echo $this->Form->input('zipcode',array('placeholder' => __('Enter the customer zipcode'),'label' => __('Zipcode'),'div' => 'form-group has-success'));
 						echo $this->Form->input('city',array('placeholder' => __('Enter the customer City'),'label' => __('City'),'div' => 'form-group has-success'));
+						echo $this->Form->input('birthday',array('placeholder' => __('Enter the customers Birthday'),'label' => __('Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
+					
 						echo $this->Form->input('notes',array('placeholder' => __('additional notes if required'),'label' => __('Notes'),'div' => 'form-group has-success'));
-						?>	
+						?>
+						<legend>
+							<?php echo __('Second Customer'); ?>
+						</legend>
+						<?php 
+						echo $this->Form->input('2nd_name',array('placeholder' => __('Enter the 2nd customer name'),'label' => __('2nd Name'),'div' => 'form-group has-success'));
+						echo $this->Form->input('2nd_surname',array('placeholder' => __('Enter the 2nd customer surname'),'label' => __('2nd Surname'),'div' => 'form-group has-success'));
+						echo $this->Form->input('2nd_maiden_surname',array('placeholder' => __('Enter the 2nd customer surname'),'label' => __('2nd Surname'),'div' => 'form-group has-success'));
+						echo $this->Form->input('2nd_birtday',array('placeholder' => __('Enter the 2nd customers Birthday'),'label' => __('2nd Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
+						?>
+						<legend>
+							<?php echo __('Building Information'); ?>
+						</legend>
+						<?php 
+						echo $this->Form->input('built_region',array('placeholder' => __('Enter the building region'),'label' => __('Building Region'),'div' => 'form-group has-success'));
+						echo $this->Form->input('built_address',array('placeholder' => __('Enter the building address'),'label' => __('Building Post Address'),'div' => 'form-group has-success'));
+						echo $this->Form->input('built_zipcode',array('placeholder' => __('Enter the building zipcode'),'label' => __('Building Zipcode'),'div' => 'form-group has-success'));
+						echo $this->Form->input('built_city',array('placeholder' => __('Enter the building City'),'label' => __('Building City'),'div' => 'form-group has-success'));
+						echo $this->Form->input('construction_office',array('placeholder' => __('Enter the corresponding Construction Office'),'label' => __('Construction Office'),'div' => 'form-group has-success'));
+						
+						?>
 						
 				</div>						
 			</div>

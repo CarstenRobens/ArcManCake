@@ -31,7 +31,7 @@ class Customer extends AppModel{
             	'rule'=>'notEmpty',
                 'message'=> 'A surname is required'
 			),
-    		'phone'=>array(
+    		'phone_private'=>array(
             	'rule'=>'notEmpty',
                 'message'=> 'A phone number is required'
 			),
@@ -46,7 +46,7 @@ class Customer extends AppModel{
             	'rule'=>'notEmpty',
                 'message'=> 'Enter your city'
 			),
-    		'phone'=>array(
+    		'phone_private'=>array(
             'required'=>array(
                 'rule'=>'decimal',
                 'message'=> 'A phone is required'
