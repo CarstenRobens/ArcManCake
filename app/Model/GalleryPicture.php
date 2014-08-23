@@ -1,6 +1,6 @@
 <?php
 
-class HomePicture extends AppModel{
+class GalleryPicture extends AppModel{
 	
 	public $belongsTo = array(
 			'MyUser' => array(

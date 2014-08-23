@@ -1,11 +1,11 @@
 <?php
-class HomePicturesController extends AppController{
+class GalleryPicturesController extends AppController{
 	public $helper = array('Html','Form');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HomePictures');
-		$this->Auth->allow('home');
+		$this->Auth->allow('index');
 	}
 	
 	public function isAuthorized($logged_user) {
@@ -23,16 +23,16 @@ class HomePicturesController extends AppController{
 	
 	public function index() {
 		$logged_user = $this->Auth->user();
-		$this->set('home_pictures_view',$this->paginate());
+		$this->set('gallery_pictures_view',$this->paginate());
 		
 		// add
 		if ($logged_user['role']<3 && !empty($logged_user)){
 			if ($this->request->is('post')) {
-				$this->HomePicture->create();
+				$this->GalleryPicture->create();
 				//Check if image has been uploaded
-				if(!empty($this->request->data['HomePicture']['upload']['name']))
+				if(!empty($this->request->data['GalleryPicture']['upload']['name']))
 				{
-					$file = $this->request->data['HomePicture']['upload']; //put the data into a var for easy use
+					$file = $this->request->data['GalleryPicture']['upload']; //put the data into a var for easy use
 				
 					$ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
 					$arr_ext = array('jpg', 'jpeg', 'gif','png'); //set allowed extensions
@@ -42,11 +42,11 @@ class HomePicturesController extends AppController{
 					{
 						//do the actual uploading of the file. First arg is the tmp name, second arg is
 						//where we are putting it
-						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/home/' . $file['name']);
+						move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/gallery/' . $file['name']);
 				
 						//prepare the filename for database entry
 						
-						$this->request->data['HomePicture']['picture'] = $file['name'];
+						$this->request->data['GalleryPicture']['picture'] = $file['name'];
 						
 						
 					}else{
@@ -54,7 +54,7 @@ class HomePicturesController extends AppController{
 					}
 				}
 				
-				$this->request->data['HomePicture']['user_id'] = $this->Auth->user('id');
+				$this->request->data['GalleryPicture']['user_id'] = $this->Auth->user('id');
 				
 				if ($this->HomePicture->save($this->request->data)) {
 					$this->Session->setFlash(__('Picture saved.'), 'alert-box', array('class'=>'alert-success'));
@@ -65,23 +65,6 @@ class HomePicturesController extends AppController{
 		}
 	}
 	
-	public function home() {
-		$this->set('home_pictures_view',$this->HomePicture->find('all'));
-	}
-
-
-	public function view($id=null) {
-            if(!$id){
-                throw new NotFoundException(__('Invalid picture'));
-            }
-	
-            $x = $this->HomePicture->findById($id);
-            if (!$x) {
-                throw new NotFoundException(__('Invalid picture'));
-            }
-            $this->set('home_picture_view',$x);
-
-	}
 
         
 	
@@ -89,9 +72,9 @@ class HomePicturesController extends AppController{
     	if ($this->request->is('get')) {
         	throw new MethodNotAllowedException();
         }
-        $x=$this->HomePicture->findById($id);
-        unlink(WWW_ROOT.'img/uploads/home/'.$x['HomePicture']['picture']);
-        if ($this->HomePicture->delete($id)) {
+        $x=$this->GalleryPicture->findById($id);
+        unlink(WWW_ROOT.'img/uploads/gallery/'.$x['GalleryPicture']['picture']);
+        if ($this->GalleryPicture->delete($id)) {
         	$this->Session->setFlash(__('Picture with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index'));
         }
