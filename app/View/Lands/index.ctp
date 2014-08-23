@@ -52,7 +52,21 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	echo $this->Form->input('notary_cost');
 	echo $this->Form->input('land_agent_cost');
 	echo $this->Form->input('land_tax');
-	echo $this->Form->input('customer',array('default' => 0));
+	echo $this->Form->input('customer',array('default' => 0));?>
+	<legend>
+		<?php echo __('Building Information'); ?>
+	</legend>
+	<?php 
+	echo $this->Form->input('built_region',array('placeholder' => __('Enter the building region'),'label' => __('Building Region'),'div' => 'form-group has-success'));
+	echo $this->Form->input('built_address',array('placeholder' => __('Enter the building address'),'label' => __('Building Post Address'),'div' => 'form-group has-success'));
+	echo $this->Form->input('built_zipcode',array('placeholder' => __('Enter the building zipcode'),'label' => __('Building Zipcode'),'div' => 'form-group has-success'));
+	echo $this->Form->input('built_city',array('placeholder' => __('Enter the building City'),'label' => __('Building City'),'div' => 'form-group has-success'));
+	echo $this->Form->input('construction_office',array('placeholder' => __('Enter the corresponding Construction Office'),'label' => __('Construction Office'),'div' => 'form-group has-success'));
+	?>
 	
+	
+	<?php
 	echo $this->Form->end('Save Land');
 }?>
+
+

@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 23, 2014 at 06:30 
+-- Host: 127.0.0.1
+-- Generation Time: Aug 23, 2014 at 06:52 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ArcManCake`
+-- Database: `arcmancake`
 --
 
 -- --------------------------------------------------------
@@ -107,11 +107,6 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `2nd_surname` varchar(200) NOT NULL,
   `2nd_maiden_surname` varchar(200) NOT NULL,
   `2nd_birtday` date NOT NULL,
-  `built_region` varchar(200) NOT NULL,
-  `built_address` varchar(200) NOT NULL,
-  `built_zipcode` varchar(200) NOT NULL,
-  `built_city` varchar(200) NOT NULL,
-  `construction_office` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
@@ -119,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `surname`, `notes`, `phone_private`, `phone_work`, `birthday`, `email`, `address1`, `address2`, `zipcode`, `city`, `user_id`, `created`, `modified`, `2nd_name`, `2nd_surname`, `2nd_maiden_surname`, `2nd_birtday`, `built_region`, `built_address`, `built_zipcode`, `built_city`, `construction_office`) VALUES
-(6, 'Jose Carlos', 'Gallego', 'Penis!', 34567890, 0, '0000-00-00', 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-08-23', '', '', '', '0000-00-00', '', '', '', '', '');
+INSERT INTO `customers` (`id`, `name`, `surname`, `notes`, `phone_private`, `phone_work`, `birthday`, `email`, `address1`, `address2`, `zipcode`, `city`, `user_id`, `created`, `modified`, `2nd_name`, `2nd_surname`, `2nd_maiden_surname`, `2nd_birtday`) VALUES
+(6, 'Jose Carlos', 'Gallego', 'Penis!', 34567890, 0, '0000-00-00', 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-08-23', '', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -451,10 +446,16 @@ CREATE TABLE IF NOT EXISTS `lands` (
   `notary_cost` float NOT NULL,
   `land_agent_cost` float NOT NULL,
   `land_tax` float NOT NULL,
+  `building_tax` float NOT NULL,
   `customer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
+  `built_region` varchar(200) NOT NULL,
+  `built_address` varchar(200) NOT NULL,
+  `built_zipcode` varchar(200) NOT NULL,
+  `built_city` varchar(200) NOT NULL,
+  `construction_office` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
@@ -462,13 +463,13 @@ CREATE TABLE IF NOT EXISTS `lands` (
 -- Dumping data for table `lands`
 --
 
-INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `customer_id`, `user_id`, `created`, `modified`) VALUES
-(1, 'Terminus', 'Desertic, no natural resources', 40000000, 1, 888888, 2, 30, 20, 21, 0, 3, '2014-07-02', '2014-07-02'),
-(2, 'Hyperion', 'Careful with the Shriek!', 2147480000, 3, 1234230, 2, 25, 23, 21, 0, 3, '2014-07-02', '2014-07-02'),
-(4, 'Alderaan', 'Set your house on an asteroid!', 3000, 1, 600, 30, 1, 1, 0, 0, 3, '2014-07-02', '2014-07-02'),
-(5, 'land for cus a2', '', 234, 120, 123, 123, 2, 3, 21, 2, 3, '2014-07-02', '2014-07-02'),
-(6, 'land cus b', '', 4567, 456789, 5678, 5678, 5, 6, 21, 3, 4, '2014-07-04', '2014-07-04'),
-(7, 'land cus b2', '', 5678, 567, 567, 5678, 3, 7, 21, 4, 4, '2014-07-04', '2014-07-04');
+INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `building_tax`, `customer_id`, `user_id`, `created`, `modified`, `built_region`, `built_address`, `built_zipcode`, `built_city`, `construction_office`) VALUES
+(1, 'Terminus', 'Desertic, no natural resources', 40000000, 1, 888888, 2, 30, 20, 21, 0, 0, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(2, 'Hyperion', 'Careful with the Shriek!', 2147480000, 3, 1234230, 2, 25, 23, 21, 0, 0, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(4, 'Alderaan', 'Set your house on an asteroid!', 3000, 1, 600, 30, 1, 1, 0, 0, 0, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(5, 'land for cus a2', '', 234, 120, 123, 123, 2, 3, 21, 0, 2, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(6, 'land cus b', '', 4567, 456789, 5678, 5678, 5, 6, 21, 0, 3, 4, '2014-07-04', '2014-07-04', '', '', '', '', ''),
+(7, 'land cus b2', '', 5678, 567, 567, 5678, 3, 7, 21, 0, 4, 4, '2014-07-04', '2014-07-04', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
