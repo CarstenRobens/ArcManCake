@@ -455,150 +455,110 @@ foreach ($normal_house_pictures_view as $x){
 			
 <!----------PANEL CONTENT------------------>	
 	
+	
+	
+	
+	
+	
+	
 	<div class="row">
-		<div class="col-md-2"> </div>
+		<div class="col-md-1"> </div>
 		
-		<div class="col-md-5">
+		<div class="col-md-7">
 			<strong id="foo" ><?php echo $proposal_view['MyLand']['name']; ?></strong> 
 			<select id="bar" style="display:none;"></select> 
 		</div>
 		
-		<div class="col-md-2" align=right> 
+		<div class="col-md-3" align=right> 
 			<a id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-edit"></span></a>
 			
 		</div>
 		
-		<div class="col-md-1"> </div>
 		
-		<div class="col-md-2"> </div>
+		<div class="col-md-1"> </div>
 		
 	</div>
 	
 	<?php if(!empty($proposal_view['MyLand']['notes'])){ ?>
 	<div class="row">
-		<div class="col-md-2"> </div>
+		<div class="col-md-1"> </div>
 		
-		<div class="col-md-3">
+		<div class="col-md-4">
 			<?php echo __('Notes:'); ?>
 		</div>
 		
-		<div class="col-md-5">
+		<div class="col-md-7">
 			<?php echo $proposal_view['MyLand']['notes']; ?>
 		</div>
 		
-		<div class="col-md-2"> </div>
+		<div class="col-md-1"> </div>
 		
 	</div>
 	<?php } ?>
-	
-	
-	
 	<div class="row">
-		<div class="col-md-2"> </div>
-		
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-4">
-					<strong><?php echo __('Land Size'); ?></strong>
-					<p align=right><?php echo $proposal_view['MyLand']['land_size'].' m<sup>2</sup>'; ?></p>
-				</div>
-				<div class="col-md-4">
-					<strong><?php echo __('Land Price'); ?></strong>
-					<p align=right><?php echo $proposal_view['MyLand']['land_price_per_m2'].' €/m<sup>2</sup>'; ?></p>
-				</div>
-				<div class="col-md-4">
-					.
-					<p align=right><?php echo $proposal_view['MyLand']['land_price_per_m2']*$proposal_view['MyLand']['land_size'].' €'; ?></p>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-4">
-					<strong><?php echo __('Dev. Size'); ?></strong>
-					<p align=right><?php echo $proposal_view['MyLand']['dev_size'].' m<sup>2</sup>'; ?></p>
-				</div>
-				<div class="col-md-4">
-					<strong><?php echo __('Dev. Cost'); ?></strong>
-					<p align=right><?php echo $proposal_view['MyLand']['dev_cost_per_m2'].' €/m<sup>2</sup>'; ?></p>
-				</div>
-				<div class="col-md-4">
-					.
-					<p align=right><?php echo $proposal_view['MyLand']['dev_cost_per_m2']*$proposal_view['MyLand']['dev_size'].' €'; ?></p>
-				</div>
-			</div>
-			
-			<?php $subtotal=$proposal_view['MyLand']['land_price_per_m2']*$proposal_view['MyLand']['land_size']+$proposal_view['MyLand']['dev_cost_per_m2']*$proposal_view['MyLand']['dev_size'];?>
-			
-		</div>
-		
-		
-		
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-1">
-				</div>
-				<div class="col-md-5">
-					<strong><?php echo __('Land Agent Cost'); ?></strong>
-					<p align=right><?php echo $proposal_view['MyLand']['land_agent_cost'].' %'; ?></p>
-					<strong><?php echo __('Notary Cost'); ?></strong>
-					<p align=right><?php echo $proposal_view['MyLand']['notary_cost'].' %'; ?></p>
-					<strong><?php echo __('Tax'); ?></strong>
-					<p align=right><?php echo $proposal_view['MyLand']['land_tax'].' %'; ?></p>
-				</div>
-				<div class="col-md-4">
-					.
-					<p align=right><?php echo $proposal_view['MyLand']['land_agent_cost']/100*$subtotal.' €'; ?></p>
-					.
-					<p align=right><?php echo $proposal_view['MyLand']['notary_cost']/100*$subtotal.' €'; ?></p>
-					.
-					<p align=right><?php echo $proposal_view['MyLand']['land_tax']/100*$subtotal.' €'; ?></p>
-				</div>
+		<div class="col-md-1"> </div>
+		<div class="col-md-10">
+				<table>
 				
-				<div class="col-md-2"> </div>
+					<tr>
+						<td >Grundstückskaufpreis Gem.:</td>
+						<td style='text-align: right'><?php echo $proposal_view['MyLand']['land_size'];?> m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $proposal_view['MyLand']['land_price_per_m2'];?> €/m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $subtotal=$proposal_view['MyLand']['land_size']*$proposal_view['MyLand']['land_price_per_m2'];?> €</td>
+						
+					</tr>
+					
+					<tr>
+						<td>
+							Notarkosten<br>
+							Grunderwerbsteuer<br>
+							Maklergebühren
+						</td>
+						<td style='text-align: right'>
+							<?php echo $proposal_view['MyLand']['notary_cost'].'%';?><br>
+							<?php echo $proposal_view['MyLand']['land_tax'].'%';?><br>
+							<?php echo $proposal_view['MyLand']['land_agent_cost'].'%';?>
+						</td>
+						<td> </td>
+						<td style='text-align: right'>
+							<?php echo $proposal_view['MyLand']['notary_cost']/100*$subtotal;?> €<br>
+							<?php echo $proposal_view['MyLand']['land_tax']/100*$subtotal;?> €<br>
+							<?php echo $proposal_view['MyLand']['land_agent_cost']/100*$subtotal;?> €
+						</td>
+						
+					</tr>
+					
+					<tr>
+						<td>Erschließungkosten</td>
+						<td style='text-align: right'><?php echo $proposal_view['MyLand']['dev_size'];?> m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $proposal_view['MyLand']['dev_cost_per_m2'];?> €/m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $subtotal_dev=$proposal_view['MyLand']['dev_size']*$proposal_view['MyLand']['dev_cost_per_m2'];?> €</td>
+						
+					</tr>
+					
+					<tr>
+						<td>Bauzinsen 0,25%/Monat</td>
+						<td style='text-align: right'><?php echo $proposal_view['MyLand']['building_tax'].'%';?></td>
+						<td> </td>
+						<td style='text-align: right'><?php echo $proposal_view['MyLand']['building_tax']/100*$subtotal;?> €</td>
+						
+					</tr>
+					
+				</table>
+				
+				<table>
+					<tr>
+						<th>Gesamtgrundstücksankauf mit Nebenkosten:</td>
+						<th style='text-align: right'><?php echo $total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost'])/100;?> €</td>
+					</tr>
+				</table>
 			</div>
-			
-			<?php $total=($proposal_view['MyLand']['land_agent_cost']+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+100)/100*$subtotal; ?>
-			
-		</div>
 		
-		<div class="col-md-2"></div>
+		<div class="col-md-1"> </div>
 		
 	</div>
 	
 	
-	<div class="row">
-		<div class="col-md-2"> </div>
-		
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-4"> </div>
-				
-				<div class="col-md-4" align=right>
-					<strong><?php echo __('Subtotal'); ?></strong>
-				</div>
-				<div class="col-md-4" align=right>
-					<?php echo $subtotal.' €'; ?>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-1"> </div>
-				
-				<div class="col-md-5" align=right>
-					<strong><?php echo __('Total'); ?></strong>
-				</div>
-				<div class="col-md-4" align=right>
-					<?php echo $total.' €'; ?>
-				</div>
-				<div class="col-md-2"> </div>
-			</div>
-		</div>
-		
-		<div class="col-md-2">
-		</div>
-	</div>
 	
 	
 <!----------END PANEL CONTENT-------------->			

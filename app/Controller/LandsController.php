@@ -42,8 +42,11 @@ class LandsController extends AppController{
 		if ($logged_user['role']<3){
 			if ($this->request->is('post')) {
 				$this->Land->create();
+				$this->request->data['Land']['notary_cost'] = 2.5;
+				$this->request->data['Land']['land_tax'] = 5;
+				$this->request->data['Land']['building_tax'] = 1.25;
+				$this->request->data['Land']['customer_id'] = 0;
 				$this->request->data['Land']['user_id'] = $this->Auth->user('id');
-				$this->request->data['Land']['customer_id'] = $this->request->data['Land']['customer'];
 				if ($this->Land->save($this->request->data)) {
 					$this->Session->setFlash(__('The land has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
@@ -81,6 +84,9 @@ class LandsController extends AppController{
 		$this->set('customer_view',$this->Land->MyCustomer->findById($customer_id));
         if ($this->request->is('post')) {
         	$this->Land->create();
+			$this->request->data['Land']['notary_cost'] = 2.5;
+			$this->request->data['Land']['land_tax'] = 5;
+			$this->request->data['Land']['building_tax'] = 1.25;
             $this->request->data['Land']['user_id'] = $this->Auth->user('id');
             $this->request->data['Land']['customer_id']=$customer_id;
             if ($this->Land->save($this->request->data)) {

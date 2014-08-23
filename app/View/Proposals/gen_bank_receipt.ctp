@@ -5,7 +5,7 @@
 
 	<div class="row">
 		<div style="width: 200px;float:left;">
-			<img src="img/Logo.png" alt="Smiley face" width="150">
+			<img src="img/Logo.png" alt="" width="150">
 		</div>
 		<div style="float:left;">
 			<div class="panel panel-default">
@@ -17,7 +17,7 @@
 				<p>
 				<?php echo $proposal_view['MyCustomer']['address1'];?><br>
 				<?php if(!empty($proposal_view['MyCustomer']['address2'])){echo $proposal_view['MyCustomer']['address2'].'<br>';}?>
-				<?php echo $proposal_view['MyCustomer']['zipcode'].', '.$proposal_view['MyCustomer']['city'];?><br>
+				<?php echo $proposal_view['MyCustomer']['zipcode'].' '.$proposal_view['MyCustomer']['city'];?><br>
 				</p>
 				
 				<p>
@@ -88,9 +88,10 @@
 					
 					<tr>
 						<td>Bauzinsen 0,25%/Monat</td>
-						<td>TODO %</td>
+						<td align="right"><?php echo $proposal_view['MyLand']['building_tax'].'%';?></td>
 						<td> </td>
-						<td>TODO €</td>
+						<td align="right"><?php echo $proposal_view['MyLand']['building_tax']/100*$subtotal;?> €</td>
+						
 						<td> </td>
 					</tr>
 					
@@ -121,7 +122,7 @@
 			
 			<table>
 					<tr>
-						<td><?php echo __('Haus ausgebaut'); ?></td>
+						<td><?php echo __('Haus: '.$proposal_view['MyHouse']['name']); ?></td>
 						<td> <td>
 						<td align="right"> 
 							<?php $total_extras=$proposal_view['MyHouse']['price']; echo $total_extras.' €'; ?>
