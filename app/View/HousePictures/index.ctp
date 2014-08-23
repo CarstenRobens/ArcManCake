@@ -11,8 +11,8 @@
 					<div class="col-md-4" align=center>
 						<?php if (!empty($house_pictures_view[$j+$i])){
 							echo $this->Html->image('/img/uploads/houses/'.$house_pictures_view[$j+$i]['HousePicture']['picture'], array('class' => 'featurette-image img-responsive'));
-							echo $house_pictures_view[$j+$i]['HousePicture']['name'].': '.$house_pictures_view[$j+$i]['HousePicture']['description'].'<br>';
-							echo $this->Form->postLink(__('Delete house picture'),array('controller' => 'HousePictures','action' => 'delete',$house_pictures_view[$j+$i]['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove'));
+							echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$house_pictures_view[$j+$i]['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
+							echo ' '.$house_pictures_view[$j+$i]['HousePicture']['name'].': '.$house_pictures_view[$j+$i]['HousePicture']['description'];
 						}?>
 					</div>
 				<?php }?>

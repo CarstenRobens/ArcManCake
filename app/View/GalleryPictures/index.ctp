@@ -1,53 +1,71 @@
-<h3>Home Pictures</h3>
+<div class="row">
+	<br>
+	<h3><?php echo __('Portfolio'); ?></h3>
+</div>
 
-
-<?php foreach($gallery_pictures_view as $x ){ ?>
-	<div class="col-md-6">
-		<?php echo $this->Html->link(
-			$this->Html->image('/img/uploads/gallery/'.$x['GalleryPicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-			'/img/uploads/gallery/'.$x['GalleryPicture']['picture'],
-			array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['GalleryPicture']['description'].': '.$x['GalleryPicture']['description'])
-		);
-		echo '<div align="center">'.$x['GalleryPicture']['title'].': '.$x['GalleryPicture']['description'].'</div>';?>
+<div class="row">
+	<div class="col-md-1"></div>
+	
+	<div class="col-md-10" align=center>
+		<?php for($j=0; $j<=count($gallery_pictures_view)-1; $j++) {
+			if (($j % 4) ==0){ ?>
+				<div class="row">
+				<?php for ($i=0; $i<=3; $i++){ ?>
+					<div class="col-md-3" align=center>
+						<?php if (!empty($gallery_pictures_view[$j+$i])){
+							echo $this->Html->link(
+								$this->Html->image('/img/uploads/gallery/'.$gallery_pictures_view[$j+$i]['GalleryPicture']['picture'], array('class' => 'featurette-image img-responsive')),
+								'/img/uploads/gallery/'.$gallery_pictures_view[$j+$i]['GalleryPicture']['picture'],
+								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$gallery_pictures_view[$j+$i]['GalleryPicture']['description'].': '.$gallery_pictures_view[$j+$i]['GalleryPicture']['description'])
+							);
+							if($current_user['role']<2){
+								echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$gallery_pictures_view[$j+$i]['GalleryPicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
+							}
+							echo ' '.$gallery_pictures_view[$j+$i]['GalleryPicture']['title'].': '.$gallery_pictures_view[$j+$i]['GalleryPicture']['description'];
+						}?>
+					</div>
+				<?php }?>
+				</div>
+			<?php }
+		}?>
+		
+		<div class="row">
+			
+		</div>
 	</div>
-<?php } ?>
 	
+	<div class="col-md-1"></div>
 	
+</div>
 	
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Name</th>
-		<th>Action</th>
-		<th>Created</th>
-	</tr>
- 
-	<?php foreach($gallery_pictures_view as $x ){ ?>
-	<tr> 
-		<td> <?php echo $x['GalleryPicture']['id']; ?> </td> 
-		<td> <?php echo $this->Html->link($x['GalleryPicture']['title'], array('controller'=>'GalleryPictures','action'=>'view',$x['GalleryPicture']['id'])); ?></td>
-		<td> <?php 
-            echo $this->Form->postLink('Delete',array('controller' => 'GalleryPictures','action' => 'delete',$x['GalleryPicture']['id']),array('confirm'=>'Are you sure?'));
-        ?></td>
-        <td> <?php echo $x['GalleryPicture']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
-	</tr>
-	<?php } ?>
-</table>
 
+<?php if ($current_user['role'] < 2 && !empty($current_user) ) {?>
+<div class="contactwrapper">
+	<div class="view">
 
-<?php 
-if ($current_user['role'] < 2 && !empty($current_user) ) {?>
-
-	<h3>Add a gallery picture</h3>
-
-	<?php 
-	echo $this->Form->create('GalleryPicture',array('enctype'=>'multipart/form-data'));
-	
-	echo $this->Form->input('title');
-	echo $this->Form->input('description');
-	echo $this->Form->input('upload', array('type' => 'file'));
-	
-	echo $this->Form->end('Save');
-}?>
+	<div class="PostBox">
+		<div class="PostContent">
+			<div class="PostContentBox">
+				<div class="PostMainContentbox">
+					<legend>
+						<?php echo __('Add a portfolio picture'); ?>
+					</legend>
+					<?php 
+					echo $this->Form->create('GalleryPicture',array('class' => 'form-horizontal','enctype'=>'multipart/form-data'));
+					
+					echo $this->Form->input('title',array('placeholder' => __('Enter the title'),'label' => __('Title'),'div' => 'form-group has-success'));
+					echo $this->Form->input('description',array('placeholder' => __('Enter the description'),'label' => __('Description'),'div' => 'form-group has-success'));
+					echo $this->Form->input('upload', array('type' => 'file','label' => __('Picture'),'div' => 'form-group has-success'));
+					?>
+				</div>
+			</div>
+		</div>
+		<p style="clear: both;"> </p>
+			<?php echo $this->Form->end(array('label' => __('Save'),'text' => 'test','class' => 'btn btn-success  pull-right buttonwidth')); ?>
+		<p style="clear: both;">  </p>
+		</div>
+	</div>
+</div>
+<?php }?>
 
 

@@ -57,18 +57,12 @@
 				<?php if($this->Session->read('menue.active')=='Offer'){ ?>
 					<li class="active"> <?php }else{ ?> <li>
 				<?php } ?>
-				<?php echo $this->Html->link(__('Offers'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
+				<?php echo $this->Html->link(__('Gallery'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
+				<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
+					<li class="active"> <?php }else{ ?> <li>
+				<?php } ?>
+				<?php echo $this->Html->link(__('GalleryPictures'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
 				
-				<li class="dropdown">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo __('TESTING Houses') ?> <b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	                <li><?php echo $this->Html->link(__('index'),array('controller'=>'Houses','action'=>'index'))?></li>
-	                <li><a href="#">Another action</a></li>
-	                <li><a href="#">Something else here</a></li>
-	              </ul>
-	            </li>
-				
-                
               </ul>
 				
 			</div>
