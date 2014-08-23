@@ -4,7 +4,7 @@ class GalleryPicturesController extends AppController{
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Session->write('menue.active','HomePictures');
+		$this->Session->write('menue.active','GalleryPictures');
 		$this->Auth->allow('index');
 	}
 	
@@ -30,6 +30,7 @@ class GalleryPicturesController extends AppController{
 			if ($this->request->is('post')) {
 				$this->GalleryPicture->create();
 				//Check if image has been uploaded
+				debug($this->request->data['GalleryPicture']);
 				if(!empty($this->request->data['GalleryPicture']['upload']['name']))
 				{
 					$file = $this->request->data['GalleryPicture']['upload']; //put the data into a var for easy use
@@ -56,7 +57,7 @@ class GalleryPicturesController extends AppController{
 				
 				$this->request->data['GalleryPicture']['user_id'] = $this->Auth->user('id');
 				
-				if ($this->HomePicture->save($this->request->data)) {
+				if ($this->GalleryPicture->save($this->request->data)) {
 					$this->Session->setFlash(__('Picture saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}

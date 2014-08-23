@@ -163,7 +163,7 @@ foreach ($normal_house_pictures_view as $x){
 							echo $this->Html->link(
 								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
 								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'].': '.$x['MyHousePicture']['description'])
+								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
 							);?>
 							</div>
 							<?php 
