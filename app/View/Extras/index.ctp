@@ -1,7 +1,7 @@
 
 <div class="row">
 	<br>
-	<h3>Extras</h3>
+	<h3><?php echo __('Extras'); ?></h3>
 </div>
 	
 
@@ -23,7 +23,7 @@
 			<th><?php echo $this->Paginator->sort('bool_custom',__('Custom')); ?></th>
 			<th><?php echo $this->Paginator->sort('bool_external',__('External')); ?></th>
 			
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
+			<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
 			<th><?php echo __('Action'); ?></th>
 		</tr>
 
