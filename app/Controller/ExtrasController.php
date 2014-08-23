@@ -124,6 +124,9 @@ class ExtrasController extends AppController{
 		if ($this->request->is('post')) {
 			$this->Extra->create();
 			//No Picture for custom Extras
+			$this->request->data['Extra']['default_priceA'] = $this->request->data['Extra']['default_price'];
+			$this->request->data['Extra']['default_priceB'] = $this->request->data['Extra']['default_price'];
+			$this->request->data['Extra']['default_priceC'] = $this->request->data['Extra']['default_price'];
 			$this->request->data['Extra']['bool_custom'] = 1;
 			$this->request->data['Extra']['bool_external'] = $bool_external;
 			$this->request->data['Extra']['user_id'] = $this->Auth->user('id');

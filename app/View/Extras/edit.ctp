@@ -18,26 +18,27 @@
 						</legend>
 						
 						<?php 
+						$array_options=array(
+							0=>__('No'),
+							1=>__('Floor size dependent'),
+							2=>__('Total size dependent')
+						);
+						$house_type[0]=__('None');
 						
 						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name'),'div' => 'form-group has-success'));
 						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description'),'div' => 'form-group has-success'));
 						echo $this->Form->input('default_priceA',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[1].__(' (in € or €/m<sup>2</sup>)'),'div' => 'form-group has-success'));
 						echo $this->Form->input('default_priceB',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[2].__(' (in € or €/m<sup>2</sup>)'),'div' => 'form-group has-success'));
 						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price '),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)'),'div' => 'form-group has-success'));
-						echo $this->Form->input('depends_on',array('options'=> $list_extras_view,'label'=>__('Can be selected only after buying:'),'div' => 'form-group has-success'));
-						$house_type[0]=__('None');
-						echo $this->Form->input('depends_on_house',array('options'=> $houses_list_view,'label'=>__('Can be selected only for house:'),'div' => 'form-group has-success'));
-						$array_options=array(
-							0=>__('No'),
-							1=>__('Floor size dependent'),
-							2=>__('Total size dependent')
-						);
+						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category'),'div' => 'form-group has-success'));
 						echo $this->Form->input('size_dependent_check',array('type'=>'select','options'=>$array_options ,'default' => 0,'label' => __('Is the price size dependent?'),'div' => 'form-group has-success'));
+						echo $this->Form->input('depends_on',array('options'=> $list_extras_view,'label'=>__('Can be selected only after buying:'),'div' => 'form-group has-success'));
+						echo $this->Form->input('depends_on_house',array('options'=> $houses_list_view,'label'=>__('Can be selected only for house:'),'div' => 'form-group has-success'));
 						echo $this->Form->input('bool_garage',array('label'=>__('Is a garage?'),'div' => 'form-group has-success'));
 						echo $this->Form->input('bool_unique',array('label'=>__('Only one can be purchased?'),'div' => 'form-group has-success'));
 						echo $this->Form->input('bool_uneditable',array('label'=>__('Will the price be fixed?'),'div' => 'form-group has-success'));
+						echo $this->Form->input('bool_external',array('default' => false,'label'=>__('Servive from external company')));
 						echo $this->Form->input('upload', array('type' => 'file','label'=>__('New picture (ignore to keep the old one)'),'div' => 'form-group has-success'));
-						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category'),'div' => 'form-group has-success'));
 						
 						?>		
 						
