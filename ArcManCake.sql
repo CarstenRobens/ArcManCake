@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2014 at 09:47 PM
+-- Generation Time: Aug 23, 2014 at 10:00 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -36,34 +36,23 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `bought_extras`
 --
 
 INSERT INTO `bought_extras` (`id`, `price`, `factor`, `comment`, `extra_id`, `proposal_id`, `created`, `modified`) VALUES
-(1, 1900, 1, NULL, 10, 1, '2014-08-23', '2014-08-23'),
-(2, 2500, 1, NULL, 16, 1, '2014-08-23', '2014-08-23'),
-(3, 8600, 1, NULL, 25, 1, '2014-08-23', '2014-08-23'),
-(4, 9990, 1, NULL, 81, 1, '2014-08-23', '2014-08-23'),
-(5, 2600, 1, NULL, 96, 1, '2014-08-23', '2014-08-23'),
-(8, 1600, 1, NULL, 36, 2, '2014-08-23', '2014-08-23'),
-(9, 4850, 1, NULL, 37, 2, '2014-08-23', '2014-08-23'),
-(10, 11, 1, NULL, 38, 2, '2014-08-23', '2014-08-23'),
-(11, 21, 1, NULL, 39, 2, '2014-08-23', '2014-08-23'),
-(12, 650, 1, NULL, 40, 2, '2014-08-23', '2014-08-23'),
-(13, 41990, 1, NULL, 72, 2, '2014-08-23', '2014-08-23'),
-(14, 9990, 1, NULL, 81, 2, '2014-08-23', '2014-08-23'),
-(16, 5000, 1, NULL, 105, 3, '2014-08-23', '2014-08-23'),
-(17, 3000, 1, NULL, 107, 3, '2014-08-23', '2014-08-23'),
-(18, 5000, 1, NULL, 108, 3, '2014-08-23', '2014-08-23'),
-(19, 5000, 1, NULL, 109, 3, '2014-08-23', '2014-08-23'),
-(20, 8000, 0, NULL, 110, 3, '2014-08-23', '2014-08-23'),
-(21, 9000, 1, NULL, 111, 3, '2014-08-23', '2014-08-23'),
-(22, 1000, 1, NULL, 112, 3, '2014-08-23', '2014-08-23'),
-(23, 4400, 1, NULL, 113, 3, '2014-08-23', '2014-08-23'),
-(24, 12900, 1, NULL, 26, 3, '2014-08-23', '2014-08-23');
+(25, 5000, 1, NULL, 105, 4, '2014-08-23', '2014-08-23'),
+(26, 3000, 1, NULL, 107, 4, '2014-08-23', '2014-08-23'),
+(27, 5000, 1, NULL, 108, 4, '2014-08-23', '2014-08-23'),
+(28, 5000, 1, NULL, 109, 4, '2014-08-23', '2014-08-23'),
+(29, 8000, 1, NULL, 110, 4, '2014-08-23', '2014-08-23'),
+(30, 9000, 1, NULL, 111, 4, '2014-08-23', '2014-08-23'),
+(31, 1000, 1, NULL, 112, 4, '2014-08-23', '2014-08-23'),
+(32, 4400, 1, NULL, 113, 4, '2014-08-23', '2014-08-23'),
+(33, 1500, 1, NULL, 35, 4, '2014-08-23', '2014-08-23'),
+(34, 4850, 1, NULL, 37, 4, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
@@ -125,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `surname`, `notes`, `phone_private`, `phone_work`, `birthday`, `email`, `address1`, `address2`, `zipcode`, `city`, `user_id`, `created`, `modified`, `2nd_name`, `2nd_surname`, `2nd_maiden_surname`, `2nd_birtday`) VALUES
-(6, 'Jose Carlos', 'Gallego', '', 34567890, 0, '1996-01-01', 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-08-23', 'Lucy', '', '', '1996-01-01');
+(6, 'Jose Carlos', 'Gallego', 'this are additional notes', 34567890, 12345, '1983-04-07', 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-08-23', 'Lucy', 'Paulet', '', '1981-07-16');
 
 -- --------------------------------------------------------
 
@@ -491,19 +480,14 @@ CREATE TABLE IF NOT EXISTS `lands` (
   `built_city` varchar(200) NOT NULL,
   `construction_office` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `lands`
 --
 
 INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `building_tax`, `customer_id`, `user_id`, `created`, `modified`, `built_region`, `built_address`, `built_zipcode`, `built_city`, `construction_office`) VALUES
-(1, 'Terminus', 'Desertic, no natural resources', 40000000, 1, 888888, 2, 30, 20, 21, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(2, 'Hyperion', 'Careful with the Shriek!', 2147480000, 3, 1234230, 2, 25, 23, 21, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(4, 'Alderaan', 'Set your house on an asteroid!', 3000, 1, 600, 30, 1, 1, 0, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(5, 'land for cus a2', '', 234, 120, 123, 123, 2, 3, 21, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(6, 'land cus b', '', 4567, 456789, 5678, 5678, 5, 6, 21, 0, 0, 2, '2014-07-04', '2014-07-04', '', '', '', '', ''),
-(7, 'land cus b2', '', 5678, 567, 567, 5678, 3, 7, 21, 0, 0, 2, '2014-07-04', '2014-07-04', '', '', '', '', '');
+(8, 'TestLand 1', 'Additional Notes For the Land', 200, 1000, 100, 10, 2.5, 2.5, 5, 1.25, 0, 2, '2014-08-23', '2014-08-23', 'D-DÃ¼sseldorf', 'Eine StraÃŸe 32', '82109', 'DÃ¼sseldorf', 'DÃ¼sseldorf');
 
 -- --------------------------------------------------------
 
@@ -526,16 +510,14 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `proposals`
 --
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
-(1, 'abc', 'asd', '', '', 'files/Contract1.pdf', 6, 1, 2, '1', 2, '2014-08-23', '2014-08-23'),
-(2, '123', 'asdas', '', '', '', 6, 0, 2, '1', 2, '2014-08-23', '2014-08-23'),
-(3, 'asd', 'asd', '', '', '', 6, 0, 2, '1', 2, '2014-08-23', '2014-08-23');
+(4, 'Test Proposal', 'Notes for the Proposal', '', '', '', 6, 8, 2, '1', 2, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
