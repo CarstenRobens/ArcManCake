@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2014 at 06:52 PM
+-- Generation Time: Aug 23, 2014 at 07:32 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `surname`, `notes`, `phone_private`, `phone_work`, `birthday`, `email`, `address1`, `address2`, `zipcode`, `city`, `user_id`, `created`, `modified`, `2nd_name`, `2nd_surname`, `2nd_maiden_surname`, `2nd_birtday`) VALUES
-(6, 'Jose Carlos', 'Gallego', 'Penis!', 34567890, 0, '0000-00-00', 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-08-23', '', '', '', '0000-00-00');
+(6, 'Jose Carlos', 'Gallego', '', 34567890, 0, '1996-01-01', 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-08-23', 'Lucy', '', '', '1996-01-01');
 
 -- --------------------------------------------------------
 
@@ -334,9 +334,6 @@ CREATE TABLE IF NOT EXISTS `home_pictures` (
 --
 
 INSERT INTO `home_pictures` (`id`, `picture`, `title`, `description`, `user_id`, `created`, `modified`) VALUES
-(5, 'home3.jpg', 'Gugen', 'Bilbao', 4, '2014-07-02', '2014-07-02'),
-(7, 'home2.jpg', 'weird house', 'lkdvn', 4, '2014-07-02', '2014-07-02'),
-(9, 'home1.png', 'Gehry something', 'png yes!', 4, '2014-07-02', '2014-07-02'),
 (11, 'homemanor.jpg', 'Cool Manor', 'Use the <paper-dialog> element to create a dialog. Set a title on a dialog using the heading published property.\r\n\r\nYou can use any kind of children inside the dialog. For action buttons, add the dismissive or affirmative attributes to place the controls (typically buttons) at the bottom of the dialog:', 6, '2014-07-22', '2014-07-22');
 
 -- --------------------------------------------------------
@@ -464,12 +461,12 @@ CREATE TABLE IF NOT EXISTS `lands` (
 --
 
 INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `building_tax`, `customer_id`, `user_id`, `created`, `modified`, `built_region`, `built_address`, `built_zipcode`, `built_city`, `construction_office`) VALUES
-(1, 'Terminus', 'Desertic, no natural resources', 40000000, 1, 888888, 2, 30, 20, 21, 0, 0, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(2, 'Hyperion', 'Careful with the Shriek!', 2147480000, 3, 1234230, 2, 25, 23, 21, 0, 0, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(4, 'Alderaan', 'Set your house on an asteroid!', 3000, 1, 600, 30, 1, 1, 0, 0, 0, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(5, 'land for cus a2', '', 234, 120, 123, 123, 2, 3, 21, 0, 2, 3, '2014-07-02', '2014-07-02', '', '', '', '', ''),
-(6, 'land cus b', '', 4567, 456789, 5678, 5678, 5, 6, 21, 0, 3, 4, '2014-07-04', '2014-07-04', '', '', '', '', ''),
-(7, 'land cus b2', '', 5678, 567, 567, 5678, 3, 7, 21, 0, 4, 4, '2014-07-04', '2014-07-04', '', '', '', '', '');
+(1, 'Terminus', 'Desertic, no natural resources', 40000000, 1, 888888, 2, 30, 20, 21, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(2, 'Hyperion', 'Careful with the Shriek!', 2147480000, 3, 1234230, 2, 25, 23, 21, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(4, 'Alderaan', 'Set your house on an asteroid!', 3000, 1, 600, 30, 1, 1, 0, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(5, 'land for cus a2', '', 234, 120, 123, 123, 2, 3, 21, 0, 0, 2, '2014-07-02', '2014-07-02', '', '', '', '', ''),
+(6, 'land cus b', '', 4567, 456789, 5678, 5678, 5, 6, 21, 0, 0, 2, '2014-07-04', '2014-07-04', '', '', '', '', ''),
+(7, 'land cus b2', '', 5678, 567, 567, 5678, 3, 7, 21, 0, 0, 2, '2014-07-04', '2014-07-04', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -499,8 +496,8 @@ CREATE TABLE IF NOT EXISTS `proposals` (
 --
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
-(1, 'abc', 'asd', '', '', 'files/Contract1.pdf', 6, 1, 2, '1', 7, '2014-08-23', '2014-08-23'),
-(2, '123', 'asdas', '', '', '', 6, 0, 2, '1', 7, '2014-08-23', '2014-08-23');
+(1, 'abc', 'asd', '', '', 'files/Contract1.pdf', 6, 1, 2, '1', 2, '2014-08-23', '2014-08-23'),
+(2, '123', 'asdas', '', '', '', 6, 0, 2, '1', 2, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
@@ -527,9 +524,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `name`, `surname`, `phone`, `email`, `created`, `modified`) VALUES
-(2, 'owner', '046d8cbb16e26dba35ddced9d4daa7b84468ef19', 1, 'O', 'wner', 1234689, 'ra@sfh.com', '2014-07-01', '2014-07-01'),
-(6, 'elgatil', '3bdbc7fecbbed14dc303ef207f84b63dff5649fc', 0, 'Ricardo', 'Gomez', 345678, 'elgatil@gmail.com', '2014-07-01', '2014-07-01'),
-(7, 'CarstenRobens', 'ecebba2e2c97789fd34481c4184fef9ebdbf2ca4', 0, 'Carsten', 'Robens', 1766085747, 'Robens@iap.uni-bonn.de', '2014-08-23', '2014-08-23');
+(2, 'CarstenRobens', 'ecebba2e2c97789fd34481c4184fef9ebdbf2ca4', 0, 'Carsten', 'Robens', 1766085747, 'Robens@iap.uni-bonn.de', '2014-07-01', '2014-08-23'),
+(6, 'elgatil', '3bdbc7fecbbed14dc303ef207f84b63dff5649fc', 0, 'Ricardo', 'Gomez', 345678, 'elgatil@gmail.com', '2014-07-01', '2014-07-01');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
