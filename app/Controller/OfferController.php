@@ -270,7 +270,7 @@ class OfferController extends AppController {
 				
 			if ($this->Contact->validates()) {
 				$this->_sendNewUserMail( $this->data['Contact']['name'],$this->data['Contact']['email'],$this->data['Contact']['title'], $this->data['Contact']['body'],$this->data['Contact']['expose_id']  );
-				$this->Session->setFlash(__('Anfrage wurde versendet', true));
+				$this->Session->setFlash(__('Anfrage wurde versendet', true), 'alert-box', array('class'=>'alert-success'));
 				$this->redirect(array('action'=>'view', $this->data['Contact']['expose_id']));
 			}
 		} else {

@@ -60,7 +60,7 @@ class AppController extends Controller {
         
         
         
-        $this->Session->setFlash(__('Acces denied'));
+        $this->Session->setFlash(__('Acces denied'), 'alert-box', array('class'=>'alert-error'));
         return FALSE;
     }
 }

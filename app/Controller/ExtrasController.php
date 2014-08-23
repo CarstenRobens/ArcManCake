@@ -21,7 +21,7 @@ class ExtrasController extends AppController{
 	public function isAuthorized($logged_user) {
 
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
 			return FALSE; # Overseers have the same privileges as visitors
 		} else {
 			return TRUE;
@@ -77,15 +77,15 @@ class ExtrasController extends AppController{
 						$this->request->data['Extra']['picture'] = $new_filename;
 						
 					}else{
-						$this->Session->setFlash(__('File not saved, you must use a picture.'));
+						$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-error'));
 					}
 				}
 				$this->request->data['Extra']['bool_custom'] = 0;
 				$this->request->data['Extra']['user_id'] = $this->Auth->user('id');
 				$this->request->data['Extra']['size_dependent_flag'] = -1*$this->request->data['Extra']['size_dependent_check'];
 				if ($this->Extra->save($this->request->data)) {
-					$this->Session->setFlash(__('The extra has been saved.'));
-					return $this->redirect(array('action' => 'index'));
+					$this->Session->setFlash(__('The extra has been saved.'), 'alert-box', array('class'=>'alert-success'));
+					return $this->redirect(array('action' => 'index'), 'alert-box', array('class'=>'alert-error'));
 				}else{
 					$this->Session->setFlash(__('Unable to add your extra.'));
 				}
@@ -134,15 +134,15 @@ class ExtrasController extends AppController{
 			if ($this->Extra->save($this->request->data)) {
 				$this->Session->setFlash(__('Custom extra added.'));
 				if ($this->Extra->MyBoughtExtra->add_default_extra($proposal_id,$this->Extra->getLastInsertId())) {
-					$this->Session->setFlash(__('Extra added to proposal.'));
+					$this->Session->setFlash(__('Extra added to proposal.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
 				}else {
-					$this->Session->setFlash(__('Unable to add extra to your proposal.'));
+					$this->Session->setFlash(__('Unable to add extra to your proposal.'), 'alert-box', array('class'=>'alert-error'));
 					return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
 				}
 				
 			}else{
-				$this->Session->setFlash(__('Unable to add your extra.'));
+				$this->Session->setFlash(__('Unable to add your extra.'), 'alert-box', array('class'=>'alert-error'));
 			}
 		}
 	}
@@ -196,7 +196,7 @@ class ExtrasController extends AppController{
         			$this->request->data['Extra']['picture'] = $new_filename;
         	
         		}else{
-        			$this->Session->setFlash(__('File not saved, you must use a picture.'));
+        			$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-error'));
         		}
         	}
         	
@@ -204,10 +204,10 @@ class ExtrasController extends AppController{
         	
         	
         	if ($this->Extra->save($this->request->data)) {
-            	$this->Session->setFlash(__('The extra has been updated'));
+            	$this->Session->setFlash(__('The extra has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update the extra.'));
+            $this->Session->setFlash(__('Unable to update the extra.'), 'alert-box', array('class'=>'alert-error'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
@@ -226,7 +226,7 @@ class ExtrasController extends AppController{
         	unlink(WWW_ROOT.'img/uploads/extras/'.$x['Extra']['picture']);
         }
         if ($this->Extra->delete($id)) {
-        	$this->Session->setFlash(__('Extra with id: %s has been deleted',h($id)));
+        	$this->Session->setFlash(__('Extra with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index'));
         }
     }

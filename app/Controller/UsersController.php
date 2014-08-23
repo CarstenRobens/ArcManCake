@@ -44,10 +44,10 @@ class UsersController extends AppController{
         	if ($this->request->is('post')) {
         		$this->User->create();
         		if ($this->User->save($this->request->data)) {
-        			$this->Session->setFlash(__('User has been created.'));
+        			$this->Session->setFlash(__('User has been created.'), 'alert-box', array('class'=>'alert-success'));
         			return $this->redirect(array('action' => 'index'));
         		}
-        		$this->Session->setFlash(__('Unable to add user.'));
+        		$this->Session->setFlash(__('Unable to add user.'), 'alert-box', array('class'=>'alert-error'));
         	}
         } 
     }
@@ -72,10 +72,10 @@ class UsersController extends AppController{
             
         if ($this->request->is('post') ||  $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('User info has been updated'));
+                $this->Session->setFlash(__('User info has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update user.'));
+            $this->Session->setFlash(__('Unable to update user.'), 'alert-box', array('class'=>'alert-error'));
         } else {
             $this->request->data=  $this->User->read(NULL,$id);
             unset($this->request->data['User']['password']);
@@ -93,11 +93,11 @@ class UsersController extends AppController{
         }
             
         if ($this->User->delete()) {
-            $this->Session->setFlash(__('The user with id: %s has been deleted',h($id)));
+            $this->Session->setFlash(__('The user with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index'));
         }
         
-        $this->Session->setFlash(__('User was not deleted'));
+        $this->Session->setFlash(__('User was not deleted'), 'alert-box', array('class'=>'alert-error'));
         return $this->redirect(array('action'=>'index'));
     }
     
@@ -108,7 +108,7 @@ class UsersController extends AppController{
             if ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirect());
             }
-            $this->Session->setFlash(__('Invalid username or password, try again'));
+            $this->Session->setFlash(__('Invalid username or password, try again'), 'alert-box', array('class'=>'alert-error'));
         }
     }
     

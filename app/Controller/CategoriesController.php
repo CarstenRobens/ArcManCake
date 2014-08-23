@@ -10,7 +10,7 @@ class CategoriesController extends AppController{
 	public function isAuthorized($logged_user) {
 
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
 			return FALSE; # Overseers have the same privileges as visitors
 		}elseif(in_array($this->action, array('index','edit','delete'))){
 			return TRUE;
@@ -30,10 +30,10 @@ class CategoriesController extends AppController{
 				$this->Category->create();
 				$this->request->data['Category']['user_id'] = $this->Auth->user('id');
 				if ($this->Category->save($this->request->data)) {
-					$this->Session->setFlash(__('New category has been saved.'));
+					$this->Session->setFlash(__('New category has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add the category.'));
+				$this->Session->setFlash(__('Unable to add the category.'), 'alert-box', array('class'=>'alert-error'));
 			}
 		}
 	}
@@ -65,10 +65,10 @@ class CategoriesController extends AppController{
 		if ($this->request->is(array('category','put'))) {
 			$this->Category->id = $id;
 			if ($this->Category->save($this->request->data)) {
-				$this->Session->setFlash(__('Category has been updated'));
+				$this->Session->setFlash(__('Category has been updated'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action'=>'index'));
 			}
-			$this->Session->setFlash(__('Unable to update category.'));
+			$this->Session->setFlash(__('Unable to update category.'), 'alert-box', array('class'=>'alert-error'));
 		}
 		if (!$this->request->data) {
 			$this->request->data=$x;
@@ -81,7 +81,7 @@ class CategoriesController extends AppController{
         	throw new MethodNotAllowedException();
         }
         if ($this->Category->delete($id)) {
-        	$this->Session->setFlash(__('Categoy with id: %s has been deleted',h($id)));
+        	$this->Session->setFlash(__('Categoy with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index'));
         }
     }

@@ -12,7 +12,7 @@ class LandsController extends AppController{
 	public function isAuthorized($logged_user) {
 		
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
 			return FALSE; # Overseers are not allowed to interact with customer data
 		} else{
 			return TRUE;
@@ -38,10 +38,10 @@ class LandsController extends AppController{
 				$this->request->data['Land']['user_id'] = $this->Auth->user('id');
 				$this->request->data['Land']['customer_id'] = $this->request->data['Land']['customer'];
 				if ($this->Land->save($this->request->data)) {
-					$this->Session->setFlash(__('The land has been saved.'));
+					$this->Session->setFlash(__('The land has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add the land.'));
+				$this->Session->setFlash(__('Unable to add the land.'), 'alert-box', array('class'=>'alert-error'));
 			}
 		}
 	}
@@ -77,10 +77,10 @@ class LandsController extends AppController{
             $this->request->data['Land']['user_id'] = $this->Auth->user('id');
             $this->request->data['Land']['customer_id']=$customer_id;
             if ($this->Land->save($this->request->data)) {
-            	$this->Session->setFlash(__('Your land has been saved.'));
+            	$this->Session->setFlash(__('Your land has been saved.'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action' => 'index'));
             }
-            $this->Session->setFlash(__('Unable to add your customer.'));
+            $this->Session->setFlash(__('Unable to add your customer.'), 'alert-box', array('class'=>'alert-error'));
      	}
 	}
         
@@ -101,10 +101,10 @@ class LandsController extends AppController{
         if ($this->request->is(array('land','put'))) {
         	$this->Land->id = $id;
         	if ($this->Land->save($this->request->data)) {
-            	$this->Session->setFlash(__('Your land has been updated'));
+            	$this->Session->setFlash(__('Your land has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update your land.'));
+            $this->Session->setFlash(__('Unable to update your land.'), 'alert-box', array('class'=>'alert-error'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
@@ -120,7 +120,7 @@ class LandsController extends AppController{
         	throw new MethodNotAllowedException();
         }
         if ($this->Land->delete($id)) {
-        	$this->Session->setFlash(__('The land with id: %s has been deleted',h($id)));
+        	$this->Session->setFlash(__('The land with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index'));
         }
     }

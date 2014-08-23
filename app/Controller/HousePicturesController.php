@@ -10,7 +10,7 @@ class HousePicturesController extends AppController{
 	public function isAuthorized($logged_user) {
 
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
 			return FALSE; # Overseers have the same privileges as visitors
 		}elseif(in_array($this->action, array('index','view','edit','delete'))){
 			return TRUE;
@@ -59,16 +59,16 @@ class HousePicturesController extends AppController{
 						
 						
 					}else{
-						$this->Session->setFlash(__('File not saved, you must use a picture.'));
+						$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-error'));
 					}
 				}
 				
 				$this->request->data['HousePicture']['user_id'] = $this->Auth->user('id');
 				if ($this->HousePicture->save($this->request->data)) {
-					$this->Session->setFlash(__('Picture saved.'));
+					$this->Session->setFlash(__('Picture saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index',$house_id));
 				}
-				$this->Session->setFlash(__('Unable to add the picture.'));
+				$this->Session->setFlash(__('Unable to add the picture.'), 'alert-box', array('class'=>'alert-error'));
 			}
 		}
 	}
@@ -96,7 +96,7 @@ class HousePicturesController extends AppController{
         $x=$this->HousePicture->findById($id);
         unlink(WWW_ROOT.'img/uploads/houses/'.$x['HousePicture']['picture']);
         if ($this->HousePicture->delete($id)) {
-        	$this->Session->setFlash(__('Picture with id: %s has been deleted',h($id)));
+        	$this->Session->setFlash(__('Picture with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index',$x['MyHouse']['id']));
         }
     }

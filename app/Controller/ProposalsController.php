@@ -110,17 +110,17 @@ class ProposalsController extends AppController{
             	 
             	foreach($ext_extras as $index=>$x){
             		if(!$this->Proposal->MyBoughtExtra->add_default_extra($this->Proposal->getLastInsertId(),$index)){
-            			$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'));
+            			$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'), 'alert-box', array('class'=>'alert-error'));
             		}
             	}
             	 
             	 
             	/* done */
             	
-            	$this->Session->setFlash(__('Your proposal has been saved.'));
+            	$this->Session->setFlash(__('Your proposal has been saved.'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('controller'=>'Proposals','action' => 'edit_house',$this->Proposal->getLastInsertID()));
             }
-            $this->Session->setFlash(__('Unable to add the proposal.'));
+            $this->Session->setFlash(__('Unable to add the proposal.'), 'alert-box', array('class'=>'alert-error'));
      	}
 	}
         
@@ -148,10 +148,10 @@ class ProposalsController extends AppController{
         if ($this->request->is(array('proposal','put'))) {
         	$this->Proposal->id = $id;
         	if ($this->Proposal->save($this->request->data)) {
-            	$this->Session->setFlash(__('Your proposal has been updated'));
+            	$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update your proposal.'));
+            $this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-error'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
@@ -236,10 +236,10 @@ class ProposalsController extends AppController{
 		$prop['Proposal']['house_id']=$house_id;
 		
 		if ($this->Proposal->save($prop)) {
-			$this->Session->setFlash(__('Your proposal has been updated'));
+			$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('action'=>'edit_default_picture',$proposal_id));
 		}
-		$this->Session->setFlash(__('Unable to update your proposal.'));
+		$this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-error'));
 	}
 	
 	
@@ -266,10 +266,10 @@ class ProposalsController extends AppController{
 		if ($this->request->is(array('proposal','put'))) {
 			$this->Proposal->id = $id;
 			if ($this->Proposal->save($this->request->data)) {
-				$this->Session->setFlash(__('Your proposal has been updated'));
+				$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action'=>'view',$id));
 			}
-			$this->Session->setFlash(__('Unable to select the picture.'));
+			$this->Session->setFlash(__('Unable to select the picture.'), 'alert-box', array('class'=>'alert-error'));
 		}
 		if (!$this->request->data) {
 			$this->request->data=$x;
@@ -297,10 +297,10 @@ class ProposalsController extends AppController{
 		$x['Proposal']['default_house_picture_id']=$default_house_picture_id;
 	
 		if ($this->Proposal->save($x)) {
-			$this->Session->setFlash(__('Your proposal has been updated'));
+			$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('action'=>'view',$proposal_id));
 		}
-		$this->Session->setFlash(__('Unable to update your proposal.'));
+		$this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-error'));
 	}
         
 	
@@ -325,7 +325,7 @@ class ProposalsController extends AppController{
         		unlink(WWW_ROOT.$proposal['Proposal']['contract']);
         	}
         	
-        	$this->Session->setFlash(__('The proposal with id: %s has been deleted',h($id)));
+        	$this->Session->setFlash(__('The proposal with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('controller'=>'Customers','action'=>'view',$proposal['MyCustomer']['id']));
         }
     }
@@ -337,29 +337,10 @@ class ProposalsController extends AppController{
     	 */
     	$x = $this->Proposal->MyBoughtExtra->findById($bought_extra_id);
     	if ($this->Proposal->MyBoughtExtra->MyExtra->delete($x['MyExtra']['id']) && $this->Proposal->MyBoughtExtra->delete($x['MyBoughtExtra']['id'])) {
-    		$this->Session->setFlash(__('Deleted'));
+    		$this->Session->setFlash(__('Deleted'), 'alert-box', array('class'=>'alert-success'));
     		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyBoughtExtra']['proposal_id']));
     	}
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -368,30 +349,7 @@ class ProposalsController extends AppController{
     	/**
     	 * Generates a PDF with the summary of the proposal.
     	 */
-    	require("/home/elgatil/Development/CakePHP/ArcManCake/plugins/fpdf17/myPDF.php");
     	
-    	$pdf = new myPDF();
-    	
-    	$pdf->title='Summary';
-    	
-    	$pdf->AddPage();
-    	
-    	$pdf->SetFont('helvetica','B',16);
-    	$pdf->Cell(0,10,'Summary','B',1,'C');
-    	$pdf->Cell(1,10,'Ssrfgjk',0,1);
-    	$pdf->SetFont('helvetica','',16);
-    	$pdf->Cell(1,10,'dgdbfd',0,1);
-    	$pdf->Cell(1,10,'aaaaaaaaa',0,1);
-    	
-    	$pdf->AddPage();
-    	
-    	$pdf->Cell(1,10,'anuuuuuuuuuu',0,1);
-    	
-    	#$pdf->Output('Summary','I');
-    	$pdf->Output('/home/elgatil/Downloads/Documents/Summary','F');
-    	
-    	$this->Session->setFlash(__('Summary generated'));
-    	return $this->redirect(array('action'=>'index'));
     	
     }
     
@@ -399,30 +357,58 @@ class ProposalsController extends AppController{
     	/**
     	 * Generates a PDF with a contract.
     	 */
-    	require("/home/elgatil/Development/CakePHP/ArcManCake/plugins/fpdf17/myPDF.php");
+    	if(!$id){
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
     	
-    	$pdf = new myPDF();
-    	 
-    	$pdf->title='Contract';
+    	$x = $this->Proposal->findById($id);
+    	$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+    			'conditions'=>array('house_id' => $x['Proposal']['house_id'])));
+    	$z = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false)));
+    	$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
     	
-    	$pdf->AddPage();
+    	if (!$x) {
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
     	
-    	$pdf->SetFont('helvetica','B',16);
-    	$pdf->Cell(0,10,'Summary','B',1,'C');
-    	$pdf->Cell(1,10,'Ssrfgjk',0,1);
-    	$pdf->SetFont('helvetica','',16);
-    	$pdf->Cell(1,10,'dgdbfd',0,1);
-    	$pdf->Cell(1,10,'aaaaaaaaa',0,1);
+    	$this->set('proposal_view',$x);
+    	$this->set('house_pictures_view',$y);
+    	$this->set('bought_extras_view',$z);
+    	$this->set('bought_external_extras_view',$zexternal);
     	
-    	$pdf->AddPage();
     	
-    	$pdf->Cell(1,10,'anuuuuuuuuuu',0,1);
+    	$this->layout='pdf';
     	
-    	#$pdf->Output('Contract','I');
-    	$pdf->Output('/home/elgatil/Downloads/Documents/Contract','F');
+    	$filename = 'files/Contract'.$x['Proposal']['id'].'.pdf';
     	
-    	$this->Session->setFlash(__('Contract generated'));
-    	return $this->redirect(array('action'=>'index'));
+    	
+    	// initializing mPDF
+    	$this->Mpdf->init();
+    	
+  
+    	$this->Mpdf->SetHTMLFooter('
+    			<table width="100%" ><tr>
+    			<td width="33%"><span ><img src="img/Logo.png" alt="IZ Haus" width="25"></span></td>
+    			<td width="33%" align="center" >IZ Haus GmbH {DATE j-m-Y}</td>
+    			<td width="33%" style="text-align: right; ">{PAGENO}/{nbpg}</td>
+    			</tr></table>
+    			');
+    
+    	// setting filename of output pdf file
+    	$this->Mpdf->setFilename($filename);
+    
+    	// setting output to I, D, F, S
+    	$this->Mpdf->setOutput('F');
+    
+    	// you can call any mPDF method via component, for example:
+    	$this->Mpdf->SetWatermarkText("Draft");
+    	
+    	
+    	$x['Proposal']['contract'] = $filename;
+    	$this->Proposal->save($x);
+    	
     	 
     }
     
@@ -464,7 +450,7 @@ class ProposalsController extends AppController{
   
     	$this->Mpdf->SetHTMLFooter('
     			<table width="100%" ><tr>
-    			<td width="33%"><span ><img src="img/Logo.png" alt="Smiley face" width="25"></span></td>
+    			<td width="33%"><span ><img src="img/Logo.png" alt="IZ Haus" width="25"></span></td>
     			<td width="33%" align="center" >{DATE j-m-Y}</td>
     			<td width="33%" style="text-align: right; ">{PAGENO}/{nbpg}</td>
     			</tr></table>

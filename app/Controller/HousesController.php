@@ -13,7 +13,7 @@ class HousesController extends AppController{
 	public function isAuthorized($logged_user) {
 
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
 			return FALSE; # Overseers have the same privileges as visitors
 		}elseif(in_array($this->action, array('edit','delete'))){
 			return TRUE;
@@ -32,10 +32,10 @@ class HousesController extends AppController{
 				$this->House->create();
 				$this->request->data['House']['user_id'] = $this->Auth->user('id');
 				if ($this->House->save($this->request->data)) {
-					$this->Session->setFlash(__('The house has been saved.'));
+					$this->Session->setFlash(__('The house has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add your house.'));
+				$this->Session->setFlash(__('Unable to add your house.'), 'alert-box', array('class'=>'alert-error'));
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class HousesController extends AppController{
         if ($this->request->is(array('house','put'))) {
         	$this->House->id = $id;
         	if ($this->House->save($this->request->data)) {
-            	$this->Session->setFlash(__('The house has been updated'));
+            	$this->Session->setFlash(__('The house has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update the house.'));
+            $this->Session->setFlash(__('Unable to update the house.'), 'alert-box', array('class'=>'alert-error'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
@@ -92,7 +92,7 @@ class HousesController extends AppController{
         			unlink(WWW_ROOT.'img/uploads/houses/'.$x['picture']);
         		}
         	}
-        	$this->Session->setFlash(__('House with id: %s has been deleted',h($id)));
+        	$this->Session->setFlash(__('House with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index'));
         }
     }

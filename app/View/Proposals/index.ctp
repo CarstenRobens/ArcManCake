@@ -22,9 +22,9 @@
                 echo $this->Form->postLink('Delete',array('controller' => 'Proposals','action' => 'delete',$x['Proposal']['id']),array('confirm'=>'Are you sure?'));
         ?></td>
         <td><?php
-        	echo $this->Html->link('Summary',array('action' => 'gen_summary',$x['Proposal']['id'])).' ';
+        	echo $this->Html->link('Summary',array('action' => 'gen_summary',$x['Proposal']['id']),array('target'=>'_blank')).' ';
         	echo $this->Html->link('Bank Receipt',array('action' => 'gen_bank_receipt',$x['Proposal']['id']),array('target'=>'_blank')).' ';
-        	echo $this->Html->link('Contract',array('action' => 'gen_contract',$x['Proposal']['id']));
+        	echo $this->Html->link('Contract',array('action' => 'gen_contract',$x['Proposal']['id']),array('target'=>'_blank'));
         ?></td>
 		<td> <?php echo $x['Proposal']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 	</tr>

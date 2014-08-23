@@ -44,7 +44,7 @@ class BoughtExtrasController extends AppController{
 				if ($this->request->data['List_bool']['bool_'.$x['MyExtra']['id']]){
 					
 					if (!$this->BoughtExtra->add_default_extra($proposal_id,$x['MyExtra']['id'])) {
-						$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'));
+						$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'), 'alert-box', array('class'=>'alert-error'));
 					}else{
 						/* Logic to handle the addition of a garage */
 						if($x['MyExtra']['bool_garage']){
@@ -53,7 +53,7 @@ class BoughtExtrasController extends AppController{
 					}
 				}
 			}
-			$this->Session->setFlash(__('Extras added.'));
+			$this->Session->setFlash(__('Extras added.'), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
 		}
 		
@@ -70,7 +70,7 @@ class BoughtExtrasController extends AppController{
 		$x = $this->BoughtExtra->findById($id);
 		
 		if ($x['MyExtra']['bool_uneditable']) {
-			$this->Session->setFlash(__('This extra canoot be edited.'));
+			$this->Session->setFlash(__('This extra cannot be edited.'), 'alert-box', array('class'=>'alert-error'));
 			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyProposal']['id']));
 		}
 		
@@ -83,10 +83,10 @@ class BoughtExtrasController extends AppController{
 		if ($this->request->is(array('bought_extra','put'))) {
 			$this->BoughtExtra->id = $id;
 			if ($this->BoughtExtra->save($this->request->data)) {
-				$this->Session->setFlash(__('The extra has been updated'));
+				$this->Session->setFlash(__('The extra has been updated'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyProposal']['id']));
 			}
-			$this->Session->setFlash(__('Unable to update your customer.'));
+			$this->Session->setFlash(__('Unable to update your customer.'), 'alert-box', array('class'=>'alert-error'));
 		}
 		if (!$this->request->data) {
 			$this->request->data=$x;
@@ -113,7 +113,7 @@ class BoughtExtrasController extends AppController{
     	}
     	
     	if ($prop_id=$this->BoughtExtra->delete_extra($id)) {
-    		$this->Session->setFlash(__('Deleted'));
+    		$this->Session->setFlash(__('Deleted'), 'alert-box', array('class'=>'alert-success'));
     		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view', $prop_id));
     	}
     }
