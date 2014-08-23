@@ -18,7 +18,7 @@
 		</tr>
 
 	<!-- Here is where we loop through our $lands array, printing out land info --> 
-		<?php foreach($lands_view as $x ): ?>
+		<?php foreach($lands_view as $x ): debug($x)?>
 		<tr> 
 			<td> <?php echo $x['Land']['id']; ?> </td> 
 			
