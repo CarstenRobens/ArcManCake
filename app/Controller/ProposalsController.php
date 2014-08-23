@@ -10,6 +10,13 @@ class ProposalsController extends AppController{
 		
 	}
 	
+	public $paginate = array(
+        'limit' => 25,
+        'order' => array(
+            'Proposal.customer_id' => 'asc'
+        )
+    );
+	
 	public function isAuthorized($logged_user) {
 		
 		if ($this->action==='index'){

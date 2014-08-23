@@ -25,9 +25,12 @@
 			<td> <?php 
 				echo $this->Html->link('Create Proposal',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' | ';
 				echo $this->Html->link('Add Land',array('controller' => 'Lands','action' => 'add_land_for_customer',$x['Customer']['id'])).' | ';
-				echo $this->Html->link('Edit',array('action' => 'edit',$x['Customer']['id'])).' | ';
-				echo $this->Form->postLink('Delete',array('controller' => 'Customers','action' => 'delete',$x['Customer']['id']),array('confirm'=>'Are you sure?'));
-			?></td>
+				?><a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a><?php
+				echo $this->Form->postLink($this->Html->tag('i', '',
+										array('class' => 'glyphicon glyphicon-remove')),
+										array('action' => 'delete',$x['Customer']['id']) ,
+										array('escape' => false), __('Are you sure you want to delete this Customer?'));
+				?></td>
 			
 		</tr>
 		<?php } ?>
@@ -40,7 +43,7 @@
 
 <?php 
 if ($current_user['role'] < 3 && !empty($current_user) ) {?>
-	<div class="container">
+	
 	<div class="contactwrapper">
 	<div class="view">
 
@@ -89,7 +92,6 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 		
 	</div>
 	</div>
-	</div> <!-- /container -->
 	
 	
 

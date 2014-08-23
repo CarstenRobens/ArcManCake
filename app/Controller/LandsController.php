@@ -4,6 +4,13 @@ class LandsController extends AppController{
 	public $components = array('RequestHandler');
 	public $helper = array('Html','Form');
 
+	public $paginate = array(
+        'limit' => 25,
+        'order' => array(
+            'Land.name' => 'asc'
+        )
+    );
+	
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','Lands');

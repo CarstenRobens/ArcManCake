@@ -5,9 +5,9 @@ class ExtrasController extends AppController{
 	public $components = array('RequestHandler','Paginator');
 	
 	public $paginate = array(
-			'limit' => 50,
+			'limit' => 25,
 			'order' => array(
-					'Customer.name' => 'asc'
+					'Extra.category_id' => 'asc'
 			)
 	);
 	

@@ -1,39 +1,54 @@
+<div class="row">
+	<br>
+	<h3><?php echo __('Land'); ?></h3>
+</div>
+	
 
-<h3>Land</h3>
+<div class="row">
+	<table>
+		<tr>
+			<th><?php echo $this->Paginator->sort('id',__('ID')); ?></th>
+			
+			<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
+			<th><?php echo $this->Paginator->sort('customer_id',__('belongs to Costumer')); ?></th>
+			<th><?php echo $this->Paginator->sort('user_id',__('belongs to Supervisor')); ?></th>
+			<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
+			<th><?php echo __('Action'); ?></th>
+			
+		</tr>
 
+	<!-- Here is where we loop through our $lands array, printing out land info --> 
+		<?php foreach($lands_view as $x ): ?>
+		<tr> 
+			<td> <?php echo $x['Land']['id']; ?> </td> 
+			
+			<td> <?php echo $this->Html->link($x['Land']['name'], array('controller'=>'Lands','action'=>'view',$x['Land']['id'])); ?></td>
+			<td> <?php 
+			if ($x['Land']['customer_id'] == 0) {
+				echo 'Open';
+			}else{
+				echo $this->Html->link($x['MyCustomer']['name'].' '.$x['MyCustomer']['surname'], array('controller'=>'Customers','action'=>'view',$x['MyCustomer']['id']));
+			} ?></td>
+			<td> <?php echo $this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
+			
 
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Costumer</th>
-		<th>Name</th>
-		<th>Supervisor</th>
-        <th>Action</th>
-		<th>Created</th>
-	</tr>
-
-<!-- Here is where we loop through our $lands array, printing out land info --> 
-	<?php foreach($lands_view as $x ): ?>
-	<tr> 
-		<td> <?php echo $x['Land']['id']; ?> </td> 
-		<td> <?php 
-		if ($x['Land']['customer_id'] == 0) {
-			echo 'Open';
-		}else{
-			echo $this->Html->link($x['MyCustomer']['name'].' '.$x['MyCustomer']['surname'], array('controller'=>'Customers','action'=>'view',$x['MyCustomer']['id']));
-		} ?></td>
-		<td> <?php echo $this->Html->link($x['Land']['name'], array('controller'=>'Lands','action'=>'view',$x['Land']['id'])); ?></td>
-		<td> <?php echo $this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
-        <td> <?php 
-                echo $this->Html->link('Edit ',array('action' => 'edit',$x['Land']['id'])).' | ';
-                echo $this->Form->postLink('Delete',array('controller' => 'Lands','action' => 'delete',$x['Land']['id']),array('confirm'=>'Are you sure?'));
-        ?></td>
-
-		<td> <?php echo $x['Land']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
-	</tr>
-	<?php endforeach; ?>
-</table>
-
+			<td> <?php echo $x['Land']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
+			<td> 
+			<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Land']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a><?php
+				echo $this->Form->postLink($this->Html->tag('i', '',
+										array('class' => 'glyphicon glyphicon-remove')),
+										array('action' => 'delete',$x['Land']['id']) ,
+										array('escape' => false), __('Are you sure you want to delete this Customer?'));
+				?>
+			
+			<?php 
+					echo $this->Html->link('Edit ',array('action' => 'edit',$x['Land']['id'])).' | ';
+					echo $this->Form->postLink('Delete',array('controller' => 'Lands','action' => 'delete',$x['Land']['id']),array('confirm'=>'Are you sure?'));
+			?></td>
+		</tr>
+		<?php endforeach; ?>
+	</table>
+</div>
 
 <?php 
 if ($current_user['role'] < 3 && !empty($current_user) ) {?>

@@ -23,6 +23,13 @@ class UsersController extends AppController{
         // Allow users to login and logout.
         $this->Auth->allow('logout', 'login');
     }
+	
+	public $paginate = array(
+        'limit' => 25,
+        'order' => array(
+            'User.surname' => 'asc'
+        )
+    );
     
     public function isAuthorized($logged_user) {
     	if (in_array($this->action, array('index','view'))){
