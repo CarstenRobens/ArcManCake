@@ -389,8 +389,9 @@ foreach ($normal_house_pictures_view as $x){
 			</a>
 		</div>
 		<div class="col-md-3" align=right>
-			<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-			
+			<?php if (!$x['MyExtra']['bool_uneditable']){?>
+				<a href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+			<?php }?>
 		</div>
 		
 		
