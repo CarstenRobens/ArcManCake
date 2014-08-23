@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 23, 2014 at 07:32 PM
+-- Host: localhost
+-- Generation Time: Aug 23, 2014 at 07:35 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `arcmancake`
+-- Database: `ArcManCake`
 --
 
 -- --------------------------------------------------------
@@ -310,7 +310,17 @@ CREATE TABLE IF NOT EXISTS `gallery_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+--
+-- Dumping data for table `gallery_pictures`
+--
+
+INSERT INTO `gallery_pictures` (`id`, `picture`, `title`, `description`, `user_id`, `created`, `modified`) VALUES
+(21, 'Flair 134 ZD.jpg', 'Flair 134 ZD', 'Es geht auch farbig!', 6, '2014-08-23', '2014-08-23'),
+(22, 'Bungalow 128.jpg', 'Bungalow 128', 'FÃ¼r Alle, die nicht hoch und runter laufen wollen!', 6, '2014-08-23', '2014-08-23'),
+(23, 'Behringen 116 Korschenbroich.JPG', 'Behringen 116 Korschenbroich', 'Behringen 116 Nr.2', 6, '2014-08-23', '2014-08-23'),
+(24, 'Behringen 116.JPG', 'Behringen 116', 'Behringen 116 Nr.1', 6, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
