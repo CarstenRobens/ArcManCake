@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 23, 2014 at 09:16 
+-- Host: 127.0.0.1
+-- Generation Time: Aug 23, 2014 at 09:47 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ArcManCake`
+-- Database: `arcmancake`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -54,7 +54,16 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `comment`, `extra_id`, `pr
 (11, 21, 1, NULL, 39, 2, '2014-08-23', '2014-08-23'),
 (12, 650, 1, NULL, 40, 2, '2014-08-23', '2014-08-23'),
 (13, 41990, 1, NULL, 72, 2, '2014-08-23', '2014-08-23'),
-(14, 9990, 1, NULL, 81, 2, '2014-08-23', '2014-08-23');
+(14, 9990, 1, NULL, 81, 2, '2014-08-23', '2014-08-23'),
+(16, 5000, 1, NULL, 105, 3, '2014-08-23', '2014-08-23'),
+(17, 3000, 1, NULL, 107, 3, '2014-08-23', '2014-08-23'),
+(18, 5000, 1, NULL, 108, 3, '2014-08-23', '2014-08-23'),
+(19, 5000, 1, NULL, 109, 3, '2014-08-23', '2014-08-23'),
+(20, 8000, 0, NULL, 110, 3, '2014-08-23', '2014-08-23'),
+(21, 9000, 1, NULL, 111, 3, '2014-08-23', '2014-08-23'),
+(22, 1000, 1, NULL, 112, 3, '2014-08-23', '2014-08-23'),
+(23, 4400, 1, NULL, 113, 3, '2014-08-23', '2014-08-23'),
+(24, 12900, 1, NULL, 26, 3, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
@@ -69,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `categories`
@@ -79,7 +88,8 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `created`, `modified`) VALUES
 (2, 'AuÃŸen', 2, '2014-08-22', '2014-08-22'),
 (3, 'Keller', 2, '2014-08-22', '2014-08-22'),
 (4, 'Innen', 2, '2014-08-22', '2014-08-22'),
-(5, 'Technik', 2, '2014-08-22', '2014-08-22');
+(5, 'Technik', 2, '2014-08-22', '2014-08-22'),
+(6, 'External', 2, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
@@ -193,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=105 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=114 ;
 
 --
 -- Dumping data for table `extras`
@@ -293,7 +303,15 @@ INSERT INTO `extras` (`id`, `name`, `description`, `default_priceA`, `default_pr
 (95, 'FuÃŸbodenheizung im Keller', 'Warmwasser- FuÃŸbodenheizung nach WÃ¤rmebedarfberechnung mit Kunststoffverrohrung auf TrÃ¤gerplatte und Raumregelung. In dem gedÃ¤mmten Kellergeschoss wird pro ausgebauten Raum (auÃŸer Hauswirtschaftsraum) ein FuÃŸbodenheizkreis installiert. Die GesamtaufbauhÃ¶he des FuÃŸbodens kann sich nach Wahl des Auftragnehmers um ca. 2 cm erhÃ¶hen. Die lichten RaumhÃ¶hen reduzieren sich entsprechend um das MaÃŸ des hÃ¶heren FuÃŸbodenaufbaus. Nach Wahl des Auftragnehmers wird ein Zement- oder Anhydritestrich eingebaut. Es wird ein Heizkreisverteiler vorgesehen. Kann nur mit der DÃ¤mmung der KellerauÃŸenwÃ¤nde bestellt werden.\r\nZum Aufheizen des Heizestrichs mÃ¼ssen rechtzeitig mit dem Einbau des Estrichs der Strom, Gas- und Wasseranschluss vom Auftraggeber bereitgestellt werden.', 2600, 3600, 4600, '', 0, 80, 1, 1, 0, 0, 0, 0, 3, 2, '2014-08-23', '2014-08-23'),
 (96, 'FuÃŸbodenheizung im Keller', 'Warmwasser- FuÃŸbodenheizung nach WÃ¤rmebedarfberechnung mit Kunststoffverrohrung auf TrÃ¤gerplatte und Raumregelung. In dem gedÃ¤mmten Kellergeschoss wird pro ausgebauten Raum (auÃŸer Hauswirtschaftsraum) ein FuÃŸbodenheizkreis installiert. Die GesamtaufbauhÃ¶he des FuÃŸbodens kann sich nach Wahl des Auftragnehmers um ca. 2 cm erhÃ¶hen. Die lichten RaumhÃ¶hen reduzieren sich entsprechend um das MaÃŸ des hÃ¶heren FuÃŸbodenaufbaus. Nach Wahl des Auftragnehmers wird ein Zement- oder Anhydritestrich eingebaut. Es wird ein Heizkreisverteiler vorgesehen. Kann nur mit der DÃ¤mmung der KellerauÃŸenwÃ¤nde bestellt werden.\r\nZum Aufheizen des Heizestrichs mÃ¼ssen rechtzeitig mit dem Einbau des Estrichs der Strom, Gas- und Wasseranschluss vom Auftraggeber bereitgestellt werden.', 2600, 3600, 4600, '', 0, 81, 2, 1, 0, 0, 0, 0, 3, 2, '2014-08-23', '2014-08-23'),
 (97, 'FuÃŸbodenheizung im Keller', 'Warmwasser- FuÃŸbodenheizung nach WÃ¤rmebedarfberechnung mit Kunststoffverrohrung auf TrÃ¤gerplatte und Raumregelung. In dem gedÃ¤mmten Kellergeschoss wird pro ausgebauten Raum (auÃŸer Hauswirtschaftsraum) ein FuÃŸbodenheizkreis installiert. Die GesamtaufbauhÃ¶he des FuÃŸbodens kann sich nach Wahl des Auftragnehmers um ca. 2 cm erhÃ¶hen. Die lichten RaumhÃ¶hen reduzieren sich entsprechend um das MaÃŸ des hÃ¶heren FuÃŸbodenaufbaus. Nach Wahl des Auftragnehmers wird ein Zement- oder Anhydritestrich eingebaut. Es wird ein Heizkreisverteiler vorgesehen. Kann nur mit der DÃ¤mmung der KellerauÃŸenwÃ¤nde bestellt werden.\r\nZum Aufheizen des Heizestrichs mÃ¼ssen rechtzeitig mit dem Einbau des Estrichs der Strom, Gas- und Wasseranschluss vom Auftraggeber bereitgestellt werden.', 2600, 3600, 4600, '', 0, 82, 3, 1, 0, 0, 0, 0, 3, 2, '2014-08-23', '2014-08-23'),
-(98, 'FuÃŸbodenheizung im Keller', 'Warmwasser- FuÃŸbodenheizung nach WÃ¤rmebedarfberechnung mit Kunststoffverrohrung auf TrÃ¤gerplatte und Raumregelung. In dem gedÃ¤mmten Kellergeschoss wird pro ausgebauten Raum (auÃŸer Hauswirtschaftsraum) ein FuÃŸbodenheizkreis installiert. Die GesamtaufbauhÃ¶he des FuÃŸbodens kann sich nach Wahl des Auftragnehmers um ca. 2 cm erhÃ¶hen. Die lichten RaumhÃ¶hen reduzieren sich entsprechend um das MaÃŸ des hÃ¶heren FuÃŸbodenaufbaus. Nach Wahl des Auftragnehmers wird ein Zement- oder Anhydritestrich eingebaut. Es wird ein Heizkreisverteiler vorgesehen. Kann nur mit der DÃ¤mmung der KellerauÃŸenwÃ¤nde bestellt werden.\r\nZum Aufheizen des Heizestrichs mÃ¼ssen rechtzeitig mit dem Einbau des Estrichs der Strom, Gas- und Wasseranschluss vom Auftraggeber bereitgestellt werden.  ', 2600, 3600, 4600, '', 0, 83, 5, 1, 0, 0, 0, 0, 3, 2, '2014-08-23', '2014-08-23');
+(98, 'FuÃŸbodenheizung im Keller', 'Warmwasser- FuÃŸbodenheizung nach WÃ¤rmebedarfberechnung mit Kunststoffverrohrung auf TrÃ¤gerplatte und Raumregelung. In dem gedÃ¤mmten Kellergeschoss wird pro ausgebauten Raum (auÃŸer Hauswirtschaftsraum) ein FuÃŸbodenheizkreis installiert. Die GesamtaufbauhÃ¶he des FuÃŸbodens kann sich nach Wahl des Auftragnehmers um ca. 2 cm erhÃ¶hen. Die lichten RaumhÃ¶hen reduzieren sich entsprechend um das MaÃŸ des hÃ¶heren FuÃŸbodenaufbaus. Nach Wahl des Auftragnehmers wird ein Zement- oder Anhydritestrich eingebaut. Es wird ein Heizkreisverteiler vorgesehen. Kann nur mit der DÃ¤mmung der KellerauÃŸenwÃ¤nde bestellt werden.\r\nZum Aufheizen des Heizestrichs mÃ¼ssen rechtzeitig mit dem Einbau des Estrichs der Strom, Gas- und Wasseranschluss vom Auftraggeber bereitgestellt werden.  ', 2600, 3600, 4600, '', 0, 83, 5, 1, 0, 0, 0, 0, 3, 2, '2014-08-23', '2014-08-23'),
+(105, 'MehrgrÃ¼ndung', '', 5000, 5000, 5000, '', 0, 0, 0, 1, 1, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
+(107, 'Erdbebenzone', '', 3000, 3000, 3000, '', 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
+(108, 'Eigenleistung AuÃŸennanlage', '', 5000, 5000, 5000, '', 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
+(109, 'Eigenleistung Maler-/Bodenarbeiten', '', 5000, 5000, 5000, '', 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
+(110, 'Garage 6 m', '', 8000, 8000, 8000, '', 0, 0, 0, 0, 0, 1, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
+(111, 'HausanschluÃŸkosten', '', 9000, 9000, 9000, '', 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
+(112, 'Baustrom- und Bauwasseranschluss', '', 1000, 1000, 1000, '', 0, 0, 0, 1, 1, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
+(113, 'Lageplan, Genehmigungskosten', '', 4400, 4400, 4400, '', 0, 0, 0, 1, 1, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
@@ -425,21 +443,6 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Immocaster_Storage`
---
-
-CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
-  `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
-  `ic_desc` varchar(32) NOT NULL,
-  `ic_key` varchar(128) NOT NULL,
-  `ic_secret` varchar(128) NOT NULL,
-  `ic_expire` datetime NOT NULL,
-  PRIMARY KEY (`ic_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `immocaster_storage`
 --
 
@@ -523,7 +526,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `proposals`
@@ -531,7 +534,8 @@ CREATE TABLE IF NOT EXISTS `proposals` (
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
 (1, 'abc', 'asd', '', '', 'files/Contract1.pdf', 6, 1, 2, '1', 2, '2014-08-23', '2014-08-23'),
-(2, '123', 'asdas', '', '', '', 6, 0, 2, '1', 2, '2014-08-23', '2014-08-23');
+(2, '123', 'asdas', '', '', '', 6, 0, 2, '1', 2, '2014-08-23', '2014-08-23'),
+(3, 'asd', 'asd', '', '', '', 6, 0, 2, '1', 2, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 

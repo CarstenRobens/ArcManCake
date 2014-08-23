@@ -97,8 +97,10 @@
 			<td> <?php echo $x['Extra']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 			<td>
 				<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				
+				<?php 
 				echo ' ';
-				<?php echo $this->Form->postLink($this->Html->tag('i', '',
+				echo $this->Form->postLink($this->Html->tag('i', '',
 										array('class' => 'glyphicon glyphicon-remove')),
 										array('action' => 'delete',$x['Extra']['id']) ,
 										array('escape' => false), __('Are you sure you want to delete this Extra?'));?>
@@ -144,7 +146,7 @@
 						echo $this->Form->input('bool_garage',array('default' => false,'label'=>__('Is a garage?')));
 						echo $this->Form->input('bool_unique',array('default' => false,'label'=>__('Only one can be purchased?')));
 						echo $this->Form->input('bool_uneditable',array('default' => false,'label'=>__('Will the price be fixed?')));
-						echo $this->Form->input('bool_external',array('default' => false,'label'=>__('Servive from external company')));
+						echo $this->Form->input('bool_external',array('default' => false,'label'=>__('Service from external company')));
 						echo $this->Form->input('upload', array('type' => 'file','label'=>'Picture'));
 						
 						

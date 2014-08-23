@@ -85,9 +85,9 @@ class ExtrasController extends AppController{
 				$this->request->data['Extra']['size_dependent_flag'] = -1*$this->request->data['Extra']['size_dependent_check'];
 				if ($this->Extra->save($this->request->data)) {
 					$this->Session->setFlash(__('The extra has been saved.'), 'alert-box', array('class'=>'alert-success'));
-					return $this->redirect(array('action' => 'index'), 'alert-box', array('class'=>'alert-error'));
+					return $this->redirect(array('action' => 'index'));
 				}else{
-					$this->Session->setFlash(__('Unable to add your extra.'));
+					$this->Session->setFlash(__('Unable to add your extra.'), 'alert-box', array('class'=>'alert-error'));
 				}
 			}
 		}

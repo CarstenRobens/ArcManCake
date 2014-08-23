@@ -37,7 +37,7 @@
 						echo $this->Form->input('bool_garage',array('label'=>__('Is a garage?'),'div' => 'form-group has-success'));
 						echo $this->Form->input('bool_unique',array('label'=>__('Only one can be purchased?'),'div' => 'form-group has-success'));
 						echo $this->Form->input('bool_uneditable',array('label'=>__('Will the price be fixed?'),'div' => 'form-group has-success'));
-						echo $this->Form->input('bool_external',array('default' => false,'label'=>__('Servive from external company')));
+						echo $this->Form->input('bool_external',array('default' => false,'label'=>__('Service from external company')));
 						echo $this->Form->input('upload', array('type' => 'file','label'=>__('New picture (ignore to keep the old one)'),'div' => 'form-group has-success'));
 						
 						?>		
