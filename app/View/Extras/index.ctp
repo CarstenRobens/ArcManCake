@@ -47,14 +47,14 @@
 			</td>
 			<td> 
 			<?php if ($x['Extra']['depends_on']==true){
-				echo $x['MyExtra']['name'];
+				echo $x['MyExtraDep']['name'];
 			}else{
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div><?php 
 			} ?>
 			</td>
 			<td> 
 			<?php if ($x['Extra']['depends_on_house']==true){
-				echo $x['MyHouse']['name'];
+				echo $x['MyHouseDep']['name'];
 			}else{
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div><?php 
 			} ?>

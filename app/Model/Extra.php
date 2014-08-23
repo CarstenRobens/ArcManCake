@@ -3,11 +3,11 @@
 class Extra extends AppModel{
 	
 	public $belongsTo = array(
-		'MyHouse' => array(
+		'MyHouseDep' => array(
 				'className' => 'House',
 				'foreignKey' => 'depends_on_house'
 		),
-		'MyExtra' => array(
+		'MyExtraDep' => array(
 				'className' => 'Extra',
 				'foreignKey' => 'depends_on'
 		),
