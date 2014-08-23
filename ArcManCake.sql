@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 23, 2014 at 07:35 
+-- Generation Time: Aug 23, 2014 at 09:16 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -310,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `gallery_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `gallery_pictures`
@@ -320,7 +320,16 @@ INSERT INTO `gallery_pictures` (`id`, `picture`, `title`, `description`, `user_i
 (21, 'Flair 134 ZD.jpg', 'Flair 134 ZD', 'Es geht auch farbig!', 6, '2014-08-23', '2014-08-23'),
 (22, 'Bungalow 128.jpg', 'Bungalow 128', 'FÃ¼r Alle, die nicht hoch und runter laufen wollen!', 6, '2014-08-23', '2014-08-23'),
 (23, 'Behringen 116 Korschenbroich.JPG', 'Behringen 116 Korschenbroich', 'Behringen 116 Nr.2', 6, '2014-08-23', '2014-08-23'),
-(24, 'Behringen 116.JPG', 'Behringen 116', 'Behringen 116 Nr.1', 6, '2014-08-23', '2014-08-23');
+(24, 'Behringen 116.JPG', 'Behringen 116', 'Behringen 116 Nr.1', 6, '2014-08-23', '2014-08-23'),
+(25, 'Bungalow 78.JPG', 'Bungalow 78', '', 6, '2014-08-23', '2014-08-23'),
+(26, 'Flair 113.JPG', 'Flair 113', '', 6, '2014-08-23', '2014-08-23'),
+(27, 'Flair 124.JPG', 'Flair 124', '', 6, '2014-08-23', '2014-08-23'),
+(28, 'Freiplanung 200.JPG', 'Freiplanung 200', '', 6, '2014-08-23', '2014-08-23'),
+(29, 'Landhaus 142.JPG', 'Landhaus 142', '', 6, '2014-08-23', '2014-08-23'),
+(30, 'vierte Referenz.JPG', 'vierte Referenz', 'Fertiges Einfamilienhaus mit Garten', 6, '2014-08-23', '2014-08-23'),
+(31, 'dritte Referenz.JPG', 'dritte Referenz', 'Zwei fertige EinfamilienhÃ¤user aus der Gartenperspektive fotografiert.', 6, '2014-08-23', '2014-08-23'),
+(32, 'zweite Referenz.JPG', 'zweite Referenz', 'Fertiges Einfamilienhaus', 6, '2014-08-23', '2014-08-23'),
+(33, 'erste Referenz.JPG', 'erste Referenz', 'Fertiges Einfamilienhaus', 6, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
@@ -412,6 +421,21 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (5, 'Keller', '', '2_stadt-120-KG.png', -1, 2, 2, '2014-08-23', '2014-08-23'),
 (6, 'Dachgeschoss', '', '2_stadt-120-DG.png', 2, 2, 2, '2014-08-23', '2014-08-23'),
 (7, 'Seitenschnitt', '', '2_stadt-120-Schnitt.png', 5, 2, 2, '2014-08-23', '2014-08-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Immocaster_Storage`
+--
+
+CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
+  `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `ic_desc` varchar(32) NOT NULL,
+  `ic_key` varchar(128) NOT NULL,
+  `ic_secret` varchar(128) NOT NULL,
+  `ic_expire` datetime NOT NULL,
+  PRIMARY KEY (`ic_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
