@@ -97,6 +97,7 @@
 			<td> <?php echo $x['Extra']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 			<td>
 				<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				echo ' ';
 				<?php echo $this->Form->postLink($this->Html->tag('i', '',
 										array('class' => 'glyphicon glyphicon-remove')),
 										array('action' => 'delete',$x['Extra']['id']) ,

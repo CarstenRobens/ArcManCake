@@ -18,7 +18,7 @@
 		</tr>
 
 	<!-- Here is where we loop through our $lands array, printing out land info --> 
-		<?php foreach($lands_view as $x ): debug($x)?>
+		<?php foreach($lands_view as $x ): ?>
 		<tr> 
 			<td> <?php echo $x['Land']['id']; ?> </td> 
 			
@@ -34,17 +34,17 @@
 
 			<td> <?php echo $x['Land']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 			<td> 
-			<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Land']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a><?php
+			<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Land']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+			
+			<?php
+			echo ' ';
+			
 				echo $this->Form->postLink($this->Html->tag('i', '',
 										array('class' => 'glyphicon glyphicon-remove')),
 										array('action' => 'delete',$x['Land']['id']) ,
 										array('escape' => false), __('Are you sure you want to delete this Customer?'));
 				?>
-			
-			<?php 
-					echo $this->Html->link('Edit ',array('action' => 'edit',$x['Land']['id'])).' | ';
-					echo $this->Form->postLink('Delete',array('controller' => 'Lands','action' => 'delete',$x['Land']['id']),array('confirm'=>'Are you sure?'));
-			?></td>
+			</td>
 		</tr>
 		<?php endforeach; ?>
 	</table>

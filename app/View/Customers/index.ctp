@@ -26,6 +26,7 @@
 				echo $this->Html->link('Create Proposal',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' | ';
 				echo $this->Html->link('Add Land',array('controller' => 'Lands','action' => 'add_land_for_customer',$x['Customer']['id'])).' | ';
 				?><a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a><?php
+				echo ' ';
 				echo $this->Form->postLink($this->Html->tag('i', '',
 										array('class' => 'glyphicon glyphicon-remove')),
 										array('action' => 'delete',$x['Customer']['id']) ,
