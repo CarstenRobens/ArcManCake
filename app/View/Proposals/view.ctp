@@ -64,28 +64,6 @@ foreach($bought_extras_view as $index=>$x){
 foreach ($normal_house_pictures_view as $x){
 	if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
 		$default_picture=$x['MyHousePicture'];
-	}else{
-		echo $this->Html->link('','/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-				array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
-		);
-	}
-}
-foreach ($basement_house_pictures_view as $key=>$x){
-if ($key==0){
-		$base_first=$x['MyHousePicture'];
-	}else{
-		echo $this->Html->link('','/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-				array('escape'=>false,'data-lightbox'=>'base_pics','data-title'=>$house_pic_type[$x['MyHousePicture']['type_flag']].': '.$x['MyHousePicture']['description'])
-		);
-	}
-}
-foreach ($floorplan_house_pictures_view as $key=>$x){
-	if ($key==0){
-		$floor_first=$x['MyHousePicture'];
-	}else{
-		echo $this->Html->link('','/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-				array('escape'=>false,'data-lightbox'=>'floor_pics','data-title'=>$house_pic_type[$x['MyHousePicture']['type_flag']].': '.$x['MyHousePicture']['description'])
-		);
 	}
 }?>
 	
@@ -179,15 +157,13 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 				<div class="panel-body">
 					<?php 
 					foreach ($normal_house_pictures_view as $x){
-						if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
-							$default_picture=$x['MyHousePicture'];
-						}else{?>
+						if ($x['MyHousePicture']['id']!=$proposal_view['Proposal']['default_house_picture_id']){?>
 							<div class="col-md-6">
 							<?php 
 							echo $this->Html->link(
 								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
 								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
+								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'].': '.$x['MyHousePicture']['description'])
 							);?>
 							</div>
 							<?php 
@@ -205,38 +181,27 @@ foreach ($floorplan_house_pictures_view as $key=>$x){
 				</div>
 				<div class="panel-body">
 					<?php 
-					foreach ($floorplan_house_pictures_view as $key=>$x){
-						if ($key==0){
-							$floor_first=$x['MyHousePicture'];
-						}else{?>
-							<div class="col-md-6">
-							<?php 
-							echo $this->Html->link(
-								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
-							);?>
-							</div>
-							<?php 
-							
-						}
-					}
-					foreach ($basement_house_pictures_view as $key=>$x){
-					if ($key==0){
-							$base_first=$x['MyHousePicture'];
-						}else{?>
-							<div class="col-md-6">
-							<?php
-							echo $this->Html->link(
-								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['description'])
-							);?>
-							</div>
-							<?php 
-						}
-					}
-					?>
+					foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
+						<div class="col-md-6">
+						<?php 
+						echo $this->Html->link(
+							$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+							'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+							array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
+						);?>
+						</div>
+					<?php }
+					foreach ($basement_house_pictures_view as $key=>$x){?>
+					
+						<div class="col-md-6">
+						<?php
+						echo $this->Html->link(
+							$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+							'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+							array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
+						);?>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 			</div>
