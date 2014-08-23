@@ -1,24 +1,24 @@
 <?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
-<div class="container">
-	<div class="contactwrapper">
+
+<div class="contactwrapper">
 	<div class="view">
 
 	<div class="PostBox">
 		<div class="PostContent">
 			<div class="PostContentBox">
 				<div class="PostMainContentbox">
-						<?php echo $this->Form->create('BoughtExtra');?>	
-						<legend>
-							<?php 
-							echo __('Change the price of: ');
-							echo $bought_extra['MyExtra']['name']; ?>
-						</legend>
-						
-						<?php 
-							echo $this->Form->create('BoughtExtra', array('class' => 'form'));
-							echo $this->Form->input('price',array('label' => __('Price')));
-							echo $this->Form->input('factor',array('label' => __('Factor')));
-						?>	
+					<?php echo $this->Form->create('BoughtExtra');?>	
+					<legend>
+						<?php echo __('Change the price of: ').$bought_extra['MyExtra']['name'];?>
+					</legend>
+					
+					<?php 
+					echo $this->Form->create('BoughtExtra', array('class' => 'form-horizontal'));
+					
+					echo $this->Form->input('price',array('label' => __('Price'),'div' => 'form-group has-success'));
+					echo $this->Form->input('factor',array('label' => __('Factor'),'div' => 'form-group has-success'));
+					echo $this->Form->input('comment',array('label' => __('Comment'),'placeholder'=>__('Enter your comment:'),'div' => 'form-group has-success'));
+					?>	
 				</div>						
 			</div>
 		</div>
@@ -27,6 +27,5 @@
 		<p style="clear: both;">  </p>
 	</div>
 		
-	</div>
 	</div>
 </div>

@@ -6,6 +6,12 @@ foreach($bought_extras_view as $index=>$x){
 	}
 }
 ?>
+
+
+<div class="row">
+	<br>
+	<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
+</div>
 	
 	<div class="CategorieTitleBox">
         <div id="Proposal">
@@ -36,10 +42,12 @@ foreach($bought_extras_view as $index=>$x){
 
 	
 	<div class="row">
-		<div class="col-md-6">
-			<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
+		<div class="col-md-7">
+			<a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
+			<a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_bank_receipt',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-euro"></span> <?php echo __('Generate bank receipt');?></a>
+			<a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_contract',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-pencil"></span> <?php echo __('Generate contract');?></a>
 		</div>
-		<div class="col-md-6" align="right">
+		<div class="col-md-5" align="right">
 			<?php if(!empty($proposal_view['Proposal']['summary'])){ ?>
 				<strong> <?php echo __('Summary'); ?> </strong>
 				<a href="<?php echo $this->Html->url('/'.$proposal_view['Proposal']['summary']); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Summary'), 'height'=>30 ));?> </a>
@@ -289,7 +297,11 @@ foreach ($normal_house_pictures_view as $x){
 		<div class="col-md-2"> </div>
 		
 		<div class="col-md-<?php if (!empty($x['MyExtra']['picture'])){ echo '6';}else{ echo '8';}?>">
-			<?php echo $x['MyExtra']['description']; ?>
+			
+			<p><?php echo $x['MyExtra']['description']; ?></p> 
+			<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
+			<p> <?php echo '<strong>'.__('Comment:').' </strong>'.$x['MyBoughtExtra']['comment']; ?> </p>
+			<?php }?>
 		</div>
 		
 		<?php if (!empty($x['MyExtra']['picture'])){ ?>

@@ -57,11 +57,12 @@
 				<?php if($this->Session->read('menue.active')=='Offer'){ ?>
 					<li class="active"> <?php }else{ ?> <li>
 				<?php } ?>
-				<?php echo $this->Html->link(__('Gallery'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
+				<?php echo $this->Html->link(__('Offers'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
+				
 				<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
 					<li class="active"> <?php }else{ ?> <li>
 				<?php } ?>
-				<?php echo $this->Html->link(__('GalleryPictures'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
+				<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
 				
               </ul>
 				
