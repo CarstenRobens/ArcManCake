@@ -20,7 +20,7 @@ $(document).ready(function() {
     		center: '',
     		right:  'today agendaDay,agendaWeek,month prev,next'
 		},
-		defaultView: 'agendaWeek',
+		defaultView: 'month',
 		firstHour: 8,
 		weekMode: 'variable',
 		aspectRatio: 2,

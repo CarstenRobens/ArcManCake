@@ -1,4 +1,15 @@
 
+<style>
+.content-left {
+  border-right: 1px solid #333;
+}
+.content-right {
+  border-left: 1px solid #333;
+}
+</style>
+
+<div class="col-md-9 content-left">
+
 <div class="row">
 	<br>
 	<h3><?php echo __('Customers'); ?></h3>
@@ -99,5 +110,17 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	<?php 
 }?>
 
-		
+</div>
+
+<div class="col-md-3 content-right">
+
+<?php foreach ($upcoming_events as $key=>$event){
+	$date=strtotime($event['MyEvent']['start']);
+	if($key==0 || $date!=strtotime($upcoming_events[$key-1]['MyEvent']['start'])){
+		echo '<h3><strong>'.date('d-M' , $date).': </strong></h3><br>';
+	}
+	echo '('.date('H:i' , $date).') '.$event['EventType']['name'].': '.$event['MyEvent']['title'].'<br>';
+}?>
+
+</div>
 

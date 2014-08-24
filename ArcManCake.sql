@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 23, 2014 at 10:00 PM
+-- Host: localhost
+-- Generation Time: Aug 24, 2014 at 04:33 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `arcmancake`
+-- Database: `ArcManCake`
 --
 
 -- --------------------------------------------------------
@@ -132,17 +132,25 @@ CREATE TABLE IF NOT EXISTS `events` (
   `all_day` tinyint(1) NOT NULL DEFAULT '1',
   `status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Scheduled',
   `active` tinyint(1) NOT NULL DEFAULT '1',
+  `user_id` int(11) NOT NULL,
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `created`, `modified`) VALUES
-(1, 1, 'The boss is angry!', '', '2014-08-14 11:21:00', '2014-08-18 11:21:00', 1, 'Scheduled', 1, '2014-07-07', '2014-07-07');
+INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `user_id`, `created`, `modified`) VALUES
+(11, 1, 'Carstens appointment', 'blablabla', '2014-10-24 02:26:00', '2014-08-24 02:26:00', 1, 'Scheduled', 1, 2, '2014-08-24', '2014-08-24'),
+(12, 1, '3', '', '2014-08-30 03:58:00', '2014-08-24 03:58:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(13, 1, '4', 'The above example will return posts where the created date is equal to the modified date (that is, it will return posts that have never been modified).', '2014-08-26 03:59:00', '2014-08-24 03:59:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(10, 3, 'another thing 2', 'Includes 200 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible', '2014-09-02 00:58:00', '2027-05-17 23:00:00', 0, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(9, 1, 'something', '$this->request->is(''post'')', '2014-10-24 01:57:00', '2014-08-24 01:57:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(14, 1, '5', 'By default, CakePHP joins multiple conditions with boolean AND. This means the snippet above would only match posts that have been created in the past two weeks, and have a title that matches one in the given set. However, we could just as easily find posts that match either condition:', '2014-09-05 03:59:00', '2014-08-24 03:59:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(15, 1, 'tutupa', '', '2014-08-27 04:30:00', '2014-08-24 04:30:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(16, 1, 'tutuchancla', '', '2014-08-27 04:30:00', '2014-08-24 04:30:00', 0, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24');
 
 -- --------------------------------------------------------
 
@@ -155,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `event_types` (
   `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `color` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `event_types`
@@ -163,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `event_types` (
 
 INSERT INTO `event_types` (`id`, `name`, `color`) VALUES
 (1, 'Meeting', 'Green'),
-(2, 'Customer appointment', 'Blue');
+(3, 'Customer appointment', 'Purple');
 
 -- --------------------------------------------------------
 

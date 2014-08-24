@@ -38,8 +38,8 @@ class AppController extends Controller {
     public $components=array(
         'Session',
         'Auth'=>array(
-            'loginRedirect'=>array('controller'=>'Houses','action'=>'index'),
-            'logoutRedirect'=>array('controller'=>'Houses','action'=>'index'),
+            'loginRedirect'=>array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'),
+            'logoutRedirect'=>array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'),
             'authorize'=>array('Controller')
         ),
     );

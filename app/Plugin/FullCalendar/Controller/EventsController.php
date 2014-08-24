@@ -126,10 +126,13 @@ class EventsController extends FullCalendarAppController {
         // The update action is called from "webroot/js/ready.js" to update date/time when an event is dragged or resized
 	function update() {
 		$vars = $this->params['url'];
-		$this->Event->id = $vars['id'];
-		$this->Event->saveField('start', $vars['start']);
-		$this->Event->saveField('end', $vars['end']);
-		$this->Event->saveField('all_day', $vars['allday']);
+		$event=$this->Event->findById($vars['id']);
+		if($event['Event']['user_id']==$this->Auth->user('id')){
+			$this->Event->id = $vars['id'];
+			$this->Event->saveField('start', $vars['start']);
+			$this->Event->saveField('end', $vars['end']);
+			$this->Event->saveField('all_day', $vars['allday']);
+		}
 	}
 
 }

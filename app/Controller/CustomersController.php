@@ -46,6 +46,8 @@ class CustomersController extends AppController{
 			$this->set('customers_view',$this->Paginator->paginate('Customer',array('Customer.user_id LIKE'=>$logged_user['id'])));
 		}
 		
+		$upcoming_events=$this->Customer->MyUser->MyEvent->find('all',array('order'=>array('start'=>'asc'),'conditions'=>array('user_id'=>$this->Auth->user('id'),'start <'=>date('Y-m-d', strtotime("+2 weeks")))));
+		$this->set('upcoming_events',$upcoming_events);
 		
 		if ($logged_user['role']<3){
 			if ($this->request->is('post')) {
@@ -58,6 +60,7 @@ class CustomersController extends AppController{
 				$this->Session->setFlash(__('Unable to add your customer.'), 'alert-box', array('class'=>'alert-error'));
 			}
 		}
+		
 	}
 
 
