@@ -371,12 +371,14 @@ class ProposalsController extends AppController{
     	$x = $this->Proposal->findById($id);
     	$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
 				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>0)));
-            $ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+        $ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
             		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>-1)));
-            $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+        $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
             		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
     	$z = $this->Proposal->MyBoughtExtra->find('all',array(
-    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false)));
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false , 'MyExtra.size_dependent_flag'=>'< 1')));
+		$zenlarge = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false, 'MyExtra.size_dependent_flag'=>'> 0')));
     	$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
     			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
     	
@@ -389,6 +391,7 @@ class ProposalsController extends AppController{
         $this->set('basement_house_pictures_view',$ybase);
         $this->set('floorplan_house_pictures_view',$yfloor);
     	$this->set('bought_extras_view',$z);
+		$this->set('bought_enlagement',$zenlarge);
     	$this->set('bought_external_extras_view',$zexternal);
     	
     	

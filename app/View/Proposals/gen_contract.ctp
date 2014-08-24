@@ -3,7 +3,15 @@ foreach ($normal_house_pictures_view as $x){
 	if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
 		$default_picture=$x['MyHousePicture'];
 	}
-}?>
+}
+
+	foreach ($bought_enlagement as $index=>$x){
+		$enlagment = $x;
+		$enlagment_price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
+		
+	}
+	debug($bought_enlagement);
+?>
 	<!-------------------------------------- First Page START -------------------------------------->
 
 	<div class="row">
@@ -61,7 +69,7 @@ foreach ($normal_house_pictures_view as $x){
 	
 	
 	<div class="row">
-		<div style="width: 400px;float:left; padding: 10px">
+		<div style="width: 400px;float:left; padding: 5px">
 			<h6> Auftragnehmer: </h6>
 			<p style="clear: both;">  </p>
 			<table>
@@ -86,7 +94,7 @@ foreach ($normal_house_pictures_view as $x){
 			</table>
 			
 		</div>
-		<div style="width: 200px;float:left; padding: 10px">
+		<div style="width: 200px;float:left; padding: 5px">
 			<h6> Vermittlung durch: </h6>
 			<p style="clear: both;">  </p>
 			<table>
@@ -99,7 +107,7 @@ foreach ($normal_house_pictures_view as $x){
 	</div>
 	
 	<div class="row">
-		<div style="width: 400px;float:left; padding: 10px">
+		<div style="width: 400px;float:left; padding:5px">
 			<h6> Auftraggeber: </h6>
 			<p style="clear: both;">  </p>
 			<table>
@@ -139,7 +147,7 @@ foreach ($normal_house_pictures_view as $x){
 			</table>
 			
 		</div>
-		<div style="width: 200px;float:left; padding: 10px">
+		<div style="width: 200px;float:left; padding: 5px">
 			<h6> &nbsp; </h6>
 			<p style="clear: both;">  </p>
 			<table>
@@ -177,7 +185,7 @@ foreach ($normal_house_pictures_view as $x){
 	
 	
 	<div class="row">
-		<div style="width: 400px;float:left; padding: 10px">
+		<div style="width: 400px;float:left; padding: 5px">
 			<h6> Bauort: </h6>
 			<p style="clear: both;">  </p>
 			<table>
@@ -207,7 +215,7 @@ foreach ($normal_house_pictures_view as $x){
 			</table>
 			
 		</div>
-		<div style="width: 200px;float:left; padding: 10px">
+		<div style="width: 200px;float:left; padding: 5px">
 			<h6> &nbsp; </h6>
 			<p style="clear: both;">  </p>
 			<table>
@@ -249,7 +257,7 @@ foreach ($normal_house_pictures_view as $x){
 	
 	
 	<div class="row">
-		<div style="width: 400px;float:left; padding: 10px">
+		<div style="width: 400px;float:left; padding: 5px">
 			<table>
 				<tr>
 					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?></h6> </td>
@@ -262,7 +270,7 @@ foreach ($normal_house_pictures_view as $x){
 			</table>
 			
 		</div>
-		<div style="width: 200px;float:left; padding: 10px">
+		<div style="width: 200px;float:left; padding: 5px">
 			<table>
 				<tr>
 					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6> </td>
@@ -301,6 +309,11 @@ foreach ($normal_house_pictures_view as $x){
 					<td style = "border-bottom: none;"> <h6> + </h6> </td>
 					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $summed_extras;?> € </h6> </td>
 				</tr>
+				<tr >
+					<td style = "border-bottom: none;"> <h6> Summe Hausvergrößerung und Verkleinerung </h6> </td>
+					<td style = "border-bottom: none;"> <h6> + </h6> </td>
+					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $enlagment_price;?> € </h6> </td>
+				</tr>
 				<tr>
 				<tr >
 					<th style = "border-bottom: none;"> <h6> &nbsp; </h6> </th>
@@ -315,7 +328,7 @@ foreach ($normal_house_pictures_view as $x){
 				<tr>
 					<th style = "border-bottom: none;"><h6> Summe inklusive MwSt. in der gesetzlichen Höhe </h6> </th>
 					<th style = "border-bottom: none;"><h6> &nbsp; </h6> </th>
-					<th style = "border-bottom: none;" align="right"><h6><?php echo $proposal_view['MyHouse']['price']+$summed_extras;?> €</h6></th>
+					<th style = "border-bottom: none;" align="right"><h6><?php echo $proposal_view['MyHouse']['price']+$summed_extras+$enlagment_price;?> €</h6></th>
 				</tr>
 			</table>
 			
@@ -1426,7 +1439,7 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	<?php } ?>
 	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
 	
-	<!-------------------------------------- Sonderausstattungen START -------------------------------------->
+	<!-------------------------------------- Sonderausstattungen Coverpage START -------------------------------------->
 	<div class="row">
 		<h2 style = "text-align: center;">
 		<br/>
@@ -1447,7 +1460,7 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	
 	
 	<pagebreak  />
-	<!-------------------------------------- Sonderausstattungen END -------------------------------------->	
+	<!-------------------------------------- Sonderausstattungen Coverpage END -------------------------------------->	
 	
 	
 	<div class="row">
