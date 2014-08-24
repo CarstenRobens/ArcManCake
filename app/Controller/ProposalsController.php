@@ -376,9 +376,9 @@ class ProposalsController extends AppController{
         $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
             		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
     	$z = $this->Proposal->MyBoughtExtra->find('all',array(
-    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false , 'MyExtra.size_dependent_flag'=>'< 1')));
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false , 'MyExtra.size_dependent_flag <'=>' 1')));
 		$zenlarge = $this->Proposal->MyBoughtExtra->find('all',array(
-    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false, 'MyExtra.size_dependent_flag'=>'> 0')));
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false, 'MyExtra.size_dependent_flag >'=>' 0')));
     	$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
     			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
     	

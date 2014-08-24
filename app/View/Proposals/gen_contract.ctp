@@ -10,7 +10,6 @@ foreach ($normal_house_pictures_view as $x){
 		$enlagment_price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 		
 	}
-	debug($bought_enlagement);
 ?>
 	<!-------------------------------------- First Page START -------------------------------------->
 
@@ -1385,10 +1384,6 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 		</div>
 	</div>
 
-
-
-
-	
 	<pagebreak  />
 	<!-------------------------------------- Vertragsgegenstand END -------------------------------------->
 	
@@ -1439,6 +1434,205 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	<?php } ?>
 	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
 	
+	
+	<!-------------------------------------- Hausvergrößerung und Verkleinerung Coverpage START -------------------------------------->
+	<div class="row">
+		<h2 style = "text-align: center;">
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/><?php echo __('Hausvergrößerung und Verkleinerung'); ?></h2>
+		<h3 style = "text-align: center;">
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?></h3>
+		
+	</div>
+	<pagebreak  />
+	<!-------------------------------------- Hausvergrößerung und Verkleinerung Coverpage END -------------------------------------->	
+	
+	
+	<!-------------------------------------- Hausvergrößerung und Verkleinerung START -------------------------------------->
+	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php echo $proposal_view['MyUser']['name'].' '.$proposal_view['MyUser']['surname'];?><?php if(!empty($proposal_view['MyCustomer']['2nd_name'])) echo ', '.$proposal_view['MyCustomer']['2nd_name'].' '.$proposal_view['MyCustomer']['2nd_surname'];?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Haustyp</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $date = date('d-m-Y');?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vertragsdatum</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	
+	<div class="row">
+		<div style="padding: 10px">
+		
+		
+		<h6>	
+		<p style="text-align: justify;">  
+		Ihr Hauses inklusive aller gewählten Sonderausstattungen wird gemäß nachstehender Skizze
+in seinen Außenabmessungen individuell angepasst, sowie entsprechend der Bau- und
+Leistungsbeschreibung ausgeführt. Der gewählte Energiestandard wird beibehalten. Die sich
+aus der „Hausverlängerung-Hausverkürzung“ ergebene Wohnfläche Ihres Hauses ist dabei nur
+ein Richtwert, Abweichungen sind möglich. Wenn vorhanden, ist die Richtung der First, die
+Größe des Carports und Wintergartens stets einzuhalten. Alle erforderlichen Planungskosten
+sind enthalten.
+		<p style="clear: both;">  </p>
+		
+		</p>
+		</h6>	
+		</div>	
+	</div>
+	
+	<div class="row" style="padding: 10px">
+		<h6><?php echo 'Vergrößerung des Grundrisses um: ' .$enlagment['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>'; ?>
+		<br/></h6>
+		
+	</div>
+	
+	
+	<div class="row" style="padding: 10px">
+		<h6><?php echo 'Preis: ' . $enlagment_price.' €'; ?>
+		<br/></h6>
+		
+	</div>
+	
+	<div class="row" style="padding: 10px">
+		<h6>Zusätzliche Anmerkungen:
+		<br/>
+		<?php if(!empty($enlagment['MyBoughtExtra']['comment'])) echo $enlagment['MyBoughtExtra']['comment'];?>
+		</h6>
+		
+	</div>
+	
+	
+	
+	<div class="row" style="padding: 10px">
+		<h6><?php echo __('Mit Ihrer Unterschrift bestätigen Sie die Richtigkeit der hier angegebenen Maße.'); ?>
+		<br/></h6>
+		
+	</div>
+	
+	
+	<div class="row" style="padding: 10px">
+		<h5><?php echo __('Von dem vor beschriebenen Vertragsinhalt habe/n ich/wir Kenntnis genommen.'); ?>
+		<br/></h5>
+		
+	</div>
+	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $date = date('d-m-Y');?></h6> </td>
+				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Ehepartner / Mitauftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vermittler</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	<pagebreak  />
+	<!-------------------------------------- Hausvergrößerung und Verkleinerung END -------------------------------------->	
+	
+	
+	
+	
+	
+	
 	<!-------------------------------------- Sonderausstattungen Coverpage START -------------------------------------->
 	<div class="row">
 		<h2 style = "text-align: center;">
@@ -1457,11 +1651,12 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 		<br/>(Mehrleistungen gegenüber Grundtyp gemäß Bauleistungsbeschreibung)</h3>
 		
 	</div>
-	
-	
 	<pagebreak  />
 	<!-------------------------------------- Sonderausstattungen Coverpage END -------------------------------------->	
 	
+	<!-------------------------------------- Sonderausstattungen Coverpage START -------------------------------------->
+	
+	<!-------------------------------------- Sonderausstattungen Coverpage END -------------------------------------->	
 	
 	<div class="row">
 		<div class="panel panel-default">
