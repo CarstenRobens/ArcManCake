@@ -245,11 +245,13 @@ class ExtrasController extends AppController{
     	if (!$proposal_id) {
     		throw new NotFoundException(__('Invalid proposal'));
     	}
-    
+    	
     	
     	$x['Extra']['name']=__('Enlarge house');
     	$x['Extra']['description']=__('Enlargement of the house by ').$this->request->data['enlargement'].__(' m<sup>2</sup> per floor.');
-    	$x['Extra']['default_price']=$this->request->data['default_price'];
+    	$x['Extra']['default_priceA']=$this->request->data['default_price'];
+    	$x['Extra']['default_priceB']=$this->request->data['default_price'];
+    	$x['Extra']['default_priceC']=$this->request->data['default_price'];
     	$x['Extra']['size_dependent_flag']=$this->request->data['enlargement'];
     	$x['Extra']['bool_custom']=1;
     	$x['Extra']['bool_garage']=0;
