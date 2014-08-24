@@ -249,9 +249,10 @@ class ExtrasController extends AppController{
     	
     	$x['Extra']['name']=__('Enlarge house');
     	$x['Extra']['description']=__('Enlargement of the house by ').$this->request->data['enlargement'].__(' m<sup>2</sup> per floor.');
-    	$x['Extra']['default_priceA']=$this->request->data['default_price'];
-    	$x['Extra']['default_priceB']=$this->request->data['default_price'];
-    	$x['Extra']['default_priceC']=$this->request->data['default_price'];
+    	$price=Configure::read('price_enlargement');
+    	$x['Extra']['default_priceA']=$pice;
+    	$x['Extra']['default_priceB']=$pice;
+    	$x['Extra']['default_priceC']=$pice;
     	$x['Extra']['size_dependent_flag']=$this->request->data['enlargement'];
     	$x['Extra']['bool_custom']=1;
     	$x['Extra']['bool_garage']=0;
@@ -269,4 +270,42 @@ class ExtrasController extends AppController{
     	}
     }
   	
+    public function add_shrink_extra(){
+    	/**
+    	 * This action is part of an API to create the custom extra shrink_house in the DB using ajax.
+    	 * It receive via POST all the relevant information.
+    	 * It creates a JSON view with a success message.
+    	 *
+    	 */
+    
+    	$proposal_id=$this->request->data['proposal_id'];
+    
+    	if (!$proposal_id) {
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
+    	 
+    	 
+    	$x['Extra']['name']=__('Shrink house');
+    	$x['Extra']['description']=__('Shrinking of the house by ').$this->request->data['enlargement'].__(' m<sup>2</sup> per floor.');
+    	$price=Configure::read('price_shrinking');
+    	$x['Extra']['default_priceA']=$pice;
+    	$x['Extra']['default_priceB']=$pice;
+    	$x['Extra']['default_priceC']=$pice;
+    	$x['Extra']['size_dependent_flag']=$this->request->data['shrinking'];
+    	$x['Extra']['bool_custom']=1;
+    	$x['Extra']['bool_garage']=0;
+    	$x['Extra']['bool_external']=0;
+    	$x['Extra']['category_id']=1;
+    	$x['Extra']['user_id']=$this->Auth->user('id');
+    
+    	if ($this->Extra->save($x)) {
+    		$this->Extra->MyBoughtExtra->add_default_extra($proposal_id,$this->Extra->getLastInsertId());
+    		$this->set('confirmation',__('Shrinking added'));
+    		$this->set('_serialize',array('confirmation'));
+    	}else{
+    		$this->set('confirmation',__('Unable to update your proposal.'));
+    		$this->set('_serialize',array('confirmation'));
+    	}
+    }
+    
 }

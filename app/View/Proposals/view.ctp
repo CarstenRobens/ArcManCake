@@ -322,7 +322,8 @@ foreach ($normal_house_pictures_view as $x){
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span></a>
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> </span> <?php echo __('Custom'); ?></a>
 		<?php if($enlargement==0){?>
-			<a class="btn btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
+			<a class="btn btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-resize-full"> </span> <?php echo __('Enlarge house'); ?></a>
+			<a class="btn btn-success" id="launch_shrink_house" href=# data-toggle="modal" data-target="#shinkModal"><span class="glyphicon glyphicon-resize-small"> </span> <?php echo __('Shrink house'); ?></a>
 		<?php }?>
 	</div>
 	
@@ -627,7 +628,7 @@ foreach ($normal_house_pictures_view as $x){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h3 class="modal-title" ><?php echo __('House enlargement:')?></h3>
+        <h3 class="modal-title" ><?php echo __('House enlargement per floor:')?></h3>
       </div>
       <div class="modal-body">
       
@@ -641,6 +642,29 @@ foreach ($normal_house_pictures_view as $x){
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button id="save_enlarge" type="button" class="btn btn-success">Enlarge</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-----Shrink------>
+<div class="modal fade" id="shrinkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" ><?php echo __('House shrinking per floor:')?></h3>
+      </div>
+      <div class="modal-body">
+      
+      <strong><?php echo __('Shrinking (in  m<sup>2</sup>):');?></strong> 
+      <textarea id="text_shrink" rows="1">10</textarea>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="save_shrink" type="button" class="btn btn-success">Enlarge</button>
       </div>
     </div>
   </div>
@@ -686,12 +710,27 @@ foreach ($normal_house_pictures_view as $x){
 <script>
 $("#save_enlarge").click(function(){
 	var enlargement=parseInt($("#text_enlarge").val())
-	var price = parseInt($("#text_enlarge_price").val())
 	
-	var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , default_price:price, enlargement:enlargement}
+	var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , enlargement:enlargement}
 			
 	$.ajax({
 		url: "<?php echo $this->Html->url(array('controller'=>'Extras','action'=>'add_enlarge_extra')); ?>.json",
+		type: "POST",
+		data: formData,
+		success: function(response) {
+			alert(response.confirmation)
+			location.reload()
+		}
+	});
+})
+
+$("#save_shrink").click(function(){
+	var shrinking=parseInt($("#text_shrink").val())
+	
+	var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , shrinking:shrinking}
+			
+	$.ajax({
+		url: "<?php echo $this->Html->url(array('controller'=>'Extras','action'=>'add_shrink_extra')); ?>.json",
 		type: "POST",
 		data: formData,
 		success: function(response) {

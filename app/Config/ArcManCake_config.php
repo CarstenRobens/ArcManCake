@@ -18,4 +18,7 @@ $config['HousePictureType'][5] = __('Floorplan: Side view');
 $config['HouseType'][1] = __('A');
 $config['HouseType'][2] = __('B');
 $config['HouseType'][3] = __('C');
+
+$config['price_enlargement'] = 999;
+$config['price_shrinking'] = -333;
 ?>
