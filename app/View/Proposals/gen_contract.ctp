@@ -1,6 +1,9 @@
 <?php 
-
-?>
+foreach ($normal_house_pictures_view as $x){
+	if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
+		$default_picture=$x['MyHousePicture'];
+	}
+}?>
 	<!-------------------------------------- First Page START -------------------------------------->
 
 	<div class="row">
@@ -12,6 +15,27 @@
 		
 	</div>
 	
+	<div class="row">
+		<h2 style = "text-align: center;">
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/><?php echo __('Bauwerkvertrag für Ihr'); ?>
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?></h2>
+		
+	</div>
+	
+	<div class="row">
+		<div style="width: 175px;float:left;">
+		<p style="clear: both;">  </p>
+		</div>
+		<div style="width: 400px;float:left;">
+			<?php echo $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
+		</div>
+		
+	</div>
 	
 	<pagebreak  />
 	<!-------------------------------------- First Page END -------------------------------------->
@@ -1350,6 +1374,51 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	
 	<pagebreak  />
 	<!-------------------------------------- Vertragsgegenstand END -------------------------------------->
+	
+	<!-------------------------------------- Grundrisse & Ansichten Coverpage -------------------------------------->
+	<div class="row">
+		<h2 style = "text-align: center;">
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/><?php echo __('Grundrisse & Ansichten'); ?></h2>
+		<h3 style = "text-align: center;">
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?></h3>
+		
+	</div>
+	
+	
+	<pagebreak  />
+	
+	<!-------------------------------------- Grundrisse & Ansichten START -------------------------------------->
+	
+	<?php 
+	foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
+		<div class="row">
+			<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
+			<?php 
+			echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
+		</div>
+		<pagebreak  />
+	<?php }
+	foreach ($basement_house_pictures_view as $key=>$x){?>
+		<div class="row">
+			<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
+			<?php
+			echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
+		</div>
+		<pagebreak  />
+	<?php } ?>
+	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
+	
+	
 	
 	
 	<div class="row">
