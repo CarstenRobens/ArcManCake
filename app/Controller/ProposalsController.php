@@ -394,6 +394,7 @@ class ProposalsController extends AppController{
     	// initializing mPDF
     	$this->Mpdf->init();
     	
+		
   
     	$this->Mpdf->SetHTMLFooter('
     			<table width="100%" ><tr>
@@ -407,7 +408,7 @@ class ProposalsController extends AppController{
     	$this->Mpdf->setFilename($filename);
     
     	// setting output to I, D, F, S
-    	$this->Mpdf->setOutput('F');
+    	$this->Mpdf->setOutput('I');
     
     	// you can call any mPDF method via component, for example:
     	$this->Mpdf->SetWatermarkText("Draft");
