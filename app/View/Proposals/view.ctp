@@ -2,7 +2,13 @@
 $enlargement=0;
 foreach($bought_extras_view as $index=>$x){
 	if($x['MyExtra']['size_dependent_flag']>0){
-		$enlargement=$x['MyExtra']['size_dependent_flag'];
+		if($x['MyBoughtExtra']['price']>0){
+			$direction=1;
+		}else{
+			$direction=-1;
+		}
+		$enlargement=$direction*$x['MyExtra']['size_dependent_flag'];
+		break;
 	}
 }
 ?>
@@ -126,7 +132,9 @@ foreach ($normal_house_pictures_view as $x){
 				<div class="col-xs-4"> <?php echo __('Size:'); ?> </div>  
 				<div class="col-xs-8"> 
 					<?php if($enlargement>0){
-						echo $proposal_view['MyHouse']['size'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' floors.').__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+						echo $proposal_view['MyHouse']['size'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+					}elseif($enlargement<0){
+						echo $proposal_view['MyHouse']['size'].' - '.-1*$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
 					}else{
 						echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
 					}?>
@@ -302,6 +310,9 @@ foreach ($normal_house_pictures_view as $x){
 			<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
 			<p> <?php echo '<strong>'.__('Comment:').' </strong>'.$x['MyBoughtExtra']['comment']; ?> </p>
 			<?php }?>
+			<?php if($x['MyBoughtExtra']['factor']!=1){ ?>
+			<p> <?php echo __('Units:').' '.$x['MyBoughtExtra']['factor']; ?> </p>
+			<?php }?>
 		</div>
 		
 		<?php if (!empty($x['MyExtra']['picture'])){ ?>
@@ -323,7 +334,7 @@ foreach ($normal_house_pictures_view as $x){
 		<a class="btn btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> </span> <?php echo __('Custom'); ?></a>
 		<?php if($enlargement==0){?>
 			<a class="btn btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-resize-full"> </span> <?php echo __('Enlarge house'); ?></a>
-			<a class="btn btn-success" id="launch_shrink_house" href=# data-toggle="modal" data-target="#shinkModal"><span class="glyphicon glyphicon-resize-small"> </span> <?php echo __('Shrink house'); ?></a>
+			<a class="btn btn-success" id="launch_shrink_house" href=# data-toggle="modal" data-target="#shrinkModal"><span class="glyphicon glyphicon-resize-small"> </span> <?php echo __('Shrink house'); ?></a>
 		<?php }?>
 	</div>
 	
@@ -627,21 +638,19 @@ foreach ($normal_house_pictures_view as $x){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo __('Close');?></span></button>
         <h3 class="modal-title" ><?php echo __('House enlargement per floor:')?></h3>
       </div>
       <div class="modal-body">
       
-      <strong><?php echo __('Enlargement (in  m<sup>2</sup>):');?></strong> 
+      <strong><?php echo __('Enlargement (in  m<sup>2</sup>/floor):');?></strong> 
       <textarea id="text_enlarge" rows="1">10</textarea>
       
-      <strong><?php echo __('Price (in € / m<sup>2</sup>):');?></strong> 
-      <textarea id="text_enlarge_price" rows="1">990</textarea>
       
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button id="save_enlarge" type="button" class="btn btn-success">Enlarge</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __('Close');?></button>
+        <button id="save_enlarge" type="button" class="btn btn-success"><?php echo __('Enlarge');?></button>
       </div>
     </div>
   </div>
@@ -653,18 +662,18 @@ foreach ($normal_house_pictures_view as $x){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo __('Close');?></span></button>
         <h3 class="modal-title" ><?php echo __('House shrinking per floor:')?></h3>
       </div>
       <div class="modal-body">
       
-      <strong><?php echo __('Shrinking (in  m<sup>2</sup>):');?></strong> 
+      <strong><?php echo __('Shrinking (in  m<sup>2</sup>/floor):');?></strong> 
       <textarea id="text_shrink" rows="1">10</textarea>
       
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button id="save_shrink" type="button" class="btn btn-success">Enlarge</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __('Close');?></button>
+        <button id="save_shrink" type="button" class="btn btn-success"><?php echo __('Shrink');?></button>
       </div>
     </div>
   </div>

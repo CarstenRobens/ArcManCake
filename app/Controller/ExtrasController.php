@@ -250,9 +250,9 @@ class ExtrasController extends AppController{
     	$x['Extra']['name']=__('Enlarge house');
     	$x['Extra']['description']=__('Enlargement of the house by ').$this->request->data['enlargement'].__(' m<sup>2</sup> per floor.');
     	$price=Configure::read('price_enlargement');
-    	$x['Extra']['default_priceA']=$pice;
-    	$x['Extra']['default_priceB']=$pice;
-    	$x['Extra']['default_priceC']=$pice;
+    	$x['Extra']['default_priceA']=$price;
+    	$x['Extra']['default_priceB']=$price;
+    	$x['Extra']['default_priceC']=$price;
     	$x['Extra']['size_dependent_flag']=$this->request->data['enlargement'];
     	$x['Extra']['bool_custom']=1;
     	$x['Extra']['bool_garage']=0;
@@ -286,11 +286,11 @@ class ExtrasController extends AppController{
     	 
     	 
     	$x['Extra']['name']=__('Shrink house');
-    	$x['Extra']['description']=__('Shrinking of the house by ').$this->request->data['enlargement'].__(' m<sup>2</sup> per floor.');
+    	$x['Extra']['description']=__('Shrinking of the house by ').$this->request->data['shrinking'].__(' m<sup>2</sup> per floor.');
     	$price=Configure::read('price_shrinking');
-    	$x['Extra']['default_priceA']=$pice;
-    	$x['Extra']['default_priceB']=$pice;
-    	$x['Extra']['default_priceC']=$pice;
+    	$x['Extra']['default_priceA']=$price;
+    	$x['Extra']['default_priceB']=$price;
+    	$x['Extra']['default_priceC']=$price;
     	$x['Extra']['size_dependent_flag']=$this->request->data['shrinking'];
     	$x['Extra']['bool_custom']=1;
     	$x['Extra']['bool_garage']=0;
