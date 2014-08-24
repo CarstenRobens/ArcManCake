@@ -1,6 +1,6 @@
 
 
-<div class="col-md-8 content-left">
+<div class="col-md-8">
 
 <div class="row">
 	<br>
@@ -104,9 +104,9 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 
 </div>
 
-<div class="col-md-4 content-right">
+<div class="col-md-4" style="padding-left:50px;">
 
-<div class="row" align="right">
+<div class="row" >
 	<br> 
 	<h3> <?php echo __('Next Appointments'); ?></h3>  <br>
 </div>
