@@ -2597,11 +2597,11 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 								<?php echo $proposal_view['MyCustomer']['zipcode'].' '.$proposal_view['MyUser']['city'];?> </h6> </td>						
 					</tr>
 					<tr>
-						<td > <h6>ja/nein </h6> </td>
+						<td > <h6>ja / nein </h6> </td>
 						<td > <h6>Eine Kopie des Personalausweises liegt vor </h6> </td>						
 					</tr>
 					<tr>
-						<td > <h6>ja/nein </h6> </td>
+						<td > <h6>ja / nein </h6> </td>
 						<td > <h6>Politisch exponierte Person </h6> </td>						
 					</tr>
 					
