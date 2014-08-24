@@ -17,6 +17,8 @@ class ProposalsController extends AppController{
         )
     );
 	
+
+	
 	public function isAuthorized($logged_user) {
 		
 		if ($this->action==='index'){
@@ -367,7 +369,9 @@ class ProposalsController extends AppController{
     	if(!$id){
     		throw new NotFoundException(__('Invalid proposal'));
     	}
+		
     	
+		
     	$x = $this->Proposal->findById($id);
     	$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
 				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>0)));
@@ -375,8 +379,14 @@ class ProposalsController extends AppController{
             		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>-1)));
         $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
             		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
+					
+					
+		$order = array("MyExtra.category_id" => "asc", "MyExtra.name" => "asc");
+		
     	$z = $this->Proposal->MyBoughtExtra->find('all',array(
-    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false , 'MyExtra.size_dependent_flag <'=>' 1')));
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false , 'MyExtra.size_dependent_flag <'=>' 1'),
+				'order'=>$order,
+				'recursive'=>2));
 		$zenlarge = $this->Proposal->MyBoughtExtra->find('all',array(
     			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false, 'MyExtra.size_dependent_flag >'=>' 0')));
     	$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
@@ -417,7 +427,7 @@ class ProposalsController extends AppController{
     	$this->Mpdf->setFilename($filename);
     
     	// setting output to I, D, F, S
-    	$this->Mpdf->setOutput('I');
+    	$this->Mpdf->setOutput('F');
     
     	// you can call any mPDF method via component, for example:
     	$this->Mpdf->SetWatermarkText("Draft");

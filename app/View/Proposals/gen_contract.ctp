@@ -1466,7 +1466,7 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php echo $proposal_view['MyUser']['name'].' '.$proposal_view['MyUser']['surname'];?><?php if(!empty($proposal_view['MyCustomer']['2nd_name'])) echo ', '.$proposal_view['MyCustomer']['2nd_name'].' '.$proposal_view['MyCustomer']['2nd_surname'];?></h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?><?php if(!empty($proposal_view['MyCustomer']['2nd_name'])) echo ', '.$proposal_view['MyCustomer']['2nd_name'].' '.$proposal_view['MyCustomer']['2nd_surname'];?></h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Auftraggeber</td>		
@@ -1654,179 +1654,1072 @@ sind enthalten.
 	<pagebreak  />
 	<!-------------------------------------- Sonderausstattungen Coverpage END -------------------------------------->	
 	
-	<!-------------------------------------- Sonderausstattungen Coverpage START -------------------------------------->
+	<!-------------------------------------- Sonderausstattungen START -------------------------------------->
+
+	<div class="row">
+		<div class="col-md-12">
+		<?php $idx = 0;
+		 $last_cat_id =-1;
+			foreach($bought_extras_view as $index=>$x) { 
+			
+			$idx = $idx+1;?>
+			
+			<?php if ($last_cat_id != $x['MyExtra']['category_id']){ 
+			$last_cat_id = $x['MyExtra']['category_id'];?>
+			<div class="row" style="padding: 10px;">
+				<div class="row">
+					<h4>
+						<?php echo 'Kategorie: ' . $x['MyExtra']['MyCategory']['name']; ?>
+					</h4>
+				</div>
+			</div>
+			
+			
+			<?php }?>
+			
+			<div class="row" style="padding: 10px;">
+				<div class="row">
+					<h5>
+						<?php echo $idx.'. '; ?>
+						<?php if ($x['MyExtra']['bool_custom']){ echo 'Kundenspezifische Sonderausstattung:';}?> 
+						<?php echo $x['MyExtra']['name']; ?>
+					</h5>
+				</div>
+				
+				
+				<div class="row">
+					<h6>
+					<div style="width:80%;float:left; text-align: justify; ">
+					<?php if (!empty($x['MyExtra']['picture'])){ ?>
+						<div style="width:30%;float:left;padding: 10px;">
+						<?php echo $this->Html->image('uploads/extras/'.$x['MyExtra']['picture'], array('class' => 'featurette-image img-responsive')); ?> 
+						</div>	
+					<?php } ?>
+					
+						<p><?php echo $x['MyExtra']['description']; ?></p> 
+						<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
+						<p> <?php echo 'Zusätzliche Anmerkungen: '.$x['MyBoughtExtra']['comment']; ?> </p>
+						<?php }?>
+						<?php if($x['MyBoughtExtra']['factor']>1){ ?>
+						<p> <?php echo 'Anzahl: '.$x['MyBoughtExtra']['factor']; ?> </p>
+						<?php }?>
+					</div>	
+					</h6>
+				</div>
+				
+				<div class="row" style="text-align: right">
+					<h5>
+						<?php echo 'Preis: '; ?>
+						<?php
+						if ($x['MyExtra']['size_dependent_flag']==-2){ 
+							echo ($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+						}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
+							echo ($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+						}elseif($x['MyExtra']['size_dependent_flag']>0){
+							echo ($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'].' €';
+						}else{
+							echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+						}
+						?>
+					</h5>
+				</div>
+			</div>
+		<?php } ?>
+		</div>
+	</div>
 	
-	<!-------------------------------------- Sonderausstattungen Coverpage END -------------------------------------->	
+	<div class="row" style="padding-top: 50px">
+		
+		
+		<div  style="text-align: right">
+		<h4> Summe Sonderausstattung: <?php echo $summed_extras;?> €</h4>
+		</div>
+		
+		
+	</div>
+	
+	<div class="row" style="padding: 10px">
+		<h5><?php echo __('Von dem vor beschriebenen Vertragsinhalt habe/n ich/wir Kenntnis genommen.'); ?>
+		<br/></h5>
+		
+	</div>
+	
+	
+	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $date = date('d-m-Y');?></h6> </td>
+				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Ehepartner / Mitauftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vermittler</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	
+	
+	<pagebreak  />
+	<!-------------------------------------- Sonderausstattungen END -------------------------------------->	
+	
+	
+	<!-------------------------------------- Verbraucherbürgschaft START -------------------------------------->	
+	
+	<div class="row" style="width: 100%;">
+		<?php echo $this->Html->image('addInfoContract/Verbraucher_1.png', array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
+	</div>
+	<div class="row" style="width: 100%;">
+		<?php echo $this->Html->image('addInfoContract/Verbraucher_2.png', array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
+	</div>
+	
+	<pagebreak  />
+	<!-------------------------------------- Verbraucherbürgschaft END -------------------------------------->
+	
+	
+	
+	
+	<!-------------------------------------- Rücktrittsvereinbarung START -------------------------------------->	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?><?php if(!empty($proposal_view['MyCustomer']['2nd_name'])) echo ', '.$proposal_view['MyCustomer']['2nd_name'].' '.$proposal_view['MyCustomer']['2nd_surname'];?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Haustyp</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $date = date('d-m-Y');?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vertragsdatum</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	
+	<div class="row" style="padding: 10px; text-align: justify;">
+		<h5> Rücktrittsvereinbarung </h5>
+		<h6>
+		Der Auftraggeber ist berechtigt, nach Maßgabe der nachfolgenden Bestimmungen vom<br>
+		Bauwerkvertrag zurückzutreten:<br>
+		<br>
+		[ ] Finanzierung<br>
+		[ ] öffentliche Mittel<br>
+		[ ] Grundstück<br>
+		<br>
+		Die Erklärung zur Ausübung des Rücktrittsrechtes bedarf zu Ihrer Wirksamkeit der Schriftform.<br>
+		Der Auftraggeber wurde darauf hingewiesen, dass die Pläne und sonstigen Unterlagen von
+		der Town & Country Haus Lizenzgeber GmbH projektiert und entwickelt wurden und der
+		Auftraggeber bei Ausübung des Rücktrittsrechtes nach diesen Plänen und Unterlagen nicht
+		bauen darf. Bei einer schuldhaften Zuwiderhandlung verpflichtet sich der Auftraggeber, einen
+		pauschalen Schadensersatz für die Planung und die Statik in Höhe von EUR 7.500,00 an den
+		Auftragnehmer zu leisten. Dem Auftragnehmer bleibt es unbenommen, nachzuweisen, dass
+		ein Schaden nicht oder nicht in dieser Höhe angefallen ist.<br>
+		Das Rücktrittsrecht erlischt, sobald der jeweilige Rücktrittsgrund wegfällt. Für weitere
+		Einzelheiten wird auf die Ausführung zum jeweiligen Rücktrittsgrund verwiesen.
+		<br/></h6>
+		
+		<h5> Finanzierung </h5>
+		<h6>
+		<p style="text-align: justify;">  
+		<ol>
+		
+			<li>
+				Der Auftraggeber ist berechtigt, nach Maßgabe der nachfolgenden Bestimmungen vom
+Bauwerkvertrag zurückzutreten, wenn für ihn nicht die Möglichkeit besteht, ein
+Baufinanzierungsdarlehen für die Durchführung des Bauwerkvertrages zu erhalten.
+			</li>
+			
+			<li>
+				<br>
+				Wird für die Finanzierung eine Bestätigung des Sachverständigen zum Antrag
+				"Energieeffizient Bauen" (KfW-Förderprogrammnummer 153) erforderlich, ist eine
+				Aufwandsentschädigung in Höhe von EUR 200,-- an den Auftragnehmer zu entrichten.
+				Im Fall der Realisierung des Bauvorhabens werden diese EUR 200,-- mit dem Werklohn
+				verrechnet.
+			</li>
+			
+			<li>
+				<br>
+				Bei einer Notwendigkeit der Erstellung eines Baugesuchs für den Auftraggeber ist eine
+Aufwandsentschädigung in Höhe von EUR 4.000,-- an den Auftragnehmer zu entrichten.
+Im Fall der Realisierung des Bauvorhabens werden diese EUR 4.000,-- mit dem
+Werklohn verrechnet. Dem Auftraggeber bleibt der Nachweis unbenommen, dass ein
+Aufwand überhaupt nicht oder in dieser Höhe angefallen ist.
+			</li>
+			
+			<li>
+				<br>
+				Das Rücktrittsrecht besteht nur, wenn feststeht, dass das vom Auftraggeber für die
+Errichtung des bestellten Bauwerks benötigte Baufinanzierungsdarlehen und/ oder
+Fördermitteldarlehen nicht gewährt werden kann. Der Auftraggeber verpflichtet sich
+insoweit, ein Baufinanzierungsdarlehen in angemessener Höhe bei einem anerkannten
+Kreditinstitut seiner Wahl zu beantragen. Erteilt das ausgewählte Kreditinstitut eine
+Kreditabsage, ist der Auftraggeber verpflichtet, einen Antrag auf Gewährung der
+benötigten Baufinanzierung bei anderen Kreditinstituten zu stellen. Ferner hat der
+Auftraggeber dem Auftragnehmer im Falle der Erteilung einer ersten Kreditabsage
+Gelegenheit zu geben, die Finanzierungsmöglichkeiten durch den Finanzierungsservice
+des Auftragnehmers zu prüfen und dem Auftraggeber ein Baufinanzierungsdarlehen in
+angemessener Höhe und zu marktüblichen Konditionen bei einem anerkannten
+Kreditinstitut zu vermitteln. Der Auftraggeber ist insoweit verpflichtet, dem
+Finanzierungsservice vom Auftragnehmer vollständig und richtig Auskunft über seine
+Vermögensverhältnisse zu geben und alles zu tun, um eine positive Kreditentscheidung
+zu ermöglichen.
+			</li>
+			
+			<li>
+				<br>
+				Liegen mindestens drei Kreditabsagen anerkannter Kreditinstitute vor und ist auch der
+Finanzierungsservice des Auftragnehmers trotz vollständiger Auskunft über die
+Vermögensverhältnisses des Auftraggebers und dessen Unterstützung nicht in der
+Lage, die Erteilung des benötigten Baufinanzierungsdarlehens zu vermitteln, steht damit
+fest, dass ein Baufinanzierungsdarlehen nicht gewährt werden kann.
+			</li>
+			
+			<li>
+				<br>
+				Der Auftraggeber verpflichtet sich, den Baufinanzierungsantrag bei den Kreditinstituten
+sachgerecht zu stellen und den Kreditinstituten sämtliche für die
+Baufinanzierungsentscheidung erforderlichen Informationen vollständig und richtig zu
+erteilen. Beruht die Kreditabsage eines oder mehrerer Kreditinstitute auf fehlerhafter
+Antragstellung, unvollständigen Angaben des Auftraggebers oder der Nichterfüllung
+sonstiger Mitwirkungspflichten des Auftraggebers, besteht kein Rücktrittsrecht.
+			</li>
+			
+			<li>
+				<br>
+				Tritt der Auftraggeber zu einem Zeitpunkt zurück, in welchem der Auftragnehmer bereits
+das notwendige Baugrundgutachten in Auftrag gegeben hat, zahlt der Auftraggeber dem
+Auftragnehmer für den hierfür entstandenen Aufwand einen Betrag von EUR 1.000,--.
+Dem Auftraggeber bleibt der Nachweis unbenommen, das ein Aufwand überhaupt nicht
+oder nicht in dieser Höhe angefallen ist.
+			</li>
+			
+			<li>
+				<br>
+				Das Rücktrittsrecht erlischt zeitgleich mit der Mitteilung des Kreditinstitutes, dass das
+beantragte Baufinanzierungsdarlehen gewährt wird. Das Rücktrittsrecht erlischt ferner,
+wenn der Auftragnehmer in Abstimmung mit dem Auftraggeber mit der Durchführung
+des vertraglich gebundenen Bauvorhabens (Bautätigkeit) beginnt.
+			</li>
+			
+			<li>
+			
+			</li>
+		</ol>
+		</p>
+		</h6>
+
+		<h5> Öffentliche Mittel </h5>
+		<h6>
+		(bitte ausfüllen)<br>
+		<br>
+		<hr>
+		<br>
+		<hr>
+		<br>
+		<hr>
+		<br/></h6>
+		
+		<h5> Grundstück </h5>
+		<h6>
+		Der Auftraggeber ist berechtigt, vom Bauwerkvertrag zurückzutreten, wenn er binnen 6 Monate
+nach Vertragsabschluss kein Grundstück erwirbt oder für den Erwerb aussucht. Das
+Rücktrittsrecht des Auftraggebers erlischt sechseinhalb Monate nach Vertragsabschluss. Das
+Rücktrittsrecht des Auftraggebers erlischt allerdings schon vor Ablauf dieser Frist, wenn der
+Auftragnehmer auf Wunsch des Auftraggebers einen Bauantrag bzw. die notwendigen
+Planungsleistungen hierfür in Auftrag gegeben hat.<br>
+Hat der Auftraggeber binnen 3 Monaten nach Vertragsabschluss noch kein Grundstück
+erworben oder ausgesucht, ist der Auftragnehmer berechtigt, dem Auftraggeber Grundstücke
+nachzuweisen (Andienungsrecht). Der Auftraggeber verpflichtet sich im Falle des Rücktritts,
+alle nachgewiesenen und von ihm abgelehnten Grundstücke binnen 2 Jahren nach Ausübung
+des Rücktrittsrechts nicht anderweitig zu bebauen. Verstößt der Auftraggeber gegen diese
+Verpflichtung, indem er ein abgelehntes Grundstück binnen vorgenannter Frist anderweitig
+bebaut, so hat der Auftraggeber an den Auftragnehmer eine Pauschale in Höhe von 10 % des
+zum Zeitpunkt des Rücktritts vereinbarten Nettopreises (ohne Mehrwertsteuer) zu zahlen. Dem
+Auftraggeber bleibt es unbenommen, nachzuweisen, dass der im konkreten Fall angemessene
+Betrag wesentlich niedriger ist als die vereinbarte Pauschale von 10%.<br>
+<br>
+Tritt der Auftraggeber zu einem Zeitpunkt zurück, in dem bereits die Baufinanzierung durch
+das finanzierende Kreditinstitut zugesagt wurde und er sich für ein Grundstück, auch ohne es
+zu erwerben, entschieden hatte, ist der Auftraggeber ebenfalls zur Zahlung einer Pauschale
+von 10 % des zum Zeitpunkt des Rücktritts vereinbarten Nettopreises (ohne Mehrwertsteuer)
+verpflichtet. Dem Auftraggeber bleibt es unbenommen, nachzuweisen, dass der im konkreten
+Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale von 10%.
+		</h6>
+		
+		
+	</div>
+	
+
+	
+	
+	<div class="row" style="padding: 10px">
+		<h5><?php echo __('Mit der beschriebenen Rücktrittsvereinbarung sind wir einverstanden.'); ?>
+		<br/></h5>
+		
+	</div>
+	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $date = date('d-m-Y');?></h6> </td>
+				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Ehepartner / Mitauftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vermittler</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	<pagebreak  />
+	<!-------------------------------------- Rücktrittsvereinbarung END -------------------------------------->
+	
+	
+	<!-------------------------------------- Datenschutzerklärung START -------------------------------------->	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?><?php if(!empty($proposal_view['MyCustomer']['2nd_name'])) echo ', '.$proposal_view['MyCustomer']['2nd_name'].' '.$proposal_view['MyCustomer']['2nd_surname'];?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Haustyp</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $date = date('d-m-Y');?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vertragsdatum</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	
+	<div class="row" style="padding: 10px; text-align: justify;">
+		<h6>
+		Ich/wir willige/n ein, dass IZ-Haus GmbH unsere
+		allgemeinen Vertragsdaten in gemeinsamen Datensammlungen führt, soweit dies der
+		ordnungsgemäßen Durchführung unseres Bauvorhabens und des damit zusammenhängenden
+		Sicherheitspaketes dient. Darüber hinaus bin/sind ich/wir damit einverstanden, dass IZ-Haus GmbH
+		 unter Verwendung meiner/unserer persönlichen Daten
+		eine Kundenzufriedenheitsanalyse durchführt und sich hierzu der Europäischen
+		Kommunikationsakademie (EKA e. V.), Hauptstr. 90E, 99820 Hörselberg-Hainich, OT
+		Behringen bedient, die die von mir/uns erhobenen Daten/Angaben speichert, verarbeitet, nutzt
+		und im Hinblick auf die Kundenzufriedenheit an IZ-Haus GmbH übermittelt.<br/>
+		Meine/unsere Einwilligung kann jederzeit gegenüber IZ-Haus GmbH, widerrufen werden.<br/>
+		<br/></h6>
+		
+	</div>
+	
+	
+	
+	<div class="row" style="padding: 10px">
+		<h5><?php echo __('Mit der beschriebenen Datenschutzerklärung sind wir einverstanden.'); ?>
+		<br/></h5>
+		
+	</div>
+	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $date = date('d-m-Y');?></h6> </td>
+				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Ehepartner / Mitauftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vermittler</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	<pagebreak  />
+	<!-------------------------------------- Datenschutzerklärung END -------------------------------------->
+	
+	
+	<!-------------------------------------- Widerrufsbelehrung START -------------------------------------->	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?><?php if(!empty($proposal_view['MyCustomer']['2nd_name'])) echo ', '.$proposal_view['MyCustomer']['2nd_name'].' '.$proposal_view['MyCustomer']['2nd_surname'];?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Haustyp</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td >&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $date = date('d-m-Y');?></h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vertragsdatum</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
 	
 	<div class="row">
 		<div class="panel panel-default">
            	<div class="panel-heading">
-				<strong>Grundstückskosten</strong>
+				<h4> Widerrufsbelehrung </h4>
 			</div>
 			<div class="panel-body">
+			<h5> Widerrufsrecht </h5>
+			<h6> Sie können Ihre Vertragserklärung innerhalb von 14 Tagen ohne Angabe von Gründen in Textform (z. B. Brief,
+			Fax, E-Mail) widerrufen. Die Frist beginnt nach Erhalt dieser Belehrung in Textform, jedoch nicht vor
+			Vertragsschluss und Erfüllung unserer Informationspflichten gemäß Artikel 246 § 2 in Verbindung mit § 1
+			Absatz 1 und 2 EGBGB und nicht, bevor Ihnen auch eine Vertragsurkunde, Ihr schriftlicher Antrag oder eine
+			Abschrift der Vertragsurkunde oder des Antrags zur Verfügung gestellt worden ist. Zur Wahrung der
+			Widerrufsfrist genügt die rechtzeitige Absendung des Widerrufs. Der Widerruf ist zu richten an:
+			IZ-Haus GmbH
+			Jungfernweg 35A
+			41564 Kaarst </h6>
+			<h5> Widerrufsfolgen </h5>
+			<h6> Im Falle eines wirksamen Widerrufs sind die beiderseits empfangenen Leistungen zurückzugewähren und
+			gegebenenfalls gezogene Nutzungen (z. B. Zinsen) herauszugeben. Können Sie uns die empfangene Leistung
+			sowie Nutzungen (z.B. Gebrauchsvorteile) nicht oder teilweise nicht oder nur in verschlechtertem Zustand
+			zurückgewähren bzw. herausgeben, müssen Sie uns insoweit Wertersatz leisten. Dies kann dazu führen, dass
+			Sie die vertraglichen Zahlungserpflichtungen für den Zeitraum bis zum Widerruf gleichwohl erfüllen müssen.
+			Verpflichtungen zur Erstattung von Zahlungen müssen innerhalb von 30 Tagen erfüllt werden. Die Frist beginnt
+			für Sie mit der Absendung Ihrer Widerrufserklärung, für uns mit deren Empfang. </h6>
+			<h5> Besondere Hinweise </h5>
+			<h6> Ihr Widerrufsrecht erlischt vorzeitig, wenn der Vertrag von beiden Seiten auf Ihren ausdrücklichen Wunsch
+			vollständig erfüllt ist, bevor Sie ihr Widerrufsrecht ausgeübt haben.
+			</h6>
+			<h5> Finanzierte Geschäfte </h5>
+			<h6> Wenn Sie diesen Vertrag durch ein Darlehen finanzieren und ihn später widerrufen, sind Sie auch an den
+			Darlehensvertrag nicht mehr gebunden, wenn beide Verträge eine wirtschaftliche Einheit bilden. Dies ist
+			insbesondere anzunehmen, wenn wir gleichzeitig Ihr Darlehensgeber sind oder wenn sich Ihr Darlehensgeber
+			im Hinblick auf die Finanzierung unserer Mitwirkung bedient. Wenn uns das Darlehen bei Wirksamwerden des
+			Widerrufs oder der Rückgabe bereits zugeflossen ist, tritt Ihr Darlehensgeber im Verhältnis zu Ihnen
+			hinsichtlich der Rechtsfolgen des Widerrufs oder der Rückgabe in unsere Rechte und Pflichten aus dem
+			finanzierten Vertrag ein.
+			Wollen Sie eine vertragliche Bindung so weitgehend wie möglich vermeiden, machen Sie von ihrem
+			Widerrufsrecht Gebrauch und widerrufen Sie zudem den Darlehensvertrag, wenn Ihnen auch dafür ein
+			Widerrufsrecht zusteht.
+			</h6>
+			
 			
 
-				<table>
-				
-					<tr>
-						<td width="40%">Grundstückskaufpreis Gem.:</td>
-						<td width="20%" align="right"><?php echo $proposal_view['MyLand']['land_size'];?> m<sup>2</sup></td>
-						<td width="20%" align="right"><?php echo $proposal_view['MyLand']['land_price_per_m2'];?> €/m<sup>2</sup></td>
-						<td width="20%" align="right"><?php echo $subtotal=$proposal_view['MyLand']['land_size']*$proposal_view['MyLand']['land_price_per_m2'];?> €</td>
-						<td> </td>
-					</tr>
-					
-					<tr>
-						<td>
-							Notarkosten<br>
-							Grunderwerbsteuer<br>
-							Maklergebühren
-						</td>
-						<td align="right">
-							<?php echo $proposal_view['MyLand']['notary_cost'].'%';?><br>
-							<?php echo $proposal_view['MyLand']['land_tax'].'%';?><br>
-							<?php echo $proposal_view['MyLand']['land_agent_cost'].'%';?>
-						</td>
-						<td> </td>
-						<td align="right">
-							<?php echo $proposal_view['MyLand']['notary_cost']/100*$subtotal;?> €<br>
-							<?php echo $proposal_view['MyLand']['land_tax']/100*$subtotal;?> €<br>
-							<?php echo $proposal_view['MyLand']['land_agent_cost']/100*$subtotal;?> €
-						</td>
-						<td> </td>
-					</tr>
-					
-					<tr>
-						<td>Erschließungkosten</td>
-						<td align="right"><?php echo $proposal_view['MyLand']['dev_size'];?> m<sup>2</sup></td>
-						<td align="right"><?php echo $proposal_view['MyLand']['dev_cost_per_m2'];?> €/m<sup>2</sup></td>
-						<td align="right"><?php echo $subtotal_dev=$proposal_view['MyLand']['dev_size']*$proposal_view['MyLand']['dev_cost_per_m2'];?> €</td>
-						<td> </td>
-					</tr>
-					
-					<tr>
-						<td>Bauzinsen 0,25%/Monat</td>
-						<td>TODO %</td>
-						<td> </td>
-						<td>TODO €</td>
-						<td> </td>
-					</tr>
-					
-				</table>
-				
-				<table>
-					<tr>
-						<th>Gesamtgrundstücksankauf mit Nebenkosten:</td>
-						<th align="right"><?php echo $total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost'])/100;?> €</td>
-					</tr>
-				</table>
-				
+
 			</div>
 		</div>
 	</div>
 	
-	
-	
-	
-	
+
 	
 	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $date = date('d-m-Y');?></h6> </td>
+				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Ehepartner / Mitauftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vermittler</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	<pagebreak  />
+	<!-------------------------------------- Widerrufsbelehrung END -------------------------------------->
+	
+	
+	
+	
+	<!-------------------------------------- Widerruf Muster START -------------------------------------->	
+	<div class="row" style="padding: 10px; text-align: justify;">
+		<h4 style="text-align: center;">
+			Muster-Widerrufsformular
+		</h4>
+		<h6 >
+		(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und
+		senden Sie es zurück.)<br/>
+		<br/>
+		<br/>
+		An<br/>
+		<br/>
+		IZ-Haus GmbH<br/> 
+		Jungfernweg 35A <br/>
+		41564 Kaarst <br/>
+		Tel.:  02131 / 1333971<br/>
+		Fax: 02131 / 1333973<br/>
+		Mail:zi@tc-architekt.de<br/>
+		<br/>
+		<br/>
+		Hiermit widerrufe(n) ich/wir (*)den von mir/uns (*) abgeschlossenen Vertrag über die
+		Erbringung der folgenden Dienstleistung:<br/>
+		<br/>
+		<hr>
+		<br/>
+		<hr>
+		<br/>
+		<hr>
+		<br/>
+		bestellt am: <br/>
+		<br/>
+		<hr>
+		<br/>
+		Name des/der Verbraucher(s):<br/>
+		<br/>
+		<hr>
+		<br/>
+		Anschrift des/der Verbraucher(s):<br/>
+		<br/>
+		<hr>
+		<br/>
+		<br/>
+		<hr>
+		<br/>
+		<br/>
+		<hr>
+		<br/>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp;</h6> </td>
+				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Unterschrift des/der Verbraucher(s)<br>
+(nur bei Mitteilung auf Papier)</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+<br/>
+(*) Unzutreffendes streichen
+		<br/></h6>
+		
+	</div>
+	<pagebreak  />
+	<!-------------------------------------- Widerruf Muster END -------------------------------------->
+	
+	
+	<!-------------------------------------- ausgehändigt START -------------------------------------->	
+	
+	
+	<div class="row" style="padding: 10px">
+		<h5><?php echo __('Der Vertrag wurde dem /den Auftraggeber/n ausgehändigt.'); ?>
+		<br/></h5>
+		
+	</div>
+	
+	<div class="row">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $date = date('d-m-Y');?></h6> </td>
+				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Ehepartner / Mitauftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vermittler</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+	</div>
+	<pagebreak  />
+	<!-------------------------------------- ausgehändigt END -------------------------------------->
+	
+	
+	
+	<!-------------------------------------- ldentitätsdaten START -------------------------------------->	
+
+	<div class="row" style="padding: 10px; text-align: justify;">
+		<h4 style="text-align: center;">
+			Erfassung der Identitätsdaten des Auftraggebers
+		</h4>
+		
+		<h5>
+			Auftraggeber ist eine natürliche Person
+		</h5>
 		<div class="panel panel-default">
            	<div class="panel-heading">
-				<strong>Haustyp und Sonderwünsche</strong>
+				<h6> Auftraggeber </h6>
 			</div>
 			<div class="panel-body">
-			
-			<table>
+				<table>
 					<tr>
-						<td><?php echo __('Haus ausgebaut'); ?></td>
-						<td> <td>
-						<td align="right"> 
-							<?php $total_extras=$proposal_view['MyHouse']['price']; echo $total_extras.' €'; ?>
-						</td>
-						
+						<td > <h6>Vor- und Zuname </h6> </td>
+						<td > <h6><?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?> </h6> </td>
 					</tr>
-			
-				<?php 
-				foreach ($bought_extras_view as $index=>$x){?>			
 					<tr>
-						<td><?php echo $x['MyExtra']['name']; ?></td>
-						<td> <td>
-						<td align="right"><?php
-						if ($x['MyExtra']['size_dependent_flag']==-2){
-							$price=($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
-						}elseif ($x['MyExtra']['size_dependent_flag']==-1){
-							$price=($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
-						}elseif($x['MyExtra']['size_dependent_flag']>0){
-							$price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
-						}else{
-							$price=$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
-						}
-						echo $price.' €';
-						$total_extras=$total_extras+$price;
-						?></td>
-						
+						<td > <h6>Geburtsort </h6> </td>
+						<td > <h6>&nbsp; </h6> </td>						
 					</tr>
-				
-				<?php }?>
-			</table>
-			<table>
-				<tr>
-					<th>Gesamt Bau- u. Baunebenkosten:</th>
-					<th align="right"><?php echo $total_extras.' €';?></th>
-				</tr>
-			</table>
+					<tr>
+						<td > <h6>Staatsangehörigkeit </h6> </td>
+						<td > <h6>&nbsp; </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>Anschrift <br>
+										<br>
+										<br>
+										<br>
+							  </h6> </td>
+						<td > <h6><?php echo $proposal_view['MyCustomer']['address1'];?> <br>
+								<?php echo $proposal_view['MyCustomer']['zipcode'].' '.$proposal_view['MyUser']['city'];?> </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>ja/nein </h6> </td>
+						<td > <h6>Eine Kopie des Personalausweises liegt vor </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>ja/nein </h6> </td>
+						<td > <h6>Politisch exponierte Person </h6> </td>						
+					</tr>
+					
+					
+				</table>
 			
 			</div>
 		</div>
-	</div>
-	
-	
-	
-	
-	<div class="row">
 		<div class="panel panel-default">
            	<div class="panel-heading">
-				<strong>sonstige Kosten</strong>
+				<h6> Ehepartner / Mitauftraggeber </h6>
 			</div>
 			<div class="panel-body">
-			
-			<table>
-				<?php $total_ext_extras=0; 
-				foreach ($bought_external_extras_view as $index=>$x){?>			
+				<table>
 					<tr>
-						<td><?php echo $x['MyExtra']['name']; ?></td>
-						<td> <td>
-						<td align="right"><?php echo $price_ext=$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor']; ?> €</td>
-						
+						<td > <h6>Vor- und Zuname </h6> </td>
+						<td > <h6> <?php if(!empty($proposal_view['MyCustomer']['2nd_name'])) echo $proposal_view['MyCustomer']['2nd_name'].' '.$proposal_view['MyCustomer']['2nd_surname'];?></h6> </td>
 					</tr>
-				<?php $total_ext_extras=$total_ext_extras+$price_ext; 
-				}?>
-			</table>
-			<table>
-				<tr>
-					<th>Gesamt sonstige Kosten:</th>
-					<th align="right"><?php echo $total_ext_extras;?> €</th>
-				</tr>
-			</table>
-			
+					<tr>
+						<td > <h6>Geburtsort </h6> </td>
+						<td > <h6>&nbsp; </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>Staatsangehörigkeit </h6> </td>
+						<td > <h6>&nbsp; </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>Anschrift <br>
+										<br>
+										<br>
+										<br>
+							  </h6> </td>
+						<td > <h6> &nbsp; </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>ja / nein </h6> </td>
+						<td > <h6>Eine Kopie des Personalausweises liegt vor </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>ja / nein </h6> </td>
+						<td > <h6>Politisch exponierte Person </h6> </td>						
+					</tr>
+					
+					
+				</table>
 			
 			</div>
 		</div>
+	
 	</div>
+	
 	<div class="row">
-		<div class="panel panel-default">
-           	
-			<div class="panel-body">
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
 			<table>
 				<tr>
-					<th>Kalkulierte Gesamtkosten:</th>
-					<th align="right"><?php echo $total_ext_extras+$total_extras+$total_land;?> €</th>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $date = date('d-m-Y');?></h6> </td>
 				</tr>
+				<tr>
+					<td >Ort, Datum<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Auftraggeber</td>		
+				</tr>
+				
+				
 			</table>
-			</div>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Ehepartner / Mitauftraggeber</td>		
+				</tr>
+				
+				
+			</table>
+			
+		</div>
+		<div style="width: 200px;float:left; padding: 10px">
+			<p style="clear: both;">  </p>
+			<table>
+				<tr>
+					<td style = "border-bottom: none;"> <h6>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+				</tr>
+				<tr>
+					<td >&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
+				</tr>
+				<tr >
+					<td style = "border-bottom: none;">Vermittler</td>		
+				</tr>
+				
+				
+			</table>
+			
 		</div>
 	</div>
 	
+	<div class="row" style="padding: 10px; text-align: justify;">
+		<h5>
+			Die Erfassung der Dalen des Auftraggebers (=Identifizterung) ist nach den §§ 3, 4 Geldwaschegesetzt (GwG) vorgeschrieben. Zur Aufzeichnung
+und Aufbewährung der vorgenannten Daten sowie zur Vorlage an die zuständige Behörde im Verdachtsfall sind wir nach § 2, Abs. 1, Nr. 10, §§ 8,
+11 GwG verpflichtet.
+		</h5>
+	</div>
 	
 	
+	<!-------------------------------------- ldentitätsdaten END -------------------------------------->
