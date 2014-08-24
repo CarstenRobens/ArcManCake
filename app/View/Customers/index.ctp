@@ -1,14 +1,6 @@
 
-<style>
-.content-left {
-  border-right: 1px solid #333;
-}
-.content-right {
-  border-left: 1px solid #333;
-}
-</style>
 
-<div class="col-md-9 content-left">
+<div class="col-md-8 content-left">
 
 <div class="row">
 	<br>
@@ -112,15 +104,36 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 
 </div>
 
-<div class="col-md-3 content-right">
+<div class="col-md-4 content-right">
 
+<div class="row" align="right">
+	<br> 
+	<h3> <?php echo __('Next Appointments'); ?></h3>  <br>
+</div>
+
+		<div><div>
 <?php foreach ($upcoming_events as $key=>$event){
-	$date=strtotime($event['MyEvent']['start']);
-	if($key==0 || $date!=strtotime($upcoming_events[$key-1]['MyEvent']['start'])){
-		echo '<h3><strong>'.date('d-M' , $date).': </strong></h3><br>';
-	}
-	echo '('.date('H:i' , $date).') '.$event['EventType']['name'].': '.$event['MyEvent']['title'].'<br>';
-}?>
+	$date=strtotime($event['MyEvent']['start']); 
+	if($key==0 || $date!=strtotime($upcoming_events[$key-1]['MyEvent']['start'])){ ?>
+			</div>
+		</div>
+		<div class="panel panel-success">
+		
+           	<div class="panel-heading">
+				<h3 class="panel-title"><?php echo date('d-M' , $date);?></h3>
+			</div>
+			<div class="panel-body">
+				<strong style="background-color:<?php echo $event['EventType']['color'];?>" > _ </strong>
+				<?php echo ' ('.date('H:i' , $date).') '.$event['EventType']['name'].': ';
+				echo $this->Html->link($event['MyEvent']['title'],array('plugin'=>'full_calendar','controller'=>'Events','action'=>'view',$event['MyEvent']['id']));?><br>
+	<?php }else{ ?>
+				<strong style="background-color:<?php echo $event['EventType']['color'];?>" > _ </strong>
+				<?php echo ' ('.date('H:i' , $date).') '.$event['EventType']['name'].': ';
+				echo $this->Html->link($event['MyEvent']['title'],array('plugin'=>'full_calendar','controller'=>'Events','action'=>'view',$event['MyEvent']['id']));?><br>
+	<?php }
+} ?>
+			</div>
+		</div>
 
 </div>
 
