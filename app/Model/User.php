@@ -25,6 +25,11 @@ class User extends AppModel{
 			'MyProposal' => array(
 					'className' => 'Proposal',
 					'foreignKey' => 'user_id'
+			),
+			'Event' => array(
+					'className' => 'FullCalendar.Event',
+					'foreignKey' => 'user_id',
+					'dependent' => false,
 			)
 	);
 

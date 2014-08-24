@@ -23,37 +23,30 @@ class EventTypesController extends FullCalendarAppController {
 		$this->set('eventTypes', $this->paginate());
 	}
 
-	function view($id = null) {
-		if(!$id) {
-			$this->Session->setFlash(__('Invalid event type', true));
-			$this->redirect(array('action' => 'index'));
-		}
-		$this->set('eventType', $this->EventType->read(null, $id));
-	}
 
 	function add() {
 		if (!empty($this->data)) {
 			$this->EventType->create();
 			if ($this->EventType->save($this->data)) {
-				$this->Session->setFlash(__('The event type has been saved', true));
+				$this->Session->setFlash(__('The categorye has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The event type could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The category could not be saved. Please, try again.', true));
 			}
 		}
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid event type', true));
+			$this->Session->setFlash(__('Invalid category', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->EventType->save($this->data)) {
-				$this->Session->setFlash(__('The event type has been saved', true));
+				$this->Session->setFlash(__('The category has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The event type could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The category could not be saved. Please, try again.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -63,15 +56,16 @@ class EventTypesController extends FullCalendarAppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for event type', true));
+			$this->Session->setFlash(__('Invalid id for category', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->EventType->delete($id)) {
-			$this->Session->setFlash(__('Event type deleted', true));
+			$this->Session->setFlash(__('Category deleted', true));
 			$this->redirect(array('action'=>'index'));
+		}else{
+			$this->Session->setFlash(__('The category was not deleted', true));
+			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Event type was not deleted', true));
-		$this->redirect(array('action' => 'index'));
 	}
 }
 ?>

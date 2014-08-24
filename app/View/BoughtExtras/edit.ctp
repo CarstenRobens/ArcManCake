@@ -7,7 +7,6 @@
 		<div class="PostContent">
 			<div class="PostContentBox">
 				<div class="PostMainContentbox">
-					<?php echo $this->Form->create('BoughtExtra');?>	
 					<legend>
 						<?php echo __('Change the price of: ').$bought_extra['MyExtra']['name'];?>
 					</legend>

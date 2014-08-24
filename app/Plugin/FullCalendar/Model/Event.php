@@ -30,6 +30,10 @@ class Event extends FullCalendarAppModel {
 		'EventType' => array(
 			'className' => 'FullCalendar.EventType',
 			'foreignKey' => 'event_type_id'
+		),
+		'MyUser' => array(
+				'className' => 'User',
+				'foreignKey' => 'user_id'
 		)
 	);
 

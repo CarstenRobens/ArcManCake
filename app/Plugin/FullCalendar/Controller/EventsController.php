@@ -14,13 +14,14 @@ class EventsController extends FullCalendarAppController {
 
 	var $name = 'Events';
 
-        var $paginate = array(
-            'limit' => 15
-        );
+	var $paginate = array(
+		'limit' => 15
+	);
 
-        function index() {
+	function index() {
 		$this->Event->recursive = 1;
 		$this->set('events', $this->paginate());
+		$this->set('list_users_view',$this->Event->MyUser->find('list',array('fields'=>array('id','username'))));
 	}
 
 	function view($id = null) {
@@ -29,12 +30,15 @@ class EventsController extends FullCalendarAppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('event', $this->Event->read(null, $id));
+		
+		$this->set('list_users_view',$this->Event->MyUser->find('list',array('fields'=>array('id','username'))));
 	}
 
 	function add() {
-		if (!empty($this->data)) {
+		if ($this->request->is('post')) {
 			$this->Event->create();
-			if ($this->Event->save($this->data)) {
+			$this->request->data['Event']['user_id']=$this->Auth->user('id');
+			if ($this->Event->save($this->request->data)) {
 				$this->Session->setFlash(__('The event has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -49,16 +53,24 @@ class EventsController extends FullCalendarAppController {
 			$this->Session->setFlash(__('Invalid event', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		if (!empty($this->data)) {
-			if ($this->Event->save($this->data)) {
+		$x = $this->Event->findById($id);
+		if($x['Event']['user_id']!=$this->Auth->user('id')){
+			$this->Session->setFlash(__('This appointment is not yours.'));
+			$this->redirect(array('action' => 'index'));
+		}
+		
+		if ($this->request->is(array('Event','put'))) {
+			$this->Event->id = $id;
+			if ($this->Event->save($this->request->data)) {
 				$this->Session->setFlash(__('The event has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The event could not be saved. Please, try again.', true));
 			}
 		}
-		if (empty($this->data)) {
-			$this->data = $this->Event->read(null, $id);
+		
+		if (!$this->request->data) {
+			$this->request->data=$x;
 		}
 		$this->set('eventTypes', $this->Event->EventType->find('list'));
 	}
@@ -68,6 +80,13 @@ class EventsController extends FullCalendarAppController {
 			$this->Session->setFlash(__('Invalid id for event', true));
 			$this->redirect(array('action'=>'index'));
 		}
+		
+		$x = $this->Event->findById($id);
+		if($x['Event']['user_id']!=$this->Auth->user('id')){
+			$this->Session->setFlash(__('This appointment is not yours.'));
+			$this->redirect(array('action' => 'index'));
+		}
+		
 		if ($this->Event->delete($id)) {
 			$this->Session->setFlash(__('Event deleted', true));
 			$this->redirect(array('action'=>'index'));
