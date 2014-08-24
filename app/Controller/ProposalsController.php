@@ -370,7 +370,11 @@ class ProposalsController extends AppController{
     	
     	$x = $this->Proposal->findById($id);
     	$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
-    			'conditions'=>array('house_id' => $x['Proposal']['house_id'])));
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>0)));
+            $ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>-1)));
+            $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
     	$z = $this->Proposal->MyBoughtExtra->find('all',array(
     			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false)));
     	$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
@@ -381,7 +385,9 @@ class ProposalsController extends AppController{
     	}
     	
     	$this->set('proposal_view',$x);
-    	$this->set('house_pictures_view',$y);
+    	$this->set('normal_house_pictures_view',$y);
+        $this->set('basement_house_pictures_view',$ybase);
+        $this->set('floorplan_house_pictures_view',$yfloor);
     	$this->set('bought_extras_view',$z);
     	$this->set('bought_external_extras_view',$zexternal);
     	

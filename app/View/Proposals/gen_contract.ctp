@@ -23,7 +23,10 @@ foreach ($normal_house_pictures_view as $x){
 		<br/>
 		<br/>
 		<br/><?php echo __('Bauwerkvertrag für Ihr'); ?>
-		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?></h2>
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?>
+		<br/>
+		<br/>
+		</h2>
 		
 	</div>
 	
@@ -31,8 +34,9 @@ foreach ($normal_house_pictures_view as $x){
 		<div style="width: 175px;float:left;">
 		<p style="clear: both;">  </p>
 		</div>
-		<div style="width: 400px;float:left;">
-			<?php echo $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
+		<div style="width: 100%;text-align: center;">
+			<?php 
+			echo $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "style"=>"center", "width"=>"400")); ?>
 		</div>
 		
 	</div>
@@ -1375,7 +1379,7 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	<pagebreak  />
 	<!-------------------------------------- Vertragsgegenstand END -------------------------------------->
 	
-	<!-------------------------------------- Grundrisse & Ansichten Coverpage -------------------------------------->
+	<!-------------------------------------- Grundrisse & Ansichten Coverpage START -------------------------------------->
 	<div class="row">
 		<h2 style = "text-align: center;">
 		<br/>
@@ -1396,29 +1400,54 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	
 	
 	<pagebreak  />
+	<!-------------------------------------- Grundrisse & Ansichten Coverpage  END -------------------------------------->
+	
 	
 	<!-------------------------------------- Grundrisse & Ansichten START -------------------------------------->
-	
 	<?php 
 	foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
 		<div class="row">
 			<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
-			<?php 
+			<p style="padding-top: 5cm"> <?php 
 			echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
+			</p>
 		</div>
 		<pagebreak  />
 	<?php }
 	foreach ($basement_house_pictures_view as $key=>$x){?>
 		<div class="row">
 			<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
+			<p style="padding-top: 5cm">
 			<?php
 			echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
+			</p>
 		</div>
 		<pagebreak  />
 	<?php } ?>
 	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
 	
+	<!-------------------------------------- Sonderausstattungen START -------------------------------------->
+	<div class="row">
+		<h2 style = "text-align: center;">
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/><?php echo __('Sonderausstattungen'); ?></h2>
+		<h3 style = "text-align: center;">
+		<br/>(Mehrleistungen gegenüber Grundtyp gemäß Bauleistungsbeschreibung)</h3>
+		
+	</div>
 	
+	
+	<pagebreak  />
+	<!-------------------------------------- Sonderausstattungen END -------------------------------------->	
 	
 	
 	<div class="row">
