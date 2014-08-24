@@ -115,6 +115,9 @@ class BoughtExtra extends AppModel{
 	
 	}
 	
+	public function _empty($value) {
+	  return empty($value);
+	}
 	
 	
 	public function allow_extra($proposal_id,$extra){
@@ -126,9 +129,9 @@ class BoughtExtra extends AppModel{
 			throw new NotFoundException(__('Invalid Proposal'));
 		}
 		
-		if ($extra['bool_unique'] && !empty($this->idFromKeys($proposal_id,$extra['id']))){
+		if ($extra['bool_unique'] && !_empty($this->idFromKeys($proposal_id,$extra['id']))){
 			return FALSE;
-		}elseif(empty($this->idFromKeys($proposal_id,$extra['depends_on'])) && $extra['depends_on']!=0){
+		}elseif(_empty($this->idFromKeys($proposal_id,$extra['depends_on'])) && $extra['depends_on']!=0){
 			return FALSE;
 		}else{
 			return TRUE;
