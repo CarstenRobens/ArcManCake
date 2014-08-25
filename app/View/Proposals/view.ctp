@@ -49,9 +49,9 @@ foreach($bought_extras_view as $index=>$x){
 	
 	<div class="row">
 		<div class="col-md-7">
-			<a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
-			<a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_bank_receipt',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-euro"></span> <?php echo __('Generate bank receipt');?></a>
-			<a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_contract',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-pencil"></span> <?php echo __('Generate contract');?></a>
+			<a class="btn btn-md btn-success" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
+			<a class="btn btn-md btn-success" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_bank_receipt',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-euro"></span> <?php echo __('Generate bank receipt');?></a>
+			<a class="btn btn-md btn-success" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_contract',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-pencil"></span> <?php echo __('Generate contract');?></a>
 		</div>
 		<div class="col-md-5" align="right">
 			<?php if(!empty($proposal_view['Proposal']['summary'])){ ?>
@@ -60,7 +60,7 @@ foreach($bought_extras_view as $index=>$x){
 			<?php }
 			if(!empty($proposal_view['Proposal']['bank_receipt'])){ ?>
 				<strong> <?php echo __('Bank receipt'); ?> </strong>
-				<a href="<?php echo $this->Html->url('/'.$proposal_view['Proposal']['bank_receipt']); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Bank receipt'), 'height'=>20 ));?> </a>
+				<a href="<?php echo $this->Html->url('/'.$proposal_view['Proposal']['bank_receipt']); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Bank receipt'), 'height'=>30 ));?> </a>
 			<?php  }
 			if(!empty($proposal_view['Proposal']['contract'])){ ?>
 				<strong> <?php echo __('Contract'); ?> </strong>
@@ -120,7 +120,7 @@ foreach ($normal_house_pictures_view as $x){
 			<div class="row">
 				<div class="col-md-4"> <strong><?php echo $proposal_view['MyHouse']['name']; ?> </strong></div>
 				<div class="col-md-4"> 
-					<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+					<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-random"></span></a>
 				</div>
 				<div class="col-md-4"></div> 
 			</div>
@@ -495,7 +495,8 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		
 		<div class="col-md-3" align=right> 
-			<a id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-edit"></span></a>
+			<a href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a>
+			<a id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
 			
 		</div>
 		
@@ -692,6 +693,7 @@ foreach ($normal_house_pictures_view as $x){
 			type: "POST",
 			data: formData,
 			success: function(response) {
+				
 				var arr = response.land_list_view
 				$(arr).each(function() {
 					$('#land_list').append($("<option>").attr('value',this[0]).text(this[1]));
