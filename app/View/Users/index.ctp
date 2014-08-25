@@ -147,12 +147,18 @@
 			if ($current_user['role'] < 2 && !empty($current_user))
 			{?>
 			<div class="row">
-				<div class="col-md-12">
-					<?php echo $this->Html->link(__('Edit User'),array('action' => 'edit',$users_view[$i]['User']['id']));?>
-					&middot;
-					<?php echo $this->Form->postLink(__('Delete User'),array('controller' => 'users','action' => 'delete',$users_view[$i]['User']['id']),array('confirm'=>'Are you sure?'));?>
-				</div>
+				<div class="col-md-7" align=right>
+				<a href=<?php echo $this->Html->url(array('action' => 'edit',$users_view[$i]['User']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 				
+				<?php 
+				echo ' ';
+				echo $this->Form->postLink($this->Html->tag('i', '',
+										array('class' => 'glyphicon glyphicon-remove')),
+										array('action' => 'delete',$users_view[$i]['User']['id']) ,
+										array('escape' => false), __('Are you sure you want to delete this user?'));?>
+			
+				</div>
+				<div class="col-md-5"></div>
 				
 			</div>
 			<?php
@@ -205,9 +211,14 @@
 				<td> <?php echo $User['User']['role']?></td>
 				<td> <?php echo $User['User']['created']; ?> </td>
 				<td>
-					 <?php echo $this->Html->link(__('Edit User'),array('action' => 'edit',$User['User']['id']));?>
-					&middot;
-					<?php echo $this->Form->postLink(__('Delete User'),array('controller' => 'users','action' => 'delete',$User['User']['id']),array('confirm'=>'Are you sure?'));?>
+					 <a href=<?php echo $this->Html->url(array('action' => 'edit',$User['User']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				
+				<?php 
+				echo ' ';
+				echo $this->Form->postLink($this->Html->tag('i', '',
+										array('class' => 'glyphicon glyphicon-remove')),
+										array('action' => 'delete',$User['User']['id']) ,
+										array('escape' => false), __('Are you sure you want to delete this user?'));?>
 				</td>
 				
 			</tr>

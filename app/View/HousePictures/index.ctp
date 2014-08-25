@@ -52,19 +52,13 @@
 			<td> <?php echo $x['MyHouse']['name'] ?></td>
 			<td> <?php echo $house_pic_type[$x['HousePicture']['type_flag']] ?></td>
 			<td> <?php 
-        	    echo $this->Form->postLink('Delete',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove'));
+        	    echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
        		 ?></td>
         	<td> <?php echo $x['HousePicture']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 		</tr>
 		<?php } ?>
 			</table>
-			
-        
-       <?php if ($this->Session->read('Auth.User.power')==3){?>
-               		<p >
-						<?php echo $this->Html->link(__('Delete User', true), array('action' => 'delete', $User['User']['id'])); ?>
-                    </p>
-        	<?php }?>
+		
 		</div>
 		
 		<div class="col-md-2"></div>
@@ -79,39 +73,30 @@
 if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 
 
-	<div class="container">
-	<div class="contactwrapper">
+<div class="contactwrapper">
 	<div class="view">
-
-	<div class="PostBox">
-		<div class="PostContent">
-			<div class="PostContentBox">
-				<div class="PostMainContentbox">
-						<?php echo $this->Form->create('HousePicture',array('enctype'=>'multipart/form-data'));?>	
+		<div class="PostBox">
+			<div class="PostContent">
+				<div class="PostContentBox">
+					<div class="PostMainContentbox">
+						<?php echo $this->Form->create('HousePicture',array('enctype'=>'multipart/form-data','class' => 'form-horizontal'));?>
 						<legend>
-							<?php echo __('Add a House Picture'); ?>
+							<?php echo __('Add a home picture'); ?>
 						</legend>
-						<?php
-							echo $this->Form->input('name');
-							echo $this->Form->input('description');
-							echo $this->Form->input('upload', array('type' => 'file'));
-							if ($house_id_view==NULL){
-								echo $this->Form->input('house_id',array('options'=> $list_houses_view));	
-							}
-							echo $this->Form->input('type_flag',array('options'=> $house_pic_type, 'label'=>'Type','default'=>0));
+						<?php 
+						echo $this->Form->input('title',array('placeholder' => __('Enter the title of the picture'),'label' => __('Title'),'div' => 'form-group has-success'));
+						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description'),'div' => 'form-group has-success'));
+						echo $this->Form->input('upload', array('type' => 'file'));
 						?>
-				</div>						
+						
+					</div>
+				</div>
 			</div>
+			<?php echo $this->Form->end(array('label' => __('Save'),'text' => 'test','class' => 'btn btn-success  pull-right buttonwidth')); ?>
+			<p style="clear: both;"></p>
 		</div>
-		<p style="clear: both;"> </p>
-		<?php echo $this->Form->end(array('label' => __('Save'),'text' => 'test','class' => 'btn btn-success  pull-right buttonwidth')); ?>
-		<p style="clear: both;">  </p>
 	</div>
-		
-	</div>
-	</div>
-	</div> <!-- /container -->
-	
+</div>	
 	
 	
 <?php } ?>

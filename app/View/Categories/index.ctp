@@ -13,10 +13,13 @@
 		<tr> 
 			<td> <?php echo $x['Category']['id']; ?> </td> 
 			<td> <?php echo $x['Category']['name']; ?></td>
-			<td> <?php
-				echo $this->Html->link('Edit',array('action' => 'edit',$x['Category']['id'])).' | ';
-				echo $this->Form->postLink('Delete',array('controller' => 'Categories','action' => 'delete',$x['Category']['id']),array('confirm'=>'Are you sure?'));
-			?></td>
+			<td> <a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Category']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a><?php
+				echo ' ';
+				echo $this->Form->postLink($this->Html->tag('i', '',
+										array('class' => 'glyphicon glyphicon-remove')),
+										array('action' => 'delete',$x['Category']['id']) ,
+										array('escape' => false), __('Are you sure you want to delete this proposal?'));
+		?></td>
 			<td> <?php echo $x['Category']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 		</tr>
 		<?php endforeach; ?>
