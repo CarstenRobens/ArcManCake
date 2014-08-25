@@ -57,36 +57,36 @@ class ProposalsController extends AppController{
 		/**
 		 * It shows all relevant information related with a proposal
 		 */
-            if(!$id){
-                throw new NotFoundException(__('Invalid proposal'));
-            }
-	
-            $x = $this->Proposal->findById($id);
-            
-            $y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+		if(!$id){
+			throw new NotFoundException(__('Invalid proposal'));
+		}
+
+		$x = $this->Proposal->findById($id);
+
+		$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
 				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>0)));
-            $ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
-            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>-1)));
-            $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
-            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
-            
-            $z = $this->Proposal->MyBoughtExtra->find('all',array(
+		$ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>-1)));
+		$yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
+
+		$z = $this->Proposal->MyBoughtExtra->find('all',array(
 				'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false)));
-            $zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
-            		'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
-            
-            if (!$x) {
-                throw new NotFoundException(__('Invalid proposal'));
-            }
-            
-            $this->set('proposal_view',$x);
-            
-            $this->set('normal_house_pictures_view',$y);
-            $this->set('basement_house_pictures_view',$ybase);
-            $this->set('floorplan_house_pictures_view',$yfloor);
-            
-            $this->set('bought_extras_view',$z);
-            $this->set('bought_external_extras_view',$zexternal);
+		$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
+				'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
+
+		if (!$x) {
+			throw new NotFoundException(__('Invalid proposal'));
+		}
+
+		$this->set('proposal_view',$x);
+
+		$this->set('normal_house_pictures_view',$y);
+		$this->set('basement_house_pictures_view',$ybase);
+		$this->set('floorplan_house_pictures_view',$yfloor);
+
+		$this->set('bought_extras_view',$z);
+		$this->set('bought_external_extras_view',$zexternal);
 	}
 
 
@@ -178,13 +178,18 @@ class ProposalsController extends AppController{
 			throw new NotFoundException(__('Invalid proposal'));
 		}
 		$x = $this->Proposal->findById($proposal_id);
+		$old_land_id=$x['Proposal']['land_id'];
 	
-		if (!$land_id) {
-			throw new NotFoundException(__('Invalid land'));
-		}
+		#Check how many Proposals are using the old land:
+		$count=sizeof($this->Proposal->find('list',array('conditions'=>array('land_id' => $old_land_id))));
+		
 		$x['Proposal']['land_id']=$land_id;
 	
 		if ($this->Proposal->save($x)) {
+			$this->Proposal->MyLand->set_ownership($land_id,$x['Proposal']['customer_id']);
+			if ($count==1 && $land_id!=$old_land_id){ //if this proposal was the last one using that land, we set the land OPEN
+				$this->Proposal->MyLand->set_ownership($old_land_id,0);
+			}
 			$this->set('confirmation','Land has been changed');
 			$this->set('_serialize',array('confirmation'));
 		}else{
@@ -315,6 +320,7 @@ class ProposalsController extends AppController{
     	 */
     	
     	$proposal=$this->Proposal->findById($id);
+    	$count=sizeof($this->Proposal->find('list',array('conditions'=>array('land_id' => $proposal['Proposal']['land_id']))));
     	
         if ($this->Proposal->delete($id)) {
         	foreach ($proposal['MyBoughtExtra'] as $bextra){
@@ -328,6 +334,10 @@ class ProposalsController extends AppController{
         	}
         	if (!empty($proposal['Proposal']['contract'])){
         		unlink(WWW_ROOT.$proposal['Proposal']['contract']);
+        	}
+        	
+        	if ($count==1){
+        		$this->Proposal->MyLand->set_ownership($proposal['Proposal']['land_id'],0);
         	}
         	
         	$this->Session->setFlash(__('The proposal with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
@@ -346,6 +356,14 @@ class ProposalsController extends AppController{
     		return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyBoughtExtra']['proposal_id']));
     	}
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

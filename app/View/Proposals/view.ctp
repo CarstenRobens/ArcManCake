@@ -687,6 +687,7 @@ foreach ($normal_house_pictures_view as $x){
 <script>
 	$( "#launch_land_modal" ).click(function() {
 		var formData =	{customer_id:"<?php echo $proposal_view['MyCustomer']['id'];?>"}
+		$('#land_list').find('option').remove()
 		
 		$.ajax({
 			url: "<?php echo $this->Html->url(array('controller'=>'Lands','action'=>'all_names')); ?>.json",
@@ -698,6 +699,7 @@ foreach ($normal_house_pictures_view as $x){
 				$(arr).each(function() {
 					$('#land_list').append($("<option>").attr('value',this[0]).text(this[1]));
 				});
+				$('#land_list option[value="<?php echo $proposal_view['MyLand']['id']?>"]').attr("selected", "selected");
 			}
 		})
 	})		
@@ -705,7 +707,7 @@ foreach ($normal_house_pictures_view as $x){
 	$("#save_land").click(function(){
 		var selection=$('#land_list option:selected').attr('value')
 		var formData =	{proposal_id:"<?php echo $proposal_view['Proposal']['id'];?>" , land_id:selection}
-				
+		
 		$.ajax({
 			url: "<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'selected_land')); ?>.json",
 			type: "POST",

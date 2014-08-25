@@ -149,12 +149,15 @@ class LandsController extends AppController{
     		throw new NotFoundException (__('Invalid customer'));
     	}
     	
-    	$lands=$this->Land->find('list',array(
+    	$lands=$this->Land->find('all',array(
 				'conditions'=>array('customer_id' => array(0 ,$customer_id))
     	));
+    	$users_list=$this->Land->MyUser->find('list',array('fields'=>array('id','username')));
+    	
     	$lands2=array();
-    	foreach ($lands as $index=>$land){
-    		$lands2[]=array($index,$land);
+    	$lands2[0]=array(0,__('No land'));
+    	foreach ($lands as $land){
+    		$lands2[]=array($land['Land']['id'],$land['Land']['name'].' by '.$users_list[$land['Land']['user_id']]);
     	}
     	$this->set('land_list_view',$lands2);
     	$this->set('_serialize',array('land_list_view'));

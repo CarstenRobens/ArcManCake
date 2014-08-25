@@ -22,9 +22,11 @@
 			<th><?php echo $this->Paginator->sort('bool_garage',__('Garage')); ?></th>
 			<th><?php echo $this->Paginator->sort('bool_custom',__('Custom')); ?></th>
 			<th><?php echo $this->Paginator->sort('bool_external',__('External')); ?></th>
-			
 			<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
-			<th><?php echo __('Action'); ?></th>
+			
+			<?php if($current_user['role']<2){ ?>
+				<th><?php echo __('Action'); ?></th>
+			<?php } ?>
 		</tr>
 
 	<!-- Here is where we loop through our $extras array, printing out extra info --> 
@@ -95,6 +97,7 @@
 			} ?>
 			</td>
 			<td> <?php echo $x['Extra']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
+			<?php if($current_user['role']<2){ ?>
 			<td>
 				<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 				
@@ -105,6 +108,7 @@
 										array('action' => 'delete',$x['Extra']['id']) ,
 										array('escape' => false), __('Are you sure you want to delete this Extra?'));?>
 			</td>
+			<?php }?>
 		</tr>
 		<?php endforeach; ?>
 		<?php echo $this->Paginator->numbers(); ?>

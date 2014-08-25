@@ -64,4 +64,12 @@ class Land extends AppModel{
     public function isOwnedBy ($owned_land,$owner){
         return $this->field('id', array('id'=>$owned_land, 'user_id'=>$owner))!==FALSE;
     }
+    
+    public function set_ownership ($land_id,$customer_id){
+    	if (!$land_id) {
+    		return ;
+    	}
+    	$this->id = $land_id;
+    	$this->saveField('customer_id', $customer_id);
+    }
 }

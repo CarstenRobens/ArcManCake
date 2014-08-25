@@ -20,10 +20,7 @@ class ExtrasController extends AppController{
 	
 	public function isAuthorized($logged_user) {
 
-		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
-			return FALSE; # Overseers have the same privileges as visitors
-		} else {
+		if ($logged_user['role']==2 && in_array($this->action, array('index','view'))){
 			return TRUE;
 		}
 		
