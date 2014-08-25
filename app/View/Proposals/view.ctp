@@ -105,32 +105,13 @@ foreach ($normal_house_pictures_view as $x){
 			</div>
         </div>
 		<div class="col-md-10">
-        <div class="row">
-		
-			
-				<?php echo $this->Html->link(
-				    $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-					'/img/uploads/houses/'.$default_picture['picture'],
-					array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])
-				); ?>
-			
-		</div>
-		
-		
 			<div class="row">
-				<div class="col-md-4"> <strong><?php echo $proposal_view['MyHouse']['name']; ?> </strong></div>
-				<div class="col-md-4"> 
-					<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-random"></span></a>
-				</div>
-				<div class="col-md-4"></div> 
+				<h3 >  <?php echo $proposal_view['MyHouse']['name']; ?> &nbsp;&nbsp;&nbsp;&nbsp;  <a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a></h3>
 			</div>
 			<div class="row">
-				<div class="col-xs-4"> <?php echo __('Type:'); ?> </div>  
-				<div class="col-xs-8"> <?php echo $proposal_view['MyHouse']['type']; ?> </div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4"> <?php echo __('Size:'); ?> </div>  
-				<div class="col-xs-8"> 
+				<h4 >
+				<?php echo __('Size:'); ?>
+				
 					<?php if($enlargement>0){
 						echo $proposal_view['MyHouse']['size'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
 					}elseif($enlargement<0){
@@ -138,15 +119,40 @@ foreach ($normal_house_pictures_view as $x){
 					}else{
 						echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
 					}?>
+				</h4 >
+			</div>
+			<div class="row">
+			
+				
+					<?php echo $this->Html->link(
+						$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+						'/img/uploads/houses/'.$default_picture['picture'],
+						array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])
+					); ?>
+				
+			</div>
+			
+			<div class="row">
+				<h3> <?php echo __('Description:'); ?> </h3>
+				<?php echo $proposal_view['MyHouse']['description']; ?> 
+			</div>
+			
+			
+			
+			
+			
+			<div class="row">
+				<div class="col-xs-9">  </div>
+				
+				<div class="col-md-1" align=right>
+					<strong><?php echo __('Price'); ?></strong>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4"> <?php echo __('Description:'); ?> </div>  
-				<div class="col-xs-8"> <?php echo $proposal_view['MyHouse']['description']; ?> </div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4"> <?php echo __('Price:'); ?> </div>  
-				<div class="col-xs-8"> <?php echo $proposal_view['MyHouse']['price'].' €'; ?> </div>
+				
+				<div class="col-md-2">
+					<?php echo $proposal_view['MyHouse']['price'].' €'; ?>
+				</div>
+				
+				
 			</div>
 		
 		</div>
