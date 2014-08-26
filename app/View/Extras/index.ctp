@@ -33,7 +33,7 @@
 		<?php foreach($extras_view as $x ):?>
 		<tr> 
 			<td> <?php echo $x['Extra']['id']; ?> </td> 
-			<td> <?php echo $this->Html->link($x['Extra']['name'], array('controller'=>'Extras','action'=>'view',$x['Extra']['id'])); ?></td>
+			<td> <a href=# id="extra_<?php echo $x['Extra']['id']; ?>" ><?php echo $x['Extra']['name'];?></a> </td>
 			<td> <?php echo $x['Extra']['default_priceA'].' €'; ?></td>
 			<td> <?php echo $x['Extra']['default_priceB'].' €'; ?></td>
 			<td> <?php echo $x['Extra']['default_priceC'].' €'; ?></td>

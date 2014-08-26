@@ -90,20 +90,6 @@ class ExtrasController extends AppController{
 		}
 	}
 
-
-	public function view($id=null) {
-            if(!$id){
-                throw new NotFoundException(__('Invalid customer'));
-            }
-	
-            $x = $this->Extra->findById($id);
-            if (!$x) {
-                throw new NotFoundException(__('Invalid customer'));
-            }
-            $this->set('extra_view',$x);
-
-	}
-
 	
 	public function add_custom_extra($proposal_id=NULL,$bool_external) {
 	

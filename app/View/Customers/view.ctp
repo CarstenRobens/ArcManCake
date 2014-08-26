@@ -76,17 +76,17 @@
 			
 			
 			<div class="row">
-				<div class="col-md-12">
-					<?php echo $this->Html->link(__('Edit Customer'),array('action' => 'edit',$customer_view['Customer']['id']));?>
-					&middot;
-					<?php echo $this->Form->postLink(__('Delete Customer'),array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?'));?>
+				<div class="col-md-7" align="right">
+					<a href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false));?>
 				</div>
+				
+				<div class="col-md-5"></div>
 			</div>
 			
         </div>
         
-		<div class="col-md-2">
-		</div>
+		<div class="col-md-2"></div>
 		
 		<?php } ?>
     </div>
@@ -107,7 +107,7 @@
     		</div>
 		
 			<div class="col-xs-3">
-				<?php echo $this->Html->link(__('Add proposal'),array('controller' => 'Proposals', 'action' => 'add', $customer_view['Customer']['id']));?>
+				<a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals', 'action' => 'add', $customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-plus"></span> Add proposal</a>
 			</div>
 		</div>
 		

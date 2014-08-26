@@ -86,9 +86,11 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div class="col-md-8">
 		<div class="panel panel-success">
-		
            	<div class="panel-heading">
-				<h3 class="panel-title"><?php echo __( 'House');?></h3>
+				<h3 class="panel-title" style="text-align:left;">
+					<?php echo __( 'House').': '.$proposal_view['MyHouse']['name'];?>
+					<a style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
+				</h3>
 			</div>
 			<div class="panel-body">
 			
@@ -105,9 +107,7 @@ foreach ($normal_house_pictures_view as $x){
 			</div>
         </div>
 		<div class="col-md-10">
-			<div class="row">
-				<h3 >  <?php echo $proposal_view['MyHouse']['name']; ?> &nbsp;&nbsp;&nbsp;&nbsp;  <a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a></h3>
-			</div>
+			
 			<div class="row">
 				<h4 >
 				<?php echo __('Size:'); ?>
@@ -479,7 +479,10 @@ foreach ($normal_house_pictures_view as $x){
 		<div class="col-md-12">
 		<div class="panel panel-success">
            	<div class="panel-heading">
-				<h3 class="panel-title"><?php echo __( 'Land');?></h3>
+           		<h3 class="panel-title" style="text-align:left;">
+					<?php echo __( 'Land').': '.$proposal_view['MyLand']['name'];?>
+					<a style="float:right" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
+				</h3>
 			</div>
 			<div class="panel-body">
 			
@@ -488,45 +491,22 @@ foreach ($normal_house_pictures_view as $x){
 	
 	
 	
-	
-	
-	
-	
 	<div class="row">
 		<div class="col-md-1"> </div>
 		
-		<div class="col-md-7">
-			<strong id="foo" ><?php echo $proposal_view['MyLand']['name']; ?></strong> 
-			<select id="bar" style="display:none;"></select> 
+		<div class="col-md-3">
+			<strong><?php echo __('Notes:'); ?></strong>
 		</div>
 		
-		<div class="col-md-3" align=right> 
-			<a href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a>
-			<a id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
-			
-		</div>
-		
-		
-		<div class="col-md-1"> </div>
-		
-	</div>
-	
-	<?php if(!empty($proposal_view['MyLand']['notes'])){ ?>
-	<div class="row">
-		<div class="col-md-1"> </div>
-		
-		<div class="col-md-4">
-			<?php echo __('Notes:'); ?>
-		</div>
-		
-		<div class="col-md-7">
+		<div class="col-md-6">
 			<?php echo $proposal_view['MyLand']['notes']; ?>
 		</div>
 		
-		<div class="col-md-1"> </div>
+		<div class="col-md-2" align="center">
+			<a href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
+		</div>
 		
 	</div>
-	<?php } ?>
 	<div class="row">
 		<div class="col-md-1"> </div>
 		<div class="col-md-10">
