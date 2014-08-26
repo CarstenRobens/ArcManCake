@@ -1,11 +1,15 @@
-<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
 
-
-<div class="CategorieTitleBox">
-	<div id="Proposal">
-		<?php echo __('Select your extras:');?>
-	</div>
+<div class="row">
+	<br>
+	<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
 </div>
+	
+
+
+<div class="row">
+	<h3><?php echo __('Select your extras:');?></h3>
+</div>
+
 
 <?php echo $this->Form->create('List_bool'); ?>
 <!---------------------------------------------Categories---------------------------------------------------->
@@ -33,10 +37,10 @@
 				
 					<input type="hidden" name="data[List_bool][bool_<?php echo $x['MyExtra']['id'];?>]" value="0" id="List_boolBool<?php echo $x['MyExtra']['id'];?>" />
 					<input type="checkbox" name="data[List_bool][bool_<?php echo $x['MyExtra']['id'];?>]" value="1" id="List_boolBool<?php echo $x['MyExtra']['id'];?>" /> 
-					<?php echo ' <b>'.$x['MyExtra']['name'].'</b>';?>
+					<?php echo ' <b>'.'&nbsp;&nbsp;&nbsp;'.$x['MyExtra']['name'].'</b>';?>
 					
 					
-					<!-- <?php echo $this->Form->input('bool_'.$x['MyExtra']['id'],array('label'=>$x['MyExtra']['name'],'type'=>'checkbox')); ?> -->
+					<!-- <?php echo $this->Form->input('bool_'.$x['MyExtra']['id'],array('label'=>'&nbsp;&nbsp;&nbsp;'.$x['MyExtra']['name'],'type'=>'checkbox')); ?> -->
 				
 			</div>
 			<?php }

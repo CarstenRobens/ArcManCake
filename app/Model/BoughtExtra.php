@@ -129,9 +129,12 @@ class BoughtExtra extends AppModel{
 			throw new NotFoundException(__('Invalid Proposal'));
 		}
 		
-		if ($extra['bool_unique'] && !_empty($this->idFromKeys($proposal_id,$extra['id']))){
+		$tmp = $this->idFromKeys($proposal_id,$extra['id']);
+		$tmp2 = $this->idFromKeys($proposal_id,$extra['depends_on']);
+		
+		if ($extra['bool_unique'] && !empty($tmp)){
 			return FALSE;
-		}elseif(_empty($this->idFromKeys($proposal_id,$extra['depends_on'])) && $extra['depends_on']!=0){
+		}elseif(empty($tmp2) && $extra['depends_on']!=0){
 			return FALSE;
 		}else{
 			return TRUE;
