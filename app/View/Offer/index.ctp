@@ -4,27 +4,17 @@
 	
 ?>
 
+<div class="row">
+	<br>
+	<?php  echo $this->Html->link('Kaufobjekte', array('controller' => 'offer','action' => 'index', 'Immobilienscout', 'Kaufobjekte')); ?>
+</div>
+	
 
-<div style="height:20px;padding:5px 0px;width:100%">
-		<div class="bread">
-        	<?php  
-				
-					echo $this->Html->link('Kaufobjekte', array('controller' => 'offer','action' => 'index', 'Immobilienscout', 'Kaufobjekte'))
-				
-			?>
-        </div>
-         
-        
-       
-        <p style="clear: both;"></p>  
+
+<div class="row">
+	<h3> <?php  echo (Configure::read('__Cakearchitect.company_name_long').' Übersicht der Regionen');?> </h3>
 </div>
 
-
-<div class="CategorieTitleBox">
-        <div id="GroupMembers">
-        <?php  echo (Configure::read('__Cakearchitect.company_name_long').' Übersicht der Regionen');?>
-        </div>
-</div>
 
 
 

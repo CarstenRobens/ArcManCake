@@ -15,9 +15,11 @@
 
 <div class="House index">
 
-    <div style="height:20px;padding:5px 0px;width:100%">
-		<div class="bread">
-        	<?php  
+    
+
+<div class="row">
+	<br>
+	<?php  
 				if($Region_id==0){
 					echo $this->Html->link('Kaufobjekte', array('controller' => 'offer','action' => 'index', 'Immobilienscout', 'Kaufobjekte'))
 						.' > '
@@ -33,14 +35,8 @@
 						
 						;
 				}
-			?>
-        </div>
-         
-        
-       
-        <p style="clear: both;"></p>  
-    </div>
-	
+	?>
+</div>
     
 <!---------------------------------------------Main Panel------------------------------------------------------>
 

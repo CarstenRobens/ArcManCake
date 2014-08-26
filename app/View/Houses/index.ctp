@@ -1,8 +1,9 @@
-<div class="CategorieTitleBox">
-        <div id="GroupMembers">
-        <?php __( 'Houses',false);?>
-        </div>
+
+<div class="row">
+	<br>
+	<h3><?php echo __('Houses'); ?></h3>
 </div>
+	
 
 <hr>
     <?php foreach($houses_view as $House ){?>

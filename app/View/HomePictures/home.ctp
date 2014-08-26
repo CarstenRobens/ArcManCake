@@ -1,6 +1,5 @@
 <?php $pic_dir='uploads/home/'; ?>
 
-    ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
