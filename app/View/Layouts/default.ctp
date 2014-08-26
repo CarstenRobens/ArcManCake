@@ -37,6 +37,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('theme');
 		echo $this->Html->css('bootstrap-theme.min');
 		echo $this->Html->css('lightbox');
+		echo $this->Html->css('jquery-ui-1.10.0.custom');
 		
 		echo $scripts_for_layout;
 		//echo $this->Html->script('jquery-1.2.6');
@@ -50,6 +51,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('customize.min');
 		echo $this->Html->script('raw-files.min');
 		echo $this->Html->script('lightbox.min');
+		echo $this->Html->script('jquery-ui-1.9.2.custom.min');
 	?>
 	
 

@@ -1,3 +1,13 @@
+<style>
+.ui-tooltip{
+            max-width: 800px;
+            width: 800px;
+            }
+
+
+</style>
+
+
 
 <div class="row">
 	<br>
@@ -33,7 +43,18 @@
 		<?php foreach($extras_view as $x ):?>
 		<tr> 
 			<td> <?php echo $x['Extra']['id']; ?> </td> 
-			<td> <a href=# id="extra_<?php echo $x['Extra']['id']; ?>" ><?php echo $x['Extra']['name'];?></a> </td>
+			<td> 
+				<a id="extra_<?php echo $x['Extra']['id']; ?>"  title="" ><?php echo $x['Extra']['name'];?></a>
+				<?php if(!$x['Extra']['picture']){
+					$html=$this->Text->autoParagraph($x['Extra']['description']);
+					$html = str_replace("\n", '', $html); //to remove linebreaks
+				}else{
+					$html='<table><tr><td><img src=/img/uploads/extras/'.$x['Extra']['picture'].' /></td><td>'.$this->Text->autoParagraph($x['Extra']['description']).'</td></tr></table>';
+				}?> 
+				<script>
+					$( "#extra_<?php echo $x['Extra']['id']; ?>" ).tooltip({ content: '<?php echo $html; ?>' });
+				</script>
+			</td>
 			<td> <?php echo $x['Extra']['default_priceA'].' €'; ?></td>
 			<td> <?php echo $x['Extra']['default_priceB'].' €'; ?></td>
 			<td> <?php echo $x['Extra']['default_priceC'].' €'; ?></td>
