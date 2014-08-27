@@ -1,4 +1,8 @@
-<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
+
+<div class="row">
+	<br>
+	<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
+</div>
 
 <div class="CategorieTitleBox">
         <div id="GroupMembers">

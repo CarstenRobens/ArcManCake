@@ -31,7 +31,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<p >
-						<?php echo 'Type'.$House['House']['type'].': <b><u>'.$House['House']['name'].'</u></b>'; ?>
+						<?php echo __('Type').' '.$house_type[$House['House']['type']].': <b><u>'.$House['House']['name'].'</u></b>'; ?>
 						<?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
 							&middot;
 							<a href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
@@ -76,8 +76,7 @@
 				
 			</tr>
 			
-			<?php foreach($houses_view as $House )
-			{?>	
+			<?php foreach($houses_view as $House) {?>	
 			<tr> 
 				<td> <?php echo $this->Html->link($House['House']['name'], array('controller'=>'Houses','action'=>'view',$House['House']['id'])); ?></td>
 				<td> <?php echo $house_type[$House['House']['type']] ?></td>
@@ -89,24 +88,10 @@
 					echo $this->Form->postLink('Delete',array('action' => 'delete',$House['House']['id']),array('confirm'=>'Are you sure?'));
 				?></td>
 				<td> <?php echo $House['House']['created'].' by '.$this->Html->link($House['MyUser']['username'], array('controller'=>'Users','action'=>'view',$House['MyUser']['id'])); ?> </td>
-						
 			</tr>
-			<?php
-			}?>
+			<?php }?>
 			</table>
-			
-        
-       <?php 
-			if ($this->Session->read('Auth.User.power')==3)
-			{?>
-               		<p >
-						<?php echo $this->Html->link(__('Edit User', true), array('action' => 'edit', $User['User']['id'])); ?>
-						&middot;
-						<?php echo $this->Html->link(__('Delete User', true), array('action' => 'delete', $User['User']['id'])); ?>
-                    </p>
-        	<?php
-    	}?>
-		</div> </p>
+		</div> 
 		
 		<div class="col-md-2"></div>
 	
@@ -117,7 +102,7 @@
 
 
 <?php 
-if ($current_user['role'] < 3 && !empty($current_user) ) {?>
+if ($current_user['role'] < 2 && !empty($current_user) ) {?>
 
 
 	<div class="container">

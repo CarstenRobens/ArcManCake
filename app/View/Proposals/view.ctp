@@ -18,15 +18,13 @@ foreach($bought_extras_view as $index=>$x){
 	<br>
 	<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
 </div>
-	
-	<div class="CategorieTitleBox">
-        <div id="Proposal">
-        	<?php echo __( $proposal_view['Proposal']['name'].'<small> for '.$proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'].'</small>',false);?>
-        </div>
-    </div>
-    
-    
-    	
+
+<div class="CategorieTitleBox">
+	<div id="Proposal">
+		<?php echo __( $proposal_view['Proposal']['name'].'<small> for '.$proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'].'</small>',false);?>
+	</div>
+</div>
+
 <?php if (!empty($proposal_view['Proposal']['notes'])){ ?>
     <div class="row">
 		

@@ -1,25 +1,40 @@
-<h3>Home Pictures</h3>
-	
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Name</th>
-		<th>Action</th>
-		<th>Created</th>
-	</tr>
- 
-	<?php foreach($home_pictures_view as $x ): ?>
-	<tr> 
-		<td> <?php echo $x['HomePicture']['id']; ?> </td> 
-		<td> <?php echo $this->Html->link($x['HomePicture']['title'], array('controller'=>'HomePictures','action'=>'view',$x['HomePicture']['id'])); ?></td>
-		<td> <?php 
-            echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HomePictures','action' => 'delete',$x['HomePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
-        ?></td>
-        <td> <?php echo $x['HomePicture']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
-	</tr>
-	<?php endforeach; ?>
-</table>
+<div class="row">
+	<h3><?php echo __('Home Pictures'); ?></h3>
+</div>
 
+
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<table>
+			<tr>
+				<th><?php echo $this->Paginator->sort('name',__('Title')); ?></th>
+				<th> </th>
+				<th><?php echo $this->Paginator->sort('description',__('Description')); ?></th>
+				<?php if($current_user['role']<2){ ?>
+					<th><?php echo __('Action'); ?></th>
+				<?php } ?>
+				<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
+			</tr>
+
+			<?php foreach($home_pictures_view as $x ){ ?>
+			<tr>
+				<td><?php echo $x['HomePicture']['title']; ?> </td>
+				<td><?php echo $this->Html->image('/img/uploads/home/'.$x['HomePicture']['picture'],array('style'=>'max-width:100px')); ?> </td>
+				<td><?php echo $x['HomePicture']['description']; ?> </td>
+				<?php if($current_user['role']<2){ ?>
+					<td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HomePictures','action' => 'delete',$x['HomePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));?> </td>
+				<?php } ?>
+				<td><?php echo $x['HomePicture']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
+			</tr>
+			<?php } ?>
+			<?php echo $this->Paginator->numbers(); ?>
+		</table>
+	</div>
+	<div class="col-md-2"></div>
+
+</div>
+<hr>
 
 <?php 
 if ($current_user['role'] < 3 && !empty($current_user) ) {?>

@@ -3,8 +3,6 @@
             max-width: 800px;
             width: 800px;
             }
-
-
 </style>
 
 
@@ -50,8 +48,6 @@
 					$html = str_replace("\n", '', $html); //to remove linebreaks
 				}else{
 					$html='<table><tr><td>'.$this->Html->image('/img/uploads/extras/'.$x['Extra']['picture'],array('style'=>'max-width:150px')).'</td><td>'.$this->Text->autoParagraph($x['Extra']['description']).'</td></tr></table>';
-					//$html='<table><tr><td><img src="/ArcManCake/img/uploads/extras/trex.jpg" alt=""/></td><td>'.$this->Text->autoParagraph($x['Extra']['description']).'</td></tr></table>';
-					//$html='<table><tr><td><img src=http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png alt=""/></td><td>'.$this->Text->autoParagraph($x['Extra']['description']).'</td></tr></table>';
 					$html = str_replace("\n", '', $html); //to remove linebreaks
 				}?> 
 				<script>

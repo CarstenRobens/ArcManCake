@@ -10,7 +10,6 @@
 <div class="row">
 	<table>
 		<tr>
-			<th><?php echo $this->Paginator->sort('id',__('ID')); ?></th>
 			<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
 			<th><?php echo $this->Paginator->sort('name',__('Surname')); ?></th>
 			<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
@@ -20,7 +19,6 @@
 	<!-- Here is where we loop through our $customers array, printing out customer info --> 
 		<?php foreach($customers_view as $x ){ ?>
 		<tr> 
-			<td> <?php echo $x['Customer']['id']; ?> </td> 
 			<td> <?php echo $this->Html->link($x['Customer']['name'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
 			<td> <?php echo $this->Html->link($x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
 			
@@ -71,7 +69,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 						echo $this->Form->input('address2',array('placeholder' => __('additional post address information'),'label' => __('Post Address 2'),'div' => 'form-group has-success'));
 						echo $this->Form->input('zipcode',array('placeholder' => __('Enter the customer zipcode'),'label' => __('Zipcode'),'div' => 'form-group has-success'));
 						echo $this->Form->input('city',array('placeholder' => __('Enter the customer City'),'label' => __('City'),'div' => 'form-group has-success'));
-						echo $this->Form->input('birthday',array('placeholder' => __('Enter the customers Birthday'),'label' => __('Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
+						echo $this->Form->input('birthday',array('dateFormat'=>'DMY','placeholder' => __('Enter the customers Birthday'),'label' => __('Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
 					
 						echo $this->Form->input('notes',array('placeholder' => __('additional notes if required'),'label' => __('Notes'),'div' => 'form-group has-success'));
 						?>
@@ -82,7 +80,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 						echo $this->Form->input('2nd_name',array('placeholder' => __('Enter the 2nd customer name'),'label' => __('2nd Name'),'div' => 'form-group has-success'));
 						echo $this->Form->input('2nd_surname',array('placeholder' => __('Enter the 2nd customer surname'),'label' => __('2nd Surname'),'div' => 'form-group has-success'));
 						echo $this->Form->input('2nd_maiden_surname',array('placeholder' => __('Enter the 2nd maiden surname'),'label' => __('2nd Maiden Surname'),'div' => 'form-group has-success'));
-						echo $this->Form->input('2nd_birtday',array('placeholder' => __('Enter the 2nd customers Birthday'),'label' => __('2nd Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
+						echo $this->Form->input('2nd_birtday',array('dateFormat'=>'DMY','placeholder' => __('Enter the 2nd customers Birthday'),'label' => __('2nd Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
 						?>
 						
 						
@@ -134,6 +132,9 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 } ?>
 			</div>
 		</div>
+		
+		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('plugin'=>'full_calendar','controller' => 'Events','action' => 'add'));?> > <span class="glyphicon glyphicon-plus"></span> Add appointment</a>
+		
 
 </div>
 

@@ -1,7 +1,9 @@
 <?php
 class ProposalsController extends AppController{
-	public $components = array('RequestHandler','Mpdf');
+	
 	public $helper = array('Html','Form');
+	
+	public $components = array('RequestHandler','Paginator','Mpdf');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -45,10 +47,11 @@ class ProposalsController extends AppController{
 		 * Not in the logic thread of the user workflow (admin only).
 		 */
 		$logged_user = $this->Auth->user();
-		if ($logged_user['role']!=2){
-			$this->set('proposals_view',$this->paginate());
+		$this->Paginator->settings = $this->paginate;
+		if ($logged_user['role']<2){
+			$this->set('proposals_view',$this->Paginator->paginate());
 		}else{
-			$this->set('proposals_view',$this->paginate('Proposal',array('Proposal.user_id LIKE'=>$logged_user['id'])));
+			$this->set('proposals_view',$this->Paginator->paginate('Proposal',array('Proposal.user_id LIKE'=>$logged_user['id'])));
 		}
 	}
     #Proposal->find('all',Array('conditions'=>Array('user_id'=>$logged_user['id']))));

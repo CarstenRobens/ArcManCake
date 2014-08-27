@@ -14,52 +14,31 @@
 		<div class="col-md-12">
 		<div class="panel panel-success">
            	<div class="panel-heading">
-				<h3 class="panel-title"><?php echo __( 'Land');?></h3>
+				<h3 class="panel-title"><?php echo __( 'Land').': '.$land_view['Land']['name'];?></h3>
 			</div>
 			<div class="panel-body">
 			
 			
 <!----------PANEL CONTENT------------------>	
-	
-	
-	
-	
-	
-	
+
 	
 	<div class="row">
 		<div class="col-md-1"> </div>
 		
-		<div class="col-md-7">
-			<strong id="foo" ><?php echo $land_view['Land']['name']; ?></strong> 
-			<select id="bar" style="display:none;"></select> 
+		<div class="col-md-3">
+			<strong><?php echo __('Notes:'); ?></strong>
 		</div>
 		
-		<div class="col-md-3" align=right> 
-			<a href=<?php echo $this->Html->url(array('action' => 'edit',$land_view['Land']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-		</div>
-		
-		
-		<div class="col-md-1"> </div>
-		
-	</div>
-	
-	<?php if(!empty($land_view['Land']['notes'])){ ?>
-	<div class="row">
-		<div class="col-md-1"> </div>
-		
-		<div class="col-md-4">
-			<?php echo __('Notes:'); ?>
-		</div>
-		
-		<div class="col-md-7">
+		<div class="col-md-6">
 			<?php echo $land_view['Land']['notes']; ?>
 		</div>
 		
-		<div class="col-md-1"> </div>
+		<div class="col-md-2" align="center">
+			<a href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$land_view['Land']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
+		</div>
 		
 	</div>
-	<?php } ?>
+	
 	<div class="row">
 		<div class="col-md-1"> </div>
 		<div class="col-md-10">

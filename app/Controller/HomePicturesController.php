@@ -2,6 +2,15 @@
 class HomePicturesController extends AppController{
 	public $helper = array('Html','Form');
 
+	public $components = array('Paginator');
+	
+	public $paginate = array(
+			'limit' => 25,
+			'order' => array(
+					'Users.username' => 'asc'
+			)
+	);
+	
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HomePictures');
@@ -23,7 +32,8 @@ class HomePicturesController extends AppController{
 	
 	public function index() {
 		$logged_user = $this->Auth->user();
-		$this->set('home_pictures_view',$this->paginate());
+		$this->Paginator->settings = $this->paginate;
+		$this->set('home_pictures_view',$this->Paginator->paginate());
 		
 		// add
 		if ($logged_user['role']<3 && !empty($logged_user)){

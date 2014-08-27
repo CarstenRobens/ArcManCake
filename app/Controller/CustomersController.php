@@ -40,7 +40,7 @@ class CustomersController extends AppController{
 		$logged_user = $this->Auth->user();
 		
 		$this->Paginator->settings = $this->paginate;
-		if ($logged_user['role']!=2){
+		if ($logged_user['role']<2){
 			$this->set('customers_view',$this->Paginator->paginate());
 		}else{
 			$this->set('customers_view',$this->Paginator->paginate('Customer',array('Customer.user_id LIKE'=>$logged_user['id'])));

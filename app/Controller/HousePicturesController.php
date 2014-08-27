@@ -1,6 +1,15 @@
 <?php
 class HousePicturesController extends AppController{
 	public $helper = array('Html','Form');
+	
+	public $components = array('Paginator');
+	
+	public $paginate = array(
+			'limit' => 25,
+			'order' => array(
+					'Customer.name' => 'asc'
+			)
+	);
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -22,8 +31,10 @@ class HousePicturesController extends AppController{
 	
 	public function index($house_id=NULL) {
 		$logged_user = $this->Auth->user();
+		$this->set('house_view',$this->HousePicture->MyHouse->findById($house_id));
 		if ($house_id==NULL){
-			$this->set('house_pictures_view',$this->paginate());
+			$this->Paginator->settings = $this->paginate;
+			$this->set('house_pictures_view',$this->Paginator->paginate());
 		}else{
 			$this->set('house_pictures_view',$this->paginate('HousePicture',array('HousePicture.house_id'=>$house_id)));
 			$this->request->data['HousePicture']['house_id'] = $house_id;
@@ -31,9 +42,8 @@ class HousePicturesController extends AppController{
 		$this->set('house_id_view',$house_id);
 		
 		// add
-		if ($logged_user['role']<3 && !empty($logged_user)){
+		if ($logged_user['role']<2 && !empty($logged_user)){
 			
-			$this->set('house_id_view',$house_id);
 			$this->set('list_houses_view',$this->HousePicture->MyHouse->find('list'));
 			
 			if ($this->request->is('post')) {

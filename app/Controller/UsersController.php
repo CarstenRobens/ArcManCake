@@ -17,6 +17,15 @@ class UsersController extends AppController{
     
     public $helper = array('Html','Form');
     
+    public $components = array('Paginator');
+    
+    public $paginate = array(
+    		'limit' => 25,
+    		'order' => array(
+    			'Users.username' => 'asc'
+    		)
+    );
+    
     public function beforeFilter() {
         parent::beforeFilter();
 		$this->Session->write('menue.active','Users');
@@ -24,14 +33,7 @@ class UsersController extends AppController{
         $this->Auth->allow('logout', 'login');
     }
 	
-	public $paginate = array(
-        'limit' => 25,
-        'order' => array(
-            'User.surname' => 'asc'
-        )
-    );
-    
-    public function isAuthorized($logged_user) {
+	public function isAuthorized($logged_user) {
     	if (in_array($this->action, array('index','view'))){
     		return TRUE;
     	}
@@ -44,8 +46,11 @@ class UsersController extends AppController{
     
     public function index() {
     	$logged_user = $this->Auth->user();
-        $this->User->recursive = 0;
-        $this->set('users_view',$this->paginate());
+    	
+    	$this->User->recursive = 0;
+    	$this->Paginator->settings = $this->paginate;
+    	$this->set('users_view',$this->Paginator->paginate());
+    	
         
         if ($logged_user['role']<2){
         	if ($this->request->is('post')) {

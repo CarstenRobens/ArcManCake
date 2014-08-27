@@ -7,7 +7,7 @@ class ExtrasController extends AppController{
 	public $paginate = array(
 			'limit' => 25,
 			'order' => array(
-					'Extra.category_id' => 'asc'
+				'Extra.category_id' => 'asc'
 			)
 	);
 	

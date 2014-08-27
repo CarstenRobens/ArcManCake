@@ -194,11 +194,16 @@
 			<table>
 			<tr>
 				
-				<th>Name</th>
-				<th>Username</th>
-				<th>Role</th>
-				<th>Created</th>
-				<th>Action</th>
+				<th><?php echo $this->Paginator->sort('surname',__('Surname')); ?></th>
+				<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
+				<th><?php echo $this->Paginator->sort('username',__('Username')); ?></th>
+				<th><?php echo $this->Paginator->sort('role',__('Role')); ?></th>
+				<th><?php echo $this->Paginator->sort('phone',__('Phone')); ?></th>
+				<th><?php echo $this->Paginator->sort('email',__('e-mail')); ?></th>
+				<?php if($current_user['role']<2){ ?>
+				<th><?php echo __('Action'); ?></th>
+				<?php } ?>
+				<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
 				
 			</tr>
 			<?php
@@ -206,38 +211,26 @@
 			{?>	
 			<tr> 
 				
-				<td> <?php echo $User['User']['name']?></td>
+				<td> <?php echo $User['User']['surname'].', ';?></td>
+				<td> <?php echo $User['User']['name'];?></td>
 				<td> <?php echo $this->Html->link($User['User']['username'], array('controller'=>'users','action'=>'view',$User['User']['id'])); ?></td>
-				<td> <?php echo $User['User']['role']?></td>
-				<td> <?php echo $User['User']['created']; ?> </td>
+				<td> <?php echo $level[$User['User']['role']];?></td>
+				<td> <?php echo $User['User']['phone'];?></td>
+				<td> <?php echo $User['User']['email'];?></td>
+				<?php if($current_user['role']<2){ ?>
 				<td>
-					 <a href=<?php echo $this->Html->url(array('action' => 'edit',$User['User']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-				
-				<?php 
-				echo ' ';
-				echo $this->Form->postLink($this->Html->tag('i', '',
-										array('class' => 'glyphicon glyphicon-remove')),
-										array('action' => 'delete',$User['User']['id']) ,
-										array('escape' => false), __('Are you sure you want to delete this user?'));?>
+					<a href=<?php echo $this->Html->url(array('action' => 'edit',$User['User']['id']));?> ><span class="glyphicon glyphicon-edit"> </span></a>
+					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"> </span>', array('action' => 'delete',$User['User']['id']), array('escape' => false), __('Are you sure you want to delete this user?'));?>
 				</td>
+				<?php } ?>
+				<td> <?php echo $User['User']['created']; ?> </td>
 				
 			</tr>
 			<?php
 			}?>
 			</table>
-			
-        
-       <?php 
-			if ($this->Session->read('Auth.User.power')==3)
-			{?>
-               		<p >
-						<?php echo $this->Html->link(__('Edit User', true), array('action' => 'edit', $User['User']['id'])); ?>
-						&middot;
-						<?php echo $this->Html->link(__('Delete User', true), array('action' => 'delete', $User['User']['id'])); ?>
-                    </p>
-        	<?php
-    	}?>
-		</div> </p>
+		
+		</div>
 		
 		<div class="col-md-2"></div>
 	
