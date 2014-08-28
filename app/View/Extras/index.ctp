@@ -16,7 +16,6 @@
 <div class="row">
 	<table>
 		<tr>
-			<th><?php echo $this->Paginator->sort('id',__('ID')); ?></th>
 			<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
 			<th><?php echo $this->Paginator->sort('default_priceA',__('Default Price A')); ?></th>
 			<th><?php echo $this->Paginator->sort('default_priceB',__('Default Price B')); ?></th>
@@ -40,7 +39,6 @@
 	<!-- Here is where we loop through our $extras array, printing out extra info --> 
 		<?php foreach($extras_view as $x ):?>
 		<tr> 
-			<td> <?php echo $x['Extra']['id']; ?> </td> 
 			<td> 
 				<a id="extra_<?php echo $x['Extra']['id']; ?>"  title="" ><?php echo $x['Extra']['name'];?></a>
 				<?php if(!$x['Extra']['picture']){

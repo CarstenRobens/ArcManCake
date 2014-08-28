@@ -49,7 +49,7 @@
 
 		<table>
 			<tr>
-				<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
+				<th><?php echo $this->Paginator->sort('name',__('Title')); ?></th>
 				<th><?php echo $this->Paginator->sort('house_id',__('House')); ?></th>
 				<th><?php echo $this->Paginator->sort('type_flag',__('Type')); ?></th>
 				<?php if($current_user['role']<2){ ?>
@@ -60,7 +60,7 @@
 
 			<?php foreach($house_pictures_view as $x ){ ?>
 			<tr>
-				<td><?php echo $this->Html->link($x['HousePicture']['name'], array('controller'=>'HousePictures','action'=>'view',$x['HousePicture']['id'])); ?></td>
+				<td><?php echo $x['HousePicture']['name']; ?></td>
 				<td><?php echo $x['MyHouse']['name'] ?></td>
 				<td><?php echo $house_pic_type[$x['HousePicture']['type_flag']] ?></td>
 				<td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));?></td>
