@@ -27,6 +27,11 @@ class BoughtExtrasController extends AppController{
 		$extras=$this->BoughtExtra->MyExtra->find('all',array(
             		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
 		
+		foreach($extras as $x){ //Selects only the categories that are going to be used
+			$used_categories[$x['MyCategory']['id']]=$x['MyCategory']['name'];
+		}
+		
+		
 		foreach ($extras as $key=>$x){
 			$house_dependency=($proposal['MyHouse']['id']==$x['MyExtra']['depends_on_house'] || $x['MyExtra']['depends_on_house']==0);
 			if(!$this->BoughtExtra->allow_extra($proposal_id,$x['MyExtra']) || !$house_dependency){
@@ -36,7 +41,7 @@ class BoughtExtrasController extends AppController{
 		
 		$this->set('proposal_id_view',$proposal_id);
 		$this->set('extras_view',$extras);
-		$this->set('list_categories_view',$this->BoughtExtra->MyExtra->MyCategory->find('list'));
+		$this->set('list_categories_view',$used_categories);
 		
 		
 		if ($this->request->is('post')){
