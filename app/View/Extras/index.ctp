@@ -37,7 +37,7 @@
 		</tr>
 
 	<!-- Here is where we loop through our $extras array, printing out extra info --> 
-		<?php foreach($extras_view as $x ):?>
+		<?php foreach($extras_view as $x ){?>
 		<tr> 
 			<td> 
 				<a id="extra_<?php echo $x['Extra']['id']; ?>"  title="" ><?php echo $x['Extra']['name'];?></a>
@@ -128,7 +128,7 @@
 			</td>
 			<?php }?>
 		</tr>
-		<?php endforeach; ?>
+		<?php } ?>
 		<?php echo $this->Paginator->numbers(); ?>
 		<?php unset($x);?>
 	</table>

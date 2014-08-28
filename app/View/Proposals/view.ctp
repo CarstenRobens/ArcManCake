@@ -107,7 +107,7 @@ foreach ($normal_house_pictures_view as $x){
 		<div class="col-md-10">
 			
 			<div class="row">
-				<h4 >
+				<strong >
 				<?php echo __('Size:'); ?>
 				
 					<?php if($enlargement>0){
@@ -117,7 +117,7 @@ foreach ($normal_house_pictures_view as $x){
 					}else{
 						echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
 					}?>
-				</h4 >
+				</strong >
 			</div>
 			<div class="row">
 			
@@ -131,8 +131,8 @@ foreach ($normal_house_pictures_view as $x){
 			</div>
 			
 			<div class="row">
-				<h3> <?php echo __('Description:'); ?> </h3>
-				<?php echo $proposal_view['MyHouse']['description']; ?> 
+				<strong > <?php echo __('Description:'); ?> </strong>
+				<?php echo $this->Text->autoParagraph($proposal_view['MyHouse']['description']); ?> 
 			</div>
 			
 			
@@ -310,9 +310,9 @@ foreach ($normal_house_pictures_view as $x){
 		
 		<div class="col-md-<?php if (!empty($x['MyExtra']['picture'])){ echo '6';}else{ echo '8';}?>">
 			
-			<p><?php echo $x['MyExtra']['description']; ?></p> 
+			<?php echo $this->Text->autoParagraph($x['MyExtra']['description']); ?> 
 			<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
-			<p> <?php echo '<strong>'.__('Comment:').' </strong>'.$x['MyBoughtExtra']['comment']; ?> </p>
+			<?php echo '<strong>'.__('Comment:').' </strong>'.$this->Text->autoParagraph($x['MyBoughtExtra']['comment']); ?>
 			<?php }?>
 			<?php if($x['MyBoughtExtra']['factor']!=1){ ?>
 			<p> <?php echo __('Units:').' '.$x['MyBoughtExtra']['factor']; ?> </p>
@@ -426,7 +426,7 @@ foreach ($normal_house_pictures_view as $x){
 		<div class="col-md-2"> </div>
 		
 		<div class="col-md-<?php if (!empty($x['MyExtra']['picture'])){ echo '6';}else{ echo '8';}?>">
-			<?php echo $x['MyExtra']['description']; ?>
+			<?php echo $this->Text->autoParagraph($x['MyExtra']['description']); ?>
 		</div>
 		
 		<?php if (!empty($x['MyExtra']['picture'])){ ?>

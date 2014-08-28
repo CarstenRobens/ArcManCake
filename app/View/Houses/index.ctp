@@ -18,7 +18,7 @@
 				<?php if(!empty($House['MyHousePicture'])){
 					foreach ($House['MyHousePicture'] as $x){
 						if($x['type_flag']==0){
-							echo $this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][0]['picture'], array('class' => 'featurette-image img-responsive'));
+							echo $this->Html->image('/img/uploads/houses/'.$x['picture'], array('class' => 'featurette-image img-responsive'));
 							break;
 						}
 					}
