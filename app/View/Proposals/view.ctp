@@ -1,5 +1,6 @@
 <?php 
 $enlargement=0;
+$basement=FALSE;
 foreach($bought_extras_view as $index=>$x){
 	if($x['MyExtra']['size_dependent_flag']>0){
 		if($x['MyBoughtExtra']['price']>0){
@@ -9,6 +10,8 @@ foreach($bought_extras_view as $index=>$x){
 		}
 		$enlargement=$direction*$x['MyExtra']['size_dependent_flag'];
 		break;
+	}elseif ($x['MyExtra']['size_dependent_flag']==2){
+		$basement=TRUE;
 	}
 }
 ?>

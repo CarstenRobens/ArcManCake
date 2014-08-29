@@ -50,6 +50,7 @@ class AppController extends Controller {
 		$this->set('level',Configure::read('Level') );
 		$this->set('house_pic_type',Configure::read('HousePictureType'));
 		$this->set('house_type',Configure::read('HouseType'));
+		$this->set('extra_type',Configure::read('ExtraType'));
 				
     }
     

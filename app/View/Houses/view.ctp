@@ -1,11 +1,14 @@
-<?php echo $this->Html->link('Back', array('controller'=>'Houses','action'=>'index')) ?>
-
+<div class="row">
+	<br>
+	<?php echo $this->Html->link('Back', array('controller'=>'Houses','action'=>'index')) ?>
+</div>
+	
 
 	<div class="row">
 		<div class="col-md-8">
 		<div class="panel panel-success">
            	<div class="panel-heading">
-				<h3 class="panel-title" style="text-align:left;">
+				<h3 class="panel-title">
 					<?php echo __( 'House').': '.$house_view['House']['name'];?>
 				</h3>
 			</div>
@@ -108,7 +111,7 @@
 				</div>
 				<div class="panel-body">
 					<?php foreach ($house_pictures_view as $x){
-						if($x['type_flag']!=0){ ?>
+						if($x['type_flag']==-2){ ?>
 							<div class="col-md-6">
 							<?php echo $this->Html->link(
 								$this->Html->image('/img/uploads/houses/'.$x['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),

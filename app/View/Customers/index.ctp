@@ -10,30 +10,25 @@
 <div class="row">
 	<table>
 		<tr>
+			<th><?php echo $this->Paginator->sort('surname',__('Surname')); ?></th>
 			<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
-			<th><?php echo $this->Paginator->sort('name',__('Surname')); ?></th>
-			<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
 			<th><?php echo __('Action'); ?></th>
+			<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
 		</tr>
 
 	<!-- Here is where we loop through our $customers array, printing out customer info --> 
 		<?php foreach($customers_view as $x ){ ?>
 		<tr> 
+			<td> <?php echo $this->Html->link($x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])).','; ?></td>
 			<td> <?php echo $this->Html->link($x['Customer']['name'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
-			<td> <?php echo $this->Html->link($x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
-			
-			<td> <?php echo $x['Customer']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
 			<td> <?php 
 				echo $this->Html->link('Create Proposal',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' | ';
 				echo $this->Html->link('Add Land',array('controller' => 'Lands','action' => 'add_land_for_customer',$x['Customer']['id'])).' | ';
-				?><a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a><?php
-				echo ' ';
-				echo $this->Form->postLink($this->Html->tag('i', '',
-										array('class' => 'glyphicon glyphicon-remove')),
-										array('action' => 'delete',$x['Customer']['id']) ,
-										array('escape' => false), __('Are you sure you want to delete this Customer?'));
+				?>
+				<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span> </a><?php
+				echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete',$x['Customer']['id']), array('escape' => false), __('Are you sure you want to delete this Customer?'));
 				?></td>
-			
+			<td> <?php echo $x['Customer']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
 		</tr>
 		<?php } ?>
 		<?php echo $this->Paginator->numbers(); ?>

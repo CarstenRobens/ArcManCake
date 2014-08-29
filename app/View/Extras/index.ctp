@@ -156,20 +156,20 @@
 						);
 						$house_type[0]=__('None');
 						
-						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name')));
-						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description'),'escape' => true));
-						echo $this->Form->input('default_priceA',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[1].__(' (in € or €/m<sup>2</sup>)')));
-						echo $this->Form->input('default_priceB',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[2].__(' (in € or €/m<sup>2</sup>)')));
-						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)')));
-						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category')));
-						echo $this->Form->input('size_dependent_check',array('type'=>'select','options'=>$array_options ,'default' => 0,'label' => __('Is the price size dependent?')));
-						echo $this->Form->input('depends_on',array('default' => 0,'options'=> $list_extras_view,'label'=>__('Can be selected only after buying:')));
-						echo $this->Form->input('depends_on_house',array('default' => 0,'options'=> $houses_list_view,'label'=>__('Can be selected only for house:')));
-						echo $this->Form->input('bool_garage',array('default' => false,'label'=>__('Is a garage?')));
-						echo $this->Form->input('bool_unique',array('default' => false,'label'=>__('Only one can be purchased?')));
-						echo $this->Form->input('bool_uneditable',array('default' => false,'label'=>__('Will the price be fixed?')));
-						echo $this->Form->input('bool_external',array('default' => false,'label'=>__('Service from external company')));
-						echo $this->Form->input('upload', array('type' => 'file','label'=>'Picture'));
+						echo $this->Form->input('name',array('placeholder' => __('Enter name'),'label' => __('Name'),'div' => 'form-group has-success'));
+						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description'),'div' => 'form-group has-success'));
+						echo $this->Form->input('default_priceA',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[1].__(' (in € or €/m<sup>2</sup>)'),'div' => 'form-group has-success'));
+						echo $this->Form->input('default_priceB',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[2].__(' (in € or €/m<sup>2</sup>)'),'div' => 'form-group has-success'));
+						echo $this->Form->input('default_priceC',array('placeholder' => __('Enter the price'),'label' => __('Default Price for Houses of type ').$house_type[3].__(' (in € or €/m<sup>2</sup>)'),'div' => 'form-group has-success'));
+						echo $this->Form->input('category_id', array('options'=> $list_categories_view,'label' => __('Category'),'div' => 'form-group has-success'));
+						echo $this->Form->input('size_dependent_check',array('type'=>'select','options'=>$array_options ,'default' => 0,'label' => __('Is the price size dependent?'),'div' => 'form-group has-success'));
+						echo $this->Form->input('type',array('type'=>'select','options'=>$extra_type ,'default' => 0,'label' => __('Type of extra'),'div' => 'form-group has-success'));
+						echo $this->Form->input('depends_on',array('default' => 0,'options'=> $list_extras_view,'label'=>__('Can be selected only after buying:'),'div' => 'form-group has-success'));
+						echo $this->Form->input('depends_on_house',array('default' => 0,'options'=> $houses_list_view,'label'=>__('Can be selected only for house:'),'div' => 'form-group has-success'));
+						echo $this->Form->input('bool_unique',array('default' => false,'label'=>__('Only one can be purchased?'),'div' => 'form-group has-success'));
+						echo $this->Form->input('bool_uneditable',array('default' => false,'label'=>__('Will the price be fixed?'),'div' => 'form-group has-success'));
+						echo $this->Form->input('bool_external',array('default' => false,'label'=>__('Service from external company?'),'div' => 'form-group has-success'));
+						echo $this->Form->input('upload', array('type' => 'file','label'=>'Picture','div' => 'form-group has-success'));
 						
 						
 						?>		
