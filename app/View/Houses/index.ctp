@@ -86,7 +86,7 @@
 					echo $this->Html->link('Edit',array('action' => 'edit',$House['House']['id'])).' | ';
 					echo $this->Form->postLink('Delete',array('action' => 'delete',$House['House']['id']),array('confirm'=>'Are you sure?'));
 				?></td>
-				<td> <?php echo $House['House']['created'].' by '.$this->Html->link($House['MyUser']['username'], array('controller'=>'Users','action'=>'view',$House['MyUser']['id'])); ?> </td>
+				<td> <?php echo date("d-M-Y",strtotime($House['House']['created'])).' by '.$this->Html->link($House['MyUser']['username'], array('controller'=>'Users','action'=>'view',$House['MyUser']['id'])); ?> </td>
 			</tr>
 			<?php }?>
 			</table>

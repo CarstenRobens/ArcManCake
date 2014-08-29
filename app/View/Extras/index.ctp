@@ -110,7 +110,7 @@
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div><?php 
 			} ?>
 			</td>
-			<td> <?php echo $x['Extra']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
+			<td> <?php echo date("d-M-Y",strtotime($x['Extra']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 			<?php if($current_user['role']<2){ ?>
 			<td>
 				<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>

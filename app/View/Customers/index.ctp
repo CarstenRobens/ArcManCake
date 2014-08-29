@@ -28,7 +28,7 @@
 				<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span> </a><?php
 				echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete',$x['Customer']['id']), array('escape' => false), __('Are you sure you want to delete this Customer?'));
 				?></td>
-			<td> <?php echo $x['Customer']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
+			<td> <?php echo date("d-M-Y",strtotime($x['Customer']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
 		</tr>
 		<?php } ?>
 		<?php echo $this->Paginator->numbers(); ?>
@@ -75,7 +75,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 						echo $this->Form->input('2nd_name',array('placeholder' => __('Enter the 2nd customer name'),'label' => __('2nd Name'),'div' => 'form-group has-success'));
 						echo $this->Form->input('2nd_surname',array('placeholder' => __('Enter the 2nd customer surname'),'label' => __('2nd Surname'),'div' => 'form-group has-success'));
 						echo $this->Form->input('2nd_maiden_surname',array('placeholder' => __('Enter the 2nd maiden surname'),'label' => __('2nd Maiden Surname'),'div' => 'form-group has-success'));
-						echo $this->Form->input('2nd_birtday',array('dateFormat'=>'DMY','placeholder' => __('Enter the 2nd customers Birthday'),'label' => __('2nd Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
+						echo $this->Form->input('2nd_birthday',array('dateFormat'=>'DMY','placeholder' => __('Enter the 2nd customers Birthday'),'label' => __('2nd Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
 						?>
 						
 						

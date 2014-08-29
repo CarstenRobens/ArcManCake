@@ -64,7 +64,7 @@
 				<td><?php echo $x['MyHouse']['name'] ?></td>
 				<td><?php echo $house_pic_type[$x['HousePicture']['type_flag']] ?></td>
 				<td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));?></td>
-				<td><?php echo $x['HousePicture']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
+				<td><?php echo date("d-M-Y",strtotime($x['HousePicture']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
 			</tr>
 			<?php } ?>
 			<?php echo $this->Paginator->numbers(); ?>

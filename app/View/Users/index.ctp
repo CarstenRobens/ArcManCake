@@ -41,7 +41,7 @@
 					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"> </span>', array('action' => 'delete',$User['User']['id']), array('escape' => false), __('Are you sure you want to delete this user?'));?>
 				</td>
 				<?php } ?>
-				<td> <?php echo $User['User']['created']; ?> </td>
+				<td> <?php echo date("d-M-Y",strtotime($User['User']['created'])); ?> </td>
 				
 			</tr>
 			<?php

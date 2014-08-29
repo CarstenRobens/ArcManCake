@@ -55,8 +55,8 @@
 					}else{
 						echo __('All day');	
 					} ?>  </p>
-					<p > <?php echo $event['Event']['created'].' '.__('by').' '.$this->Html->link($list_users_view[$event['Event']['user_id']],array('plugin'=>NULL,'controller'=>'Users','action'=>'view',$event['Event']['user_id'])); ?> </p>
-					<p > <?php echo $event['Event']['modified']; ?> </p>
+					<p > <?php echo date("d-M-Y",strtotime($event['Event']['created'])).' '.__('by').' '.$this->Html->link($list_users_view[$event['Event']['user_id']],array('plugin'=>NULL,'controller'=>'Users','action'=>'view',$event['Event']['user_id'])); ?> </p>
+					<p > <?php echo date("d-M-Y",strtotime($event['Event']['modified'])); ?> </p>
 				</div>
 			</div>
 			

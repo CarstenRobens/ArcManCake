@@ -100,7 +100,7 @@
 					</p>
 					<p >
 					<?php if(!empty($user_view['User']['created'])){
-						echo $user_view['User']['created'];
+						echo date("d-M-Y",strtotime($user_view['User']['created']));
 					} ?>
 					</p>
 				</div>

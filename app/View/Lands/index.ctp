@@ -35,7 +35,7 @@
 				</td>
 
 
-				<td><?php echo $x['Land']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?>
+				<td><?php echo date("d-M-Y",strtotime($x['Land']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?>
 				</td>
 				<td><a
 					href=<?php echo $this->Html->url(array('action' => 'edit',$x['Land']['id']));?>><span

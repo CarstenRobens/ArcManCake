@@ -151,12 +151,12 @@ foreach ($normal_house_pictures_view as $x){
 			<p style="clear: both;">  </p>
 			<table>
 				<tr>
-					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $proposal_view['MyCustomer']['birthday'];?></h6> </td>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo date("d-M-Y",strtotime($proposal_view['MyCustomer']['birthday']));?></h6> </td>
 				</tr>
 				<tr>
 					<td >Geburtsdatum<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyCustomer']['2nd_birtday'])) echo $proposal_view['MyCustomer']['2nd_birtday'];?></h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyCustomer']['2nd_birthday'])) echo date("d-M-Y",strtotime($proposal_view['MyCustomer']['2nd_birthday']));?></h6></td>		
 				</tr>
 				<tr>
 					<td style = "border-bottom: none;">Geburtsdatum<br>

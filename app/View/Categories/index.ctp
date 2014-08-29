@@ -24,7 +24,7 @@
 					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove">', array('action' => 'delete',$x['Category']['id']), array('escape' => false), __('Are you sure you want to delete this category?'));?>
 				</td>
 				<?php } ?>
-				<td><?php echo $x['Category']['created'].' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?>
+				<td><?php echo date("d-M-Y",strtotime($x['Category']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?>
 				</td>
 			</tr>
 			<?php } ?>

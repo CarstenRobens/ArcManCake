@@ -89,7 +89,7 @@
 						echo $customer_view['Customer']['zipcode'].', '.$customer_view['Customer']['city'];
 					} ?> </p>
 					<p > <?php if(!empty($customer_view['Customer']['birthday'])){
-						echo $customer_view['Customer']['birthday'];
+						echo date("d-M-Y",strtotime($customer_view['Customer']['birthday']));
 					} ?> </p>
 				</div>
 			</div>
@@ -109,7 +109,7 @@
 					<p > <?php if(!empty($customer_view['Customer']['2nd_maiden_surname'])){
 						echo __('Notes:');
 					} ?> </p>
-					<p > <?php if(!empty($customer_view['Customer']['2nd_birtday'])){
+					<p > <?php if(!empty($customer_view['Customer']['2nd_birthday'])){
 						echo __('Notes:');
 					} ?> </p>
 				</div>
@@ -123,8 +123,8 @@
 					<p > <?php if(!empty($customer_view['Customer']['2nd_maiden_surname'])){
 						echo $customer_view['Customer']['2nd_maiden_surname'];
 					} ?> </p>
-					<p > <?php if(!empty($customer_view['Customer']['2nd_birtday'])){
-						echo $customer_view['Customer']['2nd_birtday'];
+					<p > <?php if(!empty($customer_view['Customer']['2nd_birthday'])){
+						echo date("d-M-Y",strtotime($customer_view['Customer']['2nd_birthday']));
 					} ?> </p>
 				</div>
 			</div>
@@ -136,7 +136,7 @@
 				</div>
 				
 				<div class="col-xs-4">
-					<p > <?php echo $customer_view['Customer']['created'].' by '.$this->Html->link($customer_view['MyUser']['username'], array('controller'=>'Users','action'=>'view',$customer_view['Customer']['user_id'])); ?> </p>
+					<p > <?php echo date("d-M-Y",strtotime($customer_view['Customer']['created'])).' by '.$this->Html->link($customer_view['MyUser']['username'], array('controller'=>'Users','action'=>'view',$customer_view['Customer']['user_id'])); ?> </p>
 				</div>
 			</div>
 			
