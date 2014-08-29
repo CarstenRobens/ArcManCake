@@ -2,7 +2,7 @@
 class LandsController extends AppController{
 	
 	public $components = array('RequestHandler');
-	public $helper = array('Html','Form');
+	public $helper = array('Html','Form','Number');
 
 	public $paginate = array(
         'limit' => 25,

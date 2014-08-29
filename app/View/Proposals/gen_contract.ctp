@@ -301,17 +301,17 @@ foreach ($normal_house_pictures_view as $x){
 				<tr >
 					<td style = "border-bottom: none;"> <h6> </h6> </td>
 					<td style = "border-bottom: none;"> <h6> Hauspreis </h6> </td>
-					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $proposal_view['MyHouse']['price'];?> € </h6> </td>
+					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $this->Number->currency($proposal_view['MyHouse']['price'],'EUR',array('wholePosition'=>'after'));?></h6> </td>
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;"> <h6> Summe Sonderausstattung gemäß Sonderausstattungsliste </h6> </td>
 					<td style = "border-bottom: none;"> <h6> + </h6> </td>
-					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $summed_extras;?> € </h6> </td>
+					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $this->Number->currency($summed_extras,'EUR',array('wholePosition'=>'after'));?></h6> </td>
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;"> <h6> Summe Hausvergrößerung und Verkleinerung </h6> </td>
 					<td style = "border-bottom: none;"> <h6> + </h6> </td>
-					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $enlagment_price;?> € </h6> </td>
+					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $this->Number->currency($enlagment_price,'EUR',array('wholePosition'=>'after'));?></h6> </td>
 				</tr>
 				<tr>
 				<tr >
@@ -327,7 +327,7 @@ foreach ($normal_house_pictures_view as $x){
 				<tr>
 					<th style = "border-bottom: none;"><h6> Summe inklusive MwSt. in der gesetzlichen Höhe </h6> </th>
 					<th style = "border-bottom: none;"><h6> &nbsp; </h6> </th>
-					<th style = "border-bottom: none;" align="right"><h6><?php echo $proposal_view['MyHouse']['price']+$summed_extras+$enlagment_price;?> €</h6></th>
+					<th style = "border-bottom: none;" align="right"><h6><?php echo $this->Number->currency($proposal_view['MyHouse']['price']+$summed_extras+$enlagment_price,'EUR',array('wholePosition'=>'after'));?></h6></th>
 				</tr>
 			</table>
 			
@@ -1538,7 +1538,7 @@ sind enthalten.
 	
 	
 	<div class="row" style="padding: 10px">
-		<h6><?php echo 'Preis: ' . $enlagment_price.' €'; ?>
+		<h6><?php echo 'Preis: '.$this->Number->currency($enlagment_price,'EUR',array('wholePosition'=>'after')); ?>
 		<br/></h6>
 		
 	</div>
@@ -1712,13 +1712,13 @@ sind enthalten.
 						<?php echo 'Preis: '; ?>
 						<?php
 						if ($x['MyExtra']['size_dependent_flag']==-2){ 
-							echo ($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+							echo $this->Number->currency(($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 						}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
-							echo ($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+							echo $this->Number->currency(($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 						}elseif($x['MyExtra']['size_dependent_flag']>0){
-							echo ($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'].' €';
+							echo $this->Number->currency(($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 						}else{
-							echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+							echo $this->Number->currency($x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 						}
 						?>
 					</h5>
@@ -1732,7 +1732,7 @@ sind enthalten.
 		
 		
 		<div  style="text-align: right">
-		<h4> Summe Sonderausstattung: <?php echo $summed_extras;?> €</h4>
+		<h4> Summe Sonderausstattung: <?php echo $$this->Number->currency(summed_extras,'EUR',array('wholePosition'=>'after'));?></h4>
 		</div>
 		
 		

@@ -47,8 +47,8 @@
 					<tr>
 						<td >Grundstückskaufpreis Gem.:</td>
 						<td style='text-align: right'><?php echo $land_view['Land']['land_size'];?> m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $land_view['Land']['land_price_per_m2'];?> €/m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $subtotal=$land_view['Land']['land_size']*$land_view['Land']['land_price_per_m2'];?> €</td>
+						<td style='text-align: right'><?php echo $this->Number->currency($land_view['Land']['land_price_per_m2'],'EUR',array('wholePosition'=>'after'));?>/m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $this->Number->currency($subtotal=$land_view['Land']['land_size']*$land_view['Land']['land_price_per_m2'],'EUR',array('wholePosition'=>'after'));?></td>
 						
 					</tr>
 					
@@ -65,18 +65,18 @@
 						</td>
 						<td> </td>
 						<td style='text-align: right'>
-							<?php echo $land_view['Land']['notary_cost']/100*$subtotal;?> €<br>
-							<?php echo $land_view['Land']['land_tax']/100*$subtotal;?> €<br>
-							<?php echo $land_view['Land']['land_agent_cost']/100*$subtotal;?> €
+							<?php echo $this->Number->currency($land_view['Land']['notary_cost']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?><br>
+							<?php echo $this->Number->currency($land_view['Land']['land_tax']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?><br>
+							<?php echo $this->Number->currency($land_view['Land']['land_agent_cost']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?>
 						</td>
 						
 					</tr>
 					
 					<tr>
 						<td>Erschließungkosten</td>
-						<td style='text-align: right'><?php echo $land_view['Land']['dev_size'];?> m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $land_view['Land']['dev_cost_per_m2'];?> €/m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $subtotal_dev=$land_view['Land']['dev_size']*$land_view['Land']['dev_cost_per_m2'];?> €</td>
+						<td style='text-align: right'><?php echo $this->Number->currency($land_view['Land']['dev_size'],'EUR',array('wholePosition'=>'after'));?> m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $this->Number->currency($land_view['Land']['dev_cost_per_m2'],'EUR',array('wholePosition'=>'after'));?>/m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $this->Number->currency($subtotal_dev=$land_view['Land']['dev_size']*$land_view['Land']['dev_cost_per_m2'],'EUR',array('wholePosition'=>'after'));?></td>
 						
 					</tr>
 					
@@ -84,7 +84,7 @@
 						<td>Bauzinsen 0,25%/Monat</td>
 						<td style='text-align: right'><?php echo $land_view['Land']['building_tax'].'%';?></td>
 						<td> </td>
-						<td style='text-align: right'><?php echo $land_view['Land']['building_tax']/100*$subtotal;?> €</td>
+						<td style='text-align: right'><?php echo $this->Number->currency($land_view['Land']['building_tax']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?></td>
 						
 					</tr>
 					
@@ -92,8 +92,8 @@
 				
 				<table>
 					<tr>
-						<th>Gesamtgrundstücksankauf mit Nebenkosten:</td>
-						<th style='text-align: right'><?php echo $total_land=$subtotal_dev+$subtotal*(100+$land_view['Land']['notary_cost']+$land_view['Land']['land_tax']+$land_view['Land']['land_agent_cost'])/100;?> €</td>
+						<th>Gesamtgrundstücksankauf mit Nebenkosten:</th>
+						<th style='text-align: right'><?php echo $this->Number->currency($total_land=$subtotal_dev+$subtotal*(100+$land_view['Land']['notary_cost']+$land_view['Land']['land_tax']+$land_view['Land']['land_agent_cost'])/100,'EUR',array('wholePosition'=>'after'));?></th>
 					</tr>
 				</table>
 			</div>

@@ -1,6 +1,6 @@
 <?php
 class ExtrasController extends AppController{
-	public $helper = array('Html','Form');
+	public $helper = array('Html','Form','Number');
 
 	public $components = array('RequestHandler','Paginator');
 	

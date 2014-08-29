@@ -1,6 +1,6 @@
 <?php
 class HousesController extends AppController{
-	public $helper = array('Html','Form');
+	public $helper = array('Html','Form','Number');
 
 	public function beforeFilter() {
 		parent::beforeFilter();

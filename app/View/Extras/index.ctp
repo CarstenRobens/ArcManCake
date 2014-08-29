@@ -52,9 +52,9 @@
 					$( "#extra_<?php echo $x['Extra']['id']; ?>" ).tooltip({ content: '<?php echo $html; ?>' });
 				</script>
 			</td>
-			<td> <?php echo $x['Extra']['default_priceA'].' €'; ?></td>
-			<td> <?php echo $x['Extra']['default_priceB'].' €'; ?></td>
-			<td> <?php echo $x['Extra']['default_priceC'].' €'; ?></td>
+			<td> <?php echo $this->Number->currency($x['Extra']['default_priceA'],'EUR',array('wholePosition'=>'after')); ?></td>
+			<td> <?php echo $this->Number->currency($x['Extra']['default_priceB'],'EUR',array('wholePosition'=>'after')); ?></td>
+			<td> <?php echo $this->Number->currency($x['Extra']['default_priceC'],'EUR',array('wholePosition'=>'after')); ?></td>
 			<td> <?php echo $x['MyCategory']['name']; ?></td>
 			<td> 
 			<?php if ($x['Extra']['size_dependent_flag']<0){

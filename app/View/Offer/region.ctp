@@ -98,7 +98,7 @@
                                     <td><div style="text-align:right;">
                                         <?php
                                             if(!empty($offer['resultlist:realEstate']['price'])){ 
-                                                echo $offer['resultlist:realEstate']['price']['value'].' €';
+                                                echo $this->Number->currency($offer['resultlist:realEstate']['price']['value'],'EUR',array('wholePosition'=>'after'));
                                             }
                                         ?>&nbsp;
                                         </div> </td>

@@ -81,7 +81,7 @@
 				<td> <?php echo $house_type[$House['House']['type']] ?></td>
 				<td> <?php echo $House['House']['size'] ?></td>
 				<td> <?php echo $House['House']['floors'] ?></td>
-				<td> <?php echo $House['House']['price'] ?></td>
+				<td> <?php echo $this->Number->currency($House['House']['price'],'EUR',array('wholePosition'=>'after')) ?></td>
 				<td> <?php 
 					echo $this->Html->link('Edit',array('action' => 'edit',$House['House']['id'])).' | ';
 					echo $this->Form->postLink('Delete',array('action' => 'delete',$House['House']['id']),array('confirm'=>'Are you sure?'));

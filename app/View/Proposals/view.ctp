@@ -138,7 +138,7 @@ foreach ($normal_house_pictures_view as $x){
 				</div>
 				
 				<div class="col-md-2">
-					<?php echo $proposal_view['MyHouse']['price'].' €'; ?>
+					<?php echo $this->Number->currency($proposal_view['MyHouse']['price'],'EUR',array('wholePosition'=>'after')); ?>
 				</div>
 				
 				
@@ -284,13 +284,13 @@ foreach ($normal_house_pictures_view as $x){
 		<div class="col-md-2">
 			<?php
 			if ($x['MyExtra']['size_dependent_flag']==-2){ 
-				echo ($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+				echo $this->Number->currency(($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 			}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
-				echo ($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+				echo $this->Number->currency(($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 			}elseif($x['MyExtra']['size_dependent_flag']>0){
-				echo ($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'].' €';
+				echo $this->Number->currency(($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 			}else{
-				echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €';
+				echo $this->Number->currency($x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 			}
 			?>
 		</div>
@@ -408,7 +408,7 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		
 		<div class="col-md-2">
-			<?php echo $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'].' €'; ?>
+			<?php echo $this->Number->currency($x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after')); ?>
 		</div>
 		
 	</div>
@@ -505,8 +505,8 @@ foreach ($normal_house_pictures_view as $x){
 					<tr>
 						<td >Grundstückskaufpreis Gem.:</td>
 						<td style='text-align: right'><?php echo $proposal_view['MyLand']['land_size'];?> m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $proposal_view['MyLand']['land_price_per_m2'];?> €/m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $subtotal=$proposal_view['MyLand']['land_size']*$proposal_view['MyLand']['land_price_per_m2'];?> €</td>
+						<td style='text-align: right'><?php echo $this->Number->currency($proposal_view['MyLand']['land_price_per_m2'],'EUR',array('wholePosition'=>'after'));?>/m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $this->Number->currency($subtotal=$proposal_view['MyLand']['land_size']*$proposal_view['MyLand']['land_price_per_m2'],'EUR',array('wholePosition'=>'after'));?></td>
 						
 					</tr>
 					
@@ -523,9 +523,9 @@ foreach ($normal_house_pictures_view as $x){
 						</td>
 						<td> </td>
 						<td style='text-align: right'>
-							<?php echo $proposal_view['MyLand']['notary_cost']/100*$subtotal;?> €<br>
-							<?php echo $proposal_view['MyLand']['land_tax']/100*$subtotal;?> €<br>
-							<?php echo $proposal_view['MyLand']['land_agent_cost']/100*$subtotal;?> €
+							<?php echo $this->Number->currency($proposal_view['MyLand']['notary_cost']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?><br>
+							<?php echo $this->Number->currency($proposal_view['MyLand']['land_tax']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?><br>
+							<?php echo $this->Number->currency($proposal_view['MyLand']['land_agent_cost']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?>
 						</td>
 						
 					</tr>
@@ -533,8 +533,8 @@ foreach ($normal_house_pictures_view as $x){
 					<tr>
 						<td>Erschließungkosten</td>
 						<td style='text-align: right'><?php echo $proposal_view['MyLand']['dev_size'];?> m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $proposal_view['MyLand']['dev_cost_per_m2'];?> €/m<sup>2</sup></td>
-						<td style='text-align: right'><?php echo $subtotal_dev=$proposal_view['MyLand']['dev_size']*$proposal_view['MyLand']['dev_cost_per_m2'];?> €</td>
+						<td style='text-align: right'><?php echo $this->Number->currency($proposal_view['MyLand']['dev_cost_per_m2'],'EUR',array('wholePosition'=>'after'));?>/m<sup>2</sup></td>
+						<td style='text-align: right'><?php echo $this->Number->currency($subtotal_dev=$proposal_view['MyLand']['dev_size']*$proposal_view['MyLand']['dev_cost_per_m2'],'EUR',array('wholePosition'=>'after'));?></td>
 						
 					</tr>
 					
@@ -542,7 +542,7 @@ foreach ($normal_house_pictures_view as $x){
 						<td>Bauzinsen 0,25%/Monat</td>
 						<td style='text-align: right'><?php echo $proposal_view['MyLand']['building_tax'].'%';?></td>
 						<td> </td>
-						<td style='text-align: right'><?php echo $proposal_view['MyLand']['building_tax']/100*$subtotal;?> €</td>
+						<td style='text-align: right'><?php echo $this->Number->currency($proposal_view['MyLand']['building_tax']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?></td>
 						
 					</tr>
 					
@@ -550,8 +550,8 @@ foreach ($normal_house_pictures_view as $x){
 				
 				<table>
 					<tr>
-						<th>Gesamtgrundstücksankauf mit Nebenkosten:</td>
-						<th style='text-align: right'><?php echo $total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost'])/100;?> €</td>
+						<th>Gesamtgrundstücksankauf mit Nebenkosten:</th>
+						<th style='text-align: right'><?php echo $this->Number->currency($total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost'])/100,'EUR',array('wholePosition'=>'after'));?></th>
 					</tr>
 				</table>
 			</div>

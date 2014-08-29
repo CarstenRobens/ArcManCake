@@ -66,7 +66,7 @@
 				</div>
 				
 				<div class="col-md-2">
-					<?php echo $house_view['House']['price'].' €'; ?>
+					<?php echo $this->Number->currency($house_view['House']['price'],'EUR',array('wholePosition'=>'after')); ?>
 				</div>
 			</div>
 		</div>
