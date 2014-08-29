@@ -28,12 +28,17 @@
         </div>
 		<div class="col-md-10">
 			
-			<div class="row">
+			<div class="row" style="text-align:left;">
 				<strong >
-				<?php echo __('Size:'); ?>
-				
-					<?php echo $house_view['House']['size'].__(' m<sup>2</sup> in ').$house_view['House']['floors'].__(' floors.');?>
+					<?php echo __('Size:'); ?>
 				</strong >
+				<?php echo $house_view['House']['size'].__(' m<sup>2</sup> in ').$house_view['House']['floors'].__(' floors.');?>
+				
+				<span style="float:right;">
+					<?php if($house_view['House']['bool_duplex']){ ?>
+						 <?php echo __('Duplex')?> 
+					<?php } ?>
+				</span>
 			</div>
 			<div class="row">
 			

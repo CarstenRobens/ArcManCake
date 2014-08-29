@@ -87,12 +87,12 @@ class BoughtExtra extends AppModel{
 			throw new NotFoundException(__('Invalid Bought Extra'));
 		}
 		/* Logic to handle the removal of a garage */
-		if($x['MyExtra']['bool_garage']){
+		if($x['MyExtra']['type']==1){
 			$count= sizeof($this->find('all',array(
-					'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>0,'MyExtra.bool_garage'=>1))));
+					'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>0,'MyExtra.type'=>1))));
 			if($count==1){
 				$ext_garage=$this->find('first',array(
-						'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
+						'conditions'=>array('proposal_id'=>$x['MyProposal']['id'],'MyExtra.bool_external'=>1,'MyExtra.type'=>1)));
 				if(!empty($ext_garage)){
 					$house=$this->MyProposal->MyHouse->findById($ext_garage['MyProposal']['house_id']);
 					$price=$this->MyProposal->MyHouse->extra_price($house['MyHouse']['type'],$ext_garage['MyExtra']);

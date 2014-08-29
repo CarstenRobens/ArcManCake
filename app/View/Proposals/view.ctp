@@ -1,20 +1,4 @@
-<?php 
-$enlargement=0;
-$basement=FALSE;
-foreach($bought_extras_view as $index=>$x){
-	if($x['MyExtra']['size_dependent_flag']>0){
-		if($x['MyBoughtExtra']['price']>0){
-			$direction=1;
-		}else{
-			$direction=-1;
-		}
-		$enlargement=$direction*$x['MyExtra']['size_dependent_flag'];
-		break;
-	}elseif ($x['MyExtra']['size_dependent_flag']==2){
-		$basement=TRUE;
-	}
-}
-?>
+
 
 
 <div class="row">
@@ -109,28 +93,32 @@ foreach ($normal_house_pictures_view as $x){
         </div>
 		<div class="col-md-10">
 			
-			<div class="row">
+			<div class="row" style="text-align:left;">
 				<strong >
-				<?php echo __('Size:'); ?>
-				
-					<?php if($enlargement>0){
-						echo $proposal_view['MyHouse']['size'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
-					}elseif($enlargement<0){
-						echo $proposal_view['MyHouse']['size'].' - '.-1*$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
-					}else{
-						echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
-					}?>
+					<?php echo __('Size:'); ?>
 				</strong >
+				<?php if($enlargement>0){
+					echo $proposal_view['MyHouse']['size'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+				}elseif($enlargement<0){
+					echo $proposal_view['MyHouse']['size'].' - '.-1*$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+				}else{
+					echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+				}?>
+				
+				<span style="float:right;">
+					<?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']].' '.__('side'); 
+					} ?>
+				</span>
 			</div>
 			<div class="row">
-			
-				
-					<?php echo $this->Html->link(
-						$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-						'/img/uploads/houses/'.$default_picture['picture'],
-						array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])
-					); ?>
-				
+				<?php echo $this->Html->link(
+					$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+					'/img/uploads/houses/'.$default_picture['picture'],
+					array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])
+				); ?>
 			</div>
 			
 			<div class="row">
@@ -214,17 +202,18 @@ foreach ($normal_house_pictures_view as $x){
 						);?>
 						</div>
 					<?php }
-					foreach ($basement_house_pictures_view as $key=>$x){?>
+					if ($bool_basement){
+						foreach ($basement_house_pictures_view as $key=>$x){?>
 					
-						<div class="col-md-6">
-						<?php
-						echo $this->Html->link(
-							$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-							'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-							array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
-						);?>
-						</div>
-					<?php } ?>
+							<div class="col-md-6">
+								<?php echo $this->Html->link(
+									$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+									'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+									array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
+								);?>
+							</div>
+						<?php } 
+					} ?>
 				</div>
 			</div>
 			</div>
@@ -235,7 +224,7 @@ foreach ($normal_house_pictures_view as $x){
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddHouse" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']))?> ><span class="glyphicon glyphicon-plus"></span> Add house</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']))?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add house');?></a></p>
        	</div>
 	</div>
 	<hr>
@@ -361,8 +350,8 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div class="col-md-12">
 		<div id="AddExtra" align=center>
-       		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> Add extras</a>
-       		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-paperclip"></span> Add custom extra</a>
+       		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add extras');?></a>
+       		<a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-paperclip"></span> <?php echo __('Add custom extra');?></a>
        		<a class="btn btn-lg btn-success" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
        	</div>
 		</div>
@@ -458,8 +447,8 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div class="col-md-12">
 		<div id="AddExtra" align=center>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> Add external extras</a></p>
-       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> Add custom external extra</a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add external extras');?></a></p>
+       		<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add custom external extra');?></a></p>
        	</div>
 		</div>
 	</div>
@@ -585,7 +574,7 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div class="col-md-12">
 		<div id="AddLand" align=center>
-       		<p><a class="btn btn-lg btn-success" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal" > <span class="glyphicon glyphicon-plus"></span> Add land</a></p>
+       		<p><a class="btn btn-lg btn-success" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal" > <span class="glyphicon glyphicon-plus"></span> <?php echo __('Add land');?></a></p>
        	</div>
 		</div>
 	</div>

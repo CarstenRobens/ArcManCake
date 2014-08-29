@@ -23,7 +23,7 @@ class BoughtExtrasController extends AppController{
 	
 		$proposal = $this->BoughtExtra->MyProposal->findById($proposal_id);
 		$ext_garage=$this->BoughtExtra->find('first',array(
-            		'conditions'=>array('proposal_id'=>$proposal_id,'MyExtra.bool_external'=>1,'MyExtra.bool_garage'=>1)));
+            		'conditions'=>array('proposal_id'=>$proposal_id,'MyExtra.bool_external'=>1,'MyExtra.type'=>1)));
 		$extras=$this->BoughtExtra->MyExtra->find('all',array(
             		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
 		
@@ -52,7 +52,7 @@ class BoughtExtrasController extends AppController{
 						$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'), 'alert-box', array('class'=>'alert-error'));
 					}else{
 						/* Logic to handle the addition of a garage */
-						if($x['MyExtra']['bool_garage']){
+						if($x['MyExtra']['type']==1){
 							$this->BoughtExtra->edit_extra($ext_garage['BoughtExtra'],$ext_garage['BoughtExtra']['price'],0);
 						}	
 					}

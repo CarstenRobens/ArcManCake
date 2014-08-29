@@ -22,11 +22,11 @@
 			<th><?php echo $this->Paginator->sort('default_priceC',__('Default Price C')); ?></th>
 			<th><?php echo $this->Paginator->sort('MyCategory.name',__('Category')); ?></th>
 			<th><?php echo $this->Paginator->sort('size_dependent_flag',__('Size dep.')); ?></th>
+			<th><?php echo $this->Paginator->sort('type',__('Type')); ?></th>
 			<th><?php echo $this->Paginator->sort('depends_on',__('Req. Extra')); ?></th>
 			<th><?php echo $this->Paginator->sort('depends_on_house',__('Req. House')); ?></th>
 			<th><?php echo $this->Paginator->sort('bool_unique',__('Unique')); ?></th>
 			<th><?php echo $this->Paginator->sort('bool_uneditable',__('Uneditable')); ?></th>
-			<th><?php echo $this->Paginator->sort('bool_garage',__('Garage')); ?></th>
 			<th><?php echo $this->Paginator->sort('bool_custom',__('Custom')); ?></th>
 			<th><?php echo $this->Paginator->sort('bool_external',__('External')); ?></th>
 			<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
@@ -65,6 +65,9 @@
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div><?php 
 			} ?>
 			</td>
+			<td>
+				<div style="text-align:right;"><?php echo $extra_type[$x['Extra']['type']];?></div> 
+			</td>
 			<td> 
 			<?php if ($x['Extra']['depends_on']==true){
 				echo $x['MyExtraDep']['name'];
@@ -88,13 +91,6 @@
 			</td>
 			<td> 
 			<?php if ($x['Extra']['bool_uneditable']==true){
-				?><div style="text-align:right;"><span class="glyphicon glyphicon-ok"></span></div><?php
-			}else{
-				?><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div><?php 
-			} ?>
-			</td>
-			<td> 
-			<?php if ($x['Extra']['bool_garage']==true){
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-ok"></span></div><?php
 			}else{
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div><?php 

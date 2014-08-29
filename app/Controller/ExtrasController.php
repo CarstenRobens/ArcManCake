@@ -238,7 +238,7 @@ class ExtrasController extends AppController{
     	$x['Extra']['default_priceC']=$price;
     	$x['Extra']['size_dependent_flag']=$this->request->data['enlargement'];
     	$x['Extra']['bool_custom']=1;
-    	$x['Extra']['bool_garage']=0;
+    	$x['Extra']['type']=0;
     	$x['Extra']['bool_external']=0;
     	$x['Extra']['category_id']=1;
     	$x['Extra']['user_id']=$this->Auth->user('id');
@@ -276,7 +276,7 @@ class ExtrasController extends AppController{
     	$x['Extra']['default_priceC']=$price;
     	$x['Extra']['size_dependent_flag']=$this->request->data['shrinking'];
     	$x['Extra']['bool_custom']=1;
-    	$x['Extra']['bool_garage']=0;
+    	$x['Extra']['type']=0;
     	$x['Extra']['bool_external']=0;
     	$x['Extra']['category_id']=1;
     	$x['Extra']['user_id']=$this->Auth->user('id');

@@ -90,6 +90,28 @@ class ProposalsController extends AppController{
 
 		$this->set('bought_extras_view',$z);
 		$this->set('bought_external_extras_view',$zexternal);
+		
+		$enlargement=0;
+		$bool_basement=0;
+		$bool_standalone=0;
+		foreach($z as $index=>$x){
+			if($x['MyExtra']['size_dependent_flag']>0){
+				if($x['MyBoughtExtra']['price']>0){
+					$direction=1;
+				}else{
+					$direction=-1;
+				}
+				$enlargement=$direction*$x['MyExtra']['size_dependent_flag'];
+			}elseif ($x['MyExtra']['type']==2){
+				$bool_basement=1;
+			}elseif ($x['MyExtra']['type']==3){
+				$bool_standalone=1;
+			}
+		}
+		$this->set('enlargement',$enlargement);
+		$this->set('bool_basement',$bool_basement);
+		$this->set('bool_standalone',$bool_standalone);
+		
 	}
 
 
@@ -216,7 +238,7 @@ class ProposalsController extends AppController{
 		
 	}
 	
-	public function selected_house($proposal_id = NULL, $house_id = NULL) {
+	public function selected_house($proposal_id = NULL, $house_id = NULL, $side=NULL) {
 		
 		/**
 		 * This action changes Proposal.house_id in the DB.
@@ -231,6 +253,10 @@ class ProposalsController extends AppController{
 		
 		$prop = $this->Proposal->findById($proposal_id);
 		$house = $this->Proposal->MyHouse->findById($house_id);
+		
+		if (($house['MyHouse']['bool_duplex'] && $side==NULL)||(!$house['MyHouse']['bool_duplex'] && $side!=NULL)) {
+			throw new NotFoundException(__('Invalid proposal'));
+		}
 		
 		if (!$house_id) {
 			throw new NotFoundException(__('Invalid house'));
@@ -247,6 +273,7 @@ class ProposalsController extends AppController{
 		}
 		
 		$prop['Proposal']['house_id']=$house_id;
+		$prop['Proposal']['duplex_side']=$side;
 		
 		if ($this->Proposal->save($prop)) {
 			$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
