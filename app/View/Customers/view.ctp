@@ -42,7 +42,7 @@
 							<td><div style="text-align: right;"><?php echo $customer_view['Customer']['name'];?> &nbsp;</div></td>
 						</tr>
 						<tr>
-							<td><?php echo __('Surame:');?></td>
+							<td><?php echo __('Surname:');?></td>
 							<td><div style="text-align: right;"><?php echo $customer_view['Customer']['surname'];?> &nbsp;</div></td>
 						</tr>
 						<tr>
@@ -102,7 +102,7 @@
 							<td><div style="text-align: right;"><?php echo $customer_view['Customer']['2nd_name'];?> &nbsp;</div></td>
 						</tr>
 						<tr>
-							<td><?php echo __('Surame:');?></td>
+							<td><?php echo __('Surname:');?></td>
 							<td><div style="text-align: right;"><?php echo $customer_view['Customer']['2nd_surname'];?> &nbsp;</div></td>
 						</tr>
 						<?php if(!empty($customer_view['Customer']['2nd_maiden_surname'])){?>
@@ -182,7 +182,7 @@
     		</div>
  			<?php } ?>
         
-        
+<!-- CLOSING TAGS -->       
 			</div>	
 		</div>
 	</div>

@@ -1,4 +1,7 @@
-
+<div class="row">
+	<br>
+	<?php echo $this->Html->link('Back', array('controller'=>'Users','action'=>'index')) ?>
+</div>
 
 <div class="container">
 	<div class="contactwrapper">
