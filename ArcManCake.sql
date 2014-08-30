@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 29, 2014 at 04:52 
+-- Generation Time: Aug 30, 2014 at 08:58 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -19,6 +19,159 @@ SET time_zone = "+00:00";
 --
 -- Database: `ArcManCake`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bought_extras`
+--
+
+CREATE TABLE IF NOT EXISTS `bought_extras` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `price` float NOT NULL,
+  `factor` float NOT NULL,
+  `comment` text,
+  `extra_id` int(11) DEFAULT NULL,
+  `proposal_id` int(11) DEFAULT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+--
+-- Dumping data for table `bought_extras`
+--
+
+INSERT INTO `bought_extras` (`id`, `price`, `factor`, `comment`, `extra_id`, `proposal_id`, `created`, `modified`) VALUES
+(25, 5000, 1, NULL, 105, 4, '2014-08-23', '2014-08-23'),
+(26, 3000, 1, NULL, 107, 4, '2014-08-23', '2014-08-23'),
+(27, 5000, 1, NULL, 108, 4, '2014-08-23', '2014-08-23'),
+(28, 5000, 1, NULL, 109, 4, '2014-08-23', '2014-08-23'),
+(29, 8000, 1, NULL, 110, 4, '2014-08-23', '2014-08-23'),
+(30, 9000, 1, NULL, 111, 4, '2014-08-23', '2014-08-23'),
+(31, 1000, 1, NULL, 112, 4, '2014-08-23', '2014-08-23'),
+(32, 4400, 1, NULL, 113, 4, '2014-08-23', '2014-08-23'),
+(33, 1500, 1, NULL, 35, 4, '2014-08-23', '2014-08-23'),
+(34, 4850, 1, NULL, 37, 4, '2014-08-23', '2014-08-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `user_id`, `created`, `modified`) VALUES
+(2, 'AuÃŸen', 2, '2014-08-22', '2014-08-22'),
+(3, 'Keller', 2, '2014-08-22', '2014-08-22'),
+(4, 'Innen', 2, '2014-08-22', '2014-08-22'),
+(5, 'Technik', 2, '2014-08-22', '2014-08-22'),
+(6, 'External', 2, '2014-08-23', '2014-08-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE IF NOT EXISTS `customers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `surname` varchar(200) NOT NULL,
+  `notes` text NOT NULL,
+  `phone_private` int(11) NOT NULL,
+  `phone_work` int(11) DEFAULT NULL,
+  `birthday` date NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `address1` varchar(200) NOT NULL,
+  `address2` varchar(200) NOT NULL,
+  `zipcode` int(11) NOT NULL,
+  `city` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  `2nd_name` varchar(200) NOT NULL,
+  `2nd_surname` varchar(200) NOT NULL,
+  `2nd_maiden_surname` varchar(200) NOT NULL,
+  `2nd_birthday` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`id`, `name`, `surname`, `notes`, `phone_private`, `phone_work`, `birthday`, `email`, `address1`, `address2`, `zipcode`, `city`, `user_id`, `created`, `modified`, `2nd_name`, `2nd_surname`, `2nd_maiden_surname`, `2nd_birthday`) VALUES
+(6, 'Jose Carlos', 'Gallego', 'this are additional notes this are additional notes this are additional notes this are additional notes', 34567890, 12345, '1983-04-07', 'jcgallegof@gmail.com', 'Endenichalle, 76', '', 59115, 'Bonn', 6, '2014-07-07', '2014-08-23', 'Lucy', 'Paulet', '', '1981-07-16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_type_id` int(11) NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `details` text COLLATE utf8_unicode_ci NOT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL,
+  `all_day` tinyint(1) NOT NULL DEFAULT '1',
+  `status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Scheduled',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `user_id`, `created`, `modified`) VALUES
+(11, 1, 'Carstens appointment', 'blablabla', '2014-10-24 02:26:00', '2014-08-24 02:26:00', 1, 'Scheduled', 1, 2, '2014-08-24', '2014-08-24'),
+(12, 1, '3', '', '2014-08-30 03:58:00', '2014-08-24 03:58:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(13, 1, '4', 'The above example will return posts where the created date is equal to the modified date (that is, it will return posts that have never been modified).', '2014-08-26 03:59:00', '2014-08-24 03:59:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(10, 3, 'another thing 2', 'Includes 200 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible', '2014-09-02 00:58:00', '2027-05-17 23:00:00', 0, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(9, 1, 'something', '$this->request->is(''post'')', '2014-10-24 01:57:00', '2014-08-24 01:57:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(14, 1, '5', 'By default, CakePHP joins multiple conditions with boolean AND. This means the snippet above would only match posts that have been created in the past two weeks, and have a title that matches one in the given set. However, we could just as easily find posts that match either condition:', '2014-09-05 03:59:00', '2014-08-24 03:59:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(15, 1, 'tutupa', '', '2014-08-27 04:30:00', '2014-08-24 04:30:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
+(16, 1, 'tutuchancla', '', '2014-08-27 04:30:00', '2014-08-24 04:30:00', 0, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_types`
+--
+
+CREATE TABLE IF NOT EXISTS `event_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `color` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `event_types`
+--
+
+INSERT INTO `event_types` (`id`, `name`, `color`) VALUES
+(1, 'Meeting', 'Green'),
+(3, 'Customer appointment', 'Purple');
 
 -- --------------------------------------------------------
 
@@ -47,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=116 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=114 ;
 
 --
 -- Dumping data for table `extras`
@@ -156,6 +309,253 @@ INSERT INTO `extras` (`id`, `name`, `description`, `default_priceA`, `default_pr
 (111, 'HausanschluÃŸkosten', '', 9000, 9000, 9000, '', 0, 0, 0, 0, 1, 0, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
 (112, 'Baustrom- und Bauwasseranschluss', '', 1000, 1000, 1000, '', 0, 0, 0, 0, 1, 1, 0, 1, 6, 2, '2014-08-23', '2014-08-23'),
 (113, 'Lageplan, Genehmigungskosten', '', 4400, 4400, 4400, '', 0, 0, 0, 0, 1, 1, 0, 1, 6, 2, '2014-08-23', '2014-08-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery_pictures`
+--
+
+CREATE TABLE IF NOT EXISTS `gallery_pictures` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `picture` varchar(200) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+
+--
+-- Dumping data for table `gallery_pictures`
+--
+
+INSERT INTO `gallery_pictures` (`id`, `picture`, `title`, `description`, `user_id`, `created`, `modified`) VALUES
+(21, 'Flair 134 ZD.jpg', 'Flair 134 ZD', 'Es geht auch farbig!', 6, '2014-08-23', '2014-08-23'),
+(22, 'Bungalow 128.jpg', 'Bungalow 128', 'FÃ¼r Alle, die nicht hoch und runter laufen wollen!', 6, '2014-08-23', '2014-08-23'),
+(23, 'Behringen 116 Korschenbroich.JPG', 'Behringen 116 Korschenbroich', 'Behringen 116 Nr.2', 6, '2014-08-23', '2014-08-23'),
+(24, 'Behringen 116.JPG', 'Behringen 116', 'Behringen 116 Nr.1', 6, '2014-08-23', '2014-08-23'),
+(25, 'Bungalow 78.JPG', 'Bungalow 78', '', 6, '2014-08-23', '2014-08-23'),
+(26, 'Flair 113.JPG', 'Flair 113', '', 6, '2014-08-23', '2014-08-23'),
+(27, 'Flair 124.JPG', 'Flair 124', '', 6, '2014-08-23', '2014-08-23'),
+(28, 'Freiplanung 200.JPG', 'Freiplanung 200', '', 6, '2014-08-23', '2014-08-23'),
+(29, 'Landhaus 142.JPG', 'Landhaus 142', '', 6, '2014-08-23', '2014-08-23'),
+(30, 'vierte Referenz.JPG', 'vierte Referenz', 'Fertiges Einfamilienhaus mit Garten', 6, '2014-08-23', '2014-08-23'),
+(31, 'dritte Referenz.JPG', 'dritte Referenz', 'Zwei fertige EinfamilienhÃ¤user aus der Gartenperspektive fotografiert.', 6, '2014-08-23', '2014-08-23'),
+(32, 'zweite Referenz.JPG', 'zweite Referenz', 'Fertiges Einfamilienhaus', 6, '2014-08-23', '2014-08-23'),
+(33, 'erste Referenz.JPG', 'erste Referenz', 'Fertiges Einfamilienhaus', 6, '2014-08-23', '2014-08-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_pictures`
+--
+
+CREATE TABLE IF NOT EXISTS `home_pictures` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `picture` varchar(200) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `home_pictures`
+--
+
+INSERT INTO `home_pictures` (`id`, `picture`, `title`, `description`, `user_id`, `created`, `modified`) VALUES
+(11, 'homemanor.jpg', 'Cool Manor', 'Use the <paper-dialog> element to create a dialog. Set a title on a dialog using the heading published property.\r\n\r\nYou can use any kind of children inside the dialog. For action buttons, add the dismissive or affirmative attributes to place the controls (typically buttons) at the bottom of the dialog:', 6, '2014-07-22', '2014-07-22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `houses`
+--
+
+CREATE TABLE IF NOT EXISTS `houses` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `size` float NOT NULL,
+  `floors` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `type` int(11) NOT NULL,
+  `bool_duplex` tinyint(1) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  `size_din` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `houses`
+--
+
+INSERT INTO `houses` (`id`, `name`, `description`, `size`, `floors`, `price`, `type`, `bool_duplex`, `user_id`, `created`, `modified`, `size_din`) VALUES
+(1, 'Stadt 118', 'asd', 118, 2, 132990, 1, 0, 2, '2014-08-22', '2014-08-22', 133),
+(2, 'Stadt 120', 'asd', 118, 2, 139990, 1, 1, 2, '2014-08-22', '2014-08-22', 134),
+(3, 'Stadt 130', 'asd', 130, 3, 147990, 1, 0, 2, '2014-08-22', '2014-08-22', 128),
+(4, 'Modern 140', 'asd', 140, 3, 179990, 1, 0, 2, '2014-08-22', '2014-08-22', 132),
+(5, 'Stadtvilla 130', 'asd', 130, 3, 144990, 2, 0, 2, '2014-08-22', '2014-08-22', 130),
+(6, 'Land 150', 'asd', 150, 2, 159990, 2, 0, 2, '2014-08-22', '2014-08-22', 1145),
+(7, 'Land 160', 'asd', 160, 2, 165990, 2, 0, 2, '2014-08-22', '2014-08-22', 155),
+(8, 'Land 126', 'asd', 126, 2, 139990, 2, 0, 2, '2014-08-22', '2014-08-22', 120),
+(9, 'Bungalow 92', 'asd', 92, 2, 113990, 2, 0, 2, '2014-08-22', '2014-08-22', 90);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `house_pictures`
+--
+
+CREATE TABLE IF NOT EXISTS `house_pictures` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `picture` varchar(200) NOT NULL,
+  `type_flag` int(11) NOT NULL,
+  `house_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `house_pictures`
+--
+
+INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag`, `house_id`, `user_id`, `created`, `modified`) VALUES
+(1, 'Eingang', '', '2_stadt-120-eingang.png', 0, 2, 2, '2014-08-23', '2014-08-23'),
+(2, 'Garten', '', '2_stadt-120-garten.png', 0, 2, 2, '2014-08-23', '2014-08-23'),
+(3, 'Erdgeschoss', '', '2_stadt-120-EG.png', 1, 2, 2, '2014-08-23', '2014-08-23'),
+(5, 'Keller', '', '2_stadt-120-KG.png', -1, 2, 2, '2014-08-23', '2014-08-23'),
+(6, 'Dachgeschoss', '', '2_stadt-120-DG.png', 2, 2, 2, '2014-08-23', '2014-08-23'),
+(7, 'Seitenschnitt', '', '2_stadt-120-Schnitt.png', 5, 2, 2, '2014-08-23', '2014-08-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Immocaster_Storage`
+--
+
+CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
+  `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `ic_desc` varchar(32) NOT NULL,
+  `ic_key` varchar(128) NOT NULL,
+  `ic_secret` varchar(128) NOT NULL,
+  `ic_expire` datetime NOT NULL,
+  PRIMARY KEY (`ic_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `Immocaster_Storage`
+--
+
+INSERT INTO `Immocaster_Storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
+(23, 'REQUEST', 'ea567b98-3129-407c-ad73-f83a0b2f7f61', 'iV7L4OrUSS1VdGkbZKfMfBTkYl6%2FP4MbdnwMc%2BiL4Su7oDn4NRxIcX%2BUPRoEjgVwSQpAi8AdEcxWBNEp8x9ZyylcwZH7HhxbvwQ8Rjheg7o%3D', '2012-11-02 20:44:08'),
+(22, 'APPLICATION', '7ceda6d2-be12-4bb2-93ad-f24e32b778ab', 'd9YWI%2F90I03Jo9aVYZKmUCv1IROLc89KT1Sf78sMAe2UrhqPxpuLqT0bQJ1c2YZn3RslRyVH5y3AOkbplIfPfUDBtMzIMJnaGfFkprEhATw%3D', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lands`
+--
+
+CREATE TABLE IF NOT EXISTS `lands` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `notes` text NOT NULL,
+  `land_size` float NOT NULL,
+  `land_price_per_m2` float NOT NULL,
+  `dev_size` float NOT NULL,
+  `dev_cost_per_m2` float NOT NULL,
+  `notary_cost` float NOT NULL,
+  `land_agent_cost` float NOT NULL,
+  `land_tax` float NOT NULL,
+  `building_tax` float NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  `built_region` varchar(200) NOT NULL,
+  `built_address` varchar(200) NOT NULL,
+  `built_zipcode` varchar(200) NOT NULL,
+  `built_city` varchar(200) NOT NULL,
+  `construction_office` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `lands`
+--
+
+INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `building_tax`, `customer_id`, `user_id`, `created`, `modified`, `built_region`, `built_address`, `built_zipcode`, `built_city`, `construction_office`) VALUES
+(8, 'TestLand 1', 'Additional Notes For the Land', 200, 1000, 100, 10, 2.5, 2.5, 5, 1.25, 0, 2, '2014-08-23', '2014-08-23', 'D-DÃ¼sseldorf', 'Eine StraÃŸe 32', '82109', 'DÃ¼sseldorf', 'DÃ¼sseldorf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `proposals`
+--
+
+CREATE TABLE IF NOT EXISTS `proposals` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `notes` text NOT NULL,
+  `summary` varchar(200) NOT NULL,
+  `bank_receipt` varchar(200) NOT NULL,
+  `contract` varchar(200) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `land_id` int(11) NOT NULL,
+  `house_id` int(11) NOT NULL,
+  `duplex_side` int(11) NOT NULL,
+  `default_house_picture_id` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `proposals`
+--
+
+INSERT INTO `proposals` (`id`, `name`, `notes`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `duplex_side`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
+(4, 'Test Proposal', 'Notes for the Proposal', '', '', '', 6, 8, 1, 0, '1', 2, '2014-08-23', '2014-08-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `role` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `surname` varchar(200) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `name`, `surname`, `phone`, `email`, `created`, `modified`) VALUES
+(2, 'CarstenRobens', 'ecebba2e2c97789fd34481c4184fef9ebdbf2ca4', 0, 'Carsten', 'Robens', 1766085747, 'Robens@iap.uni-bonn.de', '2014-07-01', '2014-08-23'),
+(6, 'elgatil', '3bdbc7fecbbed14dc303ef207f84b63dff5649fc', 0, 'Ricardo', 'Gomez', 345678, 'elgatil@gmail.com', '2014-07-01', '2014-07-01');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
