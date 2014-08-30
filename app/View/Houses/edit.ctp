@@ -22,6 +22,7 @@
 						echo $this->Form->input('size',array('placeholder' => __('Enter a Size in Squaremeter'),'label' => __('Size'),'div' => 'form-group has-success'));
 						echo $this->Form->input('size_din',array('placeholder' => __('Enter a DIN 277 Size in Squaremeter'),'label' => __('DIN 277 Size'),'div' => 'form-group has-success'));
 						echo $this->Form->input('floors',array('placeholder' => __('Enter how many floors'),'label' => __('Foors'),'div' => 'form-group has-success'));
+						echo $this->Form->input('bool_duplex',array('label' => __('Duplex?'),'div' => 'form-group has-success'));
 						echo $this->Form->input('type',array('options'=>$house_type,'placeholder' => __('Choose type:'),'label' => __('Type'),'div' => 'form-group has-success'));
 						echo $this->Form->input('price',array('placeholder' => __('Enter a Price'),'label' => __('Price'),'div' => 'form-group has-success'));?>	
 						

@@ -4,101 +4,99 @@
 </div>
 	
 
-<hr>
-    <?php foreach($houses_view as $House ){?>
 
-      <div class="row"id="<?php echo $id = str_replace(' ', '+', $House['House']['name']);?>">
-	  <?php if(true){?>
-        
-		<div class="col-md-2"></div>
-		
-		<div class="col-md-2">
-			<div class="row">
-				<?php if(!empty($House['MyHousePicture'])){
-					foreach ($House['MyHousePicture'] as $x){
-						if($x['type_flag']==0){
-							echo $this->Html->image('/img/uploads/houses/'.$x['picture'], array('class' => 'featurette-image img-responsive'));
-							break;
+<hr>
+
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+
+<?php foreach($houses_view as $key=>$House ){?>
+	<div class="row">
+			<div class="col-md-4">
+				<div class="row" style="padding-top:35px">
+					<?php if(!empty($House['MyHousePicture'])){
+						foreach ($House['MyHousePicture'] as $x){
+							if($x['type_flag']==0){
+								echo $this->Html->link(
+										$this->Html->image('/img/uploads/houses/'.$x['picture'], array('class' => 'featurette-image img-responsive')),
+										array('controller'=>'Houses','action'=>'view',$House['House']['id']),array('escape'=>false));
+								break;
+							}
 						}
-					}
-				} ?>
+					} ?>
+				</div>
 			</div>
-		</div>
-		
-		<div class="col-md-6">
-		
-			<div class="row">
-				<div class="col-xs-12">
-					<p >
-						<?php echo __('Type').' '.$house_type[$House['House']['type']].': <b><u>'.$House['House']['name'].'</u></b>'; ?>
+			<div class="col-md-1"></div>
+			<div class="col-md-7">
+				<div class="row">
+					<p>&nbsp;
+						<strong><?php echo $this->Html->link($House['House']['name'], array('controller'=>'Houses','action'=>'view',$House['House']['id'])); ?> </strong>
 						<?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
 							&middot;
 							<a href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
 							<a href=<?php echo $this->Html->url(array('action' => 'edit', $House['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 							<a href=<?php echo $this->Html->url(array('action' => 'delete', $House['House']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 						<?php } ?> 
-						<br>
-						&nbsp; &nbsp;<?php echo ' <small>with '.$House['House']['size'].__(' m<sup>2</sup> in ').$House['House']['floors'].__(' floors.').'</small>'; ?>
 					</p>
-					<p>
-						<?php echo $House['House']['description']; ?>
-					</p>
+					
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td><?php echo 'Letzte Änderung: ' ?>&nbsp;</td>
+							<td><div style="text-align: right;">
+									<?php echo date('d-M-Y',strtotime($House['House']['modified']));?>
+									&nbsp;
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><?php echo 'Preis: ' ?>&nbsp;</td>
+							<td><div style="text-align: right;">
+									<?php echo $this->Number->currency($House['House']['price'],'EUR',array('wholePosition'=>'after'));?>
+									&nbsp;
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><?php echo 'Wohnfläche: ' ?>&nbsp;</td>
+							<td><div style="text-align: right;">
+									<?php echo $House['House']['size'].' m<sup>2</sup>';?>
+									&nbsp;
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><?php echo __('Floors:') ?>&nbsp;</td>
+							<td><div style="text-align: right;">
+									<?php echo $House['House']['floors'];?>
+									&nbsp;
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><?php echo __('Type:') ?>&nbsp;</td>
+							<td><div style="text-align: right;">
+									<?php if($House['House']['bool_duplex']){
+										echo __('Duplex');
+									}else{
+										echo __('Standalone house');
+									}?>
+									&nbsp;
+								</div>
+							</td>
+						</tr>
+					</table>
+					
 				</div>
 			</div>
-        </div>
-        
-		<div class="col-md-2"> </div>
-		
-		<?php }?>
-      </div>
-	<hr>
-    <?php }?>
+		</div>
+<?php }?>
 
+</div>
+<div class="col-md-2"></div>
+</div>
 
-
-<div class="row">
-        <div class="col-md-2"></div>
-		<div class="col-md-8">
-		
-			
-			<table>
-			<tr>
-				
-				
-				<th>Name</th>
-				<th>Type</th>
-				<th>Size (m2)</th>
-				<th>Floors</th>
-				<th>Price</th>
-				<th>Action</th>
-				<th>Created</th>
-				
-			</tr>
-			
-			<?php foreach($houses_view as $House) {?>	
-			<tr> 
-				<td> <?php echo $this->Html->link($House['House']['name'], array('controller'=>'Houses','action'=>'view',$House['House']['id'])); ?></td>
-				<td> <?php echo $house_type[$House['House']['type']] ?></td>
-				<td> <?php echo $House['House']['size'] ?></td>
-				<td> <?php echo $House['House']['floors'] ?></td>
-				<td> <?php echo $this->Number->currency($House['House']['price'],'EUR',array('wholePosition'=>'after')) ?></td>
-				<td> <?php 
-					echo $this->Html->link('Edit',array('action' => 'edit',$House['House']['id'])).' | ';
-					echo $this->Form->postLink('Delete',array('action' => 'delete',$House['House']['id']),array('confirm'=>'Are you sure?'));
-				?></td>
-				<td> <?php echo date("d-M-Y",strtotime($House['House']['created'])).' by '.$this->Html->link($House['MyUser']['username'], array('controller'=>'Users','action'=>'view',$House['MyUser']['id'])); ?> </td>
-			</tr>
-			<?php }?>
-			</table>
-		</div> 
-		
-		<div class="col-md-2"></div>
-	
-    </div>
-	<hr >
-
-
-
+<hr>
 
 <?php 
 if ($current_user['role'] < 2 && !empty($current_user) ) {?>
@@ -123,6 +121,7 @@ if ($current_user['role'] < 2 && !empty($current_user) ) {?>
 						echo $this->Form->input('size',array('placeholder' => __('Enter a Size in Squaremeter'),'label' => __('Size'),'div' => 'form-group has-success'));
 						echo $this->Form->input('size_din',array('placeholder' => __('Enter a DIN 277 Size in Squaremeter'),'label' => __('DIN 277 Size'),'div' => 'form-group has-success'));
 						echo $this->Form->input('floors',array('placeholder' => __('Enter how many floors'),'label' => __('Foors'),'div' => 'form-group has-success'));
+						echo $this->Form->input('bool_duplex',array('label' => __('Duplex?'),'div' => 'form-group has-success'));
 						echo $this->Form->input('type',array('options'=>$house_type,'placeholder' => __('Choose type:'),'label' => __('Type'),'div' => 'form-group has-success'));
 						echo $this->Form->input('price',array('placeholder' => __('Enter a Price'),'label' => __('Price'),'div' => 'form-group has-success'));?>
 				</div>						

@@ -63,6 +63,7 @@
 foreach ($normal_house_pictures_view as $x){
 	if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
 		$default_picture=$x['MyHousePicture'];
+		break;
 	}
 }?>
 	
@@ -114,11 +115,12 @@ foreach ($normal_house_pictures_view as $x){
 				</span>
 			</div>
 			<div class="row">
-				<?php echo $this->Html->link(
-					$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-					'/img/uploads/houses/'.$default_picture['picture'],
-					array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])
-				); ?>
+				<?php if(!empty($default_picture)){ 
+					echo $this->Html->link(
+						$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+						'/img/uploads/houses/'.$default_picture['picture'],
+						array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])); 
+				}?>
 			</div>
 			
 			<div class="row">

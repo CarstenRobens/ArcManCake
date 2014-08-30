@@ -294,9 +294,14 @@ class ProposalsController extends AppController{
 	
 		$x = $this->Proposal->findById($id);
 		$this->set('proposal_id_view',$id);
-		$this->set('house_pictures_view',$this->Proposal->MyHouse->MyHousePicture->find('all',array(
+		
+		$house_pictures=$this->Proposal->MyHouse->MyHousePicture->find('all',array(
 				'conditions'=>array('house_id'=>$x['MyHouse']['id'],'type_flag'=>0)
-		)));
+				));
+		if(empty($house_pictures)){
+			return $this->redirect(array('action'=>'view',$id));
+		}
+		$this->set('house_pictures_view',$house_pictures);
 	
 	
 		if (!$x) {
@@ -314,6 +319,7 @@ class ProposalsController extends AppController{
 		if (!$this->request->data) {
 			$this->request->data=$x;
 		}
+		
 	}
 	
 	public function selected_default_picture($proposal_id = NULL, $default_house_picture_id = NULL) {

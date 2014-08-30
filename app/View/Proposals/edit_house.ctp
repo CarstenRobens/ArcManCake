@@ -6,61 +6,65 @@
 
 <div class="CategorieTitleBox">
         <div id="GroupMembers">
-        <?php __( 'Select house',false);?>
+        <?php __( 'Select house');?>
         </div>
 </div>
 
-<hr>
-    <?php foreach($houses_view as $House ){?>
 
-      <div class="row"id="<?php echo $id = str_replace(' ', '+', $House['MyHouse']['name']);?>">
-	  <?php if(true){?>
-        
-		<div class="col-md-2"></div>
-		
-		<div class="col-md-2">
-			<div class="row">
-				<?php if(!empty($House['MyHousePicture'])){
-					if($House['MyHouse']['bool_duplex']){ ?>
-						<a href=# data-toggle="modal" data-target="#duplex_<?php echo $House['MyHouse']['id']?>"><?php echo $this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][0]['picture'], array('class' => 'featurette-image img-responsive'));?></a>
-					<?php }else{
-						echo $this->Html->link(
-							$this->Html->image('/img/uploads/houses/'.$House['MyHousePicture'][0]['picture'], array('class' => 'featurette-image img-responsive')),
-							array('controller'=>'Proposals','action'=>'selected_house', $proposal_id_view, $House['MyHouse']['id']),
-							array('escape' => false)
-						);
-					}
-				} ?>
-			</div>
-		</div>
-		
+<hr>
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+
+<?php foreach($houses_view as $key=>$House ){?>
 		<div class="col-md-6">
-		
-			<div class="row">
-				<div class="col-xs-12">
-					<p >
-						<?php echo 'Type'.$House['MyHouse']['type'].': <b><u>'; 
+
+			<div class="col-md-4">
+				<div class="row">
+					<?php if(!empty($House['MyHousePicture'])){
+						foreach ($House['MyHousePicture'] as $x){
+							if($x['type_flag']==0){
+								if($House['MyHouse']['bool_duplex']){ ?>
+									<a href=# data-toggle="modal" data-target="#duplex_<?php echo $House['MyHouse']['id']?>"><?php echo $this->Html->image('/img/uploads/houses/'.$x['picture'], array('class' => 'featurette-image img-responsive'));?></a>
+								<?php }else{
+									echo $this->Html->link(
+										$this->Html->image('/img/uploads/houses/'.$x['picture'], array('class' => 'featurette-image img-responsive')),
+										array('controller'=>'Proposals','action'=>'selected_house', $proposal_id_view, $House['MyHouse']['id']),
+										array('escape' => false)
+									);
+								}
+								break;
+							}
+						}
+					} ?>
+				</div>
+			</div>
+
+			<div class="col-md-8">
+				<div class="row">
+					<p>&nbsp;
+						<?php echo __('Type').' '.$house_type[$House['MyHouse']['type']].': ';
 						if($House['MyHouse']['bool_duplex']){ ?>
 							<a href=# data-toggle="modal" data-target="#duplex_<?php echo $House['MyHouse']['id']?>"><?php echo $House['MyHouse']['name']; ?></a>
 						<?php }else{
 							echo $this->Html->link($House['MyHouse']['name'], array('controller'=>'Proposals','action'=>'selected_house', $proposal_id_view, $House['MyHouse']['id']));
-						}?></u></b>
+						}?>
+						<?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
+							&middot;
+							<a href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['MyHouse']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
+							<a href=<?php echo $this->Html->url(array('action' => 'edit', $House['MyHouse']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+							<a href=<?php echo $this->Html->url(array('action' => 'delete', $House['MyHouse']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+						<?php } ?> 
 						<br>
-						&nbsp; &nbsp;<?php echo ' <small>with '.$House['MyHouse']['size'].__(' m<sup>2</sup> in ').$House['MyHouse']['floors'].__(' floors.').'</small>'; ?>
-					</p>
-					<p>
-						<?php echo $House['MyHouse']['description']; ?>
+						&nbsp; &nbsp; &nbsp;<?php echo ' <small>with '.$House['MyHouse']['size'].__(' m<sup>2</sup> in ').$House['MyHouse']['floors'].__(' floors.').'</small>'; ?>
 					</p>
 				</div>
 			</div>
-        </div>
-        
-		<div class="col-md-2"> </div>
 		
-		<?php }?>
-      </div>
-	<hr>
-
+		</div>
+		
+		
+		
 <div class="modal fade" id="duplex_<?php echo $House['MyHouse']['id']?>" >
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -79,4 +83,8 @@
 		</div>
 	</div>
 </div>
+		
 <?php }?>
+</div>
+<div class="col-md-1"></div>
+</div>

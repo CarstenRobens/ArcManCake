@@ -7,16 +7,18 @@
 
 
 <div class="row">
-	<h3><?php echo __( $customer_view['Customer']['name'].' '.$customer_view['Customer']['surname'],false);?> 
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-	<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false));?></h3>
+	<h3><?php echo __( $customer_view['Customer']['name'].' '.$customer_view['Customer']['surname'],false);?> </h3>
 </div>
 
-
+<hr >
+<div class="col-md-10"></div>
+<div class="col-md-2">
+	<a href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+	<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false));?>
+</div>
     
-	<hr >
-      <div class="row"id="<?php echo $id = str_replace(' ', '+', $customer_view['Customer']['name']);?>">
+
+      <div class="row">
 	  <?php if(true){ ?>
         
 		<div class="col-md-2">
@@ -27,7 +29,10 @@
 		
 		<div class="col-md-6">
 			<div class="row">
-				<h4> <?php echo __('First Customer:'); ?></h4>
+				<div class="col-xs-4">
+					<h4> <?php echo __('First Customer:'); ?></h4>
+				</div>
+				<div class="col-xs-8" style="padding-top:25px"></div>
 			</div>
 			
 			<div class="row">
