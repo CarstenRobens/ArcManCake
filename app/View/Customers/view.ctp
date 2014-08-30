@@ -147,6 +147,7 @@
 
 <!-- PROPOSALS -->
 			<hr>
+			<hr>
 			
 			<?php if (!empty($customer_view['MyProposal'])){ ?>
 			<div class="row">

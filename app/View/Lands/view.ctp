@@ -20,17 +20,25 @@
 			
 			
 <!----------PANEL CONTENT------------------>	
-
+	
 	
 	<div class="row">
 		<div class="col-md-1"> </div>
 		
 		<div class="col-md-3">
-			<strong><?php echo __('Notes:'); ?></strong>
+			<?php echo $land_view['Land']['built_address'];?><br>
+			<?php echo $land_view['Land']['built_zipcode'].', '.$land_view['Land']['built_city'];?><br>
+			<?php echo $land_view['Land']['built_region'];?><br>
+			<strong><?php echo __('Construction office:');?> </strong>
+			<?php echo $land_view['Land']['construction_office'];?>
 		</div>
 		
-		<div class="col-md-6">
-			<?php echo $land_view['Land']['notes']; ?>
+		<div class="col-md-1" style="padding-top:20px">
+			<strong><?php if(!empty($land_view['Land']['notes'])){ echo __('Notes:');} ?></strong>
+		</div>
+		
+		<div class="col-md-5" style="padding-top:20px">
+			<?php if(!empty($land_view['Land']['notes'])){ echo $land_view['Land']['notes'];} ?>
 		</div>
 		
 		<div class="col-md-2" align="center">
@@ -38,6 +46,7 @@
 		</div>
 		
 	</div>
+
 	
 	<div class="row">
 		<div class="col-md-1"> </div>

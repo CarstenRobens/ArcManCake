@@ -481,17 +481,23 @@ foreach ($normal_house_pictures_view as $x){
 			
 <!----------PANEL CONTENT------------------>	
 	
-	
-	
 	<div class="row">
 		<div class="col-md-1"> </div>
 		
 		<div class="col-md-3">
-			<strong><?php echo __('Notes:'); ?></strong>
+			<?php echo $proposal_view['MyLand']['built_address'];?><br>
+			<?php echo $proposal_view['MyLand']['built_zipcode'].', '.$proposal_view['MyLand']['built_city'];?><br>
+			<?php echo $proposal_view['MyLand']['built_region'];?><br>
+			<strong><?php echo __('Construction office:');?> </strong>
+			<?php echo $proposal_view['MyLand']['construction_office'];?>
 		</div>
 		
-		<div class="col-md-6">
-			<?php echo $proposal_view['MyLand']['notes']; ?>
+		<div class="col-md-1" style="padding-top:20px">
+			<strong><?php if(!empty($proposal_view['MyLand']['notes'])){ echo __('Notes:');} ?></strong>
+		</div>
+		
+		<div class="col-md-5" style="padding-top:20px">
+			<?php if(!empty($proposal_view['MyLand']['notes'])){ echo $proposal_view['MyLand']['notes'];} ?>
 		</div>
 		
 		<div class="col-md-2" align="center">
@@ -499,6 +505,8 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		
 	</div>
+	
+	
 	<div class="row">
 		<div class="col-md-1"> </div>
 		<div class="col-md-10">
