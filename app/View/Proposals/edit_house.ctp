@@ -49,12 +49,6 @@
 						<?php }else{
 							echo $this->Html->link($House['MyHouse']['name'], array('controller'=>'Proposals','action'=>'selected_house', $proposal_id_view, $House['MyHouse']['id']));
 						}?>
-						<?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
-							&middot;
-							<a href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['MyHouse']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
-							<a href=<?php echo $this->Html->url(array('action' => 'edit', $House['MyHouse']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-							<a href=<?php echo $this->Html->url(array('action' => 'delete', $House['MyHouse']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
-						<?php } ?> 
 						<br>
 						&nbsp; &nbsp; &nbsp;<?php echo ' <small>with '.$House['MyHouse']['size'].__(' m<sup>2</sup> in ').$House['MyHouse']['floors'].__(' floors.').'</small>'; ?>
 					</p>
