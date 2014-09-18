@@ -1732,7 +1732,7 @@ sind enthalten.
 		
 		
 		<div  style="text-align: right">
-		<h4> Summe Sonderausstattung: <?php echo $$this->Number->currency(summed_extras,'EUR',array('wholePosition'=>'after'));?></h4>
+		<h4> Summe Sonderausstattung: <?php echo $this->Number->currency(summed_extras,'EUR',array('wholePosition'=>'after'));?></h4>
 		</div>
 		
 		

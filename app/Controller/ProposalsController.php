@@ -461,7 +461,7 @@ class ProposalsController extends AppController{
     	
     	$folder=__DIR__.'/../files/';
     	$filename = 'Contract'.$x['Proposal']['id'].'.pdf';
-    	debug($folder.$filename);
+    	
     	
     	// initializing mPDF
     	$this->Mpdf->init();
