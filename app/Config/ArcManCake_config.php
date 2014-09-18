@@ -30,6 +30,10 @@ $config['HouseType'][1] = __('A');
 $config['HouseType'][2] = __('B');
 $config['HouseType'][3] = __('C');
 
+$config['DocType'][1] = __('Summary');
+$config['DocType'][2] = __('BankReceipt');
+$config['DocType'][3] = __('Contract');
+
 
 $config['price_enlargement'] = 999;
 $config['price_shrinking'] = -333;

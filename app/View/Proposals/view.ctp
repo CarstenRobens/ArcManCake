@@ -41,15 +41,15 @@
 		<div class="col-md-5" align="right">
 			<?php if(!empty($proposal_view['Proposal']['summary'])){ ?>
 				<strong> <?php echo __('Summary'); ?> </strong>
-				<a href="<?php echo $this->Html->url('/'.$proposal_view['Proposal']['summary']); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Summary'), 'height'=>30 ));?> </a>
+				<a href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 1, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Summary'), 'height'=>30 ));?> </a>
 			<?php }
 			if(!empty($proposal_view['Proposal']['bank_receipt'])){ ?>
 				<strong> <?php echo __('Bank receipt'); ?> </strong>
-				<a href="<?php echo $this->Html->url('/'.$proposal_view['Proposal']['bank_receipt']); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Bank receipt'), 'height'=>30 ));?> </a>
+				<a href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 2, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Bank receipt'), 'height'=>30 ));?> </a>
 			<?php  }
 			if(!empty($proposal_view['Proposal']['contract'])){ ?>
 				<strong> <?php echo __('Contract'); ?> </strong>
-				<a href="<?php echo $this->Html->url('/'.$proposal_view['Proposal']['contract']); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Contract'), 'height'=>30 ));?> </a>
+				<a href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 3, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Contract'), 'height'=>30 ));?> </a>
 			<?php } ?>
 		</div>
 	</div>

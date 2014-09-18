@@ -52,6 +52,7 @@ class AppController extends Controller {
 		$this->set('house_type',Configure::read('HouseType'));
 		$this->set('house_side',Configure::read('HouseSide'));
 		$this->set('extra_type',Configure::read('ExtraType'));
+		$this->set('doc_type',Configure::read('DocType'));
 				
     }
     

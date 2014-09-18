@@ -112,6 +112,8 @@ class ProposalsController extends AppController{
 		$this->set('bool_basement',$bool_basement);
 		$this->set('bool_standalone',$bool_standalone);
 		
+		
+		
 	}
 
 
@@ -457,8 +459,9 @@ class ProposalsController extends AppController{
     	
     	$this->layout='pdf';
     	
-    	$filename = 'files/Contract'.$x['Proposal']['id'].'.pdf';
-    	
+    	$folder=__DIR__.'/../files/';
+    	$filename = 'Contract'.$x['Proposal']['id'].'.pdf';
+    	debug($folder.$filename);
     	
     	// initializing mPDF
     	$this->Mpdf->init();
@@ -474,7 +477,7 @@ class ProposalsController extends AppController{
     			');
     
     	// setting filename of output pdf file
-    	$this->Mpdf->setFilename($filename);
+    	$this->Mpdf->setFilename($folder.$filename);
     
     	// setting output to I, D, F, S
     	$this->Mpdf->setOutput('F');
@@ -518,7 +521,8 @@ class ProposalsController extends AppController{
     	
     	$this->layout='pdf';
     	
-    	$filename = 'files/BankReceipt'.$x['Proposal']['id'].'.pdf';
+    	$folder=__DIR__.'/../files/';
+    	$filename = 'BankReceipt'.$x['Proposal']['id'].'.pdf';
     	
     	
     	// initializing mPDF
@@ -534,7 +538,7 @@ class ProposalsController extends AppController{
     			');
     
     	// setting filename of output pdf file
-    	$this->Mpdf->setFilename($filename);
+    	$this->Mpdf->setFilename($folder.$filename);
     
     	// setting output to I, D, F, S
     	$this->Mpdf->setOutput('F');
@@ -548,5 +552,37 @@ class ProposalsController extends AppController{
     	
     	
     }
-  	
+    
+    public function download_file($type_flag,$proposal_id){
+    	// type_flag: 1=Summary, 2=BankReceipt, 3=Contract
+    	
+    	$prop=$this->Proposal->findById($proposal_id);
+    	$filename='';
+    	if ($type_flag==1){
+    		$filename=$prop['Proposal']['summary'];
+    	}elseif ($type_flag==2){
+    		$filename=$prop['Proposal']['bank_receipt'];
+    	}elseif ($type_flag==3){
+    		$filename=$prop['Proposal']['contract'];
+    	}
+		
+		$folder=__DIR__.'/../files/';
+    	$file = $folder.$filename;
+    	debug($file);
+    	
+		if (file_exists($file)) {
+			header('Content-Description: File Transfer');
+			header('Content-Type: application/octet-stream');
+			header('Content-Disposition: attachment; filename='.basename($file));
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($file));
+			readfile($file);
+			exit;
+		}else{
+			$this->Session->setFlash(__('The requested file is not available'), 'alert-box', array('class'=>'alert-success'));
+			return $this->redirect(array('action'=>'view',$proposal_id));
+		}
+	}
 }
