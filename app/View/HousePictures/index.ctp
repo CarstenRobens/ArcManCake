@@ -24,6 +24,7 @@
 							echo $this->Html->image('/img/uploads/houses/'.$house_pictures_view[$j+$i]['HousePicture']['picture'], array('class' => 'featurette-image img-responsive'));
 							echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$house_pictures_view[$j+$i]['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
 							echo ' '.$house_pictures_view[$j+$i]['HousePicture']['name'].': '.$house_pictures_view[$j+$i]['HousePicture']['description'];
+							echo ' ('.$house_pic_type[$house_pictures_view[$j+$i]['HousePicture']['type_flag']].')';
 						}?>
 					</div>
 				<?php }?>
@@ -94,9 +95,10 @@
 							<?php echo __('Add a home picture'); ?>
 						</legend>
 						<?php 
-						echo $this->Form->input('title',array('placeholder' => __('Enter the title of the picture'),'label' => __('Title'),'div' => 'form-group has-success'));
+						echo $this->Form->input('name',array('placeholder' => __('Enter the title of the picture'),'label' => __('Title'),'div' => 'form-group has-success'));
 						echo $this->Form->input('description',array('placeholder' => __('Enter a description'),'label' => __('Description'),'div' => 'form-group has-success'));
 						echo $this->Form->input('upload', array('type' => 'file'));
+						echo $this->Form->input('type_flag',array('options'=> $house_pic_type, 'label'=>'Type','default'=>0),array('div' => 'form-group has-success'));
 						?>
 						
 					</div>

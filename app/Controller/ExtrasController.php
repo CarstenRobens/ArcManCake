@@ -183,6 +183,9 @@ class ExtrasController extends AppController{
         		}
         	}
         	
+			$this->request->data['Extra']['size_dependent_flag'] = -1*$this->request->data['Extra']['size_dependent_check'];
+			
+			
         	
         	
         	

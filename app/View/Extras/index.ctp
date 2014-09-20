@@ -59,6 +59,12 @@
 			<td> 
 			<?php if ($x['Extra']['size_dependent_flag']<0){
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-ok"></span></div><?php
+				if ($x['Extra']['size_dependent_flag']==-1){
+					echo __('Floor Size');
+				}
+				if ($x['Extra']['size_dependent_flag']==-2){
+					echo __('Total Size');
+				}
 			}elseif($x['Extra']['size_dependent_flag']>0){
 				echo 'enlarge';
 			}else{

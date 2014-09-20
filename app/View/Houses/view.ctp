@@ -40,6 +40,7 @@
 					<?php } ?>
 				</span>
 			</div>
+			<br>
 			<div class="row">
 			
 					<?php if(!empty($house_pictures_view)){
@@ -52,7 +53,7 @@
 					} ?>
 				
 			</div>
-			
+			<br>
 			<div class="row">
 				<strong > <?php echo __('Description:'); ?> </strong>
 				<?php echo $this->Text->autoParagraph($house_view['House']['description']); ?> 

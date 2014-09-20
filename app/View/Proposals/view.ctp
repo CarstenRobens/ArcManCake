@@ -113,7 +113,9 @@ foreach ($normal_house_pictures_view as $x){
 						 echo $house_side[$proposal_view['Proposal']['duplex_side']].' '.__('side'); 
 					} ?>
 				</span>
+				
 			</div>
+			<br>
 			<div class="row">
 				<?php if(!empty($default_picture)){ 
 					echo $this->Html->link(
@@ -122,7 +124,7 @@ foreach ($normal_house_pictures_view as $x){
 						array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])); 
 				}?>
 			</div>
-			
+			<br>
 			<div class="row">
 				<strong > <?php echo __('Description:'); ?> </strong>
 				<?php echo $this->Text->autoParagraph($proposal_view['MyHouse']['description']); ?> 
@@ -286,9 +288,9 @@ foreach ($normal_house_pictures_view as $x){
 		<div class="col-md-2">
 			<?php
 			if ($x['MyExtra']['size_dependent_flag']==-2){ 
-				echo $this->Number->currency(($proposal_view['MyHouse']['size']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
+				echo $this->Number->currency(($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 			}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
-				echo $this->Number->currency(($proposal_view['MyHouse']['size']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
+				echo $this->Number->currency(($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 			}elseif($x['MyExtra']['size_dependent_flag']>0){
 				echo $this->Number->currency(($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 			}else{
