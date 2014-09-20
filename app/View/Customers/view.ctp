@@ -195,7 +195,7 @@
 						<div class="row" style="text-align:right">
 							<div class="col-md-2" style="text-align: right;">
 								<h4>
-									<?php echo __('Partner:'); ?>
+									<?php echo __('Proposals:'); ?>
 								</h4>
 							</div>
 							<div class="col-md-10"></div>
