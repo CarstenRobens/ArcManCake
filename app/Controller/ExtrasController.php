@@ -6,9 +6,7 @@ class ExtrasController extends AppController{
 	
 	public $paginate = array(
 			'limit' => 25,
-			'order' => array(
-				'Extra.category_id' => 'asc'
-			)
+			'order' => array('Extra.category_id' => 'asc', 'Extra.name' => 'asc')
 	);
 	
 	
@@ -31,7 +29,10 @@ class ExtrasController extends AppController{
 	public function index() {
 		$logged_user = $this->Auth->user();
 		
+		
+		
 		$this->Paginator->settings = $this->paginate;
+		
 		$this->set('extras_view',$this->Paginator->paginate());
 		
 		

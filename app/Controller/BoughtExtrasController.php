@@ -25,7 +25,10 @@ class BoughtExtrasController extends AppController{
 		$ext_garage=$this->BoughtExtra->find('first',array(
             		'conditions'=>array('proposal_id'=>$proposal_id,'MyExtra.bool_external'=>1,'MyExtra.type'=>1)));
 		$extras=$this->BoughtExtra->MyExtra->find('all',array(
-            		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false)));
+            		'conditions'=>array('MyExtra.bool_external'=>$bool_external,'MyExtra.bool_custom'=>false),
+					'order' => array(
+						'MyExtra.name' => 'asc'
+					)));
 		
 		foreach($extras as $x){ //Selects only the categories that are going to be used
 			$used_categories[$x['MyCategory']['id']]=$x['MyCategory']['name'];

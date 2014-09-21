@@ -66,6 +66,14 @@
 							</td>
 						</tr>
 						<tr>
+							<td><?php echo 'Wohnfläche nach DIN 277: ' ?>&nbsp;</td>
+							<td><div style="text-align: right;">
+									<?php echo $House['House']['size_din'].' m<sup>2</sup>';?>
+									&nbsp;
+								</div>
+							</td>
+						</tr>
+						<tr>
 							<td><?php echo __('Floors:') ?>&nbsp;</td>
 							<td><div style="text-align: right;">
 									<?php echo $House['House']['floors'];?>
@@ -81,6 +89,14 @@
 									}else{
 										echo __('Standalone house');
 									}?>
+									&nbsp;
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><?php echo __('Category:') ?>&nbsp;</td>
+							<td><div style="text-align: right;">
+									<?php echo $House['House']['type'];?>
 									&nbsp;
 								</div>
 							</td>
