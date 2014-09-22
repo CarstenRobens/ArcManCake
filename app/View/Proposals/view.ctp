@@ -311,7 +311,7 @@ foreach ($normal_house_pictures_view as $x){
 			<?php echo '<strong>'.__('Comment:').' </strong>'.$this->Text->autoParagraph($x['MyBoughtExtra']['comment']); ?>
 			<?php }?>
 			<?php if($x['MyBoughtExtra']['factor']!=1){ ?>
-			<p> <?php echo __('Units:').' '.$x['MyBoughtExtra']['factor']; ?> </p>
+			<p> <?php echo __('Units / lfm / m<sup>2</sup>:').' '.$x['MyBoughtExtra']['factor']; ?> </p>
 			<?php }?>
 		</div>
 		

@@ -1701,7 +1701,7 @@ sind enthalten.
 						<p> <?php echo 'Zusätzliche Anmerkungen: '.$x['MyBoughtExtra']['comment']; ?> </p>
 						<?php }?>
 						<?php if($x['MyBoughtExtra']['factor']>1){ ?>
-						<p> <?php echo 'Anzahl: '.$x['MyBoughtExtra']['factor']; ?> </p>
+						<p> <?php echo 'Anzahl / lfm / m<sup>2</sup>: '.$x['MyBoughtExtra']['factor']; ?> </p>
 						<?php }?>
 					</div>	
 					</h6>
@@ -1890,7 +1890,7 @@ sind enthalten.
 		<br>
 		Die Erklärung zur Ausübung des Rücktrittsrechtes bedarf zu Ihrer Wirksamkeit der Schriftform.<br>
 		Der Auftraggeber wurde darauf hingewiesen, dass die Pläne und sonstigen Unterlagen von
-		der Town & Country Haus Lizenzgeber GmbH projektiert und entwickelt wurden und der
+		IZ-Haus GmbH projektiert und entwickelt wurden und der
 		Auftraggeber bei Ausübung des Rücktrittsrechtes nach diesen Plänen und Unterlagen nicht
 		bauen darf. Bei einer schuldhaften Zuwiderhandlung verpflichtet sich der Auftraggeber, einen
 		pauschalen Schadensersatz für die Planung und die Statik in Höhe von EUR 7.500,00 an den
@@ -2597,11 +2597,11 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 								<?php echo $proposal_view['MyCustomer']['zipcode'].' '.$proposal_view['MyUser']['city'];?> </h6> </td>						
 					</tr>
 					<tr>
-						<td > <h6>ja / nein </h6> </td>
+						<td > <h6>ja / nein <sup>*</sup></h6> </td>
 						<td > <h6>Eine Kopie des Personalausweises liegt vor </h6> </td>						
 					</tr>
 					<tr>
-						<td > <h6>ja / nein </h6> </td>
+						<td > <h6>ja / nein <sup>*</sup></h6> </td>
 						<td > <h6>Politisch exponierte Person </h6> </td>						
 					</tr>
 					
@@ -2637,11 +2637,11 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 						<td > <h6> &nbsp; </h6> </td>						
 					</tr>
 					<tr>
-						<td > <h6>ja / nein </h6> </td>
+						<td > <h6>ja / nein <sup>*</sup></h6> </td>
 						<td > <h6>Eine Kopie des Personalausweises liegt vor </h6> </td>						
 					</tr>
 					<tr>
-						<td > <h6>ja / nein </h6> </td>
+						<td > <h6>ja / nein <sup>*</sup></h6> </td>
 						<td > <h6>Politisch exponierte Person </h6> </td>						
 					</tr>
 					
@@ -2719,6 +2719,10 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 und Aufbewährung der vorgenannten Daten sowie zur Vorlage an die zuständige Behörde im Verdachtsfall sind wir nach § 2, Abs. 1, Nr. 10, §§ 8,
 11 GwG verpflichtet.
 		</h5>
+		<h5>
+			<sup>*</sup> unzutreffendes streichen
+		</h5>
+		
 	</div>
 	
 	
