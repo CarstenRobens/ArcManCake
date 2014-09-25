@@ -57,7 +57,7 @@
 		
 		
 		<p>
-		&copy; 2014 C. Robens and R. Gomez &middot; 
+		&copy; 2014 C. Robens and R. Gómez &middot; 
 		<?php echo $this->Html->link('Impressum',array('plugin'=>NULL,'controller'=>'pages','action'=>'impressum'))?> 
 		
 		

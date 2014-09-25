@@ -20,40 +20,40 @@ class Customer extends AppModel{
 			)
 	);
 	
-	
-	
+    
+    
     public $validate=array(
     		'name'=>array(
-            	'rule'=>'notEmpty',
-                'message'=> 'A name is required'
+    				'rule'=>'notEmpty',
+    				'message'=> 'A name is required'
     		),
     		'surname'=>array(
-            	'rule'=>'notEmpty',
-                'message'=> 'A surname is required'
-			),
+    				'rule'=>'notEmpty',
+    				'message'=> 'A surname is required'
+    		),
     		'phone_private'=>array(
-            	'rule'=>'notEmpty',
-                'message'=> 'A phone number is required'
-			),
+    				'rule'=>'notEmpty',
+    				'message'=> 'A phone number is required'
+    		),
     		'address1'=>array(
-            	'rule'=>'notEmpty',
-                'message'=> 'Address is required'
-			),
+    				'rule'=>'notEmpty',
+    				'message'=> 'Address is required'
+    		),
     		'zipcode'=>array(
-            	'rule'=>'decimal',
-                'message'=> 'Enter a valid zipcode'
-			),'city'=>array(
-            	'rule'=>'notEmpty',
-                'message'=> 'Enter your city'
-			),
+    				'rule'=>'decimal',
+    				'message'=> 'Enter a valid zipcode'
+    		),'city'=>array(
+    				'rule'=>'notEmpty',
+    				'message'=> 'Enter your city'
+    		),
     		'phone_private'=>array(
-            'required'=>array(
-                'rule'=>'decimal',
-                'message'=> 'A phone is required'
-            )
-        ),
+    				'required'=>array(
+    						'rule'=>'decimal',
+    						'message'=> 'A phone is required'
+    				)
+    		),
     		'email'=>'email'
-    		
+    
     );
     
     public function isOwnedBy ($owned_customer,$owner){

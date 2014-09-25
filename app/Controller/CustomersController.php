@@ -107,7 +107,7 @@ class CustomersController extends AppController{
         	throw new MethodNotAllowedException();
         }
         if ($this->Customer->delete($id)) {
-        	$this->Session->setFlash(__('The customer with id: %s has been deleted',h($id)), 'alert-box', array('class'=>'alert-success'));
+        	$this->Session->setFlash(__('Deleted'), 'alert-box', array('class'=>'alert-success'));
             return $this->redirect(array('action'=>'index'));
         }
     }

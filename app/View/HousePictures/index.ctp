@@ -4,7 +4,7 @@
 
 <div class="row">
 	<br>
-	<?php echo $this->Html->link('Back', array('controller'=>'Houses','action'=>'index')) ?>
+	<?php echo $this->Html->link(__('Back'), array('controller'=>'Houses','action'=>'index')) ?>
 </div>
 
 <div class="row">

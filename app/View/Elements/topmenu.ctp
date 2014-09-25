@@ -29,60 +29,66 @@
 					<?php } ?>
 					<?php echo $this->Html->link(__('Customers'), array('plugin'=>NULL,'controller' => 'Customers', 'action' => 'index')); ?></li>
 				
-				<?php if($this->Session->read('menue.active')=='Lands'){ ?>
+					<?php if($this->Session->read('menue.active')=='Lands'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
 					<?php echo $this->Html->link(__('Lands'),array('plugin'=>NULL,'controller'=>'Lands','action'=>'index'))?></li>
 				
-				<?php if($this->Session->read('menue.active')=='FullCalendar'){ ?>
+					<?php if($this->Session->read('menue.active')=='FullCalendar'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
 					<?php echo $this->Html->link(__('Calendar'),array('plugin'=>'full_calendar','controller'=>'FullCalendar'))?></li>
 				
-				<?php if($this->Session->read('menue.active')=='Houses'){ ?>
-					<li class="active"> <?php }else{ ?> <li>
-				<?php } ?>
-				<?php echo $this->Html->link(__('Houses'),array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'))?></li>
-				
-				
-				
-					
-					
+					<?php if($this->Session->read('menue.active')=='Houses'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Houses'),array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'))?></li>
+							
 					<?php if($this->Session->read('menue.active')=='Extras'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
 					<?php echo $this->Html->link(__('Extras'),array('plugin'=>NULL,'controller'=>'Extras','action'=>'index'))?></li>
 					
 				
-				<?php if($this->Session->read('menue.active')=='Offer'){ ?>
-					<li class="active"> <?php }else{ ?> <li>
-				<?php } ?>
-				<?php echo $this->Html->link(__('Offers'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
-				
-				<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
-					<li class="active"> <?php }else{ ?> <li>
-				<?php } ?>
-				<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
-				
+					<?php if($this->Session->read('menue.active')=='Offer'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Offers'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='JobOffers'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
+					
 				</ul>
 				<?php } else {?>
-				
 				<ul class="nav navbar-nav">
-				<?php if($this->Session->read('menue.active')=='Offer'){ ?>
-					<li class="active"> <?php }else{ ?> <li>
-				<?php } ?>
-				<?php echo $this->Html->link(__('Offers'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
 				
-				<?php if($this->Session->read('menue.active')=='Houses'){ ?>
-					<li class="active"> <?php }else{ ?> <li>
-				<?php } ?>
-				<?php echo $this->Html->link(__('Houses'),array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'))?></li>
-				
-				<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
-					<li class="active"> <?php }else{ ?> <li>
-				<?php } ?>
-				<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
-				
+					<?php if($this->Session->read('menue.active')=='Offer'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Offers'),array('plugin'=>NULL,'controller'=>'Offer','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='Houses'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Houses'),array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='JobOffers'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
+					
 				</ul>
 				
 				<?php } ?>

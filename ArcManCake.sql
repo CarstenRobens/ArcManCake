@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 22, 2014 at 08:59 PM
+-- Host: localhost
+-- Generation Time: Sep 25, 2014 at 06:06 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `arcmancake`
+-- Database: `ArcManCake`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -478,10 +478,10 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `immocaster_storage`
+-- Table structure for table `Immocaster_Storage`
 --
 
-CREATE TABLE IF NOT EXISTS `immocaster_storage` (
+CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
   `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `ic_desc` varchar(32) NOT NULL,
   `ic_key` varchar(128) NOT NULL,
@@ -491,12 +491,37 @@ CREATE TABLE IF NOT EXISTS `immocaster_storage` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
--- Dumping data for table `immocaster_storage`
+-- Dumping data for table `Immocaster_Storage`
 --
 
-INSERT INTO `immocaster_storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
+INSERT INTO `Immocaster_Storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
 (23, 'REQUEST', 'ea567b98-3129-407c-ad73-f83a0b2f7f61', 'iV7L4OrUSS1VdGkbZKfMfBTkYl6%2FP4MbdnwMc%2BiL4Su7oDn4NRxIcX%2BUPRoEjgVwSQpAi8AdEcxWBNEp8x9ZyylcwZH7HhxbvwQ8Rjheg7o%3D', '2012-11-02 20:44:08'),
 (22, 'APPLICATION', '7ceda6d2-be12-4bb2-93ad-f24e32b778ab', 'd9YWI%2F90I03Jo9aVYZKmUCv1IROLc89KT1Sf78sMAe2UrhqPxpuLqT0bQJ1c2YZn3RslRyVH5y3AOkbplIfPfUDBtMzIMJnaGfFkprEhATw%3D', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `job_offers`
+--
+
+CREATE TABLE IF NOT EXISTS `job_offers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `bool_active` tinyint(1) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `job_offers`
+--
+
+INSERT INTO `job_offers` (`id`, `name`, `description`, `bool_active`, `user_id`, `created`, `modified`) VALUES
+(1, 'Work work!', 'In this post we briefly show you how to use the user authentication system provided by Django in order to implement a selective access to other Django applications. We assume you are already a bit familiar with Django and you know how to create and run Django apps.\r\n\r\nWe developed and shared a project consisting of two Django apps, one implementing the login and logout of a user, the other implementing the Polls application described in the official Django tutorial. We want to make the poll application accessible only to authenticated users. ', 1, 2, NULL, '2014-09-25'),
+(3, 'Work work work!', 'public function delete($id) {\r\n    	if ($this->request->is(''get'')) {\r\n        	throw new MethodNotAllowedException();\r\n        }\r\n        if ($this->Customer->delete($id)) {\r\n        	$this->Session->setFlash(__(''The customer with id: %s has been deleted'',h($id)), ''alert-box'', array(''class''=>''alert-success''));\r\n            return $this->redirect(array(''action''=>''index''));\r\n        }\r\n    }', 1, 6, '2014-09-25', '2014-09-25');
 
 -- --------------------------------------------------------
 
@@ -557,7 +582,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `proposals`
