@@ -581,7 +581,7 @@ class ProposalsController extends AppController{
 			readfile($file);
 			exit;
 		}else{
-			$this->Session->setFlash(__('The requested file is not available'), 'alert-box', array('class'=>'alert-success'));
+			$this->Session->setFlash(__('The requested file is not available'.': '.$filename), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('action'=>'view',$proposal_id));
 		}
 	}

@@ -6,7 +6,11 @@
 
 <hr >
 
-
+<style type="text/css">
+.table > tbody > tr > td{
+  border: 0px;
+}
+</style>
 
 
 <div class="row">
@@ -35,8 +39,8 @@
 						</div>
 					</div>
 					
-					<table>
-						<tr>
+					<table class="table">
+						<tr style="border-bottom:1px solid grey;">
 							<td><strong><?php echo $user_view['User']['username'];?> </strong></td>
 							<td><div style="text-align: right;"><?php echo $level[$user_view['User']['role']];?> &nbsp;</div></td>
 						</tr>
@@ -73,7 +77,7 @@
 					<div class="col-md-2"></div>
 
 					<div class="col-md-8">
-						<table>
+						<table class="table">
 							<tr>
 								<td ><?php echo __('Modified:');?></td>
 								<td><div style="text-align: right;"><?php echo date("d-M-Y",strtotime($user_view['User']['modified'])); ?> &nbsp;</div></td>

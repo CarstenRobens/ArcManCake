@@ -496,27 +496,31 @@
 <!----------PANEL CONTENT------------------>	
 	
 	<div class="row">
-		<?php
-		foreach ($ExposeAtt['attachments']['attachment'] as $Housepicture){
-			if(!empty($Housepicture['urls']['url'])){?>
-            <div class="col-md-2">
-                <?php 
-					
-						$last=count($Housepicture['urls']['url'])-4;
-						$image_explode = explode("?",($Housepicture['urls']['url'][$last]['@href']));
-						$image_url = strstr($image_explode[0], '/ORIG/resize', true);
-						echo $this->Html->link(
-							$this->Html->image(
-								$image_url, array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-							$image_url,
-							array('escape'=>false,'data-lightbox'=>'summary')
-						); 
-						
-						
-				?>
+		<?php for($j=0; $j<=count($ExposeAtt['attachments']['attachment'])-1; $j++) {
+			if (($j % 6) ==0){ ?>
+				<div class="row">
+				<?php for ($i=0; $i<=5; $i++){ 
+					if(!empty($ExposeAtt['attachments']['attachment'][$j+$i]['urls']['url'])){ 
+						$Housepicture=$ExposeAtt['attachments']['attachment'][$j+$i];?>
+       		     		<div class="col-md-2">
+	                		<?php $last=count($Housepicture['urls']['url'])-4;
+							$image_explode = explode("?",($Housepicture['urls']['url'][$last]['@href']));
+							$image_url = strstr($image_explode[0], '/ORIG/resize', true);
+							echo $this->Html->link(
+								$this->Html->image(
+									$image_url, array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+								$image_url,
+								array('escape'=>false,'data-lightbox'=>'summary')
+							); ?>
+						</div>
+					<?php }
+				}?>
 				</div>
-        <?php } } ?>
+			<?php }
+		}?>
 	</div>
+	
+	
 	
 	
 <!----------END PANEL CONTENT-------------->

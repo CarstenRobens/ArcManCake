@@ -7,7 +7,11 @@
 
 <hr >
 
-
+<style type="text/css">
+.table > tbody > tr > td{
+  border: 0px;
+}
+</style>
 
 
 <div class="row">
@@ -186,8 +190,8 @@
 			</div>
 			
 
-<!-- PROPOSALS -->
-			
+			<!-- PROPOSALS -->
+							
 			<?php if (!empty($customer_view['MyProposal'])){ ?>
 			<div class="row">
 					<div class="col-md-2"></div>
@@ -201,7 +205,7 @@
 							<div class="col-md-10"></div>
 							
 						</div>
-						<table >
+						<table class="table">
 							<?php foreach ($customer_view['MyProposal'] as $x){?>
 							<tr>
 								<td ><?php echo $this->Html->link($x['name'],array('controller' => 'Proposals','action' => 'view',$x['id'])); ?></td>
