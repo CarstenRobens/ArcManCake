@@ -110,5 +110,9 @@ class HomePicturesController extends AppController{
     public function contact() {
     	$this->Session->write('menue.active','Contact');
     }
+	
+	public function impressum() {
+    	$this->Session->write('menue.active','Impressum');
+    }
   	
 }

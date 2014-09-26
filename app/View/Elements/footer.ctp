@@ -58,7 +58,7 @@
 		
 		<p>
 		&copy; 2014 C. Robens and R. Gómez &middot; 
-		<?php echo $this->Html->link('Impressum',array('plugin'=>NULL,'controller'=>'pages','action'=>'impressum'))?> 
+		<?php echo $this->Html->link('Impressum',array('plugin'=>NULL,'controller'=>'HomePictures','action'=>'impressum'))?> 
 		
 		
 		</p>
