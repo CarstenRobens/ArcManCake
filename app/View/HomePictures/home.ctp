@@ -47,7 +47,7 @@
 			?>
 		  <h2>Immobilienscout Angebote</h2>
           <p>Sie sind auf der Suche nach einem direktem Angebot? Dann stöbern Sie in unseren Angeboten</p>
-          <p><a class="btn btn-default" href="#" role="button">Angebote anschauen &raquo;</a></p>
+          <p> <?php echo $this->Html->link('View details', array('controller' => 'Offer', 'action' => 'index'),array('class' => 'btn btn-default'));?> </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
 			<?php 
@@ -55,7 +55,7 @@
 			?>
           <h2>Hausausstellung</h2>
           <p>Sie wissen genau wonach Sie suchen, oder möchten Sich einen überblick verschaffen? Dann schauen Sie sich in unserer Hausausstellung um.</p>
-          <p><a class="btn btn-default" href="#" role="button">Hausausstellung anschauen &raquo;</a></p>
+          <p> <?php echo $this->Html->link('View details', array('controller' => 'Houses', 'action' => 'index'),array('class' => 'btn btn-default'));?> </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <?php 
@@ -63,7 +63,7 @@
 			?>
 		  <h2>Portfolio</h2>
           <p>Lassen Sie sich von unserer langjährigen Erfahrung überzeugen und schauen Sie sich vergangene Bauprojekte an.</p>
-          <p><a class="btn btn-default" href="#" role="button">Portfolio anschauen &raquo;</a></p>
+          <p> <?php echo $this->Html->link('View details', array('controller' => 'GalleryPictures', 'action' => 'index'),array('class' => 'btn btn-default'));?> </p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       

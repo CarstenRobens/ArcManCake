@@ -13,7 +13,7 @@ class JobOffersController extends AppController{
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('index');
+		$this->Auth->allow('index','check_open');
 		$this->Session->write('menue.active','JobOffers');
 	}
 	
@@ -95,6 +95,11 @@ class JobOffersController extends AppController{
 			$this->Session->setFlash(__('Deleted'), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('action'=>'index'));
 		}
+	}
+	
+	public function check_open() {
+		$check_open = $this->JobOffer->find('count', array('conditions' => array('JobOffer.bool_active' => true)));
+		return $check_open;
 	}
 	
 	
