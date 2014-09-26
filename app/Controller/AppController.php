@@ -53,6 +53,7 @@ class AppController extends Controller {
 		$this->set('house_side',Configure::read('HouseSide'));
 		$this->set('extra_type',Configure::read('ExtraType'));
 		$this->set('doc_type',Configure::read('DocType'));
+		$this->set('eMail',Configure::read('eMail'));
     }
     
     public function isAuthorized($logged_user) {

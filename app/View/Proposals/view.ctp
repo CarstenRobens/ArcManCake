@@ -6,10 +6,8 @@
 	<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
 </div>
 
-<div class="CategorieTitleBox">
-	<div id="Proposal">
-		<?php echo __( $proposal_view['Proposal']['name'].'<small> for '.$proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'].'</small>',false);?>
-	</div>
+<div class="row">
+	<h3><?php echo __( $proposal_view['Proposal']['name'].'<small> for '.$proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'].'</small>',false);?></h3>
 </div>
 
 <?php if (!empty($proposal_view['Proposal']['notes'])){ ?>
@@ -208,7 +206,6 @@ foreach ($normal_house_pictures_view as $x){
 					<?php }
 					if ($bool_basement){
 						foreach ($basement_house_pictures_view as $key=>$x){?>
-					
 							<div class="col-md-6">
 								<?php echo $this->Html->link(
 									$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
@@ -217,7 +214,17 @@ foreach ($normal_house_pictures_view as $x){
 								);?>
 							</div>
 						<?php } 
-					} ?>
+					}else{
+						foreach ($sideview_nobasement_house_pictures_view as $key=>$x){?>
+							<div class="col-md-6">
+								<?php echo $this->Html->link(
+									$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+									'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+									array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
+									);?>
+							</div>
+						<?php } 
+					}?>
 				</div>
 			</div>
 			</div>

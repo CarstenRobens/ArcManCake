@@ -23,7 +23,7 @@
 			<div class="panel-body">
 				<?php echo $this->Text->autoParagraph($x['JobOffer']['description']);?>
 				<br>
-				<div style="text-align:right"><?php echo __('Interested?').' '.$this->Html->link(__('Mail us!'),'mailto:test@test.com',array('target'=>'blank')) ?></div>
+				<div style="text-align:right"><?php echo __('Interested?').' '.$this->Html->link(__('Mail us!'),'mailto:'.$eMail['HR'].'?subject='.__('Job offer:').' '.$x['JobOffer']['name'],array('target'=>'blank')) ?></div>
 			</div>
 		</div>
 		

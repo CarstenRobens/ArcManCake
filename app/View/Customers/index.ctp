@@ -3,7 +3,6 @@
 <div class="col-md-8">
 
 <div class="row">
-	<br>
 	<h3><?php echo __('Customers'); ?></h3>
 </div>
 	

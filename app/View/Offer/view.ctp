@@ -49,7 +49,7 @@
 				<div class="panel panel-success">
 				<!---------- Left PANEL CONTENT------------------>
 					<div class="panel-heading">
-						<h3 class="panel-title" style="text-align: center"><?php echo __($Expose['expose']['realEstate']['title']);?></h3>
+						<h3 class="panel-title" style="text-align: center"><?php echo $Expose['expose']['realEstate']['title'];?></h3>
 					</div>
 					<div class="panel-body">
 					
@@ -475,6 +475,7 @@
 				<!---------- END Right PANEL CONTENT------------------>
 			</div>
 		</div>
+		<div style="text-align:center;"><?php echo __('Interested?').' '.$this->Html->link(__('Write us!'),'mailto:'.$eMail['sales'].'?subject='.__('House:').' '.$Expose['expose']['realEstate']['title'],array('target'=>'blank')) ?> </div>
 	</div>
 	
 	

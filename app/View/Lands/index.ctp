@@ -1,5 +1,5 @@
+
 <div class="row">
-	<br>
 	<h3><?php echo __('Land'); ?></h3>
 </div>
 

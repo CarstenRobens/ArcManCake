@@ -120,7 +120,7 @@
 				</div>
 				<div class="panel-body">
 					<?php foreach ($house_pictures_view as $x){
-						if($x['type_flag']==-2){ ?>
+						if($x['type_flag']==-10){ ?>
 							<div class="col-md-6">
 							<?php echo $this->Html->link(
 								$this->Html->image('/img/uploads/houses/'.$x['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
@@ -137,3 +137,4 @@
 		</div>
 	</div>
 
+<div style="text-align:center"><?php echo __('Interested?').' '.$this->Html->link(__('Write us!'),'mailto:'.$eMail['sales'].'?subject='.__('House:').' '.$house_view['House']['name'],array('target'=>'blank')) ?></div>
