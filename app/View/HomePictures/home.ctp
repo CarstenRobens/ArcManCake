@@ -2,10 +2,17 @@
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+      
+	  <ol class="carousel-indicators">
+		<?php
+		for($i = 0; $i < count($home_pictures_view); $i++){
+			if($i==0){?>
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+		<?php
+			}else{?>
+        <li data-target="#myCarousel" data-slide-to="<?php echo $i;?>"></li>
+		<?php
+			}}?>
       </ol>
       <div class="carousel-inner">
       <?php foreach($home_pictures_view as $key=>$x){ ?>
@@ -35,22 +42,28 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <?php 
+			  echo $this->Html->image('Angebote.png', array('width'=>'140px','height'=>'140px','class' => 'img-circle'));
+			?>
+		  <h2>Immobilienscout Angebote</h2>
+          <p>Sie sind auf der Suche nach einem direktem Angebot? Dann stöbern Sie in unseren Angeboten</p>
+          <p><a class="btn btn-default" href="#" role="button">Angebote anschauen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			<?php 
+			  echo $this->Html->image('Hausausstellung.png', array('width'=>'140px','height'=>'140px','class' => 'img-circle'));
+			?>
+          <h2>Hausausstellung</h2>
+          <p>Sie wissen genau wonach Sie suchen, oder möchten Sich einen überblick verschaffen? Dann schauen Sie sich in unserer Hausausstellung um.</p>
+          <p><a class="btn btn-default" href="#" role="button">Hausausstellung anschauen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <?php 
+			  echo $this->Html->image('Proposal.png', array('width'=>'140px','height'=>'140px','class' => 'img-circle'));
+			?>
+		  <h2>Portfolio</h2>
+          <p>Lassen Sie sich von unserer langjährigen Erfahrung überzeugen und schauen Sie sich vergangene Bauprojekte an.</p>
+          <p><a class="btn btn-default" href="#" role="button">Portfolio anschauen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       

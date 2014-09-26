@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Sep 26, 2014 at 06:24 
+-- Host: 127.0.0.1
+-- Generation Time: Sep 26, 2014 at 11:41 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ArcManCake`
+-- Database: `arcmancake`
 --
 
 -- --------------------------------------------------------
@@ -355,14 +355,14 @@ CREATE TABLE IF NOT EXISTS `home_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `home_pictures`
 --
 
 INSERT INTO `home_pictures` (`id`, `picture`, `title`, `description`, `user_id`, `created`, `modified`) VALUES
-(11, 'homemanor.jpg', 'Cool Manor', 'Use the <paper-dialog> element to create a dialog. Set a title on a dialog using the heading published property.\r\n\r\nYou can use any kind of children inside the dialog. For action buttons, add the dismissive or affirmative attributes to place the controls (typically buttons) at the bottom of the dialog:', 6, '2014-07-22', '2014-07-22');
+(15, 'P1040651.JPG', 'Herzlich willkommen bei IZ-Haus', 'Wir freuen uns auf Ihren Besuch\r\nin unserem BÃ¼ro in Kaarst\r\n', 2, '2014-09-26', '2014-09-26');
 
 -- --------------------------------------------------------
 
@@ -473,10 +473,10 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Immocaster_Storage`
+-- Table structure for table `immocaster_storage`
 --
 
-CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
+CREATE TABLE IF NOT EXISTS `immocaster_storage` (
   `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `ic_desc` varchar(32) NOT NULL,
   `ic_key` varchar(128) NOT NULL,
@@ -486,10 +486,10 @@ CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
--- Dumping data for table `Immocaster_Storage`
+-- Dumping data for table `immocaster_storage`
 --
 
-INSERT INTO `Immocaster_Storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
+INSERT INTO `immocaster_storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
 (23, 'REQUEST', 'ea567b98-3129-407c-ad73-f83a0b2f7f61', 'iV7L4OrUSS1VdGkbZKfMfBTkYl6%2FP4MbdnwMc%2BiL4Su7oDn4NRxIcX%2BUPRoEjgVwSQpAi8AdEcxWBNEp8x9ZyylcwZH7HhxbvwQ8Rjheg7o%3D', '2012-11-02 20:44:08'),
 (22, 'APPLICATION', '7ceda6d2-be12-4bb2-93ad-f24e32b778ab', 'd9YWI%2F90I03Jo9aVYZKmUCv1IROLc89KT1Sf78sMAe2UrhqPxpuLqT0bQJ1c2YZn3RslRyVH5y3AOkbplIfPfUDBtMzIMJnaGfFkprEhATw%3D', '0000-00-00 00:00:00');
 

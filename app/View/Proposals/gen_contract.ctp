@@ -343,8 +343,7 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§1 <br>
-			Vertragsgegenstand</h4>
+		<h4>§1 Vertragsgegenstand</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
