@@ -11,6 +11,7 @@
 			<div id="picture-container">
 				<?php echo $this->Html->image('Logo.png', array( "class" => "featurette-image img-responsive", "alt"=>" "))?>
 			</div>
+			<br>
 			<div id="map-container" style="height:250px;width:100%"></div>
 					
 		</div>
