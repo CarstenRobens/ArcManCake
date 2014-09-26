@@ -14,10 +14,11 @@ class JobOffersController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->allow('index','check_open');
-		$this->Session->write('menue.active','JobOffers');
+		
 	}
 	
 	public function index() {
+		$this->Session->write('menue.active','JobOffers');
 		$current_user = $this->Auth->user();
 	
 		$this->Paginator->settings = $this->paginate;
@@ -44,6 +45,7 @@ class JobOffersController extends AppController{
 	
 	
 	public function edit($id = NULL) {
+		$this->Session->write('menue.active','JobOffers');
 		if (!$id) {
 			throw new NotFoundException(__('Invalid job offer'));
 		}
@@ -67,6 +69,7 @@ class JobOffersController extends AppController{
 	}
 	
 	public function toggle_activation($id = NULL) {
+		$this->Session->write('menue.active','JobOffers');
 		if (!$id) {
 			throw new NotFoundException(__('Invalid job offer'));
 		}
@@ -88,6 +91,7 @@ class JobOffersController extends AppController{
 	}
 	
 	public function delete($id) {
+		$this->Session->write('menue.active','JobOffers');
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();
 		}
