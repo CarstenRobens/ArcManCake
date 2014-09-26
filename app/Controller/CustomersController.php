@@ -46,7 +46,7 @@ class CustomersController extends AppController{
 			$this->set('customers_view',$this->Paginator->paginate('Customer',array('Customer.user_id LIKE'=>$logged_user['id'])));
 		}
 		
-		$upcoming_events=$this->Customer->MyUser->MyEvent->find('all',array('order'=>array('start'=>'asc'),'conditions'=>array('user_id'=>$this->Auth->user('id'),'start <'=>date('Y-m-d', strtotime("+2 weeks")))));
+		$upcoming_events=$this->Customer->MyUser->MyEvent->find('all',array('order'=>array('start'=>'asc'),'conditions'=>array('user_id'=>$this->Auth->user('id'),'start <'=>date('Y-m-d', strtotime("+2 weeks")),'start >'=>date('Y-m-d', strtotime("-1 hour")))));
 		$this->set('upcoming_events',$upcoming_events);
 		
 		if ($logged_user['role']<3){

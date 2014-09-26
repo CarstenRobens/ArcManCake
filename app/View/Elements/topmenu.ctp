@@ -65,6 +65,11 @@
 					<?php } ?>
 					<?php echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
 					
+					<?php if($this->Session->read('menue.active')=='Contact'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Contact'),array('plugin'=>NULL,'controller'=>'HomePictures','action'=>'contact'))?></li>
+					
 				</ul>
 				<?php } else {?>
 				<ul class="nav navbar-nav">
@@ -88,6 +93,11 @@
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
 					<?php echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='Contact'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Contact'),array('plugin'=>NULL,'controller'=>'HomePictures','action'=>'contact'))?></li>
 					
 				</ul>
 				

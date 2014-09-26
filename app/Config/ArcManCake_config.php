@@ -36,9 +36,20 @@ $config['DocType'][1] = __('Summary');
 $config['DocType'][2] = __('BankReceipt');
 $config['DocType'][3] = __('Contract');
 
+$config['price_enlargement'] = 999;
+$config['price_shrinking'] = -333;
+
+
+
 $config['eMail']['HR'] = 'test1@test.com';
 $config['eMail']['sales'] = 'test2@test.com';
 
-$config['price_enlargement'] = 999;
-$config['price_shrinking'] = -333;
+$config['Info']['title'] = 'Dipl. Ing. Architekt';
+$config['Info']['owner'] = 'Zbigniew Iwaniuk';
+$config['Info']['address'] = 'Jungfernweg 35a';
+$config['Info']['zipcode'] = '51564';
+$config['Info']['city'] = 'Kaarst';
+$config['Info']['phone'] = '02131 / 1333971';
+$config['Info']['fax'] = '02131 / 1333971';
+$config['Info']['opening_time'] = 'Montag - Freitag 9:00 - 19:00 Uhr';
 ?>

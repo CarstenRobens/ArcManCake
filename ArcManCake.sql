@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 25, 2014 at 06:06 
+-- Generation Time: Sep 26, 2014 at 03:04 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -52,11 +52,9 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `comment`, `extra_id`, `pr
 (31, 1000, 1, NULL, 112, 4, '2014-08-23', '2014-08-23'),
 (32, 4400, 1, NULL, 113, 4, '2014-08-23', '2014-08-23'),
 (38, 50, 1, NULL, 2, 4, '2014-09-20', '2014-09-20'),
-(40, 650, 1, NULL, 71, 4, '2014-09-21', '2014-09-21'),
-(41, 1600, 1, NULL, 36, 4, '2014-09-21', '2014-09-21'),
-(42, 9990, 1, NULL, 81, 4, '2014-09-21', '2014-09-21'),
 (43, 58, 1, NULL, 41, 4, '2014-09-21', '2014-09-21'),
-(44, 90, 20, '', 53, 4, '2014-09-22', '2014-09-22');
+(44, 90, 20, '', 53, 4, '2014-09-22', '2014-09-22'),
+(45, 650, 1, NULL, 71, 4, '2014-09-26', '2014-09-26');
 
 -- --------------------------------------------------------
 
@@ -140,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `events`
@@ -148,13 +146,8 @@ CREATE TABLE IF NOT EXISTS `events` (
 
 INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `user_id`, `created`, `modified`) VALUES
 (11, 1, 'Carstens appointment', 'blablabla', '2014-10-24 02:26:00', '2014-08-24 02:26:00', 1, 'Scheduled', 1, 2, '2014-08-24', '2014-08-24'),
-(12, 1, '3', '', '2014-08-30 03:58:00', '2014-08-24 03:58:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
-(13, 1, '4', 'The above example will return posts where the created date is equal to the modified date (that is, it will return posts that have never been modified).', '2014-08-26 03:59:00', '2014-08-24 03:59:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
-(10, 3, 'another thing 2', 'Includes 200 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible', '2014-09-02 00:58:00', '2027-05-17 23:00:00', 0, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
-(9, 1, 'something', '$this->request->is(''post'')', '2014-10-24 01:57:00', '2014-08-24 01:57:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
-(14, 1, '5', 'By default, CakePHP joins multiple conditions with boolean AND. This means the snippet above would only match posts that have been created in the past two weeks, and have a title that matches one in the given set. However, we could just as easily find posts that match either condition:', '2014-09-05 03:59:00', '2014-08-24 03:59:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
-(15, 1, 'tutupa', '', '2014-08-27 04:30:00', '2014-08-24 04:30:00', 1, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24'),
-(16, 1, 'tutuchancla', '', '2014-08-27 04:30:00', '2014-08-24 04:30:00', 0, 'Scheduled', 1, 6, '2014-08-24', '2014-08-24');
+(18, 1, 'tutuchancla', '', '2014-10-02 14:17:00', '2014-09-26 14:05:00', 1, 'Scheduled', 1, 6, '2014-09-26', '2014-09-26'),
+(19, 3, 'tutu', '', '2014-09-28 14:08:00', '2014-09-26 14:08:00', 1, 'Scheduled', 1, 6, '2014-09-26', '2014-09-26');
 
 -- --------------------------------------------------------
 
@@ -441,7 +434,7 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (23, 'Dachgeschoss', '', '2_stadt-120-DG.png', 2, 2, 2, '2014-09-20', '2014-09-20'),
 (24, 'Erdgeschoss', '', '2_stadt-120-EG.png', 1, 2, 2, '2014-09-20', '2014-09-20'),
 (25, 'Keller', '', '2_stadt-120-KG.png', 5, 2, 2, '2014-09-20', '2014-09-20'),
-(26, 'Seitenschnitt', '', '2_stadt-120-Schnitt.png', 5, 2, 2, '2014-09-20', '2014-09-20'),
+(26, 'Seitenschnitt', '', '2_stadt-120-Schnitt.png', -2, 2, 2, '2014-09-20', '2014-09-20'),
 (33, 'Eingang', '', '3_stadt-130-eingang.png', 0, 3, 2, '2014-09-20', '2014-09-20'),
 (34, 'Garten', '', '3_stadt-130-garten.png', 0, 3, 2, '2014-09-20', '2014-09-20'),
 (35, 'Dachgeschoss', '', '3_130-1-DG.png', 3, 3, 2, '2014-09-20', '2014-09-20'),
@@ -582,7 +575,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `proposals`

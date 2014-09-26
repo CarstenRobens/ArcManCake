@@ -14,7 +14,7 @@ class HomePicturesController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HomePictures');
-		$this->Auth->allow('home');
+		$this->Auth->allow('home','contact');
 	}
 	
 	public function isAuthorized($logged_user) {
@@ -92,7 +92,6 @@ class HomePicturesController extends AppController{
             $this->set('home_picture_view',$x);
 
 	}
-
         
 	
     public function delete($id) {
@@ -106,6 +105,10 @@ class HomePicturesController extends AppController{
             return $this->redirect(array('action'=>'index'));
         }
     }
+    
    
+    public function contact() {
+    	$this->Session->write('menue.active','Contact');
+    }
   	
 }
