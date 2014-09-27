@@ -32,7 +32,7 @@ foreach ($normal_house_pictures_view as $x){
 		<br/>
 		<br/>
 		<br/><?php echo __('Bauwerkvertrag für Ihr'); ?>
-		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?>
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )
 		<br/>
 		<br/>
 		</h2>

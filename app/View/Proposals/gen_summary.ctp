@@ -13,6 +13,20 @@ foreach ($normal_house_pictures_view as $x){
 	
 ?>
 
+<?php 
+	foreach ($bought_extras_view as $index=>$x){
+		if ($x['MyExtra']['size_dependent_flag']==-2){
+			$price=($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+		}elseif ($x['MyExtra']['size_dependent_flag']==-1){
+			$price=($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+		}elseif($x['MyExtra']['size_dependent_flag']>0){
+			$price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
+		}else{
+			$price=$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+		}
+		$summed_extras=$summed_extras+$price;
+	}?>
+
 	<!-------------------------------------- First Page START -------------------------------------->
 
 	<div class="row">
@@ -30,9 +44,8 @@ foreach ($normal_house_pictures_view as $x){
 		<br/>
 		<br/>
 		<br/>
-		<br/>
-		<br/><?php echo __('Bauwerkvertrag für Ihr'); ?>
-		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?>
+		<br/><?php echo __('Unverbindliches Angebot'); ?>
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )
 		<br/>
 		<br/>
 		</h2>
@@ -50,70 +63,130 @@ foreach ($normal_house_pictures_view as $x){
 		
 	</div>
 	
-	<pagebreak  />
-	<!-------------------------------------- First Page END -------------------------------------->
-	
-	
-	
-	<!-------------------------------------- Grundrisse & Ansichten Coverpage START -------------------------------------->
 	<div class="row">
-		<h2 style = "text-align: center;">
+		<h4 style = "text-align: center;">
+		<br/><?php echo __('Für: '); ?> <?php echo $proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'];?>
+		<br/>
+		</h4>
+		<h5 style = "text-align: center;">
+		<br/> <?php if(!empty($proposal_view['MyCustomer']['address1'])) echo $proposal_view['MyCustomer']['address1'].' '.$proposal_view['MyCustomer']['address2'];?>
+		<br/> <?php if(!empty($proposal_view['MyCustomer']['zipcode'])) echo $proposal_view['MyCustomer']['zipcode'].' '.$proposal_view['MyCustomer']['city'];?>
+		</h5>
+	</div>
+	
+	
+	<div class="row">
 		<br/>
 		<br/>
 		<br/>
 		<br/>
 		<br/>
 		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/><?php echo __('Grundrisse & Ansichten'); ?></h2>
-		<h3 style = "text-align: center;">
-		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?></h3>
-		
+		<h5 style = "text-align: center;">
+		<br/> Gesamtpreis Ihres Traumhauses inklusiver gewählten Sonderausstattungen: <?php echo $this->Number->currency($proposal_view['MyHouse']['price']+$summed_extras+$enlagment_price,'EUR',array('wholePosition'=>'after'));?>
+		</h5>
 	</div>
 	
 	
 	<pagebreak  />
-	<!-------------------------------------- Grundrisse & Ansichten Coverpage  END -------------------------------------->
+	<!-------------------------------------- First Page END -------------------------------------->
+	
+	<!---------------------------------------------EXTRAS---------------------------------------------------->
+
+<?php if (!empty($bought_extras_view)){ ?>	
+	<div class="row">
+		<div class="col-md-12">
+		<div class="panel panel-success">
+           	<div class="panel-heading">
+				<h3 class="panel-title"><?php echo __( 'Extras');?></h3>
+			</div>
+			<div class="panel-body">
+			
+			
+<!----------PANEL CONTENT------------------>	
+			
+			
+<?php foreach($bought_extras_view as $index=>$x) { ?>
+	<div class="row">
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
+		
+		<div style="width:65%;float: left">
+			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
+			<?php echo $x['MyExtra']['name']; ?>
+		</div>
+		
+		
+		<div style="width:5%;float: left">
+			<strong><?php echo __('Price:'); ?></strong>
+		</div>
+		
+		<div style="width:10%;float: left; text-align: right;">
+			<?php
+			if ($x['MyExtra']['size_dependent_flag']==-2){ 
+				echo $this->Number->currency(($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
+			}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
+				echo $this->Number->currency(($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
+			}elseif($x['MyExtra']['size_dependent_flag']>0){
+				echo $this->Number->currency(($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
+			}else{
+				echo $this->Number->currency($x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
+			}
+			?>
+
+		</div>
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
+	</div>
 	
 	
-	<!-------------------------------------- Grundrisse & Ansichten START -------------------------------------->
-					<?php 
-					foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
-						<div class="row">
-							<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
-							<p style="padding-top: 5cm"> <?php 
-							echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
-							</p>
-						</div>
-						<pagebreak  />
-					<?php }
-					if ($bool_basement){
-						foreach ($basement_house_pictures_view as $key=>$x){?>
-							<div class="row">
-								<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
-								<p style="padding-top: 5cm"> <?php 
-								echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
-								</p>
-							</div>
-							<pagebreak  />
-						<?php } 
-					}else{
-						foreach ($sideview_nobasement_house_pictures_view as $key=>$x){?>
-							<div class="row">
-								<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
-								<p style="padding-top: 5cm"> <?php 
-								echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
-								</p>
-							</div>
-							<pagebreak  />
-						<?php } 
-					}?>
+	<div class="row">
+		<div class="col-md-2"> </div>
+		
+		<div class="col-md-<?php if (!empty($x['MyExtra']['picture'])){ echo '6';}else{ echo '8';}?>">
+			
+			<?php echo $this->Text->autoParagraph($x['MyExtra']['description']); ?> 
+			<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
+			<?php echo '<strong>'.__('Comment:').' </strong>'.$this->Text->autoParagraph($x['MyBoughtExtra']['comment']); ?>
+			<?php }?>
+			<?php if($x['MyBoughtExtra']['factor']!=1){ ?>
+			<p> <?php echo $x['MyBoughtExtra']['factor'].' '.$extra_unit['factor'][$x['MyExtra']['units']]; ?> </p>
+			<?php }?>
+		</div>
+		
+		<?php if (!empty($x['MyExtra']['picture'])){ ?>
+			<div class="col-md-2">
+				<?php echo $this->Html->image('uploads/extras/'.$x['MyExtra']['picture'], array('class' => 'featurette-image img-responsive')); ?> 
+			</div>
+		<?php } ?>
+				
+		<div class="col-md-2"> </div>
+	</div>
+
+	<hr>
+<?php } ?>
+
+<!----------END PANEL CONTENT-------------->			
+			
+			
+			</div>
+		</div>
+		</div>
+	</div>
+<?php }?>
+    	
+
+
+
+
+
+
+
+
 	
 	
-	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
 	
 	<!-------------------------------------- Sonderausstattungen START -------------------------------------->
 
