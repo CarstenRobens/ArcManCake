@@ -16,7 +16,7 @@
                 <span class="icon-bar"></span>
               </button>
 				
-			  <?php echo $this->Html->link(__('IZ-Haus'), array('plugin'=>NULL,'controller' => 'HomePictures', 'action' => 'home'),array('class' => 'navbar-brand')); ?>
+			  <?php echo $this->Html->link(__('IZ-Haus'), array('plugin'=>NULL,'controller' => 'Home'),array('class' => 'navbar-brand')); ?>
             </div>
             <div class="navbar-collapse collapse">
 				
@@ -69,7 +69,7 @@
 					<?php if($this->Session->read('menue.active')=='Contact'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
-					<?php echo $this->Html->link(__('Contact'),array('plugin'=>NULL,'controller'=>'HomePictures','action'=>'contact'))?></li>
+					<?php echo $this->Html->link(__('Contact'),array('plugin'=>NULL,'controller'=>'Home','action'=>'contact'))?></li>
 					
 				</ul>
 				<?php } else {?>
@@ -101,7 +101,7 @@
 					<?php if($this->Session->read('menue.active')=='Contact'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
-					<?php echo $this->Html->link(__('Contact'),array('plugin'=>NULL,'controller'=>'HomePictures','action'=>'contact'))?></li>
+					<?php echo $this->Html->link(__('Contact'),array('plugin'=>NULL,'controller'=>'Home','action'=>'contact'))?></li>
 					
 				</ul>
 				
