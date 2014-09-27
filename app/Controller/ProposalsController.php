@@ -511,7 +511,7 @@ class ProposalsController extends AppController{
     	$folder=__DIR__.'/../files/';
     	
     	if (!empty($x['Proposal']['summary'])){
-    		unlink($folder.$proposal['Proposal']['summary']);
+    		unlink($folder.$x['Proposal']['summary']);
     	}
     	
     	$filedate=date('y').date('m');
@@ -693,7 +693,7 @@ class ProposalsController extends AppController{
     	
     	$filedate=date('y').date('m');
     	$fileID=sprintf('%04d',$x['Proposal']['id']);
-    	$filename = 'Kalculation-'.$filedate.$fileID.'.pdf';
+    	$filename = 'Kalkulation-'.$filedate.$fileID.'.pdf';
     	
     	
     	// initializing mPDF
