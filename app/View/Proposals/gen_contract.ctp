@@ -11,6 +11,7 @@ foreach ($normal_house_pictures_view as $x){
 		
 	}
 ?>
+
 	<!-------------------------------------- First Page START -------------------------------------->
 
 	<div class="row">
@@ -347,7 +348,7 @@ foreach ($normal_house_pictures_view as $x){
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
-			<li>Der Auftragnehmer übernimmt die Errichtung des vorstehend genannten Bauvorhabens gemäß Bau- und Leistungsbeschreibung (§ 15) sowie die örtliche Bauleitung hierfür.
+			<li>Der Auftragnehmer übernimmt die Errichtung des vorstehend genannten Bauvorhabens gemäß Bau- und Leistungsbeschreibung (§15) sowie die örtliche Bauleitung hierfür.
 Vertragsgrundlagen sind in der aufgeführten Reihenfolge:
 				<br>
 				<br>
@@ -356,9 +357,10 @@ Vertragsgrundlagen sind in der aufgeführten Reihenfolge:
 					<li>Bauzeichnungen/Pläne zu diesem Vertrag (Grundrisse, Schnitte, Ansichten)</li>
 					<li>Anlage Eigenleistungen</li>
 					<li>Sonderausstattung</li>
+					<li>Sonstige Vereinbarungen</li>
 					<li>Baugenehmigung</li>
 					<li>die gesetzlichen Regelungen des BGB. <br> &nbsp;</li>
-				</ol> Bei Abweichungen oder Zweifelsfällen geht die Bau- und Leistungsbeschreibung (§ 15 des Vertrages) den Plänen vor. Bei Ausstattungen in den Plänen, die nicht in der Bau- und Leistungsbeschreibung enthalten sind, handelt es sich um unverbindliche Planungsvorschläge.
+				</ol> Bei Abweichungen oder Zweifelsfällen geht die Bau- und Leistungsbeschreibung (§15 des Vertrages) den Plänen vor. Bei Ausstattungen in den Plänen, die nicht in der Bau- und Leistungsbeschreibung enthalten sind, handelt es sich um unverbindliche Planungsvorschläge.
 			</li>
 			
 			<li>
@@ -418,8 +420,7 @@ Mehraufwendungen vom Auftraggeber vergütet.
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§2 <br>
-			Vergütung des Auftragnehmers</h4>
+		<h4>§2 Vergütung des Auftragnehmers</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
@@ -430,7 +431,7 @@ Mehraufwendungen vom Auftraggeber vergütet.
 			
 			<li>
 				<br>
-				An den in Nr. 1.) genannten Pauschalpreis hält sich der Auftragnehmer für die Dauer von 12 Monaten ab Vertragsunterzeichnung gebunden. Kommt der Auftraggeber seinen notwendigen Mitwirkungshandlungen in dieser Zeit nicht nach, bestimmen sich die Rechte und Ansprüche des Auftragnehmers nach den §§ 642, 643, 645 BGB.
+				An den in Nr. 1.) genannten Pauschalpreis hält sich der Auftragnehmer für die Dauer von 12 Monaten ab Vertragsunterzeichnung gebunden. Kommt der Auftraggeber seinen notwendigen Mitwirkungshandlungen in dieser Zeit nicht nach, bestimmen sich die Rechte und Ansprüche des Auftragnehmers nach den §§642, 643, 645 BGB.
 			</li>
 			
 			<li>
@@ -444,9 +445,8 @@ Mehraufwendungen vom Auftraggeber vergütet.
 				<br>
 				<br>
 				(Haus ohne Keller)
-				<ol type="a">
-					<li>3,0 % mit Aushändigung des Baugrundgutachtens und Planungsgespräch</li>
-					<li>7,0 % mit Aushändigung des Bauantrags/Bauanzeige</li>
+				<ol style="list-style-type: none;">
+					<li>10,0 % mit Aushändigung des Bauantrags,Baugrundgutachtens und Planungsgespräch</li>
 					<li>10,0 % mit Fertigstellung der Bodenplatte</li>
 					<li>15,0 % mit Fertigstellung der tragenden Wände</li>
 					<li>13,0 % mit Fertigstellung des Dachstuhls</li>
@@ -460,24 +460,20 @@ Mehraufwendungen vom Auftraggeber vergütet.
 				(Haus mit Keller)
 				<li>
 				</li>
-				<ol type="a">	
-					<li>3,0 % mit Aushändigung des Baugrundgutachtens und Planungsgespräch</li>
-					<li> 7,0 % mit Aushändigung des Bauantrags/Bauanzeige   </li>
-					<li> 10,0 % mit Fertigstellung der Bodenplatte  </li>
-					<li> 10,0 % mit Fertigstellung der Kellerdecke  </li>
-					<li> 10,0 % mit Fertigstellung der tragenden Wände  </li>
-					<li> 10,0 % mit Fertigstellung des Dachstuhls </li>
-					<li> 11,0 % mit Fertigstellung der Dachdeckung  </li>
-					<li> 10,0 % mit Fertigstellung des Fenstereinbaus  </li>
-					<li> 14,0 % mit Fertigstellung der Rohinstallationen der Gewerke Elektro, Sanitär, Heizung  </li>
-					<li> 6,0 % mit Fertigstellung des Außenputzes oder des Verblendmauerwerks  </li>
-					<li> 5,5 % mit Fertigstellung von Estrich und Geschosstreppe  </li>
+				<ol style="list-style-type: none;">	
+					<li>10,0 % mit Aushändigung des Bauantrags,Baugrundgutachtens und Planungsgespräch</li>
+					<li>10,0 % mit Fertigstellung der Bodenplatte  </li>
+					<li>10,0 % mit Fertigstellung der Kellerdecke  </li>
+					<li>10,0 % mit Fertigstellung der tragenden Wände  </li>
+					<li>10,0 % mit Fertigstellung des Dachstuhls </li>
+					<li>11,0 % mit Fertigstellung der Dachdeckung  </li>
+					<li>10,0 % mit Fertigstellung des Fenstereinbaus  </li>
+					<li>14,0 % mit Fertigstellung der Rohinstallationen der Gewerke Elektro, Sanitär, Heizung  </li>
+					<li>6,0 % mit Fertigstellung des Außenputzes oder des Verblendmauerwerks  </li>
+					<li>5,5 % mit Fertigstellung von Estrich und Geschosstreppe  </li>
 					<li>3,5 % mit Abnahme<br> &nbsp;</li>
 				</ol>
-				Der Auftragnehmer übergibt dem Auftraggeber zusammen mit der Rechnung für die erste Rate eine
-Verbraucherbürgschaft gemäß § 632a Abs. 3 BGB in Höhe von 5% der in diesem Vertrag vereinbarten Vergütung des Auftragnehmers.
-Erhöht sich die in diesem Vertrag vereinbarte Vergütung des Auftragnehmers um mehr als 10 %, ist der Auftragnehmer verpflichtet, dem Auftraggeber zusammen mit der Rechnung für die nächste Rate eine weitere Verbraucherbürgschaft gemäß § 632a Abs.3 BGB in Höhe von 5% der zusätzlichen Vergütung zu übergeben.
-Der Bauablauf und damit die Fälligkeit der Teil-/Ratenzahlungen müssen nicht mit der vorstehenden
+				Der Bauablauf und damit die Fälligkeit der Teil-/Ratenzahlungen müssen nicht mit der vorstehenden
 Reihenfolge übereinstimmen, sondern wird vom Auftragnehmer nach billigem Ermessen festgelegt. Sofern einzelne Leistungen nicht anfallen, ist der jeweilige Vomhundertsatz anteilig auf die übrigen Raten zu verteilen.
 
 				<li>
@@ -496,12 +492,27 @@ Reihenfolge übereinstimmen, sondern wird vom Auftragnehmer nach billigem Ermess
 		</div>	
 	</div>
 	
+	<div class="row">
+		<div style="padding: 10px">
+		
+		<h4>§3 Verbraucherbürgschaft</h4>
+		<h6>	
+		<p style="text-align: justify;">  <br>
+		Der Auftragnehmer übergibt dem Auftraggeber zusammen mit der Rechnung für die erste Rate eine
+Verbraucherbürgschaft gemäß §632a Abs. 3 BGB in Höhe von 5% der in diesem Vertrag vereinbarten Vergütung des Auftragnehmers.
+Erhöht sich die in diesem Vertrag vereinbarte Vergütung des Auftragnehmers um mehr als 10%, ist der Auftragnehmer verpflichtet, dem Auftraggeber zusammen mit der Rechnung für die nächste Rate eine weitere Verbraucherbürgschaft gemäß §632a Abs.3 BGB in Höhe von 5% der zusätzlichen Vergütung zu übergeben.
+		<p style="clear: both;">  </p>
+		
+		</p>
+		</h6>	
+		</div>	
+	</div>
+	
 	
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§3 <br>
-			Finanzierungsbestätigung des Auftraggebers</h4>
+		<h4>§4 Finanzierungsbestätigung des Auftraggebers</h4>
 		<h6>	
 		<p style="text-align: justify;">  <br>
 		Der Auftraggeber ist verpflichtet, dem Auftragnehmer spätestens binnen zwei Wochen nach dem Planungsgespräch einen Nachweis der Verfügbarkeit der Finanzierungsmittel/des Eigenkapitals in Höhe des Vertragspreises durch Vorlage einer unwiderruflichen und unbefristeten Bestätigung eines Geldinstitutes zu erbringen. Aus der Bestätigung muss sich die Verpflichtung des Geldinstitutes gegenüber dem Auftragnehmer ergeben, Zahlungen nach dem vertraglichen Zahlungsplan (bei der Vergütung von Mehr- und Zusatzleistungen nur nach zusätzlicher Zahlungsfreigabe durch den Auftraggeber) ausschließlich direkt an den Auftragnehmer zu leisten. Die Kosten der Bestätigung trägt der Auftraggeber. Der Auftraggeber ist verpflichtet, das Geldinstitut anzuweisen, die vereinbarten
@@ -520,14 +531,13 @@ Kommt der Auftraggeber seiner Verpflichtung zur Vorlage der Finanzierungsbestät
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§4 <br>
-			Bürgschaft des Auftraggebers</h4>
+		<h4>§5 Bürgschaft des Auftraggebers</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<br>
-Der Auftraggeber ist verpflichtet, binnen 14 Tagen nach dem Planungsgespräch dem Auftragnehmer eine unbefristete und selbstschuldnerische Bürgschaft eines zuverlässigen Bürgen (Kreditversicherer, Bank oder Sparkasse) in Höhe der letzten Rate nach § 2 Nr. 4 des Vertrages für die Erfüllung sämtlicher ihm obliegender Zahlungsverpflichtungen aus diesem Vertrag zu stellen.<br>
-Die Vertragsparteien sind sich darüber einig, dass der Auftragnehmer vor Stellung der Bürgschaft nicht verpflichtet ist, die Arbeiten aufzunehmen. Kommt der Auftraggeber der Verpflichtung zur Stellung der Bürgschaft nicht fristgemäß nach, so ist der Auftragnehmer berechtigt, vom Vertrag zurückzutreten.
-
+Der Auftraggeber ist verpflichtet, binnen 14 Tagen nach dem Planungsgespräch dem Auftragnehmer eine unbefristete und selbstschuldnerische Bürgschaft eines zuverlässigen Bürgen (Kreditversicherer, Bank oder Sparkasse) in Höhe der letzten Rate (3,5 % - Abnahme) nach §2 Nr. 4 des Vertrages für die Erfüllung sämtlicher ihm obliegender Zahlungsverpflichtungen aus diesem Vertrag zu stellen.<br>
+Die Vertragsparteien sind sich darüber einig, dass der Auftragnehmer vor Stellung der Bürgschaft nicht verpflichtet ist, die Arbeiten aufzunehmen. Kommt der Auftraggeber der Verpflichtung zur Stellung der Bürgschaft nicht fristgemäß nach, so ist der Auftragnehmer berechtigt, vom Vertrag zurückzutreten.<br>
+Alternativ kann die letzte Rate (3,5% - Abnahme) auf das treuhänderisch verwaltete Baukonto überwiesen werden, wo sie sicher verwahrt ist und erst nach der Endabnahme des Hauses dem Auftragnehmer zu Verfügung steht. Soll sich der Auftraggeber für letztere Alternative entscheiden, erhält er hierzu eine Rechnung über die letzte Rate vor Baubeginn mit der Angabe des entsprechenden Kontos.
 		<p style="clear: both;">  </p>
 		
 		</p>
@@ -539,8 +549,7 @@ Die Vertragsparteien sind sich darüber einig, dass der Auftragnehmer vor Stellu
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§5 <br>
-			Ausführungszeit</h4>
+		<h4>§6 Ausführungszeit</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
@@ -551,7 +560,7 @@ Die Vertragsparteien sind sich darüber einig, dass der Auftragnehmer vor Stellu
 			
 			<li>
 				<br>
-				Der Bauantrag (Baugesuch) wird dem Auftraggeber innerhalb eines Monats nach Vorliegen der in § 15 Nr. 2 genannten erforderlichen Unterlagen für die Planung zur Unterschrift ausgehändigt.
+				Der Bauantrag wird dem Auftraggeber innerhalb eines Monats nach Vorliegen der in §15 Nr. 2 genannten erforderlichen Unterlagen für die Planung zur Unterschrift ausgehändigt.
 			</li>
 			
 			<li>
@@ -566,12 +575,12 @@ Prüfamt oder anerkannte Prüfingenieure in den Bundesländern, wo eine Prüfung
 Nachweise erforderlich ist</li>
 					<li>Vollständige Zahlung der bis dahin laut Zahlungsplan angefallenen Beträge</li>
 					<li>Bereitstellung von Bauwasser und Baustrom auf der Baustelle</li>
-					<li>Fertigstellung von ausreichend tragfähigen Anfahrtswegen zum Bauobjekt nach § 12 falls erforderlich</li>
-					<li>Fertigstellung des Bauzauns nach § 12, falls die Behörde diesen fordert</li>
-					<li>Vorlage der Bürgschaft nach § 4</li>
+					<li>Fertigstellung von ausreichend tragfähigen Anfahrtswegen zum Bauobjekt nach §12 falls erforderlich</li>
+					<li>Fertigstellung des Bauzauns nach §12, falls die Behörde diesen fordert</li>
+					<li>Vorlage der Bürgschaft nach §5 oder der Eingang der Vorauszahlung nach §5</li>
 					<li>Einmessung eines Schnurgerüstes durch einen Vermessungsingenieur</li>
 					<li>Abschluss einer Wohngebäudeversicherung mit integrierter Feuerrohbauversicherung<br> &nbsp;</li>
-				</ol>Alle unter § 5 Nr. 3 aufgeführten Voraussetzungen zum Baubeginn sind durch den Auftraggeber zu erbringen.
+				</ol>Alle unter §6 Nr. 3 aufgeführten Voraussetzungen zum Baubeginn sind durch den Auftraggeber zu erbringen.
 			</li>
 			
 			<li>
@@ -581,15 +590,15 @@ Nachweise erforderlich ist</li>
 			
 			<li>
 				<br>
-				Die Ausführungszeit verlängert sich im Falle von Bauzeitenverzögerungen; bei Bauunterbrechungen ist zusätzlich ein ausreichender Dispositionszeitraum zu berücksichtigen. Bauzeitverzögerungen sind:
+				Die Ausführungszeit verlängert sich im Falle von Bauzeitenverzögerungen; bei Bauunterbrechungen ist zusätzlich ein ausreichender Dispositionszeitraum zu berücksichtigen. Bauzeitverzögerungen sind insbesondere:
 				<br>
 				<br>
 				<ol type="a">
-					<li>Verzögerungen infolge höherer Gewalt,</li>
 					<li>Schlechtwettertage gemäß dem Berechnungsverfahren des deutschen Wetterdienstes, an denen
 aufgrund des jeweiligen Bautenstandes und Wetters, die Arbeit am Bau als nicht zumutbar beurteilt wird,</li>
 					<li>Tage der Verspätung des Eingangs der Raten beim Auftragnehmer, soweit die Verspätung nicht auf
 Leistungsverweigerungs- und/oder Zurückbehaltungsrechten des Auftraggebers beruht,</li>
+					<li>Verzögerungen infolge höherer Gewalt,</li>
 					<li>Verzögerungen infolge anderer für den Auftragnehmer unabwendbarer Umstände, insbesondere
 Verzögerungen der Baugenehmigungsbehörde und anderer öffentlicher Stellen, mit denen bei
 Vertragsabschluss der Auftragnehmer normalerweise nicht rechnen musste und welche der
@@ -613,13 +622,11 @@ Auftragnehmer nicht zu vertreten hat,</li>
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§6 <br>
-			Abnahme</h4>
+		<h4>§7 Abnahme</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<br>
-Der Auftragnehmer fordert den Auftraggeber unter Benennung des beabsichtigten Abnahmetermins auf, die Abnahme binnen 14 Werktagen zu erklären. Bei der Abnahme ist ein Abnahmeprotokoll zu fertigen. Die Möglichkeiten einer Abnahme durch schlüssiges Verhalten oder gemäß § 640 Abs. 1 S. 3 BGB werden hierdurch nicht ausgeschlossen.
-
+Der Auftraggeber ist zur Abnahme des Kaufgegenstandes verpflichtet. Den Abnahmetermin hat der Aufragnehmer mit einer Frist von mindestens zwei Wochen schriftlich anzukündigen und dabei den Aufraggeber zur Abnahme aufzufordern. Zur Abnahme findet eine gemeinsame Begehung des Kaufgegenstandes statt. Über diese Begehung ist eine von den Vertragsbeteiligten zu unterzeichnende Niederschrift (das Abnahmeprotokoll) anzufertigen. Die Möglichkeiten einer Abnahme durch schlüssiges Verhalten oder gemäß §240 Abs. 1 Satz 3 BGB werden hierdurch nicht ausgeschlossen. Unwesentliche Mängel oder geringfügige Restarbeiten hindern die Abnahme nicht. Nach der Abnahme hat der Auftragnehmer dem Auftraggeber die Schlüssel zu übergeben.
 		<p style="clear: both;">  </p>
 		
 		</p>
@@ -630,13 +637,16 @@ Der Auftragnehmer fordert den Auftraggeber unter Benennung des beabsichtigten Ab
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§7 <br>
-			Besichtigung durch den Auftraggeber; Ausschluss von Schadensersatz</h4>
+		<h4>§8 Bauablauf</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<br>
-Bei der Besichtigung und Begehung hat der Auftraggeber auf den Bauablauf Rücksicht zu nehmen und Störungen/Behinderungen zu vermeiden. Betritt er das Bauobjekt ohne Begleitung eines verantwortlichen Mitarbeiters des Auftragnehmers, haftet der Auftragnehmer für daraus entstehende Personenschäden nicht, soweit diese nicht auf einer fahrlässigen Pflichtverletzung des Auftragnehmers oder einer vorsätzlichen oder fahrlässigen Pflichtverletzung eines gesetzlichen Vertreters oder Erfüllungshilfen des Auftragnehmers beruhen. Für Sachschäden, die im Rahmen des Betretens des Bauobjekts durch den Auftraggeber ohne einen verantwortlichen Mitarbeiter des
-Auftragnehmers entstehen, haftet der Auftragnehmer nicht, soweit diese nicht auf einer grob fahrlässigen Pflichtverletzung des Auftragnehmers oder einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung eines gesetzlichen Vertreters oder Erfüllungshilfen des Auftragnehmers beruhen.
+Der Bauablauf wird durch den Auftragnehmer bestimmt. Dem Auftragnehmer steht das alleinige Hausrecht auf der Baustelle zu. <br>
+Der Auftraggeber hat alles zu unterlassen, was die ordnungsgemäße Abwicklung des Bauvorhabens erschwert oder stört. <br>
+Der Auftraggeber ist nicht berechtigt, vor Übergabe und Zahlung des gesamten Kaufpreises bauliche Veränderungen oder Eigenleistungen am Werk vorzunehmen. <br>
+Das Betreten der Baustelle ist nur in Absprache mit dem Auftragnehmer zulässig. <br>
+Das Betreten der Baustelle erfolgt in jedem Fall auf eigene Gefahr und Verantwortung des Auftraggebers. <br>
+Die Bauleitung hat allein der Auftragnehmer. Der Aufraggeber ist zur Erteilung von Weisungen auf der Baustelle nicht befugt, insbesondere darf er keine Weisungen an die dort tätigen Subunternehmer geben. <br>
 
 		<p style="clear: both;">  </p>
 		
@@ -645,49 +655,16 @@ Auftragnehmers entstehen, haftet der Auftragnehmer nicht, soweit diese nicht auf
 		</div>	
 	</div>
  
-	<div class="row">
-		<div style="padding: 10px">
-		
-		<h4 style = "text-align: center;" >§8 <br>
-			Vertragsstrafe</h4>
-		<h6>	
-		<p style="text-align: justify;">  
-		<ol>
-		
-			<li>
-				Im Falle des Verzuges hat der Auftragnehmer eine Vertragsstrafe ab dem vereinbarten Fertigstellungszeitpunkt von Euro 50,00 pro Arbeitstag (Montag bis Freitag) zu zahlen. Die Vertragsstrafe wird auf maximal fünf von hundert (5 %) des Pauschalpreises begrenzt.
-			</li>
-			
-			<li>
-				<br>
-				Ein Verzug liegt nur vor, soweit zum Fertigstellungszeitpunkt am Werk wesentliche Mängel bestehen, unwesentliche Mängel bleiben außer Betracht. Wesentliche Mängel sind Mängel, die die Nutzbarkeit des Hauses aufheben, unmöglich machen oder erheblich beeinträchtigen, z.B. fehlende oder funktionsuntüchtige Toilettenanlagen im gesamten Haus.
-			</li>
-			
-			<li>
-				<br>
-				Hat der Auftraggeber die Leistung abgenommen, so kann er nur dann auf Zahlung der Vertragsstrafe bestehen, wenn er sich dies bei der Abnahme vorbehalten hat.
-			</li>
-			
-			<li>
-			
-			</li>
-		</ol>
-		<p style="clear: both;">  </p>
-		
-		</p>
-		</h6>	
-		</div>	
-	</div>
 
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§9 <br>
-			Mängelansprüche</h4>
+		<h4>§9 Mängelansprüche</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<br>
-Die Mängelansprüche des Auftraggebers und deren Verjährung richten sich nach den Vorschriften des BGB. Der Auftraggeber ist verpflichtet, für Teile von maschinellen und elektrotechnischen/elektronischen Anlagen, bei denen die Wartung Einfluss auf die Sicherheit und Funktionsfähigkeit hat, die vorgesehenen Wartungsarbeiten regelmäßig und vollständig durchzuführen oder durchführen zu lassen. Ist ein Mangel/Schaden darauf zurückzuführen, dass die vorgesehenen Wartungsarbeiten nicht, nicht vollständig oder nicht ordnungsgemäß durchgeführt wurden, stehen dem Auftraggeber Mängelansprüche gegen den Auftragnehmer nicht zu.
+Für Mängel am Bauwerk gelten die Bestimmungen des Bürgerlichen Gesetzbuches über den Werkvertrag. Die Vertragsbeteiligten sind sich darüber einig, dass dem Auftragnehmer mindestens zwei Nachbesserungsversuche zustehen und es im Einzelfall auch angemessen sein kann, dem Auftragnehmer weitere Nachbesserungsversuche zu ermöglichen. <br>
+Der Auftraggeber ist verpflichtet, für Teile von maschinellen, elektrotechnischen und elektronischen Anlagen, bei denen die Wartung Einfluss auf die Sicherheit und Funktionsfähigkeit hat, die vorgesehenen Wartungsarbeiten regelmäßig und vollständig durchzuführen oder durchführen zu lassen. Ist ein Mangel/Schaden darauf zurückzuführen, dass die vorgesehenen Wartungsarbeiten nicht, nicht vollständig oder nicht ordnungsgemäß durchgeführt wurden, stehen dem Auftraggeber Mängelansprüche gegen den Auftragnehmer nicht zu.
 
 		<p style="clear: both;">  </p>
 		
@@ -699,19 +676,18 @@ Die Mängelansprüche des Auftraggebers und deren Verjährung richten sich nach 
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§10 <br>
-			Zahlungen</h4>
+		<h4>§10 Zahlungen</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
 		
 			<li>
-				Der Auftragnehmer teilt dem Auftraggeber den Eintritt der Fälligkeit der Raten (§ 2) mit. Die Fälligkeit der Raten tritt nur ein, wenn ein entsprechender Baufortschritt erreicht ist. Die Fälligkeit der ersten Rate tritt darüber hinaus nur ein, wenn der Auftragnehmer dem Auftraggeber eine Verbraucherbürgschaft gemäß § 632a Abs. 3 BGB in Höhe von 5% der in diesem Vertrag vereinbarten Vergütung des Auftragnehmers übergeben hat. Die letzte Rate wird um die bei der Abnahme festgestellte Höhe der Restarbeiten unter Berücksichtigung etwaiger Leistungsverweigerungsrechte des Auftraggebers gekürzt. Der verbleibende Betrag, der nicht von Leistungsverweigerungs- oder Zurückbehaltungsrechten des Auftraggebers erfasst wird, ist mit Abnahme fällig. Im Übrigen wird die letzte Rate sofort nach Erledigung der im Abnahmeprotokoll aufgeführten Restarbeiten und nach Beseitigung der im Abnahmeprotokoll aufgeführten Mängel fällig; etwaige Leistungsverweigerungsrechte des Auftraggebers bleiben hiervon unberührt.
+				Der Auftragnehmer teilt dem Auftraggeber den Eintritt der Fälligkeit der Raten (§2) mit. Die Fälligkeit der Raten tritt nur ein, wenn ein entsprechender Baufortschritt erreicht ist. Die Fälligkeit der ersten Rate tritt darüber hinaus nur ein, wenn der Auftragnehmer dem Auftraggeber eine Verbraucherbürgschaft gemäß §632a Abs. 3 BGB in Höhe von 5% der in diesem Vertrag vereinbarten Vergütung des Auftragnehmers übergeben hat. Die letzte Rate wird um die bei der Abnahme festgestellte Höhe der Restarbeiten unter Berücksichtigung etwaiger Leistungsverweigerungsrechte des Auftraggebers gekürzt. Der verbleibende Betrag, der nicht von Leistungsverweigerungs- oder Zurückbehaltungsrechten des Auftraggebers erfasst wird, ist mit Abnahme fällig. Im Übrigen wird die letzte Rate sofort nach Erledigung der im Abnahmeprotokoll aufgeführten Restarbeiten und nach Beseitigung der im Abnahmeprotokoll aufgeführten Mängel fällig; etwaige Leistungsverweigerungsrechte des Auftraggebers bleiben hiervon unberührt.
 			</li>
 			
 			<li>
 				<br>
-				Die Raten sind binnen 14 Tagen nach Rechnungserhalt auf das von einem Steuerberater verwaltete und noch zu benennende Konto des Auftragnehmers zu überweisen. Die Überweisung muss dabei vor Ablauf der Zahlungsfrist bewirkt worden sein. Andere Zahlungsweisen sind ausgeschlossen. Werden einzelne Raten nicht fristgerecht gezahlt, sind sie nach gesetzlicher Regelung ab Verzugseintritt mit jährlich 5 Prozentpunkten über dem Basiszins gemäß § 247 BGB, die letzte Rate ab Fälligkeit mit jährlich 4 % zu verzinsen. Die Geltendmachung eines weiteren Verzugsschadens bleibt dem Auftragnehmer vorbehalten.
+				Die Raten sind binnen 14 Tagen nach Rechnungsdatum auf das von einem Steuerberater verwaltete und noch zu benennende Konto des Auftragnehmers zu überweisen. Die Überweisung muss dabei vor Ablauf der Zahlungsfrist bewirkt worden sein. Andere Zahlungsweisen sind ausgeschlossen. Werden einzelne Raten nicht fristgerecht gezahlt, sind sie nach gesetzlicher Regelung ab Verzugseintritt mit jährlich 5 Prozentpunkten über dem Basiszins gemäß §247 BGB, die letzte Rate ab Fälligkeit mit jährlich 4 % zu verzinsen. Die Geltendmachung eines weiteren Verzugsschadens bleibt dem Auftragnehmer vorbehalten.
 			</li>
 			
 			<li>
@@ -733,12 +709,14 @@ Die Mängelansprüche des Auftraggebers und deren Verjährung richten sich nach 
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§11 <br>
-			Leistungsdurchführung</h4>
+		<h4>§11 Sonderwünsche</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<br>
-Der Auftragnehmer hat gegenüber den im Rahmen der zu erbringenden Leistungen von ihm beauftragten Dritten die alleinige und uneingeschränkte Weisungsbefugnis. Insbesondere hat der Auftraggeber Änderungs- und Sonderwünsche ausschließlich dem Auftragnehmer, nicht jedoch Dritten, insbesondere Subunternehmen gegenüber zu erklären.
+Der Auftraggeber weist darauf hin, dass Sonderwünsche nur möglich sind, wenn es der Baufortschritt zulässt. Diese können ausschließlich mit dem Auftragnehmer vereinbart werden. Änderungswünsche oder Sonderwünsche dürfen nicht mit Dritten, insbesondere Subunternehmen vereinbart werden. <br>
+Mit vorheriger Zustimmung des Auftragnehmers kann der Auftraggeber direkt mit Subunternehmen der Auftragnehmers Sonderwünsche im Auftrag geben.  <br>
+Die Ausführung von Sonderwünschen ist im Übrigen nur dann möglich, wenn baurechtliche Vorschriften nicht entgegenstehen und wenn durch die Ausführung der allgemeine Bauablauf nicht beeinträchtigt werden. <br>
+Der Auftraggeber hat keinen Rechtsanspruch auf die Berücksichtigung von Sonderwünschen.
 
 		<p style="clear: both;">  </p>
 		
@@ -751,8 +729,7 @@ Der Auftragnehmer hat gegenüber den im Rahmen der zu erbringenden Leistungen vo
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§12 <br>
-			Leistungen, die der Auftraggeber in Eigenleistung oder durch Dritte zu erbringen hat</h4>
+		<h4>§12 Leistungen, die der Auftraggeber in Eigenleistung oder durch Dritte zu erbringen hat</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
@@ -766,7 +743,7 @@ Der Auftragnehmer hat gegenüber den im Rahmen der zu erbringenden Leistungen vo
 					<li>Erstellung der Hausanschlüsse und Hausanschlusskosten bis einschließlich Übergabepunkt (Zähler) im Haus (Der Auftraggeber ist für den Anschluss seines Hauses an die Ver- und Entsorgungsnetze verantwortlich. Dies bedeutet termingerechte Bereitstellung und Montage der Hausanschlüsse für Strom, Wasser, Gas, Telefon und Kabelanschluss sowie Anschluss von Schmutz- und ggf. Regenwasserleitungen an die Kanalisation inkl. Druckprobe. Hierzu sind die Informationen zur Ausführung den Anschlussbedingungen des jeweiligen Versorgers zu entnehmen.)</li>
 					<li>Zusätzliche Kosten für die Heizung, falls kein Erdgasanschluss vorhanden ist</li>
 					<li>Absperrung der Baustelle mit einem Bauzaun, falls dieser von einer Behörde gefordert wird</li>
-					<li>Anpassung des Gründungskörpers und der Gründungsleistungen an die Baugrundverhältnisse, wenn die vereinbarten Baugrundverhältnisse gemäß § 1 Nr. 3 nicht vorliegen</li>
+					<li>Anpassung des Gründungskörpers und der Gründungsleistungen an die Baugrundverhältnisse, wenn die vereinbarten Baugrundverhältnisse gemäß §1 Nr. 3 nicht vorliegen</li>
 					<li>Herstellung von ausreichend tragfähigen Anfahrtswegen zum Bauobjekt (Grundlage: schwere
 Baufahrzeuge/Kran bis 75 t), Herstellung der freien und ungehinderten Zugänglichkeit des Grundstücks und Beseitigung von Baum- oder Gebäudebestand auf dem Grundstück</li>
 					<li>Bauwasser (Mindestwasserdruck 2 bar) und Baustrom (16 A/ 220 V und 32 A/ 380 V) sind vor Baubeginn vom Auftraggeber auf dessen Kosten bereitzustellen</li>
@@ -776,7 +753,7 @@ Baufahrzeuge/Kran bis 75 t), Herstellung der freien und ungehinderten Zugänglic
 					<li>Kosten durch behördliche Auflagen für Schall-/Geräuschimissionsprognosen gemäß TA-Lärm,
 Lärmschutzgutachten sowie Brandschutzgutachten</li>
 					<li>Grunderwerbsteuer, insbesondere für den Fall, dass das zuständige Finanzamt die in diesem Vertrag vereinbarte Vergütung des Auftragnehmers der Bemessungsgrundlage hinzurechnet</li>
-					<li>Anpassung der Gründung und des Hauseingangsbereichs an das Gelände, wenn die geforderte Ebenheit gemäß § 1 Nr. 3 des Baugrundstückes nicht gegeben ist oder das Haus in einer anderen Höhe als der Standardhöhe zum Gelände errichtet werden soll bzw. aufgrund erforderlicher höhenmäßiger Anpassung des Hauses zum Anschluss an die Entwässerung</li>
+					<li>Anpassung der Gründung und des Hauseingangsbereichs an das Gelände, wenn die geforderte Ebenheit gemäß §1 Nr. 3 des Baugrundstückes nicht gegeben ist oder das Haus in einer anderen Höhe als der Standardhöhe zum Gelände errichtet werden soll bzw. aufgrund erforderlicher höhenmäßiger Anpassung des Hauses zum Anschluss an die Entwässerung</li>
 					<li>Alle nicht ausdrücklich vereinbarten Ausstattungs-, Einrichtungsgegenstände oder Einbauteile.</li>
 					<li>Erforderliche Zuarbeiten zum Baugesuch entsprechend §15.2</li>
 					<li>Abschluss einer Wohngebäudeversicherung mit integrierter Feuerrohbauversicherung vor Baubeginn</li>
@@ -798,8 +775,7 @@ Lärmschutzgutachten sowie Brandschutzgutachten</li>
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§13 <br>
-			Ausführungen von Eigenleistungen gemäß § 12</h4>
+		<h4>§13 Ausführungen von Eigenleistungen gemäß §12</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<br>
@@ -816,25 +792,19 @@ Auftragnehmer hieraus resultierende Rechte und Ansprüche, insbesondere Schadens
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§14 <br>
-			Kündigung</h4>
+		<h4>§14 Kündigung</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
 		
 			<li>
-				Das Kündigungsrecht des Auftraggebers richtet sich nach § 649 BGB. Das Kündigungsrecht des
-Auftragnehmers richtet sich nach §§ 642, 643 BGB.
+				Das Kündigungsrecht des Auftraggebers richtet sich nach §649 BGB. Das Kündigungsrecht des
+Auftragnehmers richtet sich nach §§642, 643 BGB.
 			</li>
 			
 			<li>
 				<br>
 				Erfolgt eine solche Kündigung vor Baubeginn, ohne dass sie vom Auftragnehmer zu vertreten ist, kann der Auftragnehmer eine pauschale Vergütung bzw. einen pauschalen Schadensersatz in Höhe von 10 % des zur Zeit der Kündigung vereinbarten Netto-Gesamtpreises (ohne Mehrwertsteuer) verlangen. Dem Auftraggeber bleibt es unbenommen nachzuweisen, dass ein Schaden nicht oder nicht in dieser Höhe angefallen ist.
-			</li>
-			
-			<li>
-				<br>
-				Der Auftraggeber kann den Vertrag kündigen, wenn der Auftragnehmer seine Zahlungen einstellt, von ihm oder zulässigerweise vom Auftraggeber oder einem anderen Gläubiger das Insolvenzverfahren (§§ 14 und 15 InsO) beziehungsweise ein vergleichbares gesetzliches Verfahren beantragt ist, ein solches Verfahren eröffnet wird oder dessen Eröffnung mangels Masse abgelehnt wird. "Der Auftragnehmer hat in diesem Fall lediglich Anspruch auf Vergütung der erbrachten Leistungen. Der Auftraggeber kann Schadensersatz wegen Nichterfüllung des Restes verlangen."
 			</li>
 			
 			<li>
@@ -853,21 +823,20 @@ Auftragnehmers richtet sich nach §§ 642, 643 BGB.
 	<div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§15 <br>
-			Bau- und Leistungsbeschreibung</h4>
+		<h4>§15 Bau- und Leistungsbeschreibung</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
 		
 			<li>
 				<h5> Allgemeine Beschreibung</h5> <br>
-Es wird ein ausgebautes Wohnhaus gemäß der nachfolgenden Bau- und Leistungsbeschreibung erstellt (ohne Leistungen nach § 12).
+Es wird ein ausgebautes Wohnhaus gemäß der nachfolgenden Bau- und Leistungsbeschreibung erstellt (ohne Leistungen nach §12).
 			</li>
 			
 			<li>
 				<br>
 				<h5>Planungsphase und Ansprechpartner</h5> <br>
-Für den Bau des Hauses steht ein erfahrenes Bauteam von Anfang an als Ansprechpartner zur Verfügung. Dieses Team begleitet den Auftraggeber bis zur Schlüsselübergabe. Welche Leistungen hier vom Auftragnehmer erbracht werden und welche vom Auftraggeber zu erbringen sind,
+Für den Bau des Hauses steht eine erfahrene Baumannschaft von Anfang an als Ansprechpartner zur Verfügung. Diese Mannschaft begleitet den Auftraggeber bis zur Schlüsselübergabe. Welche Leistungen hier vom Auftragnehmer erbracht werden und welche vom Auftraggeber zu erbringen sind,
 ist im Folgenden dargestellt.
 				<br>
 Erforderliche Zuarbeiten zum Baugesuch, die durch den Auftraggeber bis zum Planungsgespräch erbracht werden:
@@ -876,12 +845,13 @@ Erforderliche Zuarbeiten zum Baugesuch, die durch den Auftraggeber bis zum Planu
 				<ol type="a">
 					<li>Nachweis über die Eigentumsverhältnisse des Grundstücks (aktueller Grundbuchauszug, notarieller
 Kaufvertrag, ggf. Zustimmung des Grundstückseigentümers)</li>
-					<li>amtl. vermessener Lage- und Höhenplan, M 1:250 oder größer </li>
+					<li>Skizze der gewünschten Lage des Hauses auf dem Grundstück </li>
 					<li>aktueller beglaubigter Katasterauszug im Original (in der erforderlichen Anzahl)</li>
 					<li>Angaben der unmittelbaren Grundstücksnachbarn</li>
+					<li>Amtl. vermessener Lage- und Höhenplan, M 1:250 oder größer</li>
 					<li>Skizze der gewünschten Lage des Hauses auf dem Grundstück</li>
 					<li>Antrag auf Versorgung mit Wasser, Entwässerungsantrag g) </li>
-					<li>sowie alle für die Baugesuchserstellung sonst notwendigen Unterlagen, z.B. Freiflächenplanung, Grünordnungsplanung mit Ausgleichs- und Ersatzmaßnahmen, Biotopwertberechnung.<br> &nbsp;</li>
+					<li>sowie alle für die Bauantragserstellung sonst notwendigen Unterlagen, z.B. Freiflächenplanung, Grünordnungsplanung mit Ausgleichs- und Ersatzmaßnahmen, Biotopwertberechnung.<br> &nbsp;</li>
 				</ol>
 				Leistungen des Auftragnehmers:
 				<li>
@@ -892,7 +862,7 @@ Um das Haus sicher auf dem Baugrund zu gründen, muss ein Baugrundgutachten vor 
 Planungsarbeiten vorliegen. Die Erstellung des Baugrundgutachtens ist im Festpreis enthalten.</li>
 					<li>Planungsgespräch<br>
 Im Planungsgespräch werden die Grundlagen für die Planungsleistungen festgelegt. Es wird die Lage des Hauses auf dem Grundstück für den Bauantrag vorbereitet. Weiterhin werden die Ergebnisse des
-Baugrundgutachtens dem Auftraggeber erklärt. Die Grundstückverhältnisse entsprechend § 1 werden
+Baugrundgutachtens dem Auftraggeber erklärt. Die Grundstückverhältnisse entsprechend §1 werden
 überprüft. Falls wegen des Baugrundgutachtens oder den Grundstücksverhältnissen Änderungen des Hauses notwendig werden sollten, oder der Auftraggeber noch Planänderungen wünscht, so werden diese mit dem Auftraggeber abgestimmt. Nach dem Planungsgespräch wird mit den Planungsleistungen begonnen. Deshalb sind Planänderungen nach dem Planungsgespräch nur noch mit Zustimmung des Auftragnehmers (und gegen Aufpreis) möglich.
 					</li>
 					<li>Planungsleistungen
@@ -969,7 +939,7 @@ Filigrandecke mit Aufbeton oder als Beton-Fertigteildecke ausgeführt. Die Decke
 			Dach mit Dacheindeckung und Spenglerarbeiten<br>
 Die Dachkonstruktion wird aus Nadelholz hergestellt und mit allen erforderlichen Verbindungsmitteln
 fachgerecht aufgerichtet. Die Holzabmessungen ergeben sich aus den statischen Erfordernissen. Sichtbare Sparrenköpfe werden gehobelt und grundiert. Die Untersichtschalung für die Trauf- und Giebelüberstände wird aus gehobelten und grundierten Nadelholzbrettern erstellt und wird farblos lasiert. Die Dachüberstände betragen im Traufbereich ca. 50 cm und im Giebelbereich ca. 20 cm.<br>
-Die Dacheindeckung erfolgt mit BRAAS-Dachsteinen "Harzer Pfanne 7 (BIG)" (oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15, "Sonstiges") in den Farben Klassisch-Rot, Dunkelrot, Ziegelrot oder Granit.
+Die Dacheindeckung erfolgt mit BRAAS-Dachsteinen "Harzer Pfanne 7 (BIG)" (oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges") in den Farben Klassisch-Rot, Dunkelrot, Ziegelrot oder Granit.
 Die Unterkonstruktion wird mit Traglattung und Konterlattung belüftet ausgeführt. Eine Flugschneesicherung ist z.B. durch eine Unterspannbahn hergestellt. Der First wird belüftet in mörtelfreier Verlegung ausgeführt. Im Festpreis enthalten sind alle für die Leistung erforderlichen Form- und Durchgangssteine. Die in der Richtlinie des Zentralverbandes des Deutschen Dachdeckerhandwerks (ZVDH) geregelten Maßnahmen zur Sturmsicherung der Dacheindeckung werden ausgeführt (Verklammerung der Dacheindeckung in sturmgefährdeten Teilen des Daches).<br>
 Auf Verlangen der Behörde, in z.B. schneereichen Gebieten, kann ein Schneefanggitter vorgeschrieben werden. Dieses ist nicht im Leistungsumfang enthalten, kann aber im Rahmen der sonstigen Vereinbarungen bestellt werden. <br>
 Die Dachrinnen und Fallrohre sind witterungsbeständig in Titanzink ausgeführt. Im Festpreis enthalten sind alle für die Leistung erforderlichen Dachrinnen, Formstücke und Regenfallrohre bis zur Oberkante Sockel.
@@ -999,7 +969,7 @@ Dreiecksfenster und Kniestockfenster erhalten keine Rollläden. Vorhandene Dachf
 			
 			<li><br>
 			Fensterbänke<br>
-Die Außenfensterbänke werden als witterungsbeständige eloxierte Aluminiumfensterbänke eingebaut. Die bodentiefen Fenstertüren im Erdgeschoss erhalten eine steinerne Außensohlbank. Die Innenfensterbänke bestehen aus Werzalit mit marmorierter Oberfläche. Die Fensterbänke im Bad sind abweichend hiervon gefliest.
+Die Außenfensterbänke werden als witterungsbeständige eloxierte Aluminiumfensterbänke eingebaut. Die bodentiefen Fenstertüren im Erdgeschoss erhalten eine steinerne Außensohlbank. Die Innenfensterbänke bestehen aus Marmor oder Granit Rosa Beta, nach Wahl des Auftraggebers. Die Fensterbänke im Bad sind abweichend hiervon gefliest.
 			</li>
 			
 			<li><br>
@@ -1014,7 +984,7 @@ Die Innentüren werden als Röhrenspankerntüren Klimaklasse I, Beanspruchungsgr
 			
 			<li><br>
 			Geschosstreppe und Bodeneinschubtreppe<br>
-Es wird eine Treppenanlage in einer offenen Bauweise (System Treppenmeister oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15,"Sonstiges") eingebaut.<br>
+Es wird eine Treppenanlage in einer offenen Bauweise (System Treppenmeister oder gleichwertig nach Wahl des Auftragnehmers gemäß §15,"Sonstiges") eingebaut.<br>
 <br>
 System Treppenmeister:<br>
 Die Buche Massivholzstufen sind parkettverleimt akzent und mehrfachversiegelt, das Geländer besteht aus silberfarbenen Metallstäben, Rechteckpfosten im An- und Austritt in der Holzart Buche parkettverleimt akzent und einem Rechteckhandlauf aus Buche parkettverleimt massiv. Über die Bauzeit erhält die Treppe einen Stufenschutz auf Trittflächen und Kanten, der vom Auftraggeber in Eigenleistung entfernt wird.
@@ -1073,7 +1043,7 @@ Materialpreis EUR 20,00 pro m² inkl. Mehrwertsteuer.<br>
 			Heizungsanlage und Trinkwassererwärmung<br>
 Das Haus wird mit einer Gas-Brennwerttherme und drei Flachkollektoren zur solaren
 Warmwasserbereitung ausgestattet (Hersteller Vaillant oder gleichwertig nach Wahl des
-Auftragnehmers gemäß § 15,"Sonstiges").<br>
+Auftragnehmers gemäß §15,"Sonstiges").<br>
 <br>
 Heizungsanlage<br>
 <br>
@@ -1119,21 +1089,21 @@ Sanitäreinrichtungsgegenstände<br>
 Wannenbad:<br>
 Standort entsprechend der zeichnerischen Darstellung:<br>
 • eingeflieste Badewanne aus Acryl (Hersteller: Ideal Standard oder gleichwertig nach Wahl des
-Auftragnehmers gemäß § 15, "Sonstiges"), ca. 170 cm x 75 cm mit verchromter Einhand-Badebatterie mit Wannenset. Eine Mittelablaufwanne ist nicht vereinbart.<br>
+Auftragnehmers gemäß §15, "Sonstiges"), ca. 170 cm x 75 cm mit verchromter Einhand-Badebatterie mit Wannenset. Eine Mittelablaufwanne ist nicht vereinbart.<br>
 • eingeflieste Brausewanne aus Acryl (Hersteller: Ideal Standard oder gleichwertig nach Wahl des
-Auftragnehmers gemäß § 15, "Sonstiges, ca. 80 cm x 80 cm mit verchromter Einhand-Brausebatterie mit Brauseset. Ablaufgarnitur aus Kunststoff, verchromt. Eine Duschtrennwand oder Kabine ist nicht vereinbart.<br>
+Auftragnehmers gemäß §15, "Sonstiges, ca. 80 cm x 80 cm mit verchromter Einhand-Brausebatterie mit Brauseset. Ablaufgarnitur aus Kunststoff, verchromt. Eine Duschtrennwand oder Kabine ist nicht vereinbart.<br>
 • Kristallporzellanwaschtisch, ca. 60 cm breit mit verchromter Einhand - Waschtischbatterie.<br>
 • wandhängendes WC mit wassersparendem 2 - Mengen - Unterputzspülkasten, Sitz und Deckel.<br>
-Sanitärkeramik, Farbe weiß, Hersteller VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Villeroy & Boch, Keramag oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15, "Sonstiges").
-Die Armaturen des Herstellers VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Grohe oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15,"Sonstiges") werden als
+Sanitärkeramik, Farbe weiß, Hersteller VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Villeroy & Boch, Keramag oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges").
+Die Armaturen des Herstellers VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Grohe oder gleichwertig nach Wahl des Auftragnehmers gemäß §15,"Sonstiges") werden als
 Aufputzarmaturen ausgeführt.<br>
 <br>
 Gäste-WC:<br>
 Standort entsprechend der zeichnerischen Darstellung:<br>
 • Kristallporzellanwaschtisch, ca. 45 cm breit mit verchromter Einhand- Waschtischbatterie.<br>
 • wandhängendes WC mit wassersparendem 2 - Mengen - Unterputzspülkasten, Sitz und Deckel.<br>
-Sanitärkeramik, Farbe weiß, Hersteller VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Villeroy & Boch, Keramag oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15, "Sonstiges").
-Die Armaturen des Herstellers VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Grohe oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15,"Sonstiges") werden als
+Sanitärkeramik, Farbe weiß, Hersteller VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Villeroy & Boch, Keramag oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges").
+Die Armaturen des Herstellers VIGOUR, Serie Clivia (produziert durch namhafte deutsche Hersteller wie Grohe oder gleichwertig nach Wahl des Auftragnehmers gemäß §15,"Sonstiges") werden als
 Aufputzarmaturen ausgeführt.<br>
 <br>
 Küche:<br>
@@ -1165,7 +1135,7 @@ Um den Luftaustausch zwischen den einzelnen Räumen zu gewährleisten, werden di
 			<li><br>
 			Elektrische Anlage<br>
 Die Elektroinstallationen werden fachgerecht in Abstimmung mit den zuständigen Energieversorgungsträgern ausgeführt.<br>
-Die Installation beginnt ab Hausanschluss / Panzersicherung innerhalb des Hauses. Im Hausanschlussraum wird ein Zählerschrank gemäß Vorschriften des Energieversorgers mit den entsprechenden Sicherungsarmaturen gesetzt. Es werden zwei FI-Schalter eingebaut. In Abhängigkeit vom Haustyp werden mindestens 12 Stromkreise installiert. Der Elektroherd, die Geschirrspülmaschine, die Waschmaschine und der Wäschetrockner erhalten jeweils eigene Stromkreise. Die verbleibenden Stromkreise werden für Lichtauslässe und Steckdosen aufgeteilt. Die Ausstattung sämtlicher Wohnräume erfolgt mit weißen bzw. cremeweißen Flächenschaltern und Steckdosen der Hersteller Gira oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15, "Sonstiges". Die Installation in den Wohngeschossen erfolgt selbstverständlich unter Putz.<br>
+Die Installation beginnt ab Hausanschluss / Panzersicherung innerhalb des Hauses. Im Hausanschlussraum wird ein Zählerschrank gemäß Vorschriften des Energieversorgers mit den entsprechenden Sicherungsarmaturen gesetzt. Es werden zwei FI-Schalter eingebaut. In Abhängigkeit vom Haustyp werden mindestens 12 Stromkreise installiert. Der Elektroherd, die Geschirrspülmaschine, die Waschmaschine und der Wäschetrockner erhalten jeweils eigene Stromkreise. Die verbleibenden Stromkreise werden für Lichtauslässe und Steckdosen aufgeteilt. Die Ausstattung sämtlicher Wohnräume erfolgt mit weißen bzw. cremeweißen Flächenschaltern und Steckdosen der Hersteller Gira oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges". Die Installation in den Wohngeschossen erfolgt selbstverständlich unter Putz.<br>
 Die genaue Lage der Schalter, Steckdosen und Lichtauslässe wird mit dem Auftraggeber individuell vor Baubeginn festgelegt.<br>
 <br>
 Hauseingang:<br>
@@ -1226,7 +1196,7 @@ Klingelanlage:<br>
 bestehend aus Taster und Läutwerk je Wohnung<br>
 <br>
 Rauchmelder:<br>
-Jedes Schlaf-, Kinder-, Arbeits- und Gästezimmer erhält einen Rauchmelder. Pro Etage wird zusätzlich jeweils ein Rauchmelder auf dem Flur installiert. Die Rauchmelder werden an der Decke angebracht. Es werden batteriebetriebene optische Rauchmelder mit Warnton, ABUS VDS, installiert (oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15, "Sonstiges".
+Jedes Schlaf-, Kinder-, Arbeits- und Gästezimmer erhält einen Rauchmelder. Pro Etage wird zusätzlich jeweils ein Rauchmelder auf dem Flur installiert. Die Rauchmelder werden an der Decke angebracht. Es werden batteriebetriebene optische Rauchmelder mit Warnton, ABUS VDS, installiert (oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges".
 
 			</li>
 			
@@ -1237,8 +1207,8 @@ Jedes Schlaf-, Kinder-, Arbeits- und Gästezimmer erhält einen Rauchmelder. Pro
 Grundausstattung enthalten und deshalb zeichnerisch dargestellt sind. Dazu gehören:<br>
 <br>
 Dachflächenfenster:<br>
-Kunststoff-Dachflächenfenster (Hersteller Roto, VELUX oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15, "Sonstiges" ); Farbe: weiß; mit 2-Scheiben-Wärmeschutzverglasung (Uw = 1,3 W/m²K); Fensteraußenmaß gemäß Zeichnung.
-Für die Verschattung des Dachflächenfensters wird das Aussenrolllo Screen (System Roto oder gleichwertig nach Wahl des Auftragnehmers gemäß § 15, "Sonstiges") eingebaut. Das Aussenrolllo besteht aus kunststoffbeschichteten Glasfasergewebe.
+Kunststoff-Dachflächenfenster (Hersteller Roto, VELUX oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges" ); Farbe: weiß; mit 2-Scheiben-Wärmeschutzverglasung (Uw = 1,3 W/m²K); Fensteraußenmaß gemäß Zeichnung.
+Für die Verschattung des Dachflächenfensters wird das Aussenrolllo Screen (System Roto oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges") eingebaut. Das Aussenrolllo besteht aus kunststoffbeschichteten Glasfasergewebe.
 
 			</li>
 			
@@ -1271,8 +1241,7 @@ Technische Änderungen sowie eine Änderung eines vereinbarten Herstellers bleib
 <div class="row">
 		<div style="padding: 10px">
 		
-		<h4 style = "text-align: center;" >§16 <br>
-			Sonstige Vereinbarungen</h4>
+		<h4>§16 Sonstige Vereinbarungen</h4>
 		<h6>	
 		<p style="text-align: justify;">  
 		<ol>
@@ -1304,6 +1273,11 @@ Der Auftragnehmer ist berechtigt, das Haus auch nach Fertigstellung kostenlos fo
 Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auftragnehmer eine Baufertigstellungsbürgschaft und eine Mängelansprüchebürgschaft ("Baugewährleistungsbürgschaft"). Das Zertifikat über die Baufertigstellungsbürgschaft wird mit Baubeginn übergeben.
 
 			</li>
+			<li>
+				Dieser Werkvertrag unterliegt deutschem Recht. Gerichtsstand ist Deutschland.
+			</li>
+			
+			
 			
 			<li>
 			
@@ -2303,7 +2277,7 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 			<h5> Widerrufsrecht </h5>
 			<h6> Sie können Ihre Vertragserklärung innerhalb von 14 Tagen ohne Angabe von Gründen in Textform (z. B. Brief,
 			Fax, E-Mail) widerrufen. Die Frist beginnt nach Erhalt dieser Belehrung in Textform, jedoch nicht vor
-			Vertragsschluss und Erfüllung unserer Informationspflichten gemäß Artikel 246 § 2 in Verbindung mit § 1
+			Vertragsschluss und Erfüllung unserer Informationspflichten gemäß Artikel 246 §2 in Verbindung mit §1
 			Absatz 1 und 2 EGBGB und nicht, bevor Ihnen auch eine Vertragsurkunde, Ihr schriftlicher Antrag oder eine
 			Abschrift der Vertragsurkunde oder des Antrags zur Verfügung gestellt worden ist. Zur Wahrung der
 			Widerrufsfrist genügt die rechtzeitige Absendung des Widerrufs. Der Widerruf ist zu richten an:
@@ -2714,8 +2688,8 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 	
 	<div class="row" style="padding: 10px; text-align: justify;">
 		<h5>
-			Die Erfassung der Dalen des Auftraggebers (=Identifizterung) ist nach den §§ 3, 4 Geldwaschegesetzt (GwG) vorgeschrieben. Zur Aufzeichnung
-und Aufbewährung der vorgenannten Daten sowie zur Vorlage an die zuständige Behörde im Verdachtsfall sind wir nach § 2, Abs. 1, Nr. 10, §§ 8,
+			Die Erfassung der Dalen des Auftraggebers (=Identifizterung) ist nach den §§3, 4 Geldwaschegesetzt (GwG) vorgeschrieben. Zur Aufzeichnung
+und Aufbewährung der vorgenannten Daten sowie zur Vorlage an die zuständige Behörde im Verdachtsfall sind wir nach §2, Abs. 1, Nr. 10, §§8,
 11 GwG verpflichtet.
 		</h5>
 		<h5>

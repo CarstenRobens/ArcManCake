@@ -467,7 +467,8 @@ class ProposalsController extends AppController{
     	
     	
     	// initializing mPDF
-    	$this->Mpdf->init();
+    	$this->Mpdf->init();  // L - landscape, P - portrait
+
     	
 		
   
@@ -478,7 +479,7 @@ class ProposalsController extends AppController{
     			<td width="33%" style="text-align: right; ">{PAGENO}/{nbpg}</td>
     			</tr></table>
     			');
-    
+		$this->Mpdf->setAutoBottomMargin;
     	// setting filename of output pdf file
     	$this->Mpdf->setFilename($folder.$filename);
     
