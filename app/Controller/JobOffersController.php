@@ -69,7 +69,6 @@ class JobOffersController extends AppController{
 	}
 	
 	public function toggle_activation($id = NULL) {
-		$this->Session->write('menue.active','JobOffers');
 		if (!$id) {
 			throw new NotFoundException(__('Invalid job offer'));
 		}
@@ -91,7 +90,6 @@ class JobOffersController extends AppController{
 	}
 	
 	public function delete($id) {
-		$this->Session->write('menue.active','JobOffers');
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();
 		}

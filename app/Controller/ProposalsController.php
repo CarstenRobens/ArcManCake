@@ -398,6 +398,26 @@ class ProposalsController extends AppController{
     	}
     }
     
+    public function toggle_lock($prop_id = NULL) {
+    	if (!$id) {
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
+    
+    	$x = $this->Proposal->findById($prop_id);
+    	if (!$x) {
+    		throw new NotFoundException (__('Invalid proposal'));
+    	}
+    
+    	$x['proposal']['bool_active']=!$x['Proposal']['bool_active'];
+    
+    	$this->request->data=$x;
+    
+    	if ($this->JobOffer->save($this->request->data)) {
+    		$this->Session->setFlash(__('The job offer has been updated'), 'alert-box', array('class'=>'alert-success'));
+    		return $this->redirect(array('action'=>'index'));
+    	}
+    	$this->Session->setFlash(__('Unable to update your job offer.'), 'alert-box', array('class'=>'alert-error'));
+    }
     
     
     

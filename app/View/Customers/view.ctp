@@ -210,7 +210,7 @@
 							<tr>
 								<td ><?php echo $this->Html->link($x['name'],array('controller' => 'Proposals','action' => 'view',$x['id'])); ?></td>
 								<td><div style="text-align: right;">
-									<?php if ($x['locked']==1){
+									<?php if ($x['bool_locked']==1){
 										$string=__('Open');
 									}else{
 										$string=__('Lock');
