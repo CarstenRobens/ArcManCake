@@ -23,17 +23,16 @@ class ProposalsController extends AppController{
 	
 	public function isAuthorized($logged_user) {
 		
-		if ($this->action==='index'){
-			return TRUE;
-		}
-		if ($logged_user['role']==2){
-			if ($this->action==='add'){
+		
+		if ($logged_user['role']<3 ){
+			if (in_array($this->action, array('index','view','download_file','toggle_lock'))){
 				return TRUE;
 			}
-			if(in_array($this->action, array('edit','delete','view'))){
-				#if ($this->Proposal->isOwnedBy($proposalId,$logged_user['id'])){
-					return TRUE;
-				#}
+			
+			$proposal_id=(int) $this->request->params['pass'][0];
+			if($this->Proposal->check_lock($proposal_id) && in_array($this->action, array('edit','delete','edit_house','selected_house','edit_default_picture','selected_default_picture','gen_summary','gen_bank_receipt','gen_contract'))){
+				$this->Session->setFlash(__('The proposal is locked'), 'alert-box', array('class'=>'alert-error'));
+				return FALSE;
 			}
 		}
 		
@@ -203,6 +202,11 @@ class ProposalsController extends AppController{
 		
 		$proposal_id=$this->request->data['proposal_id'];
 		$land_id=$this->request->data['land_id'];
+		
+		if ($this->Proposal->check_lock($proposal_id)){
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			return $this->redirect(array('action'=>'view',$proposal_id));
+		}
 		
 		if (!$proposal_id) {
 			throw new NotFoundException(__('Invalid proposal'));
@@ -399,7 +403,7 @@ class ProposalsController extends AppController{
     }
     
     public function toggle_lock($prop_id = NULL) {
-    	if (!$id) {
+    	if (!$prop_id) {
     		throw new NotFoundException(__('Invalid proposal'));
     	}
     
@@ -408,15 +412,15 @@ class ProposalsController extends AppController{
     		throw new NotFoundException (__('Invalid proposal'));
     	}
     
-    	$x['proposal']['bool_active']=!$x['Proposal']['bool_active'];
+    	$x['Proposal']['bool_locked']=!$x['Proposal']['bool_locked'];
     
     	$this->request->data=$x;
     
-    	if ($this->JobOffer->save($this->request->data)) {
-    		$this->Session->setFlash(__('The job offer has been updated'), 'alert-box', array('class'=>'alert-success'));
-    		return $this->redirect(array('action'=>'index'));
+    	if ($this->Proposal->save($this->request->data)) {
+    		$this->Session->setFlash(__('The proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
+    		return $this->redirect(array('controller'=>'Customers','action'=>'view',$x['MyCustomer']['id']));
     	}
-    	$this->Session->setFlash(__('Unable to update your job offer.'), 'alert-box', array('class'=>'alert-error'));
+    	$this->Session->setFlash(__('Unable to update the proposal.'), 'alert-box', array('class'=>'alert-error'));
     }
     
     

@@ -35,7 +35,9 @@ class Proposal extends AppModel{
     		)
     );
     
-    public function isOwnedBy ($owned_proposal,$owner){
-        return $this->field('id', array('id'=>$owned_proposal, 'user_id'=>$owner))!==FALSE;
+    
+    public function check_lock($prop_id){
+    	$this->id=$prop_id;
+    	return $this->field('bool_locked');
     }
 }

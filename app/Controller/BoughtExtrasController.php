@@ -17,6 +17,12 @@ class BoughtExtrasController extends AppController{
 	}
 	
 	public function add_many_extras($proposal_id=NULL,$bool_external=false) {
+		
+		if ($this->BoughtExtra->MyProposal->check_lock($proposal_id)){
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
+		}
+		
 		if (!$proposal_id) {
 			throw new NotFoundException(__('Invalid Proposal'));
 		}
@@ -71,11 +77,17 @@ class BoughtExtrasController extends AppController{
 	
 	
 	public function edit($id = NULL) {
+		
 		if (!$id) {
 			throw new NotFoundException(__('Invalid bought extra'));
 		}
 		
 		$x = $this->BoughtExtra->findById($id);
+		
+		if ($this->BoughtExtra->MyProposal->check_lock($x['MyProposal']['id'])){
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$x['MyProposal']['id']));
+		}
 		
 		if ($x['MyExtra']['bool_uneditable']) {
 			$this->Session->setFlash(__('This extra cannot be edited.'), 'alert-box', array('class'=>'alert-error'));
@@ -105,8 +117,12 @@ class BoughtExtrasController extends AppController{
     public function delete($id) {
     	
     	$bought_extra=$this->BoughtExtra->findById($id);
+    	if ($this->BoughtExtra->MyProposal->check_lock($bought_extra['MyProposal']['id'])){
+    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+    		return $this->redirect(array('controller'=>'Proposals','action'=>'view',$bought_extra['MyProposal']['id']));
+    	}
+    	
     	$count=sizeof($this->BoughtExtra->find('list',array('conditions'=>array('proposal_id'=>$bought_extra['MyProposal']['id'],'extra_id'=>$bought_extra['MyExtra']['id']))));
-    	debug($count);
     	if ($count==1){
     		$list_extras=$this->BoughtExtra->MyExtra->find('list',array('conditions'=>array('depends_on'=>$bought_extra['MyExtra']['id'])));
     		 

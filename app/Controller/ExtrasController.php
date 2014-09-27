@@ -98,6 +98,11 @@ class ExtrasController extends AppController{
 			throw new NotFoundException(__('Invalid Proposal'));
 		}
 		
+		if ($this->Extra->MyBoughtExtra->MyProposal->check_lock($proposal_id)){
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
+		}
+		
 		$this->set('list_categories_view',$this->Extra->MyCategory->find('list'));
 		$this->set('proposal_id_view',$proposal_id);
 		
@@ -228,6 +233,11 @@ class ExtrasController extends AppController{
     	 */
     
     	$proposal_id=$this->request->data['proposal_id'];
+    	
+    	if ($this->Extra->MyBoughtExtra->MyProposal->check_lock($proposal_id)){
+    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+    		return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
+    	}
     
     	if (!$proposal_id) {
     		throw new NotFoundException(__('Invalid proposal'));
@@ -267,6 +277,10 @@ class ExtrasController extends AppController{
     	 */
     
     	$proposal_id=$this->request->data['proposal_id'];
+    	if ($this->Extra->MyBoughtExtra->MyProposal->check_lock($proposal_id)){
+    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+    		return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
+    	}
     
     	if (!$proposal_id) {
     		throw new NotFoundException(__('Invalid proposal'));
