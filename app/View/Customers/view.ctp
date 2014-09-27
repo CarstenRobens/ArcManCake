@@ -210,6 +210,12 @@
 							<tr>
 								<td ><?php echo $this->Html->link($x['name'],array('controller' => 'Proposals','action' => 'view',$x['id'])); ?></td>
 								<td><div style="text-align: right;">
+									<?php if ($x['locked']==1){
+										$string=__('Open');
+									}else{
+										$string=__('Lock');
+									}?>
+									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><?php echo $string;?></a>
 									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 								</div></td>
