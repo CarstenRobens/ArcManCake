@@ -450,7 +450,7 @@ class String {
 	}
 
 /**
- * Strips given text of all links (<a href=....).
+ * Strips given text of all links (<a  href=....).
  *
  * @param string $text Text
  * @return string The text without links

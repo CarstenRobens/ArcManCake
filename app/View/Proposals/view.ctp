@@ -27,7 +27,7 @@
 			$string=__('Lock');
 			$button= 'success';
 		}?>
-		<a class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
+		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
 		</div>
     </div>
 <?php } ?>
@@ -38,22 +38,22 @@
 	
 	<div class="row">
 		<div class="col-md-7">
-			<a class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
-			<a class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_bank_receipt',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-euro"></span> <?php echo __('Generate bank receipt');?></a>
-			<a class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_contract',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-pencil"></span> <?php echo __('Generate contract');?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_bank_receipt',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-euro"></span> <?php echo __('Generate bank receipt');?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_contract',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-pencil"></span> <?php echo __('Generate contract');?></a>
 		</div>
 		<div class="col-md-5" align="right">
 			<?php if(!empty($proposal_view['Proposal']['summary'])){ ?>
 				<strong> <?php echo __('Summary'); ?> </strong>
-				<a href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 1, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Summary'), 'height'=>30 ));?> </a>
+				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 1, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Summary'), 'height'=>30 ));?> </a>
 			<?php }
 			if(!empty($proposal_view['Proposal']['bank_receipt'])){ ?>
 				<strong> <?php echo __('Bank receipt'); ?> </strong>
-				<a href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 2, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Bank receipt'), 'height'=>30 ));?> </a>
+				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 2, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Bank receipt'), 'height'=>30 ));?> </a>
 			<?php  }
 			if(!empty($proposal_view['Proposal']['contract'])){ ?>
 				<strong> <?php echo __('Contract'); ?> </strong>
-				<a href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 3, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Contract'), 'height'=>30 ));?> </a>
+				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" href="<?php echo $this->Html->url(array('controller'=>'Proposals','action'=>'download_file', 3, $proposal_view['Proposal']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Contract'), 'height'=>30 ));?> </a>
 			<?php } ?>
 		</div>
 	</div>
@@ -79,7 +79,7 @@ foreach ($normal_house_pictures_view as $x){
            	<div class="panel-heading">
 				<h3 class="panel-title" style="text-align:left;">
 					<?php echo __( 'House').': '.$proposal_view['MyHouse']['name'];?>
-					<a class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
+					<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -253,7 +253,7 @@ foreach ($normal_house_pictures_view as $x){
 <?php }else{ ?>
 	<div class="row">
 		<div id="AddHouse" align=center>
-       		<p><a class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']))?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add house');?></a></p>
+       		<p><a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']))?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add house');?></a></p>
        	</div>
 	</div>
 	<hr>
@@ -289,19 +289,19 @@ foreach ($normal_house_pictures_view as $x){
 		
 		<div class="col-md-4">
 			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
 				<strong><?php echo $x['MyExtra']['name']; ?></strong>
 			</a>
 		</div>
 		<div class="col-md-3" align=right>
 			<?php if (!$x['MyExtra']['bool_uneditable']){?>
-				<a class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			<?php }?>
 			
 			<?php if ($x['MyExtra']['bool_custom']){?>
-				<a class="locked" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 			<?php }else{ ?>
-				<a class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 			<?php } ?>
 		</div>
 		
@@ -355,11 +355,11 @@ foreach ($normal_house_pictures_view as $x){
 
 <div class="row">
 	<div class="col-md-12" align=right>
-		<a class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span></a>
-		<a class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> </span> <?php echo __('Custom'); ?></a>
+		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span></a>
+		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> </span> <?php echo __('Custom'); ?></a>
 		<?php if($enlargement==0){?>
-			<a class="btn btn-success locked" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-resize-full"> </span> <?php echo __('Enlarge house'); ?></a>
-			<a class="btn btn-success locked" id="launch_shrink_house" href=# data-toggle="modal" data-target="#shrinkModal"><span class="glyphicon glyphicon-resize-small"> </span> <?php echo __('Shrink house'); ?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-resize-full"> </span> <?php echo __('Enlarge house'); ?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" id="launch_shrink_house" href=# data-toggle="modal" data-target="#shrinkModal"><span class="glyphicon glyphicon-resize-small"> </span> <?php echo __('Shrink house'); ?></a>
 		<?php }?>
 	</div>
 	
@@ -379,9 +379,9 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div class="col-md-12">
 		<div id="AddExtra" align=center>
-       		<a class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add extras');?></a>
-       		<a class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-paperclip"></span> <?php echo __('Add custom extra');?></a>
-       		<a class="btn btn-lg btn-success locked" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
+       		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add extras');?></a>
+       		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-paperclip"></span> <?php echo __('Add custom extra');?></a>
+       		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
        	</div>
 		</div>
 	</div>
@@ -421,13 +421,13 @@ foreach ($normal_house_pictures_view as $x){
 		
 		<div class="col-md-4">
 			<?php if ($x['MyExtra']['bool_custom']){ echo __('Custom: ');}?> 
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseExt<?php echo $index;?>">
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseExt<?php echo $index;?>">
 				<strong><?php echo $x['MyExtra']['name']; ?></strong>
 			</a>
 		</div>
 		<div class="col-md-3" align=right>
 			<?php if (!$x['MyExtra']['bool_uneditable']){?>
-				<a class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			<?php }?>
 		</div>
 		
@@ -476,8 +476,8 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div class="col-md-12">
 		<div id="AddExtra" align=center>
-       		<p><a class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add external extras');?></a></p>
-       		<p><a class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add custom external extra');?></a></p>
+       		<p><a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add external extras');?></a></p>
+       		<p><a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],1));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add custom external extra');?></a></p>
        	</div>
 		</div>
 	</div>
@@ -500,7 +500,7 @@ foreach ($normal_house_pictures_view as $x){
            	<div class="panel-heading">
            		<h3 class="panel-title" style="text-align:left;">
 					<?php echo __( 'Land').': '.$proposal_view['MyLand']['name'];?>
-					<a class="locked" style="float:right" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
+					<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -528,7 +528,7 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		
 		<div class="col-md-2" align="center">
-			<a class="locked" href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
 		</div>
 		
 	</div>
@@ -611,7 +611,7 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="row">
 		<div class="col-md-12">
 		<div id="AddLand" align=center>
-       		<p><a class="btn btn-lg btn-success locked" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal" > <span class="glyphicon glyphicon-plus"></span> <?php echo __('Add land');?></a></p>
+       		<p><a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal" > <span class="glyphicon glyphicon-plus"></span> <?php echo __('Add land');?></a></p>
        	</div>
 		</div>
 	</div>

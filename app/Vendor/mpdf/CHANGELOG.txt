@@ -547,7 +547,7 @@ Column sums
 -----------
 (Also changed some preg_replace to str_replace to improve performance)
 To use: just add {colsum} to any cells of the table footer <tfoot>
-Add a number to specify a fixed number of decimal points e.g. <td>£{colsum2}</td>  will give you £123.40
+Add a number to specify a fixed number of decimal points e.g. <td>ï¿½{colsum2}</td>  will give you ï¿½123.40
 The width of the column will be calculated using the actual string {colsum} as a placeholder.
 If you need the column to be wider, use underscores "_" to pad it e.g. {colsum2_____}
 
@@ -600,7 +600,7 @@ double backslashes not preserved inside <pre> or <textarea>
 font-weight and font-style not recognised in <pageheader>
 
 Progress bars causing corrupt PDF file (out.php) changed fopen from "r" mode to "rb" (binary)
-Target around image - <a href="#internaltarget"><img ... /></a> - not working
+Target around image - <a  href="#internaltarget"><img ... /></a> - not working
 
 SmallCaps in <thead> error
 
@@ -647,8 +647,8 @@ Lists - if LI continues after a nested List, would add as a new LI item (should 
 
 fn WriteCell() converts to 'windows-1252' when required
 if multiple calls to mPDF used, cannot redefine function cmp()
-internal link targets <a name="xx" /> in ToC not moved when using: page-break-inside:avoid
-internal link targets <a name="xx" /> not moved when using: columns, page-break-inside:avoid, keep-with-table or table rotate
+internal link targets <a  name="xx" /> in ToC not moved when using: page-break-inside:avoid
+internal link targets <a  name="xx" /> not moved when using: columns, page-break-inside:avoid, keep-with-table or table rotate
 
 Active Forms - onChange not working for SELECT (cf. 5.3.25) Example 57 only worked by chance as JS was carried over from Select to Text field
 Bug is fixed, but example file needed updating to onCalculate for the display field.
@@ -2459,7 +2459,7 @@ Table of Contents - If a ToC entry reached other side of page a warning notice w
 Fixed - printing is now suppressed and it is moved down a line (but not when using rtl)
 
 "Keep Block Together" (i.e. page-break-inside: avoid for a block element)
-If this property causes some text to be moved to the next page, internal link targets (i.e. <a name="xxx">) were incremented pagenumber by +1 - as this used the calculated document page number, didn't work if using e.g. roman numerals
+If this property causes some text to be moved to the next page, internal link targets (i.e. <a  name="xxx">) were incremented pagenumber by +1 - as this used the calculated document page number, didn't work if using e.g. roman numerals
 (Fixed)
 NB This is now ALWAYS disabled when it meets a table - can use page-break-inside:avoid for the table
 
@@ -2498,7 +2498,7 @@ CSS properties color, font-weight, and font-style set on a table were not inheri
 When rotating a table, the text following was positioned incorrectly
 (Fixed - fn. printtablebuffer)
 
-When rotating a table, links were not adjusted in position e.g. <a href="">...
+When rotating a table, links were not adjusted in position e.g. <a  href="">...
 (Fixed - fn. printtablebuffer)
 
 If a larger border-thickness was set for a cell in the middle of a table, cells before that inaccurately calculated the cell wdith needed
@@ -2705,7 +2705,7 @@ function AddExtGState() edited to check if graphics state already exists before 
 
 ASCII-proof code
 ================
-"»¤¬" used as a special identifier in the program changed to "\xbb\xa4\xac" to make the mpdf.php script file immune from someone saving it as a utf-8 encoded file
+"ï¿½ï¿½ï¿½" used as a special identifier in the program changed to "\xbb\xa4\xac" to make the mpdf.php script file immune from someone saving it as a utf-8 encoded file
 
 Images
 ======

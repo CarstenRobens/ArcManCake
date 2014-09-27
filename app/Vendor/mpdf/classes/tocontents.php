@@ -230,12 +230,12 @@ function insertTOC() {
 		foreach($this->_toc as $t) {
 		 if ($t['toc_id']==='_mpdf_all' || $t['toc_id']===$toc_id ) {
 			$html .= '<div class="mpdf_toc_level_'.$t['l'].'">';
-			if ($TOCuseLinking) { $html .= '<a class="mpdf_toc_a" href="#__mpdfinternallink_'.$t['link'].'">'; }
+			if ($TOCuseLinking) { $html .= '<a  class="mpdf_toc_a" href="#__mpdfinternallink_'.$t['link'].'">'; }
 			$html .= '<span class="mpdf_toc_t_level_'.$t['l'].'">'.$t['t'].'</span>';
 			if ($TOCuseLinking) { $html .= '</a>'; }
 			if (!$tocoutdent) { $tocoutdent = '0'; }
 			if ($TOCusePaging) { $html .= ' <dottab outdent="'.$tocoutdent.'" /> ';
-				if ($TOCuseLinking) { $html .= '<a class="mpdf_toc_a" href="#__mpdfinternallink_'.$t['link'].'">'; }
+				if ($TOCuseLinking) { $html .= '<a  class="mpdf_toc_a" href="#__mpdfinternallink_'.$t['link'].'">'; }
 				$html .= '<span class="mpdf_toc_p_level_'.$t['l'].'">'.$this->mpdf->docPageNum($t['p']).'</span>';
 				if ($TOCuseLinking) { $html .= '</a>'; }
 			}

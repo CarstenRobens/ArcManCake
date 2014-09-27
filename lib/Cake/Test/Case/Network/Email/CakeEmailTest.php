@@ -1723,7 +1723,7 @@ class CakeEmailTest extends CakeTestCase {
 		$this->CakeEmail->emailFormat('both');
 		$this->CakeEmail->send();
 
-		$expected = '<p>This email was sent using the <a href="http://cakephp.org">CakePHP Framework</a></p>';
+		$expected = '<p>This email was sent using the <a  href="http://cakephp.org">CakePHP Framework</a></p>';
 		$this->assertContains($expected, $this->CakeEmail->message(CakeEmail::MESSAGE_HTML));
 
 		$expected = 'This email was sent using the CakePHP Framework, http://cakephp.org.';
@@ -1811,21 +1811,21 @@ class CakeEmailTest extends CakeTestCase {
 		);
 		$this->assertSame($expected, $result);
 
-		$text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac <a href="http://cakephp.org">turpis</a> orci, non commodo odio. Morbi nibh nisi, vehicula pellentesque accumsan amet.';
+		$text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac <a  href="http://cakephp.org">turpis</a> orci, non commodo odio. Morbi nibh nisi, vehicula pellentesque accumsan amet.';
 		$result = $this->CakeEmail->wrap($text, CakeEmail::LINE_LENGTH_SHOULD);
 		$expected = array(
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac',
-			'<a href="http://cakephp.org">turpis</a> orci, non commodo odio. Morbi nibh',
+			'<a  href="http://cakephp.org">turpis</a> orci, non commodo odio. Morbi nibh',
 			'nisi, vehicula pellentesque accumsan amet.',
 			''
 		);
 		$this->assertSame($expected, $result);
 
-		$text = 'Lorem ipsum <a href="http://www.cakephp.org/controller/action/param1/param2" class="nice cool fine amazing awesome">ok</a>';
+		$text = 'Lorem ipsum <a  href="http://www.cakephp.org/controller/action/param1/param2" class="nice cool fine amazing awesome">ok</a>';
 		$result = $this->CakeEmail->wrap($text, CakeEmail::LINE_LENGTH_SHOULD);
 		$expected = array(
 			'Lorem ipsum',
-			'<a href="http://www.cakephp.org/controller/action/param1/param2" class="nice cool fine amazing awesome">',
+			'<a  href="http://www.cakephp.org/controller/action/param1/param2" class="nice cool fine amazing awesome">',
 			'ok</a>',
 			''
 		);
@@ -2281,7 +2281,7 @@ class CakeEmailTest extends CakeTestCase {
  * @return void
  */
 	public function testWrapLongLine() {
-		$message = '<a href="http://cakephp.org">' . str_repeat('x', CakeEmail::LINE_LENGTH_MUST) . "</a>";
+		$message = '<a  href="http://cakephp.org">' . str_repeat('x', CakeEmail::LINE_LENGTH_MUST) . "</a>";
 
 		$this->CakeEmail->reset();
 		$this->CakeEmail->transport('Debug');

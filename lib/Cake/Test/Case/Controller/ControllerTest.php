@@ -559,7 +559,7 @@ class ControllerTest extends CakeTestCase {
 		--></style>
 		</head>
 		<body>
-		<p><a href="/flash">this should work</a></p>
+		<p><a  href="/flash">this should work</a></p>
 		</body>
 		</html>';
 		$result = str_replace(array("\t", "\r\n", "\n"), "", $result);

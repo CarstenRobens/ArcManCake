@@ -60,7 +60,7 @@ directory of the package: makefont.php. It contains the following function:
 </dl>
 The first parameter is the name of the font file. The extension must be either .ttf, .otf or .pfb and
 determines the font type. If your Type1 font is in ASCII format (.pfa), you can convert it to binary
-(.pfb) with the help of <a href="http://www.lcdf.org/~eddietwo/type/#t1utils" target="_blank">t1utils</a>.
+(.pfb) with the help of <a  href="http://www.lcdf.org/~eddietwo/type/#t1utils" target="_blank">t1utils</a>.
 <br>
 <br>
 For Type1 fonts, the corresponding .afm file must be present in the same directory.
@@ -126,10 +126,10 @@ Another way to call MakeFont() is through the command line:
 <br>
 <br>
 Finally, for TrueType and OpenType fonts, you can also generate the files
-<a href="http://www.fpdf.org/makefont/">online</a> instead of doing it manually.
+<a  href="http://www.fpdf.org/makefont/">online</a> instead of doing it manually.
 
 <h2>Declaration of the font in the script</h2>
-The second step is simple. You just need to call the <a href='../doc/addfont.htm'>AddFont()</a> method:
+The second step is simple. You just need to call the <a  href='../doc/addfont.htm'>AddFont()</a> method:
 <div class="source">
 <pre><code>$pdf<span class="kw">-&gt;</span>AddFont<span class="kw">(</span><span class="str">'Comic'</span><span class="kw">,</span><span class="str">''</span><span class="kw">,</span><span class="str">'comic.php'</span><span class="kw">);
 </span></code></pre>
@@ -142,7 +142,7 @@ had worked with Comic Sans MS Bold (comicbd.ttf), we would have written:
 </div>
 
 <h2>Example</h2>
-Let's now see a complete example. We will use the font <a href="http://www.abstractfonts.com/font/52" target="_blank">Calligrapher</a>.
+Let's now see a complete example. We will use the font <a  href="http://www.abstractfonts.com/font/52" target="_blank">Calligrapher</a>.
 The first step is the generation of the font files:
 <div class="source">
 <pre><code>&lt;?php
@@ -184,7 +184,7 @@ We can now copy the two generated files to the font directory and write the scri
 </span>$pdf<span class="kw">-&gt;</span>Output<span class="kw">();
 </span>?&gt;</code></pre>
 </div>
-<p class='demo'><a href='tuto7.php' target='_blank' class='demo'>[Demo]</a></p>
+<p class='demo'><a  href='tuto7.php' target='_blank' class='demo'>[Demo]</a></p>
 
 <h2>About the euro symbol</h2>
 The euro character is not present in all encodings, and is not always placed at the same position:
@@ -219,8 +219,8 @@ symbol.
 Font files are often quite voluminous; this is due to the fact that they contain the characters
 corresponding to many encodings. Zlib compression reduces them but they remain fairly big. A
 technique exists to reduce them further. It consists in converting the font to the Type1 format
-with <a href="http://ttf2pt1.sourceforge.net" target="_blank">ttf2pt1</a> (the Windows binary is
-available <a href="http://www.fpdf.org/fr/dl.php?id=22">here</a>) while specifying the encoding
+with <a  href="http://ttf2pt1.sourceforge.net" target="_blank">ttf2pt1</a> (the Windows binary is
+available <a  href="http://www.fpdf.org/fr/dl.php?id=22">here</a>) while specifying the encoding
 you are interested in; all other characters will be discarded.
 <br>
 For example, the arial.ttf font that ships with Windows Vista weights 748 KB (it contains 3381 characters).

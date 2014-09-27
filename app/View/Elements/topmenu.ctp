@@ -5,7 +5,7 @@
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
           <div class="container">
 			
-			<a class="navbar-brand">
+			<a  class="navbar-brand">
 					<?php echo $this->Html->image('Logo.png', array('width' => '40'), array('class' => 'img-responsive'));?>
 			</a>
             <div class="navbar-header">

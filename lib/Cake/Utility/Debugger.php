@@ -119,7 +119,7 @@ class Debugger {
 		$this->_templates['js']['info'] = $t;
 
 		$links = array();
-		$link = '<a href="javascript:void(0);" onclick="document.getElementById(\'{:id}-code\')';
+		$link = '<a "href="javascript:void(0);" onclick="document.getElementById(\'{:id}-code\')';
 		$link .= '.style.display = (document.getElementById(\'{:id}-code\').style.display == ';
 		$link .= '\'none\' ? \'\' : \'none\')">Code</a>';
 		$links['code'] = $link;

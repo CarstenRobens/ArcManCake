@@ -20,7 +20,7 @@
 				<td><?php echo $x['Category']['name']; ?></td>
 				<?php if($current_user['role']<2){ ?>
 				<td>
-					<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Category']['id']));?>><span class="glyphicon glyphicon-edit"></span> </a> 
+					<a  href=<?php echo $this->Html->url(array('action' => 'edit',$x['Category']['id']));?>><span class="glyphicon glyphicon-edit"></span> </a> 
 					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove">', array('action' => 'delete',$x['Category']['id']), array('escape' => false), __('Are you sure you want to delete this category?'));?>
 				</td>
 				<?php } ?>

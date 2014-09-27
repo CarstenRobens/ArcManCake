@@ -12,7 +12,7 @@ class AssertTagsTestCase extends CakeTestCase {
  * @return void
  */
 	public function testAssertTagsQuotes() {
-		$input = '<a href="/test.html" class="active">My link</a>';
+		$input = '<a  href="/test.html" class="active">My link</a>';
 		$pattern = array(
 			'a' => array('href' => '/test.html', 'class' => 'active'),
 			'My link',
@@ -20,7 +20,7 @@ class AssertTagsTestCase extends CakeTestCase {
 		);
 		$this->assertTags($input, $pattern);
 
-		$input = "<a href='/test.html' class='active'>My link</a>";
+		$input = "<a  href='/test.html' class='active'>My link</a>";
 		$pattern = array(
 			'a' => array('href' => '/test.html', 'class' => 'active'),
 			'My link',
@@ -28,7 +28,7 @@ class AssertTagsTestCase extends CakeTestCase {
 		);
 		$this->assertTags($input, $pattern);
 
-		$input = "<a href='/test.html' class='active'>My link</a>";
+		$input = "<a  href='/test.html' class='active'>My link</a>";
 		$pattern = array(
 			'a' => array('href' => 'preg:/.*\.html/', 'class' => 'active'),
 			'My link',
@@ -92,7 +92,7 @@ class AssertTagsTestCase extends CakeTestCase {
  * @return void
  */
 	public function testBadAssertTags() {
-		$input = '<a href="/test.html" class="active">My link</a>';
+		$input = '<a  href="/test.html" class="active">My link</a>';
 		$pattern = array(
 			'a' => array('hRef' => '/test.html', 'clAss' => 'active'),
 			'My link2',
@@ -107,7 +107,7 @@ class AssertTagsTestCase extends CakeTestCase {
  * @return void
  */
 	public function testBadAssertTags2() {
-		$input = '<a href="/test.html" class="active">My link</a>';
+		$input = '<a  href="/test.html" class="active">My link</a>';
 		$pattern = array(
 			'<a' => array('href' => '/test.html', 'class' => 'active'),
 			'My link',

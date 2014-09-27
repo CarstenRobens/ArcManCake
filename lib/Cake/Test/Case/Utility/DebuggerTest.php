@@ -165,7 +165,7 @@ class DebuggerTest extends CakeTestCase {
 		$this->_restoreError = true;
 
 		Debugger::output('js', array(
-			'traceLine' => '{:reference} - <a href="txmt://open?url=file://{:file}' .
+			'traceLine' => '{:reference} - <a  href="txmt://open?url=file://{:file}' .
 				'&line={:line}">{:path}</a>, line {:line}'
 		));
 		$result = Debugger::trace();
@@ -224,7 +224,7 @@ class DebuggerTest extends CakeTestCase {
 		$this->_restoreError = true;
 
 		Debugger::addFormat('js', array(
-			'traceLine' => '{:reference} - <a href="txmt://open?url=file://{:file}' .
+			'traceLine' => '{:reference} - <a  href="txmt://open?url=file://{:file}' .
 				'&line={:line}">{:path}</a>, line {:line}'
 		));
 		Debugger::outputAs('js');

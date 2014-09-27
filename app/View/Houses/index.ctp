@@ -34,9 +34,9 @@
 						<strong><?php echo $this->Html->link($House['House']['name'], array('controller'=>'Houses','action'=>'view',$House['House']['id'])); ?> </strong>
 						<?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
 							&middot;
-							<a href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
-							<a href=<?php echo $this->Html->url(array('action' => 'edit', $House['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-							<a href=<?php echo $this->Html->url(array('action' => 'delete', $House['House']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+							<a  href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
+							<a  href=<?php echo $this->Html->url(array('action' => 'edit', $House['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+							<a  href=<?php echo $this->Html->url(array('action' => 'delete', $House['House']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 						<?php } ?> 
 					</p>
 					

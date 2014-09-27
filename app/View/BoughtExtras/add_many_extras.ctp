@@ -18,7 +18,7 @@
 	<div class="panel panel-success">
        	<div class="panel-heading">
 			<h3 class="panel-title">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
+				<a  class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $index;?>">
 					<?php echo $category;?>
 				</a>
 			</h3>

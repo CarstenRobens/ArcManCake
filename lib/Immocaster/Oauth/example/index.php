@@ -27,7 +27,7 @@ $echo_req->sign_request($sig_method, $test_consumer, $acc_token);
 <title>OAuth Test Server</title>
 </head>
 <body>
-<div><a href="index.php">server</a> | <a href="client.php">client</a></div>
+<div><a  href="index.php">server</a> | <a  href="client.php">client</a></div>
 <h1>OAuth Test Server</h1>
 <h2>Instructions for Use</h2>
 <p>This is a test server with a predefined static set of keys and tokens, you can make your requests using them to test your code (and mine ;)).</p>
@@ -49,7 +49,7 @@ $echo_req->sign_request($sig_method, $test_consumer, $acc_token);
 <p>An unsuccessful request will attempt to describe what went wrong.</p>
 
 <h4>Example</h4>
-<a href="<?php echo $req_req; ?>"><?php echo $req_req; ?></a>
+<a  href="<?php echo $req_req; ?>"><?php echo $req_req; ?></a>
 
 <h3>Getting an Access Token</h3>
 <p>The Request Token provided above is already authorized, you may use it to request an Access Token right away.</p>
@@ -64,7 +64,7 @@ $echo_req->sign_request($sig_method, $test_consumer, $acc_token);
 <p>An unsuccessful request will attempt to describe what went wrong.</p>
 
 <h4>Example</h4>
-<a href="<?php echo $acc_req; ?>"><?php echo $acc_req; ?></a>
+<a  href="<?php echo $acc_req; ?>"><?php echo $acc_req; ?></a>
 
 <h3>Making Authenticated Calls</h3>
 <p>Using your Access Token you can make authenticated calls.</p>
@@ -78,7 +78,7 @@ A successful request will echo the non-OAuth parameters sent to it, for example:
 <p>An unsuccessful request will attempt to describe what went wrong.</p>
 
 <h4>Example</h4>
-<a href="<?php echo $echo_req; ?>"><?php echo $echo_req; ?></a>
+<a  href="<?php echo $echo_req; ?>"><?php echo $echo_req; ?></a>
 
 <h3>Currently Supported Signature Methods</h3>
 <p>Current signing method is: <?php echo $user_sig_method ?></p>
@@ -88,7 +88,7 @@ $sig_methods = $test_server->get_signature_methods();
 foreach ($sig_methods as $key => $method) {
   print "<li>$key";
   if ($key != $sig_method->get_name()) {
-    print "(<a href='?sig_method=$key'>switch</a>)";
+    print "(<a  href='?sig_method=$key'>switch</a>)";
   }
   print "</li>\n";
 }
@@ -103,6 +103,6 @@ if ("RSA-SHA1" == $sig_method->get_name()) {
 ?>
 
 <h3>Further Resources</h3>
-<p>There is also a <a href="client.php">test client</a> implementation in here.</p>
-<p>The code running this example can be downloaded from the PHP section of the OAuth google code project: <a href="http://code.google.com/p/oauth/">http://code.google.com/p/oauth/</a>
+<p>There is also a <a  href="client.php">test client</a> implementation in here.</p>
+<p>The code running this example can be downloaded from the PHP section of the OAuth google code project: <a  href="http://code.google.com/p/oauth/">http://code.google.com/p/oauth/</a>
 </body>

@@ -107,7 +107,7 @@ foreach ($normal_house_pictures_view as $x){
            		<div class="panel-heading">
 				<h3 class="panel-title" style="text-align:left;">
 					<?php echo __( 'House').': '.$proposal_view['MyHouse']['name'];?>
-					<a class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
+					<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
 				</h3>
 			</div>
 			<div class="panel-body">

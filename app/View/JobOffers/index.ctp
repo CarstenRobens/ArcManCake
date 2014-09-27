@@ -70,7 +70,7 @@
 						$string=__('Activate ');
 					}
 					echo $this->Html->link($string, array('action'=>'toggle_activation',$x['JobOffer']['id']));?>
-					<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['JobOffer']['id']));?> ><span class="glyphicon glyphicon-edit"></span> </a>
+					<a  href=<?php echo $this->Html->url(array('action' => 'edit',$x['JobOffer']['id']));?> ><span class="glyphicon glyphicon-edit"></span> </a>
 					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('action' => 'delete',$x['JobOffer']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
 					
 					?></td>

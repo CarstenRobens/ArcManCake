@@ -485,7 +485,7 @@ Isaacson, explica porqué Jobs le pidió que le hiciera su biografía en
 este artículo de El País.</span></p>
 <p><span style="font-size: medium;"><span style="font-size:
 large;">Por qué Steve era distinto.</span></span></p>
-<p><span style="font-size: medium;"><a href="http://www.elpais.com/
+<p><span style="font-size: medium;"><a  href="http://www.elpais.com/
 articulo/primer/plano/Steve/era/distinto/elpepueconeg/
 20111009elpneglse_4/Tes">http://www.elpais.com/articulo/primer/plano/
 Steve/era/distinto/elpepueconeg/20111009elpneglse_4/Tes</a></span></p>
@@ -505,7 +505,7 @@ Isaacson, explica porqué Jobs le pidió que le hiciera su biografía en
 este artículo de El País.</span></p>
 <p><span style="font-size: medium;"><span style="font-size:
 large;">Por qué Steve era distinto.</span></span></p>
-<p><span style="font-size: medium;"><a href="http://www.elpais.com/
+<p><span style="font-size: medium;"><a  href="http://www.elpais.com/
 articulo/primer/plano/Steve/era/distinto/elpepueconeg/
 20111009elpneglse_4/Tes">http://www.elpais.com/articulo/primer/plano/
 Steve/era/distinto/elpepueconeg/20111009elpneglse_4/Tes</a></span></p>
@@ -683,17 +683,17 @@ podeís adquirirla.</span></p>
 		$result = $this->Text->stripLinks($text);
 		$this->assertEquals($expected, $result);
 
-		$text = 'This is a <a href="#">test</a> text';
+		$text = 'This is a <a  href="#">test</a> text';
 		$expected = 'This is a test text';
 		$result = $this->Text->stripLinks($text);
 		$this->assertEquals($expected, $result);
 
-		$text = 'This <strong>is</strong> a <a href="#">test</a> <a href="#">text</a>';
+		$text = 'This <strong>is</strong> a <a  href="#">test</a> <a  href="#">text</a>';
 		$expected = 'This <strong>is</strong> a test text';
 		$result = $this->Text->stripLinks($text);
 		$this->assertEquals($expected, $result);
 
-		$text = 'This <strong>is</strong> a <a href="#">test</a> and <abbr>some</abbr> other <a href="#">text</a>';
+		$text = 'This <strong>is</strong> a <a  href="#">test</a> and <abbr>some</abbr> other <a  href="#">text</a>';
 		$expected = 'This <strong>is</strong> a test and <abbr>some</abbr> other text';
 		$result = $this->Text->stripLinks($text);
 		$this->assertEquals($expected, $result);

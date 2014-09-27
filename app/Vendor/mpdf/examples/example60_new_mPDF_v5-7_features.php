@@ -191,19 +191,19 @@ span.mpdf_toc_p_level_2 {	/* Page no. level 2 - may be inside <a> */
 <p>Example table of contents:</p>
 <div class="mpdf_toc" id="mpdf_toc_0">
 	<div class="mpdf_toc_level_0">
-		<a class="mpdf_toc_a" href="#__mpdfinternallink_1"><span class="mpdf_toc_t_level_0">Section 1</span></a>
+		<a  class="mpdf_toc_a" href="#__mpdfinternallink_1"><span class="mpdf_toc_t_level_0">Section 1</span></a>
 		<dottab outdent="2em" />
-		<a class="mpdf_toc_a" href="#__mpdfinternallink_1"><span class="mpdf_toc_p_level_0">5</span></a>
+		<a  class="mpdf_toc_a" href="#__mpdfinternallink_1"><span class="mpdf_toc_p_level_0">5</span></a>
 	</div>
 	<div class="mpdf_toc_level_1">
-		<a class="mpdf_toc_a" href="#__mpdfinternallink_2"><span class="mpdf_toc_t_level_1">Chapter 1</span></a>
+		<a  class="mpdf_toc_a" href="#__mpdfinternallink_2"><span class="mpdf_toc_t_level_1">Chapter 1</span></a>
 		<dottab outdent="2em" />
-		<a class="mpdf_toc_a" href="#__mpdfinternallink_2"><span class="mpdf_toc_p_level_1">6</span></a>
+		<a  class="mpdf_toc_a" href="#__mpdfinternallink_2"><span class="mpdf_toc_p_level_1">6</span></a>
 	</div>
 	<div class="mpdf_toc_level_2">
-		<a class="mpdf_toc_a" href="#__mpdfinternallink_3"><span class="mpdf_toc_t_level_2">Topic 1</span></a>
+		<a  class="mpdf_toc_a" href="#__mpdfinternallink_3"><span class="mpdf_toc_t_level_2">Topic 1</span></a>
 		<dottab outdent="2em" />
-		<a class="mpdf_toc_a" href="#__mpdfinternallink_3"><span class="mpdf_toc_p_level_2">7</span></a>
+		<a  class="mpdf_toc_a" href="#__mpdfinternallink_3"><span class="mpdf_toc_p_level_2">7</span></a>
 	</div>
 </div>
 </div>

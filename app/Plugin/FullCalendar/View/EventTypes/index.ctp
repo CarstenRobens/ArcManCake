@@ -50,6 +50,6 @@
 
 <div align="right" class="row"><br>
 
-	<a class="btn btn-md btn-success" href=<?php echo $this->Html->url( array('plugin' => 'full_calendar', 'action' => 'add'));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add category');?></a>
+	<a  class="btn btn-md btn-success" href=<?php echo $this->Html->url( array('plugin' => 'full_calendar', 'action' => 'add'));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add category');?></a>
 	
 </div>

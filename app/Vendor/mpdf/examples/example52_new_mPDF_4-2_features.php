@@ -101,7 +101,7 @@ p { margin-top: 0; }
 <htmlpagefooter name="myHTMLFooter">
 <table width="100%" style="border-top: 0.1mm solid #000000; vertical-align: top; font-size: 9pt; color: #000055;"><tr>
 <td width="25%"></td>
-<td width="50%" align="center">See <a href="http://mpdf1.com/manual/index.php">documentation manual</a> for further details</td>
+<td width="50%" align="center">See <a  href="http://mpdf1.com/manual/index.php">documentation manual</a> for further details</td>
 <td width="25%" align="right">Page {PAGENO} of {nbpg} pages</td>
 </tr></table>
 </htmlpagefooter>
@@ -390,7 +390,7 @@ Line-height: 2em</div>
 <p class="gradient" style="font-size: 10pt; line-height: 2em; padding: 0 0.3em;">Normal text <span style="font-size: 24pt;">24pt font-size &#194;</span> and normal again</p>
 
 <br />
-This broadly reflects the behaviour of IE and Firefox. Note that tall characters such as &#194; may fall outside the computed line-heights. See the same in an <a href="example52_lineheight.htm">HTML page</a>.
+This broadly reflects the behaviour of IE and Firefox. Note that tall characters such as &#194; may fall outside the computed line-heights. See the same in an <a  href="example52_lineheight.htm">HTML page</a>.
 
 
 <pagebreak page-selector="letterhead" />

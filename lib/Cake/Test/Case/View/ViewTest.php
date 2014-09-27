@@ -1026,7 +1026,7 @@ class ViewTest extends CakeTestCase {
 		$result = $View->render(false, 'flash');
 
 		$this->assertRegExp("/<title>yo what up<\/title>/", $result);
-		$this->assertRegExp("/<p><a href=\"flash\">yo what up<\/a><\/p>/", $result);
+		$this->assertRegExp("/<p><a  href=\"flash\">yo what up<\/a><\/p>/", $result);
 
 		$this->assertNull($View->render(false, 'flash'));
 

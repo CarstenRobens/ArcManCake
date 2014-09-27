@@ -14,6 +14,6 @@ A:HOVER { text-decoration: underline; color:#44E }
 --></style>
 </head>
 <body>
-<p><a href="<?php echo $url?>"><?php echo $message?></a></p>
+<p><a  href="<?php echo $url?>"><?php echo $message?></a></p>
 </body>
 </html>

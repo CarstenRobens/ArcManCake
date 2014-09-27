@@ -46,8 +46,8 @@ class HtmlHelper extends AppHelper {
 	protected $_tags = array(
 		'meta' => '<meta%s/>',
 		'metalink' => '<link href="%s"%s/>',
-		'link' => '<a href="%s"%s>%s</a>',
-		'mailto' => '<a href="mailto:%s" %s>%s</a>',
+		'link' => '<a  href="%s"%s>%s</a>',
+		'mailto' => '<a  href="mailto:%s" %s>%s</a>',
 		'form' => '<form action="%s"%s>',
 		'formend' => '</form>',
 		'input' => '<input name="%s"%s/>',
@@ -327,7 +327,7 @@ class HtmlHelper extends AppHelper {
  * @param string|array $url Cake-relative URL or array of URL parameters, or external URL (starts with http://)
  * @param array $options Array of options and HTML attributes.
  * @param string $confirmMessage JavaScript confirmation message.
- * @return string An `<a />` element.
+ * @return string An `<a  />` element.
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#HtmlHelper::link
  */
 	public function link($title, $url = null, $options = array(), $confirmMessage = false) {

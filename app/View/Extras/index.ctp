@@ -42,7 +42,7 @@
 		<?php foreach($extras_view as $x ){?>
 		<tr> 
 			<td> 
-				<a id="extra_<?php echo $x['Extra']['id']; ?>"  title="" ><?php echo $x['Extra']['name'];?></a>
+				<a  id="extra_<?php echo $x['Extra']['id']; ?>"  title="" ><?php echo $x['Extra']['name'];?></a>
 				<?php if(!$x['Extra']['picture']){
 					$html=$this->Text->autoParagraph($x['Extra']['description']);
 					$html = str_replace("\n", '', $html); //to remove linebreaks
@@ -122,7 +122,7 @@
 			<td> <?php echo date("d-M-Y",strtotime($x['Extra']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 			<?php if($current_user['role']<2){ ?>
 			<td>
-				<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				<a  href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 				
 				<?php 
 				echo ' ';

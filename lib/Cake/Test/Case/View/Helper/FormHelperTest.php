@@ -7437,20 +7437,20 @@ class FormHelperTest extends CakeTestCase {
 		);
 		$this->assertTags($result, $expected);
 
-		$this->Form->request->data = array('Model' => array('field' => 'some <strong>test</strong> data with <a href="#">HTML</a> chars'));
+		$this->Form->request->data = array('Model' => array('field' => 'some <strong>test</strong> data with <a  href="#">HTML</a> chars'));
 		$result = $this->Form->textarea('Model.field');
 		$expected = array(
 			'textarea' => array('name' => 'data[Model][field]', 'id' => 'ModelField'),
-			htmlentities('some <strong>test</strong> data with <a href="#">HTML</a> chars'),
+			htmlentities('some <strong>test</strong> data with <a  href="#">HTML</a> chars'),
 			'/textarea',
 		);
 		$this->assertTags($result, $expected);
 
-		$this->Form->request->data = array('Model' => array('field' => 'some <strong>test</strong> data with <a href="#">HTML</a> chars'));
+		$this->Form->request->data = array('Model' => array('field' => 'some <strong>test</strong> data with <a  href="#">HTML</a> chars'));
 		$result = $this->Form->textarea('Model.field', array('escape' => false));
 		$expected = array(
 			'textarea' => array('name' => 'data[Model][field]', 'id' => 'ModelField'),
-			'some <strong>test</strong> data with <a href="#">HTML</a> chars',
+			'some <strong>test</strong> data with <a  href="#">HTML</a> chars',
 			'/textarea',
 		);
 		$this->assertTags($result, $expected);

@@ -34,7 +34,7 @@
 					<div class="row" style="text-align:right">
 						<div class="col-md-8"></div>
 						<div class="col-md-4">
-							<a href=<?php echo $this->Html->url(array('action' => 'edit',$user_view['User']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+							<a  href=<?php echo $this->Html->url(array('action' => 'edit',$user_view['User']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'Users','action' => 'delete',$user_view['User']['id']),array('confirm'=>'Are you sure?','escape'=>false));?>
 						</div>
 					</div>

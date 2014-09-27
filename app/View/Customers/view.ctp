@@ -41,7 +41,7 @@
 						</div>
 						<div class="col-md-6"></div>
 						<div class="col-md-4">
-							<a href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+							<a  href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false));?>
 						</div>
 					</div>
@@ -217,9 +217,9 @@
 										$string=__('Lock');
 										$button= 'success';
 									}?>
-									<a style="margin-right:10px" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
-									<a class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-									<a class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+									<a  style="margin-right:10px" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
+									<a  class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+									<a  class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 									<?php if($x['bool_locked']){?>
 										<style>
 											.locked<?php echo $x['id'];?>{
@@ -234,14 +234,14 @@
 					</div>
 				
 					<div class="col-md-2"></div>
-					<div style="text-align: right"><a class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals', 'action' => 'add', $customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add proposal');?></a> &nbsp;</div>
+					<div style="text-align: right"><a  class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals', 'action' => 'add', $customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add proposal');?></a> &nbsp;</div>
 			</div>
 			
 			<?php }else{ ?>
 			<div class="row">
 		
 				<div class="col-md-12" align=center>
-					<p><a class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'proposals','action' => 'add', $customer_view['Customer']['id']));?> role="button"><span class="glyphicon glyphicon-plus"></span><?php echo __(' Add proposal');?></a></p>
+					<p><a  class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('controller' => 'proposals','action' => 'add', $customer_view['Customer']['id']));?> role="button"><span class="glyphicon glyphicon-plus"></span><?php echo __(' Add proposal');?></a></p>
 				</div>
     		
     		</div>

@@ -295,13 +295,13 @@ class SanitizeTest extends CakeTestCase {
 		$result = Sanitize::stripImages($string);
 		$this->assertEquals($expected, $result);
 
-		$string = '<a href="http://www.badsite.com/phising"><img src="/img/test.jpg" alt="test image alt" title="test image title" id="myImage" class="image-left"/></a>';
-		$expected = '<a href="http://www.badsite.com/phising">test image alt</a><br />';
+		$string = '<a  href="http://www.badsite.com/phising"><img src="/img/test.jpg" alt="test image alt" title="test image title" id="myImage" class="image-left"/></a>';
+		$expected = '<a  href="http://www.badsite.com/phising">test image alt</a><br />';
 		$result = Sanitize::stripImages($string);
 		$this->assertEquals($expected, $result);
 
-		$string = '<a onclick="medium()" href="http://example.com"><img src="foobar.png" onclick="evilFunction(); return false;"/></a>';
-		$expected = '<a onclick="medium()" href="http://example.com"></a>';
+		$string = '<a  onclick="medium()" href="http://example.com"><img src="foobar.png" onclick="evilFunction(); return false;"/></a>';
+		$expected = '<a  onclick="medium()" href="http://example.com"></a>';
 		$result = Sanitize::stripImages($string);
 		$this->assertEquals($expected, $result);
 	}
@@ -410,7 +410,7 @@ HTML;
  * @return void
  */
 	public function testStripTags() {
-		$string = '<h2>Headline</h2><p><a href="http://example.com">My Link</a> could go to a bad site</p>';
+		$string = '<h2>Headline</h2><p><a  href="http://example.com">My Link</a> could go to a bad site</p>';
 		$expected = 'Headline<p>My Link could go to a bad site</p>';
 		$result = Sanitize::stripTags($string, 'h2', 'a');
 		$this->assertEquals($expected, $result);
@@ -420,12 +420,12 @@ HTML;
 		$result = Sanitize::stripTags($string, 'script');
 		$this->assertEquals($expected, $result);
 
-		$string = '<h2>Important</h2><p>Additional information here <a href="/about"><img src="/img/test.png" /></a>. Read even more here</p>';
+		$string = '<h2>Important</h2><p>Additional information here <a  href="/about"><img src="/img/test.png" /></a>. Read even more here</p>';
 		$expected = 'Important<p>Additional information here <img src="/img/test.png" />. Read even more here</p>';
 		$result = Sanitize::stripTags($string, 'h2', 'a');
 		$this->assertEquals($expected, $result);
 
-		$string = '<h2>Important</h2><p>Additional information here <a href="/about"><img src="/img/test.png" /></a>. Read even more here</p>';
+		$string = '<h2>Important</h2><p>Additional information here <a  href="/about"><img src="/img/test.png" /></a>. Read even more here</p>';
 		$expected = 'Important<p>Additional information here . Read even more here</p>';
 		$result = Sanitize::stripTags($string, 'h2', 'a', 'img');
 		$this->assertEquals($expected, $result);
@@ -440,7 +440,7 @@ HTML;
 		$result = Sanitize::stripTags($string, 'b');
 		$this->assertEquals($expected, $result);
 
-		$string = '<h2 onclick="alert(\'evil\'); onmouseover="badness()">Important</h2><p>Additional information here <a href="/about"><img src="/img/test.png" /></a>. Read even more here</p>';
+		$string = '<h2 onclick="alert(\'evil\'); onmouseover="badness()">Important</h2><p>Additional information here <a  href="/about"><img src="/img/test.png" /></a>. Read even more here</p>';
 		$expected = 'Important<p>Additional information here . Read even more here</p>';
 		$result = Sanitize::stripTags($string, 'h2', 'a', 'img');
 		$this->assertEquals($expected, $result);

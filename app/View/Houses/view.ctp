@@ -20,8 +20,8 @@
 	<?php if(true){?>
         
         <?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
-			<a href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $house_view['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
-			<a href=<?php echo $this->Html->url(array('action' => 'edit', $house_view['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $house_view['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" href=<?php echo $this->Html->url(array('action' => 'edit', $house_view['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 		<?php } ?> 
         
         <div class="col-md-1">

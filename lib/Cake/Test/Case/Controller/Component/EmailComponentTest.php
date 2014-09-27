@@ -256,7 +256,7 @@ TEXTBLOC;
 
 <body>
 	<p> This is the body of the message</p><p> </p>
-	<p>This email was sent using the <a href="http://cakephp.org">CakePHP Framework</a></p>
+	<p>This email was sent using the <a  href="http://cakephp.org">CakePHP Framework</a></p>
 </body>
 </html>
 HTMLBLOC;
@@ -476,7 +476,7 @@ TEXTBLOC;
 <body>
 	<p>Here is your value: <b>22091985</b></p>
 
-	<p>This email was sent using the <a href="http://cakephp.org">CakePHP Framework</a></p>
+	<p>This email was sent using the <a  href="http://cakephp.org">CakePHP Framework</a></p>
 </body>
 </html>
 HTMLBLOC;
@@ -585,13 +585,13 @@ HTMLBLOC;
 		$expected = "Previous content\n--alt-\n text/html; utf-8\n 8bit\n\n<p>My own html content</p>";
 		$this->assertEquals($expected, $result);
 
-		$content = '<p>Some HTML content with an <a href="mailto:test@example.com">email link</a>';
+		$content = '<p>Some HTML content with an <a  href="mailto:test@example.com">email link</a>';
 		$result = $this->Controller->EmailTest->strip($content, true);
 		$expected = $content;
 		$this->assertEquals($expected, $result);
 
 		$content = '<p>Some HTML content with an ';
-		$content .= '<a href="mailto:test@example.com,test2@example.com">email link</a>';
+		$content .= '<a  href="mailto:test@example.com,test2@example.com">email link</a>';
 		$result = $this->Controller->EmailTest->strip($content, true);
 		$expected = $content;
 		$this->assertEquals($expected, $result);

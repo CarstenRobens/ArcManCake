@@ -29,7 +29,7 @@
 				?>
 				</td>
 				<td>
-					<a href=<?php echo $this->Html->url(array('action' => 'edit',$x['Proposal']['id']));?>><span class="glyphicon glyphicon-edit"> </span></a> 
+					<a  href=<?php echo $this->Html->url(array('action' => 'edit',$x['Proposal']['id']));?>><span class="glyphicon glyphicon-edit"> </span></a> 
 					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove">', array('action' => 'delete',$x['Proposal']['id']), array('escape' => false), __('Are you sure you want to delete this proposal?')); ?>
 				</td>
 				<td><?php echo date("d-M-Y",strtotime($x['Proposal']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>

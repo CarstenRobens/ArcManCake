@@ -13001,7 +13001,7 @@ function WriteHTML($html,$sub=0,$init=true,$close=true) {
 
 	//Explode the string in order to parse the HTML code
 	$a=preg_split('/<(.*?)>/ms',$html,-1,PREG_SPLIT_DELIM_CAPTURE);
-	// ? more accurate regexp that allows e.g. <a name="Silly <name>">
+	// ? more accurate regexp that allows e.g. <a  name="Silly <name>">
 	// if changing - also change in fn.SubstituteChars()
 	// $a = preg_split ('/<((?:[^<>]+(?:"[^"]*"|\'[^\']*\')?)+)>/ms', $html, -1, PREG_SPLIT_DELIM_CAPTURE);
 
@@ -20104,7 +20104,7 @@ function printbuffer($arrayaux,$blockstate=0,$is_table=false,$is_list=false)
 	{
 	    $this->strike = true;
 	}
-	if(isset($vetor[7]) and $vetor[7] != '') // internal target: <a name="anyvalue">
+	if(isset($vetor[7]) and $vetor[7] != '') // internal target: <a  name="anyvalue">
 	{
 	  $ily = $this->y; 
 	  if ($this->keep_block_together) { $this->internallink[$vetor[7]] = array("Y"=>$ily,"PAGE"=>$this->page, "kt"=>true ); }

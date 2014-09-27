@@ -1789,7 +1789,7 @@ class FormHelper extends AppHelper {
  * @param string|array $url Cake-relative URL or array of URL parameters, or external URL (starts with http://)
  * @param array $options Array of HTML attributes.
  * @param boolean|string $confirmMessage JavaScript confirmation message.
- * @return string An `<a />` element.
+ * @return string An `<a  />` element.
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/form.html#FormHelper::postLink
  */
 	public function postLink($title, $url = null, $options = array(), $confirmMessage = false) {

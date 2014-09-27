@@ -69,7 +69,7 @@ else if ($action == "access_token") {
 <title>OAuth Test Client</title>
 </head>
 <body>
-<div><a href="index.php">server</a> | <a href="client.php">client</a></div>
+<div><a  href="index.php">server</a> | <a  href="client.php">client</a></div>
 <h1>OAuth Test Client</h1>
 <h2>Instructions for Use</h2>
 <p>This is a test client that will let you test your OAuth server code. Enter the appropriate information below to test.</p>
@@ -112,7 +112,7 @@ foreach ($sig_methods as $key => $method) {
   
   print "<li>$key";
   if ($key != $sig_method->get_name()) {
-    print "(<a href='?sig_method=$key'>switch</a>)";
+    print "(<a  href='?sig_method=$key'>switch</a>)";
   }
   print "</li>\n";
 }
@@ -128,6 +128,6 @@ if ("RSA-SHA1" == $sig_method->get_name()) {
 ?>
 
 <h3>Further Resources</h3>
-<p>There is also a <a href="index.php">test server</a> implementation in here.</p>
-<p>The code running this example can be downloaded from the PHP section of the OAuth google code project: <a href="http://code.google.com/p/oauth/">http://code.google.com/p/oauth/</a>
+<p>There is also a <a  href="index.php">test server</a> implementation in here.</p>
+<p>The code running this example can be downloaded from the PHP section of the OAuth google code project: <a  href="http://code.google.com/p/oauth/">http://code.google.com/p/oauth/</a>
 </body>

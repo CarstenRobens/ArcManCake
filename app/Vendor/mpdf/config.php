@@ -152,7 +152,7 @@ $this->annotMargin;		// default position for Annotations
 $this->annotOpacity = 0.5;	// default opacity for Annotations
 
 // BOOKMARKS
-$this->anchor2Bookmark = 0;	// makes <a name=""> into a bookmark as well as internal link target; 1 = just name; 2 = name (p.34)
+$this->anchor2Bookmark = 0;	// makes <a  name=""> into a bookmark as well as internal link target; 1 = just name; 2 = name (p.34)
 // Set an optional array to specify appearance of Bookmarks (by level)
 // Default values are Black and normal style
 /*

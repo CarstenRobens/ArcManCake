@@ -85,7 +85,7 @@ class CakeTestCaseTest extends CakeTestCase {
  * @return void
  */
 	public function testAssertTagsQuoting() {
-		$input = '<a href="/test.html" class="active">My link</a>';
+		$input = '<a  href="/test.html" class="active">My link</a>';
 		$pattern = array(
 			'a' => array('href' => '/test.html', 'class' => 'active'),
 			'My link',
@@ -93,7 +93,7 @@ class CakeTestCaseTest extends CakeTestCase {
 		);
 		$this->assertTags($input, $pattern);
 
-		$input = "<a href='/test.html' class='active'>My link</a>";
+		$input = "<a  href='/test.html' class='active'>My link</a>";
 		$pattern = array(
 			'a' => array('href' => '/test.html', 'class' => 'active'),
 			'My link',
@@ -101,7 +101,7 @@ class CakeTestCaseTest extends CakeTestCase {
 		);
 		$this->assertTags($input, $pattern);
 
-		$input = "<a href='/test.html' class='active'>My link</a>";
+		$input = "<a  href='/test.html' class='active'>My link</a>";
 		$pattern = array(
 			'a' => array('href' => 'preg:/.*\.html/', 'class' => 'active'),
 			'My link',
