@@ -152,12 +152,12 @@ foreach ($normal_house_pictures_view as $x){
 			<p style="clear: both;">  </p>
 			<table>
 				<tr>
-					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo date("d-M-Y",strtotime($proposal_view['MyCustomer']['birthday']));?></h6> </td>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo date("d-m-Y",strtotime($proposal_view['MyCustomer']['birthday']));?></h6> </td>
 				</tr>
 				<tr>
 					<td >Geburtsdatum<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyCustomer']['2nd_birthday'])) echo date("d-M-Y",strtotime($proposal_view['MyCustomer']['2nd_birthday']));?></h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyCustomer']['2nd_birthday'])) echo date("d-m-Y",strtotime($proposal_view['MyCustomer']['2nd_birthday']));?></h6></td>		
 				</tr>
 				<tr>
 					<td style = "border-bottom: none;">Geburtsdatum<br>
@@ -247,9 +247,6 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 	</div>
 	
-	<div class="row">
-		Soweit die/der Auftraggeber/in das Baugrundstück noch nicht erworben haben, ist die Bauadresse innerhalb des angegebenen Landkreises unverbundlich.
-	</div>
 	
 	<div class="row">
 		<h6> Hiermit bestelle/n ich/wir untenstehendes Haus.</h6>
@@ -260,7 +257,7 @@ foreach ($normal_house_pictures_view as $x){
 		<div style="width: 400px;float:left; padding: 5px">
 			<table>
 				<tr>
-					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?></h6> </td>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name']; ?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6> </td>
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -270,17 +267,7 @@ foreach ($normal_house_pictures_view as $x){
 			</table>
 			
 		</div>
-		<div style="width: 200px;float:left; padding: 5px">
-			<table>
-				<tr>
-					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6> </td>
-				</tr>
-				<tr >
-					<td style = "border-bottom: none;">Haus gespiegelt</td>		
-				</tr>
-			</table>
-			
-		</div>
+		
 	</div>
 	
 	<?php 
@@ -309,11 +296,13 @@ foreach ($normal_house_pictures_view as $x){
 					<td style = "border-bottom: none;"> <h6> + </h6> </td>
 					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $this->Number->currency($summed_extras,'EUR',array('wholePosition'=>'after'));?></h6> </td>
 				</tr>
+				<?php if(!empty($enlagment)) { ?>
 				<tr >
 					<td style = "border-bottom: none;"> <h6> Summe Hausvergrößerung und Verkleinerung </h6> </td>
 					<td style = "border-bottom: none;"> <h6> + </h6> </td>
 					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $this->Number->currency($enlagment_price,'EUR',array('wholePosition'=>'after'));?></h6> </td>
 				</tr>
+				<?php }?>
 				<tr>
 				<tr >
 					<th style = "border-bottom: none;"> <h6> &nbsp; </h6> </th>
@@ -1407,7 +1396,7 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	<?php } ?>
 	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
 	
-	
+	<?php if(!empty($enlagment)) { ?>
 	<!-------------------------------------- Hausvergrößerung und Verkleinerung Coverpage START -------------------------------------->
 	<div class="row">
 		<h2 style = "text-align: center;">
@@ -1515,19 +1504,19 @@ sind enthalten.
 		<br/></h6>
 		
 	</div>
-	
+	<?php if(!empty($enlagment['MyBoughtExtra']['comment'])){ ?>
 	<div class="row" style="padding: 10px">
 		<h6>Zusätzliche Anmerkungen:
-		<br/>
+		<br/>		
 		<?php if(!empty($enlagment['MyBoughtExtra']['comment'])) echo $enlagment['MyBoughtExtra']['comment'];?>
 		</h6>
 		
 	</div>
-	
+	<?php } ?>
 	
 	
 	<div class="row" style="padding: 10px">
-		<h6><?php echo __('Mit Ihrer Unterschrift bestätigen Sie die Richtigkeit der hier angegebenen Maße.'); ?>
+		<h6><?php echo __('Mit Ihrer Unterschrift bestätigen Sie die Richtigkeit der hier angegebene Vergrößerung.'); ?>
 		<br/></h6>
 		
 	</div>
@@ -1600,7 +1589,7 @@ sind enthalten.
 	</div>
 	<pagebreak  />
 	<!-------------------------------------- Hausvergrößerung und Verkleinerung END -------------------------------------->	
-	
+	<?php } ?>
 	
 	
 	
@@ -1669,9 +1658,9 @@ sind enthalten.
 						</div>	
 					<?php } ?>
 					
-						<p><?php echo $x['MyExtra']['description']; ?></p> 
+						<p><?php echo $this->Text->autoParagraph($x['MyExtra']['description']); ?></p> 
 						<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
-						<p> <?php echo 'Zusätzliche Anmerkungen: '.$x['MyBoughtExtra']['comment']; ?> </p>
+						<p> <?php echo 'Zusätzliche Anmerkungen: '.$this->Text->autoParagraph($x['MyBoughtExtra']['comment']); ?> </p>
 						<?php }?>
 						<?php if($x['MyBoughtExtra']['factor']>1){ ?>
 						<p> <?php echo 'Anzahl / lfm / m<sup>2</sup>: '.$x['MyBoughtExtra']['factor']; ?> </p>
@@ -1705,7 +1694,7 @@ sind enthalten.
 		
 		
 		<div  style="text-align: right">
-		<h4> Summe Sonderausstattung: <?php echo $this->Number->currency(summed_extras,'EUR',array('wholePosition'=>'after'));?></h4>
+		<h4> Summe Sonderausstattung: <?php echo $this->Number->currency($summed_extras,'EUR',array('wholePosition'=>'after'));?></h4>
 		</div>
 		
 		
@@ -1785,15 +1774,16 @@ sind enthalten.
 	
 	
 	<!-------------------------------------- Verbraucherbürgschaft START -------------------------------------->	
-	
+	<!--
 	<div class="row" style="width: 100%;">
-		<?php echo $this->Html->image('addInfoContract/Verbraucher_1.png', array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
+		<?php //echo $this->Html->image('addInfoContract/Verbraucher_1.png', array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
 	</div>
 	<div class="row" style="width: 100%;">
-		<?php echo $this->Html->image('addInfoContract/Verbraucher_2.png', array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
+		<?php //echo $this->Html->image('addInfoContract/Verbraucher_2.png', array( "class" => "featurette-image img-responsive", "style"=>"center")); ?>
 	</div>
 	
 	<pagebreak  />
+	--->
 	<!-------------------------------------- Verbraucherbürgschaft END -------------------------------------->
 	
 	
@@ -2400,7 +2390,7 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 		41564 Kaarst <br/>
 		Tel.:  02131 / 1333971<br/>
 		Fax: 02131 / 1333973<br/>
-		Mail:zi@tc-architekt.de<br/>
+		Mail:info@tc-architekt.de<br/>
 		<br/>
 		<br/>
 		Hiermit widerrufe(n) ich/wir (*)den von mir/uns (*) abgeschlossenen Vertrag über die

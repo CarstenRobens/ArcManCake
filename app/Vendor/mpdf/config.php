@@ -178,13 +178,13 @@ $this->defaultheaderfontstyle = 'BI';	// '', or 'B' or 'I' or 'BI'
 $this->defaultheaderline = 1;		// 1 or 0 - line under the header
 $this->defaultfooterfontsize = 8;	// pt
 $this->defaultfooterfontstyle = 'BI';	// '', or 'B' or 'I' or 'BI'
-$this->defaultfooterline = 1;		// 1 or 0 - line over the footer
+$this->defaultfooterline = 0;		// 1 or 0 - line over the footer
 $this->header_line_spacing = 0.25;	// spacing between bottom of header and line (if present) - function of fontsize
 $this->footer_line_spacing = 0.25;	// spacing between bottom of header and line (if present) - function of fontsize
 // If 'pad' margin-top sets fixed distance in mm (padding) between bottom of header and top of text.
 // If 'stretch' margin-top sets a minimum distance in mm between top of page and top of text, which expands if header is too large to fit.
 $this->setAutoTopMargin = false;	
-$this->setAutoBottomMargin = false;	
+$this->setAutoBottomMargin = true;	
 $this->autoMarginPadding = 2;		// distance in mm used as padding if 'stretch' mode is used
 
 

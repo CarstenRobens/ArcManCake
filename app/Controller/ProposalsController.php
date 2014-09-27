@@ -473,13 +473,12 @@ class ProposalsController extends AppController{
 		
   
     	$this->Mpdf->SetHTMLFooter('
-    			<table width="100%" ><tr>
-    			<td width="33%"><span ><img src="img/Logo.png" alt="IZ Haus" width="25"></span></td>
-    			<td width="33%" align="center" >IZ Haus GmbH {DATE j-m-Y}</td>
-    			<td width="33%" style="text-align: right; ">{PAGENO}/{nbpg}</td>
-    			</tr></table>
+    			<div style="width:100%" >
+    			<div style="width:33%;float:left"><span ><img src="img/Logo.png" alt="IZ Haus" width="25"></span></div>
+    			<div style="width:33%;float:left; text-align: center;">IZ Haus GmbH {DATE j-m-Y}</div>
+    			<div style="width:33%;float:left; text-align: right; ">{PAGENO}/{nbpg}</div>
+    			</div>
     			');
-		$this->Mpdf->setAutoBottomMargin;
     	// setting filename of output pdf file
     	$this->Mpdf->setFilename($folder.$filename);
     
@@ -534,11 +533,11 @@ class ProposalsController extends AppController{
     	
   
     	$this->Mpdf->SetHTMLFooter('
-    			<table width="100%" ><tr>
-    			<td width="33%"><span ><img src="img/Logo.png" alt="IZ Haus" width="25"></span></td>
-    			<td width="33%" align="center" >{DATE j-m-Y}</td>
-    			<td width="33%" style="text-align: right; ">{PAGENO}/{nbpg}</td>
-    			</tr></table>
+    			<div style="width:100%" >
+    			<div style="width:33%;float:left"><span ><img src="img/Logo.png" alt="IZ Haus" width="25"></span></div>
+    			<div style="width:33%;float:left; text-align: center;">IZ Haus GmbH {DATE j-m-Y}</div>
+    			<div style="width:33%;float:left; text-align: right; ">{PAGENO}/{nbpg}</div>
+    			</div>
     			');
     
     	// setting filename of output pdf file
