@@ -52,6 +52,8 @@ foreach ($normal_house_pictures_view as $x){
 		
 	</div>
 	
+	
+	
 	<div class="row">
 		<div style="width: 175px;float:left;">
 		<p style="clear: both;">  </p>
