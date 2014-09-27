@@ -20,7 +20,7 @@ class CustomersController extends AppController{
 	
 	public function isAuthorized($logged_user) {
 		if (isset($logged_user['role']) && $logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-danger'));
 			return FALSE;
 		} # Overseers are not allowed to interact with customer data
 
@@ -59,7 +59,7 @@ class CustomersController extends AppController{
 					$this->Session->setFlash(__('Your customer has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add your customer.'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('Unable to add your customer.'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 		
@@ -96,7 +96,7 @@ class CustomersController extends AppController{
             	$this->Session->setFlash(__('Your customer has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update your customer.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to update your customer.'), 'alert-box', array('class'=>'alert-danger'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;

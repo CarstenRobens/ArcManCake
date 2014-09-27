@@ -218,8 +218,15 @@
 										$button= 'success';
 									}?>
 									<a style="margin-right:10px" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
-									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a> 
+									<a class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+									<a class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+									<?php if($x['bool_locked']){?>
+										<style>
+											.locked<?php echo $x['id'];?>{
+												visibility:hidden
+											}
+										</style>
+									<?php }?> 
 								</div></td>
 							</tr>
 							<?php }?>

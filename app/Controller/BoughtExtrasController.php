@@ -21,7 +21,7 @@ class BoughtExtrasController extends AppController{
 	public function add_many_extras($proposal_id=NULL,$bool_external=false) {
 		
 		if ($this->BoughtExtra->MyProposal->check_lock($proposal_id)){
-			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
 			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
 		}
 		
@@ -60,7 +60,7 @@ class BoughtExtrasController extends AppController{
 				if ($this->request->data['List_bool']['bool_'.$x['MyExtra']['id']]){
 					
 					if (!$this->BoughtExtra->add_default_extra($proposal_id,$x['MyExtra']['id'])) {
-						$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'), 'alert-box', array('class'=>'alert-error'));
+						$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'), 'alert-box', array('class'=>'alert-danger'));
 					}else{
 						/* Logic to handle the addition of a garage */
 						if($x['MyExtra']['type']==1){
@@ -87,12 +87,12 @@ class BoughtExtrasController extends AppController{
 		$x = $this->BoughtExtra->findById($id);
 		
 		if ($this->BoughtExtra->MyProposal->check_lock($x['MyProposal']['id'])){
-			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
 			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$x['MyProposal']['id']));
 		}
 		
 		if ($x['MyExtra']['bool_uneditable']) {
-			$this->Session->setFlash(__('This extra cannot be edited.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('This extra cannot be edited.'), 'alert-box', array('class'=>'alert-danger'));
 			return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyProposal']['id']));
 		}
 		
@@ -108,7 +108,7 @@ class BoughtExtrasController extends AppController{
 				$this->Session->setFlash(__('The extra has been updated'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$x['MyProposal']['id']));
 			}
-			$this->Session->setFlash(__('Unable to update your customer.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Unable to update your customer.'), 'alert-box', array('class'=>'alert-danger'));
 		}
 		if (!$this->request->data) {
 			$this->request->data=$x;
@@ -120,7 +120,7 @@ class BoughtExtrasController extends AppController{
     	
     	$bought_extra=$this->BoughtExtra->findById($id);
     	if ($this->BoughtExtra->MyProposal->check_lock($bought_extra['MyProposal']['id'])){
-    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
     		return $this->redirect(array('controller'=>'Proposals','action'=>'view',$bought_extra['MyProposal']['id']));
     	}
     	

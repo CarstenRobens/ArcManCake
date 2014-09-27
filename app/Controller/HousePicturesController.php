@@ -21,7 +21,7 @@ class HousePicturesController extends AppController{
 	public function isAuthorized($logged_user) {
 
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-danger'));
 			return FALSE; # Overseers have the same privileges as visitors
 		}elseif(in_array($this->action, array('index','view','edit','delete'))){
 			return TRUE;
@@ -71,7 +71,7 @@ class HousePicturesController extends AppController{
 						
 						
 					}else{
-						$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-error'));
+						$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-danger'));
 					}
 				}
 				
@@ -80,7 +80,7 @@ class HousePicturesController extends AppController{
 					$this->Session->setFlash(__('Picture saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index',$house_id));
 				}
-				$this->Session->setFlash(__('Unable to add the picture.'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('Unable to add the picture.'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 	}

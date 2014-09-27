@@ -61,7 +61,7 @@ class UsersController extends AppController{
         			$this->Session->setFlash(__('User has been created.'), 'alert-box', array('class'=>'alert-success'));
         			return $this->redirect(array('action' => 'index'));
         		}
-        		$this->Session->setFlash(__('Unable to add user.'), 'alert-box', array('class'=>'alert-error'));
+        		$this->Session->setFlash(__('Unable to add user.'), 'alert-box', array('class'=>'alert-danger'));
         	}
         } 
     }
@@ -89,7 +89,7 @@ class UsersController extends AppController{
                 $this->Session->setFlash(__('User info has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update user.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to update user.'), 'alert-box', array('class'=>'alert-danger'));
         } else {
             $this->request->data=  $this->User->read(NULL,$id);
             unset($this->request->data['User']['password']);
@@ -111,7 +111,7 @@ class UsersController extends AppController{
             return $this->redirect(array('action'=>'index'));
         }
         
-        $this->Session->setFlash(__('User was not deleted'), 'alert-box', array('class'=>'alert-error'));
+        $this->Session->setFlash(__('User was not deleted'), 'alert-box', array('class'=>'alert-danger'));
         return $this->redirect(array('action'=>'index'));
     }
     
@@ -122,7 +122,7 @@ class UsersController extends AppController{
             if ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirect());
             }
-            $this->Session->setFlash(__('Invalid username or password, try again'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Invalid username or password, try again'), 'alert-box', array('class'=>'alert-danger'));
         }
     }
     

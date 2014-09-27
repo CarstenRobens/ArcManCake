@@ -15,7 +15,7 @@ class HousesController extends AppController{
 	public function isAuthorized($logged_user) {
 
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-danger'));
 			return FALSE; # Overseers have the same privileges as visitors
 		}elseif(in_array($this->action, array('edit','delete'))){
 			return TRUE;
@@ -37,7 +37,7 @@ class HousesController extends AppController{
 					$this->Session->setFlash(__('The house has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add your house.'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('Unable to add your house.'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 	}
@@ -75,7 +75,7 @@ class HousesController extends AppController{
             	$this->Session->setFlash(__('The house has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update the house.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to update the house.'), 'alert-box', array('class'=>'alert-danger'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;

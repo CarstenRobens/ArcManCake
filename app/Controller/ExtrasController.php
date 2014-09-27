@@ -77,7 +77,7 @@ class ExtrasController extends AppController{
 						$this->request->data['Extra']['picture'] = $new_filename;
 						
 					}else{
-						$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-error'));
+						$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-danger'));
 					}
 				}
 				$this->request->data['Extra']['bool_custom'] = 0;
@@ -87,7 +87,7 @@ class ExtrasController extends AppController{
 					$this->Session->setFlash(__('The extra has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}else{
-					$this->Session->setFlash(__('Unable to add your extra.'), 'alert-box', array('class'=>'alert-error'));
+					$this->Session->setFlash(__('Unable to add your extra.'), 'alert-box', array('class'=>'alert-danger'));
 				}
 			}
 		}
@@ -101,7 +101,7 @@ class ExtrasController extends AppController{
 		}
 		
 		if ($this->Extra->MyBoughtExtra->MyProposal->check_lock($proposal_id)){
-			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
 			return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
 		}
 		
@@ -128,12 +128,12 @@ class ExtrasController extends AppController{
 					$this->Session->setFlash(__('Extra added to proposal.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
 				}else {
-					$this->Session->setFlash(__('Unable to add extra to your proposal.'), 'alert-box', array('class'=>'alert-error'));
+					$this->Session->setFlash(__('Unable to add extra to your proposal.'), 'alert-box', array('class'=>'alert-danger'));
 					return $this->redirect(array('controller'=>'Proposals', 'action'=>'view',$proposal_id));
 				}
 				
 			}else{
-				$this->Session->setFlash(__('Unable to add your extra.'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('Unable to add your extra.'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 	}
@@ -187,7 +187,7 @@ class ExtrasController extends AppController{
         			$this->request->data['Extra']['picture'] = $new_filename;
         	
         		}else{
-        			$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-error'));
+        			$this->Session->setFlash(__('File not saved, you must use a picture.'), 'alert-box', array('class'=>'alert-danger'));
         		}
         	}
         	
@@ -201,7 +201,7 @@ class ExtrasController extends AppController{
             	$this->Session->setFlash(__('The extra has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update the extra.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to update the extra.'), 'alert-box', array('class'=>'alert-danger'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
@@ -237,7 +237,7 @@ class ExtrasController extends AppController{
     	$proposal_id=$this->request->data['proposal_id'];
     	
     	if ($this->Extra->MyBoughtExtra->MyProposal->check_lock($proposal_id)){
-    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
     		return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
     	}
     
@@ -280,7 +280,7 @@ class ExtrasController extends AppController{
     
     	$proposal_id=$this->request->data['proposal_id'];
     	if ($this->Extra->MyBoughtExtra->MyProposal->check_lock($proposal_id)){
-    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+    		$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
     		return $this->redirect(array('controller'=>'Proposals','action'=>'view',$proposal_id));
     	}
     

@@ -32,7 +32,7 @@ class ProposalsController extends AppController{
 			
 			$proposal_id=(int) $this->request->params['pass'][0];
 			if($this->Proposal->check_lock($proposal_id) && in_array($this->action, array('edit','delete','edit_house','selected_house','edit_default_picture','selected_default_picture','gen_summary','gen_bank_receipt','gen_contract'))){
-				$this->Session->setFlash(__('The proposal is locked'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('The proposal is locked'), 'alert-box', array('class'=>'alert-danger'));
 				return FALSE;
 			}
 		}
@@ -149,7 +149,7 @@ class ProposalsController extends AppController{
             	 
             	foreach($ext_extras as $index=>$x){
             		if(!$this->Proposal->MyBoughtExtra->add_default_extra($this->Proposal->getLastInsertId(),$index)){
-            			$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'), 'alert-box', array('class'=>'alert-error'));
+            			$this->Session->setFlash(__('Unable to add the'. $x['MyExtra']['name'] .' extra to your proposal.'), 'alert-box', array('class'=>'alert-danger'));
             		}
             	}
             	 
@@ -159,7 +159,7 @@ class ProposalsController extends AppController{
             	$this->Session->setFlash(__('Your proposal has been saved.'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('controller'=>'Proposals','action' => 'edit_house',$this->Proposal->getLastInsertID()));
             }
-            $this->Session->setFlash(__('Unable to add the proposal.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to add the proposal.'), 'alert-box', array('class'=>'alert-danger'));
      	}
 	}
         
@@ -186,7 +186,7 @@ class ProposalsController extends AppController{
             	$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-danger'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
@@ -205,7 +205,7 @@ class ProposalsController extends AppController{
 		$land_id=$this->request->data['land_id'];
 		
 		if ($this->Proposal->check_lock($proposal_id)){
-			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
 			return $this->redirect(array('action'=>'view',$proposal_id));
 		}
 		
@@ -289,7 +289,7 @@ class ProposalsController extends AppController{
 			$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('action'=>'edit_default_picture',$proposal_id));
 		}
-		$this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-error'));
+		$this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-danger'));
 	}
 	
 	
@@ -324,7 +324,7 @@ class ProposalsController extends AppController{
 				$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action'=>'view',$id));
 			}
-			$this->Session->setFlash(__('Unable to select the picture.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Unable to select the picture.'), 'alert-box', array('class'=>'alert-danger'));
 		}
 		if (!$this->request->data) {
 			$this->request->data=$x;
@@ -356,7 +356,7 @@ class ProposalsController extends AppController{
 			$this->Session->setFlash(__('Your proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('action'=>'view',$proposal_id));
 		}
-		$this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-error'));
+		$this->Session->setFlash(__('Unable to update your proposal.'), 'alert-box', array('class'=>'alert-danger'));
 	}
         
 	
@@ -422,7 +422,7 @@ class ProposalsController extends AppController{
     		$this->Session->setFlash(__('The proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
     		return $this->redirect($this->referer());
     	}
-    	$this->Session->setFlash(__('Unable to update the proposal.'), 'alert-box', array('class'=>'alert-error'));
+    	$this->Session->setFlash(__('Unable to update the proposal.'), 'alert-box', array('class'=>'alert-danger'));
     }
     
     

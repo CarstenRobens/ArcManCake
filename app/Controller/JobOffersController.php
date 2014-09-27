@@ -39,7 +39,7 @@ class JobOffersController extends AppController{
 					$this->Session->setFlash(__('The job offer has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add the job offer.'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('Unable to add the job offer.'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 	}
@@ -62,7 +62,7 @@ class JobOffersController extends AppController{
 				$this->Session->setFlash(__('The job offer has been updated'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action'=>'index'));
 			}
-			$this->Session->setFlash(__('Unable to update your job offer.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Unable to update your job offer.'), 'alert-box', array('class'=>'alert-danger'));
 		}
 		if (!$this->request->data) {
 			$this->request->data=$x;
@@ -87,7 +87,7 @@ class JobOffersController extends AppController{
 			$this->Session->setFlash(__('The job offer has been updated'), 'alert-box', array('class'=>'alert-success'));
 			return $this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Unable to update your job offer.'), 'alert-box', array('class'=>'alert-error'));
+		$this->Session->setFlash(__('Unable to update your job offer.'), 'alert-box', array('class'=>'alert-danger'));
 	}
 	
 	public function delete($id) {

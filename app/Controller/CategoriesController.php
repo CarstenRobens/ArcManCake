@@ -12,7 +12,7 @@ class CategoriesController extends AppController{
 	public function isAuthorized($logged_user) {
 
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-danger'));
 			return FALSE; # Overseers have the same privileges as visitors
 		}elseif(in_array($this->action, array('index','edit','delete'))){
 			return TRUE;
@@ -35,7 +35,7 @@ class CategoriesController extends AppController{
 					$this->Session->setFlash(__('New category has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add the category.'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('Unable to add the category.'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 	}
@@ -70,7 +70,7 @@ class CategoriesController extends AppController{
 				$this->Session->setFlash(__('Category has been updated'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action'=>'index'));
 			}
-			$this->Session->setFlash(__('Unable to update category.'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Unable to update category.'), 'alert-box', array('class'=>'alert-danger'));
 		}
 		if (!$this->request->data) {
 			$this->request->data=$x;

@@ -21,7 +21,7 @@ class LandsController extends AppController{
 	public function isAuthorized($logged_user) {
 		
 		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-error'));
+			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-danger'));
 			return FALSE; # Overseers are not allowed to interact with customer data
 		} else{
 			return TRUE;
@@ -53,7 +53,7 @@ class LandsController extends AppController{
 					$this->Session->setFlash(__('The land has been saved.'), 'alert-box', array('class'=>'alert-success'));
 					return $this->redirect(array('action' => 'index'));
 				}
-				$this->Session->setFlash(__('Unable to add the land.'), 'alert-box', array('class'=>'alert-error'));
+				$this->Session->setFlash(__('Unable to add the land.'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 	}
@@ -95,7 +95,7 @@ class LandsController extends AppController{
             	$this->Session->setFlash(__('Your land has been saved.'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action' => 'index'));
             }
-            $this->Session->setFlash(__('Unable to add your customer.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to add your customer.'), 'alert-box', array('class'=>'alert-danger'));
      	}
 	}
         
@@ -119,7 +119,7 @@ class LandsController extends AppController{
             	$this->Session->setFlash(__('Your land has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
             }
-            $this->Session->setFlash(__('Unable to update your land.'), 'alert-box', array('class'=>'alert-error'));
+            $this->Session->setFlash(__('Unable to update your land.'), 'alert-box', array('class'=>'alert-danger'));
  		}
         if (!$this->request->data) {
         	$this->request->data=$x;
