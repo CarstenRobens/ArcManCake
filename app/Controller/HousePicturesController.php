@@ -14,6 +14,8 @@ class HousePicturesController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HousePictures');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Haus Bilder; '.$company['keywords']);
 	}
 	
 	public function isAuthorized($logged_user) {

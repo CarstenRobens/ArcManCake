@@ -26,17 +26,19 @@ class HomeController extends AppController {
 	}
 	
 	function index() {
-		
-		
 		Controller::loadModel('HomePicture');
 		$this->set('home_pictures_view',$this->HomePicture->find('all'));
 	}
 	
 	public function contact() {
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Kontakt; '.$company['keywords']);
     	$this->Session->write('menue.active','Contact');
     }
 	
 	public function impressum() {
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Impressum; '.$company['keywords']);
     	$this->Session->write('menue.active','Impressum');
     }
 

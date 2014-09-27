@@ -14,6 +14,8 @@ class LandsController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','Lands');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Grundstücke; '.$company['keywords']);
 	}
 	
 	public function isAuthorized($logged_user) {
