@@ -425,16 +425,17 @@ class ProposalsController extends AppController{
     		throw new NotFoundException(__('Invalid proposal'));
     	}
 		
-    	
-		
+
+
     	$x = $this->Proposal->findById($id);
     	$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
 				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>0)));
-        $ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
-            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>-1)));
-        $yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
-            		'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag >'=>0)));
-					
+		$ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>array(-1,-2))));
+		$yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>array(1,2,3,4))));
+		$ysidenobase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>array(5))));
 					
 		$order = array("MyExtra.category_id" => "asc", "MyExtra.name" => "asc");
 		
@@ -450,11 +451,36 @@ class ProposalsController extends AppController{
     	if (!$x) {
     		throw new NotFoundException(__('Invalid proposal'));
     	}
+		
+		
     	
+		$bool_basement=0;
+		$bool_standalone=0;
+		foreach($z as $index=>$abc){
+			if($abc['MyExtra']['size_dependent_flag']>0){
+				if($abc['MyBoughtExtra']['price']>0){
+					$direction=1;
+				}else{
+					$direction=-1;
+				}
+			}elseif ($abc['MyExtra']['type']==2){
+				$bool_basement=1;
+			}elseif ($abc['MyExtra']['type']==3){
+				$bool_standalone=1;
+			}
+		}
+		$this->set('bool_basement',$bool_basement);
+		$this->set('bool_standalone',$bool_standalone);
+		
+		
+		
     	$this->set('proposal_view',$x);
-    	$this->set('normal_house_pictures_view',$y);
-        $this->set('basement_house_pictures_view',$ybase);
-        $this->set('floorplan_house_pictures_view',$yfloor);
+    	
+		$this->set('normal_house_pictures_view',$y);
+		$this->set('basement_house_pictures_view',$ybase);
+		$this->set('floorplan_house_pictures_view',$yfloor);
+		$this->set('sideview_nobasement_house_pictures_view',$ysidenobase);
+		
     	$this->set('bought_extras_view',$z);
 		$this->set('bought_enlagement',$zenlarge);
     	$this->set('bought_external_extras_view',$zexternal);

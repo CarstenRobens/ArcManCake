@@ -86,7 +86,7 @@
 					</tr>
 					
 					<tr>
-						<td>Bauzinsen 0,25%/Monat</td>
+						<td>Bauzinsen</td>
 						<td align="right"><?php echo $proposal_view['MyLand']['building_tax'].'%';?></td>
 						<td> </td>
 						<td align="right"><?php echo $this->Number->currency($proposal_view['MyLand']['building_tax']/100*$subtotal,'EUR',array('wholePosition'=>'after'));?></td>
