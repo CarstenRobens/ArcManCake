@@ -37,6 +37,12 @@
 				</strong >
 				<?php echo $house_view['House']['size'].__(' m<sup>2</sup> in ').$house_view['House']['floors'].__(' floors.');?>
 				
+				<br>
+				<strong >
+					<?php echo __('Size according to DIN 227:'); ?>
+				</strong >
+				<?php echo $house_view['House']['size_din'].__(' m<sup>2</sup>');?>
+				
 				<span style="float:right;">
 					<?php if($house_view['House']['bool_duplex']){ ?>
 						 <?php echo __('Duplex')?> 

@@ -109,6 +109,18 @@ foreach ($normal_house_pictures_view as $x){
 				}else{
 					echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
 				}?>
+				<br>
+				<strong >
+					<?php echo __('Size according to DIN 227:'); ?>
+				</strong >
+				<?php if($enlargement>0){
+					echo $proposal_view['MyHouse']['size_din'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup>');
+				}elseif($enlargement<0){
+					echo $proposal_view['MyHouse']['size_din'].' - '.-1*$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup>');
+				}else{
+					echo $proposal_view['MyHouse']['size_din'].__(' m<sup>2</sup>');
+				}?>
+				
 				
 				<span style="float:right;">
 					<?php if($bool_standalone){ 
