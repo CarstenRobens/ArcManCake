@@ -418,7 +418,7 @@ class ProposalsController extends AppController{
     
     	if ($this->Proposal->save($this->request->data)) {
     		$this->Session->setFlash(__('The proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
-    		return $this->redirect(array('controller'=>'Customers','action'=>'view',$x['MyCustomer']['id']));
+    		return $this->redirect($this->referer());
     	}
     	$this->Session->setFlash(__('Unable to update the proposal.'), 'alert-box', array('class'=>'alert-error'));
     }

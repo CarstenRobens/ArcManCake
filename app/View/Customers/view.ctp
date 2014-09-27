@@ -211,13 +211,15 @@
 								<td ><?php echo $this->Html->link($x['name'],array('controller' => 'Proposals','action' => 'view',$x['id'])); ?></td>
 								<td><div style="text-align: right;">
 									<?php if ($x['bool_locked']==1){
-										$string=__('Open');
+										$string=__('Unlock');
+										$button= 'danger';
 									}else{
 										$string=__('Lock');
+										$button= 'success';
 									}?>
-									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><?php echo $string;?></a>
+									<a style="margin-right:10px" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
 									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+									<a href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a> 
 								</div></td>
 							</tr>
 							<?php }?>
