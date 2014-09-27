@@ -8,7 +8,7 @@ $config['Level'][3] = __('Overseer');
 
 $config['HousePictureType'][-10] = __('Floorplan for visitors');
 $config['HousePictureType'][-2] = __('Floorplan: Side view with basement');
-$config['HousePictureType'][-1] = __('Basement');
+$config['HousePictureType'][-1] = __('Floorplan: Basement');
 $config['HousePictureType'][0] = __('House Picture');
 $config['HousePictureType'][1] = __('Floorplan: Ground level');
 $config['HousePictureType'][2] = __('Floorplan: First floor');
@@ -48,7 +48,7 @@ $config['DocType'][3] = __('Contract');
 
 
 $config['eMail']['HR'] = 'test1@test.com';
-$config['eMail']['sales'] = 'test2@test.com';
+$config['eMail']['contact'] = 'test2@test.com';
 
 $config['Info']['title'] = 'Dipl. Ing. Architekt';
 $config['Info']['owner'] = 'Zbigniew Iwaniuk';

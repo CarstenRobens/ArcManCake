@@ -14,12 +14,14 @@
 	
 
 <div class="row">
+	<?php echo $this->Paginator->numbers(); ?>
 	<table>
 		<tr>
 			<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
 			<th><?php echo $this->Paginator->sort('default_priceA',__('Default Price A')); ?></th>
 			<th><?php echo $this->Paginator->sort('default_priceB',__('Default Price B')); ?></th>
 			<th><?php echo $this->Paginator->sort('default_priceC',__('Default Price C')); ?></th>
+			<th><?php echo $this->Paginator->sort('units',__('Units')); ?></th>
 			<th><?php echo $this->Paginator->sort('MyCategory.name',__('Category')); ?></th>
 			<th><?php echo $this->Paginator->sort('size_dependent_flag',__('Size dep.')); ?></th>
 			<th><?php echo $this->Paginator->sort('type',__('Type')); ?></th>
@@ -55,6 +57,7 @@
 			<td> <?php echo $this->Number->currency($x['Extra']['default_priceA'],'EUR',array('wholePosition'=>'after')); ?></td>
 			<td> <?php echo $this->Number->currency($x['Extra']['default_priceB'],'EUR',array('wholePosition'=>'after')); ?></td>
 			<td> <?php echo $this->Number->currency($x['Extra']['default_priceC'],'EUR',array('wholePosition'=>'after')); ?></td>
+			<td> <?php echo $extra_unit['factor'][$x['Extra']['units']]; ?></td>
 			<td> <?php echo $x['MyCategory']['name']; ?></td>
 			<td> 
 			<?php if ($x['Extra']['size_dependent_flag']<0){
@@ -131,9 +134,9 @@
 			<?php }?>
 		</tr>
 		<?php } ?>
-		<?php echo $this->Paginator->numbers(); ?>
 		<?php unset($x);?>
 	</table>
+	<?php echo $this->Paginator->numbers(); ?>
 </div>
 
 

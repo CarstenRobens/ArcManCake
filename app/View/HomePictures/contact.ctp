@@ -24,10 +24,12 @@
 			<?php echo $info['zipcode'].', '.$info['city'];?></p>
 			
 			<p><strong><?php echo __('Tel.:').' '?></strong><?php echo $info['phone'];?><br> 
-			<strong><?php echo __('Fax:').' '?></strong><?php echo $info['fax'];?></p>
+			<strong><?php echo __('Fax:').' '?></strong><?php echo $info['fax'];?><br>
+			<strong><?php echo 'Mail:'.' '?></strong><?php echo $this->Html->link($eMail['contact'],'mailto:'.$eMail['contact'],array('target'=>'blank'));?></p>
 			
 			<p><strong><?php echo __('Opening time')?> </strong><br> 
 			<?php echo $info['opening_time']?></p>
+			
 		</div>
 		</div>
 	</div>

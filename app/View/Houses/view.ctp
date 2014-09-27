@@ -137,4 +137,4 @@
 		</div>
 	</div>
 
-<div style="text-align:center"><?php echo __('Interested?').' '.$this->Html->link(__('Write us!'),'mailto:'.$eMail['sales'].'?subject='.__('House:').' '.$house_view['House']['name'],array('target'=>'blank')) ?></div>
+<div style="text-align:center"><?php echo __('Interested?').' '.$this->Html->link(__('Write us!'),'mailto:'.$eMail['contact'].'?subject='.__('House:').' '.$house_view['House']['name'],array('target'=>'blank')) ?></div>
