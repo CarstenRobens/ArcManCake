@@ -14,9 +14,9 @@
 					<?php 
 					echo $this->Form->create('BoughtExtra', array('class' => 'form-horizontal'));
 					
-					echo $this->Form->input('price',array('label' => __('Price'),'div' => 'form-group has-success'));
+					echo $this->Form->input('price',array('label' => __('Price').' ('.$extra_unit['price'][$bought_extra['MyExtra']['units']].')','div' => 'form-group has-success'));
 					if ($bought_extra['MyExtra']['units']!=0){
-						echo $this->Form->input('factor',array('label' => __('Factor').'('.$extra_unit[$bought_extra['MyExtra']['units']].')','div' => 'form-group has-success'));
+						echo $this->Form->input('factor',array('label' => $extra_unit['factor'][$bought_extra['MyExtra']['units']],'div' => 'form-group has-success'));
 					}
 					echo $this->Form->input('comment',array('label' => __('Comment'),'placeholder'=>__('Enter your comment:'),'div' => 'form-group has-success'));
 					?>	

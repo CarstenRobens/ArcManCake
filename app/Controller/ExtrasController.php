@@ -240,6 +240,7 @@ class ExtrasController extends AppController{
     	$x['Extra']['default_priceA']=$price;
     	$x['Extra']['default_priceB']=$price;
     	$x['Extra']['default_priceC']=$price;
+    	$x['Extra']['units']=2;
     	$x['Extra']['size_dependent_flag']=$this->request->data['enlargement'];
     	$x['Extra']['bool_custom']=1;
     	$x['Extra']['type']=0;
@@ -278,6 +279,7 @@ class ExtrasController extends AppController{
     	$x['Extra']['default_priceA']=$price;
     	$x['Extra']['default_priceB']=$price;
     	$x['Extra']['default_priceC']=$price;
+    	$x['Extra']['units']=2;
     	$x['Extra']['size_dependent_flag']=$this->request->data['shrinking'];
     	$x['Extra']['bool_custom']=1;
     	$x['Extra']['type']=0;

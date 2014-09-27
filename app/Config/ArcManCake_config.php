@@ -25,10 +25,14 @@ $config['ExtraType'][1] = __('Garage');
 $config['ExtraType'][2] = __('Basement');
 $config['ExtraType'][3] = __('Standalone');
 
-$config['ExtraUnit'][0] = '';
-$config['ExtraUnit'][1] = __('Units');
-$config['ExtraUnit'][2] = 'm<sup>2</sup>';
-$config['ExtraUnit'][3] = 'lfm';
+$config['ExtraUnit']['price'][0] = '€';
+$config['ExtraUnit']['factor'][0] = __('None');
+$config['ExtraUnit']['price'][1] = '€';
+$config['ExtraUnit']['factor'][1] = __('Units');
+$config['ExtraUnit']['price'][2] = '€/m<sup>2</sup>';
+$config['ExtraUnit']['factor'][2] = 'm<sup>2</sup>';
+$config['ExtraUnit']['price'][3] = '€/m';
+$config['ExtraUnit']['factor'][3] = 'lfm';
 
 
 $config['HouseType'][1] = 'A';
