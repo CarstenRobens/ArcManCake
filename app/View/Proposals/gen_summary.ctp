@@ -93,19 +93,29 @@ foreach ($normal_house_pictures_view as $x){
 	
 	<!---------------------------------------------HousePictures START---------------------------------------------------->
 	
+	<?php 
+foreach ($normal_house_pictures_view as $x){
+	if ($x['MyHousePicture']['id']==$proposal_view['Proposal']['default_house_picture_id']){
+		$default_picture=$x['MyHousePicture'];
+		break;
+	}
+}?>
+	
 	<div class="row">
 		<div class="col-md-12">
 		<div class="panel panel-success">
-           	<div class="panel-heading">
-				<h3 class="panel-title"><?php echo __( 'Sonderausstattung');?></h3>
+           		<div class="panel-heading">
+				<h3 class="panel-title" style="text-align:left;">
+					<?php echo __( 'House').': '.$proposal_view['MyHouse']['name'];?>
+					<a class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
+				</h3>
 			</div>
 			<div class="panel-body">
 			
 			
 <!----------PANEL CONTENT------------------>	
+
 			
-			
-<?php foreach($bought_extras_view as $index=>$x) { ?>
 	
 	
 	<div class="row">
@@ -114,20 +124,69 @@ foreach ($normal_house_pictures_view as $x){
 		&nbsp;
 		</div>
 		
-		<div style="width:80%;float: left;text-align: justify;">
-			
+		<div style="width:80%;float: left;">
+			<div class="row" style="text-align:left;">
+				<div class="green-text" style="width:25%;float: left;">
+					<?php echo __('Size:'); ?>
+				</div>
+				<div style="width:25%;float: left;">
+				<?php if($enlargement>0){
+					echo $proposal_view['MyHouse']['size'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+				}elseif($enlargement<0){
+					echo $proposal_view['MyHouse']['size'].' - '.-1*$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+				}else{
+					echo $proposal_view['MyHouse']['size'].__(' m<sup>2</sup> in ').$proposal_view['MyHouse']['floors'].__(' floors.');
+				}?>
+				</div>
+				<br>
+				<div class="green-text" style="width:25%;float: left;">
+					<?php echo __('Size according to DIN 227:'); ?>
+				</div>
+				<div style="width:25%;float: left;">
+				<?php if($enlargement>0){
+					echo $proposal_view['MyHouse']['size_din'].' + '.$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup>');
+				}elseif($enlargement<0){
+					echo $proposal_view['MyHouse']['size_din'].' - '.-1*$enlargement*$proposal_view['MyHouse']['floors'].__(' m<sup>2</sup>');
+				}else{
+					echo $proposal_view['MyHouse']['size_din'].__(' m<sup>2</sup>');
+				}?>
+				</div>
+				<div style="width:50%;float: left;text-align:right">
+					<?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']].' '.__('side'); 
+					} ?>
+				</div>
+			</div>
 		</div>
 		
 		
 		<div style="width:10%;float: left">
 		&nbsp;
 		</div>
-	
+	</div>	
+	<div class="row">	
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
 		
+		<div style="width:80%;float: left;">
+			<?php if(!empty($default_picture)){ 
+					echo $this->Html->link(
+						$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+						'/img/uploads/houses/'.$default_picture['picture'],
+						array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])); 
+				}?>
+		</div>
+		
+		
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
 	</div>
-
-	<hr>
-<?php } ?>
+		
+	
 
 <!----------END PANEL CONTENT-------------->			
 			
