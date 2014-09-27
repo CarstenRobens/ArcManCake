@@ -47,8 +47,8 @@ $config['DocType'][2] = __('BankReceipt');
 $config['DocType'][3] = __('Contract');
 
 
-$config['eMail']['HR'] = 'test1@test.com';
-$config['eMail']['contact'] = 'test2@test.com';
+$config['eMail']['HR'] = 'info@tc-architekt.de';
+$config['eMail']['contact'] = 'info@tc-architekt.de';
 
 $config['Info']['title'] = 'Dipl. Ing. Architekt';
 $config['Info']['owner'] = 'Zbigniew Iwaniuk';
@@ -58,4 +58,11 @@ $config['Info']['city'] = 'Kaarst';
 $config['Info']['phone'] = '02131 / 1333971';
 $config['Info']['fax'] = '02131 / 1333971';
 $config['Info']['opening_time'] = 'Montag - Freitag 9:00 - 19:00 Uhr';
+
+$config['company']['name'] 			= 'IZ-Haus';
+$config['company']['description'] 	= 'Massivhaus/Massivhäuser für Normalverdiener im unteren Preissegment';
+$config['company']['keywords'] 		= 'Neubau, Massivhaus, Hausbau, Einfamilienhaus, bauen, Fertighaus, Massivhaus, Kaarst, Neuss';
+
+
+
 ?>

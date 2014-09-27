@@ -15,6 +15,7 @@ class HomePicturesController extends AppController{
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HomePictures');
 		$this->Auth->allow('home','contact');
+		
 	}
 	
 	public function isAuthorized($logged_user) {
@@ -31,6 +32,8 @@ class HomePicturesController extends AppController{
 	
 	
 	public function index() {
+		$company = Configure::read('company');
+		$this->set("title_for_layout",$company['name']);
 		$logged_user = $this->Auth->user();
 		$this->Paginator->settings = $this->paginate;
 		$this->set('home_pictures_view',$this->Paginator->paginate());

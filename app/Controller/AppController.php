@@ -56,6 +56,8 @@ class AppController extends Controller {
 		$this->set('doc_type',Configure::read('DocType'));
 		$this->set('eMail',Configure::read('eMail'));
 		$this->set('info',Configure::read('Info'));
+		$this->set('company',Configure::read('company'));
+		
     }
     
     public function isAuthorized($logged_user) {

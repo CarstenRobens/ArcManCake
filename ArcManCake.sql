@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2014 at 07:36 PM
+-- Generation Time: Sep 27, 2014 at 09:24 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -354,14 +354,14 @@ CREATE TABLE IF NOT EXISTS `home_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `home_pictures`
 --
 
 INSERT INTO `home_pictures` (`id`, `picture`, `title`, `description`, `user_id`, `created`, `modified`) VALUES
-(11, 'homemanor.jpg', 'Cool Manor', 'Use the <paper-dialog> element to create a dialog. Set a title on a dialog using the heading published property.\r\n\r\nYou can use any kind of children inside the dialog. For action buttons, add the dismissive or affirmative attributes to place the controls (typically buttons) at the bottom of the dialog:', 6, '2014-07-22', '2014-07-22');
+(12, 'HomePicture_1.png', 'Herzlich willkommen bei IZ-Haus', '', 2, '2014-09-27', '2014-09-27');
 
 -- --------------------------------------------------------
 
