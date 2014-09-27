@@ -14,6 +14,8 @@ class ExtrasController extends AppController{
 		parent::beforeFilter();
 		// Allow visitors to view extras
 		$this->Session->write('menue.active','Extras');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Sonderausstattung; '.$company['keywords']);
 	}
 	
 	public function isAuthorized($logged_user) {

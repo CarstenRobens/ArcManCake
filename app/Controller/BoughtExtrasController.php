@@ -5,6 +5,8 @@ class BoughtExtrasController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','BoughtExtras');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Gekaufte Sonderausstattung; '.$company['keywords']);
 	}
 	
 	public function isAuthorized($logged_user) {

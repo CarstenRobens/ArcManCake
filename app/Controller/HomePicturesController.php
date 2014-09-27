@@ -15,6 +15,8 @@ class HomePicturesController extends AppController{
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HomePictures');
 		$this->Auth->allow('home','contact');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Home Bilder; '.$company['keywords']);
 		
 	}
 	
@@ -32,8 +34,6 @@ class HomePicturesController extends AppController{
 	
 	
 	public function index() {
-		$company = Configure::read('company');
-		$this->set("title_for_layout",$company['name']);
 		$logged_user = $this->Auth->user();
 		$this->Paginator->settings = $this->paginate;
 		$this->set('home_pictures_view',$this->Paginator->paginate());
@@ -78,11 +78,6 @@ class HomePicturesController extends AppController{
 		}
 	}
 	
-	public function home() {
-		$this->set('home_pictures_view',$this->HomePicture->find('all'));
-	}
-
-
 	public function view($id=null) {
             if(!$id){
                 throw new NotFoundException(__('Invalid picture'));
@@ -110,12 +105,6 @@ class HomePicturesController extends AppController{
     }
     
    
-    public function contact() {
-    	$this->Session->write('menue.active','Contact');
-    }
-	
-	public function impressum() {
-    	$this->Session->write('menue.active','Impressum');
-    }
+    
   	
 }

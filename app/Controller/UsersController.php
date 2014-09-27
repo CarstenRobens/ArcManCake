@@ -31,6 +31,8 @@ class UsersController extends AppController{
 		$this->Session->write('menue.active','Users');
         // Allow users to login and logout.
         $this->Auth->allow('logout', 'login');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Benutzer; '.$company['keywords']);
     }
 	
 	public function isAuthorized($logged_user) {

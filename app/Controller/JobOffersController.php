@@ -14,7 +14,8 @@ class JobOffersController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->allow('index','check_open');
-		
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Job Angebote; '.$company['keywords']);
 	}
 	
 	public function index() {

@@ -8,6 +8,8 @@ class HousesController extends AppController{
 	
 		$this->Auth->allow('index','view');
 		$this->Session->write('menue.active','Houses');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Hausausstellung; '.$company['keywords']);
 	}
 	
 	public function isAuthorized($logged_user) {

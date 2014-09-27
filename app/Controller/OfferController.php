@@ -18,7 +18,8 @@ class OfferController extends AppController {
 		$this->Auth->allow('index','view','verify','region');
         parent::beforeFilter();
 		$this->Session->write('menue.active','Offer');
-		$this->set("title_for_layout",'Immobilienscout Kaufobjekte; ');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Immobilienscout Kaufobjekte; '.$company['keywords']);
 	}
 	
 	

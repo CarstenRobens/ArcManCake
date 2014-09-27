@@ -6,6 +6,8 @@ class GalleryPicturesController extends AppController{
 		parent::beforeFilter();
 		$this->Session->write('menue.active','GalleryPictures');
 		$this->Auth->allow('index');
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Portfolio; '.$company['keywords']);
 	}
 	
 	public function isAuthorized($logged_user) {

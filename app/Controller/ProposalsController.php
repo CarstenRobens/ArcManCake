@@ -8,7 +8,8 @@ class ProposalsController extends AppController{
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','Proposals');
-		
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Kundenspezifische Angebote; '.$company['keywords']);
 		
 	}
 	

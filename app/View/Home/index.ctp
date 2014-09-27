@@ -47,6 +47,7 @@
 			?>
 		  <h2>Immobilienscout Angebote</h2>
           <p>Sie sind auf der Suche nach einem direktem Angebot? Dann stöbern Sie in unseren Angeboten</p>
+		  <br>
           <p> <?php echo $this->Html->link('Angebote anschauen', array('controller' => 'Offer', 'action' => 'index'),array('class' => 'btn btn-md btn-success'));?> </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
