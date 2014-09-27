@@ -10,6 +10,7 @@ foreach ($normal_house_pictures_view as $x){
 		$enlagment_price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 		
 	}
+	
 ?>
 
 	<!-------------------------------------- First Page START -------------------------------------->
@@ -1374,26 +1375,39 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	
 	
 	<!-------------------------------------- Grundrisse & Ansichten START -------------------------------------->
-	<?php 
-	foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
-		<div class="row">
-			<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
-			<p style="padding-top: 5cm"> <?php 
-			echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
-			</p>
-		</div>
-		<pagebreak  />
-	<?php }
-	foreach ($basement_house_pictures_view as $key=>$x){?>
-		<div class="row">
-			<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
-			<p style="padding-top: 5cm">
-			<?php
-			echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
-			</p>
-		</div>
-		<pagebreak  />
-	<?php } ?>
+					<?php 
+					foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
+						<div class="row">
+							<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
+							<p style="padding-top: 5cm"> <?php 
+							echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
+							</p>
+						</div>
+						<pagebreak  />
+					<?php }
+					if ($bool_basement){
+						foreach ($basement_house_pictures_view as $key=>$x){?>
+							<div class="row">
+								<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
+								<p style="padding-top: 5cm"> <?php 
+								echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
+								</p>
+							</div>
+							<pagebreak  />
+						<?php } 
+					}else{
+						foreach ($sideview_nobasement_house_pictures_view as $key=>$x){?>
+							<div class="row">
+								<h4><?php echo $x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description']; ?></h4>
+								<p style="padding-top: 5cm"> <?php 
+								echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" "));?>
+								</p>
+							</div>
+							<pagebreak  />
+						<?php } 
+					}?>
+	
+	
 	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
 	
 	<?php if(!empty($enlagment)) { ?>
@@ -1444,7 +1458,7 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -1645,6 +1659,9 @@ sind enthalten.
 						<?php echo $idx.'. '; ?>
 						<?php if ($x['MyExtra']['bool_custom']){ echo 'Kundenspezifische Sonderausstattung:';}?> 
 						<?php echo $x['MyExtra']['name']; ?>
+						<?php if($x['MyBoughtExtra']['factor']!=1){ ?>
+							&nbsp;&nbsp;&nbsp;&nbsp;( <?php echo $x['MyBoughtExtra']['factor'].' '.$extra_unit['factor'][$x['MyExtra']['units']]; ?> )
+						<?php }?>
 					</h5>
 				</div>
 				
@@ -1662,9 +1679,9 @@ sind enthalten.
 						<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
 						<p> <?php echo 'Zusätzliche Anmerkungen: '.$this->Text->autoParagraph($x['MyBoughtExtra']['comment']); ?> </p>
 						<?php }?>
-						<?php if($x['MyBoughtExtra']['factor']>1){ ?>
-						<p> <?php echo 'Anzahl / lfm / m<sup>2</sup>: '.$x['MyBoughtExtra']['factor']; ?> </p>
-						<?php }?>
+						
+						
+						
 					</div>	
 					</h6>
 				</div>
@@ -1673,10 +1690,10 @@ sind enthalten.
 					<h5>
 						<?php echo 'Preis: '; ?>
 						<?php
-						if ($x['MyExtra']['size_dependent_flag']==-2){ 
-							echo $this->Number->currency(($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
-						}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
+						if ($x['MyExtra']['size_dependent_flag']==-2){
 							echo $this->Number->currency(($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
+						}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
+							echo $this->Number->currency(($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 						}elseif($x['MyExtra']['size_dependent_flag']>0){
 							echo $this->Number->currency(($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'],'EUR',array('wholePosition'=>'after'));
 						}else{
@@ -1813,7 +1830,7 @@ sind enthalten.
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?>  &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -2091,7 +2108,7 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -2126,10 +2143,7 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 		ordnungsgemäßen Durchführung unseres Bauvorhabens und des damit zusammenhängenden
 		Sicherheitspaketes dient. Darüber hinaus bin/sind ich/wir damit einverstanden, dass IZ-Haus GmbH
 		 unter Verwendung meiner/unserer persönlichen Daten
-		eine Kundenzufriedenheitsanalyse durchführt und sich hierzu der Europäischen
-		Kommunikationsakademie (EKA e. V.), Hauptstr. 90E, 99820 Hörselberg-Hainich, OT
-		Behringen bedient, die die von mir/uns erhobenen Daten/Angaben speichert, verarbeitet, nutzt
-		und im Hinblick auf die Kundenzufriedenheit an IZ-Haus GmbH übermittelt.<br/>
+		eine Kundenzufriedenheitsanalyse durchführt.<br/>
 		Meine/unsere Einwilligung kann jederzeit gegenüber IZ-Haus GmbH, widerrufen werden.<br/>
 		<br/></h6>
 		
@@ -2230,7 +2244,7 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> </h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -2547,6 +2561,10 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 						<td > <h6>&nbsp; </h6> </td>						
 					</tr>
 					<tr>
+						<td > <h6>Geburtsdatum </h6> </td>
+						<td > <h6> <?php echo date("d-m-Y",strtotime($proposal_view['MyCustomer']['birthday']));?> </h6> </td>						
+					</tr>
+					<tr>
 						<td > <h6>Staatsangehörigkeit </h6> </td>
 						<td > <h6>&nbsp; </h6> </td>						
 					</tr>
@@ -2573,6 +2591,9 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 			
 			</div>
 		</div>
+		
+		<?php if(!empty($proposal_view['MyCustomer']['2nd_name'])){ ?>
+		
 		<div class="panel panel-default">
            	<div class="panel-heading">
 				<h6> Ehepartner / Mitauftraggeber </h6>
@@ -2586,6 +2607,10 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 					<tr>
 						<td > <h6>Geburtsort </h6> </td>
 						<td > <h6>&nbsp; </h6> </td>						
+					</tr>
+					<tr>
+						<td > <h6>Geburtsdatum </h6> </td>
+						<td > <h6> <?php if(!empty($proposal_view['MyCustomer']['2nd_birthday'])) echo date("d-m-Y",strtotime($proposal_view['MyCustomer']['2nd_birthday']));?> </h6> </td>						
 					</tr>
 					<tr>
 						<td > <h6>Staatsangehörigkeit </h6> </td>
@@ -2613,7 +2638,7 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 			
 			</div>
 		</div>
-	
+		<?php } ?>
 	</div>
 	
 	<div class="row">
@@ -2678,7 +2703,7 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 	
 	<div class="row" style="padding: 10px; text-align: justify;">
 		<h5>
-			Die Erfassung der Dalen des Auftraggebers (=Identifizterung) ist nach den §§3, 4 Geldwaschegesetzt (GwG) vorgeschrieben. Zur Aufzeichnung
+			Die Erfassung der Daten des Auftraggebers (=Identifizierung) ist nach den §§3, 4 Geldwäschegesetzt (GwG) vorgeschrieben. Zur Aufzeichnung
 und Aufbewährung der vorgenannten Daten sowie zur Vorlage an die zuständige Behörde im Verdachtsfall sind wir nach §2, Abs. 1, Nr. 10, §§8,
 11 GwG verpflichtet.
 		</h5>
