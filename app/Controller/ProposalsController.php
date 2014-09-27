@@ -439,7 +439,105 @@ class ProposalsController extends AppController{
     	 * Generates a PDF with the summary of the proposal.
     	 */
     	
+    	/**
+    	 * Generates a PDF with a contract.
+    	 */
+    	if(!$id){
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
+		
+
+
+    	$x = $this->Proposal->findById($id);
+    	$y = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>0)));
+		$ybase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>array(-1,-2))));
+		$yfloor = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>array(1,2,3,4))));
+		$ysidenobase = $this->Proposal->MyHouse->MyHousePicture->find('all',array(
+				'conditions'=>array('house_id' => $x['Proposal']['house_id'],'type_flag'=>array(5))));
+					
+		$order = array("MyExtra.category_id" => "asc", "MyExtra.name" => "asc");
+		
+    	$z = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false , 'MyExtra.size_dependent_flag <'=>' 1'),
+				'order'=>$order,
+				'recursive'=>2));
+		$zenlarge = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>false, 'MyExtra.size_dependent_flag >'=>' 0')));
+    	$zexternal = $this->Proposal->MyBoughtExtra->find('all',array(
+    			'conditions'=>array('proposal_id' => $x['Proposal']['id'], 'MyExtra.bool_external'=>true)));
     	
+    	if (!$x) {
+    		throw new NotFoundException(__('Invalid proposal'));
+    	}
+		
+		
+    	
+		$bool_basement=0;
+		$bool_standalone=0;
+		foreach($z as $index=>$abc){
+			if($abc['MyExtra']['size_dependent_flag']>0){
+				if($abc['MyBoughtExtra']['price']>0){
+					$direction=1;
+				}else{
+					$direction=-1;
+				}
+			}elseif ($abc['MyExtra']['type']==2){
+				$bool_basement=1;
+			}elseif ($abc['MyExtra']['type']==3){
+				$bool_standalone=1;
+			}
+		}
+		$this->set('bool_basement',$bool_basement);
+		$this->set('bool_standalone',$bool_standalone);
+		
+		
+		
+    	$this->set('proposal_view',$x);
+    	
+		$this->set('normal_house_pictures_view',$y);
+		$this->set('basement_house_pictures_view',$ybase);
+		$this->set('floorplan_house_pictures_view',$yfloor);
+		$this->set('sideview_nobasement_house_pictures_view',$ysidenobase);
+		
+    	$this->set('bought_extras_view',$z);
+		$this->set('bought_enlagement',$zenlarge);
+    	$this->set('bought_external_extras_view',$zexternal);
+    	
+    	
+    	$this->layout='pdf';
+    	
+    	$folder=__DIR__.'/../files/';
+    	$filename = 'Summary'.$x['Proposal']['id'].'.pdf';
+    	
+    	
+    	// initializing mPDF
+    	$this->Mpdf->init();  // L - landscape, P - portrait
+
+    	
+		
+  
+    	$this->Mpdf->SetHTMLFooter('
+    			<div style="width:100%" >
+    			<div style="width:33%;float:left"><span ><img src="img/Logo.png" alt="IZ Haus" width="25"></span></div>
+    			<div style="width:33%;float:left; text-align: center;">IZ Haus GmbH {DATE j-m-Y}</div>
+    			<div style="width:33%;float:left; text-align: right; ">{PAGENO}/{nbpg}</div>
+    			</div>
+    			');
+    	// setting filename of output pdf file
+    	$this->Mpdf->setFilename($folder.$filename);
+    
+    	// setting output to I, D, F, S
+    	$this->Mpdf->setOutput('F');
+    
+    	// you can call any mPDF method via component, for example:
+    	$this->Mpdf->SetWatermarkText("Draft");
+    	
+    	
+    	$x['Proposal']['summary'] = $filename;
+    	$this->Proposal->save($x);
     }
     
     public function gen_contract($id) {
