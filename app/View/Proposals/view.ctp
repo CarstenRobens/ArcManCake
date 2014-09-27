@@ -1,6 +1,4 @@
 
-
-
 <div class="row">
 	<br>
 	<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
@@ -21,7 +19,7 @@
 			<?php echo $proposal_view['Proposal']['notes']; ?>
 		</div>
 		
-		<div class="col-md-1">
+		<div class="col-md-1" style="text-align:right">
 		<?php if ($proposal_view['Proposal']['bool_locked']==1){
 			$string=__('Unlock');
 			$button= 'danger';

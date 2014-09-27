@@ -368,18 +368,19 @@ class ProposalsController extends AppController{
     	$proposal=$this->Proposal->findById($id);
     	$count=sizeof($this->Proposal->find('list',array('conditions'=>array('land_id' => $proposal['Proposal']['land_id']))));
     	
+    	$folder=__DIR__.'/../files/';
         if ($this->Proposal->delete($id)) {
         	foreach ($proposal['MyBoughtExtra'] as $bextra){
         		$this->Proposal->MyBoughtExtra->delete_extra($bextra['id']);
         	}
         	if (!empty($proposal['Proposal']['summary'])){
-        		unlink(WWW_ROOT.$proposal['Proposal']['summary']);
+        		unlink($folder.$proposal['Proposal']['summary']);
         	}
         	if (!empty($proposal['Proposal']['bank_receipt'])){
-        		unlink(WWW_ROOT.$proposal['Proposal']['bank_receipt']);
+        		unlink($folder.$proposal['Proposal']['bank_receipt']);
         	}
         	if (!empty($proposal['Proposal']['contract'])){
-        		unlink(WWW_ROOT.$proposal['Proposal']['contract']);
+        		unlink($folder.$proposal['Proposal']['contract']);
         	}
         	
         	if ($count==1){
@@ -472,8 +473,6 @@ class ProposalsController extends AppController{
     	if (!$x) {
     		throw new NotFoundException(__('Invalid proposal'));
     	}
-		
-		
     	
 		$bool_basement=0;
 		$bool_standalone=0;
@@ -510,7 +509,14 @@ class ProposalsController extends AppController{
     	$this->layout='pdf';
     	
     	$folder=__DIR__.'/../files/';
-    	$filename = 'Summary'.$x['Proposal']['id'].'.pdf';
+    	
+    	if (!empty($x['Proposal']['summary'])){
+    		unlink($folder.$proposal['Proposal']['summary']);
+    	}
+    	
+    	$filedate=date('y').date('m');
+    	$fileID=sprintf('%04d',$x['Proposal']['id']);
+    	$filename = 'Angebot-'.$filedate.$fileID.'.pdf';
     	
     	
     	// initializing mPDF
@@ -575,7 +581,7 @@ class ProposalsController extends AppController{
     		throw new NotFoundException(__('Invalid proposal'));
     	}
 		
-		
+    	
     	
 		$bool_basement=0;
 		$bool_standalone=0;
@@ -612,7 +618,14 @@ class ProposalsController extends AppController{
     	$this->layout='pdf';
     	
     	$folder=__DIR__.'/../files/';
-    	$filename = 'Contract'.$x['Proposal']['id'].'.pdf';
+    	
+    	if (!empty($x['Proposal']['contract'])){
+    		unlink($folder.$x['Proposal']['contract']);
+    	}
+    	
+    	$filedate=date('y').date('m');
+    	$fileID=sprintf('%04d',$x['Proposal']['id']);
+    	$filename = 'Vertrag-'.$filedate.$fileID.'.pdf';
     	
     	
     	// initializing mPDF
@@ -670,11 +683,17 @@ class ProposalsController extends AppController{
     	$this->set('bought_extras_view',$z);
     	$this->set('bought_external_extras_view',$zexternal);
     	
-    	
     	$this->layout='pdf';
     	
     	$folder=__DIR__.'/../files/';
-    	$filename = 'BankReceipt'.$x['Proposal']['id'].'.pdf';
+    	
+    	if (!empty($x['Proposal']['bank_receipt'])){
+    		unlink($folder.$x['Proposal']['bank_receipt']);
+    	}
+    	
+    	$filedate=date('y').date('m');
+    	$fileID=sprintf('%04d',$x['Proposal']['id']);
+    	$filename = 'Kalculation-'.$filedate.$fileID.'.pdf';
     	
     	
     	// initializing mPDF
