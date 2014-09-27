@@ -9,7 +9,7 @@
 		<div class="panel panel-success panel-body">
 		<div class="col-md-6">
 			<div id="picture-container">
-				<?php echo $this->Html->image('Logo.png', array( "class" => "featurette-image img-responsive", "alt"=>" "))?>
+				<?php echo $this->Html->image('Logo.png', array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ))?>
 			</div>
 			<br>
 			<div id="map-container" style="height:250px;width:100%"></div>

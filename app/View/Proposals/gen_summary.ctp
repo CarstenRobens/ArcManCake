@@ -174,7 +174,7 @@ foreach ($normal_house_pictures_view as $x){
 		
 		<div style="width:80%;float: left;">
 			<?php if(!empty($default_picture)){ 
-					echo $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")); 
+					echo $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )); 
 				}?>
 		</div>
 		

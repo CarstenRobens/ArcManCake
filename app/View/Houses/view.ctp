@@ -106,7 +106,7 @@
 							<div class="col-md-6">
 							<?php 
 							echo $this->Html->link(
-								$this->Html->image('/img/uploads/houses/'.$x['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+								$this->Html->image('/img/uploads/houses/'.$x['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 								'/img/uploads/houses/'.$x['picture'],
 								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['name'].': '.$x['description'])
 							);?>
@@ -129,7 +129,7 @@
 						if($x['type_flag']==-10){ ?>
 							<div class="col-md-6">
 							<?php echo $this->Html->link(
-								$this->Html->image('/img/uploads/houses/'.$x['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+								$this->Html->image('/img/uploads/houses/'.$x['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 								'/img/uploads/houses/'.$x['picture'],
 								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['name'].': '.$x['description'])
 							);?>

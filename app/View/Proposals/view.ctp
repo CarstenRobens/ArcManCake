@@ -135,7 +135,7 @@ foreach ($normal_house_pictures_view as $x){
 			<div class="row">
 				<?php if(!empty($default_picture)){ 
 					echo $this->Html->link(
-						$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+						$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 						'/img/uploads/houses/'.$default_picture['picture'],
 						array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])); 
 				}?>
@@ -192,7 +192,7 @@ foreach ($normal_house_pictures_view as $x){
 							<div class="col-md-6">
 							<?php 
 							echo $this->Html->link(
-								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
 								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
 							);?>
@@ -216,7 +216,7 @@ foreach ($normal_house_pictures_view as $x){
 						<div class="col-md-6">
 						<?php 
 						echo $this->Html->link(
-							$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+							$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 							'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
 							array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
 						);?>
@@ -226,7 +226,7 @@ foreach ($normal_house_pictures_view as $x){
 						foreach ($basement_house_pictures_view as $key=>$x){?>
 							<div class="col-md-6">
 								<?php echo $this->Html->link(
-									$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+									$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 									'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
 									array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
 								);?>
@@ -236,7 +236,7 @@ foreach ($normal_house_pictures_view as $x){
 						foreach ($sideview_nobasement_house_pictures_view as $key=>$x){?>
 							<div class="col-md-6">
 								<?php echo $this->Html->link(
-									$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+									$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 									'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
 									array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
 									);?>

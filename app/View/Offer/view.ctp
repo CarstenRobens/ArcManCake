@@ -60,7 +60,7 @@
 							$image_url = strstr($image_explode[0], '/ORIG/resize', true);
 							echo $this->Html->link(
 								$this->Html->image(
-									$image_url, array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+									$image_url, array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 								$image_url,
 								array('escape'=>false,'data-lightbox'=>'summary')
 							); 
@@ -509,7 +509,7 @@
 							$image_url = strstr($image_explode[0], '/ORIG/resize', true);
 							echo $this->Html->link(
 								$this->Html->image(
-									$image_url, array( "class" => "featurette-image img-responsive", "alt"=>" ")),
+									$image_url, array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
 								$image_url,
 								array('escape'=>false,'data-lightbox'=>'summary')
 							); ?>
