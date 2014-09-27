@@ -127,7 +127,6 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		
 		<div style="width:80%;float: left;">
-			<div class="row" style="text-align:left;">
 				<div class="green-text" style="width:25%;float: left;">
 					<?php echo __('Size:'); ?>
 				</div>
@@ -160,7 +159,6 @@ foreach ($normal_house_pictures_view as $x){
 						 echo $house_side[$proposal_view['Proposal']['duplex_side']].' '.__('side'); 
 					} ?>
 				</div>
-			</div>
 		</div>
 		
 		
