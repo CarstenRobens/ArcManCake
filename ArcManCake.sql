@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Sep 27, 2014 at 06:26 
+-- Host: 127.0.0.1
+-- Generation Time: Sep 27, 2014 at 06:37 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ArcManCake`
+-- Database: `arcmancake`
 --
 
 -- --------------------------------------------------------
@@ -54,7 +54,6 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `comment`, `extra_id`, `pr
 (38, 50, 1, '', 2, 4, '2014-09-20', '2014-09-26'),
 (43, 58, 1, NULL, 41, 4, '2014-09-21', '2014-09-21'),
 (44, 90, 20, '', 53, 4, '2014-09-22', '2014-09-22'),
-(48, 650, 1, NULL, 71, 4, '2014-09-26', '2014-09-26'),
 (49, 52, 1, NULL, 21, 4, '2014-09-26', '2014-09-26');
 
 -- --------------------------------------------------------
@@ -420,7 +419,7 @@ CREATE TABLE IF NOT EXISTS `house_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
 
 --
 -- Dumping data for table `house_pictures`
@@ -430,7 +429,6 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (17, 'Dachgeschoss', '', '1_stadt-118-DG.png', 3, 1, 2, '2014-09-20', '2014-09-20'),
 (18, 'Erdgeschoss', '', '1_stadt-118-EG.png', 1, 1, 2, '2014-09-20', '2014-09-20'),
 (19, 'Keller', '', '1_stadt-118-KG.png', -1, 1, 2, '2014-09-20', '2014-09-20'),
-(20, 'Seitenschnitt', '', '1_stadt-118-Schnitt.png', 5, 1, 2, '2014-09-20', '2014-09-20'),
 (21, 'Eingang', '', '2_stadt-120-eingang.png', 0, 2, 2, '2014-09-20', '2014-09-20'),
 (22, 'Garten', '', '2_stadt-120-garten.png', 0, 2, 2, '2014-09-20', '2014-09-20'),
 (23, 'Dachgeschoss', '', '2_stadt-120-DG.png', 2, 2, 2, '2014-09-20', '2014-09-20'),
@@ -443,7 +441,6 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (36, 'Obergeschoss', '', '3_130-1-OG.png', 2, 3, 2, '2014-09-20', '2014-09-20'),
 (37, 'Erdgeschoss', '', '3_130-1-EG.png', 1, 3, 2, '2014-09-20', '2014-09-20'),
 (38, 'Keller', '', '3_130-1-KG.png', -1, 3, 2, '2014-09-20', '2014-09-20'),
-(39, 'Seitenschnitt', '', '3_130-1-Schnitt.png', 5, 3, 2, '2014-09-20', '2014-09-20'),
 (40, 'Eingang', '', '5_stadtvilla-eingang2.png', 0, 5, 2, '2014-09-20', '2014-09-20'),
 (41, 'Garten', '', '5_stadtvilla-garten-2.png', 0, 5, 2, '2014-09-20', '2014-09-20'),
 (42, 'Dachgeschoss', '', '5_stadtvilla-DG.png', 2, 5, 2, '2014-09-20', '2014-09-20'),
@@ -462,21 +459,27 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (55, 'Garten', '', '8_land-150-garten.png', 0, 8, 2, '2014-09-20', '2014-09-20'),
 (56, 'Dachgeschoss', '', '8_Land-150-DG.png', 2, 8, 2, '2014-09-20', '2014-09-20'),
 (57, 'Erdgeschoss', '', '8_Land-150-EG.png', 1, 8, 2, '2014-09-20', '2014-09-20'),
-(58, 'Seitenschnitt', '', '8_Land-150-Schnitt.png', 5, 8, 2, '2014-09-20', '2014-09-20'),
 (59, 'Eingang', '', '1_stadt-118-eingang.png', 0, 1, 2, '2014-09-22', '2014-09-22'),
 (60, 'Garten', '', '1_stadt-118-garten.png', 0, 1, 2, '2014-09-22', '2014-09-22'),
 (61, 'Eingang', '', '9_bungalow-92-eingang.png', 0, 9, 2, '2014-09-22', '2014-09-22'),
 (62, 'Garten', '', '9_bungalow-92-garten.png', 0, 9, 2, '2014-09-22', '2014-09-22'),
 (63, 'Erdgeschoss', '', '9_Bungalow-92-EG.png', 1, 9, 2, '2014-09-22', '2014-09-22'),
-(64, 'Seitenschnitt', '', '9_Bungalow-92-Schnitt.png', 5, 9, 2, '2014-09-22', '2014-09-22');
+(64, 'Seitenschnitt', '', '9_Bungalow-92-Schnitt.png', 5, 9, 2, '2014-09-22', '2014-09-22'),
+(66, 'Seitenschnitt', '', '1_stadt-118-Schnitt_ohneKeller.png', 5, 1, 2, '2014-09-27', '2014-09-27'),
+(67, 'Seitenschnitt', '', '1_stadt-118-Schnitt.png', -2, 1, 2, '2014-09-27', '2014-09-27'),
+(73, 'Seitenschnitt', '', '3_130-Schnitt_ohneKeller.png', 5, 3, 2, '2014-09-27', '2014-09-27'),
+(74, 'Seitenschnitt', '', '3_130-1-Schnitt.png', -2, 3, 2, '2014-09-27', '2014-09-27'),
+(75, 'Seitenschnitt', '', '2_stadt-120-Schnitt_ohneKeller.png', 5, 2, 2, '2014-09-27', '2014-09-27'),
+(77, 'Seitenschnitt', '', '8_Land-150-Schnitt_ohneKeller.png', 5, 8, 2, '2014-09-27', '2014-09-27'),
+(78, 'Seitenschnitt', '', '8_Land-150-Schnitt.png', -2, 8, 2, '2014-09-27', '2014-09-27');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Immocaster_Storage`
+-- Table structure for table `immocaster_storage`
 --
 
-CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
+CREATE TABLE IF NOT EXISTS `immocaster_storage` (
   `ic_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `ic_desc` varchar(32) NOT NULL,
   `ic_key` varchar(128) NOT NULL,
@@ -486,10 +489,10 @@ CREATE TABLE IF NOT EXISTS `Immocaster_Storage` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
--- Dumping data for table `Immocaster_Storage`
+-- Dumping data for table `immocaster_storage`
 --
 
-INSERT INTO `Immocaster_Storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
+INSERT INTO `immocaster_storage` (`ic_id`, `ic_desc`, `ic_key`, `ic_secret`, `ic_expire`) VALUES
 (23, 'REQUEST', 'ea567b98-3129-407c-ad73-f83a0b2f7f61', 'iV7L4OrUSS1VdGkbZKfMfBTkYl6%2FP4MbdnwMc%2BiL4Su7oDn4NRxIcX%2BUPRoEjgVwSQpAi8AdEcxWBNEp8x9ZyylcwZH7HhxbvwQ8Rjheg7o%3D', '2012-11-02 20:44:08'),
 (22, 'APPLICATION', '7ceda6d2-be12-4bb2-93ad-f24e32b778ab', 'd9YWI%2F90I03Jo9aVYZKmUCv1IROLc89KT1Sf78sMAe2UrhqPxpuLqT0bQJ1c2YZn3RslRyVH5y3AOkbplIfPfUDBtMzIMJnaGfFkprEhATw%3D', '0000-00-00 00:00:00');
 
