@@ -167,7 +167,8 @@ foreach ($normal_house_pictures_view as $x){
 		<div style="width:10%;float: left">
 		&nbsp;
 		</div>
-	</div>	
+	</div>
+	<br/>	
 	<div class="row">	
 		<div style="width:10%;float: left">
 		&nbsp;
@@ -175,10 +176,7 @@ foreach ($normal_house_pictures_view as $x){
 		
 		<div style="width:80%;float: left;">
 			<?php if(!empty($default_picture)){ 
-					echo $this->Html->link(
-						$this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")),
-						'/img/uploads/houses/'.$default_picture['picture'],
-						array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$default_picture['description'])); 
+					echo $this->Html->image('uploads/houses/'.$default_picture['picture'], array( "class" => "featurette-image img-responsive", "alt"=>" ")); 
 				}?>
 		</div>
 		
@@ -187,8 +185,27 @@ foreach ($normal_house_pictures_view as $x){
 		&nbsp;
 		</div>
 	</div>
+	<br/>	
+	<div class="row">	
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
 		
-	
+		<div style="width:80%;float: left;">
+			<div class="green-text">
+					<?php echo __('Description:'); ?>
+			</div>
+			<div style="text-align: justify;">
+			<?php echo $this->Text->autoParagraph($proposal_view['MyHouse']['description']); ?> 
+			</div>
+			
+		</div>
+		
+		
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
+	</div>		
 
 <!----------END PANEL CONTENT-------------->			
 			
