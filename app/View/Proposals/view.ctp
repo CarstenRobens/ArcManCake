@@ -38,10 +38,16 @@
 	
 	<div class="row">
 		<div class="col-md-7">
-			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
-			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_bank_receipt',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-euro"></span> <?php echo __('Generate bank receipt');?></a>
-			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_contract',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-pencil"></span> <?php echo __('Generate contract');?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked doc" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked doc" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_bank_receipt',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-euro"></span> <?php echo __('Generate bank receipt');?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked doc" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_contract',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-pencil"></span> <?php echo __('Generate contract');?></a>
 		</div>
+		<script>
+		$('.doc').click(function(){
+			location.reload()
+		});
+	
+		</script>
 		<div class="col-md-5" align="right">
 			<?php if(!empty($proposal_view['Proposal']['summary'])){ ?>
 				<strong> <?php echo __('Summary'); ?> </strong>
