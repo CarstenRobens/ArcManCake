@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-09-28 14:59+0200\n"
-"PO-Revision-Date: 2014-09-28 17:04+0100\n"
+"PO-Revision-Date: 2014-09-28 15:06+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -17,62 +17,60 @@ msgstr ""
 
 #: /FullCalendar/Controller/EventTypesController.php:31;46
 msgid "The category has been saved."
-msgstr "Die Kategorie wurde gespeichert."
+msgstr ""
 
 #: /FullCalendar/Controller/EventTypesController.php:34;49
 msgid "The category could not be saved. Please, try again."
 msgstr ""
-"Die Kategorie konnte nicht gespeichert werden. Bitte versuchen Sie es erneut."
 
 #: /FullCalendar/Controller/EventTypesController.php:41
 #: /CategoriesController.php:46;51;59;64
 msgid "Invalid category"
-msgstr "Ungültige Kategorie"
+msgstr ""
 
 #: /FullCalendar/Controller/EventTypesController.php:59
 msgid "Invalid id for category."
-msgstr "Ungültige Kategorie ID"
+msgstr ""
 
 #: /FullCalendar/Controller/EventTypesController.php:63
 msgid "Category deleted."
-msgstr "Die Kategorie wurde gelöscht."
+msgstr ""
 
 #: /FullCalendar/Controller/EventTypesController.php:66
 msgid "The category was not deleted."
-msgstr "Die Kategorie konnte nicht gelöscht werden."
+msgstr ""
 
 #: /FullCalendar/Controller/EventsController.php:29
 msgid "Invalid event"
-msgstr "Ungültiger Termin"
+msgstr ""
 
 #: /FullCalendar/Controller/EventsController.php:42;65
 msgid "The event has been saved."
-msgstr "Der Termin wurde gespeichert."
+msgstr ""
 
 #: /FullCalendar/Controller/EventsController.php:45;68
 msgid "The event could not be saved. Please, try again."
 msgstr ""
-"Die Termin konnte nicht gespeichert werden. Bitte versuchen Sie es erneut."
 
 #: /FullCalendar/Controller/EventsController.php:53;80
 msgid "Invalid event."
-msgstr "Ungültiger Termin"
+msgstr ""
 
 #: /FullCalendar/Controller/EventsController.php:58;86
 msgid "This appointment is not yours."
-msgstr "Dieser Termin wurde von einem anderen Benutzer angelegt."
+msgstr ""
 
 #: /FullCalendar/Controller/EventsController.php:91
 msgid "Event deleted."
-msgstr "Der Termin wurde gelöscht."
+msgstr ""
 
 #: /FullCalendar/Controller/EventsController.php:94
 msgid "Event was not deleted."
-msgstr "Die Termin konnte nicht gelöscht werden."
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/add.ctp:26
 msgid "Add calendar category"
-msgstr "Hinzufügen einer Kategorie des Kalenders"
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/add.ctp:32
 #: /FullCalendar/View/EventTypes/edit.ctp:32 /Categories/edit.ctp:17
@@ -84,7 +82,7 @@ msgstr "Hinzufügen einer Kategorie des Kalenders"
 #: /Lands/index.ctp:12;68 /Proposals/add.ctp:17 /Proposals/edit.ctp:16
 #: /Users/add.ctp:19 /Users/edit.ctp:24 /Users/index.ctp:17;81
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/add.ctp:51
 #: /FullCalendar/View/EventTypes/edit.ctp:51
@@ -99,19 +97,19 @@ msgstr "Name"
 #: /Proposals/add.ctp:24 /Proposals/edit.ctp:23 /Proposals/view.ctp:644
 #: /Users/add.ctp:29 /Users/edit.ctp:33 /Users/index.ctp:90
 msgid "Save"
-msgstr "Speichern"
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/edit.ctp:25
 msgid "Edit calendar category"
-msgstr "Editieren einer Kategorie des Kalenders"
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/index.ctp:15
 msgid "Calendar categories"
-msgstr "Kalender Kategorien"
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/index.ctp:23
 msgid "Event Types"
-msgstr "Terminarten"
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/index.ctp:42;43
 #: /FullCalendar/View/Events/index.ctp:58
@@ -121,88 +119,88 @@ msgstr "Terminarten"
 #: /Lands/index.ctp:40 /Lands/view.ctp:45 /Proposals/index.ctp:40
 #: /Proposals/view.ctp:298;431;532 /Users/index.ctp:40 /Users/view.ctp:37
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr ""
 
 #: /FullCalendar/View/EventTypes/index.ctp:53
 msgid "Add category"
-msgstr "Kategorie hinzufügen"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:26
 msgid "Add appointment"
-msgstr "Termin hinzufügen"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:32 /FullCalendar/View/Events/edit.ctp:33
 #: /Extras/add_custom_extra.ctp:33 /Extras/edit.ctp:34
 #: /Extras/index.ctp:25;170
 msgid "Category"
-msgstr "Kategorie"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:33 /FullCalendar/View/Events/edit.ctp:34
 #: /GalleryPictures/index.ctp:56 /HomePictures/index.ctp:11;53
 #: /HousePictures/index.ctp:53;98
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:34 /FullCalendar/View/Events/edit.ctp:35
 #: /FullCalendar/View/Events/view.ctp:29 /Offer/view.ctp:223
 msgid "Details"
-msgstr "Details"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:34 /FullCalendar/View/Events/edit.ctp:35
 msgid "Enter your details:"
-msgstr "Bitte geben Sie weitere Details an"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:35 /FullCalendar/View/Events/edit.ctp:36
 msgid "Starting:"
-msgstr "Anfangszeitpunkt:"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:36 /FullCalendar/View/Events/edit.ctp:37
 msgid "Ending:"
-msgstr "Endzeitpunkt:"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:37 /FullCalendar/View/Events/edit.ctp:38
 msgid "All day?:"
-msgstr "Ganztagig:"
+msgstr ""
 
 #: /FullCalendar/View/Events/add.ctp:42 /FullCalendar/View/Events/edit.ctp:43
 #: /FullCalendar/View/Events/view.ctp:43
 msgid "Status:"
-msgstr "Status:"
+msgstr ""
 
 #: /FullCalendar/View/Events/edit.ctp:26
 msgid "Edit appointment"
-msgstr "Termin bearbeiten"
+msgstr ""
 
 #: /FullCalendar/View/Events/edit.ctp:32
 msgid "Appointment"
-msgstr "Termin"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:16
 msgid "Appointments"
-msgstr "Termine"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:20
 msgid "Calendar view"
-msgstr "Kalender Ansicht"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:21
 #: /FullCalendar/View/FullCalendar/index.ctp:20;38
 msgid "Set appointment"
-msgstr "Termin hinzufügen"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:22
 #: /FullCalendar/View/FullCalendar/index.ctp:21;39
 msgid "Types"
-msgstr "Terminarten"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:27
 msgid "Events"
-msgstr "Termine"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:54
 #: /FullCalendar/View/Events/view.ctp:56
 msgid "All day"
-msgstr "Ganztägig"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:59
 #: /FullCalendar/View/Events/view.ctp:67 /Categories/index.ctp:24
@@ -212,180 +210,180 @@ msgstr "Ganztägig"
 #: /Lands/index.ctp:41 /Proposals/index.ctp:41 /Proposals/view.ctp:302;304
 #: /Users/index.ctp:41 /Users/view.ctp:38
 msgid "Delete"
-msgstr "Löschen"
+msgstr ""
 
 #: /FullCalendar/View/Events/index.ctp:61
 #: /FullCalendar/View/Events/view.ctp:58
 msgid "by"
-msgstr "erstell von"
+msgstr ""
 
 #: /FullCalendar/View/Events/view.ctp:27
 msgid "Title:"
-msgstr "Titel:"
+msgstr ""
 
 #: /FullCalendar/View/Events/view.ctp:42 /Houses/index.ctp:81
 msgid "Category:"
-msgstr "Kategorie:"
+msgstr ""
 
 #: /FullCalendar/View/Events/view.ctp:44
 msgid "From:"
-msgstr "Anfangszeitpunkt:"
+msgstr ""
 
 #: /FullCalendar/View/Events/view.ctp:45
 msgid "To:"
-msgstr "Endzeitpunkt:"
+msgstr ""
 
 #: /FullCalendar/View/Events/view.ctp:46 /Customers/view.ctp:180
 #: /Users/view.ctp:90
 msgid "Created:"
-msgstr "Erstellt von:"
+msgstr ""
 
 #: /FullCalendar/View/Events/view.ctp:47 /Users/view.ctp:86
 msgid "Modified:"
-msgstr "Erstellt am:"
+msgstr ""
 
 #: /FullCalendar/View/FullCalendar/index.ctp:19;37
 msgid "Table view"
-msgstr "Tabellarische Ansicht"
+msgstr ""
 
 #: /ArcManCake_config.php:4
 msgid "Webmaster"
-msgstr "Webmaster"
+msgstr ""
 
 #: /ArcManCake_config.php:5
 msgid "Admin"
-msgstr "Admin"
+msgstr ""
 
 #: /ArcManCake_config.php:6
 msgid "Salesman"
-msgstr "Verkäufer"
+msgstr ""
 
 #: /ArcManCake_config.php:7
 msgid "Overseer"
-msgstr "Bauleitung"
+msgstr ""
 
 #: /ArcManCake_config.php:9
 msgid "Floorplan for visitors"
-msgstr "Grundriss: Besucher"
+msgstr ""
 
 #: /ArcManCake_config.php:10
 msgid "Floorplan: Side view with basement"
-msgstr "Grundriss: Seitenansicht mit Keller"
+msgstr ""
 
 #: /ArcManCake_config.php:11
 msgid "Floorplan: Basement"
-msgstr "Grundriss: Keller"
+msgstr ""
 
 #: /ArcManCake_config.php:12
 msgid "House Picture"
-msgstr "Hausansicht"
+msgstr ""
 
 #: /ArcManCake_config.php:13
 msgid "Floorplan: Ground level"
-msgstr "Grundriss: Erdgeschoss"
+msgstr ""
 
 #: /ArcManCake_config.php:14
 msgid "Floorplan: First floor"
-msgstr "Grundriss: erster Stock"
+msgstr ""
 
 #: /ArcManCake_config.php:15
 msgid "Floorplan: Second floor"
-msgstr "Grundriss: zweiter Stock"
+msgstr ""
 
 #: /ArcManCake_config.php:16
 msgid "Floorplan: Third floor"
-msgstr "Grundriss: dritter Stock"
+msgstr ""
 
 #: /ArcManCake_config.php:17
 msgid "Floorplan: Side view"
-msgstr "Grundriss: Seitenansicht ohne Keller"
+msgstr ""
 
 #: /ArcManCake_config.php:19
 msgid "Left"
-msgstr "Links"
+msgstr ""
 
 #: /ArcManCake_config.php:20
 msgid "Right"
-msgstr "Rechts"
+msgstr ""
 
 #: /ArcManCake_config.php:21;26
 msgid "Standalone"
-msgstr "Freistehend"
+msgstr ""
 
 #: /ArcManCake_config.php:23
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #: /ArcManCake_config.php:24
 msgid "Garage"
-msgstr "Garage"
+msgstr ""
 
 #: /ArcManCake_config.php:25
 msgid "Basement"
-msgstr "Keller"
+msgstr ""
 
 #: /ArcManCake_config.php:29 /ExtrasController.php:46;50;112;155;159
 #: /Extras/add_custom_extra.ctp:27 /Extras/edit.ctp:26 /Extras/index.ctp:162
 msgid "None"
-msgstr "Nichts"
+msgstr ""
 
 #: /ArcManCake_config.php:31 /Extras/index.ctp:24
 msgid "Units"
-msgstr "Stück"
+msgstr ""
 
 #: /ArcManCake_config.php:45 /Proposals/index.ctp:26 /Proposals/view.ctp:47;48
 msgid "Summary"
-msgstr "Unverbindliches Angebot"
+msgstr ""
 
 #: /ArcManCake_config.php:46
 msgid "BankReceipt"
-msgstr "Kalkulation"
+msgstr ""
 
 #: /ArcManCake_config.php:47 /Proposals/index.ctp:28 /Proposals/view.ctp:55;56
 msgid "Contract"
-msgstr "Vertrag"
+msgstr ""
 
 #: /AppController.php:69
 msgid "Acces denied"
-msgstr "Zugang verweigert"
+msgstr ""
 
 #: /BoughtExtrasController.php:24;90;123 /ExtrasController.php:104;240;283
 #: /ProposalsController.php:210
 msgid "The proposal is locked."
-msgstr "Das Angebot ist verschlossen"
+msgstr ""
 
 #: /BoughtExtrasController.php:29 /ExtrasController.php:100
 msgid "Invalid Proposal"
-msgstr "Ungültiges Angebot"
+msgstr ""
 
 #: /BoughtExtrasController.php:63 /ProposalsController.php:154
 msgid "Unable to add the"
-msgstr "Folgendes konnte nicht hinzugefügt werden:"
+msgstr ""
 
 #: /BoughtExtrasController.php:72
 msgid "Extras added."
-msgstr "Sonderausstattung wurden hinzugefügt"
+msgstr ""
 
 #: /BoughtExtrasController.php:84;102
 msgid "Invalid bought extra"
-msgstr "Ungültige gekaufte Sonderausstattung"
+msgstr ""
 
 #: /BoughtExtrasController.php:95
 msgid "This extra cannot be edited."
-msgstr "Diese Sonderausstattung kann nicht editiert werden."
+msgstr ""
 
 #: /BoughtExtrasController.php:108 /ExtrasController.php:201
 msgid "The extra has been updated"
-msgstr "Die Sonderausstattung wurde aktualisiert."
+msgstr ""
 
 #: /BoughtExtrasController.php:111 /CustomersController.php:99
 msgid "Unable to update your customer."
-msgstr "Es ist nicht möglich den Kunden zu aktualisieren"
+msgstr ""
 
 #: /BoughtExtrasController.php:142 /CustomersController.php:112
 #: /JobOffersController.php:98 /ProposalsController.php:405
 msgid "Deleted"
-msgstr "Gelöscht"
+msgstr ""
 
 #: /CategoriesController.php:15 /CustomersController.php:23
 #: /GalleryPicturesController.php:16 /HomePicturesController.php:26
@@ -393,625 +391,620 @@ msgstr "Gelöscht"
 #: /LandsController.php:24
 msgid "Acces denied: Low cleareance access"
 msgstr ""
-"Zugang verweigert: Sie verfügen nicht über die benötigten Zugangsrechte."
 
 #: /CategoriesController.php:35
 msgid "New category has been saved."
-msgstr "Die neue Kategorie der Sonderausstattungen wurde gespeichert."
+msgstr ""
 
 #: /CategoriesController.php:38
 msgid "Unable to add the category."
-msgstr "Die Kategorie der Sonderausstattungen konnte nicht hinzugefügt werden."
+msgstr ""
 
 #: /CategoriesController.php:70
 msgid "Category has been updated"
-msgstr "Die Kategorie der Sonderausstattungen wurde aktualisiert."
+msgstr ""
 
 #: /CategoriesController.php:73
 msgid "Unable to update category."
 msgstr ""
-"Die Kategorie der Sonderausstattungen konnte nicht aktualisiert werden."
 
 #: /CategoriesController.php:86
 msgid "Categoy with id: %s has been deleted"
-msgstr "Die Kategorie der Sonderausstattungen (ID: %s) wurde gelöscht."
+msgstr ""
 
 #: /CustomersController.php:59
 msgid "Your customer has been saved."
-msgstr "Ihr Kunde wurde gespeichert."
+msgstr ""
 
 #: /CustomersController.php:62 /LandsController.php:98
 msgid "Unable to add your customer."
-msgstr "Ihr Kunde konnte nicht gespeichert werden."
+msgstr ""
 
 #: /CustomersController.php:71;76
 msgid "Invalid pustomer"
-msgstr "Ungültiger Kunde"
+msgstr ""
 
 #: /CustomersController.php:85;90 /HousesController.php:48;53
 #: /LandsController.php:151 /ProposalsController.php:130
 msgid "Invalid customer"
-msgstr "Ungültiger Kunde"
+msgstr ""
 
 #: /CustomersController.php:96
 msgid "Your customer has been updated"
-msgstr "Ihr Kunde wurde aktualisiert."
+msgstr ""
 
 #: /ExtrasController.php:80;190 /GalleryPicturesController.php:56
 #: /HomePicturesController.php:66 /HousePicturesController.php:74
 msgid "File not saved, you must use a picture."
 msgstr ""
-"Die Datei konnte nicht gespeichert werden. Bitte verwenden Sie ein Bild (."
-"png)"
 
 #: /ExtrasController.php:87
 msgid "The extra has been saved."
-msgstr "Die Sonderausstattung wurde gespeichert."
+msgstr ""
 
 #: /ExtrasController.php:90;136
 msgid "Unable to add your extra."
-msgstr "Die Sonderausstattung konnte nicht hinzugefügt werden."
+msgstr ""
 
 #: /ExtrasController.php:126
 msgid "Custom extra added."
-msgstr "Die Kundenspezifische Sonderausstattung wurde hinzugefügt."
+msgstr ""
 
 #: /ExtrasController.php:128
 msgid "Extra added to proposal."
-msgstr "Die Sonderausstattung wurde dem Angebot hinzugefügt."
+msgstr ""
 
 #: /ExtrasController.php:131
 msgid "Unable to add extra to your proposal."
-msgstr "Die Sonderausstattung konnte dem Angebot nicht hinzugefügt werden."
+msgstr ""
 
 #: /ExtrasController.php:144;149
 msgid "Invalid extra"
-msgstr "Ungültige Sonderausstattung"
+msgstr ""
 
 #: /ExtrasController.php:204
 msgid "Unable to update the extra."
-msgstr "Die Sonderausstattung konnte nicht aktualisiert werden."
+msgstr ""
 
 #: /ExtrasController.php:223
 msgid "Extra with id: %s has been deleted"
-msgstr "Die Sinderausstattung (ID: %s) wurde gelöscht"
+msgstr ""
 
 #: /ExtrasController.php:245;288
 #: /ProposalsController.php:66;86;175;182;215;246;263;271;305;321;347;412;417;458;485;565;592;677;689
 msgid "Invalid proposal"
-msgstr "Ungültiges Angebot"
+msgstr ""
 
 #: /ExtrasController.php:249 /Proposals/view.ctp:361;384
 msgid "Enlarge house"
-msgstr "Haus vergrößern"
+msgstr ""
 
 #: /ExtrasController.php:250
 msgid "Enlargement of the house by "
-msgstr "Vergrößerung des Hauses um"
+msgstr ""
 
 #: /ExtrasController.php:250;293
 msgid " m<sup>2</sup> per floor."
-msgstr "m<sup>2</sup> pro Etage."
+msgstr ""
 
 #: /ExtrasController.php:265
 msgid "Enlargement added"
-msgstr "Hausvergrößerung hinzugefügt"
+msgstr ""
 
 #: /ExtrasController.php:268;311 /ProposalsController.php:191;233;295;362
 msgid "Unable to update your proposal."
-msgstr "Das Angebot konnte nicht aktualisiert werden."
+msgstr ""
 
 #: /ExtrasController.php:292 /Proposals/view.ctp:362;385
 msgid "Shrink house"
-msgstr "Haus verkleinern"
+msgstr ""
 
 #: /ExtrasController.php:293
 msgid "Shrinking of the house by "
-msgstr "Verkleinerung des Hauses um"
+msgstr ""
 
 #: /ExtrasController.php:308
 msgid "Shrinking added"
-msgstr "Verkleinerung hinzugefügt"
+msgstr ""
 
 #: /GalleryPicturesController.php:63 /HomePicturesController.php:73
 #: /HousePicturesController.php:80
 msgid "Picture saved."
-msgstr "Das Bild wurde gespeichert."
+msgstr ""
 
 #: /GalleryPicturesController.php:66 /HomePicturesController.php:76
 #: /HousePicturesController.php:83
 msgid "Unable to add the picture."
-msgstr "Das Bild konnte nicht hinzugefügt werden."
+msgstr ""
 
 #: /GalleryPicturesController.php:81 /HomePicturesController.php:102
 #: /HousePicturesController.php:111
 msgid "Picture with id: %s has been deleted"
-msgstr "Das Bild (ID: %s) wurde gelöscht."
+msgstr ""
 
 #: /HomePicturesController.php:83;88 /HousePicturesController.php:91;96
 msgid "Invalid picture"
-msgstr "Ungültiges Bild"
+msgstr ""
 
 #: /HousesController.php:37
 msgid "The house has been saved."
-msgstr "Das Haus wurde gespeichert."
+msgstr ""
 
 #: /HousesController.php:40
 msgid "Unable to add your house."
-msgstr "Das Haus konnte nicht gespeichert werden."
+msgstr ""
 
 #: /HousesController.php:64;69 /ProposalsController.php:275
 msgid "Invalid house"
-msgstr "Ungültiges Haus"
+msgstr ""
 
 #: /HousesController.php:75
 msgid "The house has been updated"
-msgstr "Das Haus wurde aktualisiert."
+msgstr ""
 
 #: /HousesController.php:78
 msgid "Unable to update the house."
-msgstr "Das Haus konnte nicht aktualisiert werden."
+msgstr ""
 
 #: /HousesController.php:97
 msgid "House with id: %s has been deleted"
-msgstr "Das Haus (ID: %s) wurde gelöscht."
+msgstr ""
 
 #: /JobOffersController.php:39
 msgid "The job offer has been saved."
-msgstr "Das Jobangebot wurde gespeichert."
+msgstr ""
 
 #: /JobOffersController.php:42
 msgid "Unable to add the job offer."
-msgstr "Das Jobangebot konnte nicht hinzugefügt werden."
+msgstr ""
 
 #: /JobOffersController.php:51;56;74;79
 msgid "Invalid job offer"
-msgstr "Ungültiges Jobangebot"
+msgstr ""
 
 #: /JobOffersController.php:62;87
 msgid "The job offer has been updated"
-msgstr "Das Jobangebot wurde aktualisiert."
+msgstr ""
 
 #: /JobOffersController.php:65;90
 msgid "Unable to update your job offer."
-msgstr "Das Jobangebot konnte nicht aktualisiert werden."
+msgstr ""
 
 #: /LandsController.php:53
 msgid "The land has been saved."
-msgstr "Das Grundstück wurde gespeichert."
+msgstr ""
 
 #: /LandsController.php:56
 msgid "Unable to add the land."
-msgstr "Das Grundstück konnte nicht hinzugefügt werden."
+msgstr ""
 
 #: /LandsController.php:66;71;83;113
 msgid "Invalid land"
-msgstr "Ungültiges Grundstück"
+msgstr ""
 
 #: /LandsController.php:95
 msgid "Your land has been saved."
-msgstr "Das Grundstück wurde gespeichert."
+msgstr ""
 
 #: /LandsController.php:108
 msgid "Invaled land"
-msgstr "Ungültiges Grundstück"
+msgstr ""
 
 #: /LandsController.php:119
 msgid "Your land has been updated"
-msgstr "Das Grundstück wurde aktualisiert."
+msgstr ""
 
 #: /LandsController.php:122
 msgid "Unable to update your land."
-msgstr "Das Grundstück konnte nicht aktualisiert werden."
+msgstr ""
 
 #: /LandsController.php:138
 msgid "The land with id: %s has been deleted"
-msgstr "Das Grundstück (ID: %s) wurde gelöscht."
+msgstr ""
 
 #: /LandsController.php:160
 msgid "No land"
-msgstr "Kein Grundstück"
+msgstr ""
 
 #: /OfferController.php:274
 msgid "Anfrage wurde versendet"
-msgstr "Anfrage wurde versendet"
+msgstr ""
 
 #: /ProposalsController.php:36
 msgid "The proposal is locked"
-msgstr "Das Angebot ist verschlossen."
+msgstr ""
 
 #: /ProposalsController.php:161
 msgid "Your proposal has been saved."
-msgstr "Das Angebot wurde gespeichert."
+msgstr ""
 
 #: /ProposalsController.php:164
 msgid "Unable to add the proposal."
-msgstr "Das Angebot konnte nicht hinzugefügt werden."
+msgstr ""
 
 #: /ProposalsController.php:188;292;327;359
 msgid "Your proposal has been updated"
-msgstr "Das Angebot wurde aktualisiert."
+msgstr ""
 
 #: /ProposalsController.php:230
 msgid "Land has been changed"
-msgstr "Das Grundstück wurde geändert."
+msgstr ""
 
 #: /ProposalsController.php:330
 msgid "Unable to select the picture."
-msgstr "Die Hausansicht konnte nicht ausgewählt werden."
+msgstr ""
 
 #: /ProposalsController.php:353
 msgid "Invalid house picture"
-msgstr "Ungültige Hausansicht"
+msgstr ""
 
 #: /ProposalsController.php:393
 msgid "The proposal with id: %s has been deleted"
-msgstr "Das Angebot (ID: %s) wurde gelöscht."
+msgstr ""
 
 #: /ProposalsController.php:422
 msgid "The proposal has been locked"
-msgstr "Das Angebot wurde verschlossen."
+msgstr ""
 
 #: /ProposalsController.php:425
 msgid "The proposal has been unlocked"
-msgstr "Das Angebot ist unverschlossen."
+msgstr ""
 
 #: /ProposalsController.php:435
 msgid "Unable to lock/unlock the proposal."
-msgstr "Es ist nicht möglich dieses Angebot zu verschließen"
+msgstr ""
 
 #: /ProposalsController.php:771
 msgid "The requested file is not available: "
-msgstr "Die folgende Datei wurde nicht gefunden:"
+msgstr ""
 
 #: /UsersController.php:61
 msgid "User has been created."
-msgstr "Der Benutzer wurde angelegt."
+msgstr ""
 
 #: /UsersController.php:64
 msgid "Unable to add user."
-msgstr "Der Benutzer konnte nicht angelegt werden."
+msgstr ""
 
 #: /UsersController.php:74;83;106
 msgid "Invalid user"
-msgstr "Ungültiger Benutzer"
+msgstr ""
 
 #: /UsersController.php:89
 msgid "User info has been updated"
-msgstr "Die Benutzerinformationen wurden aktualisiert"
+msgstr ""
 
 #: /UsersController.php:92
 msgid "Unable to update user."
-msgstr "Die Benutzerinformationen konnten nicht aktualisiert werden."
+msgstr ""
 
 #: /UsersController.php:110
 msgid "The user with id: %s has been deleted"
-msgstr "Der Benutzer (ID: %s) wurde gelöscht."
+msgstr ""
 
 #: /UsersController.php:114
 msgid "User was not deleted"
-msgstr "Der Benutzer konnte nicht gelöscht werden."
+msgstr ""
 
 #: /UsersController.php:125
 msgid "Invalid username or password, try again"
-msgstr "Ungültiger Benutzername oder Passwort"
+msgstr ""
 
 #: /BoughtExtras/add_many_extras.ctp:10
 #: /BoughtExtras/add_many_extras_testing.ctp:7
 msgid "Select your extras:"
-msgstr "Wählen Sie die gewünschten Sonderausstattungen"
+msgstr ""
 
 #: /BoughtExtras/add_many_extras.ctp:60
 msgid "Save extras"
-msgstr "Sonderausstattungen hinzufügen"
+msgstr ""
 
 #: /BoughtExtras/add_many_extras_testing.ctp:106 /Proposals/view.ctp:382
 msgid "Add extras"
-msgstr "Sonderausstattungen hinzufügen"
+msgstr ""
 
 #: /BoughtExtras/add_many_extras_testing.ctp:108 /Proposals/view.ctp:383
 msgid "Add custom extra"
-msgstr "Kundenspezifische Sonderausstattungen hinzufügen"
+msgstr ""
 
 #: /BoughtExtras/edit.ctp:11
 msgid "Change the price of: "
-msgstr "Preisänderung des: "
+msgstr ""
 
 #: /BoughtExtras/edit.ctp:17 /Houses/edit.ctp:27 /Houses/index.ctp:127
 #: /Houses/view.ctp:75 /Proposals/view.ctp:157;310;437
 msgid "Price"
-msgstr "Preis: "
+msgstr ""
 
 #: /BoughtExtras/edit.ctp:21
 msgid "Comment"
-msgstr "Kommentar: "
+msgstr ""
 
 #: /BoughtExtras/edit.ctp:21
 msgid "Enter your comment:"
-msgstr "Dieser Platz kann für zusätzliche Kommentare genutzt werden."
+msgstr ""
 
 #: /Categories/edit.ctp:14 /Categories/index.ctp:48
 msgid "Add Category"
-msgstr "Sonderausstattungs Kategorie hinzufügen"
+msgstr ""
 
 #: /Categories/edit.ctp:17 /Categories/index.ctp:51
 msgid "Enter category name"
-msgstr "Geben Sie einen Namen für die Kategorie an"
+msgstr ""
 
 #: /Categories/index.ctp:3
 msgid "Categories"
-msgstr "Sonderausstattungs Kategorien"
+msgstr ""
 
 #: /Categories/index.ctp:13 /Customers/index.ctp:14 /Extras/index.ctp:37
 #: /HomePictures/index.ctp:15 /HousePictures/index.ctp:57
 #: /JobOffers/index.ctp:52 /Lands/index.ctp:18 /Proposals/index.ctp:15
 #: /Users/index.ctp:23
 msgid "Action"
-msgstr "Handlungen"
+msgstr ""
 
 #: /Categories/index.ctp:15 /Customers/index.ctp:15 /Extras/index.ctp:34
 #: /HomePictures/index.ctp:17 /HousePictures/index.ctp:59
 #: /JobOffers/index.ctp:53 /Lands/index.ctp:17 /Proposals/index.ctp:16
 #: /Users/index.ctp:25
 msgid "Created"
-msgstr "Erstellt"
+msgstr ""
 
 #: /Categories/index.ctp:24
 msgid "Are you sure you want to delete this category?"
 msgstr ""
-"Sind Sie Sich sicher, diese Sonderausstattungs Kategorie löschen zu wollen?"
 
 #: /Customers/edit.ctp:18
 msgid "Edit Customer"
-msgstr "Kundendaten bearbeiten"
+msgstr ""
 
 #: /Customers/edit.ctp:24 /Customers/index.ctp:57
 msgid "Enter the customer name"
-msgstr "Geben Sie den Kundennamen an"
+msgstr ""
 
 #: /Customers/edit.ctp:25 /Customers/index.ctp:58
 msgid "Enter the customer surname"
-msgstr "Geben Sie den Kundennachnamen an"
+msgstr ""
 
 #: /Customers/edit.ctp:25 /Customers/index.ctp:12;58 /Users/add.ctp:20
 #: /Users/edit.ctp:25 /Users/index.ctp:16;82
 msgid "Surname"
-msgstr "Nachname"
+msgstr ""
 
 #: /Customers/edit.ctp:26 /Customers/index.ctp:59
 msgid "Enter the customer private phone number"
-msgstr "Geben Sie die private Telefonnummer des Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:26 /Customers/index.ctp:59
 msgid "Private Phone"
-msgstr "private Telefonnummer"
+msgstr ""
 
 #: /Customers/edit.ctp:27 /Customers/index.ctp:60
 msgid "Enter the customer work phone number"
-msgstr "Geben Sie die geschäftliche Telefonnummer des Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:27 /Customers/index.ctp:60
 msgid "Work Phone"
-msgstr "geschäftliche Telefonnummer"
+msgstr ""
 
 #: /Customers/edit.ctp:28 /Customers/index.ctp:61
 msgid "Enter the customer email address"
-msgstr "Geben Sie die eMail Adresse des Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:28 /Customers/index.ctp:61
 msgid "eMail"
-msgstr "eMail"
+msgstr ""
 
 #: /Customers/edit.ctp:29 /Customers/index.ctp:62
 msgid "Enter the customer post address"
-msgstr "Geben Sie die Kundenadresse an"
+msgstr ""
 
 #: /Customers/edit.ctp:29 /Customers/index.ctp:62
 msgid "Post Address"
-msgstr "Kundenandresse"
+msgstr ""
 
 #: /Customers/edit.ctp:30 /Customers/index.ctp:63
 msgid "additional post address information"
-msgstr "Geben Sie die zusätzliche Kundenadresse an"
+msgstr ""
 
 #: /Customers/edit.ctp:30 /Customers/index.ctp:63
 msgid "Post Address 2"
-msgstr "zusätzliche Kundenadresse "
+msgstr ""
 
 #: /Customers/edit.ctp:31 /Customers/index.ctp:64
 msgid "Enter the customer zipcode"
-msgstr "Geben Sie die Postleitzahl des Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:31 /Customers/index.ctp:64
 msgid "Zipcode"
-msgstr "Postleitzahl"
+msgstr ""
 
 #: /Customers/edit.ctp:32 /Customers/index.ctp:65
 msgid "Enter the customer City"
-msgstr "Geben Sie die Stadt des Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:32 /Customers/index.ctp:65
 msgid "City"
-msgstr "Stadt"
+msgstr ""
 
 #: /Customers/edit.ctp:33 /Customers/index.ctp:66
 msgid "Enter the customers Birthday"
-msgstr "Geben Sie den Geburtstag des Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:33 /Customers/index.ctp:66
 msgid "Birthday"
-msgstr "Geburtstag"
+msgstr ""
 
 #: /Customers/edit.ctp:35 /Customers/index.ctp:68
 #: /Lands/add_land_for_customer.ctp:28 /Lands/edit.ctp:28 /Lands/index.ctp:74
 msgid "additional notes if required"
-msgstr "Dieser Platz kann für zusätzliche Kommentare genutzt werden."
+msgstr ""
 
 #: /Customers/edit.ctp:35 /Customers/index.ctp:68
 #: /Lands/add_land_for_customer.ctp:28 /Lands/edit.ctp:28 /Lands/index.ctp:74
 #: /Proposals/add.ctp:18 /Proposals/edit.ctp:17 /Proposals/view.ctp:15
 msgid "Notes"
-msgstr "Notizen"
+msgstr ""
 
 #: /Customers/edit.ctp:38 /Customers/index.ctp:71
 msgid "Second Customer"
-msgstr "zweiter Kunde"
+msgstr ""
 
 #: /Customers/edit.ctp:41 /Customers/index.ctp:74
 msgid "Enter the 2nd customer name"
-msgstr "Geben Sie den zweiten Kundennamen an"
+msgstr ""
 
 #: /Customers/edit.ctp:41 /Customers/index.ctp:74
 msgid "2nd Name"
-msgstr "zweiter Kundenname"
+msgstr ""
 
 #: /Customers/edit.ctp:42 /Customers/index.ctp:75
 msgid "Enter the 2nd customer surname"
-msgstr "Geben Sie den zweiten Kundennachnamen an"
+msgstr ""
 
 #: /Customers/edit.ctp:42 /Customers/index.ctp:75
 msgid "2nd Surname"
-msgstr "zweiter Kundennachnahme"
+msgstr ""
 
 #: /Customers/edit.ctp:43 /Customers/index.ctp:76
 msgid "Enter the 2nd maiden surname"
-msgstr "Falls zutreffend geben Sie den Mutternamen des zweiten Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:43 /Customers/index.ctp:76
 msgid "2nd Maiden Surname"
-msgstr "Mutternamen"
+msgstr ""
 
 #: /Customers/edit.ctp:44 /Customers/index.ctp:77
 msgid "Enter the 2nd customers Birthday"
-msgstr "Geben Sie den Geburtstag des zweiten Kunden an"
+msgstr ""
 
 #: /Customers/edit.ctp:44 /Customers/index.ctp:77
 msgid "2nd Birthday"
-msgstr "Geburtstag"
+msgstr ""
 
 #: /Customers/index.ctp:6 /Elements/topmenu.ctp:31
 msgid "Customers"
-msgstr "Kunden"
+msgstr ""
 
 #: /Customers/index.ctp:28
 msgid "Are you sure you want to delete this Customer?"
-msgstr "Sind Sie sich sicher, dass Sie diesen Kunden löschen wollen?"
+msgstr ""
 
 #: /Customers/index.ctp:51
 msgid "Add a Customer"
-msgstr "Kunden hinzufügen"
+msgstr ""
 
 #: /Customers/index.ctp:103
 msgid "Next Appointments"
-msgstr "Ihre nächsten Termine"
+msgstr ""
 
 #: /Customers/view.ctp:24;39
 msgid "Customer:"
-msgstr "Kunde:"
+msgstr ""
 
 #: /Customers/view.ctp:51;138 /Users/view.ctp:56
 msgid "Name:"
-msgstr "Name:"
+msgstr ""
 
 #: /Customers/view.ctp:52;141 /Users/view.ctp:60
 msgid "Surname:"
-msgstr "Nachname:"
+msgstr ""
 
 #: /Customers/view.ctp:53 /Lands/view.ctp:37 /Proposals/view.ctp:524
 msgid "Notes:"
-msgstr "Notizen:"
+msgstr ""
 
 #: /Customers/view.ctp:66
 msgid "Tel. Private:"
-msgstr "Tel. Privat:"
+msgstr ""
 
 #: /Customers/view.ctp:69
 msgid "Tel. Office:"
-msgstr "Tel. Büro"
+msgstr ""
 
 #: /Customers/view.ctp:72
 msgid "E-Mail:"
-msgstr "eMail:"
+msgstr ""
 
 #: /Customers/view.ctp:75
 msgid "Address:"
-msgstr "Adresse:"
+msgstr ""
 
 #: /Customers/view.ctp:78;81
 msgid " &nbsp;  "
-msgstr " &nbsp;  "
+msgstr ""
 
 #: /Customers/view.ctp:84;147
 msgid "Birthday:"
-msgstr "Geburtstag:"
+msgstr ""
 
 #: /Customers/view.ctp:129
 msgid "Partner:"
-msgstr "Partner:"
+msgstr ""
 
 #: /Customers/view.ctp:144
 msgid "Maiden Surname:"
-msgstr "Geburtsname:"
+msgstr ""
 
 #: /Customers/view.ctp:202
 msgid "Proposals:"
-msgstr "Angebote:"
+msgstr ""
 
 #: /Customers/view.ctp:214 /Proposals/index.ctp:33 /Proposals/view.ctp:24
 msgid "Unlock"
-msgstr "Unlock"
+msgstr ""
 
 #: /Customers/view.ctp:217 /Proposals/index.ctp:36 /Proposals/view.ctp:27
 msgid "Lock"
-msgstr "Lock"
+msgstr ""
 
 #: /Customers/view.ctp:237
 msgid "Add proposal"
-msgstr "Angebot hinzufügen"
+msgstr ""
 
 #: /Customers/view.ctp:244
 msgid " Add proposal"
-msgstr " Angebot hinzufügen"
+msgstr ""
 
 #: /Elements/footer.ctp:30 /Users/index.ctp:4
 msgid "Users"
-msgstr "Benutzer"
+msgstr ""
 
 #: /Elements/footer.ctp:36 /Proposals/index.ctp:3
 msgid "Proposals"
-msgstr "Angebote"
+msgstr ""
 
 #: /Elements/footer.ctp:38
 msgid "Extra categories"
-msgstr "Kategorien der Sonderausstattungen"
+msgstr ""
 
 #: /Elements/footer.ctp:43
 msgid "Home pictures"
-msgstr "Bilder der Startseite"
+msgstr ""
 
 #: /Elements/footer.ctp:48
 msgid "House pictures"
-msgstr "Bilder der Häuser"
+msgstr ""
 
 #: /Elements/footer.ctp:53 /Users/login.ctp:24
 msgid "Login"
-msgstr "Login"
+msgstr ""
 
 #: /Elements/footer.ctp:67 /Layouts/error.ctp:19
 msgid "CakePHP: the rapid development php framework"
-msgstr "CakePHP: the rapid development php framework"
+msgstr ""
 
 #: /Elements/topmenu.ctp:19
 msgid "IZ-Haus"
-msgstr "IZ-Haus"
+msgstr ""
 
 #: /Elements/topmenu.ctp:36
 msgid "Lands"
-msgstr "Grundstücke"
+msgstr ""
 
 #: /Elements/topmenu.ctp:41
 msgid "Calendar"
-msgstr "Kalender"
+msgstr ""
 
 #: /Elements/topmenu.ctp:46;86 /Houses/index.ctp:3
 msgid "Houses"
@@ -1019,149 +1012,149 @@ msgstr "Hausausstellung"
 
 #: /Elements/topmenu.ctp:51 /Extras/index.ctp:12 /Proposals/view.ctp:278
 msgid "Extras"
-msgstr "Sonderausstattungen"
+msgstr ""
 
 #: /Elements/topmenu.ctp:57;81
 msgid "Offers"
-msgstr "Kaufobjekte"
+msgstr ""
 
 #: /Elements/topmenu.ctp:62;91 /GalleryPictures/index.ctp:3
 msgid "Portfolio"
-msgstr "Portfolio"
+msgstr ""
 
 #: /Elements/topmenu.ctp:67;98 /JobOffers/index.ctp:2
 msgid "Job offers"
-msgstr "Jobangebote"
+msgstr ""
 
 #: /Elements/topmenu.ctp:72;104 /Home/contact.ctp:2 /Home/impressum.ctp:2
 msgid "Contact"
-msgstr "Kontakt"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:18 /Extras/edit.ctp:17
 msgid "Edit Extra"
-msgstr "Sonderausstattung bearbeiten"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:23 /Extras/edit.ctp:22 /Extras/index.ctp:158
 msgid "No"
-msgstr "Nein"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:24 /Extras/edit.ctp:23 /Extras/index.ctp:159
 msgid "Floor size dependent"
-msgstr "Grundriss größenabhängig"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:25 /Extras/edit.ctp:24
 msgid "Total size dependent"
-msgstr "Wohnfläche größenabhängig"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:29 /Extras/edit.ctp:28 /Extras/index.ctp:164
 msgid "Enter name"
-msgstr "Namen angeben"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:30 /Extras/edit.ctp:29 /Extras/index.ctp:165
 #: /HomePictures/index.ctp:54 /HousePictures/index.ctp:99
 #: /JobOffers/edit.ctp:20 /JobOffers/index.ctp:108
 msgid "Enter a description"
-msgstr "Beschreibung angeben"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:30 /Extras/edit.ctp:29 /Extras/index.ctp:165
 #: /GalleryPictures/index.ctp:57 /HomePictures/index.ctp:13;54
 #: /HousePictures/index.ctp:99 /Houses/edit.ctp:21 /Houses/index.ctp:121
 #: /JobOffers/edit.ctp:20 /JobOffers/index.ctp:108
 msgid "Description"
-msgstr "Beschreibung"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:31 /Extras/edit.ctp:30;31;32
 msgid "Enter the price "
-msgstr "Preis angeben"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:31
 msgid "Default Price for Houses (in €, €/m<sup>2</sup> or €/m)"
-msgstr "Standard Preis für Häuser (in €, €/m<sup>2</sup> oder €/m)"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:32 /Extras/edit.ctp:33 /Extras/index.ctp:169
 msgid "Factor unit"
-msgstr "Einheit des Multiplikators"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:34 /Extras/edit.ctp:35 /Extras/index.ctp:171
 msgid "Is the price size dependent?"
-msgstr "Größenabhängig"
+msgstr ""
 
 #: /Extras/add_custom_extra.ctp:35 /Extras/edit.ctp:36 /Extras/index.ctp:172
 msgid "Type of extra"
-msgstr "Kategorie"
+msgstr ""
 
 #: /Extras/edit.ctp:30;31;32 /Extras/index.ctp:166;167;168
 msgid "Default Price for Houses of type "
-msgstr "Standartpreis für ein Haus der Kategorie"
+msgstr ""
 
 #: /Extras/edit.ctp:30;31;32 /Extras/index.ctp:166;167;168
 msgid " (in €, €/m<sup>2</sup> or €/m)"
-msgstr " (in €, €/m<sup>2</sup> oder €/m)"
+msgstr ""
 
 #: /Extras/edit.ctp:37 /Extras/index.ctp:173
 msgid "Can be selected only after buying:"
-msgstr "benötigt folgende Sonderausstattung:"
+msgstr ""
 
 #: /Extras/edit.ctp:38 /Extras/index.ctp:174
 msgid "Can be selected only for house:"
-msgstr "nur erhältlich für folgendes Haus:"
+msgstr ""
 
 #: /Extras/edit.ctp:39 /Extras/index.ctp:175
 msgid "Only one can be purchased?"
-msgstr "Einzigartige Sonderausstattung"
+msgstr ""
 
 #: /Extras/edit.ctp:40 /Extras/index.ctp:176
 msgid "Will the price be fixed?"
-msgstr "Preis kann nicht bearbeitet werden"
+msgstr ""
 
 #: /Extras/edit.ctp:41 /Extras/index.ctp:177
 msgid "Service from external company?"
-msgstr "Sonstige Kosten (nur für Kalkulation)"
+msgstr ""
 
 #: /Extras/edit.ctp:42
 msgid "New picture (ignore to keep the old one)"
-msgstr "Neues Bild"
+msgstr ""
 
 #: /Extras/index.ctp:21
 msgid "Default Price A"
-msgstr "Standard Preis A"
+msgstr ""
 
 #: /Extras/index.ctp:22
 msgid "Default Price B"
-msgstr "Standard Preis B"
+msgstr ""
 
 #: /Extras/index.ctp:23
 msgid "Default Price C"
-msgstr "Standard Preis C"
+msgstr ""
 
 #: /Extras/index.ctp:26
 msgid "Size dep."
-msgstr "Größ. abh."
+msgstr ""
 
 #: /Extras/index.ctp:27 /HousePictures/index.ctp:55 /Houses/edit.ctp:26
 #: /Houses/index.ctp:126 /Proposals/edit_house.ctp:45
 msgid "Type"
-msgstr "Kategorie"
+msgstr ""
 
 #: /Extras/index.ctp:28
 msgid "Req. Extra"
-msgstr "ben. Sd.-Ausst."
+msgstr ""
 
 #: /Extras/index.ctp:29
 msgid "Req. House"
-msgstr "ben. Haus"
+msgstr ""
 
 #: /Extras/index.ctp:30
 msgid "Unique"
-msgstr "Einzig"
+msgstr ""
 
 #: /Extras/index.ctp:31
 msgid "Uneditable"
-msgstr "Festpreis"
+msgstr ""
 
 #: /Extras/index.ctp:32 /Proposals/view.ctp:359
 msgid "Custom"
-msgstr "kundenspez."
+msgstr ""
 
 #: /Extras/index.ctp:33
 msgid "External"
