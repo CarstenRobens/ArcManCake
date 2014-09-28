@@ -2,7 +2,7 @@
 	<h3><?php echo __('Job offers'); ?></h3>
 </div>
 
-<?php if($current_user['role']==NULL){?>
+<?php if($current_user['role']==NULL || $current_user['role']>1){?>
 
 <div class="row">
 	<div class="col-md-2"></div>

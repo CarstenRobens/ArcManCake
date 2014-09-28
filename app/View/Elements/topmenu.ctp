@@ -61,10 +61,12 @@
 					<?php } ?>
 					<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
 					
-					<?php if($this->Session->read('menue.active')=='JobOffers'){ ?>
-						<li class="active"> <?php }else{ ?> <li>
+					<?php if ($check_open>0 && $current_user['role']<1) {
+						if($this->Session->read('menue.active')=='JobOffers'){ ?>
+							<li class="active"> <?php }else{ ?> <li>
+						<?php } 
+						echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
 					<?php } ?>
-					<?php echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
 					
 					<?php if($this->Session->read('menue.active')=='Contact'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
@@ -90,14 +92,13 @@
 					<?php } ?>
 					<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
 					
-					<?php if ($check_open>0) {?>
-					
-						<?php if($this->Session->read('menue.active')=='JobOffers'){ ?>
+					<?php if ($check_open>0) {
+						if($this->Session->read('menue.active')=='JobOffers'){ ?>
 							<li class="active"> <?php }else{ ?> <li>
-						<?php } ?>
-						<?php echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
-					
+						<?php } 
+						echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
 					<?php } ?>
+					
 					<?php if($this->Session->read('menue.active')=='Contact'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
