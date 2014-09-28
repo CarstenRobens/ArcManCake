@@ -34,6 +34,10 @@
 </div>
 
 <hr>
+
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
     <?php if(!empty($OffersArray_sorted)){
 	if(!empty($OffersArray_sorted[0]['resultlist:realEstate']['title'])){
 	foreach ($OffersArray_sorted as $offer) {?>
@@ -43,9 +47,9 @@
 	  
 	  ?>
         
-		<div class="col-md-1"></div>
 		
-		<div class="col-md-3">
+		
+		<div class="col-md-4">
 			<div class="row" style="padding-top:25px">
 				<?php
 							
@@ -68,31 +72,19 @@
           					
 			</div>
 		</div>
-		
-		<div class="col-md-6">
+		<div class="col-md-1"></div>
+		<div class="col-md-7">
 		
 			<div class="row">
 				
-					<p >
+					<p ><strong>
 						<?php echo $this->Html->link($offer['resultlist:realEstate']['title'],array('controller' => 'offer','action' => 'view',$offer['resultlist:realEstate']['@id'],$Region_id, 'Immobilienscout', 'Kaufobjekte',$offer['resultlist:realEstate']['title'])); ?>
-						
+						</strong>
 						
 						
 					</p>
 					<p>
 						<table cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td><?php echo 'Letzte Änderung: ' ?>&nbsp;</td>
-                                    <td><div style="text-align:right;">
-                                        <?php
-                                            if(!empty($offer['@modification'])){ 
-                                                
-												echo $this->Time->nice( $offer['@modification']);
-                                            }
-                                        ?>&nbsp;
-                                        </div> </td>
-                                    
-                                </tr>
                                 <tr>
                                     <td><?php echo 'Preis: ' ?>&nbsp;</td>
                                     <td><div style="text-align:right;">
@@ -148,7 +140,18 @@
                                         </div> </td>
                                     
                                 </tr>
-                                
+                                <tr>
+                                    <td><?php echo 'Letzte Änderung: ' ?>&nbsp;</td>
+                                    <td><div style="text-align:right;">
+                                        <?php
+                                            if(!empty($offer['@modification'])){ 
+                                                
+												echo $this->Time->nice( $offer['@modification']);
+                                            }
+                                        ?>&nbsp;
+                                        </div> </td>
+                                    
+                                </tr>
                                 
                         </table>
 					</p>
@@ -156,21 +159,25 @@
 			</div>
         </div>
         
-		<div class="col-md-2"> </div>
 		
 		<?php }?>
       </div>
+	  
 	<hr>
-    <?php } }else{ $offer = $OffersArray_sorted;?>
+	
+    <?php } ?>
+	
+	
+	<?php }else{ $offer = $OffersArray_sorted;?>
 
       <div class="row"id="<?php echo $id = str_replace(' ', '+', $offer['resultlist:realEstate']['title']);?>">
 	  <?php if(true){
 	  
 	  ?>
         
-		<div class="col-md-1"></div>
 		
-		<div class="col-md-3">
+		
+		<div class="col-md-4">
 			<div class="row" style="padding-top:25px">
 				<?php
 							
@@ -193,14 +200,14 @@
           					
 			</div>
 		</div>
-		
-		<div class="col-md-6">
+		<div class="col-md-1"></div>
+		<div class="col-md-7">
 		
 			<div class="row">
 				
 					<p >
-						<?php echo $this->Html->link($offer['resultlist:realEstate']['title'],array('controller' => 'offer','action' => 'view',$offer['resultlist:realEstate']['@id'],$Region_id, 'Immobilienscout', 'Kaufobjekte',$offer['resultlist:realEstate']['title'])); ?>
-						
+						<strong><?php echo $this->Html->link($offer['resultlist:realEstate']['title'],array('controller' => 'offer','action' => 'view',$offer['resultlist:realEstate']['@id'],$Region_id, 'Immobilienscout', 'Kaufobjekte',$offer['resultlist:realEstate']['title'])); ?>
+						</strong>
 						
 						
 					</p>
@@ -280,8 +287,6 @@
 				
 			</div>
         </div>
-        
-		<div class="col-md-2"> </div>
 		
 		<?php }?>
       </div>
@@ -290,7 +295,9 @@
 	<?php 
 	}
 	}?>
-
+</div>
+<div class="col-md-2"></div>
+</div>
 
 
 	

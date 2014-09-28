@@ -78,6 +78,7 @@
 				<div class="col-md-2">
 					<?php echo $this->Number->currency($house_view['House']['price'],'EUR',array('wholePosition'=>'after')); ?>
 				</div>
+				
 			</div>
 		</div>
 		
@@ -141,6 +142,7 @@
 			</div>
 			
 		</div>
+		<div style="text-align:center;"><strong><?php echo __('Interested?').' '.$this->Html->link(__('Contact us!'),'mailto:'.$eMail['contact'].'?subject='.__('House:').' '.$house_view['House']['name'],array('target'=>'blank')) ?> </strong></div>
+		
+				
 	</div>
-
-<div style="text-align:center"><?php echo __('Interested?').' '.$this->Html->link(__('Write us!'),'mailto:'.$eMail['contact'].'?subject='.__('House:').' '.$house_view['House']['name'],array('target'=>'blank')) ?></div>

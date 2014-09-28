@@ -28,11 +28,12 @@
 				if($current_user['role']<3){
 					?> &middot; <?php
 					echo $this->Html->link(__('Users'),array('plugin'=>NULL,'controller'=>'Users','action'=>'index'));
-					?> &middot; <?php
-					echo $this->Html->link(__('Proposals'),array('plugin'=>NULL,'controller'=>'Proposals','action'=>'index'));
+					
 				}
 				
 				if($current_user['role']<2){
+					?> &middot; <?php
+					echo $this->Html->link(__('Proposals'),array('plugin'=>NULL,'controller'=>'Proposals','action'=>'index'));
 					?> &middot; <?php
 					echo $this->Html->link(__('Extra categories'),array('plugin'=>NULL,'controller'=>'Categories','action'=>'index'));
 				}
@@ -42,7 +43,7 @@
 					echo $this->Html->link(__('Home pictures'),array('plugin'=>NULL,'controller'=>'HomePictures','action'=>'index'));
 				}
 				
-				if($current_user['role']<3){
+				if($current_user['role']<2){
 					?> &middot; <?php
 					echo $this->Html->link(__('House pictures'),array('plugin'=>NULL,'controller'=>'HousePictures','action'=>'index'));
 				}

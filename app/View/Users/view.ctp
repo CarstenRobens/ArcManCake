@@ -40,8 +40,12 @@
 					</div>
 					
 					<table class="table">
-						<tr style="border-bottom:1px solid grey;">
-							<td><strong><?php echo $user_view['User']['username'];?> </strong></td>
+						<tr >
+							<td><?php echo __('Username:');?></td>
+							<td><div style="text-align: right;"><?php echo $user_view['User']['username'];?> &nbsp;</div></td>
+						</tr>
+						<tr >
+							<td><?php echo __('Access Level:');?></td>
 							<td><div style="text-align: right;"><?php echo $level[$user_view['User']['role']];?> &nbsp;</div></td>
 						</tr>
 						<tr>
