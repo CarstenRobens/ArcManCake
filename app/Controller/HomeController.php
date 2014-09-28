@@ -19,7 +19,7 @@ class HomeController extends AppController {
     {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','HomePictures');
-		$this->Auth->allow('home','contact','impressum');
+		$this->Auth->allow('index','contact','impressum');
 		$company = Configure::read('company');
 		$this->set("title_for_layout",'Home; '.$company['keywords']);
 		

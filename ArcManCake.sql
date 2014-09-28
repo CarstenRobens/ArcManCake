@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2014 at 02:11 AM
+-- Generation Time: Sep 28, 2014 at 02:24 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `bought_extras` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=76 ;
 
 --
 -- Dumping data for table `bought_extras`
@@ -54,7 +54,32 @@ INSERT INTO `bought_extras` (`id`, `price`, `factor`, `comment`, `extra_id`, `pr
 (38, 50, 1, '', 2, 4, '2014-09-20', '2014-09-26'),
 (43, 58, 1, NULL, 41, 4, '2014-09-21', '2014-09-21'),
 (44, 90, 20, '', 53, 4, '2014-09-22', '2014-09-22'),
-(49, 52, 1, NULL, 21, 4, '2014-09-26', '2014-09-26');
+(49, 52, 1, NULL, 21, 4, '2014-09-26', '2014-09-26'),
+(50, 5000, 1, NULL, 105, 5, '2014-09-28', '2014-09-28'),
+(51, 3000, 1, NULL, 107, 5, '2014-09-28', '2014-09-28'),
+(52, 5000, 1, NULL, 108, 5, '2014-09-28', '2014-09-28'),
+(53, 5000, 1, NULL, 109, 5, '2014-09-28', '2014-09-28'),
+(54, 8000, 0, NULL, 110, 5, '2014-09-28', '2014-09-28'),
+(55, 9000, 1, NULL, 111, 5, '2014-09-28', '2014-09-28'),
+(56, 1000, 1, NULL, 112, 5, '2014-09-28', '2014-09-28'),
+(57, 4400, 1, NULL, 113, 5, '2014-09-28', '2014-09-28'),
+(58, 50, 1, NULL, 2, 5, '2014-09-28', '2014-09-28'),
+(59, 8600, 1, NULL, 25, 5, '2014-09-28', '2014-09-28'),
+(60, 650, 1, NULL, 42, 5, '2014-09-28', '2014-09-28'),
+(61, 8900, 1, NULL, 52, 5, '2014-09-28', '2014-09-28'),
+(62, 1050, 1, NULL, 123, 5, '2014-09-28', '2014-09-28'),
+(63, 1790, 1, NULL, 124, 5, '2014-09-28', '2014-09-28'),
+(64, 700, 1, NULL, 71, 5, '2014-09-28', '2014-09-28'),
+(65, 1080, 1, NULL, 11, 5, '2014-09-28', '2014-09-28'),
+(66, 999, 1, NULL, 129, 5, '2014-09-28', '2014-09-28'),
+(67, 5000, 1, NULL, 105, 6, '2014-09-28', '2014-09-28'),
+(68, 3000, 1, NULL, 107, 6, '2014-09-28', '2014-09-28'),
+(69, 5000, 1, NULL, 108, 6, '2014-09-28', '2014-09-28'),
+(70, 5000, 1, NULL, 109, 6, '2014-09-28', '2014-09-28'),
+(71, 8000, 1, NULL, 110, 6, '2014-09-28', '2014-09-28'),
+(72, 9000, 1, NULL, 111, 6, '2014-09-28', '2014-09-28'),
+(73, 1000, 1, NULL, 112, 6, '2014-09-28', '2014-09-28'),
+(74, 4400, 1, NULL, 113, 6, '2014-09-28', '2014-09-28');
 
 -- --------------------------------------------------------
 
@@ -109,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `2nd_maiden_surname` varchar(200) NOT NULL,
   `2nd_birthday` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `customers`
@@ -138,16 +163,16 @@ CREATE TABLE IF NOT EXISTS `events` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `user_id`, `created`, `modified`) VALUES
-(11, 1, 'Carstens appointment', 'blablabla', '2014-10-24 02:26:00', '2014-08-24 02:26:00', 1, 'Scheduled', 1, 2, '2014-08-24', '2014-08-24'),
-(18, 1, 'tutuchancla', '', '2014-10-02 14:17:00', '2014-09-26 14:05:00', 1, 'Scheduled', 1, 6, '2014-09-26', '2014-09-26'),
-(19, 3, 'tutu', '', '2014-09-28 14:08:00', '2014-09-26 14:08:00', 1, 'Scheduled', 1, 6, '2014-09-26', '2014-09-26');
+(21, 1, 'Beispieltermin fÃ¼r ein Meeting', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-10 14:15:00', '2014-10-10 15:15:00', 0, 'Scheduled', 1, 2, '2014-09-28', '2014-09-28'),
+(23, 4, 'Beispieltermin fÃ¼r eine Besichtigung des Bauvorhabens', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-09 10:17:00', '2014-10-09 14:17:00', 1, 'Scheduled', 1, 2, '2014-09-28', '2014-09-28'),
+(22, 3, 'Beispieltermin fÃ¼r einen Kundentermin', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-10 10:16:00', '2014-10-10 12:16:00', 0, 'Scheduled', 1, 2, '2014-09-28', '2014-09-28');
 
 -- --------------------------------------------------------
 
@@ -157,18 +182,19 @@ INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`,
 
 CREATE TABLE IF NOT EXISTS `event_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `color` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `event_types`
 --
 
 INSERT INTO `event_types` (`id`, `name`, `color`) VALUES
-(1, 'Meeting', 'Green'),
-(3, 'Customer appointment', 'Purple');
+(1, 'Meeting', 'Red'),
+(3, 'Kundentermin', 'Green'),
+(4, 'Besichtigung des Bauvorhabens', 'Blue');
 
 -- --------------------------------------------------------
 
@@ -301,7 +327,8 @@ INSERT INTO `extras` (`id`, `name`, `description`, `default_priceA`, `default_pr
 (125, 'Einliegerwohnung (Land 190)', 'Ihr Haus wird gemÃ¤ÃŸ der  nachfolgender Bauleistungsbeschreibung ausgefÃ¼hrt: \r\nGrundriss/Aufteilung\r\nDas Wohnhaus wird als Einfamilienhaus mit Einliegerwohnung im Erdgeschoss ausgefÃ¼hrt. Der HWR der groÃŸen Wohnung befindet sich im Dachgeschoss oder im Keller. Im Erdgeschoss der groÃŸen Wohnung entsteht ein zusÃ¤tzliches GÃ¤ste-WC. \r\nWohnungtrennwÃ¤nde\r\nZusÃ¤tzlich zu den WohnungstrennwÃ¤nden wird eine Trennwand nach Bedarf zum Schutz gegen SchallÃ¼bertragung aus Kalksandstein erstellt und mit einem mineralischen DÃ¼nnputz tapezierfÃ¤hig verspachtelt. \r\nHaustÃ¼r\r\nDie Einliegerwohnung erhÃ¤lt einen separaten Zugang mit einer 2. HauseingangstÃ¼r. Im ZÃ¤hlerraum (von auÃŸen zugÃ¤ngig) wird eine NebeneingangstÃ¼r eingebaut. \r\nSanitÃ¤ranlage und Installation\r\nEin zusÃ¤tzliches GÃ¤ste-WC entsteht im Erdgeschoss in der groÃŸen Wohnung, Standort entsprechend der zeichnerischen Darstellung. Ausstattung: \r\n- Kristallporzellanwaschtisch, ca. 45 cm breit mit verchromter Einhand-Waschtischbatterie\r\n- wandhÃ¤ngendes WC mit wassersparendem 2-Mengen-UnterputzspÃ¼lkasten, Sitz und Deckel\r\nSanitÃ¤rkeramik (Farbe weiÃŸ) eines Markenherstellers\r\nDie Armaturen eines Markenherstellers werden als Aufputzarmaturen ausgefÃ¼hrt. \r\nEin Duschbad wird eingebaut (kleine Wohnung), Standort entsprechend der zeichnerischen Darstellung (das Wannenbad im EG entfÃ¤llt). Ausstattung: \r\n- eingeflieste Brausewanne aus Acryl eines Markenherstellers, ca. 80 cm x 80 cm mit verchromter Einhand- Brausebatterie mit Brauseset. Ablaufgarnitur aus Kunststoff, mit StandrohrÃ¼berlauf, verchromt. Eine Duschtrennwand oder Kabine ist nicht vereinbart. \r\n- Kristallporzellanwaschtisch, ca. 60 cm breit mit verchromter Einhand- Waschtischbatterie. \r\n- wandhÃ¤ngendes WC mit wassersparendem 2-Mengen-UnterputzspÃ¼lkasten, Sitz und Deckel. SanitÃ¤rkeramik (Farbe weiÃŸ) eines Markenherstellers\r\nDie Armaturen eines Markenherstellers werden als Aufputzarmaturen ausgefÃ¼hrt. \r\nDie Einliegerwohnung bekommt einen zusÃ¤tzlichen AuÃŸenwasserhahn. \r\nFliesen\r\nDas GÃ¤ste-WC erhÃ¤lt einen Fliesenspiegel Ã¼ber dem Waschbecken, sowie Bodenfliesen zum Materialpreis EUR 20,00 pro mÂ² inkl. Mehrwertsteuer. \r\nEs werden Fliesen mit den KantenlÃ¤ngen > 12 cm und < 30 cm vorgesehen. Sockelfliesen, Sonderverlegungen, andere Formate und Dekore, sowie Mehrverfliesungen sind im Rahmen der sonstigen Vereinbarungen mÃ¶glich. Die Anschlussfugen zwischen Boden- und Wandfliesen werden elastisch versiegelt. \r\nIm Duschbad werden an den WÃ¤nden Fliesen zum Materialpreis EUR 20,00 pro mÂ² inkl. Mehrwertsteuer tÃ¼rhoch verlegt. DachschrÃ¤gen werden nicht gefliest. Der FuÃŸboden ist mit Fliesen zum gleichen Materialpreis gefliest. Unterhalb der Bodenfliesen und im Spritzwasserbereich Ã¼ber der Dusche wird eine FlÃ¼ssigdichtung als zusÃ¤tzlicher Schutz aufgebracht. \r\nEs werden Fliesen mit den KantenlÃ¤ngen > 12 cm und < 30 cm vorgesehen. Sockelfliesen, Sonderverlegungen, andere Formate und Dekore, sowie Mehrverfliesungen sind im Rahmen der sonstigen Vereinbarungen mÃ¶glich. Die Anschlussfugen zwischen Boden- und Wandfliesen werden elastisch versiegelt. \r\nElektrische Anlage\r\nDie Elektroinstallationen des Treppenhauses gemÃ¤ÃŸ Â§15 Bau-und Leistungsbeschreibung entfallen, es werden zusÃ¤tzlich folgende Elektroinstallationen ausgefÃ¼hrt: \r\nHAR/ZÃ¤hlerraum: ein Deckenauslass mit Schalter und eine Steckdose \r\nFlur EG (Einliegerwohnung): ein zusÃ¤tzlicher Deckenauslass \r\nGÃ¤ste WC: ein Wandauslass mit Schalter und eine Steckdose 	', 4890, 4890, 4890, 0, '', 0, 0, 0, 10, 1, 0, 0, 0, 4, 2, '2014-09-22', '2014-09-27'),
 (126, 'ZusÃ¤tzliche Fliesenarbeiten', 'Es werden zusÃ¤tzliche Wand- bzw. Bodenfliesen zum Materialpreis im Haus verlegt. \r\nWandfliesen: 20,00 EUR pro mÂ² inkl. Mehrwertsteuer gemÃ¤ÃŸ Muster, FuÃŸboden mit Fliesen zum gleichen Materialpreis. Es werden Fliesen mit den KantenlÃ¤ngen > 12 cm und < 30 cm vorgesehen. DachschrÃ¤gen werden nicht gefliest. \r\nSockelfliesen, Sonderverlegungen, andere Formate und Dekore, sowie Mehrverfliesungen sind im Rahmen der sonstigen Vereinbarungen mÃ¶glich. \r\nDie Bauzeit verlÃ¤ngert sich um zwei Wochen.\r\n', 80, 80, 80, 2, '', 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, '2014-09-22', '2014-09-27'),
 (127, 'ZusÃ¤tzliche Porenbetonwand 11,5 cm', 'Es wird eine zusÃ¤tzliche 11,5 cm starke Porenbetonwand, beidseitig verspachtelt, im Erd- oder Obergeschoss des Hauses errichtet. Die AusfÃ¼hrung erfolgt gemÃ¤ÃŸ Bau- und Leistungsbeschreibung. \r\nDie Lage der zusÃ¤tzlichen Wand ist in die Zeichnungen einzufÃ¼gen. Die endgÃ¼ltige Anordnung der WÃ¤nde erfolgt durch den Auftragnehmer im Rahmen der Zeichnungen fÃ¼r den Bauantrag. Die Anordnung muss statisch mÃ¶glich sein. ', 200, 200, 200, 3, '', 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, '2014-09-22', '2014-09-27'),
-(128, 'ZusÃ¤tzliche Trockenbauwand 10 cm', 'Es wird eine zusÃ¤tzliche 10 cm starke Trockenbauwand im Dachgeschoss des Hauses errichtet. Die AusfÃ¼hrung erfolgt gemÃ¤ÃŸ Bau- und Leistungsbeschreibung. \r\nDie Lage der zusÃ¤tzlichen Wand ist in die Zeichnungen einzufÃ¼gen. Die endgÃ¼ltige Anordnung der WÃ¤nde erfolgt durch den Auftragnehmer im Rahmen der Zeichnungen fÃ¼r den Bauantrag.', 160, 160, 160, 3, '', 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, '2014-09-22', '2014-09-27');
+(128, 'ZusÃ¤tzliche Trockenbauwand 10 cm', 'Es wird eine zusÃ¤tzliche 10 cm starke Trockenbauwand im Dachgeschoss des Hauses errichtet. Die AusfÃ¼hrung erfolgt gemÃ¤ÃŸ Bau- und Leistungsbeschreibung. \r\nDie Lage der zusÃ¤tzlichen Wand ist in die Zeichnungen einzufÃ¼gen. Die endgÃ¼ltige Anordnung der WÃ¤nde erfolgt durch den Auftragnehmer im Rahmen der Zeichnungen fÃ¼r den Bauantrag.', 160, 160, 160, 3, '', 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, '2014-09-22', '2014-09-27'),
+(129, 'Enlarge house', 'Enlargement of the house by 38 m<sup>2</sup> per floor.', 999, 999, 999, 2, '', 38, 0, 0, 0, 0, 0, 1, 0, 1, 2, '2014-09-28', '2014-09-28');
 
 -- --------------------------------------------------------
 
@@ -390,17 +417,17 @@ CREATE TABLE IF NOT EXISTS `houses` (
 --
 
 INSERT INTO `houses` (`id`, `name`, `description`, `size`, `floors`, `price`, `type`, `bool_duplex`, `user_id`, `created`, `modified`, `size_din`) VALUES
-(1, 'Stadt 118', 'asd', 117, 2, 132990, 1, 1, 2, '2014-08-22', '2014-09-20', 133),
-(2, 'Stadt 120', 'asd', 124, 2, 139990, 1, 1, 2, '2014-08-22', '2014-09-20', 134),
-(3, 'Stadt 130', 'asd', 130, 3, 147990, 1, 1, 2, '2014-08-22', '2014-09-20', 152),
-(5, 'Stadtvilla', 'asd', 130, 2, 144990, 2, 0, 2, '2014-08-22', '2014-09-20', 130),
-(6, 'Land 120', 'asd', 120, 2, 129980, 2, 0, 2, '2014-08-22', '2014-09-20', 132),
-(7, 'Land 135', 'asd', 132, 2, 149980, 2, 0, 2, '2014-08-22', '2014-09-20', 145),
-(8, 'Land 150', 'asd', 140, 2, 159990, 2, 0, 2, '2014-08-22', '2014-09-20', 154),
-(9, 'Bungalow', 'asd', 91, 1, 113890, 2, 0, 2, '2014-09-22', '2014-09-22', 92),
-(10, 'Land 160', 'bald erhÃ¤ltlich', 160, 2, 165990, 2, 0, 2, '2014-09-22', '2014-09-22', 170),
-(11, 'Land 190', 'bald erhÃ¤ltlich', 190, 3, 209890, 2, 0, 2, '2014-09-22', '2014-09-22', 200),
-(12, 'Modern 140', 'bald erhÃ¤ltlich', 140, 2, 179990, 1, 1, 2, '2014-09-22', '2014-09-22', 150);
+(1, 'Stadt 118', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 117, 2, 132990, 1, 1, 2, '2014-08-22', '2014-09-28', 133),
+(2, 'Stadt 120', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 124, 2, 139990, 1, 1, 2, '2014-08-22', '2014-09-28', 134),
+(3, 'Stadt 130', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 130, 3, 147990, 1, 1, 2, '2014-08-22', '2014-09-28', 152),
+(5, 'Stadtvilla', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 130, 2, 144990, 2, 0, 2, '2014-08-22', '2014-09-28', 130),
+(6, 'Land 120', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 120, 2, 129980, 2, 0, 2, '2014-08-22', '2014-09-28', 132),
+(7, 'Land 135', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 132, 2, 149980, 2, 0, 2, '2014-08-22', '2014-09-28', 145),
+(8, 'Land 150', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 140, 2, 159990, 2, 0, 2, '2014-08-22', '2014-09-28', 154),
+(9, 'Bungalow', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 91, 1, 113890, 2, 0, 2, '2014-09-22', '2014-09-28', 92),
+(10, 'Land 160', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 160, 2, 165990, 2, 0, 2, '2014-09-22', '2014-09-28', 170),
+(11, 'Land 190', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 190, 3, 209890, 2, 0, 2, '2014-09-22', '2014-09-28', 200),
+(12, 'Modern 140', 'Weitere Informationen Ã¼ber dieses Haus erfolgen in KÃ¼rze!\r\n\r\nIhr IZ-Haus Team', 140, 2, 179990, 1, 1, 2, '2014-09-22', '2014-09-28', 150);
 
 -- --------------------------------------------------------
 
@@ -519,8 +546,7 @@ CREATE TABLE IF NOT EXISTS `job_offers` (
 --
 
 INSERT INTO `job_offers` (`id`, `name`, `description`, `bool_active`, `user_id`, `created`, `modified`) VALUES
-(1, 'Work work!', 'In this post we briefly show you how to use the user authentication system provided by Django in order to implement a selective access to other Django applications. We assume you are already a bit familiar with Django and you know how to create and run Django apps.\r\n\r\nWe developed and shared a project consisting of two Django apps, one implementing the login and logout of a user, the other implementing the Polls application described in the official Django tutorial. We want to make the poll application accessible only to authenticated users. ', 1, 2, NULL, '2014-09-25'),
-(3, 'Work work work!', 'public function delete($id) {\r\n    	if ($this->request->is(''get'')) {\r\n        	throw new MethodNotAllowedException();\r\n        }\r\n        if ($this->Customer->delete($id)) {\r\n        	$this->Session->setFlash(__(''The customer with id: %s has been deleted'',h($id)), ''alert-box'', array(''class''=>''alert-success''));\r\n            return $this->redirect(array(''action''=>''index''));\r\n        }\r\n    }', 1, 6, '2014-09-25', '2014-09-25');
+(3, 'Work work work!', 'public function delete($id) {\r\n    	if ($this->request->is(''get'')) {\r\n        	throw new MethodNotAllowedException();\r\n        }\r\n        if ($this->Customer->delete($id)) {\r\n        	$this->Session->setFlash(__(''The customer with id: %s has been deleted'',h($id)), ''alert-box'', array(''class''=>''alert-success''));\r\n            return $this->redirect(array(''action''=>''index''));\r\n        }\r\n    }', 0, 6, '2014-09-25', '2014-09-25');
 
 -- --------------------------------------------------------
 
@@ -550,14 +576,15 @@ CREATE TABLE IF NOT EXISTS `lands` (
   `built_city` varchar(200) NOT NULL,
   `construction_office` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `lands`
 --
 
 INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `building_tax`, `customer_id`, `user_id`, `created`, `modified`, `built_region`, `built_address`, `built_zipcode`, `built_city`, `construction_office`) VALUES
-(8, 'TestLand 1', 'Additional Notes For the Land', 200, 1000, 100, 10, 2.5, 2.5, 5, 1.25, 0, 2, '2014-08-23', '2014-08-23', 'D-DÃ¼sseldorf', 'Eine StraÃŸe 32', '82109', 'DÃ¼sseldorf', 'DÃ¼sseldorf');
+(8, 'TestLand 1', 'Additional Notes For the Land', 200, 1000, 100, 10, 2.5, 2.5, 5, 1.25, 6, 2, '2014-08-23', '2014-09-28', 'D-DÃ¼sseldorf', 'Eine StraÃŸe 32', '82109', 'DÃ¼sseldorf', 'DÃ¼sseldorf'),
+(9, 'TestLand 2', '', 200, 1000, 2, 100, 2.5, 10, 5, 1.5, 7, 2, '2014-09-28', '2014-09-28', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -582,14 +609,16 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `proposals`
 --
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `bool_locked`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `duplex_side`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
-(4, 'Test Proposal', 'Notes for the Proposal', 0, 'Angebot-14090004.pdf', 'Kalkulation-14090004.pdf', 'Vertrag-14090004.pdf', 6, 8, 2, 2, '21', 2, '2014-08-23', '2014-08-23');
+(4, 'Test Proposal', 'Notes for the Proposal', 0, 'Angebot-14090004.pdf', 'Kalkulation-14090004.pdf', 'Vertrag-14090004.pdf', 6, 8, 2, 1, '21', 2, '2014-08-23', '2014-08-23'),
+(5, 'proposal geht nur yu yweit___', 'immer noch doofer kunde', 0, 'Angebot-14090005.pdf', 'Kalkulation-14090005.pdf', 'Vertrag-14090005.pdf', 7, 9, 5, 0, '41', 2, '2014-09-28', '2014-09-28'),
+(6, 'sdgsfgdf', 'ghfhdfh', 0, 'Angebot-14090006.pdf', '', '', 7, 0, 10, 0, '', 2, '2014-09-28', '2014-09-28');
 
 -- --------------------------------------------------------
 
