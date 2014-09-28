@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-09-28 14:59+0200\n"
-"PO-Revision-Date: 2014-09-28 17:04+0100\n"
+"PO-Revision-Date: 2014-09-28 18:24+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -987,11 +987,11 @@ msgstr "Kategorien der Sonderausstattungen"
 
 #: /Elements/footer.ctp:43
 msgid "Home pictures"
-msgstr "Bilder der Startseite"
+msgstr "Startseiten Bilder"
 
 #: /Elements/footer.ctp:48
 msgid "House pictures"
-msgstr "Bilder der Häuser"
+msgstr "Häuser Bilder"
 
 #: /Elements/footer.ctp:53 /Users/login.ctp:24
 msgid "Login"
@@ -1047,11 +1047,11 @@ msgstr "Nein"
 
 #: /Extras/add_custom_extra.ctp:24 /Extras/edit.ctp:23 /Extras/index.ctp:159
 msgid "Floor size dependent"
-msgstr "Grundriss größenabhängig"
+msgstr "Abhängig von der Etagenfläche"
 
 #: /Extras/add_custom_extra.ctp:25 /Extras/edit.ctp:24
 msgid "Total size dependent"
-msgstr "Wohnfläche größenabhängig"
+msgstr "Abhängig von der Wohnfläche"
 
 #: /Extras/add_custom_extra.ctp:29 /Extras/edit.ctp:28 /Extras/index.ctp:164
 msgid "Enter name"
@@ -1084,7 +1084,7 @@ msgstr "Einheit des Multiplikators"
 
 #: /Extras/add_custom_extra.ctp:34 /Extras/edit.ctp:35 /Extras/index.ctp:171
 msgid "Is the price size dependent?"
-msgstr "Größenabhängig"
+msgstr "Flächenabhängig"
 
 #: /Extras/add_custom_extra.ctp:35 /Extras/edit.ctp:36 /Extras/index.ctp:172
 msgid "Type of extra"
@@ -1161,675 +1161,678 @@ msgstr "Festpreis"
 
 #: /Extras/index.ctp:32 /Proposals/view.ctp:359
 msgid "Custom"
-msgstr "kundenspez."
+msgstr "kundenspez. Sonderausstattung"
 
 #: /Extras/index.ctp:33
 msgid "External"
-msgstr ""
+msgstr "Sonstiges"
 
 #: /Extras/index.ctp:66
 msgid "Floor Size"
-msgstr ""
+msgstr "Wohnfläche pro Etage"
 
 #: /Extras/index.ctp:69
 msgid "Total Size"
-msgstr ""
+msgstr "gesamte Wohnfläche"
 
 #: /Extras/index.ctp:132
 msgid "Are you sure you want to delete this Extra?"
-msgstr ""
+msgstr "Sind Sie sich sicher, dass Sie diese Sonderausstattung löschen wollen?"
 
 #: /Extras/index.ctp:153
 msgid "Add Extra"
-msgstr ""
+msgstr "Sonderausstattung hinzufügen"
 
 #: /Extras/index.ctp:160
 msgid "Toal size dependent"
-msgstr ""
+msgstr "Abhängig von der Wohnfläche"
 
 #: /Extras/index.ctp:166;167;168
 msgid "Enter the price"
-msgstr ""
+msgstr "Geben Sie einen Preis an"
 
 #: /GalleryPictures/index.ctp:51
 msgid "Add a portfolio picture"
-msgstr ""
+msgstr "Hinzufügen eines weiteren Eintrags"
 
 #: /GalleryPictures/index.ctp:56
 msgid "Enter the title"
-msgstr ""
+msgstr "Geben Sie einen Titel an"
 
 #: /GalleryPictures/index.ctp:57
 msgid "Enter the description"
-msgstr ""
+msgstr "Geben Sie eine Beschreibung an"
 
 #: /GalleryPictures/index.ctp:58 /Houses/view.ctp:23
 msgid "Picture"
-msgstr ""
+msgstr "Bild"
 
 #: /Home/contact.ctp:22 /Offer/view.ctp:118
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #: /Home/contact.ctp:26
 msgid "Tel.:"
-msgstr ""
+msgstr "Tel.:"
 
 #: /Home/contact.ctp:27
 msgid "Fax:"
-msgstr ""
+msgstr "Fax.:"
 
 #: /Home/contact.ctp:30
 msgid "Opening time"
-msgstr ""
+msgstr "Öffnungszeiten"
 
 #: /HomePictures/index.ctp:2
 msgid "Home Pictures"
-msgstr ""
+msgstr "Startseiten Bilder"
 
 #: /HomePictures/index.ctp:50 /HousePictures/index.ctp:95
 msgid "Add a home picture"
-msgstr ""
+msgstr "Startseiten Bild hinzufügen"
 
 #: /HomePictures/index.ctp:53 /HousePictures/index.ctp:98
 msgid "Enter the title of the picture"
-msgstr ""
+msgstr "Geben Sie einen Titel an"
 
 #: /HousePictures/index.ctp:7
 msgid "Back"
-msgstr ""
+msgstr "Zurück"
 
 #: /HousePictures/index.ctp:11;43
 msgid "House Pictures"
-msgstr ""
+msgstr "Haus Bilder"
 
 #: /HousePictures/index.ctp:54 /Houses/view.ctp:12
 #: /Proposals/gen_summary.ctp:114 /Proposals/view.ctp:81
 msgid "House"
-msgstr ""
+msgstr "Haus"
 
 #: /Houses/edit.ctp:16 /Houses/index.ctp:116
 msgid "Add a House"
-msgstr ""
+msgstr "Haus hinzufügen"
 
 #: /Houses/edit.ctp:20 /Houses/index.ctp:120 /Users/add.ctp:19
 #: /Users/edit.ctp:24 /Users/index.ctp:81
 msgid "Enter a Name"
-msgstr ""
+msgstr "Geben Sie einen Namen an"
 
 #: /Houses/edit.ctp:21 /Houses/index.ctp:121
 msgid "Enter a Description"
-msgstr ""
+msgstr "Geben Sie eine Beschreibung an"
 
 #: /Houses/edit.ctp:22 /Houses/index.ctp:122
 msgid "Enter a Size in Squaremeter"
-msgstr ""
+msgstr "Geben Sie die Wohnfläche in Quadratmetern an"
 
 #: /Houses/edit.ctp:22 /Houses/index.ctp:122
 msgid "Size"
-msgstr ""
+msgstr "Wohnfläche"
 
 #: /Houses/edit.ctp:23 /Houses/index.ctp:123
 msgid "Enter a DIN 277 Size in Squaremeter"
-msgstr ""
+msgstr "Geben Sie die Wohnfläche nach DIN 277 in Quadratmetern an"
 
 #: /Houses/edit.ctp:23 /Houses/index.ctp:123
 msgid "DIN 277 Size"
-msgstr ""
+msgstr "DIN 277 Wohnfläche"
 
 #: /Houses/edit.ctp:24 /Houses/index.ctp:124
 msgid "Enter how many floors"
-msgstr ""
+msgstr "Geben Sie die Anzahl der Etagen an"
 
 #: /Houses/edit.ctp:24 /Houses/index.ctp:124
 msgid "Foors"
-msgstr ""
+msgstr "Etagen"
 
 #: /Houses/edit.ctp:25 /Houses/index.ctp:125
 msgid "Duplex?"
-msgstr ""
+msgstr "Doppelhaus"
 
 #: /Houses/edit.ctp:26 /Houses/index.ctp:126
 msgid "Choose type:"
-msgstr ""
+msgstr "Hauskategorie"
 
 #: /Houses/edit.ctp:27 /Houses/index.ctp:127
 msgid "Enter a Price"
-msgstr ""
+msgstr "Geben Sie einen Preis an"
 
 #: /Houses/index.ctp:37
 msgid "Pictures"
-msgstr ""
+msgstr "Bilder"
 
 #: /Houses/index.ctp:61
 msgid "Floors:"
-msgstr ""
+msgstr "Etagen:"
 
 #: /Houses/index.ctp:69
 msgid "Type:"
-msgstr ""
+msgstr "Kategorie:"
 
 #: /Houses/index.ctp:72 /Houses/view.ctp:48
 msgid "Duplex"
-msgstr ""
+msgstr "Doppelhaus"
 
 #: /Houses/index.ctp:74
 msgid "Standalone house"
-msgstr ""
+msgstr "Freistehendes Haus"
 
 #: /Houses/view.ctp:36 /Proposals/gen_summary.ctp:133 /Proposals/view.ctp:103
 msgid "Size:"
-msgstr ""
+msgstr "Wohnfläche"
 
 #: /Houses/view.ctp:38 /Proposals/edit_house.ctp:52
 #: /Proposals/gen_summary.ctp:137;139;141 /Proposals/view.ctp:106;108;110
 msgid " m<sup>2</sup> in "
-msgstr ""
+msgstr " m<sup>2</sup> auf "
 
 #: /Houses/view.ctp:38 /Proposals/edit_house.ctp:52
 #: /Proposals/gen_summary.ctp:137;139;141 /Proposals/view.ctp:106;108;110
 msgid " floors."
-msgstr ""
+msgstr "Etagen."
 
 #: /Houses/view.ctp:42 /Proposals/gen_summary.ctp:146 /Proposals/view.ctp:114
 msgid "Size according to DIN 227:"
-msgstr ""
+msgstr "Wohnfläche nach DIN 227:"
 
 #: /Houses/view.ctp:44 /Proposals/gen_summary.ctp:150;152;154
 #: /Proposals/view.ctp:117;119;121
 msgid " m<sup>2</sup>"
-msgstr ""
+msgstr " m<sup>2</sup>"
 
 #: /Houses/view.ctp:67 /Proposals/gen_summary.ctp:196 /Proposals/view.ctp:145
 msgid "Description:"
-msgstr ""
+msgstr "Beschreibung:"
 
 #: /Houses/view.ctp:102 /Proposals/gen_summary.ctp:224 /Proposals/view.ctp:186
 msgid "Gallery"
-msgstr ""
+msgstr "Galerie "
 
 #: /Houses/view.ctp:126 /Proposals/gen_summary.ctp:278 /Proposals/view.ctp:211
 msgid "Floorplans"
-msgstr ""
+msgstr "Grundrisse"
 
 #: /Houses/view.ctp:145 /JobOffers/index.ctp:26 /Offer/view.ctp:478
 msgid "Interested?"
-msgstr ""
+msgstr "Haben wir Ihr Interesse geweckt?"
 
 #: /Houses/view.ctp:145 /JobOffers/index.ctp:26 /Offer/view.ctp:478
 msgid "Contact us!"
-msgstr ""
+msgstr "Kontaktieren Sie uns!"
 
 #: /Houses/view.ctp:145 /Offer/view.ctp:478
 msgid "House:"
-msgstr ""
+msgstr "Haus:"
 
 #: /JobOffers/edit.ctp:16
 msgid "Edit job offer"
-msgstr ""
+msgstr "Jobangebot editieren"
 
 #: /JobOffers/edit.ctp:19 /JobOffers/index.ctp:107
 msgid "Enter the name of the job offer"
-msgstr ""
+msgstr "Geben Sie einen Titel für das Jobangebot an"
 
 #: /JobOffers/index.ctp:26
 msgid "Job offer:"
-msgstr ""
+msgstr "Jobangebot:"
 
 #: /JobOffers/index.ctp:50
 msgid "name"
-msgstr ""
+msgstr "Name"
 
 #: /JobOffers/index.ctp:51
 msgid "Active?"
-msgstr ""
+msgstr "Aktiviert?"
 
 #: /JobOffers/index.ctp:68
 msgid "Deactivate "
-msgstr ""
+msgstr "Deaktivieren"
 
 #: /JobOffers/index.ctp:70
 msgid "Activate "
-msgstr ""
+msgstr "Aktivieren"
 
 #: /JobOffers/index.ctp:104
 msgid "Add a new job offer"
-msgstr ""
+msgstr "Ein neues Jobangebot hinzufügen"
 
 #: /Lands/add_land_for_customer.ctp:18
 msgid "Private land for "
-msgstr ""
+msgstr "persönliches Grundstück von "
 
 #: /Lands/add_land_for_customer.ctp:22 /Lands/edit.ctp:22 /Lands/index.ctp:68
 msgid "Enter the Land Name"
-msgstr ""
+msgstr "Geben Sie einen Namen für das Grundstück an"
 
 #: /Lands/add_land_for_customer.ctp:23 /Lands/edit.ctp:23 /Lands/index.ctp:69
 msgid "Enter the Land Size in squaremeter"
-msgstr ""
+msgstr "Geben Sie die Grundstückfläche in Quadratmetern an"
 
 #: /Lands/add_land_for_customer.ctp:23 /Lands/edit.ctp:23 /Lands/index.ctp:69
 msgid "Size (m<sup>2</sup>)"
-msgstr ""
+msgstr "Größe (m<sup>2</sup>)"
 
 #: /Lands/add_land_for_customer.ctp:24 /Lands/edit.ctp:24 /Lands/index.ctp:70
 msgid "Enter the Land Price per squaremeter"
-msgstr ""
+msgstr "Geben Sie den Quadratmeterpreis an"
 
 #: /Lands/add_land_for_customer.ctp:24 /Lands/edit.ctp:24 /Lands/index.ctp:70
 msgid "Land Price (€/m<sup>2</sup>)"
-msgstr ""
+msgstr "Quadratmeterpreis (€/m<sup>2</sup>)"
 
 #: /Lands/add_land_for_customer.ctp:25 /Lands/edit.ctp:25 /Lands/index.ctp:71
 msgid "Enter the Development Size in squaremeter"
-msgstr ""
+msgstr "Geben Sie die Erschließungsfläche in Quadratmetern an"
 
 #: /Lands/add_land_for_customer.ctp:25 /Lands/edit.ctp:25 /Lands/index.ctp:71
 msgid "Development Size (m<sup>2</sup>)"
-msgstr ""
+msgstr "Erschließungsfläche Size (m<sup>2</sup>)"
 
 #: /Lands/add_land_for_customer.ctp:26 /Lands/edit.ctp:26 /Lands/index.ctp:72
 msgid "Enter the Development Price per squaremeter"
-msgstr ""
+msgstr "Geben Sie den Preis der Erschließungsfläche pro Quadratmeter an"
 
 #: /Lands/add_land_for_customer.ctp:26 /Lands/edit.ctp:26 /Lands/index.ctp:72
 msgid "Development Price (€/m<sup>2</sup>)"
-msgstr ""
+msgstr "Preis der Erschließungsfläche (€/m<sup>2</sup>)"
 
 #: /Lands/add_land_for_customer.ctp:27 /Lands/edit.ctp:27 /Lands/index.ctp:73
 msgid "Enter the Land Agent Cost in %"
-msgstr ""
+msgstr "Geben Sie die Maklergebühren in % an"
 
 #: /Lands/add_land_for_customer.ctp:27 /Lands/edit.ctp:27 /Lands/index.ctp:73
 msgid "Land Agent Cost (%)"
-msgstr ""
+msgstr "Maklergebühren (%)"
 
 #: /Lands/add_land_for_customer.ctp:31 /Lands/edit.ctp:31 /Lands/index.ctp:77
 msgid "Building Information"
-msgstr ""
+msgstr "Informationen zum Bauort"
 
 #: /Lands/add_land_for_customer.ctp:34 /Lands/edit.ctp:34 /Lands/index.ctp:80
 msgid "Enter the building region"
-msgstr ""
+msgstr "Geben Sie die Bauregion an"
 
 #: /Lands/add_land_for_customer.ctp:34 /Lands/edit.ctp:34 /Lands/index.ctp:80
 msgid "Building Region"
-msgstr ""
+msgstr "Bauregion"
 
 #: /Lands/add_land_for_customer.ctp:35 /Lands/edit.ctp:35 /Lands/index.ctp:81
 msgid "Enter the building address"
-msgstr ""
+msgstr "Geben Sie den Bauort an"
 
 #: /Lands/add_land_for_customer.ctp:35 /Lands/edit.ctp:35 /Lands/index.ctp:81
 msgid "Building Post Address"
-msgstr ""
+msgstr "Bauort Adresse"
 
 #: /Lands/add_land_for_customer.ctp:36 /Lands/edit.ctp:36 /Lands/index.ctp:82
 msgid "Enter the building zipcode"
-msgstr ""
+msgstr "Geben Sie die Postleitzahl des Bauorts an"
 
 #: /Lands/add_land_for_customer.ctp:36 /Lands/edit.ctp:36 /Lands/index.ctp:82
 msgid "Building Zipcode"
-msgstr ""
+msgstr "Postleizahl des Bauorts"
 
 #: /Lands/add_land_for_customer.ctp:37 /Lands/edit.ctp:37 /Lands/index.ctp:83
 msgid "Enter the building City"
-msgstr ""
+msgstr "Geben Sie die Stadt des Bauorts an"
 
 #: /Lands/add_land_for_customer.ctp:37 /Lands/edit.ctp:37 /Lands/index.ctp:83
 msgid "Building City"
-msgstr ""
+msgstr "Stadt des Bauorts"
 
 #: /Lands/add_land_for_customer.ctp:38 /Lands/edit.ctp:38 /Lands/index.ctp:84
 msgid "Enter the corresponding Construction Office"
-msgstr ""
+msgstr "Zugehöriges Bauamt"
 
 #: /Lands/add_land_for_customer.ctp:38 /Lands/edit.ctp:38 /Lands/index.ctp:84
 msgid "Construction Office"
-msgstr ""
+msgstr "Bauamt"
 
 #: /Lands/edit.ctp:18
 msgid "Edit Land"
-msgstr ""
+msgstr "Grundstück bearbeiten"
 
 #: /Lands/index.ctp:3 /Lands/view.ctp:17 /Proposals/view.ctp:503
 msgid "Land"
-msgstr ""
+msgstr "Grundstück"
 
 #: /Lands/index.ctp:13
 msgid "belongs to Costumer"
-msgstr ""
+msgstr "gehört zu Kunden"
 
 #: /Lands/index.ctp:15
 msgid "belongs to Supervisor"
-msgstr ""
+msgstr "erstell von "
 
 #: /Lands/index.ctp:41
 msgid "Are you sure you want to delete this land?"
-msgstr ""
+msgstr "Sind Sie sich sicher, dass Sie dieses Grundstück löschen wollen?"
 
 #: /Lands/index.ctp:62
 msgid "Add a Land"
-msgstr ""
+msgstr "Grundstück hinzufügen"
 
 #: /Lands/view.ctp:32 /Proposals/view.ctp:519
 msgid "Construction office:"
-msgstr ""
+msgstr "Bauamt:"
 
 #: /Offer/region.ctp:33
 msgid "Offers in "
-msgstr ""
+msgstr "Immobilienscout Angebote in "
 
 #: /Offer/region.ctp:33
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: /Offer/view.ctp:176
 msgid "€ Price"
-msgstr ""
+msgstr "Kosten / € "
 
 #: /Proposals/add.ctp:10
 msgid "Add proposal for"
-msgstr ""
+msgstr "Erstellen eines Angebots für"
 
 #: /Proposals/add.ctp:17 /Proposals/edit.ctp:16
 msgid "Enter the name of the proposal"
-msgstr ""
+msgstr "Geben Sie einen Namen für das Angebots an"
 
 #: /Proposals/add.ctp:18 /Proposals/edit.ctp:17
 msgid "Something to point out?"
-msgstr ""
+msgstr "Dieser Platz kann für zusätzliche Notizen genutzt werden."
 
 #: /Proposals/edit.ctp:9
 msgid "Edit proposal for"
-msgstr ""
+msgstr "Bearbeiten des Angebots für"
 
 #: /Proposals/edit_default_picture.ctp:4
 msgid "Select the default picture for this house "
-msgstr ""
+msgstr "Wählen Sie ein Bild aus"
 
 #: /Proposals/edit_house.ctp:9
 msgid "Please select a house for this Proposal"
-msgstr ""
+msgstr "Wählen Sie ein Haus für dieses Angebot"
 
 #: /Proposals/edit_house.ctp:67
 msgid "This house is a duplex, choose in which side you want the house:"
-msgstr ""
+msgstr "Dies ist ein Doppelhaus, wählen Sie eine Doppelhaushälfte:"
 
 #: /Proposals/edit_house.ctp:70
 msgid "or"
-msgstr ""
+msgstr "oder"
 
 #: /Proposals/gen_bank_receipt.ctp:124
 msgid "Haus: "
-msgstr ""
+msgstr "Haus:"
 
 #: /Proposals/gen_contract.ctp:34
 msgid "Bauwerkvertrag für Ihr"
-msgstr ""
+msgstr "Bauwerkvertrag für Ihr"
 
 #: /Proposals/gen_contract.ctp:61
 msgid "Bauwerkvertrag"
-msgstr ""
+msgstr "Bauwerkvertrag"
 
 #: /Proposals/gen_contract.ctp:1284;1540;1721
 msgid ""
 "Von dem vor beschriebenen Vertragsinhalt habe/n ich/wir Kenntnis genommen."
 msgstr ""
+"Von dem vor beschriebenen Vertragsinhalt habe/n ich/wir Kenntnis genommen."
 
 #: /Proposals/gen_contract.ctp:1366
 msgid "Grundrisse & Ansichten"
-msgstr ""
+msgstr "Grundrisse & Ansichten"
 
 #: /Proposals/gen_contract.ctp:1427
 msgid "Hausvergrößerung und Verkleinerung"
-msgstr ""
+msgstr "Hausvergrößerung und Verkleinerung"
 
 #: /Proposals/gen_contract.ctp:1533
 msgid ""
 "Mit Ihrer Unterschrift bestätigen Sie die Richtigkeit der hier angegebene "
 "Vergrößerung."
 msgstr ""
+"Mit Ihrer Unterschrift bestätigen Sie die Richtigkeit der hier angegebene "
+"Vergrößerung."
 
 #: /Proposals/gen_contract.ctp:1625
 msgid "Sonderausstattungen"
-msgstr ""
+msgstr "Sonderausstattungen"
 
 #: /Proposals/gen_contract.ctp:2019
 msgid "Mit der beschriebenen Rücktrittsvereinbarung sind wir einverstanden."
-msgstr ""
+msgstr "Mit der beschriebenen Rücktrittsvereinbarung sind wir einverstanden."
 
 #: /Proposals/gen_contract.ctp:2155
 msgid "Mit der beschriebenen Datenschutzerklärung sind wir einverstanden."
-msgstr ""
+msgstr "Mit der beschriebenen Datenschutzerklärung sind wir einverstanden."
 
 #: /Proposals/gen_contract.ctp:2470
 msgid "Der Vertrag wurde dem /den Auftraggeber/n ausgehändigt."
-msgstr ""
+msgstr "Der Vertrag wurde dem /den Auftraggeber/n ausgehändigt."
 
 #: /Proposals/gen_summary.ctp:46
 msgid "Unverbindliches Angebot"
-msgstr ""
+msgstr "Unverbindliches Angebot"
 
 #: /Proposals/gen_summary.ctp:69
 msgid "Für: "
-msgstr ""
+msgstr "Für: "
 
 #: /Proposals/gen_summary.ctp:161 /Proposals/view.ctp:129
 msgid "side"
-msgstr ""
+msgstr "Seite"
 
 #: /Proposals/gen_summary.ctp:337
 msgid "Sonderausstattung"
-msgstr ""
+msgstr "Sonderausstattung"
 
 #: /Proposals/gen_summary.ctp:353 /Proposals/view.ctp:291;424
 msgid "Custom: "
-msgstr ""
+msgstr "Kundenspezifisch:"
 
 #: /Proposals/gen_summary.ctp:360
 msgid "Price:"
-msgstr ""
+msgstr "Preis:"
 
 #: /Proposals/gen_summary.ctp:392 /Proposals/view.ctp:336
 msgid "Comment:"
-msgstr ""
+msgstr "Kommentar:"
 
 #: /Proposals/index.ctp:12
 msgid "Customer"
-msgstr ""
+msgstr "Kunde"
 
 #: /Proposals/index.ctp:13
 msgid "Proposal"
-msgstr ""
+msgstr "Angebot"
 
 #: /Proposals/index.ctp:14
 msgid "Generate"
-msgstr ""
+msgstr "Erstellen"
 
 #: /Proposals/index.ctp:27 /Proposals/view.ctp:51;52
 msgid "Bank receipt"
-msgstr ""
+msgstr "Kalkulation"
 
 #: /Proposals/index.ctp:41
 msgid "Are you sure you want to delete this proposal?"
-msgstr ""
+msgstr "Sind Sie sich sicher, dass Sie dieses Angebot löschen wollen?"
 
 #: /Proposals/view.ctp:41
 msgid "Generate summary"
-msgstr ""
+msgstr "Unverbindliches Angebot erstellen"
 
 #: /Proposals/view.ctp:42
 msgid "Generate bank receipt"
-msgstr ""
+msgstr "Kalkulation erstellen"
 
 #: /Proposals/view.ctp:43
 msgid "Generate contract"
-msgstr ""
+msgstr "Vertrag erstellen"
 
 #: /Proposals/view.ctp:82
 msgid "Change house"
-msgstr ""
+msgstr "Haus wechseln"
 
 #: /Proposals/view.ctp:256
 msgid "Add house"
-msgstr ""
+msgstr "Haus hinzufügen"
 
 #: /Proposals/view.ctp:358
 msgid "Add"
-msgstr ""
+msgstr "Hinzufügen"
 
 #: /Proposals/view.ctp:411
 msgid "External Extras"
-msgstr ""
+msgstr "Sonstige Kosten"
 
 #: /Proposals/view.ctp:480
 msgid "Add external extras"
-msgstr ""
+msgstr "Sonstige Kosten hinzufügen"
 
 #: /Proposals/view.ctp:481
 msgid "Add custom external extra"
-msgstr ""
+msgstr "Kundespezifische sonstige Kosten hinzufügen"
 
 #: /Proposals/view.ctp:504
 msgid "Change land"
-msgstr ""
+msgstr "Grundstück wechseln"
 
 #: /Proposals/view.ctp:615
 msgid "Add land"
-msgstr ""
+msgstr "Grundstück hinzufügen"
 
 #: /Proposals/view.ctp:635
 msgid "Select Land"
-msgstr ""
+msgstr "Grundstück auswählen"
 
 #: /Proposals/view.ctp:643;657;668;681;691
 msgid "Close"
-msgstr ""
+msgstr "Schließen"
 
 #: /Proposals/view.ctp:658
 msgid "House enlargement per floor:"
-msgstr ""
+msgstr "Hausvergrößerung pro Etage:"
 
 #: /Proposals/view.ctp:662
 msgid "Enlargement (in  m<sup>2</sup>/floor):"
-msgstr ""
+msgstr "Hausvergrößerung  (in m<sup>2</sup>/Etage):"
 
 #: /Proposals/view.ctp:669
 msgid "Enlarge"
-msgstr ""
+msgstr "Vergrößern"
 
 #: /Proposals/view.ctp:682
 msgid "House shrinking per floor:"
-msgstr ""
+msgstr "Hausverkleinerung pro Etage:"
 
 #: /Proposals/view.ctp:686
 msgid "Shrinking (in  m<sup>2</sup>/floor):"
-msgstr ""
+msgstr "Hausverkleinerung (in m<sup>2</sup>/Etage):"
 
 #: /Proposals/view.ctp:692
 msgid "Shrink"
-msgstr ""
+msgstr "Verkleinern"
 
 #: /Users/add.ctp:11 /Users/index.ctp:73
 msgid "Add a User"
-msgstr ""
+msgstr "Benutzer hinzufügen"
 
 #: /Users/add.ctp:16 /Users/edit.ctp:21 /Users/index.ctp:78
 #: /Users/login.ctp:18
 msgid "Enter a Username"
-msgstr ""
+msgstr "Geben Sie einen Benutzernamen an"
 
 #: /Users/add.ctp:16 /Users/edit.ctp:21 /Users/index.ctp:18;78
 #: /Users/login.ctp:18
 msgid "Username"
-msgstr ""
+msgstr "Benutzername"
 
 #: /Users/add.ctp:17 /Users/edit.ctp:22 /Users/index.ctp:79
 #: /Users/login.ctp:19
 msgid "Enter a Password"
-msgstr ""
+msgstr "Geben Sie ein Benutzerpasswort an"
 
 #: /Users/add.ctp:17 /Users/edit.ctp:22 /Users/index.ctp:79
 #: /Users/login.ctp:19
 msgid "Password"
-msgstr ""
+msgstr "Passwort"
 
 #: /Users/add.ctp:18 /Users/edit.ctp:23 /Users/index.ctp:19;80
 msgid "Role"
-msgstr ""
+msgstr "Zugangsrechte"
 
 #: /Users/add.ctp:20 /Users/edit.ctp:25 /Users/index.ctp:82
 msgid "Enter a Surname"
-msgstr ""
+msgstr "Geben Sie den Nachnamen an"
 
 #: /Users/add.ctp:21 /Users/edit.ctp:26 /Users/index.ctp:83
 msgid "Enter a Phone Number"
-msgstr ""
+msgstr "Geben Sie eine Telefonnummer an"
 
 #: /Users/add.ctp:21 /Users/edit.ctp:26 /Users/index.ctp:83
 msgid "Phone Number"
-msgstr ""
+msgstr "Telefonnummer "
 
 #: /Users/add.ctp:22 /Users/edit.ctp:27 /Users/index.ctp:84
 msgid "Enter an E-Mail Address"
-msgstr ""
+msgstr "Geben Sie eine eMail Adresse an"
 
 #: /Users/add.ctp:22 /Users/edit.ctp:27 /Users/index.ctp:84
 msgid "E-Mail Address"
-msgstr ""
+msgstr "eMail"
 
 #: /Users/edit.ctp:16
 msgid "Edit User"
-msgstr ""
+msgstr "Benutzer bearbeiten"
 
 #: /Users/index.ctp:20
 msgid "Phone"
-msgstr ""
+msgstr "Telefonnummer "
 
 #: /Users/index.ctp:21
 msgid "e-mail"
-msgstr ""
+msgstr "eMail"
 
 #: /Users/index.ctp:41
 msgid "Are you sure you want to delete this user?"
-msgstr ""
+msgstr "Sind Sie sich sicher, dass Sie diesen Benutzer löschen wollen?"
 
 #: /Users/login.ctp:14
 msgid "Please enter your username and password"
-msgstr ""
+msgstr "Bitte geben Sie Ihren Benutzernamen und Passwort an"
 
 #: /Users/login.ctp:18
 msgid "username"
-msgstr ""
+msgstr "Benutzername"
 
 #: /Users/login.ctp:19
 msgid "password"
-msgstr ""
+msgstr "Passwort"
 
 #: /Users/view.ctp:23
 msgid "User:"
-msgstr ""
+msgstr "Benutzer:"
 
 #: /Users/view.ctp:44
 msgid "Username:"
-msgstr ""
+msgstr "Benutzername:"
 
 #: /Users/view.ctp:48
 msgid "Access Level:"
-msgstr ""
+msgstr "Zugangsrechte:"
 
 #: /Users/view.ctp:64
 msgid "Phone:"
-msgstr ""
+msgstr "Telefonnummer:"
 
 #: /Users/view.ctp:68
 msgid "E-mail:"
-msgstr ""
+msgstr "eMail:"
 
 #: /Errors/error400.ctp:21 /Errors/error500.ctp:21
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: /Errors/error400.ctp:23
 msgid "The requested address %s was not found on this server."
