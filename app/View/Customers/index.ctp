@@ -106,7 +106,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 		<div><div>
 <?php foreach ($upcoming_events as $key=>$event){
 	$date=strtotime($event['MyEvent']['start']); 
-	if($key==0 || $date!=strtotime($upcoming_events[$key-1]['MyEvent']['start'])){ ?>
+	if($key==0 || date('ymd' , $date)!=date('ymd',strtotime($upcoming_events[$key-1]['MyEvent']['start']))){ ?>
 			</div>
 		</div>
 		<div class="panel panel-success">
