@@ -1,8 +1,8 @@
 
-<div class="CategorieTitleBox">
-	<div id="Proposal">
-		<?php echo __( 'Select the house default picture');?>
-	</div>
+<div class="row">
+	<h3>
+		<?php echo __( 'Select the default picture for this house ');?>
+	</h3>
 </div>
 
 <div class="row">

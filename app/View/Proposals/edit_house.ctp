@@ -4,12 +4,11 @@
 	<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
 </div>
 
-<div class="CategorieTitleBox">
-        <div id="GroupMembers">
-        <?php __( 'Select house');?>
-        </div>
+<div class="row">
+	<h3>
+		<?php echo __( 'Please select a house for this Proposal');?>
+	</h3>
 </div>
-
 
 <hr>
 <div class="row">
