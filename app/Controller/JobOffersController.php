@@ -26,7 +26,7 @@ class JobOffersController extends AppController{
 		if ($current_user['role']<2){
 			$this->set('job_offers_view',$this->Paginator->paginate());
 		}else{
-			$this->set('job_offers_view',$this->Paginator->paginate('Customer',array('bool_active'=>1)));
+			$this->set('job_offers_view',$this->Paginator->paginate('JobOffer',array('bool_active'=>1)));
 		}
 	
 	
