@@ -20,11 +20,14 @@ class LandsController extends AppController{
 	
 	public function isAuthorized($logged_user) {
 		
-		if ($logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-danger'));
-			return FALSE; # Overseers are not allowed to interact with customer data
-		} else{
+		if ($logged_user['role']<3 && in_array($this->action, array('index','view','add_land_for_customer','all_names'))) {
 			return TRUE;
+		}
+		if (in_array($this->action, array('edit','delete'))){
+			$land_id=(int) $this->request->params['pass'][0];
+			if ($this->Land->isOwnedBy($land_id,$logged_user['id'])){
+				return TRUE;
+			}
 		}
 		
 		

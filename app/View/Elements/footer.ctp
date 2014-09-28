@@ -25,7 +25,7 @@
 				echo 'Hello <b>'.$current_user['username'].'</b> ('.$level[$current_user['role']].') &middot; '.$this->Html->link('Logout',array('plugin'=>NULL,'controller'=>'users','action'=>'logout'));
 				
 				
-				if($current_user['role']<3){
+				if(!empty($current_user['role'])){
 					?> &middot; <?php
 					echo $this->Html->link(__('Users'),array('plugin'=>NULL,'controller'=>'Users','action'=>'index'));
 					
@@ -46,6 +46,11 @@
 				if($current_user['role']<2){
 					?> &middot; <?php
 					echo $this->Html->link(__('House pictures'),array('plugin'=>NULL,'controller'=>'HousePictures','action'=>'index'));
+				}
+				
+				if ($current_user['role']<2) {
+					?> &middot; <?php
+					echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'));
 				}
 				
 				

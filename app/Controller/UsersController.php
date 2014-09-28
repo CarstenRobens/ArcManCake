@@ -39,7 +39,12 @@ class UsersController extends AppController{
     	if (in_array($this->action, array('index','view'))){
     		return TRUE;
     	}
-    
+    	if (in_array($this->action, array('edit'))){
+    		$user_id=(int) $this->request->params['pass'][0];
+    		if ($user_id==$logged_user['id']){
+    			return TRUE;
+    		}
+    	}
     
     	return parent::isAuthorized($logged_user);
     }

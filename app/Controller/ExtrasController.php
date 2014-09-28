@@ -20,7 +20,7 @@ class ExtrasController extends AppController{
 	
 	public function isAuthorized($logged_user) {
 
-		if ($logged_user['role']==2 && in_array($this->action, array('index','view'))){
+		if (in_array($this->action, array('index'))){
 			return TRUE;
 		}
 		

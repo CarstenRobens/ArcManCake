@@ -4,6 +4,13 @@ class ProposalsController extends AppController{
 	public $helper = array('Html','Form','Number');
 	
 	public $components = array('RequestHandler','Paginator','Mpdf');
+	
+	public $paginate = array(
+			'limit' => 25,
+			'order' => array(
+					'Proposal.customer_id' => 'asc'
+			)
+	);
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -12,18 +19,9 @@ class ProposalsController extends AppController{
 		$this->set("title_for_layout",'Kundenspezifische Angebote; '.$company['keywords']);
 		
 	}
-	
-	public $paginate = array(
-        'limit' => 25,
-        'order' => array(
-            'Proposal.customer_id' => 'asc'
-        )
-    );
-	
 
 	
 	public function isAuthorized($logged_user) {
-		
 		
 		if ($logged_user['role']<3 ){
 			if (in_array($this->action, array('index','view','download_file','toggle_lock'))){
@@ -31,12 +29,14 @@ class ProposalsController extends AppController{
 			}
 			
 			if(!empty($this->request->params['pass'][0])){
-			$proposal_id=(int) $this->request->params['pass'][0];
-			if($this->Proposal->check_lock($proposal_id) && in_array($this->action, array('edit','delete','edit_house','selected_house','edit_default_picture','selected_default_picture','gen_summary','gen_bank_receipt','gen_contract'))){
-				$this->Session->setFlash(__('The proposal is locked'), 'alert-box', array('class'=>'alert-danger'));
-				return FALSE;
+				$proposal_id=(int) $this->request->params['pass'][0];
+				if($this->Proposal->check_lock($proposal_id) && in_array($this->action, array('edit','delete','edit_house','selected_house','edit_default_picture','selected_default_picture','gen_summary','gen_bank_receipt','gen_contract'))){
+					$this->Session->setFlash(__('The proposal is locked'), 'alert-box', array('class'=>'alert-danger'));
+					return FALSE;
+				}
 			}
-			}
+		}elseif($logged_user['role']==3 && in_array($this->action, array('index','view'))){
+			return TRUE;
 		}
 		
 		return parent::isAuthorized($logged_user);
@@ -50,7 +50,7 @@ class ProposalsController extends AppController{
 		 */
 		$logged_user = $this->Auth->user();
 		$this->Paginator->settings = $this->paginate;
-		if ($logged_user['role']<2){
+		if ($logged_user['role']!=2 ){
 			$this->set('proposals_view',$this->Paginator->paginate());
 		}else{
 			$this->set('proposals_view',$this->Paginator->paginate('Proposal',array('Proposal.user_id LIKE'=>$logged_user['id'])));

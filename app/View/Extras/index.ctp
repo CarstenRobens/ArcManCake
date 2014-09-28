@@ -139,7 +139,7 @@
 	<?php echo $this->Paginator->numbers(); ?>
 </div>
 
-
+<?php if($current_user['role']<2){?>
 
 <div class="contactwrapper">
 	<div class="view">
@@ -190,5 +190,5 @@
 		
 	</div>
 </div>
-
+<?php }?>
 

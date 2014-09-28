@@ -24,16 +24,22 @@
 				
 				<ul class="nav navbar-nav">
 				
-				
-					<?php if($this->Session->read('menue.active')=='Customers'){ ?>
-						<li class="active">	<?php }else{ ?>	<li>
-					<?php } ?>
-					<?php echo $this->Html->link(__('Customers'), array('plugin'=>NULL,'controller' => 'Customers', 'action' => 'index')); ?></li>
-				
-					<?php if($this->Session->read('menue.active')=='Lands'){ ?>
-						<li class="active"> <?php }else{ ?> <li>
-					<?php } ?>
-					<?php echo $this->Html->link(__('Lands'),array('plugin'=>NULL,'controller'=>'Lands','action'=>'index'))?></li>
+					<?php if($current_user['role']<3){?>
+						<?php if($this->Session->read('menue.active')=='Customers'){ ?>
+							<li class="active">	<?php }else{ ?>	<li>
+						<?php } ?>
+						<?php echo $this->Html->link(__('Customers'), array('plugin'=>NULL,'controller' => 'Customers', 'action' => 'index')); ?></li>
+					
+						<?php if($this->Session->read('menue.active')=='Lands'){ ?>
+							<li class="active"> <?php }else{ ?> <li>
+						<?php } ?>
+						<?php echo $this->Html->link(__('Lands'),array('plugin'=>NULL,'controller'=>'Lands','action'=>'index'))?></li>
+					<?php }elseif ($current_user['role']==3){?>
+						<?php if($this->Session->read('menue.active')=='Proposals'){ ?>
+							<li class="active"> <?php }else{ ?> <li>
+						<?php } ?>
+						<?php echo $this->Html->link(__('Proposals'),array('plugin'=>NULL,'controller'=>'Proposals','action'=>'index'))?></li>
+					<?php }?>
 				
 					<?php if($this->Session->read('menue.active')=='FullCalendar'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
@@ -60,13 +66,6 @@
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
 					<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
-					
-					<?php if ($check_open>0 && $current_user['role']<1) {
-						if($this->Session->read('menue.active')=='JobOffers'){ ?>
-							<li class="active"> <?php }else{ ?> <li>
-						<?php } 
-						echo $this->Html->link(__('Job offers'),array('plugin'=>NULL,'controller'=>'JobOffers','action'=>'index'))?></li>
-					<?php } ?>
 					
 				</ul>
 				<?php } else {?>

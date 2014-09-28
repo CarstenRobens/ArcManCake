@@ -19,7 +19,9 @@
 
 		<a  class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('plugin' => 'full_calendar', 'controller' => 'full_calendar'));?> ><span class="glyphicon glyphicon-calendar"></span> <?php echo __('Calendar view');?></a>
 		<a  class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('plugin' => 'full_calendar', 'controller' => 'events', 'action' => 'add'));?> ><span class="glyphicon glyphicon-pushpin"></span> <?php echo __('Set appointment');?></a>
-		<a  class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('plugin' => 'full_calendar', 'controller' => 'event_types'));?> ><span class="glyphicon glyphicon-list"></span> <?php echo __('Types');?></a>
+		<?php if ($current_user['role']<2){?>
+			<a  class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('plugin' => 'full_calendar', 'controller' => 'event_types'));?> ><span class="glyphicon glyphicon-list"></span> <?php echo __('Types');?></a>
+		<?php }?>
 	</div>
 </div>
 

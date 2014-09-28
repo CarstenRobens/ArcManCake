@@ -17,6 +17,15 @@ class EventsController extends FullCalendarAppController {
 	var $paginate = array(
 		'limit' => 15
 	);
+	
+	
+	public function isAuthorized($logged_user) {
+		if (!empty($logged_user['role']) ){
+			return true;
+		}
+		return parent::isAuthorized($logged_user);
+	}
+	
 
 	function index() {
 		$this->Event->recursive = 1;

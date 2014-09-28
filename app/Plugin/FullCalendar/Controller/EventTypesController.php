@@ -14,9 +14,10 @@ class EventTypesController extends FullCalendarAppController {
 
 	var $name = 'EventTypes';
 
-        var $paginate = array(
-            'limit' => 15
-        );
+	var $paginate = array(
+		'limit' => 15
+	);
+	
 
 	function index() {
 		$this->EventType->recursive = 0;
