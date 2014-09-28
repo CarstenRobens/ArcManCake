@@ -689,6 +689,24 @@ class ProposalsController extends AppController{
     		throw new NotFoundException(__('Invalid proposal'));
     	}
     	
+		$bool_basement=0;
+		$bool_standalone=0;
+		foreach($z as $index=>$abc){
+			if($abc['MyExtra']['size_dependent_flag']>0){
+				if($abc['MyBoughtExtra']['price']>0){
+					$direction=1;
+				}else{
+					$direction=-1;
+				}
+			}elseif ($abc['MyExtra']['type']==2){
+				$bool_basement=1;
+			}elseif ($abc['MyExtra']['type']==3){
+				$bool_standalone=1;
+			}
+		}
+		$this->set('bool_basement',$bool_basement);
+		$this->set('bool_standalone',$bool_standalone);
+		
     	$this->set('proposal_view',$x);
     	$this->set('house_pictures_view',$y);
     	$this->set('bought_extras_view',$z);

@@ -59,9 +59,12 @@
 		
 		<p>
 		&copy; 2014 C. Robens and R. Gómez &middot; 
-		<?php echo $this->Html->link('Impressum',array('plugin'=>NULL,'controller'=>'Home','action'=>'impressum'))?> 
-		
-		
+		<?php echo $this->Html->link('Impressum',array('plugin'=>NULL,'controller'=>'Home','action'=>'impressum'))?>
+		<?php if($this->Session->check('Auth.User')){
+					?> &middot; <?php
+					echo $this->Html->link(__('Contact'),array('plugin'=>NULL,'controller'=>'Home','action'=>'contact'));
+				}
+		?>
 		</p>
 		<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),

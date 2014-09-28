@@ -44,7 +44,11 @@ foreach ($normal_house_pictures_view as $x){
 		<br/>
 		<br/>
 		<br/><?php echo __('Unverbindliches Angebot'); ?>
-		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )
 		<br/>
 		<br/>
 		</h2>

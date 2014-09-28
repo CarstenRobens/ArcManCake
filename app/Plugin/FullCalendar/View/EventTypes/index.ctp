@@ -23,8 +23,8 @@
 	<h2><?php __('Event Types');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('name');?></th>
-            <th><?php echo $this->Paginator->sort('color');?></th>
+			<th><?php echo $this->Paginator->sort('name','Name');?></th>
+            <th><?php echo $this->Paginator->sort('color','Farbe');?></th>
 			<th class="actions"></th>
 	</tr>
 	<?php

@@ -1,34 +1,34 @@
 <?php
 
 // Config of Userright names
-$config['Level'][0] = __('Webmaster');
-$config['Level'][1] = __('Admin');
-$config['Level'][2] = __('Salesman');
-$config['Level'][3] = __('Overseer');
+$config['Level'][0] = ('Webmaster');
+$config['Level'][1] = ('Admin');
+$config['Level'][2] = ('Verkäufer');
+$config['Level'][3] = ('Bauleiter');
 
-$config['HousePictureType'][-10] = __('Floorplan for visitors');
-$config['HousePictureType'][-2] = __('Floorplan: Side view with basement');
-$config['HousePictureType'][-1] = __('Floorplan: Basement');
-$config['HousePictureType'][0] = __('House Picture');
-$config['HousePictureType'][1] = __('Floorplan: Ground level');
-$config['HousePictureType'][2] = __('Floorplan: First floor');
-$config['HousePictureType'][3] = __('Floorplan: Second floor');
-$config['HousePictureType'][4] = __('Floorplan: Third floor');
-$config['HousePictureType'][5] = __('Floorplan: Side view');
+$config['HousePictureType'][-10] = ('Grundriss: Besucher');
+$config['HousePictureType'][-2] = ('Grundriss: Seitenansicht mit Keller');
+$config['HousePictureType'][-1] = ('Grundriss: Keller');
+$config['HousePictureType'][0] = ('Hausansicht');
+$config['HousePictureType'][1] = ('Grundriss: Erdgeschoss');
+$config['HousePictureType'][2] = ('Grundriss: erster Stock');
+$config['HousePictureType'][3] = ('Grundriss: zweiter Stock');
+$config['HousePictureType'][4] = ('Grundriss: dritter Stock');
+$config['HousePictureType'][5] = ('Grundriss: Seitenansicht ohne Keller');
 
-$config['HouseSide'][1] = __('Left');
-$config['HouseSide'][2] = __('Right');
-$config['HouseSide'][3] = __('Standalone');
+$config['HouseSide'][1] = ('Links');
+$config['HouseSide'][2] = ('Rechts');
+$config['HouseSide'][3] = ('Freistehend');
 
-$config['ExtraType'][0] = __('Normal');
-$config['ExtraType'][1] = __('Garage');
-$config['ExtraType'][2] = __('Basement');
-$config['ExtraType'][3] = __('Standalone');
+$config['ExtraType'][0] = ('Normal');
+$config['ExtraType'][1] = ('Garage');
+$config['ExtraType'][2] = ('Keller');
+$config['ExtraType'][3] = ('Freistehend');
 
 $config['ExtraUnit']['price'][0] = '€';
-$config['ExtraUnit']['factor'][0] = __('None');
+$config['ExtraUnit']['factor'][0] = ('Keine');
 $config['ExtraUnit']['price'][1] = '€';
-$config['ExtraUnit']['factor'][1] = __('Units');
+$config['ExtraUnit']['factor'][1] = ('Stück');
 $config['ExtraUnit']['price'][2] = '€/m<sup>2</sup>';
 $config['ExtraUnit']['factor'][2] = 'm<sup>2</sup>';
 $config['ExtraUnit']['price'][3] = '€/m';
@@ -42,9 +42,9 @@ $config['HouseType'][3] = 'C';
 $config['price_enlargement'] = 999;
 $config['price_shrinking'] = -333;
 
-$config['DocType'][1] = __('Summary');
-$config['DocType'][2] = __('BankReceipt');
-$config['DocType'][3] = __('Contract');
+$config['DocType'][1] = ('Unverbindliches Angebot');
+$config['DocType'][2] = ('Kalkulation');
+$config['DocType'][3] = ('Vertrag');
 
 
 $config['eMail']['HR'] = 'info@tc-architekt.de';

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-09-28 14:59+0200\n"
-"PO-Revision-Date: 2014-09-28 18:24+0100\n"
+"PO-Revision-Date: 2014-09-28 19:26+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -217,7 +217,7 @@ msgstr "Löschen"
 #: /FullCalendar/View/Events/index.ctp:61
 #: /FullCalendar/View/Events/view.ctp:58
 msgid "by"
-msgstr "erstell von"
+msgstr "von"
 
 #: /FullCalendar/View/Events/view.ctp:27
 msgid "Title:"
@@ -331,7 +331,7 @@ msgstr "Nichts"
 
 #: /ArcManCake_config.php:31 /Extras/index.ctp:24
 msgid "Units"
-msgstr "Stück"
+msgstr "Einheiten"
 
 #: /ArcManCake_config.php:45 /Proposals/index.ctp:26 /Proposals/view.ctp:47;48
 msgid "Summary"
@@ -474,7 +474,7 @@ msgstr "Die Sonderausstattung konnte nicht aktualisiert werden."
 
 #: /ExtrasController.php:223
 msgid "Extra with id: %s has been deleted"
-msgstr "Die Sinderausstattung (ID: %s) wurde gelöscht"
+msgstr "Die Sonderausstattung (ID: %s) wurde gelöscht"
 
 #: /ExtrasController.php:245;288
 #: /ProposalsController.php:66;86;175;182;215;246;263;271;305;321;347;412;417;458;485;565;592;677;689
@@ -707,11 +707,11 @@ msgstr "Sonderausstattungen hinzufügen"
 
 #: /BoughtExtras/add_many_extras_testing.ctp:106 /Proposals/view.ctp:382
 msgid "Add extras"
-msgstr "Sonderausstattungen hinzufügen"
+msgstr "Sonderausstattungen"
 
 #: /BoughtExtras/add_many_extras_testing.ctp:108 /Proposals/view.ctp:383
 msgid "Add custom extra"
-msgstr "Kundenspezifische Sonderausstattungen hinzufügen"
+msgstr "Kundenspezifische Sonderausstattungen"
 
 #: /BoughtExtras/edit.ctp:11
 msgid "Change the price of: "
@@ -784,7 +784,7 @@ msgstr "Geben Sie die private Telefonnummer des Kunden an"
 
 #: /Customers/edit.ctp:26 /Customers/index.ctp:59
 msgid "Private Phone"
-msgstr "private Telefonnummer"
+msgstr "private Tel."
 
 #: /Customers/edit.ctp:27 /Customers/index.ctp:60
 msgid "Enter the customer work phone number"
@@ -792,7 +792,7 @@ msgstr "Geben Sie die geschäftliche Telefonnummer des Kunden an"
 
 #: /Customers/edit.ctp:27 /Customers/index.ctp:60
 msgid "Work Phone"
-msgstr "geschäftliche Telefonnummer"
+msgstr "geschäftliche Tel."
 
 #: /Customers/edit.ctp:28 /Customers/index.ctp:61
 msgid "Enter the customer email address"
@@ -808,7 +808,7 @@ msgstr "Geben Sie die Kundenadresse an"
 
 #: /Customers/edit.ctp:29 /Customers/index.ctp:62
 msgid "Post Address"
-msgstr "Kundenandresse"
+msgstr "Adresse"
 
 #: /Customers/edit.ctp:30 /Customers/index.ctp:63
 msgid "additional post address information"
@@ -816,7 +816,7 @@ msgstr "Geben Sie die zusätzliche Kundenadresse an"
 
 #: /Customers/edit.ctp:30 /Customers/index.ctp:63
 msgid "Post Address 2"
-msgstr "zusätzliche Kundenadresse "
+msgstr "zusätzliche Adresse "
 
 #: /Customers/edit.ctp:31 /Customers/index.ctp:64
 msgid "Enter the customer zipcode"
@@ -863,7 +863,7 @@ msgstr "Geben Sie den zweiten Kundennamen an"
 
 #: /Customers/edit.ctp:41 /Customers/index.ctp:74
 msgid "2nd Name"
-msgstr "zweiter Kundenname"
+msgstr "Name"
 
 #: /Customers/edit.ctp:42 /Customers/index.ctp:75
 msgid "Enter the 2nd customer surname"
@@ -871,7 +871,7 @@ msgstr "Geben Sie den zweiten Kundennachnamen an"
 
 #: /Customers/edit.ctp:42 /Customers/index.ctp:75
 msgid "2nd Surname"
-msgstr "zweiter Kundennachnahme"
+msgstr "Nachnahme"
 
 #: /Customers/edit.ctp:43 /Customers/index.ctp:76
 msgid "Enter the 2nd maiden surname"
@@ -879,7 +879,7 @@ msgstr "Falls zutreffend geben Sie den Mutternamen des zweiten Kunden an"
 
 #: /Customers/edit.ctp:43 /Customers/index.ctp:76
 msgid "2nd Maiden Surname"
-msgstr "Mutternamen"
+msgstr "Muttername"
 
 #: /Customers/edit.ctp:44 /Customers/index.ctp:77
 msgid "Enter the 2nd customers Birthday"
@@ -983,7 +983,7 @@ msgstr "Angebote"
 
 #: /Elements/footer.ctp:38
 msgid "Extra categories"
-msgstr "Kategorien der Sonderausstattungen"
+msgstr "Sonderausstattungs Kategorien"
 
 #: /Elements/footer.ctp:43
 msgid "Home pictures"
@@ -1088,7 +1088,7 @@ msgstr "Flächenabhängig"
 
 #: /Extras/add_custom_extra.ctp:35 /Extras/edit.ctp:36 /Extras/index.ctp:172
 msgid "Type of extra"
-msgstr "Kategorie"
+msgstr "Art der Sonderausstattung"
 
 #: /Extras/edit.ctp:30;31;32 /Extras/index.ctp:166;167;168
 msgid "Default Price for Houses of type "
@@ -1112,7 +1112,7 @@ msgstr "Einzigartige Sonderausstattung"
 
 #: /Extras/edit.ctp:40 /Extras/index.ctp:176
 msgid "Will the price be fixed?"
-msgstr "Preis kann nicht bearbeitet werden"
+msgstr "Preis kann nicht verändert werden"
 
 #: /Extras/edit.ctp:41 /Extras/index.ctp:177
 msgid "Service from external company?"
@@ -1141,7 +1141,7 @@ msgstr "Größ. abh."
 #: /Extras/index.ctp:27 /HousePictures/index.ctp:55 /Houses/edit.ctp:26
 #: /Houses/index.ctp:126 /Proposals/edit_house.ctp:45
 msgid "Type"
-msgstr "Kategorie"
+msgstr "Art"
 
 #: /Extras/index.ctp:28
 msgid "Req. Extra"
@@ -1205,7 +1205,7 @@ msgstr "Geben Sie eine Beschreibung an"
 
 #: /GalleryPictures/index.ctp:58 /Houses/view.ctp:23
 msgid "Picture"
-msgstr "Bild"
+msgstr "Bilder"
 
 #: /Home/contact.ctp:22 /Offer/view.ctp:118
 msgid "Address"
@@ -1229,7 +1229,7 @@ msgstr "Startseiten Bilder"
 
 #: /HomePictures/index.ctp:50 /HousePictures/index.ctp:95
 msgid "Add a home picture"
-msgstr "Startseiten Bild hinzufügen"
+msgstr "Bild hinzufügen"
 
 #: /HomePictures/index.ctp:53 /HousePictures/index.ctp:98
 msgid "Enter the title of the picture"
@@ -1329,7 +1329,7 @@ msgstr " m<sup>2</sup> auf "
 #: /Houses/view.ctp:38 /Proposals/edit_house.ctp:52
 #: /Proposals/gen_summary.ctp:137;139;141 /Proposals/view.ctp:106;108;110
 msgid " floors."
-msgstr "Etagen."
+msgstr " Etagen."
 
 #: /Houses/view.ctp:42 /Proposals/gen_summary.ctp:146 /Proposals/view.ctp:114
 msgid "Size according to DIN 227:"
@@ -1498,11 +1498,11 @@ msgstr "Grundstück"
 
 #: /Lands/index.ctp:13
 msgid "belongs to Costumer"
-msgstr "gehört zu Kunden"
+msgstr "gehört Kunde"
 
 #: /Lands/index.ctp:15
 msgid "belongs to Supervisor"
-msgstr "erstell von "
+msgstr "verwaltet von"
 
 #: /Lands/index.ctp:41
 msgid "Are you sure you want to delete this land?"
@@ -1772,7 +1772,7 @@ msgstr "Geben Sie eine Telefonnummer an"
 
 #: /Users/add.ctp:21 /Users/edit.ctp:26 /Users/index.ctp:83
 msgid "Phone Number"
-msgstr "Telefonnummer "
+msgstr "Tel."
 
 #: /Users/add.ctp:22 /Users/edit.ctp:27 /Users/index.ctp:84
 msgid "Enter an E-Mail Address"

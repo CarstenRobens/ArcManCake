@@ -1,7 +1,7 @@
 
 <div class="row">
 	<br>
-	<?php echo $this->Html->link('Back', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
+	<?php echo $this->Html->link('Zurück', array('controller'=>'Proposals','action'=>'view',$proposal_id_view)) ?>
 </div>
 	
 

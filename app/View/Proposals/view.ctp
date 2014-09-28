@@ -1,7 +1,7 @@
 
 <div class="row">
 	<br>
-	<?php echo $this->Html->link('Back', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
+	<?php echo $this->Html->link('Zurück', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
 </div>
 
 <div class="row">
@@ -642,13 +642,14 @@ foreach ($normal_house_pictures_view as $x){
       </div>
       <div class="modal-body">
       
-      <div style="text-align:right"><a style="text-align:right" href=<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'add_land_for_customer',$proposal_view['MyCustomer']['id']));?>> Grundstück hinzufügen </a></div>
       <select id="land_list"></select> 
       
       </div>
       <div class="modal-footer">
+		
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __('Close');?></button>
-        <button id="save_land" type="button" class="btn btn-success"><?php echo __('Save');?></button>
+        <a style="text-align:right" href=<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'add_land_for_customer',$proposal_view['MyCustomer']['id']));?>>  <button type="button" class="btn btn-success" ><?php echo ('Grundstück erstellen');?></button></a>
+		<button id="save_land" type="button" class="btn btn-success"><?php echo __('Save');?></button>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <div class="row">
 	<br>
-	<?php echo $this->Html->link('Back', array('controller'=>'Extras','action'=>'index')) ?>
+	<?php echo $this->Html->link('Zurück', array('controller'=>'Extras','action'=>'index')) ?>
 </div>
 	
 

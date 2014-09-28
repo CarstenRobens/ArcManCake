@@ -40,7 +40,7 @@
 <?php 
 if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	
-	<div class="contactwrapper">
+	<div class="contactwrapper" style="margin:10px">
 	<div class="view">
 
 	<div class="PostBox">

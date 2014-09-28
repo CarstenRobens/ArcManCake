@@ -69,7 +69,7 @@
 					echo __('Total Size');
 				}
 			}elseif($x['Extra']['size_dependent_flag']>0){
-				echo 'enlarge';
+				echo 'Hausvergrößerung';
 			}else{
 				?><div style="text-align:right;"><span class="glyphicon glyphicon-remove"></span></div><?php 
 			} ?>

@@ -27,13 +27,13 @@
 	<h2><?php __('Events');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('title');?></th>
-			<th><?php echo $this->Paginator->sort('event_type_id','Category');?></th>
-			<th><?php echo $this->Paginator->sort('status');?></th>
-			<th><?php echo $this->Paginator->sort('start');?></th>
-            <th><?php echo $this->Paginator->sort('end');?></th>
+			<th><?php echo $this->Paginator->sort('title','Titel');?></th>
+			<th><?php echo $this->Paginator->sort('event_type_id','Kategorie');?></th>
+			<th><?php echo $this->Paginator->sort('status','Status');?></th>
+			<th><?php echo $this->Paginator->sort('start','Startzeitpunkt');?></th>
+            <th><?php echo $this->Paginator->sort('end','Endzeitpunkt');?></th>
 			<th class="actions"></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
+			<th><?php echo $this->Paginator->sort('created','Erstellt');?></th>
 	</tr>
 	<?php
 	$i = 0;

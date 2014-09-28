@@ -1,6 +1,6 @@
 <h3>Edit House</h3>
 
-<?php echo $this->Html->link('Back', array('controller'=>'Houses','action'=>'index')) ?>
+<?php echo $this->Html->link('Zurück', array('controller'=>'Houses','action'=>'index')) ?>
 
 
 <div class="container">

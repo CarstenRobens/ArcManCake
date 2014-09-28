@@ -121,7 +121,11 @@
 			
 			<table>
 					<tr>
-						<td><?php echo __('Haus: '.$proposal_view['MyHouse']['name']); ?></td>
+						<td><?php echo __('Haus: '.$proposal_view['MyHouse']['name']); ?> ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )</td>
 						<td> <td>
 						<td align="right"> 
 							<?php $total_extras=$proposal_view['MyHouse']['price']; echo $this->Number->currency($total_extras,'EUR',array('wholePosition'=>'after')); ?>

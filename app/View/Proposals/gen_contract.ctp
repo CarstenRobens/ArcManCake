@@ -32,7 +32,11 @@ foreach ($normal_house_pictures_view as $x){
 		<br/>
 		<br/>
 		<br/><?php echo __('Bauwerkvertrag für Ihr'); ?>
-		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )
+		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )
 		<br/>
 		<br/>
 		</h2>
@@ -258,7 +262,11 @@ foreach ($normal_house_pictures_view as $x){
 		<div style="width: 400px;float:left; padding: 5px">
 			<table>
 				<tr>
-					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name']; ?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6> </td>
+					<td > <h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name']; ?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )</h6> </td>
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -1458,7 +1466,11 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -1830,7 +1842,11 @@ sind enthalten.
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?>  &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?>  &nbsp;&nbsp;&nbsp;&nbsp; ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -2108,7 +2124,11 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
@@ -2244,7 +2264,11 @@ Fall angemessene Betrag wesentlich niedriger ist als die vereinbarte Pauschale v
 				<tr>
 					<td >&nbsp;<br>
 					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )</h6></td>		
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> &nbsp;&nbsp;&nbsp;&nbsp; ( <?php if($bool_standalone){ 
+						echo $house_side[3];
+					}elseif($proposal_view['MyHouse']['bool_duplex']){
+						 echo $house_side[$proposal_view['Proposal']['duplex_side']]; 
+					} ?> )</h6></td>		
 				</tr>
 				<tr >
 					<td style = "border-bottom: none;">Haustyp</td>		
