@@ -41,7 +41,7 @@
 						echo $this->Form->input('2nd_name',array('placeholder' => __('Enter the 2nd customer name'),'label' => __('2nd Name'),'div' => 'form-group has-success'));
 						echo $this->Form->input('2nd_surname',array('placeholder' => __('Enter the 2nd customer surname'),'label' => __('2nd Surname'),'div' => 'form-group has-success'));
 						echo $this->Form->input('2nd_maiden_surname',array('placeholder' => __('Enter the 2nd maiden surname'),'label' => __('2nd Maiden Surname'),'div' => 'form-group has-success'));
-						echo $this->Form->input('2nd_birthday',array('dateFormat'=>'DMY','placeholder' => __('Enter the 2nd customers Birthday'),'label' => __('2nd Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
+						echo $this->Form->input('2nd_birthday',array('empty' => true,'dateFormat'=>'DMY','placeholder' => __('Enter the 2nd customers Birthday'),'label' => __('2nd Birthday'),'div' => 'form-group has-success','minYear' => date('Y') - 110,'maxYear' => date('Y') - 18));
 						?>	
 						
 				</div>						
