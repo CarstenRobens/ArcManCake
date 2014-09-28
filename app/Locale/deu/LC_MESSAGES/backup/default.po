@@ -1,0 +1,473 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-06-29 15:31+0200\n"
+"PO-Revision-Date: 2014-06-29 15:34+0100\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: Controller/AppController.php:55
+msgid "Acces denied"
+msgstr ""
+
+#: Controller/CostumersController.php:12 Controller/HousesController.php:15
+msgid "Acces denied: Low cleareance access"
+msgstr ""
+
+#: Controller/CostumersController.php:45
+msgid "Your costumer has been saved."
+msgstr ""
+
+#: Controller/CostumersController.php:48
+msgid "Unable to add your costumer."
+msgstr ""
+
+#: Controller/CostumersController.php:56;61
+#: Controller/HousesController.php:51;56 Controller/LandsController.php:42;47
+#: Controller/ProposalsController.php:42;47
+msgid "Invalid postumer"
+msgstr ""
+
+#: Controller/CostumersController.php:70 Controller/LandsController.php:56
+#: Controller/ProposalsController.php:56
+msgid "Invaled postumer"
+msgstr ""
+
+#: Controller/CostumersController.php:75
+msgid "Invalid costumer"
+msgstr ""
+
+#: Controller/CostumersController.php:81
+msgid "Your costumer has been updated"
+msgstr ""
+
+#: Controller/CostumersController.php:84
+msgid "Unable to update your costumer."
+msgstr ""
+
+#: Controller/CostumersController.php:97
+msgid "The costumer with id: %s has been deleted"
+msgstr ""
+
+#: Controller/HousesController.php:40
+msgid "The house has been saved."
+msgstr ""
+
+#: Controller/HousesController.php:43
+msgid "Unable to add your house."
+msgstr ""
+
+#: Controller/HousesController.php:65
+msgid "Invaled house"
+msgstr ""
+
+#: Controller/HousesController.php:70
+msgid "Invalid house"
+msgstr ""
+
+#: Controller/HousesController.php:76
+msgid "The house has been updated"
+msgstr ""
+
+#: Controller/HousesController.php:79
+msgid "Unable to update the house."
+msgstr ""
+
+#: Controller/HousesController.php:92
+msgid "House with id: %s has been deleted"
+msgstr ""
+
+#: Controller/LandsController.php:64
+msgid "Your land has been saved."
+msgstr ""
+
+#: Controller/LandsController.php:67 Controller/ProposalsController.php:67
+msgid "Unable to add your postumer."
+msgstr ""
+
+#: Controller/LandsController.php:74
+msgid "Invaled land"
+msgstr ""
+
+#: Controller/LandsController.php:79
+msgid "Invalid land"
+msgstr ""
+
+#: Controller/LandsController.php:85
+msgid "Your land has been updated"
+msgstr ""
+
+#: Controller/LandsController.php:88
+msgid "Unable to update your land."
+msgstr ""
+
+#: Controller/LandsController.php:101
+msgid "The land with id: %s has been deleted"
+msgstr ""
+
+#: Controller/LandsController.php:124 Controller/ProposalsController.php:124
+msgid "Summary generated"
+msgstr ""
+
+#: Controller/LandsController.php:141 Controller/ProposalsController.php:141
+msgid "Contract generated"
+msgstr ""
+
+#: Controller/LandsController.php:157 Controller/ProposalsController.php:157
+msgid "Bank Receipt generated"
+msgstr ""
+
+#: Controller/ProposalsController.php:64
+msgid "Your proposal has been saved."
+msgstr ""
+
+#: Controller/ProposalsController.php:74
+msgid "Invaled proposal"
+msgstr ""
+
+#: Controller/ProposalsController.php:79
+msgid "Invalid proposal"
+msgstr ""
+
+#: Controller/ProposalsController.php:85
+msgid "Your proposal has been updated"
+msgstr ""
+
+#: Controller/ProposalsController.php:88
+msgid "Unable to update your proposal."
+msgstr ""
+
+#: Controller/ProposalsController.php:101
+msgid "The proposal with id: %s has been deleted"
+msgstr ""
+
+#: Controller/UsersController.php:48;73
+msgid "User has been created."
+msgstr ""
+
+#: Controller/UsersController.php:51;76
+msgid "Unable to add user."
+msgstr ""
+
+#: Controller/UsersController.php:61;85;107
+msgid "Invalid user"
+msgstr ""
+
+#: Controller/UsersController.php:91
+msgid "User info has been updated"
+msgstr ""
+
+#: Controller/UsersController.php:94
+msgid "Unable to update user."
+msgstr ""
+
+#: Controller/UsersController.php:111
+msgid "The user with id: %s has been deleted"
+msgstr ""
+
+#: Controller/UsersController.php:115
+msgid "User was not deleted"
+msgstr ""
+
+#: Controller/UsersController.php:126
+msgid "Invalid username or password, try again"
+msgstr ""
+
+#: View/Users/index.ctp:7
+msgid "Users"
+msgstr ""
+
+#: View/Users/index.ctp:8
+msgid "blakbfksdjnmjsndfb penis"
+msgstr "nooooooooooooooooo"
+
+#: View/Users/login.ctp:6
+msgid "Please enter your username and password"
+msgstr ""
+
+#: View/Users/login.ctp:15
+msgid "Login"
+msgstr ""
+
+#: Model/User.php:validation for field username
+msgid "A username is required"
+msgstr ""
+
+#: Model/User.php:validation for field password
+msgid "A password is required"
+msgstr ""
+
+#: Model/User.php:validation for field role
+msgid "Please enter a valid role"
+msgstr ""
+
+#: View/Errors/error400.ctp:21 View/Errors/error500.ctp:21
+msgid "Error"
+msgstr ""
+
+#: View/Errors/error400.ctp:23
+msgid "The requested address %s was not found on this server."
+msgstr ""
+
+#: View/Errors/error500.ctp:22
+msgid "An Internal Error Has Occurred."
+msgstr ""
+
+#: View/Layouts/default.ctp:19 View/Layouts/error.ctp:19
+msgid "CakePHP: the rapid development php framework"
+msgstr ""
+
+#: View/Layouts/default.ctp:20
+msgid "CakePHP %s"
+msgstr ""
+
+#: View/Pages/home.ctp:16
+msgid "Release Notes for CakePHP %s."
+msgstr ""
+
+#: View/Pages/home.ctp:18
+msgid "Read the changelog"
+msgstr ""
+
+#: View/Pages/home.ctp:29
+msgid "URL rewriting is not properly configured on your server."
+msgstr ""
+
+#: View/Pages/home.ctp:40
+msgid "Your version of PHP is 5.2.8 or higher."
+msgstr ""
+
+#: View/Pages/home.ctp:44
+msgid ""
+"Your version of PHP is too low. You need PHP 5.2.8 or higher to use CakePHP."
+msgstr ""
+
+#: View/Pages/home.ctp:53
+msgid "Your tmp directory is writable."
+msgstr ""
+
+#: View/Pages/home.ctp:57
+msgid "Your tmp directory is NOT writable."
+msgstr ""
+
+#: View/Pages/home.ctp:67
+msgid "The %s is being used for core caching. To change the config edit %s"
+msgstr ""
+
+#: View/Pages/home.ctp:71
+msgid "Your cache is NOT working. Please check the settings in %s"
+msgstr ""
+
+#: View/Pages/home.ctp:81
+msgid "Your database configuration file is present."
+msgstr ""
+
+#: View/Pages/home.ctp:86
+msgid "Your database configuration file is NOT present."
+msgstr ""
+
+#: View/Pages/home.ctp:88
+msgid "Rename %s to %s"
+msgstr ""
+
+#: View/Pages/home.ctp:113
+msgid "CakePHP is able to connect to the database."
+msgstr ""
+
+#: View/Pages/home.ctp:117
+msgid "CakePHP is NOT able to connect to the database."
+msgstr ""
+
+#: View/Pages/home.ctp:129
+msgid "PCRE has not been compiled with Unicode support."
+msgstr ""
+
+#: View/Pages/home.ctp:131
+msgid ""
+"Recompile PCRE with Unicode support by adding <code>--enable-unicode-"
+"properties</code> when configuring"
+msgstr ""
+
+#: View/Pages/home.ctp:140
+msgid "DebugKit plugin is present"
+msgstr ""
+
+#: View/Pages/home.ctp:144
+msgid ""
+"DebugKit is not installed. It will help you inspect and debug different "
+"aspects of your application."
+msgstr ""
+
+#: View/Pages/home.ctp:146
+msgid "You can install it from %s"
+msgstr ""
+
+#: View/Pages/home.ctp:152
+msgid "Editing this Page"
+msgstr ""
+
+#: View/Pages/home.ctp:155
+msgid ""
+"To change the content of this page, edit: %s.<br />\n"
+"To change its layout, edit: %s.<br />\n"
+"You can also add some CSS styles for your pages at: %s."
+msgstr ""
+
+#: View/Pages/home.ctp:162
+msgid "Getting Started"
+msgstr ""
+
+#: View/Pages/home.ctp:166
+msgid "New"
+msgstr ""
+
+#: View/Pages/home.ctp:166
+msgid "CakePHP 2.0 Docs"
+msgstr ""
+
+#: View/Pages/home.ctp:175
+msgid "The 15 min Blog Tutorial"
+msgstr ""
+
+#: View/Pages/home.ctp:182
+msgid "Official Plugins"
+msgstr ""
+
+#: View/Pages/home.ctp:187
+msgid ""
+"provides a debugging toolbar and enhanced debugging tools for CakePHP "
+"applications."
+msgstr ""
+
+#: View/Pages/home.ctp:191
+msgid ""
+"contains various localized validation classes and translations for specific "
+"countries"
+msgstr ""
+
+#: View/Pages/home.ctp:196
+msgid "More about CakePHP"
+msgstr ""
+
+#: View/Pages/home.ctp:198
+msgid ""
+"CakePHP is a rapid development framework for PHP which uses commonly known "
+"design patterns like Active Record, Association Data Mapping, Front "
+"Controller and MVC."
+msgstr ""
+
+#: View/Pages/home.ctp:201
+msgid ""
+"Our primary goal is to provide a structured framework that enables PHP users "
+"at all levels to rapidly develop robust web applications, without any loss "
+"to flexibility."
+msgstr ""
+
+#: View/Pages/home.ctp:206
+msgid "The Rapid Development Framework"
+msgstr ""
+
+#: View/Pages/home.ctp:207
+msgid "CakePHP Documentation"
+msgstr ""
+
+#: View/Pages/home.ctp:208
+msgid "Your Rapid Development Cookbook"
+msgstr ""
+
+#: View/Pages/home.ctp:209
+msgid "CakePHP API"
+msgstr ""
+
+#: View/Pages/home.ctp:210
+msgid "Quick API Reference"
+msgstr ""
+
+#: View/Pages/home.ctp:211
+msgid "The Bakery"
+msgstr ""
+
+#: View/Pages/home.ctp:212
+msgid "Everything CakePHP"
+msgstr ""
+
+#: View/Pages/home.ctp:213
+msgid "CakePHP Plugins"
+msgstr ""
+
+#: View/Pages/home.ctp:214
+msgid "A comprehensive list of all CakePHP plugins created by the community"
+msgstr ""
+
+#: View/Pages/home.ctp:215
+msgid "CakePHP Community Center"
+msgstr ""
+
+#: View/Pages/home.ctp:216
+msgid "Everything related to the CakePHP community in one place"
+msgstr ""
+
+#: View/Pages/home.ctp:217
+msgid "CakePHP Google Group"
+msgstr ""
+
+#: View/Pages/home.ctp:218
+msgid "Community mailing list"
+msgstr ""
+
+#: View/Pages/home.ctp:220
+msgid "Live chat about CakePHP"
+msgstr ""
+
+#: View/Pages/home.ctp:221
+msgid "CakePHP Code"
+msgstr ""
+
+#: View/Pages/home.ctp:222
+msgid "Find the CakePHP code on GitHub and contribute to the framework"
+msgstr ""
+
+#: View/Pages/home.ctp:223;224
+msgid "CakePHP Issues"
+msgstr ""
+
+#: View/Pages/home.ctp:225;226
+msgid "CakePHP Roadmaps"
+msgstr ""
+
+#: View/Pages/home.ctp:227
+msgid "Training"
+msgstr ""
+
+#: View/Pages/home.ctp:228
+msgid "Join a live session and get skilled with the framework"
+msgstr ""
+
+#: View/Pages/home.ctp:229
+msgid "CakeFest"
+msgstr ""
+
+#: View/Pages/home.ctp:230
+msgid "Don't miss our annual CakePHP conference"
+msgstr ""
+
+#: View/Pages/home.ctp:231
+msgid "Cake Software Foundation"
+msgstr ""
+
+#: View/Pages/home.ctp:232
+msgid "Promoting development related to CakePHP"
+msgstr ""
+
+#: webroot/test.php:93
+msgid "Debug setting does not allow access to this url."
+msgstr ""

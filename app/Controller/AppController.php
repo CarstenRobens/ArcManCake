@@ -57,6 +57,7 @@ class AppController extends Controller {
 		$this->set('eMail',Configure::read('eMail'));
 		$this->set('info',Configure::read('Info'));
 		$this->set('company',Configure::read('company'));
+		Configure::write('Config.language', 'de');
     }
     
     public function isAuthorized($logged_user) {
