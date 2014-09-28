@@ -475,7 +475,7 @@
 				<!---------- END Right PANEL CONTENT------------------>
 			</div>
 		</div>
-		<div style="text-align:center;"><?php echo __('Interested?').' '.$this->Html->link(__('Write us!'),'mailto:'.$eMail['contact'].'?subject='.__('House:').' '.$Expose['expose']['realEstate']['title'],array('target'=>'blank')) ?> </div>
+		<div style="text-align:center;"><strong><?php echo __('Interested?').' '.$this->Html->link(__('Contact us!'),'mailto:'.$eMail['contact'].'?subject='.__('House:').' '.$Expose['expose']['realEstate']['title'],array('target'=>'blank')) ?></strong> </div>
 	</div>
 	
 	

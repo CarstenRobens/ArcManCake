@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2014 at 09:24 PM
+-- Generation Time: Sep 28, 2014 at 02:11 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -419,7 +419,7 @@ CREATE TABLE IF NOT EXISTS `house_pictures` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
 
 --
 -- Dumping data for table `house_pictures`
@@ -471,7 +471,8 @@ INSERT INTO `house_pictures` (`id`, `name`, `description`, `picture`, `type_flag
 (74, 'Seitenschnitt', '', '3_130-1-Schnitt.png', -2, 3, 2, '2014-09-27', '2014-09-27'),
 (75, 'Seitenschnitt', '', '2_stadt-120-Schnitt_ohneKeller.png', 5, 2, 2, '2014-09-27', '2014-09-27'),
 (77, 'Seitenschnitt', '', '8_Land-150-Schnitt_ohneKeller.png', 5, 8, 2, '2014-09-27', '2014-09-27'),
-(78, 'Seitenschnitt', '', '8_Land-150-Schnitt.png', -2, 8, 2, '2014-09-27', '2014-09-27');
+(78, 'Seitenschnitt', '', '8_Land-150-Schnitt.png', -2, 8, 2, '2014-09-27', '2014-09-27'),
+(79, 'Keller', '', '8_Land-150-KG.png', -1, 8, 2, '2014-09-28', '2014-09-28');
 
 -- --------------------------------------------------------
 
@@ -588,7 +589,7 @@ CREATE TABLE IF NOT EXISTS `proposals` (
 --
 
 INSERT INTO `proposals` (`id`, `name`, `notes`, `bool_locked`, `summary`, `bank_receipt`, `contract`, `customer_id`, `land_id`, `house_id`, `duplex_side`, `default_house_picture_id`, `user_id`, `created`, `modified`) VALUES
-(4, 'Test Proposal', 'Notes for the Proposal', 0, '', 'BankReceipt4.pdf', 'Contract4.pdf', 6, 8, 2, 2, '21', 2, '2014-08-23', '2014-08-23');
+(4, 'Test Proposal', 'Notes for the Proposal', 0, 'Angebot-14090004.pdf', 'Kalkulation-14090004.pdf', 'Vertrag-14090004.pdf', 6, 8, 2, 2, '21', 2, '2014-08-23', '2014-08-23');
 
 -- --------------------------------------------------------
 
@@ -621,7 +622,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `name`, `surname`, `p
 (8, 'LM', '0f4a6718fe21012abbdf4c2cfa486387b195c537', 1, 'Liewald', 'Marion', '021311333971', 'info@tc-architekt.de', '2014-09-27', '2014-09-27'),
 (9, 'SK', '78942178bce5a5b76bd1bf0043c528195b1543fe', 2, 'Kerstin', 'von Stiegler', '01601518749', 'Kerstin@vonstiegler.de', '2014-09-27', '2014-09-27'),
 (10, 'SR', '25b8ec5f24ee85b209890da891568359ee70aa49', 2, 'Radij', 'Scharf', '01722031326', 'Scharf.immo@web.de', '2014-09-27', '2014-09-27'),
-(11, 'AW', '799c4c7bf5a09b746f648fb3d07458d670e4cb20', 3, 'Werner', 'Alosery', '017630419272', 'bauleitung@tc-architekt.de', '2014-09-27', '2014-09-27');
+(11, 'AW', '799c4c7bf5a09b746f648fb3d07458d670e4cb20', 3, 'Werner', 'Alosery', '017630419272', 'bauleitung@tc-architekt.de', '2014-09-27', '2014-09-28');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

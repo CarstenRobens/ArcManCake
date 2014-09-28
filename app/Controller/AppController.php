@@ -57,7 +57,6 @@ class AppController extends Controller {
 		$this->set('eMail',Configure::read('eMail'));
 		$this->set('info',Configure::read('Info'));
 		$this->set('company',Configure::read('company'));
-		
     }
     
     public function isAuthorized($logged_user) {

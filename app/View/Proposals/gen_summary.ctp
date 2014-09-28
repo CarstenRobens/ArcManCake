@@ -43,7 +43,6 @@ foreach ($normal_house_pictures_view as $x){
 		<br/>
 		<br/>
 		<br/>
-		<br/>
 		<br/><?php echo __('Unverbindliches Angebot'); ?>
 		<br/><?php if(!empty($proposal_view['MyHouse']['name'])) echo $proposal_view['MyHouse']['name'];?> ( <?php echo $house_side[$proposal_view['Proposal']['duplex_side']]?> )
 		<br/>
@@ -81,11 +80,15 @@ foreach ($normal_house_pictures_view as $x){
 		<br/>
 		<br/>
 		<br/>
-		<br/>
-		<br/>
-		<br/>
+		
 		<h5 style = "text-align: center;">
 		<br/> Gesamtpreis Ihres Traumhauses inklusive der ausgewählten Sonderausstattungen: <?php echo $this->Number->currency($proposal_view['MyHouse']['price']+$summed_extras+$enlagment_price,'EUR',array('wholePosition'=>'after'));?>
+		</h5>
+		<br/>
+		<br/>
+		
+		<h5 style = "text-align: center;">
+		<br/> Erstellt von Ihrem Hauskaufberater: <?php echo $proposal_view['MyUser']['name'].' '.$proposal_view['MyUser']['surname'];?>
 		</h5>
 	</div>
 	
@@ -109,7 +112,6 @@ foreach ($normal_house_pictures_view as $x){
            		<div class="panel-heading">
 				<h3 class="panel-title" style="text-align:left;">
 					<?php echo __( 'House').': '.$proposal_view['MyHouse']['name'];?>
-					<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -214,10 +216,114 @@ foreach ($normal_house_pictures_view as $x){
 	</div>
 	
 	
+	<div class="row">
+		<div class="col-md-12">
+		<div class="panel panel-success">
+           		<div class="panel-heading">
+				<h3 class="panel-title" style="text-align:left;">
+					<?php echo __( 'Gallery');?>
+				</h3>
+			</div>
+			<div class="panel-body">
+			
+			
+<!----------PANEL CONTENT------------------>	
+
+		
+		
+	<div class="row">
+		
+		<div style="width:100%;float: left;">
+			<?php 
+					foreach ($normal_house_pictures_view as $x){
+						if ($x['MyHousePicture']['id']!=$proposal_view['Proposal']['default_house_picture_id']){?>
+							<div style="width:40%;padding: 5%;float: left">
+							<?php 
+							echo $this->Html->link(
+								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
+								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
+								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
+							);?>
+							</div>
+							<?php 
+						}
+					}?>
+			
+					
+			
+		</div>
+		
+		
+	</div>		
+
+<!----------END PANEL CONTENT-------------->			
+			
+			
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<pagebreak  />
 	
 	<!---------------------------------------------HousePictures END---------------------------------------------------->
 	
 	<!---------------------------------------------Floorplans START---------------------------------------------------->
+	
+	<div class="row">
+		<div class="col-md-12">
+		<div class="panel panel-success">
+           		<div class="panel-heading">
+				<h3 class="panel-title" style="text-align:left;">
+					<?php echo __( 'Floorplans');?>
+				</h3>
+			</div>
+			<div class="panel-body">
+			
+			
+<!----------PANEL CONTENT------------------>	
+
+		
+		
+	<div class="row">
+		
+		<div style="width:100%;float: left;">
+			<?php 
+					foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
+						<div style="width:40%;padding: 5%;float: left">
+						<?php 
+						echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
+						</div>
+					<?php }
+					if ($bool_basement){
+						foreach ($basement_house_pictures_view as $key=>$x){?>
+							<div style="width:40%;padding: 5%;float: left">
+								<?php echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
+							</div>
+						<?php } 
+					}else{
+						foreach ($sideview_nobasement_house_pictures_view as $key=>$x){?>
+							<div style="width:40%;padding: 5%;float: left">
+								<?php echo$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
+							</div>
+						<?php } 
+					}?>
+			
+		</div>
+		
+		
+	</div>		
+
+<!----------END PANEL CONTENT-------------->			
+			
+			
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<pagebreak  />
+	
 	<!---------------------------------------------Floorplans END---------------------------------------------------->
 	
 	

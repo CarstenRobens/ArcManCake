@@ -42,14 +42,6 @@
 					
 					<table cellpadding="0" cellspacing="0">
 						<tr>
-							<td><?php echo 'Letzte Änderung: ' ?>&nbsp;</td>
-							<td><div style="text-align: right;">
-									<?php echo date('d-M-Y',strtotime($House['House']['modified']));?>
-									&nbsp;
-								</div>
-							</td>
-						</tr>
-						<tr>
 							<td><?php echo 'Preis: ' ?>&nbsp;</td>
 							<td><div style="text-align: right;">
 									<?php echo $this->Number->currency($House['House']['price'],'EUR',array('wholePosition'=>'after'));?>
@@ -61,14 +53,6 @@
 							<td><?php echo 'Wohnfläche: ' ?>&nbsp;</td>
 							<td><div style="text-align: right;">
 									<?php echo $House['House']['size'].' m<sup>2</sup>';?>
-									&nbsp;
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td><?php echo 'Wohnfläche nach DIN 277: ' ?>&nbsp;</td>
-							<td><div style="text-align: right;">
-									<?php echo $House['House']['size_din'].' m<sup>2</sup>';?>
 									&nbsp;
 								</div>
 							</td>
@@ -96,7 +80,7 @@
 						<tr>
 							<td><?php echo __('Category:') ?>&nbsp;</td>
 							<td><div style="text-align: right;">
-									<?php echo $House['House']['type'];?>
+									<?php echo $house_type[$House['House']['type']];?>
 									&nbsp;
 								</div>
 							</td>
