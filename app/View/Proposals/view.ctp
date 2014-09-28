@@ -382,6 +382,7 @@ foreach ($normal_house_pictures_view as $x){
        		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add extras');?></a>
        		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?> ><span class="glyphicon glyphicon-paperclip"></span> <?php echo __('Add custom extra');?></a>
        		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-fullscreen"> </span> <?php echo __('Enlarge house'); ?></a>
+			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-lg btn-success locked" id="launch_shrink_house" href=# data-toggle="modal" data-target="#shrinkModal"><span class="glyphicon glyphicon-resize-small"> </span> <?php echo __('Shrink house'); ?></a>
        	</div>
 		</div>
 	</div>
