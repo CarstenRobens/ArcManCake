@@ -624,13 +624,14 @@ foreach ($normal_house_pictures_view as $x){
 
 
 <!-----------------MODALS-------------------->
+
 <!-----LAND------>
 <div class="modal fade" id="landModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h3 class="modal-title" >Select Land</h3>
+        <h3 class="modal-title" ><?php echo __('Select Land');?></h3>
       </div>
       <div class="modal-body">
       
@@ -638,8 +639,8 @@ foreach ($normal_house_pictures_view as $x){
       
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button id="save_land" type="button" class="btn btn-success">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __('Close');?></button>
+        <button id="save_land" type="button" class="btn btn-success"><?php echo __('Save');?></button>
       </div>
     </div>
   </div>

@@ -30,10 +30,12 @@ class ProposalsController extends AppController{
 				return TRUE;
 			}
 			
+			if(!empty($this->request->params['pass'][0])){
 			$proposal_id=(int) $this->request->params['pass'][0];
 			if($this->Proposal->check_lock($proposal_id) && in_array($this->action, array('edit','delete','edit_house','selected_house','edit_default_picture','selected_default_picture','gen_summary','gen_bank_receipt','gen_contract'))){
 				$this->Session->setFlash(__('The proposal is locked'), 'alert-box', array('class'=>'alert-danger'));
 				return FALSE;
+			}
 			}
 		}
 		
@@ -205,31 +207,32 @@ class ProposalsController extends AppController{
 		$land_id=$this->request->data['land_id'];
 		
 		if ($this->Proposal->check_lock($proposal_id)){
-			$this->Session->setFlash(__('The proposal is locked.'), 'alert-box', array('class'=>'alert-danger'));
-			return $this->redirect(array('action'=>'view',$proposal_id));
-		}
-		
-		if (!$proposal_id) {
-			throw new NotFoundException(__('Invalid proposal'));
-		}
-		$x = $this->Proposal->findById($proposal_id);
-		$old_land_id=$x['Proposal']['land_id'];
-	
-		#Check how many Proposals are using the old land:
-		$count=sizeof($this->Proposal->find('list',array('conditions'=>array('land_id' => $old_land_id))));
-		
-		$x['Proposal']['land_id']=$land_id;
-	
-		if ($this->Proposal->save($x)) {
-			$this->Proposal->MyLand->set_ownership($land_id,$x['Proposal']['customer_id']);
-			if ($count==1 && $land_id!=$old_land_id){ //if this proposal was the last one using that land, we set the land OPEN
-				$this->Proposal->MyLand->set_ownership($old_land_id,0);
-			}
-			$this->set('confirmation','Land has been changed');
+			$this->set('confirmation',__('The proposal is locked.'));
 			$this->set('_serialize',array('confirmation'));
 		}else{
-			$this->set('confirmation','Unable to update your proposal.');
-			$this->set('_serialize',array('confirmation'));
+		
+			if (!$proposal_id) {
+				throw new NotFoundException(__('Invalid proposal'));
+			}
+			$x = $this->Proposal->findById($proposal_id);
+			$old_land_id=$x['Proposal']['land_id'];
+		
+			#Check how many Proposals are using the old land:
+			$count=sizeof($this->Proposal->find('list',array('conditions'=>array('land_id' => $old_land_id))));
+			
+			$x['Proposal']['land_id']=$land_id;
+		
+			if ($this->Proposal->save($x)) {
+				$this->Proposal->MyLand->set_ownership($land_id,$x['Proposal']['customer_id']);
+				if ($count==1 && $land_id!=$old_land_id){ //if this proposal was the last one using that land, we set the land OPEN
+					$this->Proposal->MyLand->set_ownership($old_land_id,0);
+				}
+				$this->set('confirmation',__('Land has been changed'));
+				$this->set('_serialize',array('confirmation'));
+			}else{
+				$this->set('confirmation',__('Unable to update your proposal.'));
+				$this->set('_serialize',array('confirmation'));
+			}
 		}
 	}
 	
