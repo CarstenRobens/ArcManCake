@@ -21,8 +21,8 @@
 			<td> <?php echo $this->Html->link($x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])).','; ?></td>
 			<td> <?php echo $this->Html->link($x['Customer']['name'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
 			<td> <?php 
-				echo $this->Html->link('Create Proposal',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' | ';
-				echo $this->Html->link('Add Land',array('controller' => 'Lands','action' => 'add_land_for_customer',$x['Customer']['id'])).' | ';
+				echo $this->Html->link('Angebot erstellen',array('controller' => 'Proposals','action' => 'add',$x['Customer']['id'])).' | ';
+				echo $this->Html->link('Grundstück hinzufügen',array('controller' => 'Lands','action' => 'add_land_for_customer',$x['Customer']['id'])).' | ';
 				?>
 				<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$x['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span> </a><?php
 				echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete',$x['Customer']['id']), array('escape' => false, 'title'=>__('Delete')), __('Are you sure you want to delete this Customer?'));

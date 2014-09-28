@@ -642,6 +642,7 @@ foreach ($normal_house_pictures_view as $x){
       </div>
       <div class="modal-body">
       
+      <div style="text-align:right"><a style="text-align:right" href=<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'add_land_for_customer',$proposal_view['MyCustomer']['id']));?>> Grundstück hinzufügen </a></div>
       <select id="land_list"></select> 
       
       </div>
