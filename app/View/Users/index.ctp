@@ -37,8 +37,8 @@
 				<td> <?php echo $User['User']['email'];?></td>
 				<?php if($current_user['role']<2){ ?>
 				<td>
-					<a  href=<?php echo $this->Html->url(array('action' => 'edit',$User['User']['id']));?> ><span class="glyphicon glyphicon-edit"> </span></a>
-					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"> </span>', array('action' => 'delete',$User['User']['id']), array('escape' => false), __('Are you sure you want to delete this user?'));?>
+					<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$User['User']['id']));?> ><span class="glyphicon glyphicon-edit"> </span></a>
+					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"> </span>', array('action' => 'delete',$User['User']['id']), array('escape' => false, 'title'=>__('Delete')), __('Are you sure you want to delete this user?'));?>
 				</td>
 				<?php } ?>
 				<td> <?php echo date("d-M-Y",strtotime($User['User']['created'])); ?> </td>

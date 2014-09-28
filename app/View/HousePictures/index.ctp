@@ -22,7 +22,7 @@
 					<div class="col-md-4" align=center>
 						<?php if (!empty($house_pictures_view[$j+$i])){
 							echo $this->Html->image('/img/uploads/houses/'.$house_pictures_view[$j+$i]['HousePicture']['picture'], array('class' => 'featurette-image img-responsive'));
-							echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$house_pictures_view[$j+$i]['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
+							echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$house_pictures_view[$j+$i]['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false, 'title'=>__('Delete')));
 							echo ' '.$house_pictures_view[$j+$i]['HousePicture']['name'].': '.$house_pictures_view[$j+$i]['HousePicture']['description'];
 							echo ' ('.$house_pic_type[$house_pictures_view[$j+$i]['HousePicture']['type_flag']].')';
 						}?>
@@ -64,7 +64,7 @@
 				<td><?php echo $x['HousePicture']['name']; ?></td>
 				<td><?php echo $x['MyHouse']['name'] ?></td>
 				<td><?php echo $house_pic_type[$x['HousePicture']['type_flag']] ?></td>
-				<td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));?></td>
+				<td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$x['HousePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false, 'title'=>__('Delete')));?></td>
 				<td><?php echo date("d-M-Y",strtotime($x['HousePicture']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
 			</tr>
 			<?php } ?>

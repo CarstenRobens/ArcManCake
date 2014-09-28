@@ -122,14 +122,14 @@
 			<td> <?php echo date("d-M-Y",strtotime($x['Extra']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 			<?php if($current_user['role']<2){ ?>
 			<td>
-				<a  href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$x['Extra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 				
 				<?php 
 				echo ' ';
 				echo $this->Form->postLink($this->Html->tag('i', '',
 										array('class' => 'glyphicon glyphicon-remove')),
 										array('action' => 'delete',$x['Extra']['id']) ,
-										array('escape' => false), __('Are you sure you want to delete this Extra?'));?>
+										array('escape' => false, 'title'=>__('Delete')), __('Are you sure you want to delete this Extra?'));?>
 			</td>
 			<?php }?>
 		</tr>

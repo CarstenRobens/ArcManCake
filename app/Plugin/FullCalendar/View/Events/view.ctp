@@ -63,8 +63,8 @@
 			<div class="row">
 				<div class="col-md-12" align="right">
 					<?php if ($current_user['id']==$event['Event']['user_id']){ 
-						echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $event['Event']['id']),array('escape'=>false));
-						echo $this->Html->link('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $event['Event']['id']),array('escape'=>false));
+						echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $event['Event']['id']),array('escape'=>false, 'title'=>__('Edit')));
+						echo $this->Html->link('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $event['Event']['id']),array('escape'=>false, 'title'=>__('Delete')));
 					} ?>
 				</div>
 			</div>

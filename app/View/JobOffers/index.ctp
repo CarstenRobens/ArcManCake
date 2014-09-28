@@ -70,8 +70,8 @@
 						$string=__('Activate ');
 					}
 					echo $this->Html->link($string, array('action'=>'toggle_activation',$x['JobOffer']['id']));?>
-					<a  href=<?php echo $this->Html->url(array('action' => 'edit',$x['JobOffer']['id']));?> ><span class="glyphicon glyphicon-edit"></span> </a>
-					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('action' => 'delete',$x['JobOffer']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));
+					<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$x['JobOffer']['id']));?> ><span class="glyphicon glyphicon-edit"></span> </a>
+					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('action' => 'delete',$x['JobOffer']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false, 'title'=>__('Delete')));
 					
 					?></td>
 				<td><?php echo date("d-M-Y",strtotime($x['JobOffer']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>

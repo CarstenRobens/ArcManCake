@@ -23,14 +23,22 @@
 				<td><?php echo $this->Html->link($x['Proposal']['name'], array('controller'=>'Proposals','action'=>'view',$x['Proposal']['id'])); ?></td>
 				<td>
 				<?php
-				echo $this->Html->link('<span class="glyphicon glyphicon-list-alt"> </span>',array('action' => 'gen_summary',$x['Proposal']['id']),array('target'=>'_blank', 'escape'=>false)).' ';
-				echo $this->Html->link('<span class="glyphicon glyphicon-euro"> </span>',array('action' => 'gen_bank_receipt',$x['Proposal']['id']),array('target'=>'_blank', 'escape'=>false)).' ';
-				echo $this->Html->link('<span class="glyphicon glyphicon-pencil"> </span>',array('action' => 'gen_contract',$x['Proposal']['id']),array('target'=>'_blank', 'escape'=>false));
+				echo $this->Html->link('<span class="glyphicon glyphicon-list-alt"> </span>',array('action' => 'gen_summary',$x['Proposal']['id']),array('target'=>'_blank', 'escape'=>false, 'title'=>__('Summary'))).' ';
+				echo $this->Html->link('<span class="glyphicon glyphicon-euro"> </span>',array('action' => 'gen_bank_receipt',$x['Proposal']['id']),array('target'=>'_blank', 'escape'=>false, 'title'=>__('Bank receipt'))).' ';
+				echo $this->Html->link('<span class="glyphicon glyphicon-pencil"> </span>',array('action' => 'gen_contract',$x['Proposal']['id']),array('target'=>'_blank', 'escape'=>false, 'title'=>__('Contract')));
 				?>
 				</td>
 				<td>
-					<a  href=<?php echo $this->Html->url(array('action' => 'edit',$x['Proposal']['id']));?>><span class="glyphicon glyphicon-edit"> </span></a> 
-					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove">', array('action' => 'delete',$x['Proposal']['id']), array('escape' => false), __('Are you sure you want to delete this proposal?')); ?>
+					<?php if ($x['Proposal']['bool_locked']==1){
+						$string=__('Unlock');
+						$button= 'danger';
+					}else{
+						$string=__('Lock');
+						$button= 'success';
+					}?>
+					<a style="margin-right:5px" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['Proposal']['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
+					<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$x['Proposal']['id']));?>><span class="glyphicon glyphicon-edit"> </span></a> 
+					<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove">', array('action' => 'delete',$x['Proposal']['id']), array('escape' => false, 'title'=>__('Delete')), __('Are you sure you want to delete this proposal?')); ?>
 				</td>
 				<td><?php echo date("d-M-Y",strtotime($x['Proposal']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
 			</tr>

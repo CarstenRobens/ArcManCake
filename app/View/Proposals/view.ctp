@@ -79,7 +79,7 @@ foreach ($normal_house_pictures_view as $x){
            	<div class="panel-heading">
 				<h3 class="panel-title" style="text-align:left;">
 					<?php echo __( 'House').': '.$proposal_view['MyHouse']['name'];?>
-					<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
+					<a title="<?php echo __('Change house');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -295,13 +295,13 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		<div class="col-md-3" align=right>
 			<?php if (!$x['MyExtra']['bool_uneditable']){?>
-				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			<?php }?>
 			
 			<?php if ($x['MyExtra']['bool_custom']){?>
-				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+				<a title="<?php echo __('Delete');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete_custom_extra',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 			<?php }else{ ?>
-				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+				<a title="<?php echo __('Delete');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 			<?php } ?>
 		</div>
 		
@@ -355,7 +355,7 @@ foreach ($normal_house_pictures_view as $x){
 
 <div class="row">
 	<div class="col-md-12" align=right>
-		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span></a>
+		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add'); ?></a>
 		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'Extras','action' => 'add_custom_extra',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-paperclip"> </span> <?php echo __('Custom'); ?></a>
 		<?php if($enlargement==0){?>
 			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" id="launch_enlarge_house" href=# data-toggle="modal" data-target="#enlargeModal"><span class="glyphicon glyphicon-resize-full"> </span> <?php echo __('Enlarge house'); ?></a>
@@ -427,7 +427,7 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		<div class="col-md-3" align=right>
 			<?php if (!$x['MyExtra']['bool_uneditable']){?>
-				<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+				<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			<?php }?>
 		</div>
 		
@@ -500,7 +500,7 @@ foreach ($normal_house_pictures_view as $x){
            	<div class="panel-heading">
            		<h3 class="panel-title" style="text-align:left;">
 					<?php echo __( 'Land').': '.$proposal_view['MyLand']['name'];?>
-					<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
+					<a title="<?php echo __('Change land');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -528,7 +528,7 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		
 		<div class="col-md-2" align="center">
-			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
+			<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
 		</div>
 		
 	</div>

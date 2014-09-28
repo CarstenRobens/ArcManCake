@@ -41,8 +41,8 @@
 						</div>
 						<div class="col-md-6"></div>
 						<div class="col-md-4">
-							<a  href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false));?>
+							<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false, 'title'=>__('Delete')));?>
 						</div>
 					</div>
 					
@@ -218,8 +218,8 @@
 										$button= 'success';
 									}?>
 									<a  style="margin-right:10px" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
-									<a  class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-									<a  class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+									<a title="<?php echo __('Edit');?>" class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+									<a title="<?php echo __('Delete');?>" class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 									<?php if($x['bool_locked']){?>
 										<style>
 											.locked<?php echo $x['id'];?>{

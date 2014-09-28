@@ -42,7 +42,7 @@
 		</div>
 		
 		<div class="col-md-2" align="center">
-			<a  href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$land_view['Land']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
+			<a title="<?php echo __('Edit');?>" href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$land_view['Land']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
 		</div>
 		
 	</div>

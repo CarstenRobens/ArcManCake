@@ -23,7 +23,7 @@
 				<td><?php echo $this->Html->image('/img/uploads/home/'.$x['HomePicture']['picture'],array('style'=>'max-width:100px')); ?> </td>
 				<td><?php echo $x['HomePicture']['description']; ?> </td>
 				<?php if($current_user['role']<2){ ?>
-					<td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HomePictures','action' => 'delete',$x['HomePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false));?> </td>
+					<td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HomePictures','action' => 'delete',$x['HomePicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false, 'title'=>__('Delete')));?> </td>
 				<?php } ?>
 				<td><?php echo date("d-M-Y",strtotime($x['HomePicture']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?> </td>
 			</tr>

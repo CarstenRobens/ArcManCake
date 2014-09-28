@@ -39,8 +39,8 @@
 		<td><?php echo $eventType['EventType']['name']; ?>&nbsp;</td>
         <td><?php echo $eventType['EventType']['color']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('plugin' => 'full_calendar', 'action' => 'edit', $eventType['EventType']['id']),array('escape'=>false)); ?>
-			<?php echo $this->Html->link('<span class="glyphicon glyphicon-remove"></span>', array('plugin' => 'full_calendar', 'action' => 'delete', $eventType['EventType']['id']),array('escape'=>false)); ?>
+			<?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('plugin' => 'full_calendar', 'action' => 'edit', $eventType['EventType']['id']),array('escape'=>false, 'title'=>__('Edit'))); ?>
+			<?php echo $this->Html->link('<span class="glyphicon glyphicon-remove"></span>', array('plugin' => 'full_calendar', 'action' => 'delete', $eventType['EventType']['id']),array('escape'=>false, 'title'=>__('Edit'))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

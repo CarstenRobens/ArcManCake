@@ -418,14 +418,22 @@ class ProposalsController extends AppController{
     	}
     
     	$x['Proposal']['bool_locked']=!$x['Proposal']['bool_locked'];
-    
+    	if ($x['Proposal']['bool_locked']){
+    		$message=__('The proposal has been locked');
+    		$button= 'success';
+    	}else{
+    		$message=__('The proposal has been unlocked');
+    		$button= 'danger';
+    	}
+    	
     	$this->request->data=$x;
     
     	if ($this->Proposal->save($this->request->data)) {
-    		$this->Session->setFlash(__('The proposal has been updated'), 'alert-box', array('class'=>'alert-success'));
+    		$this->Session->setFlash($message, 'alert-box', array('class'=>'alert-'.$button));
     		return $this->redirect($this->referer());
+    	}else{
+    		$this->Session->setFlash(__('Unable to lock/unlock the proposal.'), 'alert-box', array('class'=>'alert-danger'));
     	}
-    	$this->Session->setFlash(__('Unable to update the proposal.'), 'alert-box', array('class'=>'alert-danger'));
     }
     
     
