@@ -2,8 +2,8 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 28, 2014 at 02:24 PM
+-- Host: localhost
+-- Generation Time: Sep 28, 2014 at 04:07 
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `arcmancake`
+-- Database: `ArcManCake`
 --
 
 -- --------------------------------------------------------
@@ -132,9 +132,9 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `2nd_name` varchar(200) NOT NULL,
   `2nd_surname` varchar(200) NOT NULL,
   `2nd_maiden_surname` varchar(200) NOT NULL,
-  `2nd_birthday` date NOT NULL,
+  `2nd_birthday` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `customers`
@@ -170,9 +170,9 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 INSERT INTO `events` (`id`, `event_type_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `user_id`, `created`, `modified`) VALUES
-(21, 1, 'Beispieltermin fÃ¼r ein Meeting', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-10 14:15:00', '2014-10-10 15:15:00', 0, 'Scheduled', 1, 2, '2014-09-28', '2014-09-28'),
-(23, 4, 'Beispieltermin fÃ¼r eine Besichtigung des Bauvorhabens', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-09 10:17:00', '2014-10-09 14:17:00', 1, 'Scheduled', 1, 2, '2014-09-28', '2014-09-28'),
-(22, 3, 'Beispieltermin fÃ¼r einen Kundentermin', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-10 10:16:00', '2014-10-10 12:16:00', 0, 'Scheduled', 1, 2, '2014-09-28', '2014-09-28');
+(21, 1, 'Beispieltermin fÃ¼r ein Meeting', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-10 14:15:00', '2014-10-10 15:15:00', 0, 'Scheduled', 1, 6, '2014-09-28', '2014-09-28'),
+(23, 4, 'Beispieltermin fÃ¼r eine Besichtigung des Bauvorhabens', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-09 10:17:00', '2014-10-09 14:17:00', 1, 'Scheduled', 1, 6, '2014-09-28', '2014-09-28'),
+(22, 3, 'Beispieltermin fÃ¼r einen Kundentermin', 'Nutzen Sie diesen Text fÃ¼r zusÃ¤tzliche Informationen', '2014-10-10 10:16:00', '2014-10-10 12:16:00', 0, 'Scheduled', 1, 6, '2014-09-28', '2014-09-28');
 
 -- --------------------------------------------------------
 
@@ -584,7 +584,7 @@ CREATE TABLE IF NOT EXISTS `lands` (
 
 INSERT INTO `lands` (`id`, `name`, `notes`, `land_size`, `land_price_per_m2`, `dev_size`, `dev_cost_per_m2`, `notary_cost`, `land_agent_cost`, `land_tax`, `building_tax`, `customer_id`, `user_id`, `created`, `modified`, `built_region`, `built_address`, `built_zipcode`, `built_city`, `construction_office`) VALUES
 (8, 'TestLand 1', 'Additional Notes For the Land', 200, 1000, 100, 10, 2.5, 2.5, 5, 1.25, 6, 2, '2014-08-23', '2014-09-28', 'D-DÃ¼sseldorf', 'Eine StraÃŸe 32', '82109', 'DÃ¼sseldorf', 'DÃ¼sseldorf'),
-(9, 'TestLand 2', '', 200, 1000, 2, 100, 2.5, 10, 5, 1.5, 7, 2, '2014-09-28', '2014-09-28', '', '', '', '', '');
+(9, 'TestLand 2', '', 200, 1000, 2, 100, 2.5, 10, 5, 1.5, 6, 2, '2014-09-28', '2014-09-28', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
