@@ -19,7 +19,7 @@
 								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$gallery_pictures_view[$j+$i]['GalleryPicture']['description'].': '.$gallery_pictures_view[$j+$i]['GalleryPicture']['description'])
 							);
 							if($current_user['role']<2 && !empty($current_user)){
-								echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'HousePictures','action' => 'delete',$gallery_pictures_view[$j+$i]['GalleryPicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false, 'title'=>__('Delete')));
+								echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'GalleryPictures','action' => 'delete',$gallery_pictures_view[$j+$i]['GalleryPicture']['id']),array('confirm'=>'Are you sure?', 'class'=>'remove', 'escape'=>false, 'title'=>__('Delete')));
 							}
 							echo ' '.$gallery_pictures_view[$j+$i]['GalleryPicture']['title'].': '.$gallery_pictures_view[$j+$i]['GalleryPicture']['description'];
 						}?>

@@ -243,11 +243,7 @@ foreach ($normal_house_pictures_view as $x){
 						if ($x['MyHousePicture']['id']!=$proposal_view['Proposal']['default_house_picture_id']){?>
 							<div style="width:40%;padding: 5%;float: left">
 							<?php 
-							echo $this->Html->link(
-								$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] )),
-								'/img/uploads/houses/'.$x['MyHousePicture']['picture'],
-								array('escape'=>false,'data-lightbox'=>'normal_pics','data-title'=>$x['MyHousePicture']['name'].': '.$x['MyHousePicture']['description'])
-							);?>
+							$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
 							</div>
 							<?php 
 						}
