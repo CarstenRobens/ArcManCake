@@ -277,7 +277,7 @@ class ProposalsController extends AppController{
 		
 		foreach ($prop['MyBoughtExtra'] as $bextra){
 			$extra=$this->Proposal->MyBoughtExtra->MyExtra->findById($bextra['extra_id']);
-			if($extra['MyExtra']['depends_on_house']!=$house['MyHouse']['id'] && $extra['MyExtra']['depends_on_house']!=0){
+			if(($extra['MyExtra']['depends_on_house']!=$house['MyHouse']['id'] && $extra['MyExtra']['depends_on_house']!=0) || $extra['MyExtra']['type']==2){
 				$this->Proposal->MyBoughtExtra->delete_extra($bextra['id']);
 			}else{
 				$price = $this->Proposal->MyHouse->extra_price($house['MyHouse']['type'],$extra['MyExtra']);
