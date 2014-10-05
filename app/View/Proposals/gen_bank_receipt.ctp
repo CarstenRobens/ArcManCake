@@ -4,6 +4,7 @@
 
 	<div class="row">
 		<div style="width: 200px;float:left;">
+		
 			<img src="img/Logo.png" alt="" width="150">
 		</div>
 		<div style="float:left;">

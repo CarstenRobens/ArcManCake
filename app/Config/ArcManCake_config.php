@@ -50,14 +50,14 @@ $config['DocType'][3] = ('Vertrag');
 $config['eMail']['HR'] = 'info@tc-architekt.de';
 $config['eMail']['contact'] = 'info@tc-architekt.de';
 
-$config['Info']['title'] = 'Dipl. Ing. Architekt';
+$config['Info']['title'] = 'Dipl.-Ing. Architekt AKNW';
 $config['Info']['owner'] = 'Zbigniew Iwaniuk';
 $config['Info']['address'] = 'Jungfernweg 35a';
 $config['Info']['zipcode'] = '51564';
 $config['Info']['city'] = 'Kaarst';
 $config['Info']['phone'] = '02131 / 1333971';
-$config['Info']['fax'] = '02131 / 1333971';
-$config['Info']['opening_time'] = 'Montag - Freitag 9:00 - 19:00 Uhr';
+$config['Info']['fax'] = '02131 / 1333973';
+$config['Info']['opening_time'] = 'Montag - Freitag 9:00 - 17:00 Uhr';
 
 $config['company']['name'] 			= 'IZ-Haus';
 $config['company']['description'] 	= 'Massivhaus/Massivhäuser für Normalverdiener im unteren Preissegment';

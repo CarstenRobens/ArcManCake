@@ -242,8 +242,8 @@ foreach ($normal_house_pictures_view as $x){
 					foreach ($normal_house_pictures_view as $x){
 						if ($x['MyHousePicture']['id']!=$proposal_view['Proposal']['default_house_picture_id']){?>
 							<div style="width:40%;padding: 5%;float: left">
-							<?php 
-							$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
+							
+							<?php echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
 							</div>
 							<?php 
 						}
@@ -291,20 +291,19 @@ foreach ($normal_house_pictures_view as $x){
 			<?php 
 					foreach ($floorplan_house_pictures_view as $key=>$x){ ?>
 						<div style="width:40%;padding: 5%;float: left">
-						<?php 
-						echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
+							<?php echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture']);?>
 						</div>
 					<?php }
 					if ($bool_basement){
 						foreach ($basement_house_pictures_view as $key=>$x){?>
 							<div style="width:40%;padding: 5%;float: left">
-								<?php echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
+								<?php echo $this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive" ));?>
 							</div>
 						<?php } 
 					}else{
 						foreach ($sideview_nobasement_house_pictures_view as $key=>$x){?>
 							<div style="width:40%;padding: 5%;float: left">
-								<?php echo$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ));?>
+								<?php echo$this->Html->image('/img/uploads/houses/'.$x['MyHousePicture']['picture'], array( "class" => "featurette-image img-responsive"));?>
 							</div>
 						<?php } 
 					}?>
