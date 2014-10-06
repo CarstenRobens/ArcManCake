@@ -150,10 +150,9 @@ class OfferController extends AppController {
 		
 		$this->set('oImmocaster', $oImmocaster);
 		
-		$regionarray = array(1276010010,1276010012,1276010017,1276010027,1276010029,1276010034,1276010037,1276010051,1276010053);
+		$regionarray = array(1276010010,1276010012,1276010017,1276010027,1276010029,1276010034,1276010037,1276010051,1276010053,1276010054,1276010031,1276010043,1276010048,1276010011,1276010021);
 		
-		
-		
+			
 		for ($idx = 0; $idx < sizeof($regionarray) ; $idx++) {
 			$type = "housebuy"; 
 			$aParameter = array('geocodes'=>$regionarray[$idx] ,
@@ -162,20 +161,8 @@ class OfferController extends AppController {
 			$res        = $oImmocaster->regionSearch($aParameter); 
 			$OffersArray = Xml::toArray(Xml::build($res));
 			$numoffers[$regionarray[$idx]]=$OffersArray['resultlist']['resultlistEntries']['@numberOfHits'];
-			
-			
 		}
 		$this->set('numoffers', $numoffers);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 	

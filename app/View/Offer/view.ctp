@@ -5,8 +5,8 @@
 	//debug($Expose);
 	$ExposeAtt = Xml::toArray(Xml::build($ExposeAttArrayXML));
 	//debug($ExposeAtt);
-	$regionNRarray = array('Duisburg'=>1276010010,'Düsseldorf'=>1276010012,'Gelsenkirchen'=>1276010017,'Krefeld'=>1276010027,'Leverkusen'=>1276010029,'Mönchengladbach'=>1276010034,'Neuss (Rhein-Kreis)'=>1276010037,'Viersen (Kreis)'=>1276010051,'Wesel (Kreis)'=>1276010053);
-	$regionarray = array(1276010010=>'Duisburg',1276010012=>'Düsseldorf',1276010017=>'Gelsenkirchen',1276010027=>'Krefeld',1276010029=>'Leverkusen',1276010034=>'Mönchengladbach',1276010037=>'Neuss (Rhein-Kreis)',1276010051=>'Viersen (Kreis)',1276010053=>'Wesel (Kreis)',0=>'Alle anzeigen');
+	$regionarray = array(1276010010=>'Duisburg',1276010012=>'Düsseldorf',1276010017=>'Gelsenkirchen',1276010027=>'Krefeld',1276010029=>'Leverkusen',1276010034=>'Mönchengladbach',1276010037=>'Neuss (Rhein-Kreis)',1276010051=>'Viersen (Kreis)',1276010053=>'Wesel (Kreis)',1276010054=>'Wuppertal',1276010031=>'Mettmann',1276010043=>'Remscheid',1276010048=>'Solingen',1276010011=>'Düren',1276010021=>'Heinsberg');
+	$regionnumarray= array(1276010010,1276010012,1276010017,1276010027,1276010029,1276010034,1276010037,1276010051,1276010053,1276010054,1276010031,1276010043,1276010048,1276010011,1276010021);
 ?>
 
 <style>
