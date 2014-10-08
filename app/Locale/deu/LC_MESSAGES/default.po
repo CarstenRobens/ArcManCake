@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-09-28 14:59+0200\n"
-"PO-Revision-Date: 2014-09-28 19:26+0100\n"
+"PO-Revision-Date: 2014-10-08 20:37+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1271,11 +1271,11 @@ msgstr "Wohnfläche"
 
 #: /Houses/edit.ctp:23 /Houses/index.ctp:123
 msgid "Enter a DIN 277 Size in Squaremeter"
-msgstr "Geben Sie die Wohnfläche nach DIN 277 in Quadratmetern an"
+msgstr "Geben Sie die Hauptnutzfläche nach DIN 277 in Quadratmetern an"
 
 #: /Houses/edit.ctp:23 /Houses/index.ctp:123
 msgid "DIN 277 Size"
-msgstr "DIN 277 Wohnfläche"
+msgstr "DIN 277 Hauptnutzfläche "
 
 #: /Houses/edit.ctp:24 /Houses/index.ctp:124
 msgid "Enter how many floors"
@@ -1333,7 +1333,7 @@ msgstr " Etagen."
 
 #: /Houses/view.ctp:42 /Proposals/gen_summary.ctp:146 /Proposals/view.ctp:114
 msgid "Size according to DIN 227:"
-msgstr "Wohnfläche nach DIN 227:"
+msgstr "Hauptnutzfläche nach DIN 227:"
 
 #: /Houses/view.ctp:44 /Proposals/gen_summary.ctp:150;152;154
 #: /Proposals/view.ctp:117;119;121
