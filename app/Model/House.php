@@ -33,34 +33,36 @@ class House extends AppModel{
 	
     public $validate=array(
     		'name'=>array(
-            	'rule'=>'notEmpty'
+            	'rule'=>'notEmpty',
+				'message'=> 'Bitte geben Sie einen Namen für das Haus an.'
     		),
     		'description'=>array(
-    				'rule'=>'notEmpty'
+    				'rule'=>'notEmpty',
+					'message'=> 'Bitte geben Sie eine Beschreibung für das Haus an.'
     		),
     		'type'=>array(
     			'rule'=>array('inList',array(1,2,3)),
-            	'message'=> 'Please enter a valid role',
+            	'message'=> 'Bitte geben Sie einen Haustyp an.',
             	'allowEmpty'=>false
     		),
     		'size'=>array(
             	'rule'=>'decimal',
-            	'message'=> 'Please enter a valid size',
+            	'message'=> 'Bitte geben Sie eine gültige Wohnfläche an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
             	'allowEmpty'=>false
 			),
 			'size_din'=>array(
             	'rule'=>'decimal',
-            	'message'=> 'Please enter a valid size',
+            	'message'=> 'Bitte geben Sie eine gültige Hauptnutzfläche an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
             	'allowEmpty'=>false
 			),
     		'floors'=>array(
-            	'rule'=>'decimal',
-            	'message'=> 'Please enter a valid number of floors',
+            	'rule'=>'integer',
+            	'message'=> 'Bitte geben Sie die Anzahl der Etagen an.',
             	'allowEmpty'=>false
 			),
     		'price'=>array(
     			'rule'=>'decimal',
-            	'message'=> 'Please enter a valid price',
+            	'message'=> 'Bitte geben Sie eine gültigen Preis an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
             	'allowEmpty'=>false
     		)
     );

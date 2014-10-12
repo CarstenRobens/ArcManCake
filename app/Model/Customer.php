@@ -25,34 +25,31 @@ class Customer extends AppModel{
     public $validate=array(
     		'name'=>array(
     				'rule'=>'notEmpty',
-    				'message'=> 'A name is required'
+    				'message'=> 'Bitte geben Sie einen Vornamen an.'
     		),
     		'surname'=>array(
     				'rule'=>'notEmpty',
-    				'message'=> 'A surname is required'
+    				'message'=> 'Bitte geben Sie einen Nachnamen an.'
     		),
     		'phone_private'=>array(
     				'rule'=>'notEmpty',
-    				'message'=> 'A phone number is required'
+    				'message'=> 'Bitte geben Sie eine Telefonnummer an'
     		),
     		'address1'=>array(
     				'rule'=>'notEmpty',
-    				'message'=> 'Address is required'
+    				'message'=> 'Bitte geben Sie eine Adresse an.'
     		),
     		'zipcode'=>array(
     				'rule'=>'decimal',
-    				'message'=> 'Enter a valid zipcode'
+    				'message'=> 'Bitte geben Sie eine gültige Postleitzahl an.'
     		),'city'=>array(
     				'rule'=>'notEmpty',
-    				'message'=> 'Enter your city'
+    				'message'=> 'Bitte geben Sie eine Stadt an.'
     		),
-    		'phone_private'=>array(
-    				'required'=>array(
-    						'rule'=>'decimal',
-    						'message'=> 'A phone is required'
-    				)
-    		),
-    		'email'=>'email'
+    		'email'=>array(
+    				'rule'=>'email',
+    				'message'=> 'Bitte geben Sie eine gültige eMail Adresse an.'
+    		)
     
     );
     

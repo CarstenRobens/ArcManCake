@@ -25,7 +25,7 @@
 				echo 'Hello <b>'.$current_user['username'].'</b> ('.$level[$current_user['role']].') &middot; '.$this->Html->link('Logout',array('plugin'=>NULL,'controller'=>'users','action'=>'logout'));
 				
 				
-				if(!empty($current_user['role'])){
+				if(!empty($current_user['id'])){
 					?> &middot; <?php
 					echo $this->Html->link(__('Users'),array('plugin'=>NULL,'controller'=>'Users','action'=>'index'));
 					

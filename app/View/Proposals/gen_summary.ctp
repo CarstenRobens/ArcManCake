@@ -218,7 +218,7 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		</div>
 	</div>
-	
+	<pagebreak  />
 	
 	<div class="row">
 		<div class="col-md-12">

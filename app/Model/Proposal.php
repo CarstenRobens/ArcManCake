@@ -31,7 +31,8 @@ class Proposal extends AppModel{
 	
     public $validate=array(
     		'name'=>array(
-            	'rule'=>'notEmpty'
+            	'rule'=>'notEmpty',
+				'message'=> 'Bitte geben Sie einen Namen für das Angebot an.'
     		)
     );
     

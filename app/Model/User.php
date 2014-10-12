@@ -38,39 +38,39 @@ class User extends AppModel{
 		'username'=>array(
         	    'required'=>array(
             	    'rule'=>array('notEmpty'),
-                	'message'=> 'A username is required'
+					'message'=> 'Bitte geben Sie einen Benutzernamen an.'
                 )
 		),
         'password'=>array(
             'required'=>array(
                 'rule'=>array('notEmpty'),
-                'message'=> 'A password is required'
+                'message'=> 'Bitte geben Sie ein Passwort an.'
             )
 		),
     	'role'=>array(
      		'valid'=>array(
         		#'rule'=>array('inList',array('admin','owner','employee','visitor')),
             	'rule'=>array('inList',array(0,1,2,3)),
-            	'message'=> 'Please enter a valid role',
+            	'message'=> 'Bitte geben Sie eine gültige Position an.',
             	'allowEmpty'=>false
     		)
 		),
         'name'=>array(
             'required'=>array(
                 'rule'=>array('notEmpty'),
-                'message'=> 'A name is required'
+                'message'=> 'Bitte geben Sie einen Vornamen an.'
             )
 		),
         'surname'=>array(
             'required'=>array(
                 'rule'=>array('notEmpty'),
-                'message'=> 'A surname is required'
+                'message'=> 'Bitte geben Sie einen Nachnamen an.'
             )
 		),
         'phone'=>array(
             'required'=>array(
-                'rule'=>'decimal',
-                'message'=> 'A phone is required'
+                'rule'=>array('notEmpty'),
+                'message'=> 'Bitte geben Sie eine Telefonnummer an.'
             )
         ),
         'email'=>'email'

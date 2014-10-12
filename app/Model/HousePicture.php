@@ -18,12 +18,12 @@ class HousePicture extends AppModel{
     		'name'=>array('rule'=>'notEmpty'),
     		'upload'=>array(
             	'rule'=>'uploadError',
-    			'message'=> 'Something went wrong while updating',
+    			'message'=> 'Etwas hat nicht funktioniert. Bitte versuchen Sie es erneut.',
     			'allowEmpty'=>false
 			),
     		'house_id'=>array(
     			'rule'=>'notEmpty',
-            	'message'=> 'Please enter a valid house'
+            	'message'=> 'Bitte geben Sie eine ein gültiges Haus an.'
     		),
     		'type_flag'=>array('rule'=>'notEmpty')
     );

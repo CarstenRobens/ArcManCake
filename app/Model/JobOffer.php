@@ -11,11 +11,11 @@ class JobOffer extends AppModel{
 	public $validate=array(
 			'name'=>array(
 					'rule'=>'notEmpty',
-					'message'=> 'A name is required'
+					'message'=> 'Bitte geben Sie einen einen Jobtitel an.'
 			),
 			'description'=>array(
 					'rule'=>'notEmpty',
-					'message'=> 'Description is required'
+					'message'=> 'Bitte geben Sie einen eine Jobbeschreibung an.'
 			)
 	);
 	

@@ -17,12 +17,12 @@ class BoughtExtra extends AppModel{
     public $validate=array(
     		'price'=>array(
             	'rule'=>'decimal',
-    			'message'=> 'Please enter a valid price',
+    			'message'=> 'Bitte geben Sie einen gültigen Preis an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
     			'allowEmpty'=>false
 			),
     		'factor'=>array(
     			'rule'=>'decimal',
-    			'message'=> 'Please enter a valid factor',
+    			'message'=> 'Bitte geben Sie einen gültige Zahl an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
     			'allowEmpty'=>false
     		)
     		

@@ -139,19 +139,21 @@
 					<tr>
 						<td><?php echo $x['MyExtra']['name']; ?></td>
 						<td> <td>
-						<td align="right"><?php
+						<td align="right">
+						<?php
 						if ($x['MyExtra']['size_dependent_flag']==-2){
-							$price=($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
-						}elseif ($x['MyExtra']['size_dependent_flag']==-1){
-							$price=($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+							$price= ($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+						}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
+							$price= ($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
 						}elseif($x['MyExtra']['size_dependent_flag']>0){
-							$price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
+							$price= ($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 						}else{
-							$price=$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+							$price= $x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
 						}
 						echo $this->Number->currency($price,'EUR',array('wholePosition'=>'after'));
 						$total_extras=$total_extras+$price;
-						?></td>
+						?>
+						</td>
 						
 					</tr>
 				

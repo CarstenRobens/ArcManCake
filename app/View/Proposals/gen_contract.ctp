@@ -208,12 +208,7 @@ foreach ($normal_house_pictures_view as $x){
 						<h6>&nbsp;&nbsp;&nbsp;&nbsp;  <?php if(!empty($proposal_view['MyLand']['built_zipcode'])) echo $proposal_view['MyLand']['built_zipcode'].' '.$proposal_view['MyLand']['built_city'];?></h6></td>		
 				</tr>
 				<tr>
-					<td >Postleitzahl, Wohnort<br>
-					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyLand']['construction_office'])) echo $proposal_view['MyLand']['construction_office'];?></h6></td>		
-				</tr>
-				<tr >
-					<td style = "border-bottom: none;">zuständiges Bauamt</td>		
+					<td style = "border-bottom: none;">Postleitzahl, Wohnort</td>		
 				</tr>
 				
 				
@@ -232,20 +227,14 @@ foreach ($normal_house_pictures_view as $x){
 					<br>
 						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
 				</tr>
-				<tr>
-					<td >&nbsp;<br>
-					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
-				</tr>
-				<tr>
-					<td >Flur<br>
-					<br>
-						<h6>&nbsp;&nbsp;&nbsp;&nbsp; </h6></td>		
-				</tr>
 				
-	
+				<tr>
+					<td >&nbsp;&nbsp;<br>
+					<br>
+						<h6>&nbsp;&nbsp;&nbsp;&nbsp; <?php if(!empty($proposal_view['MyLand']['construction_office'])) echo $proposal_view['MyLand']['construction_office'];?></h6></td>		
+				</tr>
 				<tr >
-					<td style = "border-bottom: none;">Flurstück</td>		
+					<td style = "border-bottom: none;">zuständiges Bauamt</td>		
 				</tr>
 			</table>
 			
@@ -1646,14 +1635,16 @@ sind enthalten.
 
 	<div class="row">
 		<div class="col-md-12">
+		<div class="row" style="margin-left: 50x; margin-right: 30x;">
 		<?php $idx = 0;
 		 $last_cat_id =-1;
-			foreach($bought_extras_view as $index=>$x) { 
-			
+			foreach($bought_extras_view as $index=>$x) { 			
 			$idx = $idx+1;?>
 			
 			<?php if ($last_cat_id != $x['MyExtra']['category_id']){ 
 			$last_cat_id = $x['MyExtra']['category_id'];?>
+			
+			
 			<div class="row" style="padding: 10px;">
 				<div class="row">
 					<h4>
@@ -1716,6 +1707,7 @@ sind enthalten.
 				</div>
 			</div>
 		<?php } ?>
+		</div>
 		</div>
 	</div>
 	

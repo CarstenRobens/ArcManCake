@@ -127,7 +127,7 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 			</div>
 		</div>
 		
-		<a  class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('plugin'=>'full_calendar','controller' => 'Events','action' => 'add'));?> > <span class="glyphicon glyphicon-plus"></span> Add appointment</a>
+		<a  class="btn btn-lg btn-success" href=<?php echo $this->Html->url(array('plugin'=>'full_calendar','controller' => 'Events','action' => 'add'));?> > <span class="glyphicon glyphicon-plus"></span> Termin hinzufügen</a>
 		
 
 </div>

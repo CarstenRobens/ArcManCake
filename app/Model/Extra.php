@@ -42,17 +42,17 @@ class Extra extends AppModel{
 			'name'=>array('rule'=>'notEmpty'),
 			'default_priceA'=>array(
 					'rule'=>'decimal',
-					'message'=> 'Please enter a valid price',
+					'message'=> 'Bitte geben Sie einen gültigen Preis an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
 					'allowEmpty'=>false
 			),
 			'default_priceB'=>array(
 					'rule'=>'decimal',
-					'message'=> 'Please enter a valid price',
+					'message'=> 'Bitte geben Sie einen gültigen Preis an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
 					'allowEmpty'=>false
 			),
 			'default_priceC'=>array(
 					'rule'=>'decimal',
-					'message'=> 'Please enter a valid price',
+					'message'=> 'Bitte geben Sie einen gültigen Preis an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
 					'allowEmpty'=>false
 			),
 			'units'=>array('rule'=>'notEmpty'),

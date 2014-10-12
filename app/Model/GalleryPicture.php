@@ -14,7 +14,7 @@ class GalleryPicture extends AppModel{
     		'title'=>array('rule'=>'notEmpty'),
     		'upload'=>array(
             	'rule'=>'uploadError',
-    			'message'=> 'Something went wrong while updating',
+    			'message'=> 'Etwas hat nicht funktioniert. Bitte versuchen Sie es erneut.',
     			'allowEmpty'=>false
 			)
     );

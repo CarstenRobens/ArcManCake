@@ -26,37 +26,38 @@ class Land extends AppModel{
     		),
     		'land_size'=>array(
             	'rule'=>'decimal',
-    			'message'=> 'Please enter the size of the land in m2',
+				'message'=> 'Bitte geben Sie die Grundstücksgröße (in Quadratmetern) an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
     			'allowEmpty'=>false
 			),
     		'land_price_per_m2'=>array(
             	'rule'=>'decimal',
+				'message'=> 'Bitte geben Sie die Preis pro Quadratmeter an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
     			'message'=> 'Please enter the price per m2',
     			'allowEmpty'=>false
 			),
     		'dev_size'=>array(
             	'rule'=>'decimal',
-    			'message'=> 'Please enter the size of the dev in m2',
+				'message'=> 'Bitte geben Sie die Erschließungsgröße (in Quadratmetern) an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
     			'allowEmpty'=>false
 			),
     		'dev_cost_per_m2'=>array(
             	'rule'=>'decimal',
-    			'message'=> 'Please enter the cost of the dev per m2',
+    			'message'=> 'Bitte geben Sie die den Preis für die Erschließung pro Quadratmeter an (beachten Sie, dass Sie einen "." und kein "," benutzen müssen).',
     			'allowEmpty'=>false
 			),
     		'notary_cost'=>array(
             	'rule'=>'decimal',
-    			'message'=> 'Please enter the cost of the notary (in %)',
+    			'message'=> 'Bitte geben Sie die Notarkosten an (in Prozent).',
     			'allowEmpty'=>false
 			),
     		'land_agent_cost'=>array(
             	'rule'=>'decimal',
-    			'message'=> 'Please enter the cost of the land agent',
+    			'message'=> 'Bitte geben Sie die Marklergebühren an (in Prozent).',
     			'allowEmpty'=>false
 			),
     		'land_tax'=>array(
             	'rule'=>'decimal',
-    			'message'=> 'Please enter the tax over the land (in %)',
+    			'message'=> 'Bitte geben Sie die Bauzinsen an (in Prozent).',
     			'allowEmpty'=>false
 			)
     );
