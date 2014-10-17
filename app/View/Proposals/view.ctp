@@ -1,8 +1,9 @@
-
+<?php if ($current_user['role']<3) {?>
 <div class="row">
 	<br>
 	<?php echo $this->Html->link('Zurück', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
 </div>
+<?php }?>
 
 <div class="row">
 	<h3><?php echo __( $proposal_view['Proposal']['name'].'<small> for '.$proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'].'</small>',false);?></h3>
@@ -27,7 +28,9 @@
 			$string=__('Lock');
 			$button= 'success';
 		}?>
+		<?php if ($current_user['role']<3) {?>
 		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
+		<?php }?>
 		</div>
     </div>
 <?php } ?>
@@ -35,7 +38,7 @@
     
 	<hr >
 
-	
+	<?php if ($current_user['role']<3) {?>
 	<div class="row">
 		<div class="col-md-7">
 			<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-md btn-success locked doc" target="_blank" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'gen_summary',$proposal_view['Proposal']['id']));?> ><span class="glyphicon glyphicon-list-alt"></span> <?php echo __('Generate summary');?></a>
@@ -63,6 +66,7 @@
 			<?php } ?>
 		</div>
 	</div>
+	<?php }?>
 	
 	
 	
@@ -85,7 +89,9 @@ foreach ($normal_house_pictures_view as $x){
            	<div class="panel-heading">
 				<h3 class="panel-title" style="text-align:left;">
 					<?php echo __( 'House').': '.$proposal_view['MyHouse']['name'];?>
+					<?php if ($current_user['role']<3) {?>
 					<a title="<?php echo __('Change house');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right;" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit_house',$proposal_view['Proposal']['id']));?> ><span  class="glyphicon glyphicon-random"></span></a>
+					<?php }?>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -300,6 +306,7 @@ foreach ($normal_house_pictures_view as $x){
 			</a>
 		</div>
 		<div class="col-md-3" align=right>
+		<?php if ($current_user['role']<3) {?>
 			<?php if (!$x['MyExtra']['bool_uneditable']){?>
 				<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			<?php }?>
@@ -309,6 +316,7 @@ foreach ($normal_house_pictures_view as $x){
 			<?php }else{ ?>
 				<a title="<?php echo __('Delete');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'delete',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
 			<?php } ?>
+		<?php }?>
 		</div>
 		
 		
@@ -337,12 +345,12 @@ foreach ($normal_house_pictures_view as $x){
 		
 		<div class="col-md-<?php if (!empty($x['MyExtra']['picture'])){ echo '6';}else{ echo '8';}?>">
 			
-			<?php echo $this->Text->autoParagraph($x['MyExtra']['description']); ?> 
-			<?php if(!empty($x['MyBoughtExtra']['comment'])){ ?>
-			<?php echo '<strong>'.__('Comment:').' </strong>'.$this->Text->autoParagraph($x['MyBoughtExtra']['comment']); ?>
-			<?php }?>
-			<?php if($x['MyBoughtExtra']['factor']!=1){ ?>
-			<p> <?php echo $x['MyBoughtExtra']['factor'].' '.$extra_unit['factor'][$x['MyExtra']['units']]; ?> </p>
+			<?php echo $this->Text->autoParagraph($x['MyExtra']['description']);
+			if(!empty($x['MyBoughtExtra']['comment'])){ 
+				echo '<strong>'.__('Comment:').' </strong>'.$this->Text->autoParagraph($x['MyBoughtExtra']['comment']); 
+			}
+			if($x['MyBoughtExtra']['factor']!=1){ ?>
+				<p> <?php echo $x['MyBoughtExtra']['factor'].' '.$extra_unit['factor'][$x['MyExtra']['units']]; ?> </p>
 			<?php }?>
 		</div>
 		
@@ -359,6 +367,7 @@ foreach ($normal_house_pictures_view as $x){
 	<hr>
 <?php } ?>
 
+<?php if ($current_user['role']<3) {?>
 <div class="row">
 	<div class="col-md-12" align=right>
 		<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="btn btn-success locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'add_many_extras',$proposal_view['Proposal']['id'],0));?>><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add'); ?></a>
@@ -372,6 +381,7 @@ foreach ($normal_house_pictures_view as $x){
 	<div class="col-md-0"></div>
 
 </div>
+<?php }?>
 
 	
 <!----------END PANEL CONTENT-------------->			
@@ -433,9 +443,11 @@ foreach ($normal_house_pictures_view as $x){
 			</a>
 		</div>
 		<div class="col-md-3" align=right>
+		<?php if ($current_user['role']<3) {?>
 			<?php if (!$x['MyExtra']['bool_uneditable']){?>
 				<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href=<?php echo $this->Html->url(array('controller' => 'BoughtExtras','action' => 'edit',$x['MyBoughtExtra']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 			<?php }?>
+		<?php }?>
 		</div>
 		
 		
@@ -506,8 +518,10 @@ foreach ($normal_house_pictures_view as $x){
 		<div class="panel panel-success">
            	<div class="panel-heading">
            		<h3 class="panel-title" style="text-align:left;">
-					<?php echo __( 'Land').': '.$proposal_view['MyLand']['name'];?>
+					<?php echo __( 'Land').': '.$proposal_view['MyLand']['name'];
+					if ($current_user['role']<3) {?>
 					<a title="<?php echo __('Change land');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" style="float:right" id="launch_land_modal" href=# data-toggle="modal" data-target="#landModal"><span class="glyphicon glyphicon-random"></span></a>
+					<?php }?>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -535,7 +549,9 @@ foreach ($normal_house_pictures_view as $x){
 		</div>
 		
 		<div class="col-md-2" align="center">
-			<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a> 
+		<?php if ($current_user['role']<3) {?>
+			<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" class="locked" href="<?php echo $this->Html->url(array('controller' => 'Lands','action' => 'edit',$proposal_view['MyLand']['id']));?>"><span class="glyphicon glyphicon-edit"></span></a>
+		<?php }?> 
 		</div>
 		
 	</div>

@@ -7,6 +7,7 @@
 <div class="row">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
+	<?php if ($current_user['role']<3) {?>
 		<table>
 			<tr>
 				<th><?php echo $this->Paginator->sort('Customer.surname',__('Customer')); ?></th>
@@ -46,6 +47,44 @@
 			<?php echo $this->Paginator->numbers(); ?>
 			<?php unset($proposal); ?>
 		</table>
+		
+		
+	<?php }else{?>
+	
+	
+		<table>
+			<tr>
+				<th><?php echo $this->Paginator->sort('Customer.surname',__('Customer')); ?></th>
+				<th><?php echo $this->Paginator->sort('name',__('Proposal')); ?></th>
+				<th><?php echo $this->Paginator->sort('House.name',__('House')); ?></th>
+				<th><?php echo $this->Paginator->sort('Land.name',__('Land')); ?></th>
+				<th><?php echo __('Lock?'); ?></th>
+				<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
+			</tr>
+
+			<!-- Here is where we loop through our $proposals array, printing out proposal info -->
+			<?php foreach($proposals_view as $x ){ ?>
+			
+			<tr>
+				<td><?php echo $x['MyCustomer']['surname'].', '.$x['MyCustomer']['name']; ?></td>
+				<td><?php echo $this->Html->link($x['Proposal']['name'], array('controller'=>'Proposals','action'=>'view',$x['Proposal']['id'])); ?></td>
+				<td> <?php echo $this->Html->link($x['MyHouse']['name'],array('controller'=>'Houses', 'action' => 'view', $x['MyHouse']['id'])); ?> </td>
+				<td> <?php echo $x['MyLand']['name']; ?> </td>
+				<td>
+					<?php if ($x['Proposal']['bool_locked']==1){
+						$button= 'ok';
+					}else{
+						$button= 'remove';
+					}?>
+					<span class="glyphicon glyphicon-<?php echo $button;?>"></span>
+				</td>
+				<td><?php echo date("d-M-Y",strtotime($x['Proposal']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['MyUser']['id'])); ?></td>
+			</tr>
+			<?php } ?>
+			<?php echo $this->Paginator->numbers(); ?>
+			<?php unset($proposal); ?>
+		</table>
+	<?php }?>
 	</div>
 	<div class="col-md-2"></div>
 
