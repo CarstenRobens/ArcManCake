@@ -28,7 +28,11 @@
 				if(!empty($current_user['id'])){
 					?> &middot; <?php
 					echo $this->Html->link(__('Users'),array('plugin'=>NULL,'controller'=>'Users','action'=>'index'));
-					
+				}
+				
+				if($current_user['role'] == 3){
+					?> &middot; <?php
+					echo $this->Html->link(__('Customers'),array('plugin'=>NULL,'controller'=>'Customers','action'=>'index'));
 				}
 				
 				if($current_user['role']<2){

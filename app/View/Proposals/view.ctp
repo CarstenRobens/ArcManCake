@@ -1,9 +1,7 @@
-<?php if ($current_user['role']<3) {?>
 <div class="row">
 	<br>
 	<?php echo $this->Html->link('Zurück', array('controller'=>'Customers','action'=>'view',$proposal_view['MyCustomer']['id'])) ?>
 </div>
-<?php }?>
 
 <div class="row">
 	<h3><?php echo __( $proposal_view['Proposal']['name'].'<small> for '.$proposal_view['MyCustomer']['name'].' '.$proposal_view['MyCustomer']['surname'].'</small>',false);?></h3>

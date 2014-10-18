@@ -66,7 +66,7 @@
 			<?php foreach($proposals_view as $x ){ ?>
 			
 			<tr>
-				<td><?php echo $x['MyCustomer']['surname'].', '.$x['MyCustomer']['name']; ?></td>
+				<td><?php echo $this->Html->link($x['MyCustomer']['surname'].', '.$x['MyCustomer']['name'], array('controller'=>'Customers','action'=>'view',$x['Proposal']['customer_id'])); ?></td>
 				<td><?php echo $this->Html->link($x['Proposal']['name'], array('controller'=>'Proposals','action'=>'view',$x['Proposal']['id'])); ?></td>
 				<td> <?php echo $this->Html->link($x['MyHouse']['name'],array('controller'=>'Houses', 'action' => 'view', $x['MyHouse']['id'])); ?> </td>
 				<td> <?php echo $x['MyLand']['name']; ?> </td>

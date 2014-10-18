@@ -41,8 +41,10 @@
 						</div>
 						<div class="col-md-6"></div>
 						<div class="col-md-4">
-							<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false, 'title'=>__('Delete')));?>
+							<?php if ($current_user['role'] < 3) {?>
+								<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit',$customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+								<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>',array('controller' => 'customers','action' => 'delete',$customer_view['Customer']['id']),array('confirm'=>'Are you sure?','escape'=>false, 'title'=>__('Delete')));
+							}?>
 						</div>
 					</div>
 					
@@ -209,32 +211,38 @@
 							<?php foreach ($customer_view['MyProposal'] as $x){?>
 							<tr>
 								<td ><?php echo $this->Html->link($x['name'],array('controller' => 'Proposals','action' => 'view',$x['id'])); ?></td>
-								<td><div style="text-align: right;">
-									<?php if ($x['bool_locked']==1){
-										$string=__('Unlock');
-										$button= 'danger';
-									}else{
-										$string=__('Lock');
-										$button= 'success';
-									}?>
-									<a  style="margin-right:10px" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
-									<a title="<?php echo __('Edit');?>" class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
-									<a title="<?php echo __('Delete');?>" class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
-									<?php if($x['bool_locked']){?>
-										<style>
-											.locked<?php echo $x['id'];?>{
-												visibility:hidden
-											}
-										</style>
-									<?php }?> 
-								</div></td>
+								<td>
+									<?php if ($current_user['role'] < 3) {?>
+										<div style="text-align: right;">
+											<?php if ($x['bool_locked']==1){
+												$string=__('Unlock');
+												$button= 'danger';
+											}else{
+												$string=__('Lock');
+												$button= 'success';
+											}?>
+											<a  style="margin-right:10px" class="btn btn-xs btn-<?php echo $button;?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'toggle_lock',$x['id']));?> ><span class="glyphicon glyphicon-lock"> <?php echo $string;?></span></a>
+											<a title="<?php echo __('Edit');?>" class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'edit',$x['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+											<a title="<?php echo __('Delete');?>" class="locked<?php echo $x['id'];?>" href=<?php echo $this->Html->url(array('controller' => 'Proposals','action' => 'delete',$x['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+											<?php if($x['bool_locked']){?>
+												<style>
+													.locked<?php echo $x['id'];?>{
+														visibility:hidden
+													}
+												</style>
+											<?php }?> 
+										</div>
+									<?php }?>
+								</td>
 							</tr>
 							<?php }?>
 						</table>
 					</div>
 				
 					<div class="col-md-2"></div>
-					<div style="text-align: right"><a  class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals', 'action' => 'add', $customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add proposal');?></a> &nbsp;</div>
+					<?php if ($current_user['role'] < 3) {?>
+						<div style="text-align: right"><a  class="btn btn-md btn-success" href=<?php echo $this->Html->url(array('controller' => 'Proposals', 'action' => 'add', $customer_view['Customer']['id']));?> ><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add proposal');?></a> &nbsp;</div>
+					<?php }?>
 			</div>
 			
 			<?php }else{ ?>

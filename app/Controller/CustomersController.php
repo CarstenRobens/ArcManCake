@@ -19,16 +19,12 @@ class CustomersController extends AppController{
 	}
 	
 	public function isAuthorized($logged_user) {
-		if (isset($logged_user['role']) && $logged_user['role']>2) {
-			$this->Session->setFlash(__('Acces denied: Low cleareance access'), 'alert-box', array('class'=>'alert-danger'));
-			return FALSE;
-		} # Overseers are not allowed to interact with customer data
-
-		if (in_array($this->action, array('index'))){
+		
+		if (in_array($this->action, array('index', 'view'))){
 			return TRUE;
 		}
 	
-		if (in_array($this->action, array('edit','delete','view'))){
+		if (in_array($this->action, array('edit','delete')) && $logged_user['role']<3){
 			$customerId=(int) $this->request->params['pass'][0];
 			if ($this->Customer->isOwnedBy($customerId,$logged_user['id'])){
 				return TRUE;
@@ -42,7 +38,7 @@ class CustomersController extends AppController{
 		$logged_user = $this->Auth->user();
 		
 		$this->Paginator->settings = $this->paginate;
-		if ($logged_user['role']<2){
+		if ($logged_user['role']!=2){
 			$this->set('customers_view',$this->Paginator->paginate());
 		}else{
 			$this->set('customers_view',$this->Paginator->paginate('Customer',array('Customer.user_id LIKE'=>$logged_user['id'])));

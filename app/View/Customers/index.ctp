@@ -1,11 +1,48 @@
-
-
-<div class="col-md-8">
+<?php if ($current_user['role'] == 3) {?>
 
 <div class="row">
 	<h3><?php echo __('Customers'); ?></h3>
 </div>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<table>
+			<tr>
+				<th><?php echo $this->Paginator->sort('surname',__('Surname')); ?></th>
+				<th><?php echo $this->Paginator->sort('name',__('Name')); ?></th>
+				<th><?php echo $this->Paginator->sort('phone_private',__('Tel. Private:')); ?></th>
+				<th><?php echo $this->Paginator->sort('phone_office',__('Tel. Office:')); ?></th>
+				<th><?php echo $this->Paginator->sort('email',__('E-Mail:')); ?></th>
+				<th><?php echo $this->Paginator->sort('created',__('Created')); ?></th>
+			</tr>
 	
+		<!-- Here is where we loop through our $customers array, printing out customer info --> 
+			<?php foreach($customers_view as $x ){ ?>
+			<tr> 
+				<td> <?php echo $this->Html->link($x['Customer']['surname'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])).','; ?></td>
+				<td> <?php echo $this->Html->link($x['Customer']['name'], array('controller'=>'Customers','action'=>'view',$x['Customer']['id'])); ?></td>
+				<td> <?php echo $x['Customer']['phone_private'];?> </td>
+				<td> <?php echo $x['Customer']['phone_work'];?> </td>
+				<td> <?php echo $x['Customer']['email'];?> </td>
+				<td> <?php echo date("d-M-Y",strtotime($x['Customer']['created'])).' by '.$this->Html->link($x['MyUser']['username'], array('controller'=>'Users','action'=>'view',$x['Customer']['user_id'])); ?></td>
+			</tr>
+			<?php } ?>
+			<?php echo $this->Paginator->numbers(); ?>
+			<?php unset($customer); ?>
+		</table>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+
+
+<?php }else{ ?>
+
+
+<div class="col-md-8">
+	
+<div class="row">
+	<h3><?php echo __('Customers'); ?></h3>
+</div>
 <div class="row">
 	<table>
 		<tr>
@@ -33,12 +70,8 @@
 		<?php echo $this->Paginator->numbers(); ?>
 		<?php unset($customer); ?>
 	</table>
+
 </div>
-
-
-
-<?php 
-if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 	
 	<div class="contactwrapper" style="margin:10px">
 	<div class="view">
@@ -88,11 +121,6 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 		
 	</div>
 	</div>
-	
-	
-
-	<?php 
-}?>
 
 </div>
 
@@ -132,3 +160,5 @@ if ($current_user['role'] < 3 && !empty($current_user) ) {?>
 
 </div>
 
+	
+<?php }?>
