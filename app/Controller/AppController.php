@@ -61,7 +61,7 @@ class AppController extends Controller {
     }
     
     public function isAuthorized($logged_user) {
-        if (isset($logged_user['role']) && $logged_user['role']<2) {
+        if (isset($logged_user['role']) && $logged_user['role']<3) {
             return TRUE;
         }
         

@@ -21,7 +21,7 @@
 				</p>
 				
 				<p>
-				<?php echo $proposal_view['MyCustomer']['phone'];?><br>
+				<?php echo $proposal_view['MyCustomer']['phone_private'];?><br>
 				<?php echo $proposal_view['MyCustomer']['email'];?><br>
 				</p>
 				<p>
