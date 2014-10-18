@@ -17,7 +17,7 @@ class FullCalendarController extends FullCalendarAppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		// Allow visitors to view houses
-	
+		Configure::write('Config.language', 'de');
 		$this->Session->write('menue.active','FullCalendar');
 	}
 	

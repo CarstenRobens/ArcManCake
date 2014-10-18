@@ -33,3 +33,6 @@ msgstr "November"
 
 msgid "December"
 msgstr "Dezember"
+
+msgid "Oct"
+msgstr "Okt"

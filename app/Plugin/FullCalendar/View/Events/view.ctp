@@ -49,9 +49,9 @@
 				<div class="col-xs-8" align="right">
 					<p > <?php echo $event['EventType']['name']; ?> </p>
 					<p > <?php echo $event['Event']['status']; ?> </p>
-					<p > <?php echo $event['Event']['start']; ?> </p>
+					<p > <?php echo date("d-M-Y H:m",strtotime($event['Event']['start'])); ?></p>
 					<p > <?php if($event['Event']['all_day']==false){
-						echo $event['Event']['end'];
+						echo date("d-M-Y H:m",strtotime($event['Event']['end']));
 					}else{
 						echo __('All day');	
 					} ?>  </p>
