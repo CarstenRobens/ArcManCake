@@ -49,9 +49,9 @@
 		<td><?php echo $this->Html->link($event['Event']['title'], array('action' => 'view', $event['Event']['id'])); ?></td>
 		<td><?php echo $event['EventType']['name']; ?></td>
 		<td><?php echo $event['Event']['status']; ?></td>
-		<td><?php echo $event['Event']['start']; ?></td>
+		<td><?php echo date("d-M-Y H:m",strtotime($event['Event']['start'])); ?></td>
         <td><?php if($event['Event']['all_day'] == 0) { 
-        	echo $event['Event']['end']; 
+        	echo date("d-M-Y H:m",strtotime($event['Event']['end']));
 		} else { 
 			echo __('All day');
 		} ?></td>
