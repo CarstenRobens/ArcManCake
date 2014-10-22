@@ -6,7 +6,6 @@ foreach ($normal_house_pictures_view as $x){
 }
 
 	foreach ($bought_enlagement as $index=>$x){
-		$enlagment = $x;
 		$enlagment_price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 		
 	}
@@ -931,8 +930,12 @@ Die Dacheindeckung erfolgt mit BRAAS-Dachsteinen "Harzer Pfanne 7 (BIG)" (oder g
 Die Unterkonstruktion wird mit Traglattung und Konterlattung belüftet ausgeführt. Eine Flugschneesicherung ist z.B. durch eine Unterspannbahn hergestellt. Der First wird belüftet in mörtelfreier Verlegung ausgeführt. Im Festpreis enthalten sind alle für die Leistung erforderlichen Form- und Durchgangssteine. Die in der Richtlinie des Zentralverbandes des Deutschen Dachdeckerhandwerks (ZVDH) geregelten Maßnahmen zur Sturmsicherung der Dacheindeckung werden ausgeführt (Verklammerung der Dacheindeckung in sturmgefährdeten Teilen des Daches).<br>
 Auf Verlangen der Behörde, in z.B. schneereichen Gebieten, kann ein Schneefanggitter vorgeschrieben werden. Dieses ist nicht im Leistungsumfang enthalten, kann aber im Rahmen der sonstigen Vereinbarungen bestellt werden. <br>
 Die Dachrinnen und Fallrohre sind witterungsbeständig in Titanzink ausgeführt. Im Festpreis enthalten sind alle für die Leistung erforderlichen Dachrinnen, Formstücke und Regenfallrohre bis zur Oberkante Sockel.
-Der nicht ausgebaute Spitzboden bzw. der nicht ausbaufähige Dachraum kann zu Abstellzwecken genutzt werden. Eine Abbretterung, sowie Anschlussleitungen für Strom sind im Spitzboden nicht vorhanden und können vom Auftraggeber in Eigenleistung ausgeführt werden.
-			
+Der nicht ausgebaute Spitzboden bzw. der nicht ausbaufähige Dachraum kann zu Abstellzwecken genutzt werden. Eine Abbretterung, sowie Anschlussleitungen für Strom sind im Spitzboden nicht vorhanden und können vom Auftraggeber in Eigenleistung ausgeführt werden.<br>
+<br>
+Nur Haus Modern-140:<br>
+Flachdach mit umlaufender Attika<br>
+Das Betonflachdach wird als unbelüftetes Warmdach mit einer umlaufenden, Attika gemäß
+Zeichnung ausgeführt. Der Aufbau besteht aus Trennlagen und einer Gefälledämmung der Wärmeleitgruppe 035 in der Stärke nach Energieeinsparverordnung. Die obere Abdichtung wird als Kunststoffbahnenabdichtung ausgeführt. Als obere Beschwerung wird eine Bekiesung in der Stärke von ca. 5 cm hergestellt. Die Entwässerung erfolgt aussenliegend durch die Attika mit Flachabläufen und Rechteckfallrohren. Die Attika erhält eine umlaufende Blechabdeckung.		
 			</li>
 			
 			<li><br>
@@ -940,7 +943,14 @@ Der nicht ausgebaute Spitzboden bzw. der nicht ausbaufähige Dachraum kann zu Ab
 Die Außenwand bekommt nach Wahl des Auftragnehmers einen mineralischen Außenputz. Der Farbton wird gemeinsam vor Baubeginn nach Farbkarte des Auftragnehmers festgelegt. Die Oberfläche wird mit einer Körnung von 2-3 mm ausgerieben strukturiert. Der Außenputz erhält einen Egalisierungsanstrich.
 Die Fensteranschlüsse sind regendicht mit einem Anschlussprofil ausgeführt. <br>
 Der Sockelputz wird mit einem Trennprofil vom Wandputz getrennt und glatt ausgerieben. Der Sockelputz wird dabei beginnend im unteren Drittel der Bodenplatte ca. 40-45 cm hoch, jedoch mindestens 30 cm ab Oberkannte geplantem Gelände, ausgeführt. Der Sockelputz erhält einen geeigneten Anstrich.
-Im Haus sind die Massivwände, außer im Bereich des Spitzbodens, mit einem mineralischen Dünnputz tapezierfähig (Qualitätsstufe Q2) verspachtelt. Falls ein gemauerter Drempel (Zeichnung) ausgeführt wird, wird dieser mit Gipskartonplatten verkleidet. Die Anschlüsse an die Geschossdecken erhalten einen Kellenschnitt. Die Flächen der Geschossdecken werden tapezierfähig hergestellt, die Fugen werden tapezierfähig verspachtelt.
+Im Haus sind die Massivwände, außer im Bereich des Spitzbodens, mit einem mineralischen Dünnputz tapezierfähig (Qualitätsstufe Q2) verspachtelt. Falls ein gemauerter Drempel (Zeichnung) ausgeführt wird, wird dieser mit Gipskartonplatten verkleidet. Die Anschlüsse an die Geschossdecken erhalten einen Kellenschnitt. Die Flächen der Geschossdecken werden tapezierfähig hergestellt, die Fugen werden tapezierfähig verspachtelt.<br>
+<br>
+Nur Haus Modern-140:<br>
+Die Außenwand erhält ein Wärmedämmverbundsystem, bestehend aus 12 cm Hartschaumplatten WLG 040, Putzschienen, mehrlagigem Putz mit Vliesarmierung und Deckputz, Körnung 2-3 mm. Der Farbton wird gemeinsam vor Baubeginn nach Farbkarte des Auftragnehmers festgelegt. Das Wärmedämmverbundsystem beginnt im Bereich der Bodenplatte, wobei im Bereich des Sockels spezielle Sockeldämmplatten, Stärke nach Energieeinsparverordnung, zur Anwendung kommen. Im Spritzwasserbereich, ca. 50 cm hoch ab Unterkante Bodenplatte, wird ein Sockelputz vorgesehen, wobei der Deckputz glatt ausgerieben ausgeführt wird. Der Sockelputz erhält im erdberührten Bereich eine Abdichtung gegen Bodenfeuchtigkeit und wird mit einem Trennprofil vom Wandputz getrennt. Die Fensteranschlüsse sind regendicht mit einem Anschlussprofil ausgeführt.<br>
+Im Haus sind die Massivwände mit einem mineralischen Dünnputz tapezierfertig (Qualitätsstufe Q2)
+verspachtelt. Die Anschlüsse an die Geschossdecken erhalten einen Kellenschnitt. Die Flächen der
+Geschossdecken werden tapezierfähig hergestellt, die Fugen werden tapezierfähig verspachtelt.
+		
 			</li>
 			
 			<li><br>
@@ -980,7 +990,11 @@ Die Buche Massivholzstufen sind parkettverleimt akzent und mehrfachversiegelt, d
 <br>
 In der Dachgeschossdecke wird eine dreiteilige Bodeneinschubtreppe mit wärmegedämmten
 Sandwichdeckel, raumseitig weiß beschichtet mit Lukendeckeldichtung und Schnappriegelverschluss eingebaut. Das Rohbau-Lukenmaß beträgt ca. 60/120 cm. Ein
-Lukenschutzgeländer ist nicht vereinbart.
+Lukenschutzgeländer ist nicht vereinbart.<br>
+<br>
+Nur Haus Modern-140:<br>
+Es wird eine Treppenanlage in einer geschlossenen Bauweise eingebaut. Das System ist eine Stahlholmtreppe mit aufgesetzten Tritt- und Setzstufen in Faltwerkoptik.<br>
+Die Massivholzstufen in der Holzart Eiche (oder gleichwertig nach Wahl des Auftragnehmers) sind keilverzinkt, verleimt und mehrfachversiegelt. Als Geländer dient ein an der Wand montierter Rundhandlauf auf Edelstahlkonsolen. Die Brüstungsmauer im OG erhält als Abschluss Abdeckbretter in der Holzart der Treppenanlage.
 			</li>
 			
 			<li><br>

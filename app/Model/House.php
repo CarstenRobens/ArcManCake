@@ -56,7 +56,7 @@ class House extends AppModel{
             	'allowEmpty'=>false
 			),
     		'floors'=>array(
-            	'rule'=>'integer',
+            	'rule'=>'notEmpty',
             	'message'=> 'Bitte geben Sie die Anzahl der Etagen an.',
             	'allowEmpty'=>false
 			),

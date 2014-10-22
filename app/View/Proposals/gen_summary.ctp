@@ -6,7 +6,6 @@ foreach ($normal_house_pictures_view as $x){
 }
 
 	foreach ($bought_enlagement as $index=>$x){
-		$enlagment = $x;
 		$enlagment_price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 		
 	}

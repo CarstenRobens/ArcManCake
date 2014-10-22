@@ -484,7 +484,7 @@ class ProposalsController extends AppController{
     	if (!$x) {
     		throw new NotFoundException(__('Invalid proposal'));
     	}
-    	
+    	$enlargement=0;
 		$bool_basement=0;
 		$bool_standalone=0;
 		foreach($z as $index=>$abc){
@@ -494,6 +494,7 @@ class ProposalsController extends AppController{
 				}else{
 					$direction=-1;
 				}
+				$enlargement=$direction*$abc['MyExtra']['size_dependent_flag'];
 			}elseif ($abc['MyExtra']['type']==2){
 				$bool_basement=1;
 			}elseif ($abc['MyExtra']['type']==3){
@@ -502,6 +503,9 @@ class ProposalsController extends AppController{
 		}
 		$this->set('bool_basement',$bool_basement);
 		$this->set('bool_standalone',$bool_standalone);
+		$this->set('enlargement',$enlargement);
+		
+		
 		
 		
 		
@@ -593,7 +597,7 @@ class ProposalsController extends AppController{
     	}
 		
     	
-    	
+    	$enlargement=0;
 		$bool_basement=0;
 		$bool_standalone=0;
 		foreach($z as $index=>$abc){
@@ -603,6 +607,7 @@ class ProposalsController extends AppController{
 				}else{
 					$direction=-1;
 				}
+				$enlargement=$direction*$abc['MyExtra']['size_dependent_flag'];
 			}elseif ($abc['MyExtra']['type']==2){
 				$bool_basement=1;
 			}elseif ($abc['MyExtra']['type']==3){
@@ -611,6 +616,9 @@ class ProposalsController extends AppController{
 		}
 		$this->set('bool_basement',$bool_basement);
 		$this->set('bool_standalone',$bool_standalone);
+		$this->set('enlargement',$enlargement);
+		
+		
 		
 		
 		
@@ -691,6 +699,7 @@ class ProposalsController extends AppController{
     	
 		$bool_basement=0;
 		$bool_standalone=0;
+		$enlargement=0;
 		foreach($z as $index=>$abc){
 			if($abc['MyExtra']['size_dependent_flag']>0){
 				if($abc['MyBoughtExtra']['price']>0){
@@ -698,6 +707,7 @@ class ProposalsController extends AppController{
 				}else{
 					$direction=-1;
 				}
+				$enlargement=$direction*$abc['MyExtra']['size_dependent_flag'];
 			}elseif ($abc['MyExtra']['type']==2){
 				$bool_basement=1;
 			}elseif ($abc['MyExtra']['type']==3){
@@ -706,6 +716,8 @@ class ProposalsController extends AppController{
 		}
 		$this->set('bool_basement',$bool_basement);
 		$this->set('bool_standalone',$bool_standalone);
+		$this->set('enlargement',$enlargement);
+		
 		
     	$this->set('proposal_view',$x);
     	$this->set('house_pictures_view',$y);
