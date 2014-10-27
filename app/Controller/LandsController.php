@@ -162,7 +162,7 @@ class LandsController extends AppController{
     	$lands2=array();
     	$lands2[0]=array(0,__('No land'));
     	foreach ($lands as $land){
-    		$lands2[]=array($land['Land']['id'],$land['Land']['name'].' by '.$users_list[$land['Land']['user_id']]);
+    		$lands2[]=array($land['Land']['id'],$land['Land']['name'].' erstellt von: '.$users_list[$land['Land']['user_id']]);
     	}
     	$this->set('land_list_view',$lands2);
     	$this->set('_serialize',array('land_list_view'));

@@ -15,7 +15,7 @@
 				<div class="PostMainContentbox">
 						<?php echo $this->Form->create('Land',array('enctype'=>'multipart/form-data', 'class' => 'form-horizontal'));?>	
 						<legend>
-							<?php echo __('Private land for '.$customer_view['MyCustomer']['name'].' '.$customer_view['MyCustomer']['surname']); ?>
+							<?php echo __('Hinzufügen von einem Grundstück für den Kunden: '.$customer_view['MyCustomer']['name'].' '.$customer_view['MyCustomer']['surname']); ?>
 						</legend>
 						
 						<?php 

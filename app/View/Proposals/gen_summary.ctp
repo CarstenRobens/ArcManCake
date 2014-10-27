@@ -9,7 +9,6 @@ foreach ($normal_house_pictures_view as $x){
 		$enlagment_price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 		
 	}
-	
 ?>
 
 <?php 
@@ -407,7 +406,76 @@ foreach ($normal_house_pictures_view as $x){
 	</div>
 
 	<hr>
+	
+	
+	
+	
 <?php } ?>
+
+
+<?php if (!empty($enlargement)) {?>
+	<div class="row">
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
+		
+		<div style="width:65%;float: left">
+			<div class="green-text">
+			<?php echo $bought_enlagement[0]['MyExtra']['name']; ?>
+			</div>
+		</div>
+		
+		
+		<div style="width:5%;float: left">
+			<strong><?php echo __('Price:'); ?></strong>
+		</div>
+		
+		<div style="width:10%;float: left; text-align: right;">
+			<?php
+			echo $this->Number->currency($enlagment_price,'EUR',array('wholePosition'=>'after'))
+			?>
+
+		</div>
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
+	</div>
+	<br/>
+	
+	<div class="row">
+	
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
+		
+		<div style="width:80%;float: left;text-align: justify;">
+			<?php echo $this->Text->autoParagraph('Ihr Hauses inklusive aller gewählten Sonderausstattungen wird gemäß nachstehender Skizze
+in seinen Außenabmessungen individuell angepasst, sowie entsprechend der Bau- und
+Leistungsbeschreibung ausgeführt. Der gewählte Energiestandard wird beibehalten. Die sich
+aus der „Hausverlängerung-Hausverkürzung“ ergebene Wohnfläche Ihres Hauses ist dabei nur
+ein Richtwert, Abweichungen sind möglich. Wenn vorhanden, ist die Richtung der First, die
+Größe des Carports und Wintergartens stets einzuhalten. Alle erforderlichen Planungskosten
+sind enthalten.'); ?> 
+			<?php 
+			if($enlagment_price>0){
+				echo 'Vergrößerung des Grundrisses um: ' .$bought_enlagement[0]['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>'; 
+			} else {
+				echo 'Verkleinerung des Grundrisses um: ' .$bought_enlagement[0]['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>'; 
+			}?>
+			
+			
+		</div>
+		
+		
+		<div style="width:10%;float: left">
+		&nbsp;
+		</div>
+	
+		
+	</div>
+
+	<hr>
+	<?php } ?>
 
 <!----------END PANEL CONTENT-------------->			
 			

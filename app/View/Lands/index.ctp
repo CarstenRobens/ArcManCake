@@ -26,7 +26,7 @@
 				</td>
 				<td><?php 
 				if ($x['Land']['customer_id'] == 0) {
-					echo 'Open';
+					echo 'Nicht zugewiesen';
 				}else{
 					echo $this->Html->link($x['MyCustomer']['name'].' '.$x['MyCustomer']['surname'], array('controller'=>'Customers','action'=>'view',$x['MyCustomer']['id']));
 				} ?>

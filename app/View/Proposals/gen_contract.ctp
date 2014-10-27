@@ -9,7 +9,6 @@ foreach ($normal_house_pictures_view as $x){
 		$enlagment_price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 		
 	}
-	
 ?>
 
 	<!-------------------------------------- First Page START -------------------------------------->
@@ -294,7 +293,7 @@ foreach ($normal_house_pictures_view as $x){
 					<td style = "border-bottom: none;"> <h6> + </h6> </td>
 					<td style = "border-bottom: none; text-align: right;"> <h6><?php echo $this->Number->currency($summed_extras,'EUR',array('wholePosition'=>'after'));?></h6> </td>
 				</tr>
-				<?php if(!empty($enlagment)) { ?>
+				<?php if(!empty($enlargement)) { ?>
 				<tr >
 					<td style = "border-bottom: none;"> <h6> Summe Hausvergrößerung und Verkleinerung </h6> </td>
 					<td style = "border-bottom: none;"> <h6> + </h6> </td>
@@ -1422,7 +1421,7 @@ Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auft
 	
 	<!-------------------------------------- Grundrisse & Ansichten END -------------------------------------->
 	
-	<?php if(!empty($enlagment)) { ?>
+	<?php if(!empty($enlargement)) { ?>
 	<!-------------------------------------- Hausvergrößerung und Verkleinerung Coverpage START -------------------------------------->
 	<div class="row">
 		<h2 style = "text-align: center;">
@@ -1523,7 +1522,12 @@ sind enthalten.
 	</div>
 	
 	<div class="row" style="padding: 10px">
-		<h6><?php echo 'Vergrößerung des Grundrisses um: ' .$enlagment['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>'; ?>
+		<h6><?php 
+			if($enlagment_price>0){
+				echo 'Vergrößerung des Grundrisses um: ' .$enlargement['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>';
+			} else {
+				echo 'Verkleinerung des Grundrisses um: ' .$enlargement['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>';
+			}?>
 		<br/></h6>
 		
 	</div>
@@ -1534,11 +1538,11 @@ sind enthalten.
 		<br/></h6>
 		
 	</div>
-	<?php if(!empty($enlagment['MyBoughtExtra']['comment'])){ ?>
+	<?php if(!empty($enlargement['MyBoughtExtra']['comment'])){ ?>
 	<div class="row" style="padding: 10px">
 		<h6>Zusätzliche Anmerkungen:
 		<br/>		
-		<?php if(!empty($enlagment['MyBoughtExtra']['comment'])) echo $enlagment['MyBoughtExtra']['comment'];?>
+		<?php if(!empty($enlargement['MyBoughtExtra']['comment'])) echo $enlargement['MyBoughtExtra']['comment'];?>
 		</h6>
 		
 	</div>
