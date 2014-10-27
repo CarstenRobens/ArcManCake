@@ -14,17 +14,21 @@ foreach ($normal_house_pictures_view as $x){
 
 <?php 
 	foreach ($bought_extras_view as $index=>$x){
-		if ($x['MyExtra']['size_dependent_flag']==-2){
-			$price=($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
-		}elseif ($x['MyExtra']['size_dependent_flag']==-1){
-			$price=($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+		if ($x['MyExtra']['size_dependent_flag']==-2){ 
+			$price= ($proposal_view['MyHouse']['size_din']+$enlargement*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+		}elseif ($x['MyExtra']['size_dependent_flag']==-1){ 
+			$price= ($proposal_view['MyHouse']['size_din']/$proposal_view['MyHouse']['floors']+$enlargement)*$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
 		}elseif($x['MyExtra']['size_dependent_flag']>0){
-			$price=($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
+			$price= ($x['MyBoughtExtra']['price']*$x['MyExtra']['size_dependent_flag']*$proposal_view['MyHouse']['floors'])*$x['MyBoughtExtra']['factor'];
 		}else{
-			$price=$x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor'];
+			$price= ($x['MyBoughtExtra']['price']*$x['MyBoughtExtra']['factor']);
 		}
+		
+		
 		$summed_extras=$summed_extras+$price;
-	}?>
+		
+	}
+	?>
 
 	<!-------------------------------------- First Page START -------------------------------------->
 

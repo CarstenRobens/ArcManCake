@@ -501,6 +501,17 @@ class ProposalsController extends AppController{
 				$bool_standalone=1;
 			}
 		}
+		if(!empty($zenlarge[0])){
+			if($zenlarge[0]['MyExtra']['size_dependent_flag']>0){
+				if($zenlarge[0]['MyBoughtExtra']['price']>0){
+				$direction=1;
+			}else{
+				$direction=-1;
+			}
+			$enlargement=$direction*$zenlarge[0]['MyExtra']['size_dependent_flag'];
+			}
+		}
+		
 		$this->set('bool_basement',$bool_basement);
 		$this->set('bool_standalone',$bool_standalone);
 		$this->set('enlargement',$enlargement);
@@ -614,6 +625,7 @@ class ProposalsController extends AppController{
 				$bool_standalone=1;
 			}
 		}
+		
 		$this->set('bool_basement',$bool_basement);
 		$this->set('bool_standalone',$bool_standalone);
 		$this->set('enlargement',$enlargement);
