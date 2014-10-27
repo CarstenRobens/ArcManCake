@@ -1524,9 +1524,9 @@ sind enthalten.
 	<div class="row" style="padding: 10px">
 		<h6><?php 
 			if($enlagment_price>0){
-				echo 'Vergrößerung des Grundrisses um: ' .$enlargement['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>';
+				echo 'Vergrößerung des Grundrisses um: ' .$bought_enlagement[0]['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>';
 			} else {
-				echo 'Verkleinerung des Grundrisses um: ' .$enlargement['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>';
+				echo 'Verkleinerung des Grundrisses um: ' .$bought_enlagement[0]['MyExtra']['size_dependent_flag']. 'm<sup>2</sup>';
 			}?>
 		<br/></h6>
 		
