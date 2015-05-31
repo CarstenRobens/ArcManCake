@@ -81,15 +81,25 @@
 					<?php } ?>
 					<?php echo $this->Html->link(__('Houses'),array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'))?></li>
 					
-					<?php if($this->Session->read('menue.active')=='Service'){ ?>
+					<?php if($this->Session->read('menue.active')=='Advantage'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
-					<?php echo $this->Html->link(__('Service'),array('plugin'=>NULL,'controller'=>'Service','action'=>'index'))?></li>
+					<?php echo $this->Html->link(__('Ihre Vorteile'),array('plugin'=>NULL,'controller'=>'Advantage','action'=>'bauenMitIZHaus'))?></li>
 					
 					<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
 					<?php echo $this->Html->link(__('Portfolio'),array('plugin'=>NULL,'controller'=>'GalleryPictures','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='Service'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Service'),array('plugin'=>NULL,'controller'=>'Service','action'=>'index'))?></li>
+					
+					<?php if($this->Session->read('menue.active')=='AboutUs'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Über Uns'),array('plugin'=>NULL,'controller'=>'AboutUs','action'=>'philosophie'))?></li>
 					
 					<?php if ($check_open>0) {
 						if($this->Session->read('menue.active')=='JobOffers'){ ?>
