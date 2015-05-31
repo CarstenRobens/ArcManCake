@@ -81,6 +81,11 @@
 					<?php } ?>
 					<?php echo $this->Html->link(__('Houses'),array('plugin'=>NULL,'controller'=>'Houses','action'=>'index'))?></li>
 					
+					<?php if($this->Session->read('menue.active')=='Service'){ ?>
+						<li class="active"> <?php }else{ ?> <li>
+					<?php } ?>
+					<?php echo $this->Html->link(__('Service'),array('plugin'=>NULL,'controller'=>'Service','action'=>'index'))?></li>
+					
 					<?php if($this->Session->read('menue.active')=='GalleryPictures'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
