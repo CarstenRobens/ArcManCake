@@ -48,7 +48,7 @@ class LandsController extends AppController{
 			if ($this->request->is('post')) {
 				$this->Land->create();
 				$this->request->data['Land']['notary_cost'] = 2.5;
-				$this->request->data['Land']['land_tax'] = 5;
+				$this->request->data['Land']['land_tax'] = 6.5;
 				$this->request->data['Land']['building_tax'] = 1.5;
 				$this->request->data['Land']['customer_id'] = 0;
 				$this->request->data['Land']['user_id'] = $this->Auth->user('id');
@@ -90,7 +90,7 @@ class LandsController extends AppController{
         if ($this->request->is('post')) {
         	$this->Land->create();
 			$this->request->data['Land']['notary_cost'] = 2.5;
-			$this->request->data['Land']['land_tax'] = 5;
+			$this->request->data['Land']['land_tax'] = 6.5;
 			$this->request->data['Land']['building_tax'] = 1.25;
             $this->request->data['Land']['user_id'] = $this->Auth->user('id');
             $this->request->data['Land']['customer_id']=$customer_id;
@@ -118,6 +118,7 @@ class LandsController extends AppController{
             
         if ($this->request->is(array('land','put'))) {
         	$this->Land->id = $id;
+			$this->request->data['Land']['land_tax'] = 6.5;
         	if ($this->Land->save($this->request->data)) {
             	$this->Session->setFlash(__('Your land has been updated'), 'alert-box', array('class'=>'alert-success'));
                 return $this->redirect(array('action'=>'index'));
@@ -166,6 +167,7 @@ class LandsController extends AppController{
     	}
     	$this->set('land_list_view',$lands2);
     	$this->set('_serialize',array('land_list_view'));
+	  //debug($lands2);
     }
   	
 }

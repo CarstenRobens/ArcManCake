@@ -100,7 +100,9 @@
 				<table>
 					<tr>
 						<th>Gesamtgrundstücksankauf mit Nebenkosten:</th>
-						<th align="right"><?php echo $this->Number->currency($total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost'])/100,'EUR',array('wholePosition'=>'after'));?></th>
+						<th align="right"><?php 
+					    $total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost']+$proposal_view['MyLand']['building_tax'])/100;
+						echo $this->Number->currency($total_land,'EUR',array('wholePosition'=>'after'));?></th>
 					</tr>
 				</table>
 				

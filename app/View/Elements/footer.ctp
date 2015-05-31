@@ -75,6 +75,14 @@
 				}
 		?>
 		</p>
+		
+		<?php 
+			echo $this->Html->link(
+					$this->Html->image('Logo_Experte.jpg', array('width'=>'140px','height'=>'140px', 'class' => 'featurette-image img-responsive')),
+					'http://www.energie-effizienz-experten.de',
+					array('target' => '_blank', 'escape' => false));
+			  
+		?>
 		<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
 					'http://www.cakephp.org/',

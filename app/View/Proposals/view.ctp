@@ -154,6 +154,12 @@ foreach ($normal_house_pictures_view as $x){
 			<div class="row">
 				<strong > <?php echo __('Description:'); ?> </strong>
 				<?php echo $this->Text->autoParagraph($proposal_view['MyHouse']['description']); ?> 
+				<?php if ($current_user['role'] < 3 && !empty($current_user)) {?>
+					<?php if(!empty($proposal_view['MyHouse']['spec_pdf'])){ ?>
+						<strong> <?php echo __('Detaillierte Informationen: '); ?> </strong>
+						<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" href="<?php echo $this->Html->url(array('controller'=>'Houses','action'=>'download_file', $proposal_view['MyHouse']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Summary'), 'height'=>30 ));?> </a>
+					<?php }?>
+				<?php } ?>
 			</div>
 			
 			
@@ -609,7 +615,7 @@ foreach ($normal_house_pictures_view as $x){
 				<table>
 					<tr>
 						<th>Gesamtgrundstücksankauf mit Nebenkosten:</th>
-						<th style='text-align: right'><?php echo $this->Number->currency($total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost'])/100,'EUR',array('wholePosition'=>'after'));?></th>
+						<th style='text-align: right'><?php echo $this->Number->currency($total_land=$subtotal_dev+$subtotal*(100+$proposal_view['MyLand']['notary_cost']+$proposal_view['MyLand']['land_tax']+$proposal_view['MyLand']['land_agent_cost']+$proposal_view['MyLand']['building_tax'])/100,'EUR',array('wholePosition'=>'after'));?></th>
 					</tr>
 				</table>
 			</div>

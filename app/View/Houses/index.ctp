@@ -37,6 +37,14 @@
 							<a title="<?php echo __('Pictures');?>" href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $House['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
 							<a title="<?php echo __('Edit');?>" href=<?php echo $this->Html->url(array('action' => 'edit', $House['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
 							<a title="<?php echo __('Delete');?>" href=<?php echo $this->Html->url(array('action' => 'delete', $House['House']['id']));?> ><span class="glyphicon glyphicon-remove"></span></a>
+							&middot;
+							<?php 
+							if(empty($House['House']['spec_pdf'])){
+								echo $this->Html->link('PDF hinzufügen', array('controller'=>'Houses','action'=>'add_pdf',$House['House']['id'])); 
+							}else{
+								echo $this->Html->link('PDF löschen', array('controller'=>'Houses','action'=>'delete_pdf',$House['House']['id']),array('class'=>'remove', 'escape'=>false, 'title'=>__('Delete'))); 
+							}
+							?>
 						<?php } ?> 
 					</p>
 					

@@ -700,7 +700,7 @@ Der Auftraggeber ist verpflichtet, für Teile von maschinellen, elektrotechnisch
 		<p style="text-align: justify;">  
 		<br>
 Der Auftraggeber weist darauf hin, dass Sonderwünsche nur möglich sind, wenn es der Baufortschritt zulässt. Diese können ausschließlich mit dem Auftragnehmer vereinbart werden. Änderungswünsche oder Sonderwünsche dürfen nicht mit Dritten, insbesondere Subunternehmen vereinbart werden. <br>
-Mit vorheriger Zustimmung des Auftragnehmers kann der Auftraggeber direkt mit Subunternehmen der Auftragnehmers Sonderwünsche im Auftrag geben.  <br>
+Mit vorheriger Zustimmung des Auftragnehmers kann der Auftraggeber direkt mit Subunternehmen des Auftragnehmers Sonderwünsche im Auftrag geben.  <br>
 Die Ausführung von Sonderwünschen ist im Übrigen nur dann möglich, wenn baurechtliche Vorschriften nicht entgegenstehen und wenn durch die Ausführung der allgemeine Bauablauf nicht beeinträchtigt werden. <br>
 Der Auftraggeber hat keinen Rechtsanspruch auf die Berücksichtigung von Sonderwünschen.
 
@@ -835,8 +835,7 @@ Kaufvertrag, ggf. Zustimmung des Grundstückseigentümers)</li>
 					<li>aktueller beglaubigter Katasterauszug im Original (in der erforderlichen Anzahl)</li>
 					<li>Angaben der unmittelbaren Grundstücksnachbarn</li>
 					<li>Amtl. vermessener Lage- und Höhenplan, M 1:250 oder größer</li>
-					<li>Skizze der gewünschten Lage des Hauses auf dem Grundstück</li>
-					<li>Antrag auf Versorgung mit Wasser, Entwässerungsantrag g) </li>
+					<li>Antrag auf Versorgung mit Wasser, Entwässerungsantrag </li>
 					<li>sowie alle für die Bauantragserstellung sonst notwendigen Unterlagen, z.B. Freiflächenplanung, Grünordnungsplanung mit Ausgleichs- und Ersatzmaßnahmen, Biotopwertberechnung.<br> &nbsp;</li>
 				</ol>
 				Leistungen des Auftragnehmers:
@@ -1208,7 +1207,7 @@ Jedes Schlaf-, Kinder-, Arbeits- und Gästezimmer erhält einen Rauchmelder. Pro
 Grundausstattung enthalten und deshalb zeichnerisch dargestellt sind. Dazu gehören:<br>
 <br>
 Dachflächenfenster:<br>
-Kunststoff-Dachflächenfenster (Hersteller Roto, VELUX oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges" ); Farbe: weiß; mit 2-Scheiben-Wärmeschutzverglasung (Uw = 1,3 W/m²K); Fensteraußenmaß gemäß Zeichnung.
+Kunststoff-Dachflächenfenster (Hersteller Roto oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges" ); Farbe: weiß; mit 2-Scheiben-Wärmeschutzverglasung (Uw = 1,3 W/m²K); Fensteraußenmaß gemäß Zeichnung.
 Für die Verschattung des Dachflächenfensters wird das Aussenrolllo Screen (System Roto oder gleichwertig nach Wahl des Auftragnehmers gemäß §15, "Sonstiges") eingebaut. Das Aussenrolllo besteht aus kunststoffbeschichteten Glasfasergewebe.
 
 			</li>
@@ -1271,7 +1270,7 @@ Der Auftragnehmer ist berechtigt, das Haus auch nach Fertigstellung kostenlos fo
 			</li>
 			<li>
 				Der Auftragnehmer schließt für jedes Bauvorhaben eine Bauleistungsversicherung und eine
-Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auftragnehmer eine Baufertigstellungsbürgschaft und eine Mängelansprüchebürgschaft ("Baugewährleistungsbürgschaft"). Das Zertifikat über die Baufertigstellungsbürgschaft wird mit Baubeginn übergeben.
+Bauherrenhaftpflichtversicherung ab. Weiterhin erhält der Auftraggeber vom Auftragnehmer eine Baufertigstellungsbürgschaft über 20 % des Hauspreises und eine Mängelansprüchebürgschaft über 75.000,00 EUR. Das Zertifikat über die Baufertigstellungsbürgschaft wird mit Baubeginn übergeben, die Mängelansprüchebürgschaft erhält der Auftraggeber nach der Hausübergabe in der Hausakte.
 
 			</li>
 			<li>

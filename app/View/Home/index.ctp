@@ -68,3 +68,39 @@
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       
+	</div>
+	<div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+		<div class="col-lg-3">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-6">
+         
+		</div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      
+	</div>
+	
+	<div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+		<div class="col-lg-3">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-6">
+          <?php 
+			echo $this->Html->link(
+					$this->Html->image('Logo_Experte.jpg', array( 'class' => 'featurette-image img-responsive')),
+					'http://www.energie-effizienz-experten.de',
+					array('target' => '_blank', 'escape' => false));
+			  
+			?>
+		</div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      
+	</div>

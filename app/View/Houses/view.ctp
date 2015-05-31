@@ -22,6 +22,11 @@
         <?php if ($current_user['role'] < 2 && !empty($current_user)) {?>
 			<a title="<?php echo __('Picture');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" href=<?php echo $this->Html->url(array('controller'=>'HousePictures', 'action' => 'index', $house_view['House']['id']));?> ><span class="glyphicon glyphicon-picture"></span></a>
 			<a title="<?php echo __('Edit');?>" alt="<?php echo $company['name'].': '.$company['keywords'];?>" href=<?php echo $this->Html->url(array('action' => 'edit', $house_view['House']['id']));?> ><span class="glyphicon glyphicon-edit"></span></a>
+			<?php if(empty($house_view['House']['spec_pdf'])){
+								echo $this->Html->link('PDF hinzufügen', array('controller'=>'Houses','action'=>'add_pdf',$house_view['House']['id'])); 
+							}else{
+								echo $this->Html->link('PDF löschen', array('controller'=>'Houses','action'=>'delete_pdf',$house_view['House']['id']),array('class'=>'remove', 'escape'=>false, 'title'=>__('Delete'))); 
+							}?> 
 		<?php } ?> 
         
         <div class="col-md-1">
@@ -66,6 +71,13 @@
 			<div class="row">
 				<strong > <?php echo __('Description:'); ?> </strong>
 				<?php echo $this->Text->autoParagraph($house_view['House']['description']); ?> 
+				
+				<?php if ($current_user['role'] < 3 && !empty($current_user)) {?>
+					<?php if(!empty($house_view['House']['spec_pdf'])){ ?>
+						<strong> <?php echo __('Detaillierte Informationen: '); ?> </strong>
+						<a alt="<?php echo $company['name'].': '.$company['keywords'];?>" href="<?php echo $this->Html->url(array('controller'=>'Houses','action'=>'download_file', $house_view['House']['id'])); ?>"> <?php echo $this->Html->image('pdf.thumbnail.jpg', array('alt' => __('Summary'), 'height'=>30 ));?> </a>
+					<?php }?>
+				<?php } ?>
 			</div>
 			
 			<div class="row">
