@@ -19,15 +19,21 @@ class AboutUsController extends AppController {
     {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','AboutUs');
-		$this->Auth->allow('philosophie');
+		$this->Auth->allow('Unternehmen','unserePartner');
 		$company = Configure::read('company');
 		$this->set("title_for_layout",'Ihre Vorteile; '.$company['keywords']);
 		
 	}
 	
-	function philosophie() {
+	function Unternehmen() {
 		$company = Configure::read('company');
-		$this->set("title_for_layout",'Philosophie; '.$company['keywords']);
+		$this->set("title_for_layout",'Unternehmen; '.$company['keywords']);
+    	$this->Session->write('menue.active','AboutUs');
+	}
+	
+	function unserePartner() {
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'unsere Partner; '.$company['keywords']);
     	$this->Session->write('menue.active','AboutUs');
 	}
 	

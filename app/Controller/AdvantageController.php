@@ -19,7 +19,7 @@ class AdvantageController extends AppController {
     {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','Advantage');
-		$this->Auth->allow('bauenMitIZHaus','tuevAbnahme');
+		$this->Auth->allow('bauenMitIZHaus','unsereLeistungen');
 		$company = Configure::read('company');
 		$this->set("title_for_layout",'Ihre Vorteile; '.$company['keywords']);
 		
@@ -31,9 +31,10 @@ class AdvantageController extends AppController {
     	$this->Session->write('menue.active','Advantage');
 	}
 	
-	public function tuevAbnahme() {
+	
+	public function unsereLeistungen() {
 		$company = Configure::read('company');
-		$this->set("title_for_layout",'TÜV Abnahme; '.$company['keywords']);
+		$this->set("title_for_layout",'Unsere Leistungen; '.$company['keywords']);
     	$this->Session->write('menue.active','Advantage');
     }
 	

@@ -19,7 +19,7 @@ class ServiceController extends AppController {
     {
 		parent::beforeFilter();
 		$this->Session->write('menue.active','Service');
-		$this->Auth->allow('index','schutzbriefe','finanzierung');
+		$this->Auth->allow('index','schutzbriefe','finanzierung','grundstuecksservice');
 		$company = Configure::read('company');
 		$this->set("title_for_layout",'Service; '.$company['keywords']);
 		
@@ -38,6 +38,12 @@ class ServiceController extends AppController {
 	public function finanzierung() {
 		$company = Configure::read('company');
 		$this->set("title_for_layout",'Finanzierung; '.$company['keywords']);
+    	$this->Session->write('menue.active','Service');
+    }
+	
+	public function grundstuecksservice() {
+		$company = Configure::read('company');
+		$this->set("title_for_layout",'Grundstücksservice; '.$company['keywords']);
     	$this->Session->write('menue.active','Service');
     }
 

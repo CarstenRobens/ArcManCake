@@ -1,7 +1,4 @@
 
-	
-	
-	
 	<div id="picture-container">
 				<?php echo $this->Html->image('Service.png', array( "class" => "featurette-image img-responsive", "alt"=>$company['name'].": ".$company['keywords'] ))?>
 	</div>
@@ -25,12 +22,10 @@
 		<?php echo($this->element('serviceMenue'));?>
 		
 		<div class="col-lg-6">
-		<h3>Serviceleistungen</h3>
+		<h3>Grundstücksservice</h3>
 		<br>
 			
-		Wir geben Ihnen schon vor Baubeginn ein gutes Gefühl. IZ-Haus ist Partner für alle Leistungen, die das Bauen sicher und bequem machen. Sollten Sie zwar große Ideen, aber noch keinen eigenen Grund besitzen, helfen wir ebenfalls gerne. Auch bei der soliden Finanzierung und bei Versicherungsfragen stehen wir beratend an Ihrer Seite.
-			
- 	
+		Sie wissen schon wie Ihr Traumhaus aussehen soll, haben aber noch kein geeignetes Grundstück gefunden? Auch in diesem Fall helfen wir Ihnen gerne weiter. Nach Absprache mit Ihnen suchen wir mit unseren Partner das passende Grundstück. Für unsere Kunden selbstverständlich kostenlos.	
 			
         </div><!-- /.col-lg-8 -->
 		<div class="col-lg-2">
@@ -39,5 +34,3 @@
       
 	</div>
 	
-	
-   

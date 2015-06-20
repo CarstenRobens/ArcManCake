@@ -19,7 +19,7 @@
 
     <div class="container marketing">
 			
-		<?php echo($this->element('advantageMenue'));?>
+		<?php echo($this->element('aboutUsMenue'));?>
 		
 		<div class="col-lg-6">
 		<h3>Bauen mit IZ-Haus</h3>

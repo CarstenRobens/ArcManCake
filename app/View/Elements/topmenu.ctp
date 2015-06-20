@@ -99,7 +99,7 @@
 					<?php if($this->Session->read('menue.active')=='AboutUs'){ ?>
 						<li class="active"> <?php }else{ ?> <li>
 					<?php } ?>
-					<?php echo $this->Html->link(__('Über Uns'),array('plugin'=>NULL,'controller'=>'AboutUs','action'=>'philosophie'))?></li>
+					<?php echo $this->Html->link(__('Über Uns'),array('plugin'=>NULL,'controller'=>'AboutUs','action'=>'Unternehmen'))?></li>
 					
 					<?php if ($check_open>0) {
 						if($this->Session->read('menue.active')=='JobOffers'){ ?>
